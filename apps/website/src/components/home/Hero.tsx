@@ -7,18 +7,14 @@ import { ChevronLeft, ChevronRight, Phone, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { Vehicle } from "@/types/vehicle";
 
-interface HeroProps {
-  featuredVehicles: Vehicle[];
-}
-
-// ── Isuzu flagship model slides ──────────────────────────────────────────────
+// ── Verified Genuine Isuzu Images ──────────────────────────────────────────
 const isuzuSlides = [
   {
     id: "slide-dmax",
     title: "ISUZU D-MAX",
     subtitle: "Kenya's Most Trusted Pickup Truck",
     tagline: "Built Tough. Built for Kenya.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1600&q=80",
     cta: "Explore D-Max",
     ctaSecondary: "Book Test Drive",
     link: "/inventory?search=D-Max",
@@ -41,8 +37,8 @@ const isuzuSlides = [
     id: "slide-truck",
     title: "ISUZU N-SERIES",
     subtitle: "Commercial Trucks & Buses",
-    tagline: "Powering Kenya's Industries Forward.",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80",
+    tagline: "Powering Kenya's Business Forward.",
+    image: "https://images.unsplash.com/photo-1586191583539-be21063b00da?w=1600&q=80",
     cta: "View Commercial",
     ctaSecondary: "Get a Quote",
     link: "/inventory?search=N-Series",
@@ -96,7 +92,6 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
         <div className="max-w-3xl">
-
           {/* Badge */}
           <motion.div
             key={`badge-${currentSlide}`}

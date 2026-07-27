@@ -6,6 +6,7 @@ import { Vehicle } from "@/types/vehicle";
 import Link from "next/link";
 import { Phone, MessageSquare, ChevronRight, MapPin, Clock } from "lucide-react";
 
+// ── Verified High-Resolution Isuzu Pickup, SUV & Commercial Images ──
 const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
   {
     id: 'isuzu-dmax-vcross',
@@ -56,7 +57,7 @@ const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
     category: 'CAR',
     status: 'AVAILABLE',
     createdAt: new Date().toISOString(),
-    images: [{ id: 'img-3', url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
+    images: [{ id: 'img-3', url: 'https://images.unsplash.com/photo-1586191583539-be21063b00da?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
   },
   {
     id: 'isuzu-dmax-ls',
@@ -73,7 +74,7 @@ const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
     category: 'CAR',
     status: 'AVAILABLE',
     createdAt: new Date().toISOString(),
-    images: [{ id: 'img-4', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
+    images: [{ id: 'img-4', url: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
   },
   {
     id: 'isuzu-mux-ls',
@@ -90,7 +91,7 @@ const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
     category: 'CAR',
     status: 'AVAILABLE',
     createdAt: new Date().toISOString(),
-    images: [{ id: 'img-5', url: 'https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
+    images: [{ id: 'img-5', url: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
   },
   {
     id: 'isuzu-npr',
@@ -148,7 +149,6 @@ export default async function Home() {
       <section className="py-20 bg-white px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
             {/* Left: Image */}
             <div className="relative">
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/10 -z-10" />
@@ -178,7 +178,7 @@ export default async function Home() {
                 <span className="text-secondary">Built for Kenya.</span>
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Edwin Kibira Isuzu Sales is your trusted authorized Isuzu dealer in Kenya. We carry the full range of Isuzu vehicles — from the legendary D-Max pickup built for Kenya&apos;s terrain, to the premium mu-X family SUV, and the powerful N-Series commercial trucks and buses.
+                Edwin Kibira Isuzu Sales is your trusted authorized Isuzu dealer in Kenya. We carry the full range of Isuzu vehicles — from the legendary D-Max pickup built for Kenya&apos;s terrain, to the premium mu-X SUV, and the powerful N-Series commercial trucks and buses.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 With decades of experience and a commitment to after-sales service, we make owning an Isuzu in Kenya easy, reliable, and rewarding.
@@ -250,7 +250,6 @@ export default async function Home() {
       <section className="py-20 bg-primary px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
             {/* Left */}
             <div className="lg:col-span-5 space-y-8">
               <div>
