@@ -1,5 +1,5 @@
 services:
-  # 1. Primary Website Application (edwinkibiraisuzu.onrender.com)
+  # Primary Website Application (edwinkibiraisuzu.onrender.com)
   - type: web
     name: edwinkibiraisuzu
     env: node
@@ -19,59 +19,5 @@ services:
         value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true
       - key: DIRECT_URL
         value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:5432/postgres
-      - key: NEXT_PUBLIC_API_URL
-        value: https://edwinkibiraisuzu-api.onrender.com
       - key: NEXT_PUBLIC_WEBSITE_URL
         value: https://edwinkibiraisuzu.onrender.com
-
-  # 2. API Server Application (edwinkibiraisuzu-api.onrender.com)
-  - type: web
-    name: edwinkibiraisuzu-api
-    env: node
-    plan: free
-    buildCommand: npm install && npm run build --workspace=apps/api-server
-    startCommand: npm run start --workspace=apps/api-server
-    envVars:
-      - key: NODE_VERSION
-        value: 20.12.2
-      - key: PORT
-        value: 4000
-      - key: NEXT_PUBLIC_SUPABASE_URL
-        value: https://oqfnxojgqyhpbwcpluhk.supabase.co
-      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xZm54b2pncXlocGJ3Y3BsdWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxNDE4NzUsImV4cCI6MjEwMDcxNzg3NX0.OIUXd3rg143tK18YIOpFuTRiLhh_08fIAjPB2CljyRk
-      - key: SUPABASE_SERVICE_ROLE_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xZm54b2pncXlocGJ3Y3BsdWhrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTE0MTg3NSwiZXhwIjoyMTAwNzE3ODc1fQ.Gh6OQbbS-7-U1qurCWpAS8ADCOfG37q8GxyCCWgwXow
-      - key: DATABASE_URL
-        value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true
-      - key: DIRECT_URL
-        value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:5432/postgres
-
-  # 3. Admin Dashboard Application (edwinkibiraisuzu-admin.onrender.com)
-  - type: web
-    name: edwinkibiraisuzu-admin
-    env: node
-    plan: free
-    buildCommand: npm install && npm run build --workspace=apps/admin-dashboard
-    startCommand: npm run start --workspace=apps/admin-dashboard
-    envVars:
-      - key: NODE_VERSION
-        value: 20.12.2
-      - key: NEXT_PUBLIC_SUPABASE_URL
-        value: https://oqfnxojgqyhpbwcpluhk.supabase.co
-      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xZm54b2pncXlocGJ3Y3BsdWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxNDE4NzUsImV4cCI6MjEwMDcxNzg3NX0.OIUXd3rg143tK18YIOpFuTRiLhh_08fIAjPB2CljyRk
-      - key: SUPABASE_SERVICE_ROLE_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xZm54b2pncXlocGJ3Y3BsdWhrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTE0MTg3NSwiZXhwIjoyMTAwNzE3ODc1fQ.Gh6OQbbS-7-U1qurCWpAS8ADCOfG37q8GxyCCWgwXow
-      - key: DATABASE_URL
-        value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true
-      - key: DIRECT_URL
-        value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:5432/postgres
-      - key: NEXT_PUBLIC_API_URL
-        value: https://edwinkibiraisuzu-api.onrender.com
-      - key: NEXT_PUBLIC_WEBSITE_URL
-        value: https://edwinkibiraisuzu.onrender.com
-      - key: ADMIN_PASSWORD
-        value: AspireAdmin2024!
-      - key: ADMIN_SESSION_SECRET
-        value: aspire-motors-admin-secret-key-2024
