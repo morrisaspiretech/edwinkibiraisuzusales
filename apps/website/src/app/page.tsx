@@ -4,15 +4,72 @@ import NewArrivals from "@/components/home/NewArrivals";
 import SourcingForm from "@/components/home/SourcingForm";
 import { Vehicle } from "@/types/vehicle";
 
+const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
+  {
+    id: 'isuzu-dmax-vcross',
+    make: 'Isuzu',
+    model: 'D-Max V-Cross 4x4',
+    year: 2024,
+    price: 6800000,
+    engineCC: 2999,
+    transmission: 'AUTOMATIC',
+    fuelType: 'DIESEL',
+    condition: 'FOREIGN',
+    bodyType: 'PICKUP',
+    mileage: 0,
+    category: 'CAR',
+    status: 'AVAILABLE',
+    createdAt: new Date().toISOString(),
+    images: [{ id: 'img-1', url: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
+  },
+  {
+    id: 'isuzu-mux',
+    make: 'Isuzu',
+    model: 'M-UX 3.0L SUV',
+    year: 2024,
+    price: 8200000,
+    engineCC: 2999,
+    transmission: 'AUTOMATIC',
+    fuelType: 'DIESEL',
+    condition: 'FOREIGN',
+    bodyType: 'SUV',
+    mileage: 0,
+    category: 'CAR',
+    status: 'AVAILABLE',
+    createdAt: new Date().toISOString(),
+    images: [{ id: 'img-2', url: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
+  },
+  {
+    id: 'isuzu-nqr',
+    make: 'Isuzu',
+    model: 'NQR Commercial Bus/Truck',
+    year: 2023,
+    price: 5200000,
+    engineCC: 5193,
+    transmission: 'MANUAL',
+    fuelType: 'DIESEL',
+    condition: 'FOREIGN',
+    bodyType: 'TRUCK',
+    mileage: 0,
+    category: 'CAR',
+    status: 'AVAILABLE',
+    createdAt: new Date().toISOString(),
+    images: [{ id: 'img-3', url: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }]
+  }
+];
+
 async function getVehicles() {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:4000";
     const res = await fetch(`${apiUrl}/api/vehicles`, { next: { revalidate: 0 } });
-    if (!res.ok) return [];
-    return await res.json();
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) return data;
+    }
+    return DEFAULT_ISUZU_VEHICLES;
   } catch (error) {
-    console.error("Error fetching vehicles:", error);
-    return [];
+    console.error("Error fetching vehicles, using default Isuzu collection:", error);
+    return DEFAULT_ISUZU_VEHICLES;
   }
 }
 
