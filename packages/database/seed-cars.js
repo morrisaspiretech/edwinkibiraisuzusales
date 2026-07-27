@@ -1,65 +1,126 @@
-const { PrismaClient } = require('./src/generated/client');
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
-  const gWagon = await prisma.vehicle.create({
-    data: {
-      make: 'Mercedes-Benz',
-      model: 'G-Class G 63 AMG',
-      year: 2024,
-      price: 45000000,
-      fuelType: 'Petrol',
-      engineCC: 3982,
-      transmission: 'Automatic',
-      bodyType: 'SUV',
-      mileage: 1500,
-      color: 'Obsidian Black',
-      category: 'CAR',
-      status: 'AVAILABLE',
-      condition: 'FOREIGN',
-      description: 'The ultimate luxury off-roader with unparalleled performance and road presence.',
-      vin: `W1N${Math.floor(Math.random() * 100000000000)}`,
-      images: {
-        create: [
-          { url: 'https://images.unsplash.com/photo-1520031441872-265e4ff70366?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }
-        ]
-      }
-    }
+  // Create default admin/dealer user if not present
+  const user = await prisma.user.upsert({
+    where: { email: 'sales@edwinkibiraisuzu.co.ke' },
+    update: {},
+    create: {
+      email: 'sales@edwinkibiraisuzu.co.ke',
+      fullName: 'Edwin Kibirai Isuzu Sales',
+      role: 'DEALER',
+    },
   });
 
-  const sedan = await prisma.vehicle.create({
-    data: {
-      make: 'Mercedes-Benz',
-      model: 'S-Class S 580 4MATIC',
+  console.log('Seeding Isuzu vehicles for', user.fullName);
+
+  const cars = [
+    {
+      make: 'Isuzu',
+      model: 'D-Max V-Cross',
       year: 2024,
-      price: 35000000,
-      fuelType: 'Petrol',
-      engineCC: 3982,
-      transmission: 'Automatic',
-      bodyType: 'Sedan',
-      mileage: 200,
-      color: 'Diamond White',
-      category: 'CAR',
+      price: 6800000,
+      description: 'Brand new Isuzu D-Max V-Cross 3.0L 4x4 Automatic. Ultimate toughness and comfort.',
+      location: 'Nairobi',
+      condition: 'NEW',
       status: 'AVAILABLE',
-      condition: 'FOREIGN',
-      description: 'Experience absolute executive luxury, cutting-edge technology, and unmatched comfort.',
-      vin: `W1N${Math.floor(Math.random() * 100000000000)}`,
+      specs: {
+        create: {
+          engineCc: 2999,
+          fuelType: 'Diesel',
+          transmission: 'Automatic',
+          drivetrain: '4WD',
+          horsepower: 190,
+          seatingCapacity: 5,
+        },
+      },
       images: {
         create: [
-          { url: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1000&auto=format&fit=crop', isPrimary: true, position: 0 }
-        ]
-      }
-    }
-  });
-  
-  console.log("Successfully seeded:");
-  console.log("1. G-Wagon created with ID:", gWagon.id);
-  console.log("2. S-Class created with ID:", sedan.id);
+          {
+            url: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1000&auto=format&fit=crop',
+            isHero: true,
+            type: 'HERO',
+          },
+        ],
+      },
+    },
+    {
+      make: 'Isuzu',
+      model: 'NQR Bus / Truck',
+      year: 2023,
+      price: 5200000,
+      description: 'Reliable Isuzu NQR Commercial chassis. High payload capacity and fuel efficient engine.',
+      location: 'Nairobi',
+      condition: 'NEW',
+      status: 'AVAILABLE',
+      specs: {
+        create: {
+          engineCc: 5193,
+          fuelType: 'Diesel',
+          transmission: 'Manual',
+          drivetrain: 'RWD',
+          horsepower: 155,
+          seatingCapacity: 33,
+        },
+      },
+      images: {
+        create: [
+          {
+            url: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000&auto=format&fit=crop',
+            isHero: true,
+            type: 'HERO',
+          },
+        ],
+      },
+    },
+    {
+      make: 'Isuzu',
+      model: 'M-UX SUV',
+      year: 2024,
+      price: 8200000,
+      description: '7-seater luxury SUV powered by Isuzu legendary diesel reliability.',
+      location: 'Nairobi',
+      condition: 'NEW',
+      status: 'AVAILABLE',
+      specs: {
+        create: {
+          engineCc: 2999,
+          fuelType: 'Diesel',
+          transmission: 'Automatic',
+          drivetrain: '4WD',
+          horsepower: 190,
+          seatingCapacity: 7,
+        },
+      },
+      images: {
+        create: [
+          {
+            url: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1000&auto=format&fit=crop',
+            isHero: true,
+            type: 'HERO',
+          },
+        ],
+      },
+    },
+  ];
+
+  for (const carData of cars) {
+    const createdCar = await prisma.car.create({
+      data: {
+        ...carData,
+        sellerId: user.id,
+      },
+    });
+    console.log(`Created car listing: ${createdCar.make} ${createdCar.model} (${createdCar.id})`);
+  }
+
+  console.log('Seeding completed successfully!');
 }
 
 main()
   .catch((e) => {
-    console.error(e);
+    console.error('Seeding error:', e);
     process.exit(1);
   })
   .finally(async () => {
