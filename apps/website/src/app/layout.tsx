@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   description:
     "Edwin Kibira Isuzu Sales – Kenya's trusted Isuzu dealer. Browse D-Max pickups, mu-X SUVs, commercial trucks and buses. Built tough. Built for Kenya.",
   keywords: ["Isuzu Kenya", "Isuzu dealer Nairobi", "D-Max Kenya", "mu-X Kenya", "Isuzu trucks Kenya", "Edwin Kibira Isuzu"],
+  icons: {
+    icon: "/logo.jpg",
+    apple: "/logo.jpg",
+    shortcut: "/logo.jpg",
+  },
   openGraph: {
     title: "Edwin Kibira Isuzu Sales",
     description: "Authorized Isuzu dealer in Kenya. D-Max, mu-X, N-Series trucks, buses and more.",
     type: "website",
+    images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibira Isuzu Sales" }],
   },
 };
 

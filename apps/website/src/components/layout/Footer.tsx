@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   MapPin,
@@ -30,59 +31,69 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-white pt-16 pb-0 border-t-4 border-secondary">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-primary text-white pt-12 md:pt-16 pb-0 border-t-4 border-secondary">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
 
-          {/* Brand Info */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block">
-              <span className="text-secondary font-black text-xs tracking-[0.3em] uppercase block">Edwin Kibira</span>
-              <span className="text-white font-black text-2xl tracking-[0.1em] uppercase leading-none">
-                ISUZU <span className="text-secondary">SALES</span>
-              </span>
+          {/* Brand Info with Logo */}
+          <div className="flex flex-col gap-5">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-secondary flex-shrink-0">
+                <Image
+                  src="/logo.jpg"
+                  alt="Edwin Kibira Isuzu Sales"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="text-secondary font-black text-[10px] tracking-[0.2em] uppercase">Edwin Kibira</span>
+                <span className="text-white font-black text-lg tracking-[0.1em] uppercase leading-tight">
+                  ISUZU <span className="text-secondary">SALES</span>
+                </span>
+              </div>
             </Link>
-            <p className="text-white/60 leading-relaxed text-sm">
-              Kenya&apos;s trusted Isuzu dealer. We sell genuine Isuzu vehicles built for Kenya&apos;s roads — D-Max pickups, mu-X SUVs, trucks, and buses. Built Tough.
+            <p className="text-white/60 leading-relaxed text-xs md:text-sm">
+              Kenya&apos;s trusted Isuzu dealer — bringing durable, reliable Isuzu vehicles (D-Max, mu-X, trucks, and buses) to Kenyans across the country.
             </p>
-            <div className="flex gap-3 mt-1">
-              <a href="#" className="w-9 h-9 rounded border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
-                <Facebook size={16} />
+            <div className="flex gap-2.5 mt-1">
+              <a href="#" className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+                <Facebook size={14} />
               </a>
-              <a href="#" className="w-9 h-9 rounded border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
-                <Instagram size={16} />
+              <a href="#" className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+                <Instagram size={14} />
               </a>
-              <a href="#" className="w-9 h-9 rounded border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
-                <Youtube size={16} />
+              <a href="#" className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+                <Youtube size={14} />
               </a>
               <a
                 href="https://wa.me/254700000000"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded border border-white/20 flex items-center justify-center hover:bg-green-600 hover:border-green-600 transition-all"
+                className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:bg-green-600 hover:border-green-600 transition-all"
               >
-                <MessageSquare size={16} />
+                <MessageSquare size={14} />
               </a>
             </div>
           </div>
 
           {/* Isuzu Models */}
-          <div className="flex flex-col gap-5">
-            <h4 className="text-sm font-black uppercase tracking-widest text-secondary">Isuzu Models</h4>
-            <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
+            <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Isuzu Models</h4>
+            <div className="flex flex-col gap-2.5">
               {[
                 { label: "Isuzu D-Max Pickup", href: "/inventory?search=D-Max" },
                 { label: "Isuzu mu-X SUV", href: "/inventory?search=mu-X" },
-                { label: "N-Series Trucks", href: "/inventory?search=N-Series" },
+                { label: "N-Series Commercial Trucks", href: "/inventory?search=N-Series" },
                 { label: "Buses & Coaches", href: "/inventory?search=Bus" },
                 { label: "Book a Test Drive", href: "/book-test-drive" },
               ].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white/60 hover:text-secondary transition-colors text-sm font-medium flex items-center gap-2 group"
+                  className="text-white/70 hover:text-secondary transition-colors text-xs md:text-sm font-medium flex items-center gap-2 group"
                 >
-                  <ArrowRight size={13} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-secondary" />
+                  <ArrowRight size={12} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-secondary" />
                   {link.label}
                 </Link>
               ))}
@@ -90,36 +101,36 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col gap-5">
-            <h4 className="text-sm font-black uppercase tracking-widest text-secondary">Contact Us</h4>
-            <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
+            <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Contact Us</h4>
+            <div className="flex flex-col gap-3.5 text-xs md:text-sm">
               <div className="flex gap-3 items-start">
-                <MapPin className="text-secondary flex-shrink-0 mt-0.5" size={18} />
-                <p className="text-white/60 text-sm font-medium">
+                <MapPin className="text-secondary flex-shrink-0 mt-0.5" size={16} />
+                <p className="text-white/70 font-medium">
                   Edwin Kibira Isuzu Sales<br />
                   Nairobi, Kenya
                 </p>
               </div>
               <div className="flex gap-3 items-center">
-                <Phone className="text-secondary flex-shrink-0" size={18} />
-                <a href="tel:+254700000000" className="text-white/60 hover:text-secondary transition-colors text-sm font-medium">
+                <Phone className="text-secondary flex-shrink-0" size={16} />
+                <a href="tel:+254700000000" className="text-white/70 hover:text-secondary transition-colors font-medium">
                   +254 700 000 000
                 </a>
               </div>
               <div className="flex gap-3 items-center">
-                <MessageSquare className="text-secondary flex-shrink-0" size={18} />
+                <MessageSquare className="text-secondary flex-shrink-0" size={16} />
                 <a
                   href="https://wa.me/254700000000"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white/60 hover:text-secondary transition-colors text-sm font-medium"
+                  className="text-white/70 hover:text-secondary transition-colors font-medium"
                 >
                   WhatsApp Us
                 </a>
               </div>
               <div className="flex gap-3 items-center">
-                <Mail className="text-secondary flex-shrink-0" size={18} />
-                <a href="mailto:info@edwinkibiraisuzu.co.ke" className="text-white/60 hover:text-secondary transition-colors text-sm font-medium">
+                <Mail className="text-secondary flex-shrink-0" size={16} />
+                <a href="mailto:info@edwinkibiraisuzu.co.ke" className="text-white/70 hover:text-secondary transition-colors font-medium">
                   info@edwinkibiraisuzu.co.ke
                 </a>
               </div>
@@ -127,30 +138,30 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="flex flex-col gap-5">
-            <h4 className="text-sm font-black uppercase tracking-widest text-secondary">Stay Updated</h4>
-            <p className="text-white/60 text-sm font-medium">
-              Get the latest Isuzu news, new arrivals, and exclusive offers straight to your inbox.
+          <div className="flex flex-col gap-4">
+            <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Stay Updated</h4>
+            <p className="text-white/70 text-xs md:text-sm font-medium">
+              Subscribe for the latest Isuzu arrivals, prices, and special dealer offers.
             </p>
 
             {isSubscribed ? (
-              <div className="bg-green-500/10 border border-green-500/20 rounded p-4 flex items-center gap-3 text-green-400">
-                <CheckCircle2 size={20} />
-                <p className="font-bold text-sm">Thanks for subscribing!</p>
+              <div className="bg-green-500/10 border border-green-500/20 p-3 flex items-center gap-2 text-green-400">
+                <CheckCircle2 size={18} />
+                <p className="font-bold text-xs">Subscribed successfully!</p>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-2.5">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
                   required
-                  className="bg-white/5 border border-white/10 text-white placeholder:text-white/30 px-4 py-3 focus:outline-none focus:border-secondary transition-all w-full text-sm"
+                  className="bg-white/5 border border-white/10 text-white placeholder:text-white/30 px-3.5 py-3 focus:outline-none focus:border-secondary transition-all w-full text-xs"
                 />
                 <button
                   type="submit"
-                  className="bg-secondary text-white font-black uppercase tracking-widest text-xs px-4 py-3 hover:bg-accent-dark transition-all w-full"
+                  className="bg-secondary text-white font-black uppercase tracking-widest text-[11px] px-4 py-3 hover:bg-accent-dark transition-all w-full"
                 >
                   Subscribe
                 </button>
@@ -159,17 +170,17 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Isuzu Kenya Authorized Badge */}
-        <div className="border-t border-white/10 py-6 text-center">
-          <p className="text-secondary text-xs font-black uppercase tracking-widest mb-1">
+        {/* Authorized Dealer Ribbon */}
+        <div className="border-t border-white/10 py-4 text-center">
+          <p className="text-secondary text-[11px] font-black uppercase tracking-widest">
             Authorized Isuzu Dealer — Kenya
           </p>
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-medium">
+        <div className="border-t border-white/10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/40 font-medium">
           <p>&copy; {new Date().getFullYear()} Edwin Kibira Isuzu Sales. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-4">
             <Link href="#" className="hover:text-secondary transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-secondary transition-colors">Terms of Service</Link>
           </div>

@@ -1,136 +1,244 @@
 "use client";
 
+import React, { useState } from "react";
+import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { useState } from "react";
-import { CheckCircle2, Loader2, ArrowRight, Mail, Phone, MapPin, Send, MessageCircle, Clock, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, MessageSquare, Clock, Send, CheckCircle2, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "Vehicle Inquiry",
+    message: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 1500);
+    }, 1000);
   };
 
   return (
-    <main className="min-h-screen bg-primary">
-      {/* Header */}
-      <header className="pt-20 pb-8 px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <nav className="flex items-center justify-center gap-2 text-xs font-black uppercase text-accent mb-4 tracking-[0.2em]">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <span className="text-white">Get In Touch</span>
-          </nav>
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight uppercase">Contact <span className="text-secondary">Us</span></h1>
-          <p className="text-white/40 font-bold mt-2 uppercase tracking-[0.1em]">Our Isuzu specialists are ready to help you.</p>
-        </motion.div>
-      </header>
+    <main className="min-h-screen bg-white flex flex-col justify-between">
+      <div>
+        <Navbar />
 
-      <section className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
-          {/* Contact Methods */}
-          <div className="space-y-6">
-            <ContactMethod 
-              icon={<Phone className="text-secondary" />}
-              title="Call Us"
-              value="+254 700 000 000"
-              sub="Sales and Test Drive Booking"
-            />
-            <ContactMethod 
-              icon={<MessageCircle className="text-secondary" />}
-              title="WhatsApp Us"
-              value="+254 700 000 000"
-              sub="Instant response on WhatsApp"
-            />
-            <ContactMethod 
-              icon={<Mail className="text-secondary" />}
-              title="Email Us"
-              value="info@edwinkibiraisuzu.co.ke"
-              sub="Enquiries and fleet services"
-            />
-            <ContactMethod 
-              icon={<MapPin className="text-secondary" />}
-              title="Visit Our Showroom"
-              value="Edwin Kibira Isuzu Sales"
-              sub="Nairobi, Kenya"
-            />
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl flex items-center gap-4 group hover:border-secondary/40 transition-all">
-              <Clock className="text-secondary" size={24} />
-              <div>
-                <p className="text-xs font-black text-white/40 uppercase tracking-widest">Opening Hours</p>
-                <p className="text-sm font-black text-white uppercase mt-1">Mon - Sat: 8:00 AM - 6:00 PM</p>
+        {/* ── Page Header ── */}
+        <div className="bg-primary text-white py-12 px-4 md:px-6 border-b-4 border-secondary">
+          <div className="max-w-5xl mx-auto">
+            <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary tracking-widest mb-3">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <ChevronRight size={10} className="text-white/30" />
+              <span className="text-white/50">Contact Us</span>
+            </nav>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="h-[3px] w-10 bg-secondary" />
+              <span className="text-secondary font-black text-xs uppercase tracking-widest">Get In Touch</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+              Contact <span className="text-secondary">Edwin Kibira Isuzu Sales</span>
+            </h1>
+            <p className="text-white/60 text-xs md:text-sm mt-2 max-w-xl font-medium">
+              Have questions about an Isuzu vehicle, test drive, or financing? Our team is ready to assist you.
+            </p>
+          </div>
+        </div>
+
+        {/* ── Main Content Container ── */}
+        <div className="max-w-5xl mx-auto px-4 md:px-6 py-10 md:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+            {/* Left Column: Direct Contact Info */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="border border-gray-100 p-6 md:p-8 bg-surface space-y-6">
+                <h3 className="text-lg font-black text-primary uppercase tracking-wide border-b border-gray-200 pb-3">
+                  Showroom & Office
+                </h3>
+
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Location</p>
+                      <p className="text-sm font-bold text-primary mt-0.5">Edwin Kibira Isuzu Sales</p>
+                      <p className="text-xs text-gray-500">Nairobi, Kenya</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <Phone size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Phone Calls</p>
+                      <a href="tel:+254700000000" className="text-sm font-bold text-secondary hover:underline block mt-0.5">
+                        +254 700 000 000
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <MessageSquare size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black uppercase text-gray-400 tracking-wider">WhatsApp Line</p>
+                      <a
+                        href="https://wa.me/254700000000"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm font-bold text-emerald-600 hover:underline block mt-0.5"
+                      >
+                        +254 700 000 000 (Chat Now)
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <Mail size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Email Address</p>
+                      <a href="mailto:info@edwinkibiraisuzu.co.ke" className="text-sm font-bold text-primary hover:text-secondary transition-colors block mt-0.5">
+                        info@edwinkibiraisuzu.co.ke
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 pt-3 border-t border-gray-200">
+                    <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
+                      <Clock size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Opening Hours</p>
+                      <p className="text-xs text-primary font-bold mt-0.5">Monday – Friday: 8:00 AM – 6:00 PM</p>
+                      <p className="text-xs text-primary font-bold">Saturday: 9:00 AM – 4:00 PM</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-[40px] shadow-2xl relative overflow-hidden h-full">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 blur-[100px] rounded-full -mr-32 -mt-32" />
-              
-              {isSuccess ? (
-                <div className="text-center py-12 space-y-6">
-                  <div className="w-20 h-20 bg-secondary flex items-center justify-center text-white mx-auto">
-                    <CheckCircle2 size={40} />
-                  </div>
-                  <h3 className="text-3xl font-black text-white uppercase tracking-tight">Message Sent!</h3>
-                  <p className="text-white/40 font-bold uppercase text-xs tracking-widest">Our Isuzu team will respond within 24 hours.</p>
-                  <button onClick={() => setIsSuccess(false)} className="text-secondary font-black uppercase text-[10px] tracking-widest hover:underline">Send another message</button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                  <div className="space-y-2">
-                    <label className="text-xs font-black text-white/30 uppercase tracking-[0.2em] ml-1">Full Name</label>
-                    <input required type="text" className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl text-white font-bold focus:outline-none focus:border-accent transition-all" placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-black text-white/30 uppercase tracking-[0.2em] ml-1">Email Address</label>
-                    <input required type="email" className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl text-white font-bold focus:outline-none focus:border-accent transition-all" placeholder="john@example.com" />
-                  </div>
-                  <div className="md:col-span-2 space-y-2">
-                    <label className="text-xs font-black text-white/30 uppercase tracking-[0.2em] ml-1">How can we help?</label>
-                    <textarea required rows={6} className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl text-white font-bold focus:outline-none focus:border-accent transition-all resize-none" placeholder="I'm interested in the Isuzu D-Max V-Cross..."></textarea>
-                  </div>
-                  <div className="md:col-span-2">
-                    <button 
-                      disabled={isSubmitting}
-                      className="w-full bg-secondary text-white p-6 font-black uppercase text-sm tracking-[0.2em] flex items-center justify-center gap-4 hover:bg-accent-dark transition-all disabled:opacity-50"
+            {/* Right Column: Clean Contact Form */}
+            <div className="lg:col-span-7">
+              <div className="border border-gray-100 p-6 md:p-8 bg-white shadow-lg border-t-4 border-secondary">
+                {isSuccess ? (
+                  <div className="text-center py-12 space-y-4">
+                    <div className="w-16 h-16 bg-secondary text-white flex items-center justify-center mx-auto">
+                      <CheckCircle2 size={32} />
+                    </div>
+                    <h3 className="text-2xl font-black text-primary uppercase">Thank You!</h3>
+                    <p className="text-sm text-gray-500 max-w-md mx-auto">
+                      Your message has been received. One of our Isuzu vehicle specialists will contact you shortly.
+                    </p>
+                    <button
+                      onClick={() => setIsSuccess(false)}
+                      className="text-secondary font-bold uppercase text-xs hover:underline tracking-widest pt-4 block mx-auto"
                     >
-                      {isSubmitting ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      Send Another Message
                     </button>
                   </div>
-                </form>
-              )}
-            </div>
-          </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <h3 className="text-lg font-black text-primary uppercase tracking-wide">
+                        Send Us a Message
+                      </h3>
+                      <p className="text-xs text-gray-400 mt-0.5">
+                        Fill out the form below and we will get back to you as soon as possible.
+                      </p>
+                    </div>
 
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                      <div className="space-y-1">
+                        <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Your Name *</label>
+                        <input
+                          required
+                          type="text"
+                          placeholder="John Doe"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full border border-gray-200 px-3.5 py-3 text-xs md:text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Phone Number *</label>
+                        <input
+                          required
+                          type="tel"
+                          placeholder="+254 700 000 000"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full border border-gray-200 px-3.5 py-3 text-xs md:text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Email Address</label>
+                      <input
+                        type="email"
+                        placeholder="john@example.com (optional)"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full border border-gray-200 px-3.5 py-3 text-xs md:text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Subject</label>
+                      <select
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="w-full border border-gray-200 px-3.5 py-3 text-xs md:text-sm font-medium focus:outline-none focus:border-secondary transition-colors bg-white"
+                      >
+                        <option value="Vehicle Inquiry">Isuzu Vehicle Inquiry</option>
+                        <option value="Test Drive">Test Drive Booking</option>
+                        <option value="Fleet Purchase">Fleet / Business Purchase</option>
+                        <option value="Spare Parts">Parts & After-Sales Service</option>
+                        <option value="General">General Question</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Your Message *</label>
+                      <textarea
+                        required
+                        rows={4}
+                        placeholder="Tell us what you need or which Isuzu model you are looking for..."
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full border border-gray-200 px-3.5 py-3 text-xs md:text-sm font-medium focus:outline-none focus:border-secondary transition-colors resize-none"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-secondary text-white py-4 font-black uppercase tracking-widest text-xs md:text-sm hover:bg-accent-dark transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      <Send size={16} />
+                      {isSubmitting ? "Sending Message..." : "Send Message"}
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+
+          </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 }
-
-const ContactMethod = ({ icon, title, value, sub }: { icon: React.ReactNode, title: string, value: string, sub: string }) => (
-  <div className="bg-white/5 border border-white/10 p-8 rounded-3xl group hover:border-secondary/40 transition-all">
-    <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all mb-4">
-      {icon}
-    </div>
-    <p className="text-xs font-black text-white/40 uppercase tracking-widest">{title}</p>
-    <p className="text-xl font-black text-white mt-2 tracking-tight">{value}</p>
-    <p className="text-[10px] font-black text-white/20 uppercase tracking-widest mt-1">{sub}</p>
-  </div>
-);

@@ -7,6 +7,11 @@ import { ChevronLeft, ChevronRight, Phone, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { Vehicle } from "@/types/vehicle";
 
+interface HeroProps {
+  featuredVehicles: Vehicle[];
+}
+
+
 // ── Verified Genuine Isuzu Images ──────────────────────────────────────────
 const isuzuSlides = [
   {
