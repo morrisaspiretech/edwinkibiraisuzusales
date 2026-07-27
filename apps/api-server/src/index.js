@@ -41,13 +41,13 @@ const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const multer_1 = __importDefault(require("multer"));
 const supabase_js_1 = require("@supabase/supabase-js");
-const database_1 = require("database");
+const database_1 = require("@repo/database");
 dotenv_1.default.config();
 const prisma = new database_1.PrismaClient();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 4000;
 // Supabase admin client (uses service_role key to bypass RLS)
-const supabaseAdmin = (0, supabase_js_1.createClient)(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabaseAdmin = (0, supabase_js_1.createClient)((process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL), process.env.SUPABASE_SERVICE_ROLE_KEY);
 // Multer for handling file uploads (in-memory)
 const upload = (0, multer_1.default)({ storage: multer_1.default.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 app.use((0, cors_1.default)());

@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import multer from 'multer';
 import { createClient } from '@supabase/supabase-js';
-import { PrismaClient } from 'database';
+import { PrismaClient } from '@repo/database';
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 4000;
 
 // Supabase admin client (uses service_role key to bypass RLS)
 const supabaseAdmin = createClient(
-  process.env.SUPABASE_URL!,
+  (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL)!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
