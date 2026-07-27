@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/layout/Footer";
+import TopProgressBar from "@/components/layout/TopProgressBar";
+import { Suspense } from "react";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -9,13 +12,16 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Aspire Motors | Kenya's Premium Vehicle Dealership",
-  description: "Experience excellence with Aspire Motors. Browse luxury vehicles, SUVs, and bikes in Kenya. Quality certified cars at the best prices.",
+  title: "Edwin Kibira Isuzu Sales | Authorized Isuzu Dealer in Kenya",
+  description:
+    "Edwin Kibira Isuzu Sales – Kenya's trusted Isuzu dealer. Browse D-Max pickups, mu-X SUVs, commercial trucks and buses. Built tough. Built for Kenya.",
+  keywords: ["Isuzu Kenya", "Isuzu dealer Nairobi", "D-Max Kenya", "mu-X Kenya", "Isuzu trucks Kenya", "Edwin Kibira Isuzu"],
+  openGraph: {
+    title: "Edwin Kibira Isuzu Sales",
+    description: "Authorized Isuzu dealer in Kenya. D-Max, mu-X, N-Series trucks, buses and more.",
+    type: "website",
+  },
 };
-
-import Footer from "@/components/layout/Footer";
-import TopProgressBar from "@/components/layout/TopProgressBar";
-import { Suspense } from "react";
 
 export default function RootLayout({
   children,

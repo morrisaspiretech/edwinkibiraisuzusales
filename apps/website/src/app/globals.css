@@ -2,48 +2,46 @@
 
 @theme {
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-weight-black: 700;
-  --font-weight-extrabold: 700;
-  
-  --color-primary: #0F0F0F;    /* Rich Black */
-  --color-secondary: #0B3D2E;  /* Forest Green */
-  --color-accent: #D4AF37;     /* High-End Vibrant Gold */
-  --color-surface: #F5F5F5;    /* Light Grey */
-  --color-text-dark: #222222;  /* Dark Grey */
+
+  /* ── Isuzu Brand Palette ── */
+  --color-primary: #1A1A1A;        /* Deep Black */
+  --color-secondary: #D62B2B;      /* Isuzu Red */
+  --color-accent: #D62B2B;         /* Isuzu Red (accent alias) */
+  --color-accent-dark: #B01E1E;    /* Darker Red for hover */
+  --color-surface: #F5F5F5;        /* Light Grey background */
+  --color-surface-dark: #ECECEC;   /* Slightly darker surface */
+  --color-text-dark: #1A1A1A;      /* Body text */
+  --color-text-muted: #666666;     /* Muted text */
 }
 
 :root {
-  --background: #F5F5F5;
-  --foreground: #222222;
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
   scroll-behavior: smooth;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F0F0F;
-    --foreground: #F5F5F5;
-  }
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
 }
 
+/* ── Isuzu Button Styles ── */
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-md font-bold hover:opacity-90 transition-all;
+    @apply bg-secondary text-white px-6 py-3 font-bold hover:bg-accent-dark transition-all uppercase tracking-wider;
   }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white px-6 py-3 rounded-md font-bold hover:opacity-90 transition-all;
-  }
-  
+
   .btn-outline {
-    @apply border-2 border-accent text-accent px-6 py-3 rounded-md font-bold hover:bg-accent hover:text-primary transition-all;
+    @apply border-2 border-secondary text-secondary px-6 py-3 font-bold hover:bg-secondary hover:text-white transition-all uppercase tracking-wider;
+  }
+
+  .btn-dark {
+    @apply bg-primary text-white px-6 py-3 font-bold hover:bg-primary/80 transition-all uppercase tracking-wider;
   }
 }
 
+/* ── Scrollbar ── */
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
 }
@@ -51,9 +49,38 @@ body {
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
+  background: rgba(214, 43, 43, 0.3);
   border-radius: 10px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.6);
+  background: rgba(214, 43, 43, 0.7);
+}
+
+/* ── Isuzu Red Underline Accent ── */
+.isuzu-underline {
+  position: relative;
+}
+.isuzu-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #D62B2B;
+}
+
+/* ── Section heading style ── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: #D62B2B;
 }

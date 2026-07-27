@@ -3,8 +3,19 @@
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
-import { ChevronRight, Calendar, User, Phone, Mail, Car, CheckCircle2, Loader2, MessageSquare } from "lucide-react";
+import { ChevronRight, Calendar, User, Phone, Car, CheckCircle2, Loader2, MessageSquare, Mail, Shield, Clock, Truck } from "lucide-react";
 import { motion } from "framer-motion";
+
+const isuzuModels = [
+  "Isuzu D-Max SX 4x2",
+  "Isuzu D-Max LS 4x2",
+  "Isuzu D-Max V-Cross 4x4",
+  "Isuzu mu-X LS-T",
+  "Isuzu mu-X LS-U 4x4",
+  "Isuzu NPR Light Truck",
+  "Isuzu NQR Medium Truck",
+  "Other Isuzu Model",
+];
 
 const BookTestDrivePage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,14 +27,13 @@ const BookTestDrivePage = () => {
     vehicleInterest: "",
     preferredDate: "",
     preferredTime: "",
-    message: ""
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSuccess(true);
     setIsSubmitting(false);
   };
@@ -32,165 +42,193 @@ const BookTestDrivePage = () => {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Header */}
-      <div className="pt-24 pb-8 bg-primary px-6 relative overflow-hidden border-b border-accent/10">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 skew-x-12 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-accent mb-4 tracking-[0.2em]">
+      {/* ── Hero Header ── */}
+      <div className="pb-12 bg-primary px-6 border-b-4 border-secondary">
+        <div className="max-w-7xl mx-auto pt-10">
+          <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary tracking-widest mb-4">
             <Link href="/" className="hover:text-white transition-all">Home</Link>
-            <ChevronRight size={10} className="opacity-50" />
-            <span className="text-white">Book Test Drive</span>
+            <ChevronRight size={10} className="text-white/30" />
+            <span className="text-white/50">Book Test Drive</span>
           </nav>
-          <h1 className="text-5xl md:text-8xl font-bold text-white uppercase leading-[0.85] tracking-tighter">
-            Book a <br /> <span className="text-accent">Test Drive</span>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-[3px] w-12 bg-secondary" />
+            <span className="text-secondary font-black text-xs uppercase tracking-widest">Free Test Drive</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-white uppercase leading-none tracking-tight">
+            Drive an <span className="text-secondary">Isuzu</span><br />
+            Before You Buy
           </h1>
-          <p className="text-white/60 mt-6 max-w-xl font-bold uppercase tracking-wider text-sm">
-            Experience the vehicle of your choice firsthand. Our team will prepare it for your scheduled drive.
+          <p className="text-white/50 mt-4 max-w-xl font-medium text-sm leading-relaxed">
+            Experience the legendary Isuzu D-Max, mu-X SUV, or any of our commercial vehicles firsthand. No obligation — just pure Isuzu performance.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Left: Info Panel */}
+
+          {/* ── Left: Info Panel ── */}
           <div className="lg:col-span-2 space-y-10">
             <div>
-              <h2 className="text-3xl font-bold text-primary uppercase tracking-tight mb-4">
-                What to Expect
-              </h2>
-              <p className="text-text-dark/60 font-medium leading-relaxed">
-                Our knowledgeable advisors will walk you through the vehicle's features, 
-                answer all your questions, and arrange a personalised test drive at our showroom.
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-[3px] w-8 bg-secondary" />
+                <span className="text-secondary font-black text-xs uppercase tracking-widest">What to Expect</span>
+              </div>
+              <h2 className="text-2xl font-black text-primary uppercase mb-3">Your Isuzu Test Drive Experience</h2>
+              <p className="text-gray-500 leading-relaxed text-sm">
+                Our trained Isuzu advisors will prepare your chosen vehicle and guide you through all its features. We&apos;ll answer every question and make sure you leave confident in your choice.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {[
-                { icon: <Car size={20} />, title: "Vehicle Prepared", desc: "Your chosen vehicle will be fully cleaned and ready." },
-                { icon: <Calendar size={20} />, title: "Flexible Scheduling", desc: "Mon–Sat: 8:00 AM – 6:00 PM. We work with your schedule." },
-                { icon: <User size={20} />, title: "Personal Advisor", desc: "A dedicated advisor accompanies you throughout the experience." },
+                { icon: <Truck size={20} />, title: "Any Isuzu Model", desc: "Test the D-Max, mu-X, or any commercial vehicle in our range." },
+                { icon: <Calendar size={20} />, title: "Flexible Scheduling", desc: "Mon–Sat: 8:00 AM – 6:00 PM. We work around you." },
+                { icon: <User size={20} />, title: "Isuzu-Trained Advisor", desc: "A specialist accompanies you to answer all your questions." },
+                { icon: <Shield size={20} />, title: "No Obligation", desc: "Take your time — zero pressure to buy on the day." },
               ].map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-4"
+                  transition={{ delay: i * 0.08 }}
+                  className="flex items-start gap-4 group"
                 >
-                  <div className="p-3 bg-accent/10 text-accent rounded-sm shrink-0">
+                  <div className="p-3 bg-secondary/10 group-hover:bg-secondary text-secondary group-hover:text-white transition-all flex-shrink-0">
                     {item.icon}
                   </div>
                   <div>
-                    <p className="font-bold text-primary uppercase text-sm">{item.title}</p>
-                    <p className="text-text-dark/50 text-sm font-medium mt-1">{item.desc}</p>
+                    <p className="font-black text-primary text-sm uppercase tracking-wide">{item.title}</p>
+                    <p className="text-gray-400 text-sm mt-0.5">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="bg-primary p-8 text-white space-y-4 border-l-4 border-accent">
-              <p className="font-bold uppercase text-sm tracking-widest text-accent">Contact Directly</p>
-              <a href="tel:+254700000000" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors font-bold">
-                <Phone size={16} /> +254 700 000 000
+            {/* Contact Box */}
+            <div className="bg-primary p-8 text-white space-y-4 border-l-4 border-secondary">
+              <p className="font-black uppercase text-xs tracking-widest text-secondary">Or Contact Us Directly</p>
+              <a href="tel:+254700000000" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <Phone size={16} className="text-secondary" /> +254 700 000 000
               </a>
-              <a href="https://wa.me/254700000000" target="_blank" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors font-bold">
-                <MessageSquare size={16} /> WhatsApp Us
+              <a href="https://wa.me/254700000000" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <MessageSquare size={16} className="text-secondary" /> WhatsApp Us
               </a>
-              <a href="mailto:info@aspiremotors.co.ke" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors font-bold">
-                <Mail size={16} /> info@aspiremotors.co.ke
+              <a href="mailto:info@edwinkibiraisuzu.co.ke" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <Mail size={16} className="text-secondary" /> info@edwinkibiraisuzu.co.ke
               </a>
+              <div className="flex items-center gap-3 text-white/40 text-sm pt-2 border-t border-white/10">
+                <Clock size={14} className="text-secondary flex-shrink-0" />
+                <span>Mon–Fri: 8AM–6PM | Sat: 9AM–4PM</span>
+              </div>
             </div>
           </div>
 
-          {/* Right: Form */}
+          {/* ── Right: Form ── */}
           <div className="lg:col-span-3">
             {isSuccess ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center h-full text-center space-y-6 py-20"
+                className="flex flex-col items-center justify-center text-center space-y-6 py-20 border-t-4 border-secondary bg-white shadow-xl px-10"
               >
-                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center">
-                  <CheckCircle2 size={40} className="text-accent" />
+                <div className="w-20 h-20 bg-secondary flex items-center justify-center text-white">
+                  <CheckCircle2 size={40} />
                 </div>
-                <h2 className="text-3xl font-bold text-primary uppercase">Booking Confirmed!</h2>
-                <p className="text-text-dark/60 font-medium max-w-md leading-relaxed">
-                  Thank you, <strong>{formData.name}</strong>. We've received your request and will confirm your test drive shortly via phone or email.
+                <h2 className="text-3xl font-black text-primary uppercase">Test Drive Booked!</h2>
+                <p className="text-gray-500 max-w-md leading-relaxed">
+                  Thank you, <strong>{formData.name}</strong>! We&apos;ve received your request and will confirm your Isuzu test drive shortly via phone.
                 </p>
-                <Link href="/inventory" className="bg-primary text-white px-8 py-4 font-bold uppercase text-sm tracking-widest hover:bg-accent hover:text-primary transition-all">
-                  Browse More Vehicles
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xs">
+                  <Link
+                    href="/inventory"
+                    className="flex-1 bg-secondary text-white px-6 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-accent-dark transition-all text-center"
+                  >
+                    Browse Vehicles
+                  </Link>
+                  <button
+                    onClick={() => setIsSuccess(false)}
+                    className="flex-1 border-2 border-primary text-primary px-6 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-primary hover:text-white transition-all"
+                  >
+                    Book Another
+                  </button>
+                </div>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6 bg-surface p-10 border border-primary/5">
-                <h2 className="text-2xl font-bold text-primary uppercase tracking-tight">Your Details</h2>
+              <form onSubmit={handleSubmit} className="space-y-5 bg-surface p-8 md:p-10 border-t-4 border-secondary">
+                <div className="mb-6">
+                  <h2 className="text-xl font-black text-primary uppercase tracking-tight">Book Your Free Test Drive</h2>
+                  <p className="text-sm text-gray-400 mt-1">Fill in your details and we&apos;ll call to confirm.</p>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Full Name *</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-black uppercase tracking-widest text-gray-400">Full Name *</label>
                     <input
                       required
                       type="text"
                       placeholder="Your full name"
                       value={formData.name}
-                      onChange={e => setFormData(p => ({ ...p, name: e.target.value }))}
-                      className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-bold focus:outline-none focus:border-accent transition-colors"
+                      onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
+                      className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
                     />
                   </div>
-
-                  <div className="space-y-2">
-                    <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Phone Number *</label>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-black uppercase tracking-widest text-gray-400">Phone Number *</label>
                     <input
                       required
                       type="tel"
-                      placeholder="+254..."
+                      placeholder="+254 700 000 000"
                       value={formData.phone}
-                      onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))}
-                      className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-bold focus:outline-none focus:border-accent transition-colors"
+                      onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
+                      className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Email Address *</label>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-black uppercase tracking-widest text-gray-400">Email Address</label>
                   <input
-                    required
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="your@email.com (optional)"
                     value={formData.email}
-                    onChange={e => setFormData(p => ({ ...p, email: e.target.value }))}
-                    className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-bold focus:outline-none focus:border-accent transition-colors"
+                    onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
+                    className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Vehicle of Interest</label>
-                  <input
-                    type="text"
-                    placeholder="e.g. Toyota Land Cruiser V8 2011"
+                <div className="space-y-1.5">
+                  <label className="text-xs font-black uppercase tracking-widest text-gray-400">Isuzu Model of Interest *</label>
+                  <select
+                    required
                     value={formData.vehicleInterest}
-                    onChange={e => setFormData(p => ({ ...p, vehicleInterest: e.target.value }))}
-                    className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-bold focus:outline-none focus:border-accent transition-colors"
-                  />
+                    onChange={(e) => setFormData((p) => ({ ...p, vehicleInterest: e.target.value }))}
+                    className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors appearance-none"
+                  >
+                    <option value="">Select an Isuzu model...</option>
+                    {isuzuModels.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                  </select>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Preferred Date *</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-black uppercase tracking-widest text-gray-400">Preferred Date *</label>
                     <input
                       required
                       type="date"
                       value={formData.preferredDate}
-                      onChange={e => setFormData(p => ({ ...p, preferredDate: e.target.value }))}
-                      className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-bold focus:outline-none focus:border-accent transition-colors"
+                      onChange={(e) => setFormData((p) => ({ ...p, preferredDate: e.target.value }))}
+                      className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Preferred Time</label>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-black uppercase tracking-widest text-gray-400">Preferred Time</label>
                     <select
                       value={formData.preferredTime}
-                      onChange={e => setFormData(p => ({ ...p, preferredTime: e.target.value }))}
-                      className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-bold focus:outline-none focus:border-accent transition-colors appearance-none"
+                      onChange={(e) => setFormData((p) => ({ ...p, preferredTime: e.target.value }))}
+                      className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors appearance-none"
                     >
                       <option value="">Select time</option>
                       <option>8:00 AM</option>
@@ -202,28 +240,32 @@ const BookTestDrivePage = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-extrabold uppercase tracking-widest text-text-dark/60">Additional Notes</label>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-black uppercase tracking-widest text-gray-400">Additional Notes</label>
                   <textarea
-                    rows={4}
-                    placeholder="Any specific requirements or questions..."
+                    rows={3}
+                    placeholder="Any specific questions or requirements about the vehicle..."
                     value={formData.message}
-                    onChange={e => setFormData(p => ({ ...p, message: e.target.value }))}
-                    className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-medium focus:outline-none focus:border-accent transition-colors resize-none"
+                    onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))}
+                    className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-white py-5 font-bold uppercase tracking-[0.2em] text-sm hover:bg-accent hover:text-primary transition-all shadow-xl flex items-center justify-center gap-3 disabled:opacity-50 active:scale-95"
+                  className="w-full bg-secondary text-white py-5 font-black uppercase tracking-widest text-sm hover:bg-accent-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <><Loader2 className="animate-spin" size={18} /> Booking...</>
                   ) : (
-                    <><Calendar size={18} /> Confirm Test Drive Booking</>
+                    <><Calendar size={18} /> Confirm Isuzu Test Drive</>
                   )}
                 </button>
+
+                <p className="text-xs text-gray-400 text-center">
+                  Free of charge. No obligation to buy. Our team will call to confirm within 1 hour.
+                </p>
               </form>
             )}
           </div>

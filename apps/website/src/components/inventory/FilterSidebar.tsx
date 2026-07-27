@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { Search, SlidersHorizontal, ChevronDown, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FilterSidebarProps {
@@ -12,18 +12,16 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
   const [localFilters, setLocalFilters] = useState({
     search: "",
     category: "all",
-    brand: "",
+    brand: "isuzu",
     bodyType: "",
     transmission: "",
     minPrice: 0,
-    maxPrice: 0
+    maxPrice: 0,
   });
 
   const updateFilter = (key: string, value: any) => {
     const newFilters = { ...localFilters, [key]: value };
     setLocalFilters(newFilters);
-    // Auto-apply for search and category, or let the Apply button handle it? 
-    // User wants it to "respond", so let's make it reactive.
     onFilterChange(newFilters);
   };
 
@@ -31,94 +29,112 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
     const reset = {
       search: "",
       category: "all",
-      brand: "",
+      brand: "isuzu",
       bodyType: "",
       transmission: "",
       minPrice: 0,
-      maxPrice: 0
+      maxPrice: 0,
     };
     setLocalFilters(reset);
     onFilterChange(reset);
   };
 
+  const isuzuBodyTypes = [
+    "Pickup",
+    "SUV",
+    "Truck",
+    "Bus",
+    "Van",
+  ];
+
+  const isuzuModels = [
+    { label: "All Isuzu Models", value: "" },
+    { label: "D-Max (Pickup)", value: "D-Max" },
+    { label: "mu-X (SUV)", value: "mu-X" },
+    { label: "N-Series Trucks", value: "N-Series" },
+    { label: "NPR Light Truck", value: "NPR" },
+    { label: "NQR Medium Truck", value: "NQR" },
+    { label: "FVR Heavy Truck", value: "FVR" },
+    { label: "Buses / Coaches", value: "Bus" },
+  ];
+
   return (
-    <aside className="w-full h-full space-y-8 bg-surface p-7 border border-primary/5 overflow-y-auto custom-scrollbar">
-      <div className="flex items-center justify-between mb-8">
-        <h3 className="text-xl font-bold text-primary tracking-tight uppercase">Filters</h3>
-        <SlidersHorizontal className="w-4 h-4 text-accent" />
+    <aside className="w-full h-full space-y-7 bg-surface p-6 border-r border-gray-100 overflow-y-auto custom-scrollbar">
+
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-[3px] bg-secondary" />
+          <h3 className="text-sm font-black text-primary tracking-wider uppercase">Filters</h3>
+        </div>
+        <SlidersHorizontal className="w-4 h-4 text-secondary" />
       </div>
 
-      {/* Category Filter */}
-      <FilterGroup label="Category">
-        <div className="flex bg-white p-1 border border-primary/5 rounded-sm">
-          {[
-            { id: 'all', label: 'All' },
-            { id: 'CAR', label: 'Cars' },
-            { id: 'BIKE', label: 'Bikes' }
-          ].map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => updateFilter("category", cat.id)}
-              className={cn(
-                "flex-1 py-3 text-[10px] font-black uppercase tracking-widest transition-all",
-                localFilters.category === cat.id 
-                  ? "bg-primary text-white shadow-xl" 
-                  : "text-primary hover:bg-primary/5"
-              )}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-      </FilterGroup>
+      {/* Isuzu Brand Badge */}
+      <div className="bg-secondary/10 border border-secondary/20 px-4 py-3 flex items-center gap-3">
+        <div className="w-2 h-2 rounded-full bg-secondary" />
+        <span className="text-xs font-black uppercase tracking-widest text-secondary">
+          Isuzu Vehicles Only
+        </span>
+      </div>
 
-      {/* Search Input */}
-      <div className="space-y-4">
-        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Keyword Search</label>
+      {/* Search */}
+      <div className="space-y-2">
+        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
+          Search
+        </label>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-accent w-4 h-4" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary w-4 h-4" />
           <input
             type="text"
-            placeholder="Search make, model..."
+            placeholder="D-Max, mu-X, NQR..."
             value={localFilters.search}
             onChange={(e) => updateFilter("search", e.target.value)}
-            className="w-full bg-white border border-primary/5 px-10 py-4 text-sm font-black focus:outline-none focus:border-accent transition-colors shadow-sm placeholder:font-bold"
+            className="w-full bg-white border border-gray-200 px-10 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors placeholder:text-gray-300"
           />
+          {localFilters.search && (
+            <button
+              onClick={() => updateFilter("search", "")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-secondary transition-colors"
+            >
+              <X size={14} />
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Make Filter */}
-      <FilterGroup label="Brand / Manufacturer">
+      {/* Isuzu Model */}
+      <FilterGroup label="Isuzu Model">
         <div className="relative">
-          <select 
+          <select
             value={localFilters.brand}
             onChange={(e) => updateFilter("brand", e.target.value)}
-            className="w-full bg-white border border-primary/5 px-4 py-4 text-sm font-black appearance-none focus:outline-none focus:border-accent shadow-sm uppercase tabular-nums"
+            className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium appearance-none focus:outline-none focus:border-secondary transition-colors text-primary"
           >
-            <option value="">All Brands</option>
-            <option value="toyota">Toyota</option>
-            <option value="mazda">Mazda</option>
-            <option value="mercedes">Mercedes-Benz</option>
-            <option value="bmw">BMW</option>
-            <option value="subaru">Subaru</option>
-            <option value="land rover">Land Rover</option>
+            {isuzuModels.map((m) => (
+              <option key={m.value} value={m.value}>
+                {m.label}
+              </option>
+            ))}
           </select>
-          <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-accent pointer-events-none" />
+          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary pointer-events-none" />
         </div>
       </FilterGroup>
 
-      {/* Body Type Filter */}
-      <FilterGroup label="Body Type">
+      {/* Body Type */}
+      <FilterGroup label="Vehicle Type">
         <div className="grid grid-cols-2 gap-2">
-          {['SUV', 'Sedan', 'Pickup', 'Coupe', 'Hatchback'].map((type) => (
+          {isuzuBodyTypes.map((type) => (
             <button
               key={type}
-              onClick={() => updateFilter("bodyType", localFilters.bodyType === type ? "" : type)}
+              onClick={() =>
+                updateFilter("bodyType", localFilters.bodyType === type ? "" : type)
+              }
               className={cn(
-                "px-4 py-3 border text-[10px] font-black uppercase tracking-widest transition-all shadow-md",
+                "px-3 py-2.5 border text-[10px] font-black uppercase tracking-wider transition-all",
                 localFilters.bodyType === type
-                  ? "bg-primary border-primary text-white"
-                  : "border-primary/5 bg-white text-primary hover:border-accent hover:text-accent"
+                  ? "bg-secondary border-secondary text-white"
+                  : "border-gray-200 bg-white text-gray-500 hover:border-secondary hover:text-secondary"
               )}
             >
               {type}
@@ -127,51 +143,40 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
         </div>
       </FilterGroup>
 
-      {/* Price Range */}
-      <div className="space-y-4">
-        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Price Range (KSh)</label>
-        <div className="flex gap-2">
-          <input 
-            type="number" 
-            placeholder="Min" 
-            value={localFilters.minPrice || ""}
-            onChange={(e) => updateFilter("minPrice", parseInt(e.target.value) || 0)}
-            className="w-1/2 bg-white border border-primary/5 px-4 py-3 text-sm font-black focus:outline-none focus:border-accent shadow-sm tabular-nums" 
-          />
-          <input 
-            type="number" 
-            placeholder="Max" 
-            value={localFilters.maxPrice || ""}
-            onChange={(e) => updateFilter("maxPrice", parseInt(e.target.value) || 0)}
-            className="w-1/2 bg-white border border-primary/5 px-4 py-3 text-sm font-black focus:outline-none focus:border-accent shadow-sm tabular-nums" 
-          />
-        </div>
-      </div>
-
       {/* Transmission */}
-      <FilterGroup label="Transmission Type">
-        <div className="flex flex-col gap-3">
-          {['AUTOMATIC', 'MANUAL'].map((mode) => (
-            <label 
-              key={mode} 
+      <FilterGroup label="Transmission">
+        <div className="flex flex-col gap-2.5">
+          {["AUTOMATIC", "MANUAL"].map((mode) => (
+            <label
+              key={mode}
               className="flex items-center gap-3 cursor-pointer group"
-              onClick={() => updateFilter("transmission", localFilters.transmission === mode ? "" : mode)}
+              onClick={() =>
+                updateFilter(
+                  "transmission",
+                  localFilters.transmission === mode ? "" : mode
+                )
+              }
             >
-              <div className={cn(
-                "w-6 h-6 border-2 flex items-center justify-center transition-colors rounded-sm",
-                localFilters.transmission === mode 
-                  ? "border-accent bg-accent/10" 
-                  : "border-primary/10 bg-white group-hover:border-accent"
-              )}>
-                <div className={cn(
-                  "w-3 h-3 bg-accent transition-all duration-300",
-                  localFilters.transmission === mode ? "opacity-100 scale-100" : "opacity-0 scale-50"
-                )} />
+              <div
+                className={cn(
+                  "w-5 h-5 border-2 flex items-center justify-center transition-colors",
+                  localFilters.transmission === mode
+                    ? "border-secondary bg-secondary"
+                    : "border-gray-300 bg-white group-hover:border-secondary"
+                )}
+              >
+                {localFilters.transmission === mode && (
+                  <div className="w-2 h-2 bg-white" />
+                )}
               </div>
-              <span className={cn(
-                "text-[10px] font-black uppercase tracking-widest transition-colors",
-                localFilters.transmission === mode ? "text-primary" : "text-primary/60 group-hover:text-primary"
-              )}>
+              <span
+                className={cn(
+                  "text-[11px] font-black uppercase tracking-widest transition-colors",
+                  localFilters.transmission === mode
+                    ? "text-secondary"
+                    : "text-gray-400 group-hover:text-primary"
+                )}
+              >
                 {mode}
               </span>
             </label>
@@ -179,26 +184,63 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
         </div>
       </FilterGroup>
 
-      <button 
+      {/* Price Range */}
+      <div className="space-y-3">
+        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
+          Price Range (KSh)
+        </label>
+        <div className="flex gap-2">
+          <input
+            type="number"
+            placeholder="Min"
+            value={localFilters.minPrice || ""}
+            onChange={(e) =>
+              updateFilter("minPrice", parseInt(e.target.value) || 0)
+            }
+            className="w-1/2 bg-white border border-gray-200 px-3 py-3 text-sm font-medium focus:outline-none focus:border-secondary transition-colors tabular-nums"
+          />
+          <input
+            type="number"
+            placeholder="Max"
+            value={localFilters.maxPrice || ""}
+            onChange={(e) =>
+              updateFilter("maxPrice", parseInt(e.target.value) || 0)
+            }
+            className="w-1/2 bg-white border border-gray-200 px-3 py-3 text-sm font-medium focus:outline-none focus:border-secondary transition-colors tabular-nums"
+          />
+        </div>
+      </div>
+
+      {/* Apply Button */}
+      <button
         onClick={() => onFilterChange(localFilters)}
-        className="w-full bg-primary text-white py-5 font-extrabold uppercase tracking-[0.2em] text-sm hover:bg-accent hover:text-primary transition-all shadow-2xl active:scale-95"
+        className="w-full bg-secondary text-white py-4 font-black uppercase tracking-widest text-sm hover:bg-accent-dark transition-all"
       >
         Apply Filters
       </button>
-      
-      <button 
+
+      {/* Clear */}
+      <button
         onClick={clearFilters}
-        className="w-full text-text-dark/60 text-xs font-extrabold uppercase tracking-[0.3em] hover:text-primary transition-colors pt-4"
+        className="w-full text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-secondary transition-colors flex items-center justify-center gap-2"
       >
-        Clear All Refinements
+        <X size={12} /> Clear All Filters
       </button>
     </aside>
   );
 };
 
-const FilterGroup = ({ label, children }: { label: string; children: React.ReactNode }) => (
-  <div className="space-y-3 relative">
-    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">{label}</label>
+const FilterGroup = ({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) => (
+  <div className="space-y-2.5">
+    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
+      {label}
+    </label>
     {children}
   </div>
 );

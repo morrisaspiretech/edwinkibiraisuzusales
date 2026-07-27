@@ -23,7 +23,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="group bg-white rounded-xl border border-black/5 hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col"
+      className="group bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-xl transition-all duration-400 overflow-hidden flex flex-col"
     >
       {/* Image Container - Strictly 4:3 Aspect Ratio */}
       <Link href={`/inventory/${vehicle.id}`} className="block relative aspect-[4/3] overflow-hidden shrink-0 bg-gray-100">
@@ -37,12 +37,12 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
         
         {/* Urgent Badge Overlays */}
         <div className="absolute top-3 left-3 flex gap-2">
-          <span className="px-3 py-1.5 text-xs font-extrabold bg-[#0F2D52] text-white rounded uppercase tracking-wider shadow-lg">
-            In stock
+          <span className="px-3 py-1.5 text-xs font-extrabold bg-primary text-white uppercase tracking-wider shadow-lg">
+            In Stock
           </span>
         </div>
         <div className="absolute top-3 right-3">
-          <span className="px-3 py-1.5 text-xs font-extrabold bg-[#E31E24] text-white rounded uppercase tracking-wider shadow-lg">
+          <span className="px-3 py-1.5 text-xs font-extrabold bg-secondary text-white uppercase tracking-wider shadow-lg">
             {vehicle.year}
           </span>
         </div>
@@ -51,7 +51,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
       <div className="p-4 flex flex-col flex-1 bg-white">
         {/* Title & Condition - Dense Hierarchy */}
         <div className="mb-4">
-          <h3 className="text-lg font-bold text-primary leading-tight mb-0.5 group-hover:text-accent transition-colors">
+          <h3 className="text-lg font-bold text-primary leading-tight mb-0.5 group-hover:text-secondary transition-colors">
             {vehicle.make} {vehicle.model}
           </h3>
           <p className="text-[10px] text-primary font-black uppercase tracking-widest">{conditionLabel}</p>
@@ -77,9 +77,9 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
           </p>
           <Link 
             href={`/inventory/${vehicle.id}`}
-            className="flex items-center gap-2 bg-[#0B7C5A] text-white px-6 py-2.5 rounded-full text-xs font-extrabold uppercase hover:bg-[#09664a] transition-all shadow-lg active:scale-95"
+            className="flex items-center gap-2 bg-secondary text-white px-6 py-2.5 text-xs font-black uppercase hover:bg-accent-dark transition-all active:scale-95"
           >
-            VIEW
+            View
             <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
           </Link>
         </div>

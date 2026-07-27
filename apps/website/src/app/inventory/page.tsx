@@ -48,72 +48,106 @@ const InventoryPage = () => {
 
   const getFallbackData = (): any[] => [
     {
-      id: 'fallback-lc200',
-      make: 'Toyota',
-      model: 'Land Cruiser V8',
-      year: 2011,
-      price: 5950000,
-      engineCC: 4500,
-      transmission: 'AUTOMATIC',
-      fuelType: 'PETROL',
-      condition: 'LOCAL',
-      bodyType: 'SUV',
-      mileage: 120000,
-      category: 'CAR',
-      status: 'AVAILABLE',
-      createdAt: new Date().toISOString(),
-      images: [{ id: 'img-1', url: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800', isPrimary: true, position: 0 }]
-    },
-    {
-      id: 'fallback-prado',
-      make: 'Toyota',
-      model: 'Land Cruiser Prado',
-      year: 2011,
-      price: 5600000,
-      engineCC: 3000,
-      transmission: 'AUTOMATIC',
-      fuelType: 'DIESEL',
-      condition: 'FOREIGN',
-      bodyType: 'SUV',
-      mileage: 82000,
-      category: 'CAR',
-      status: 'AVAILABLE',
-      createdAt: new Date().toISOString(),
-      images: [{ id: 'img-2', url: 'https://images.unsplash.com/photo-1620211116293-61b6c62463fd?q=80&w=800', isPrimary: true, position: 0 }]
-    },
-    {
-      id: 'fallback-discovery',
-      make: 'Land Rover',
-      model: 'Discovery IV',
-      year: 2011,
-      price: 4500000,
-      engineCC: 3000,
-      transmission: 'AUTOMATIC',
-      fuelType: 'DIESEL',
-      condition: 'FOREIGN',
-      bodyType: 'SUV',
-      mileage: 95000,
-      category: 'CAR',
-      status: 'AVAILABLE',
-      createdAt: new Date().toISOString(),
-      images: [{ id: 'img-3', url: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800', isPrimary: true, position: 0 }]
-    },
-    {
-      id: 'fallback-hilux',
-      make: 'Toyota',
-      model: 'Hilux Invincible',
-      year: 2021,
-      price: 6200000,
-      engineCC: 2800,
+      id: 'isuzu-dmax-vcross',
+      make: 'Isuzu',
+      model: 'D-Max V-Cross 4x4',
+      year: 2024,
+      price: 6800000,
+      engineCC: 2999,
       transmission: 'AUTOMATIC',
       fuelType: 'DIESEL',
       condition: 'FOREIGN',
       bodyType: 'PICKUP',
-      mileage: 45000,
+      mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-4', url: 'https://images.unsplash.com/photo-1594731804116-65155f89be93?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-1', url: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800', isPrimary: true, position: 0 }]
+    },
+    {
+      id: 'isuzu-mux-lst',
+      make: 'Isuzu',
+      model: 'mu-X LS-T 4x2',
+      year: 2024,
+      price: 7800000,
+      engineCC: 1898,
+      transmission: 'AUTOMATIC',
+      fuelType: 'DIESEL',
+      condition: 'FOREIGN',
+      bodyType: 'SUV',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-2', url: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800', isPrimary: true, position: 0 }]
+    },
+    {
+      id: 'isuzu-mux-lsu',
+      make: 'Isuzu',
+      model: 'mu-X LS-U 4x4',
+      year: 2024,
+      price: 9100000,
+      engineCC: 2999,
+      transmission: 'AUTOMATIC',
+      fuelType: 'DIESEL',
+      condition: 'FOREIGN',
+      bodyType: 'SUV',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-3', url: 'https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=800', isPrimary: true, position: 0 }]
+    },
+    {
+      id: 'isuzu-dmax-ls',
+      make: 'Isuzu',
+      model: 'D-Max LS 4x2',
+      year: 2024,
+      price: 5900000,
+      engineCC: 1898,
+      transmission: 'AUTOMATIC',
+      fuelType: 'DIESEL',
+      condition: 'FOREIGN',
+      bodyType: 'PICKUP',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-4', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800', isPrimary: true, position: 0 }]
+    },
+    {
+      id: 'isuzu-nqr',
+      make: 'Isuzu',
+      model: 'NQR 75 Medium Truck',
+      year: 2023,
+      price: 5200000,
+      engineCC: 5193,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'FOREIGN',
+      bodyType: 'TRUCK',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-5', url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800', isPrimary: true, position: 0 }]
+    },
+    {
+      id: 'isuzu-npr',
+      make: 'Isuzu',
+      model: 'NPR 75 Light Truck',
+      year: 2023,
+      price: 4100000,
+      engineCC: 3856,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'FOREIGN',
+      bodyType: 'TRUCK',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-6', url: 'https://images.unsplash.com/photo-1586191583539-be21063b00da?q=80&w=800', isPrimary: true, position: 0 }]
     }
   ];
 
@@ -172,23 +206,22 @@ const InventoryPage = () => {
     <main className="bg-white flex flex-col min-h-screen">
       <Navbar />
       
-      {/* Ultra-Lean Header */}
-      <div className="pt-24 pb-4 bg-primary px-6 relative overflow-hidden shrink-0 border-b border-accent/20">
-        <div className="absolute top-0 right-0 w-1/5 h-full bg-accent/5 skew-x-12 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto relative z-10 flex items-center justify-between">
-          <div className="flex flex-col">
-            <nav className="flex items-center gap-2 text-[7px] font-bold uppercase text-accent/40 tracking-[0.3em] mb-1">
-              <Link href="/" className="hover:text-accent transition-all">Home</Link>
-              <ChevronRight size={6} />
-              <span>Showroom</span>
+      {/* Page Header */}
+      <div className="pt-8 pb-6 bg-primary px-6 border-b-4 border-secondary">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div>
+            <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary/60 tracking-widest mb-2">
+              <Link href="/" className="hover:text-secondary transition-all">Home</Link>
+              <ChevronRight size={10} />
+              <span className="text-white/40">Showroom</span>
             </nav>
-            <h1 className="text-2xl md:text-3xl font-black text-white uppercase leading-none tracking-tighter">
-              Premium <span className="text-accent">Inventory</span>
-              <span className="ml-4 text-xs font-bold text-white/20 tabular-nums">[{filteredVehicles.length} Units]</span>
+            <h1 className="text-3xl md:text-4xl font-black text-white uppercase leading-none">
+              Isuzu <span className="text-secondary">Showroom</span>
+              <span className="ml-4 text-sm font-bold text-white/30 tabular-nums">{filteredVehicles.length} vehicles</span>
             </h1>
           </div>
-          <p className="hidden md:block text-white/20 font-bold uppercase tracking-[0.3em] text-[7px] text-right">
-            Kenya's Elite Collection <br/> Verified Luxury
+          <p className="hidden md:block text-white/30 font-bold uppercase tracking-widest text-xs text-right">
+            Edwin Kibira <br/> Isuzu Sales
           </p>
         </div>
       </div>
@@ -203,17 +236,17 @@ const InventoryPage = () => {
           {/* Results Area */}
           <div className="flex-1 w-full">
             {/* Toolbar */}
-            <div className="flex items-center justify-between mb-8 pb-4 border-b border-primary/5 sticky top-20 bg-white z-20 pt-2">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 sticky top-20 bg-white z-20 pt-2">
               <div className="flex items-center gap-6">
                 <button className="flex items-center gap-2 text-[10px] font-bold uppercase text-primary tracking-widest">
-                  <LayoutGrid className="w-4 h-4 text-accent" /> Grid
+                  <LayoutGrid className="w-4 h-4 text-secondary" /> Grid
                 </button>
                 <button className="flex items-center gap-2 text-[10px] font-bold uppercase text-primary/30 hover:text-primary transition-colors tracking-widest">
                   <List className="w-4 h-4" /> List
                 </button>
               </div>
               <div className="flex items-center gap-2">
-                <SortAsc className="w-4 h-4 text-accent" />
+                <SortAsc className="w-4 h-4 text-secondary" />
                 <select className="bg-transparent text-[10px] font-bold uppercase text-primary focus:outline-none cursor-pointer tracking-widest border-none">
                   <option>Newest Arrivals</option>
                   <option>Price: Low to High</option>

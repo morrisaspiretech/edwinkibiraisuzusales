@@ -3,196 +3,248 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Search, Zap } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Vehicle } from "@/types/vehicle";
+import { ChevronLeft, ChevronRight, Phone, MessageSquare } from "lucide-react";
 import Link from "next/link";
+import { Vehicle } from "@/types/vehicle";
 
 interface HeroProps {
   featuredVehicles: Vehicle[];
 }
 
+// ── Isuzu flagship model slides ──────────────────────────────────────────────
+const isuzuSlides = [
+  {
+    id: "slide-dmax",
+    title: "ISUZU D-MAX",
+    subtitle: "Kenya's Most Trusted Pickup Truck",
+    tagline: "Built Tough. Built for Kenya.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80",
+    cta: "Explore D-Max",
+    ctaSecondary: "Book Test Drive",
+    link: "/inventory?search=D-Max",
+    linkSecondary: "/book-test-drive",
+    badge: "BEST SELLER",
+  },
+  {
+    id: "slide-mux",
+    title: "ISUZU mu-X",
+    subtitle: "Premium 7-Seater Family SUV",
+    tagline: "Command Every Road in Style.",
+    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=1600&q=80",
+    cta: "Explore mu-X",
+    ctaSecondary: "Request Quote",
+    link: "/inventory?search=mu-X",
+    linkSecondary: "/contact",
+    badge: "NEW ARRIVAL",
+  },
+  {
+    id: "slide-truck",
+    title: "ISUZU N-SERIES",
+    subtitle: "Commercial Trucks & Buses",
+    tagline: "Powering Kenya's Industries Forward.",
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80",
+    cta: "View Commercial",
+    ctaSecondary: "Get a Quote",
+    link: "/inventory?search=N-Series",
+    linkSecondary: "/contact",
+    badge: "COMMERCIAL",
+  },
+];
+
 const Hero = ({ featuredVehicles }: HeroProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Fallback slides if no featured vehicles
-  const defaultSlides = [
-    {
-      id: "fallback-1",
-      title: "DRIVE EXCELLENCE",
-      subtitle: "Experience Kenya's Finest Luxury SUVs",
-      image: "/hero-car.png",
-      cta: "Browse SUVs",
-      link: "/inventory?search=SUV"
-    },
-    {
-      id: "fallback-2",
-      title: "EXECUTIVE PRESENCE",
-      subtitle: "Discover Our Range of Premium Sedans",
-      image: "/hero-car.png",
-      cta: "Explore Sedans",
-      link: "/inventory?search=Sedan"
-    },
-  ];
-
-  // Always use the default hardcoded slides for the Hero to preserve the exact aesthetic
-  const slides = defaultSlides;
+  const slides = isuzuSlides;
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
+  const current = slides[currentSlide];
 
   return (
-    <section className="relative h-[80vh] min-h-[600px] max-h-[800px] w-full overflow-hidden bg-primary flex flex-col justify-between">
+    <section className="relative h-[88vh] min-h-[600px] max-h-[900px] w-full overflow-hidden bg-primary">
+      {/* Background Image */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.0, ease: "easeOut" }}
           className="absolute inset-0"
         >
           <Image
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].title}
+            src={current.image}
+            alt={current.title}
             fill
             priority
-            className="object-cover brightness-[0.4]"
+            className="object-cover brightness-[0.35]"
           />
         </motion.div>
       </AnimatePresence>
 
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-[1]" />
+
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-24 pb-8 flex-1 flex flex-col justify-center">
-        <div className="max-w-4xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex items-center gap-2 mb-3"
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+        <div className="max-w-3xl">
+
+          {/* Badge */}
+          <motion.div
+            key={`badge-${currentSlide}`}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-3 mb-6"
           >
-            <div className="h-[2px] w-12 bg-accent" />
-            <span className="text-accent font-extrabold text-sm uppercase tracking-widest">
-              {('featured' in slides[currentSlide]) ? (slides[currentSlide] as any).featured : "Aspire Motors Premium"}
+            <span className="bg-secondary text-white text-xs font-black px-4 py-1.5 tracking-[0.2em] uppercase">
+              {current.badge}
+            </span>
+            <div className="h-[1px] w-16 bg-white/40" />
+            <span className="text-white/60 text-xs font-semibold uppercase tracking-widest">
+              Edwin Kibira Isuzu Sales
             </span>
           </motion.div>
 
-          <motion.h1 
+          {/* Title */}
+          <motion.h1
             key={`title-${currentSlide}`}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-4 leading-[0.85] uppercase tracking-tighter"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-6xl md:text-8xl font-black text-white mb-3 uppercase leading-none tracking-tight"
           >
-            {slides[currentSlide].title.split(" ").map((word, i) => (
-              <span key={i} className={i === 1 ? "text-accent block" : ""}>
+            {current.title.split(" ").map((word, i) => (
+              <span
+                key={i}
+                className={word === "D-MAX" || word === "mu-X" || word === "N-SERIES" ? "text-secondary" : ""}
+              >
                 {word}{" "}
               </span>
             ))}
           </motion.h1>
 
-          <motion.p 
+          {/* Subtitle */}
+          <motion.p
             key={`sub-${currentSlide}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl font-bold uppercase tracking-wide"
-          >
-            {slides[currentSlide].subtitle}
-          </motion.p>
-
-          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.45 }}
+            className="text-2xl md:text-3xl text-white font-light mb-2 tracking-wide"
+          >
+            {current.subtitle}
+          </motion.p>
+
+          {/* Tagline */}
+          <motion.p
+            key={`tag-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.55 }}
+            className="text-white/60 text-base mb-10 font-medium italic"
+          >
+            {current.tagline}
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65 }}
             className="flex flex-wrap gap-4"
           >
-            <Link 
-              href={slides[currentSlide].link}
-              className="bg-accent text-primary px-10 py-5 font-extrabold uppercase text-base hover:bg-white transition-all shadow-2xl flex items-center gap-3 rounded-sm"
+            <Link
+              href={current.link}
+              className="bg-secondary text-white px-10 py-4 font-black uppercase text-sm tracking-widest hover:bg-accent-dark transition-all flex items-center gap-3"
             >
-              {slides[currentSlide].cta}
-              <ChevronRight size={20} strokeWidth={3} />
+              {current.cta}
+              <ChevronRight size={18} strokeWidth={3} />
+            </Link>
+            <Link
+              href={current.ctaSecondary}
+              className="border-2 border-white text-white px-10 py-4 font-black uppercase text-sm tracking-widest hover:bg-white hover:text-primary transition-all"
+            >
+              {current.ctaSecondary}
             </Link>
           </motion.div>
         </div>
       </div>
 
-      {/* Quick Access Categories Cards */}
-      <div className="absolute bottom-0 left-0 w-full z-10 bg-gradient-to-t from-primary via-primary/80 to-transparent pt-32 pb-0">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 translate-y-6"
+      {/* Slide Indicators */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentSlide(idx)}
+            className={`transition-all duration-300 rounded-full ${
+              idx === currentSlide
+                ? "w-10 h-2.5 bg-secondary"
+                : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Slide Arrow Controls */}
+      <div className="absolute right-6 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col gap-3">
+        <button
+          onClick={prevSlide}
+          className="w-12 h-12 border border-white/30 text-white hover:bg-secondary hover:border-secondary transition-all flex items-center justify-center backdrop-blur-sm"
+        >
+          <ChevronLeft size={22} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="w-12 h-12 border border-white/30 text-white hover:bg-secondary hover:border-secondary transition-all flex items-center justify-center backdrop-blur-sm"
+        >
+          <ChevronRight size={22} />
+        </button>
+      </div>
+
+      {/* Quick Contact Strip */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-secondary/90 backdrop-blur-sm hidden md:flex">
+        <div className="max-w-7xl mx-auto px-6 w-full flex items-center justify-between py-3">
+          <div className="flex items-center gap-8">
+            <a
+              href="tel:+254700000000"
+              className="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors"
+            >
+              <Phone size={14} /> +254 700 000 000
+            </a>
+            <a
+              href="https://wa.me/254700000000"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors"
+            >
+              <MessageSquare size={14} /> WhatsApp Us
+            </a>
+          </div>
+          <Link
+            href="/inventory"
+            className="text-white text-sm font-black uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all"
           >
-            {[
-              { title: "Luxury SUVs", tag: "SUV", icon: "/icons/suv-icon.svg", link: "/inventory?search=SUV" },
-              { title: "Superbikes", tag: "Bike", icon: "/icons/bike-icon.svg", link: "/bikes" },
-              { title: "Performance Sedans", tag: "Sedan", icon: "/icons/sedan-icon.svg", link: "/inventory?search=Sedan" },
-              { title: "View All Features", tag: "All", icon: "/icons/all-icon.svg", link: "/inventory" },
-            ].map((category, idx) => (
-              <Link 
-                key={category.tag} 
-                href={category.link}
-                className={cn(
-                  "group relative overflow-hidden rounded-xl border border-white/10 bg-black/40 backdrop-blur-md p-6 hover:border-accent/50 transition-all duration-300",
-                  idx === 3 ? "bg-accent/10 border-accent/20 hover:bg-accent hover:text-primary" : ""
-                )}
-              >
-                <div className="flex flex-col h-full justify-between gap-4">
-                  <span className={cn(
-                    "font-extrabold uppercase tracking-widest text-sm",
-                    idx === 3 ? "text-accent group-hover:text-primary" : "text-white/60 group-hover:text-white"
-                  )}>
-                    {category.tag}
-                  </span>
-                  <div className="flex items-end justify-between">
-                    <h3 className={cn(
-                      "font-bold text-lg leading-tight uppercase",
-                      idx === 3 ? "text-white group-hover:text-primary" : "text-white"
-                    )}>
-                      {category.title.split(" ").map((w, i) => (
-                        <span key={i} className="block">{w}</span>
-                      ))}
-                    </h3>
-                    <ChevronRight size={20} className={cn(
-                      "opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0",
-                      idx === 3 ? "text-primary" : "text-accent"
-                    )} />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </motion.div>
+            View All Isuzu Vehicles <ChevronRight size={16} />
+          </Link>
         </div>
       </div>
 
-      {/* Slider Controls */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col gap-4">
-        <button onClick={prevSlide} className="p-3 border border-white/20 text-white hover:bg-accent hover:text-primary transition-all rounded-full bg-white/5 backdrop-blur-md">
-          <ChevronLeft size={24} />
-        </button>
-        <button onClick={nextSlide} className="p-3 border border-white/20 text-white hover:bg-accent hover:text-primary transition-all rounded-full bg-white/5 backdrop-blur-md">
-          <ChevronRight size={24} />
-        </button>
-      </div>
-
-      {/* Progress Indicator */}
-      <div className="absolute bottom-0 left-0 h-1 bg-accent/20 w-full z-20">
-        <motion.div 
+      {/* Progress Bar */}
+      <div className="absolute top-0 left-0 h-1 w-full z-20 bg-white/10">
+        <motion.div
           key={currentSlide}
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          transition={{ duration: 8, ease: "linear" }}
-          className="h-full bg-accent"
+          transition={{ duration: 7, ease: "linear" }}
+          className="h-full bg-secondary"
         />
       </div>
     </section>
