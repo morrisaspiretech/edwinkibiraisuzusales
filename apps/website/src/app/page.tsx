@@ -5,10 +5,15 @@ import SourcingForm from "@/components/home/SourcingForm";
 import { Vehicle } from "@/types/vehicle";
 
 async function getVehicles() {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:4000";
-  const res = await fetch(`${apiUrl}/api/vehicles`, { next: { revalidate: 0 } });
-  if (!res.ok) return [];
-  return res.json();
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:4000";
+    const res = await fetch(`${apiUrl}/api/vehicles`, { next: { revalidate: 0 } });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching vehicles:", error);
+    return [];
+  }
 }
 
 export default async function Home() {
