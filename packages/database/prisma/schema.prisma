@@ -40,76 +40,123 @@ model User {
 }
 
 model Car {
-  id            String      @id @default(uuid())
-  sellerId      String
-  seller        User        @relation(fields: [sellerId], references: [id])
-  make          String
-  model         String
-  year          Int
-  price         Decimal
-  currency      String      @default("KES")
-  mileage       Decimal?
-  condition     Condition   @default(USED)
-  status        CarStatus   @default(AVAILABLE)
-  description   String?
-  location      String?
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  specs         CarSpecs?
-  images        CarImage[]
-  favorites     Favorite[]
-  reviews       Review[]
-  inspections   Inspection[]
+  id                    String      @id @default(uuid())
+  sellerId              String
+  seller                User        @relation(fields: [sellerId], references: [id])
+  
+  // Identity
+  vin                   String?     @unique
+  chassisNumber         String?
+  engineNumber          String?
+  licensePlate          String?
+  registrationDate      DateTime?
+  manufactureDate       DateTime?
+  importOrLocal         String?     // "Imported" or "Local"
+  
+  // Basic Info
+  make                  String
+  model                 String
+  year                  Int
+  price                 Decimal
+  currency              String      @default("KES")
+  mileage               Decimal?
+  condition             Condition   @default(USED)
+  status                CarStatus   @default(AVAILABLE)
+  description           String?
+  location              String?
+  
+  // Engagement
+  viewsCount            Int         @default(0)
+  likesCount            Int         @default(0)
+  sharesCount           Int         @default(0)
+  
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+  specs                 CarSpecs?
+  images                CarImage[]
+  favorites             Favorite[]
+  reviews               Review[]
+  inspections           Inspection[]
+  history               CarHistory[]
 }
 
 model CarSpecs {
-  id                  String   @id @default(uuid())
-  carId               String   @unique
-  car                 Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
+  id                    String   @id @default(uuid())
+  carId                 String   @unique
+  car                   Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
   
-  // Basic Info
-  trim                String?
-  generation          String?
-  bodyType            String?
-  vehicleCategory     String?
+  // Trim & Generation
+  trimLevel             String?
+  trimPackage           String?
+  specialEdition        String?
+  faceliftVersion       String?
+  generationCode        String?
   
-  // Engine
-  engineType          String?
-  engineCc            Int?
-  horsepower          Int?
-  torque              Int?
-  fuelType            String?
-  turbocharged        Boolean  @default(false)
-  supercharged        Boolean  @default(false)
-  hybridSystem        String?
+  // Deep Engine
+  engineType            String?
+  engineCc              Int?
+  engineCode            String?
+  horsepower            Int?
+  torque                Int?
+  fuelType              String?
+  turbocharged          Boolean  @default(false)
+  supercharged          Boolean  @default(false)
+  turboCount            Int?
+  intercooler           Boolean  @default(false)
+  bore                  Decimal?
+  stroke                Decimal?
+  compressionRatio      String?
+  valveTrain            String?
   
-  // Transmission
-  transmission        String?
-  drivetrain          String?
+  // EV Data
+  batteryCapacityKwh    Decimal?
+  batteryType           String?
+  rangeWltp             Int?
+  fastChargeTime        Int?     // minutes
   
-  // Dimensions
-  seatingCapacity     Int?
-  doorCount           Int?
+  // Drivetrain & Suspension
+  transmission          String?
+  drivetrain            String?
+  differentialType      String?
+  frontSuspension       String?
+  rearSuspension        String?
+  airSuspension         Boolean  @default(false)
   
-  // Features
-  sunroof             Boolean  @default(false)
-  appleCarplay        Boolean  @default(false)
-  android_auto        Boolean  @default(false)
-  adaptiveCruise      Boolean  @default(false)
+  // Interior & Comfort
+  seatingCapacity       Int?
+  seatMaterial          String?
+  heatedSeats           Boolean  @default(false)
+  sunroof               Boolean  @default(false)
+  ambientLighting       Boolean  @default(false)
+  appleCarplay          Boolean  @default(false)
+  androidAuto           Boolean  @default(false)
   
-  // Technical details
-  vin                 String?
-  chassisNumber       String?
+  // Safety
+  airbagsCount          Int?
+  abs                   Boolean  @default(true)
+  laneAssist            Boolean  @default(false)
+  blindSpotMonitor      Boolean  @default(false)
+  safetyRating          String?
 }
 
 model CarImage {
   id          String   @id @default(uuid())
   carId       String
   car         Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
+  type        String   @default("GALLERY") // HERO, GALLERY, 360, INSPECTION
   url         String
   isHero      Boolean  @default(false)
-  is360       Boolean  @default(false)
   orderIndex  Int      @default(0)
+}
+
+model CarHistory {
+  id            String   @id @default(uuid())
+  carId         String
+  car           Car      @relation(fields: [carId], references: [id])
+  event         String   // "PRICE_DROP", "SOLD", "INSPECTED"
+  oldValue      String?
+  newValue      String?
+  createdAt     DateTime @default(now())
 }
 
 model CrspValue {

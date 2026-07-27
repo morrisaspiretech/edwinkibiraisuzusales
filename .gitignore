@@ -36,3 +36,14 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Binaries & Scratch Files
+node.msi
+node.zip
+node-v20.12.2-win-x64/
+*.db
+*.txt
+*.tmp*
+tmp/
+
+

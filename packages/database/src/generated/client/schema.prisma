@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vehicle {
+  id           String         @id @default(cuid())
+  make         String
+  model        String
+  year         Int
+  price        Float
+  fuelType     String
+  engineCC     Int
+  transmission String
+  bodyType     String
+  mileage      Int
+  color        String?
+  driveType    String?
+  vin          String?        @unique
+  description  String?
+  features     String[]       @default([])
+  category     String         @default("CAR") // CAR, BIKE
+  status       String         @default("AVAILABLE")
+  condition    String         @default("FOREIGN") // FOREIGN, LOCAL
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  images       VehicleImage[]
+  leads        Lead[]
+}
+
+model VehicleImage {
+  id        String  @id @default(cuid())
+  vehicleId String
+  url       String
+  isPrimary Boolean @default(false)
+  position  Int     @default(0)
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+}
+
+model CRSPModel {
+  id             String  @id @default(cuid())
+  make           String
+  model          String
+  bodyType       String?
+  fuelType       String?
+  engineCC       Int?
+  referencePrice Float?
+  yearStart      Int?
+  yearEnd        Int?
+
+  @@unique([make, model])
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  message   String?
+  vehicleId String?
+  vehicle   Vehicle? @relation(fields: [vehicleId], references: [id], onDelete: SetNull)
+  status    String   @default("NEW") // NEW, CONTACTED, CLOSED, SPAM
+  createdAt DateTime @default(now())
+}
+
+model SourcingRequest {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  category  String   @default("CAR") // CAR, BIKE
+  make      String
+  model     String
+  fuelType  String?
+  yearMin   Int?
+  budgetMax Float?
+  message   String?
+  status    String   @default("NEW") // NEW, IN_PROGRESS, FULFILLED, CLOSED
+  createdAt DateTime @default(now())
+}
