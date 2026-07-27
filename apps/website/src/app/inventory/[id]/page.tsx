@@ -144,14 +144,14 @@ const VehicleDetailsPage = () => {
               </section>
             )}
 
-            <section className="bg-primary p-8 text-white border-l-4 border-accent">
+            <section className="bg-primary p-8 text-white border-l-4 border-secondary">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2 uppercase">
-                <ShieldCheck className="text-accent" /> Aspire Certified Guarantee
+                <ShieldCheck className="text-secondary" /> Edwin Kibira Isuzu Quality Guarantee
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {['KRA Verified', 'Accident Free History', '150-Point Inspection', 'Mileage Certified'].map((item) => (
+                {['Genuine Isuzu Parts', 'Factory Warranty Certified', '150-Point Technical Inspection', 'KRA & NTSA Verified'].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-white/70 font-bold uppercase tracking-wide">
-                    <CheckCircle2 size={16} className="text-accent" /> {item}
+                    <CheckCircle2 size={16} className="text-secondary" /> {item}
                   </li>
                 ))}
               </ul>
@@ -189,7 +189,7 @@ const VehicleDetailsPage = () => {
                   <LeadForm vehicleId={vehicle.id} vehicleName={`${vehicle.make} ${vehicle.model}`} />
                   
                   <a
-                    href={`https://wa.me/254700000000?text=Hi Aspire Motors, I am interested in the ${vehicle.year} ${vehicle.make} ${vehicle.model}. Please provide more details.`}
+                    href={`https://wa.me/254700000000?text=Hi Edwin Kibira Isuzu Sales, I am interested in the ${vehicle.year} ${vehicle.make} ${vehicle.model}. Please provide more details.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-emerald-600 text-white py-5 font-bold uppercase hover:bg-emerald-700 transition-all shadow-xl flex items-center justify-center gap-3"
@@ -198,7 +198,7 @@ const VehicleDetailsPage = () => {
                   </a>
                   <a
                     href="tel:+254700000000"
-                    className="w-full border-2 border-primary/5 py-5 font-bold uppercase hover:border-accent hover:text-accent transition-all flex items-center justify-center gap-3"
+                    className="w-full border-2 border-primary/5 py-5 font-bold uppercase hover:border-secondary hover:text-secondary transition-all flex items-center justify-center gap-3"
                   >
                     <Phone size={18} /> Call Advisor
                   </a>
@@ -207,7 +207,7 @@ const VehicleDetailsPage = () => {
                 <div className="mt-8 pt-8 border-t border-primary/5">
                   <p className="text-xs font-extrabold text-text-dark/60 uppercase mb-4 tracking-widest">Location & Opening Hours</p>
                   <div className="space-y-2 text-sm font-medium text-text-dark/70">
-                    <p>Ngong Road, Nairobi</p>
+                    <p>Nairobi, Kenya</p>
                     <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
                   </div>
                 </div>
