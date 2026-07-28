@@ -18,9 +18,8 @@ import {
   ShieldCheck,
   CheckCircle2,
   Info,
-  ArrowLeft,
   Maximize2,
-  ZoomIn,
+  Check,
 } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -28,7 +27,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/inventory/LeadForm";
 
-// ── Same fallback data as home/inventory pages ───────────────────────────────
+// ── Fallback data ────────────────────────────────────────────────────────
 const FALLBACK_VEHICLES: Vehicle[] = [
   {
     id: "isuzu-dmax-vcross",
@@ -136,10 +135,14 @@ const VehicleDetailsPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gray-50 pt-28">
         <Navbar />
-        <div className="animate-pulse" style={{ paddingTop: 80 }}>
-          <div className="h-[70vh] bg-gray-100" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 animate-pulse">
+          <div className="h-10 bg-gray-200 w-1/3 mb-6" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-8 h-[60vh] bg-gray-200 rounded" />
+            <div className="lg:col-span-4 h-[60vh] bg-gray-200 rounded" />
+          </div>
         </div>
       </div>
     );
@@ -147,17 +150,17 @@ const VehicleDetailsPage = () => {
 
   if (!vehicle) {
     return (
-      <div className="min-h-screen bg-white flex flex-col">
+      <div className="min-h-screen bg-gray-50 flex flex-col pt-20">
         <Navbar />
         <div className="flex-1 flex flex-col items-center justify-center px-6 py-24 text-center">
-          <div className="w-20 h-20 bg-secondary/10 flex items-center justify-center mb-6">
+          <div className="w-20 h-20 bg-secondary/10 flex items-center justify-center mb-6 rounded-full">
             <Info size={32} className="text-secondary" />
           </div>
-          <h1 className="text-2xl font-black uppercase text-[#1A1A1A] mb-3">Vehicle Not Found</h1>
+          <h1 className="text-3xl font-black uppercase text-primary mb-3">Vehicle Not Found</h1>
           <p className="text-gray-500 mb-8 max-w-sm">
             This vehicle may have been sold or removed. Browse our current inventory for available Isuzu vehicles.
           </p>
-          <Link href="/inventory" className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b82222] transition-all">
+          <Link href="/inventory" className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b82222] transition-all rounded shadow-lg shadow-secondary/20">
             Browse Inventory <ChevronRight size={16} />
           </Link>
         </div>
@@ -170,84 +173,74 @@ const VehicleDetailsPage = () => {
   const conditionLabel = vehicle.condition === "FOREIGN" ? "Foreign Used" : "Locally Used";
   const fuelLabel = vehicle.fuelType.charAt(0) + vehicle.fuelType.slice(1).toLowerCase();
 
-  const quickSpecs = [
-    { label: "Year", value: vehicle.year.toString(), icon: <Calendar size={16} /> },
-    { label: "Mileage", value: `${vehicle.mileage.toLocaleString()} km`, icon: <Gauge size={16} /> },
-    { label: "Fuel", value: fuelLabel, icon: <Fuel size={16} /> },
-    { label: "Transmission", value: vehicle.transmission, icon: <Settings2 size={16} /> },
-    { label: "Engine", value: `${vehicle.engineCC}cc`, icon: <Settings2 size={16} /> },
-    { label: "Body", value: vehicle.bodyType, icon: <Settings2 size={16} /> },
-  ];
-
   return (
-    <main className="min-h-screen bg-[#F7F7F7]">
+    <main className="min-h-screen bg-gray-50 pt-20">
       <Navbar />
 
-      {/* ═══════════════════════════════════════════════════════════════
-          HERO — full-bleed vehicle photo + pricing card side by side
-      ═══════════════════════════════════════════════════════════════ */}
-      <div className="bg-[#1A1A1A]" style={{ paddingTop: 80 }}>
+      {/* ── Top Header Section (Title & Breadcrumbs) ── */}
+      <div className="bg-white border-b border-gray-200 pt-6 sm:pt-10 pb-6 shadow-sm relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          
+          <nav className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-gray-400 mb-4 flex-wrap">
+            <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
+            <ChevronRight size={12} className="opacity-40" />
+            <Link href="/inventory" className="hover:text-secondary transition-colors">Inventory</Link>
+            <ChevronRight size={12} className="opacity-40" />
+            <span className="text-primary">{vehicle.make} {vehicle.model}</span>
+          </nav>
 
-          {/* Breadcrumb strip */}
-          <div className="flex items-center justify-between py-3 border-b border-white/8">
-            <div className="flex items-center gap-4">
-              <Link href="/inventory" className="flex items-center gap-1.5 text-white/40 hover:text-secondary transition-colors text-xs font-bold uppercase tracking-widest">
-                <ArrowLeft size={13} /> Inventory
-              </Link>
-              <span className="text-white/20 text-xs">›</span>
-              <nav className="hidden sm:flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/35 flex-wrap">
-                <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
-                <ChevronRight size={11} className="opacity-30" />
-                <Link href="/inventory" className="hover:text-secondary transition-colors">Inventory</Link>
-                <ChevronRight size={11} className="opacity-30" />
-                <span className="text-white/70">{vehicle.make} {vehicle.model}</span>
-              </nav>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-secondary/10 text-secondary border border-secondary/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-secondary mr-1.5" />
+                  {vehicle.status}
+                </span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-gray-100 text-gray-600 border border-gray-200">
+                  {conditionLabel}
+                </span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-widest bg-gray-100 text-gray-600 border border-gray-200">
+                  {vehicle.year}
+                </span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary uppercase leading-tight tracking-tight">
+                {vehicle.make} <span className="text-secondary">{vehicle.model}</span>
+              </h1>
             </div>
+
             <div className="flex items-center gap-2">
-              <button className="w-8 h-8 border border-white/15 text-white/50 hover:text-white hover:border-white/40 transition-colors flex items-center justify-center" title="Share">
-                <Share2 size={14} />
+              <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-gray-600 hover:text-primary hover:border-gray-300 transition-all font-bold text-xs uppercase tracking-wider rounded">
+                <Share2 size={14} /> Share
               </button>
-              <button className="w-8 h-8 border border-white/15 text-white/50 hover:text-secondary hover:border-secondary transition-colors flex items-center justify-center" title="Save">
-                <Heart size={14} />
+              <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-gray-600 hover:text-secondary hover:border-secondary transition-all font-bold text-xs uppercase tracking-wider rounded">
+                <Heart size={14} /> Save
               </button>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* ── Hero Grid: Photo LEFT, Price Card RIGHT ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 py-6 lg:py-8">
-
-            {/* ── LEFT: Vehicle Image (fills all available space) ── */}
-            <div className="lg:col-span-7 flex flex-col gap-3">
-
-              {/* Vehicle title (mobile only — shows above image) */}
-              <div className="lg:hidden mb-2">
-                <span className="inline-block bg-secondary text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest mb-2">
-                  {conditionLabel}
-                </span>
-                <h1 className="text-2xl font-black text-white uppercase leading-tight">
-                  {vehicle.make} <span className="text-secondary">{vehicle.model}</span>
-                </h1>
-                <p className="text-white/40 text-sm font-semibold mt-1">
-                  {vehicle.year} · {vehicle.bodyType} · {fuelLabel}
-                </p>
-              </div>
-
-              {/* Main image */}
-              <div
-                className="relative w-full overflow-hidden bg-[#111] cursor-zoom-in group"
-                style={{ aspectRatio: "16/9" }}
+      {/* ── Main Layout Grid ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+          
+          {/* ── LEFT COLUMN: Gallery & Details ── */}
+          <div className="lg:col-span-8 space-y-8">
+            
+            {/* Image Gallery */}
+            <div className="bg-white p-2 rounded-xl border border-gray-200 shadow-sm">
+              <div 
+                className="relative w-full overflow-hidden bg-gray-100 rounded-lg cursor-zoom-in group"
+                style={{ aspectRatio: "16/10" }}
                 onClick={() => setLightbox(true)}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeImg}
-                    initial={{ opacity: 0, scale: 1.03 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.45 }}
+                    transition={{ duration: 0.3 }}
                     className="absolute inset-0"
                   >
                     <Image
@@ -260,322 +253,213 @@ const VehicleDetailsPage = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Prev/Next arrows */}
                 {images.length > 1 && (
                   <>
                     <button
                       onClick={(e) => { e.stopPropagation(); setActiveImg((p) => (p === 0 ? images.length - 1 : p - 1)); }}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-secondary"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg text-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-secondary hover:text-white"
                     >
-                      <ChevronLeft size={18} />
+                      <ChevronLeft size={20} />
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); setActiveImg((p) => (p + 1) % images.length); }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/50 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-secondary"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg text-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-secondary hover:text-white"
                     >
-                      <ChevronRight size={18} />
+                      <ChevronRight size={20} />
                     </button>
                   </>
                 )}
 
-                {/* Zoom icon */}
-                <div className="absolute top-3 right-3 w-8 h-8 bg-black/40 backdrop-blur-sm text-white/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn size={15} />
-                </div>
-
-                {/* Photo count */}
-                <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs font-black px-2.5 py-1 backdrop-blur-sm">
-                  {activeImg + 1} / {images.length}
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Maximize2 size={18} />
                 </div>
               </div>
 
               {/* Thumbnails */}
               {images.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto pb-1">
+                <div className="flex gap-2 overflow-x-auto mt-2 pb-1 scrollbar-hide">
                   {images.map((img, i) => (
                     <button
                       key={img.id}
                       onClick={() => setActiveImg(i)}
-                      className={`relative flex-shrink-0 overflow-hidden transition-all ${
-                        i === activeImg
-                          ? "ring-2 ring-secondary opacity-100"
-                          : "opacity-50 hover:opacity-80"
+                      className={`relative flex-shrink-0 rounded-md overflow-hidden transition-all ${
+                        i === activeImg ? "ring-2 ring-secondary opacity-100" : "opacity-60 hover:opacity-100 ring-1 ring-gray-200"
                       }`}
-                      style={{ width: 90, aspectRatio: "3/2" }}
+                      style={{ width: 100, aspectRatio: "4/3" }}
                     >
                       <Image src={img.url} alt="thumb" fill className="object-cover" />
                     </button>
                   ))}
                 </div>
               )}
-
-              {/* Quick spec pills (desktop — below image) */}
-              <div className="hidden lg:flex flex-wrap gap-2 mt-1">
-                {quickSpecs.map((s) => (
-                  <div key={s.label} className="flex items-center gap-2 bg-white/8 border border-white/10 px-4 py-2 text-xs font-black uppercase tracking-wide text-white">
-                    <span className="text-secondary">{s.icon}</span>
-                    <span className="text-white/50">{s.label}:</span>
-                    {s.value}
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* ── RIGHT: Title + Price Card ── */}
-            <div className="lg:col-span-5 flex flex-col gap-4 lg:pt-2">
-
-              {/* Desktop title */}
-              <div className="hidden lg:block">
-                <span className="inline-block bg-secondary text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest mb-3">
-                  {conditionLabel}
-                </span>
-                <h1 className="text-3xl xl:text-4xl font-black text-white uppercase leading-tight mb-1">
-                  {vehicle.make}
-                </h1>
-                <h2 className="text-3xl xl:text-4xl font-black text-secondary uppercase leading-tight mb-3">
-                  {vehicle.model}
-                </h2>
-                <p className="text-white/40 text-sm font-semibold">
-                  {vehicle.year} · {vehicle.bodyType} · {fuelLabel}
-                </p>
-              </div>
-
-              {/* Price block */}
-              <div className="bg-white">
-                {/* Red accent top */}
-                <div className="h-1 bg-secondary" />
-                <div className="p-6 sm:p-7">
-
-                  {/* Status */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-secondary uppercase tracking-widest border border-secondary/30 px-3 py-1 bg-secondary/5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-secondary inline-block" />
-                      {vehicle.status}
-                    </span>
-                    <div className="flex items-center gap-1.5 text-gray-400 text-xs font-bold">
-                      <MapPin size={11} className="text-secondary" />
-                      Nairobi, Kenya
-                    </div>
+            {/* Quick Specs Highlight Bar */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { label: "Mileage", value: `${vehicle.mileage.toLocaleString()} km`, icon: <Gauge size={20} /> },
+                { label: "Fuel Type", value: fuelLabel, icon: <Fuel size={20} /> },
+                { label: "Transmission", value: vehicle.transmission, icon: <Settings2 size={20} /> },
+                { label: "Engine", value: `${vehicle.engineCC}cc`, icon: <Settings2 size={20} /> },
+              ].map((spec, i) => (
+                <div key={i} className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center gap-2">
+                  <div className="text-secondary bg-secondary/10 p-2 rounded-full">{spec.icon}</div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">{spec.label}</p>
+                    <p className="font-bold text-primary text-sm mt-0.5">{spec.value}</p>
                   </div>
-
-                  {/* Price */}
-                  <div className="pb-5 mb-5 border-b border-gray-100">
-                    <p className="text-[10px] uppercase tracking-widest text-gray-400 font-black mb-1">Asking Price</p>
-                    <p className="text-4xl xl:text-5xl font-black text-[#1A1A1A] leading-none">
-                      <span className="text-xl text-secondary mr-1">KSh</span>
-                      {vehicle.price.toLocaleString()}
-                    </p>
-                    <p className="text-xs text-gray-400 mt-1.5">
-                      Est. monthly: KSh {Math.round(vehicle.price * 0.02).toLocaleString()} · financing available
-                    </p>
-                  </div>
-
-                  {/* CTA buttons */}
-                  <div className="space-y-2.5">
-                    <Link
-                      href="/book-test-drive"
-                      className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b82222] transition-all"
-                    >
-                      <Calendar size={16} /> Book a Test Drive
-                    </Link>
-
-                    <a
-                      href={`https://wa.me/254700000000?text=Hi Edwin Kibira Isuzu Sales, I'm interested in the ${vehicle.year} ${vehicle.make} ${vehicle.model} (KSh ${vehicle.price.toLocaleString()}). Please send more details.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#1ebe5d] transition-all"
-                    >
-                      <MessageSquare size={16} /> WhatsApp Enquiry
-                    </a>
-
-                    <div className="grid grid-cols-2 gap-2">
-                      <a
-                        href="tel:+254700000000"
-                        className="flex items-center justify-center gap-2 border-2 border-gray-200 text-[#1A1A1A] py-3.5 font-black uppercase text-xs tracking-widest hover:border-secondary hover:text-secondary transition-all"
-                      >
-                        <Phone size={14} /> Call Us
-                      </a>
-                      <LeadForm vehicleId={vehicle.id} vehicleName={`${vehicle.make} ${vehicle.model}`} />
-                    </div>
-                  </div>
-
-                  {/* Hours */}
-                  <div className="mt-5 pt-5 border-t border-gray-100 grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-400">
-                    <p className="col-span-2 font-black uppercase tracking-widest text-[#1A1A1A] text-[10px] mb-1">Showroom Hours</p>
-                    <p>Mon – Fri</p><p className="text-right font-semibold text-gray-600">8:00 AM – 6:00 PM</p>
-                    <p>Saturday</p><p className="text-right font-semibold text-gray-600">9:00 AM – 4:00 PM</p>
-                    <p>Sunday</p><p className="text-right font-semibold text-gray-600">Closed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          BODY — Specs, Description, Features
-      ═══════════════════════════════════════════════════════════════ */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-
-          {/* ── Left: Details ── */}
-          <div className="lg:col-span-7 space-y-8">
-
-            {/* Mobile quick specs */}
-            <div className="lg:hidden flex flex-wrap gap-2">
-              {quickSpecs.map((s) => (
-                <div key={s.label} className="flex items-center gap-2 bg-white border border-gray-200 px-3 py-2 text-xs font-black uppercase tracking-wide text-[#1A1A1A]">
-                  <span className="text-secondary">{s.icon}</span>
-                  <span className="text-gray-400">{s.label}:</span>
-                  {s.value}
                 </div>
               ))}
             </div>
 
             {/* Description */}
             {vehicle.description && (
-              <section className="bg-white p-6 sm:p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-[3px] w-8 bg-secondary" />
-                  <h2 className="text-base font-black text-[#1A1A1A] uppercase tracking-wide">About This Vehicle</h2>
-                </div>
+              <section className="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm">
+                <h2 className="text-lg font-black text-primary uppercase tracking-wide mb-4">About This Vehicle</h2>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{vehicle.description}</p>
               </section>
             )}
 
-            {/* Specs table */}
-            <section className="bg-white overflow-hidden">
-              <div className="flex items-center gap-3 px-6 sm:px-8 py-5 border-b border-gray-100">
-                <div className="h-[3px] w-8 bg-secondary" />
-                <h2 className="text-base font-black text-[#1A1A1A] uppercase tracking-wide">Full Specifications</h2>
+            {/* Full Specs Table */}
+            <section className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+              <div className="p-6 sm:p-8 border-b border-gray-100">
+                <h2 className="text-lg font-black text-primary uppercase tracking-wide">Vehicle Specifications</h2>
               </div>
-              <div>
-                {[
-                  ["Make", vehicle.make],
-                  ["Model", vehicle.model],
-                  ["Year", vehicle.year.toString()],
-                  ["Body Type", vehicle.bodyType],
-                  ["Engine Size", `${vehicle.engineCC}cc`],
-                  ["Fuel Type", fuelLabel],
-                  ["Transmission", vehicle.transmission],
-                  ["Mileage", `${vehicle.mileage.toLocaleString()} km`],
-                  ["Condition", conditionLabel],
-                  ["Colour", vehicle.color || "Contact for Details"],
-                  ["Location", "Nairobi, Kenya"],
-                ].map(([label, value], i) => (
-                  <div
-                    key={label}
-                    className={`flex items-center justify-between px-6 sm:px-8 py-3.5 text-sm ${i % 2 === 0 ? "bg-[#F7F7F7]" : "bg-white"}`}
-                  >
-                    <span className="font-black text-[#1A1A1A] uppercase text-xs tracking-wide">{label}</span>
-                    <span className="font-semibold text-gray-500 text-xs sm:text-sm uppercase">{value}</span>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+                <div className="divide-y divide-gray-100">
+                  {[
+                    ["Make", vehicle.make],
+                    ["Model", vehicle.model],
+                    ["Year", vehicle.year.toString()],
+                    ["Body Type", vehicle.bodyType],
+                    ["Engine Size", `${vehicle.engineCC}cc`],
+                  ].map(([label, value]) => (
+                    <div key={label} className="flex items-center justify-between p-4">
+                      <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">{label}</span>
+                      <span className="font-bold text-primary">{value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="divide-y divide-gray-100">
+                  {[
+                    ["Fuel Type", fuelLabel],
+                    ["Transmission", vehicle.transmission],
+                    ["Mileage", `${vehicle.mileage.toLocaleString()} km`],
+                    ["Condition", conditionLabel],
+                    ["Colour", vehicle.color || "Contact for Details"],
+                  ].map(([label, value]) => (
+                    <div key={label} className="flex items-center justify-between p-4">
+                      <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">{label}</span>
+                      <span className="font-bold text-primary">{value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </section>
 
             {/* Features */}
             {vehicle.features && vehicle.features.length > 0 && (
-              <section className="bg-white p-6 sm:p-8">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="h-[3px] w-8 bg-secondary" />
-                  <h2 className="text-base font-black text-[#1A1A1A] uppercase tracking-wide">Key Features</h2>
-                </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <section className="bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-sm">
+                <h2 className="text-lg font-black text-primary uppercase tracking-wide mb-6">Key Features</h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                   {vehicle.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
-                      <CheckCircle2 size={15} className="text-secondary flex-shrink-0 mt-0.5" /> {f}
+                      <div className="bg-green-100 text-green-600 p-1 rounded mt-0.5">
+                        <Check size={12} strokeWidth={3} />
+                      </div>
+                      {f}
                     </li>
                   ))}
                 </ul>
               </section>
             )}
-
-            {/* Quality Guarantee */}
-            <section className="bg-[#1A1A1A] p-6 sm:p-8 border-l-4 border-secondary">
-              <div className="flex items-center gap-3 mb-4">
-                <ShieldCheck size={20} className="text-secondary" />
-                <h3 className="text-sm font-black text-white uppercase tracking-wide">Edwin Kibira Isuzu — Quality Guarantee</h3>
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {["Genuine Isuzu Parts Only", "Factory Warranty Certified", "150-Point Technical Inspection", "KRA & NTSA Verified"].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-white/60">
-                    <CheckCircle2 size={14} className="text-secondary flex-shrink-0" /> {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
           </div>
 
-          {/* ── Right: Finance + Similar Vehicles ── */}
-          <div className="lg:col-span-5 space-y-5">
-            {/* Finance teaser */}
-            <div className="bg-white p-6 sm:p-8 border-t-4 border-secondary">
-              <h3 className="font-black text-[#1A1A1A] uppercase text-sm tracking-wide mb-2">Financing Available</h3>
-              <p className="text-xs text-gray-500 leading-relaxed mb-5">
-                Get pre-approved with our bank partners. Estimated monthly payment from{" "}
-                <strong className="text-secondary">KSh {Math.round(vehicle.price * 0.02).toLocaleString()}</strong>. No hidden fees.
-              </p>
-              <div className="space-y-2">
-                <Link href="/contact" className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all">
-                  Enquire About Finance <ChevronRight size={14} />
-                </Link>
-                <Link href="/book-test-drive" className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 text-[#1A1A1A] py-3.5 font-black uppercase text-xs tracking-widest hover:border-secondary hover:text-secondary transition-all">
-                  Book Test Drive
-                </Link>
-              </div>
-            </div>
+          {/* ── RIGHT COLUMN: Pricing & Actions ── */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-28 space-y-6">
+              
+              {/* Main Pricing Box */}
+              <div className="bg-white rounded-xl border border-gray-200 shadow-lg shadow-gray-200/50 overflow-hidden">
+                <div className="bg-primary p-6 text-center text-white relative overflow-hidden">
+                  <div className="absolute -right-10 -top-10 text-white/5">
+                    <Settings2 size={120} />
+                  </div>
+                  <p className="text-[10px] uppercase tracking-widest text-white/70 font-bold mb-2">Asking Price</p>
+                  <p className="text-4xl font-black tracking-tight relative z-10">
+                    <span className="text-xl text-secondary mr-1">KSh</span>
+                    {vehicle.price.toLocaleString()}
+                  </p>
+                </div>
+                
+                <div className="p-6 space-y-4">
+                  <Link
+                    href="/book-test-drive"
+                    className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#9a1b1b] transition-all rounded shadow-md shadow-secondary/20"
+                  >
+                    <Calendar size={18} /> Book a Test Drive
+                  </Link>
 
-            {/* Contact card */}
-            <div className="bg-white p-6 sm:p-8">
-              <h3 className="font-black text-[#1A1A1A] uppercase text-sm tracking-wide mb-4">Talk to a Specialist</h3>
-              <div className="space-y-3 text-sm">
-                <a href="tel:+254700000000" className="flex items-center gap-3 text-gray-600 hover:text-secondary transition-colors font-medium group">
-                  <div className="w-9 h-9 bg-secondary/10 group-hover:bg-secondary flex items-center justify-center text-secondary group-hover:text-white transition-all flex-shrink-0">
-                    <Phone size={15} />
+                  <a
+                    href={`https://wa.me/254700000000?text=Hi Edwin Kibira Isuzu Sales, I'm interested in the ${vehicle.year} ${vehicle.make} ${vehicle.model} (KSh ${vehicle.price.toLocaleString()}). Please send more details.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#1ebe5d] transition-all rounded shadow-md shadow-[#25D366]/20"
+                  >
+                    <MessageSquare size={18} /> WhatsApp Enquiry
+                  </a>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href="tel:+254700000000"
+                      className="flex items-center justify-center gap-2 border-2 border-gray-200 text-primary py-3 font-black uppercase text-xs tracking-widest hover:border-primary hover:bg-gray-50 transition-all rounded"
+                    >
+                      <Phone size={14} /> Call Us
+                    </a>
+                    <div className="[&>button]:w-full [&>button]:h-full [&>button]:border-2 [&>button]:border-gray-200 [&>button]:text-primary [&>button]:font-black [&>button]:uppercase [&>button]:text-xs [&>button]:tracking-widest [&>button]:rounded hover:[&>button]:border-primary hover:[&>button]:bg-gray-50 transition-all">
+                       <LeadForm vehicleId={vehicle.id} vehicleName={`${vehicle.make} ${vehicle.model}`} />
+                    </div>
                   </div>
-                  +254 700 000 000
-                </a>
-                <a
-                  href={`https://wa.me/254700000000?text=Hi, I'm interested in the ${vehicle.make} ${vehicle.model}`}
-                  target="_blank" rel="noreferrer"
-                  className="flex items-center gap-3 text-gray-600 hover:text-[#25D366] transition-colors font-medium group"
-                >
-                  <div className="w-9 h-9 bg-[#25D366]/10 group-hover:bg-[#25D366] flex items-center justify-center text-[#25D366] group-hover:text-white transition-all flex-shrink-0">
-                    <MessageSquare size={15} />
-                  </div>
-                  WhatsApp Us
-                </a>
-                <div className="flex items-center gap-3 text-gray-600 font-medium">
-                  <div className="w-9 h-9 bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
-                    <MapPin size={15} />
-                  </div>
-                  Nairobi, Kenya
+                </div>
+
+                <div className="bg-gray-50 p-4 border-t border-gray-100 flex items-center justify-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest">
+                  <MapPin size={14} className="text-secondary" /> Nairobi, Kenya
                 </div>
               </div>
-            </div>
 
-            {/* Related links */}
-            <div className="bg-white p-6">
-              <h3 className="font-black text-[#1A1A1A] uppercase text-xs tracking-widest mb-4">Explore More</h3>
-              <div className="space-y-2">
-                {[
-                  { label: "View All D-Max Models", href: "/inventory?search=D-Max" },
-                  { label: "View All mu-X Models", href: "/inventory?search=mu-X" },
-                  { label: "Commercial Trucks & Buses", href: "/inventory?search=N-Series" },
-                  { label: "Full Inventory", href: "/inventory" },
-                ].map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="flex items-center justify-between text-xs font-bold text-gray-500 hover:text-secondary transition-colors py-2 border-b border-gray-50 last:border-0 uppercase tracking-wide group"
-                  >
-                    {item.label}
-                    <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                ))}
+              {/* Finance Box */}
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-bl-full" />
+                <h3 className="font-black text-primary uppercase text-sm tracking-wide mb-2 flex items-center gap-2">
+                  <ShieldCheck size={16} className="text-secondary" /> Financing Options
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-4">
+                  Partnered with major banks for seamless asset financing. Estimated from <strong className="text-primary font-black">KSh {Math.round(vehicle.price * 0.02).toLocaleString()} /mo</strong>.
+                </p>
+                <Link href="/contact" className="text-xs font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider group">
+                  Enquire about Finance <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
+
+              {/* Dealer Box */}
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                 <h3 className="font-black text-primary uppercase text-sm tracking-wide mb-4">Edwin Kibira Isuzu</h3>
+                 <div className="space-y-3 text-sm">
+                   <div className="flex justify-between items-center pb-2 border-b border-gray-100">
+                     <span className="text-gray-500">Mon - Fri</span>
+                     <span className="font-bold text-primary">8:00 AM - 6:00 PM</span>
+                   </div>
+                   <div className="flex justify-between items-center pb-2 border-b border-gray-100">
+                     <span className="text-gray-500">Saturday</span>
+                     <span className="font-bold text-primary">9:00 AM - 4:00 PM</span>
+                   </div>
+                   <div className="flex justify-between items-center">
+                     <span className="text-gray-500">Sunday</span>
+                     <span className="font-bold text-primary">Closed</span>
+                   </div>
+                 </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -583,18 +467,18 @@ const VehicleDetailsPage = () => {
 
       {/* ── Lightbox ── */}
       {lightbox && (
-        <div
-          className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center"
-          onClick={() => setLightbox(false)}
-        >
-          <button className="absolute top-5 right-5 text-white/70 hover:text-white text-3xl font-light" onClick={() => setLightbox(false)}>✕</button>
-          <div className="relative w-full max-w-5xl max-h-[85vh] mx-6">
+        <div className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 md:p-8" onClick={() => setLightbox(false)}>
+          <button className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors p-2" onClick={() => setLightbox(false)}>
+            <span className="sr-only">Close</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+          <div className="relative w-full max-w-6xl max-h-full">
             <Image
               src={primaryImg}
               alt={`${vehicle.make} ${vehicle.model}`}
-              width={1280}
-              height={720}
-              className="object-contain w-full h-full max-h-[85vh]"
+              width={1920}
+              height={1080}
+              className="object-contain w-full h-[80vh]"
             />
           </div>
         </div>
