@@ -62,7 +62,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-1', url: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-1', url: '/vehicles/dmax-hero.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-mux-lst',
@@ -79,7 +79,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-2', url: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-2', url: '/vehicles/mux-hero.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-mux-lsu',
@@ -96,7 +96,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-3', url: 'https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-3', url: '/vehicles/mux-black.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-dmax-ls',
@@ -113,7 +113,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-4', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-4', url: '/vehicles/dmax-silver.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-nqr',
@@ -130,7 +130,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-5', url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-5', url: '/vehicles/nqr-hero.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-npr',
@@ -147,7 +147,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-6', url: 'https://images.unsplash.com/photo-1586191583539-be21063b00da?q=80&w=800', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-6', url: '/vehicles/fvr-truck.png', isPrimary: true, position: 0 }]
     }
   ];
 

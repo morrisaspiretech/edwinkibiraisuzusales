@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80"
+            src="/vehicles/dmax-hero.png"
             alt="Isuzu Kenya"
             className="w-full h-full object-cover opacity-20"
           />
@@ -88,7 +88,7 @@ export default function AboutPage() {
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary -z-10" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80"
+              src="/vehicles/mux-black.png"
               alt="Isuzu D-Max"
               className="w-full h-[420px] object-cover shadow-2xl relative z-10"
             />
