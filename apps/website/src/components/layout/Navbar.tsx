@@ -20,9 +20,9 @@ const Navbar = () => {
   }, []);
 
   const vehicleCategories = [
-    { label: "Isuzu mu-X (SUV)", href: "/inventory?search=mu-X" },
-    { label: "Isuzu D-Max (Pickup)", href: "/inventory?search=D-Max" },
-    { label: "N-Series Trucks", href: "/inventory?search=N-Series" },
+    { label: "Isuzu D-Max Pickup", href: "/inventory?search=D-Max" },
+    { label: "Isuzu mu-X SUV", href: "/inventory?search=mu-X" },
+    { label: "N-Series Commercial Trucks", href: "/inventory?search=N-Series" },
     { label: "Buses & Coaches", href: "/inventory?search=Bus" },
     { label: "All Vehicles", href: "/inventory" },
   ];

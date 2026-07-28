@@ -28,7 +28,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
       {/* Image Container - Strictly 4:3 Aspect Ratio */}
       <Link href={`/inventory/${vehicle.id}`} className="block relative aspect-[4/3] overflow-hidden shrink-0 bg-gray-100">
         <Image
-          src={primaryImage?.url || 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=800'}
+          src={primaryImage?.url || '/vehicles/dmax-hero.png'}
           alt={`${vehicle.make} ${vehicle.model}`}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
