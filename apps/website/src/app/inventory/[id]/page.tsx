@@ -409,17 +409,12 @@ const VehicleDetailsPage = () => {
                     <MessageSquare size={18} /> WhatsApp Enquiry
                   </a>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <a
-                      href="tel:+254700000000"
-                      className="flex items-center justify-center gap-2 border-2 border-gray-200 text-primary py-3 font-black uppercase text-xs tracking-widest hover:border-primary hover:bg-gray-50 transition-all rounded"
-                    >
-                      <Phone size={14} /> Call Us
-                    </a>
-                    <div className="[&>button]:w-full [&>button]:h-full [&>button]:border-2 [&>button]:border-gray-200 [&>button]:text-primary [&>button]:font-black [&>button]:uppercase [&>button]:text-xs [&>button]:tracking-widest [&>button]:rounded hover:[&>button]:border-primary hover:[&>button]:bg-gray-50 transition-all">
-                       <LeadForm vehicleId={vehicle.id} vehicleName={`${vehicle.make} ${vehicle.model}`} />
-                    </div>
-                  </div>
+                  <a
+                    href="tel:+254700000000"
+                    className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 text-primary py-3 font-black uppercase text-xs tracking-widest hover:border-primary hover:bg-gray-50 transition-all rounded"
+                  >
+                    <Phone size={14} /> Call Us
+                  </a>
                 </div>
 
                 <div className="bg-gray-50 p-4 border-t border-gray-100 flex items-center justify-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest">
@@ -459,6 +454,9 @@ const VehicleDetailsPage = () => {
                    </div>
                  </div>
               </div>
+
+              {/* Lead Form Widget */}
+              <LeadForm vehicleId={vehicle.id} vehicleName={`${vehicle.make} ${vehicle.model}`} />
 
             </div>
           </div>
