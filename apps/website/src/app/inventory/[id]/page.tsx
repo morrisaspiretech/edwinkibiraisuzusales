@@ -135,7 +135,7 @@ const VehicleDetailsPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-28">
+      <div className="min-h-screen bg-gray-50">
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 animate-pulse">
           <div className="h-10 bg-gray-200 w-1/3 mb-6" />
@@ -150,7 +150,7 @@ const VehicleDetailsPage = () => {
 
   if (!vehicle) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col pt-20">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />
         <div className="flex-1 flex flex-col items-center justify-center px-6 py-24 text-center">
           <div className="w-20 h-20 bg-secondary/10 flex items-center justify-center mb-6 rounded-full">
@@ -174,7 +174,7 @@ const VehicleDetailsPage = () => {
   const fuelLabel = vehicle.fuelType.charAt(0) + vehicle.fuelType.slice(1).toLowerCase();
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-20">
+    <main className="min-h-screen bg-gray-50">
       <Navbar />
 
       {/* ── Top Header Section (Title & Breadcrumbs) ── */}
