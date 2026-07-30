@@ -2,6 +2,7 @@ import { PrismaClient } from "@repo/database";
 import Link from "next/link";
 import { Car, TrendingUp, CheckCircle2, AlertCircle, Plus } from "lucide-react";
 
+export const dynamic = "force-dynamic";
 const prisma = new PrismaClient();
 
 export default async function AdminDashboardPage() {

@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import StatusSelect from "./StatusSelect";
 
+export const dynamic = "force-dynamic";
 const prisma = new PrismaClient();
 
 async function deleteCar(formData: FormData) {
