@@ -25,18 +25,14 @@ const InventoryPage = () => {
   useEffect(() => {
     const fetchVehicles = async () => {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:4000";
-        const res = await fetch(`${apiUrl}/api/vehicles`, { cache: 'no-store' });
-        
+        const res = await fetch("/api/vehicles", { cache: "no-store" });
         if (res.ok) {
           const data = await res.json();
-          setVehicles(data);
+          setVehicles(Array.isArray(data) ? data : getFallbackData());
         } else {
-          console.warn("API returned error, using fallback data");
           setVehicles(getFallbackData());
         }
-      } catch (error) {
-        console.warn("Fetch failed, using fallback data");
+      } catch {
         setVehicles(getFallbackData());
       } finally {
         setLoading(false);
@@ -159,7 +155,7 @@ const InventoryPage = () => {
     if (filters.category && filters.category !== 'all') {
       const catLower = filters.category.toLowerCase();
       result = result.filter(v => {
-        const vCatLower = v.category.toLowerCase();
+        const vCatLower = (v.category || '').toLowerCase();
         // Match singular/plural like 'car' vs 'cars'
         return vCatLower === catLower || 
                vCatLower === catLower.replace(/s$/, '') || 
@@ -183,12 +179,12 @@ const InventoryPage = () => {
 
     // Body Type Filter
     if (filters.bodyType) {
-      result = result.filter(v => v.bodyType.toLowerCase() === filters.bodyType.toLowerCase());
+      result = result.filter(v => (v.bodyType || '').toLowerCase() === filters.bodyType.toLowerCase());
     }
 
     // Transmission Filter
     if (filters.transmission) {
-      result = result.filter(v => v.transmission.toLowerCase() === filters.transmission.toLowerCase());
+      result = result.filter(v => (v.transmission || '').toLowerCase() === filters.transmission.toLowerCase());
     }
 
     // Price Filtering

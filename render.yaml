@@ -4,7 +4,7 @@ services:
     name: edwinkibiraisuzu
     env: node
     plan: free
-    buildCommand: npm install && npm run db:push --workspace=packages/database && npm run build --workspace=apps/website
+    buildCommand: npm install && npm run db:generate --workspace=packages/database && npm run build --workspace=apps/website
     startCommand: npm run start --workspace=apps/website
     envVars:
       - key: NODE_VERSION
@@ -16,7 +16,7 @@ services:
       - key: SUPABASE_SERVICE_ROLE_KEY
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xZm54b2pncXlocGJ3Y3BsdWhrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTE0MTg3NSwiZXhwIjoyMTAwNzE3ODc1fQ.Gh6OQbbS-7-U1qurCWpAS8ADCOfG37q8GxyCCWgwXow
       - key: DATABASE_URL
-        value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true
+        value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:5432/postgres
       - key: DIRECT_URL
         value: postgresql://postgres.oqfnxojgqyhpbwcpluhk:%40Kenya2023%40@aws-0-eu-west-1.pooler.supabase.com:5432/postgres
       - key: NEXT_PUBLIC_WEBSITE_URL

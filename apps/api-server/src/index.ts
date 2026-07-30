@@ -52,28 +52,35 @@ app.get('/api/vehicles', async (req: Request, res: Response) => {
     if (make) where.make = { contains: make as string };
     if (model) where.model = { contains: model as string };
     if (year) where.year = parseInt(year as string);
-    if (bodyType) where.bodyType = bodyType as string;
-    if (fuelType) where.fuelType = fuelType as string;
-    if (category) where.category = category as string;
-    if (status) where.status = status as string;
-
-    if (minPrice || maxPrice) {
-      where.price = {};
-      if (minPrice) where.price.gte = parseFloat(minPrice as string);
-      if (maxPrice) where.price.lte = parseFloat(maxPrice as string);
+    if (bodyType || fuelType) {
+      where.specs = {};
+      if (bodyType) where.specs.bodyType = bodyType as string;
+      if (fuelType) where.specs.fuelType = fuelType as string;
     }
 
-    const vehicles = await prisma.vehicle.findMany({
+    const cars = await prisma.car.findMany({
       where,
       include: {
-        images: true
+        images: true,
+        specs: true
       },
       orderBy: {
         createdAt: 'desc'
       }
     });
 
-    res.json(vehicles);
+    const mapped = cars.map((car: any) => ({
+      ...car,
+      price: Number(car.price),
+      mileage: car.mileage ? Number(car.mileage) : 0,
+      fuelType: car.specs?.fuelType || 'Diesel',
+      engineCC: car.specs?.engineCc || 0,
+      transmission: car.specs?.transmission || 'Manual',
+      bodyType: car.model.toLowerCase().includes('mu-x') ? 'SUV' : car.model.toLowerCase().includes('d-max') ? 'Pickup' : 'Truck',
+      category: 'CAR'
+    }));
+
+    res.json(mapped);
   } catch (error) {
     console.error('Error fetching vehicles:', error);
     res.status(500).json({ error: 'Failed to fetch vehicles' });
@@ -84,18 +91,30 @@ app.get('/api/vehicles', async (req: Request, res: Response) => {
 app.get('/api/vehicles/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const vehicle = await prisma.vehicle.findUnique({
+    const car = await prisma.car.findUnique({
       where: { id },
       include: {
-        images: true
+        images: true,
+        specs: true
       }
     });
 
-    if (!vehicle) {
+    if (!car) {
       return res.status(404).json({ error: 'Vehicle not found' });
     }
 
-    res.json(vehicle);
+    const mapped = {
+      ...car,
+      price: Number(car.price),
+      mileage: car.mileage ? Number(car.mileage) : 0,
+      fuelType: car.specs?.fuelType || 'Diesel',
+      engineCC: car.specs?.engineCc || 0,
+      transmission: car.specs?.transmission || 'Manual',
+      bodyType: car.model.toLowerCase().includes('mu-x') ? 'SUV' : car.model.toLowerCase().includes('d-max') ? 'Pickup' : 'Truck',
+      category: 'CAR'
+    };
+
+    res.json(mapped);
   } catch (error) {
     console.error('Error fetching vehicle details:', error);
     res.status(500).json({ error: 'Failed to fetch vehicle details' });

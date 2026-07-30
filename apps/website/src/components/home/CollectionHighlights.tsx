@@ -74,11 +74,11 @@ const CollectionHighlights = ({ vehicles }: CollectionHighlightsProps) => {
   return (
     <>
       {/* ── Vehicle Categories ── */}
-      <section className="py-16 sm:py-20 bg-[#F7F7F7] px-4 sm:px-6">
+      <section className="py-10 sm:py-14 bg-[#F7F7F7] px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section header */}
-          <div className="mb-10 sm:mb-14">
-            <div className="flex items-center gap-3 mb-3">
+          <div className="mb-6 sm:mb-8">
+            <div className="flex items-center gap-3 mb-2">
               <div className="h-[3px] w-10 bg-secondary" />
               <span className="text-secondary font-black text-[10px] sm:text-xs uppercase tracking-[0.2em]">
                 Our Isuzu Range
@@ -148,11 +148,11 @@ const CollectionHighlights = ({ vehicles }: CollectionHighlightsProps) => {
       </section>
 
       {/* ── Why Edwin Kibira Isuzu ── */}
-      <section className="py-16 sm:py-20 bg-[#1A1A1A] px-4 sm:px-6">
+      <section className="py-10 sm:py-14 bg-[#1A1A1A] px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section header */}
-          <div className="text-center mb-10 sm:mb-14">
-            <div className="flex items-center justify-center gap-3 mb-3">
+          <div className="text-center mb-8 sm:mb-10">
+            <div className="flex items-center justify-center gap-3 mb-2">
               <div className="h-[3px] w-8 bg-secondary" />
               <span className="text-secondary font-black text-[10px] sm:text-xs uppercase tracking-[0.2em]">
                 Why Choose Us

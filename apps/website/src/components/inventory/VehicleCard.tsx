@@ -65,7 +65,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
           </div>
           <div className="space-y-1">
             <p className="text-[10px] text-primary font-black uppercase tracking-widest leading-none">Fuel Type</p>
-            <p className="text-sm font-black text-primary capitalize">{vehicle.fuelType.toLowerCase()}</p>
+            <p className="text-sm font-black text-primary capitalize">{(vehicle.fuelType || "Diesel").toLowerCase()}</p>
           </div>
         </div>
 

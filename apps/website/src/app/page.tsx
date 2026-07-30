@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
+import { PrismaClient } from "@repo/database";
 import Hero from "@/components/home/Hero";
 import NewArrivals from "@/components/home/NewArrivals";
 import CollectionHighlights from "@/components/home/CollectionHighlights";
@@ -6,6 +7,9 @@ import { Vehicle } from "@/types/vehicle";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MessageSquare, ChevronRight, MapPin, Clock, CheckCircle } from "lucide-react";
+
+const prisma = new PrismaClient();
+
 
 // ── Default Isuzu Vehicles (shown when API is offline) ──────────────────────
 const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
@@ -115,14 +119,30 @@ const DEFAULT_ISUZU_VEHICLES: Vehicle[] = [
 
 async function getVehicles() {
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:4000";
-    const res = await fetch(`${apiUrl}/api/vehicles`, { next: { revalidate: 0 } });
-    if (res.ok) {
-      const data = await res.json();
-      if (Array.isArray(data) && data.length > 0) return data;
+    const data = await prisma.car.findMany({
+      include: {
+        images: true,
+        specs: true,
+      },
+      orderBy: {
+        createdAt: 'desc'
+      }
+    });
+    if (Array.isArray(data) && data.length > 0) {
+      return data.map((car: any) => ({
+        ...car,
+        price: Number(car.price),
+        mileage: car.mileage ? Number(car.mileage) : 0,
+        fuelType: car.specs?.fuelType || 'Diesel',
+        engineCC: car.specs?.engineCc || 0,
+        transmission: car.specs?.transmission || 'Manual',
+        bodyType: car.model.toLowerCase().includes('mu-x') ? 'SUV' : car.model.toLowerCase().includes('d-max') ? 'Pickup' : 'Truck',
+        category: 'CAR'
+      })) as unknown as Vehicle[];
     }
     return DEFAULT_ISUZU_VEHICLES;
-  } catch {
+  } catch (err) {
+    console.error("Error fetching vehicles:", err);
     return DEFAULT_ISUZU_VEHICLES;
   }
 }
@@ -146,7 +166,7 @@ export default async function Home() {
       <CollectionHighlights vehicles={vehicles} />
 
       {/* ── About / Built for Africa ── */}
-      <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 overflow-hidden">
+      <section className="py-10 sm:py-16 bg-white px-4 sm:px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
@@ -250,7 +270,7 @@ export default async function Home() {
 
       {/* ── Test Drive CTA Banner ── */}
       <section
-        className="relative py-14 sm:py-20 px-4 sm:px-6 overflow-hidden"
+        className="relative py-10 sm:py-14 px-4 sm:px-6 overflow-hidden"
         style={{ background: "linear-gradient(135deg, #D62B2B 0%, #a81e1e 100%)" }}
       >
         {/* Decorative stripes */}
@@ -288,7 +308,7 @@ export default async function Home() {
       </section>
 
       {/* ── Showroom & Hours ── */}
-      <section className="py-16 sm:py-20 bg-[#1A1A1A] px-4 sm:px-6">
+      <section className="py-10 sm:py-16 bg-[#1A1A1A] px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
