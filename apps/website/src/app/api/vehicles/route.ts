@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@repo/database";
+import { prisma } from "@repo/database";
 
 export const dynamic = "force-dynamic";
-const prisma = new PrismaClient();
+
 
 export async function GET() {
   try {

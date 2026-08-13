@@ -1,10 +1,10 @@
 "use server";
 
-import { PrismaClient } from "@repo/database";
+import { prisma } from "@repo/database";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-const prisma = new PrismaClient();
+
 
 export async function createVehicleAction(formData: FormData) {
   try {
@@ -73,6 +73,8 @@ export async function createVehicleAction(formData: FormData) {
         chassisNumber: chassisNumber || undefined,
         licensePlate: licensePlate || undefined,
         importOrLocal,
+        category: formData.get("category") as string || null,
+        features: JSON.parse(formData.get("features") as string || "[]"),
         specs: {
           create: {
             engineType,

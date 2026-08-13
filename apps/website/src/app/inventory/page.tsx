@@ -92,7 +92,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-3', url: '/vehicles/mux-black.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-3', url: '/vehicles/mux-hero.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-dmax-ls',
@@ -109,7 +109,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-4', url: '/vehicles/dmax-silver.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-4', url: '/vehicles/dmax-hero.png', isPrimary: true, position: 0 }]
     },
     {
       id: 'isuzu-nqr',
@@ -143,7 +143,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-6', url: '/vehicles/fvr-truck.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-6', url: '/vehicles/nqr-hero.png', isPrimary: true, position: 0 }]
     }
   ];
 

@@ -1,10 +1,10 @@
-import { PrismaClient } from "@repo/database";
+import { prisma } from "@repo/database";
 import { notFound } from "next/navigation";
 import VehicleClientView from "./VehicleClientView";
+import { Suspense } from "react";
 import { Vehicle } from "@/types/vehicle";
 
 export const dynamic = "force-dynamic";
-const prisma = new PrismaClient();
 
 export default async function VehicleDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

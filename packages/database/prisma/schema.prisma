@@ -64,6 +64,9 @@ model Car {
   status                CarStatus   @default(AVAILABLE)
   description           String?
   location              String?
+  bodyType              String?
+  category              String?
+  features              String[]
   
   // Engagement
   viewsCount            Int         @default(0)

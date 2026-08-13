@@ -1,157 +1,250 @@
-import { PrismaClient } from "@repo/database";
+import { prisma } from "@repo/database";
 import Link from "next/link";
-import { Car, TrendingUp, CheckCircle2, AlertCircle, Plus } from "lucide-react";
+import { Car, TrendingUp, CheckCircle, Clock, AlertCircle, Plus, ArrowRight, Eye } from "lucide-react";
 
 export const dynamic = "force-dynamic";
-const prisma = new PrismaClient();
 
-export default async function AdminDashboardPage() {
-  const [totalCars, availableCars, soldCars, recentCars] = await Promise.all([
-    prisma.car.count(),
-    prisma.car.count({ where: { status: "AVAILABLE" } }),
-    prisma.car.count({ where: { status: "SOLD" } }),
+export default async function AdminDashboard() {
+  // Fetch real data from database
+  const [allCars, recentCars] = await Promise.all([
+    prisma.car.findMany({ include: { images: true } }),
     prisma.car.findMany({
-      include: { images: true, specs: true },
+      include: { images: true },
       orderBy: { createdAt: "desc" },
       take: 5,
     }),
   ]);
 
-  const allCarsForValue = await prisma.car.findMany({ select: { price: true } });
-  const totalValue = allCarsForValue.reduce((sum, c) => sum + Number(c.price), 0);
+  const totalVehicles = allCars.length;
+  const available = allCars.filter((c) => c.status === "AVAILABLE").length;
+  const sold = allCars.filter((c) => c.status === "SOLD").length;
+  const pending = allCars.filter((c) => c.status === "PENDING").length;
 
-  const allCarsForBreakdown = await prisma.car.findMany({ select: { model: true } });
+  // Revenue from sold vehicles
+  const revenue = allCars
+    .filter((c) => c.status === "SOLD")
+    .reduce((sum, c) => sum + Number(c.price), 0);
 
-  const stats = [
-    { label: "Total Vehicles", value: totalCars, icon: Car, color: "bg-blue-50 text-blue-600", trend: "In Stock" },
-    { label: "Available", value: availableCars, icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600", trend: "Ready to Sell" },
-    { label: "Sold Units", value: soldCars, icon: TrendingUp, color: "bg-secondary/10 text-secondary", trend: "All Time" },
-    { label: "Portfolio Value", value: `KES ${(totalValue / 1_000_000).toFixed(1)}M`, icon: TrendingUp, color: "bg-purple-50 text-purple-600", trend: "Total Asking" },
-  ];
+  // Category breakdown
+  const categories: Record<string, number> = {};
+  for (const car of allCars) {
+    const cat = car.category || "Uncategorized";
+    categories[cat] = (categories[cat] || 0) + 1;
+  }
 
-  const categories = [
-    { label: "Pickups (D-Max)", count: allCarsForBreakdown.filter(c => c.model.toLowerCase().includes("d-max")).length, color: "bg-blue-500" },
-    { label: "SUVs (mu-X)", count: allCarsForBreakdown.filter(c => c.model.toLowerCase().includes("mu-x")).length, color: "bg-secondary" },
-    { label: "Trucks", count: allCarsForBreakdown.filter(c => ["nqr", "npr", "fvr", "truck"].some(k => c.model.toLowerCase().includes(k))).length, color: "bg-orange-500" },
-    { label: "Buses", count: allCarsForBreakdown.filter(c => ["bus", "mv114"].some(k => c.model.toLowerCase().includes(k))).length, color: "bg-emerald-500" },
-  ];
+  const formatPrice = (p: number) =>
+    p >= 1_000_000
+      ? `KES ${(p / 1_000_000).toFixed(1)}M`
+      : `KES ${p.toLocaleString()}`;
+
+  const statusColor: Record<string, string> = {
+    AVAILABLE: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    SOLD: "bg-blue-50 text-blue-700 border-blue-200",
+    PENDING: "bg-amber-50 text-amber-700 border-amber-200",
+  };
 
   return (
-    <div className="space-y-6 max-w-7xl">
-      <div>
-        <h1 className="text-2xl font-black text-gray-900 uppercase tracking-wide">Dashboard</h1>
-        <p className="text-gray-400 text-sm mt-1">Welcome back, Edwin. Here&apos;s your dealership overview.</p>
+    <div className="space-y-8 max-w-[1400px]">
+
+      {/* Welcome Banner */}
+      <div className="bg-gradient-to-r from-[#0F172A] to-[#1E293B] rounded-2xl p-6 text-white flex items-center justify-between">
+        <div>
+          <p className="text-white/60 text-sm mb-1">Good day, Edwin 👋</p>
+          <h2 className="text-2xl font-bold">Welcome to your Dealership Dashboard</h2>
+          <p className="text-white/50 text-sm mt-1">
+            You have {available} vehicle{available !== 1 ? "s" : ""} available for sale
+          </p>
+        </div>
+        <Link
+          href="/admin/inventory/new"
+          className="bg-red-600 hover:bg-red-700 transition-colors text-white font-bold px-5 py-3 rounded-xl flex items-center gap-2 shadow-lg shadow-red-900/30 whitespace-nowrap"
+        >
+          <Plus size={18} /> Add Vehicle
+        </Link>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map(({ label, value, icon: Icon, color, trend }) => (
-          <div key={label} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
-            <div className="flex items-start justify-between mb-3">
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${color}`}>
-                <Icon size={20} />
-              </div>
+      {/* KPI Cards */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center">
+              <Car size={20} className="text-gray-600" />
             </div>
-            <p className="text-2xl font-black text-gray-900">{value}</p>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mt-0.5">{label}</p>
-            <p className="text-[10px] text-gray-300 mt-1 uppercase tracking-widest">{trend}</p>
+            <span className="text-xs font-semibold text-gray-400 bg-gray-50 px-2 py-1 rounded-md">Fleet</span>
           </div>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Recent Vehicles */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-gray-100 shadow-sm">
-          <div className="flex items-center justify-between p-5 border-b border-gray-50">
-            <h2 className="font-black text-gray-800 uppercase text-sm tracking-wide">Recent Vehicles</h2>
-            <Link href="/admin/inventory" className="text-xs font-bold text-secondary uppercase tracking-widest hover:underline">
-              View All
-            </Link>
-          </div>
-          <div className="divide-y divide-gray-50">
-            {recentCars.length === 0 ? (
-              <div className="p-8 text-center text-gray-400">
-                <Car size={32} className="mx-auto mb-2 opacity-30" />
-                <p className="text-sm font-bold">No vehicles yet.</p>
-                <Link href="/admin/inventory/new" className="text-xs text-secondary font-bold hover:underline">Add your first vehicle →</Link>
-              </div>
-            ) : recentCars.map((car) => (
-              <div key={car.id} className="flex items-center gap-4 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="w-14 h-10 bg-gray-100 rounded overflow-hidden flex-shrink-0">
-                  {car.images[0] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={car.images[0].url} alt={car.model} className="w-full h-full object-cover" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-300">
-                      <Car size={14} />
-                    </div>
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-black text-gray-800 text-sm truncate">{car.make} {car.model}</p>
-                  <p className="text-xs text-gray-400">{car.year} · {car.condition}</p>
-                </div>
-                <div className="text-right flex-shrink-0">
-                  <p className="font-black text-secondary text-sm">KES {Number(car.price).toLocaleString()}</p>
-                  <span className={`inline-block text-[10px] font-black uppercase px-2 py-0.5 rounded ${
-                    car.status === "AVAILABLE" ? "bg-emerald-50 text-emerald-600" :
-                    car.status === "SOLD" ? "bg-gray-100 text-gray-500" :
-                    "bg-yellow-50 text-yellow-700"
-                  }`}>{car.status}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-3xl font-black text-gray-900">{totalVehicles}</p>
+          <p className="text-sm text-gray-500 mt-1 font-medium">Total Vehicles</p>
         </div>
 
-        {/* Right Column */}
-        <div className="space-y-4">
-          {/* Fleet Breakdown */}
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
-            <h2 className="font-black text-gray-800 uppercase text-sm tracking-wide mb-4">Fleet Breakdown</h2>
-            <div className="space-y-3">
-              {categories.map(({ label, count, color }) => (
-                <div key={label}>
-                  <div className="flex justify-between text-xs font-bold text-gray-500 mb-1">
-                    <span>{label}</span>
-                    <span>{count}</span>
+        <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center">
+              <CheckCircle size={20} className="text-emerald-600" />
+            </div>
+            <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md">Live</span>
+          </div>
+          <p className="text-3xl font-black text-gray-900">{available}</p>
+          <p className="text-sm text-gray-500 mt-1 font-medium">Available for Sale</p>
+        </div>
+
+        <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
+              <TrendingUp size={20} className="text-blue-600" />
+            </div>
+            <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">Sold</span>
+          </div>
+          <p className="text-3xl font-black text-gray-900">{sold}</p>
+          <p className="text-sm text-gray-500 mt-1 font-medium">Units Sold</p>
+        </div>
+
+        <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center">
+              <Clock size={20} className="text-amber-600" />
+            </div>
+            <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-md">Pending</span>
+          </div>
+          <p className="text-3xl font-black text-gray-900">{pending}</p>
+          <p className="text-sm text-gray-500 mt-1 font-medium">Pending Sales</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        {/* Recent Inventory */}
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <div className="p-6 border-b border-gray-50 flex items-center justify-between">
+            <h3 className="font-bold text-gray-900">Recent Inventory</h3>
+            <Link href="/admin/inventory" className="text-sm text-red-600 font-semibold hover:underline flex items-center gap-1">
+              View All <ArrowRight size={14} />
+            </Link>
+          </div>
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50/50">
+              <tr>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Vehicle</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Category</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Price</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Status</th>
+                <th className="px-6 py-3"></th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {recentCars.map((car) => {
+                const heroImg = car.images.find((i) => i.isHero) || car.images[0];
+                return (
+                  <tr key={car.id} className="hover:bg-gray-50/50 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-14 h-10 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
+                          {heroImg ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={heroImg.url} alt={car.model} className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center">
+                              <Car size={16} className="text-gray-300" />
+                            </div>
+                          )}
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900 text-[13px] leading-tight">{car.model}</p>
+                          <p className="text-gray-400 text-[11px]">{car.make} · {car.year}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="text-xs font-semibold text-gray-600 bg-gray-100 px-2.5 py-1 rounded-md">
+                        {car.category || "—"}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="font-bold text-gray-900 text-[13px]">
+                        KES {Number(car.price).toLocaleString()}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${statusColor[car.status] || "bg-gray-50 text-gray-500 border-gray-200"}`}>
+                        {car.status}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <Link href={`/admin/inventory/${car.id}/edit`} className="text-gray-400 hover:text-red-600 transition-colors">
+                        <Eye size={15} />
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Right column */}
+        <div className="space-y-6">
+          {/* Stock by Category */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+            <h3 className="font-bold text-gray-900 mb-5">Stock by Category</h3>
+            <div className="space-y-4">
+              {Object.entries(categories).map(([cat, count]) => {
+                const pct = Math.round((count / totalVehicles) * 100);
+                const colors: Record<string, string> = {
+                  Pickup: "bg-blue-500",
+                  SUV: "bg-purple-500",
+                  Lorry: "bg-red-500",
+                  Bus: "bg-amber-500",
+                  "Spare Parts": "bg-teal-500",
+                  "Other Parts": "bg-gray-400",
+                };
+                const barColor = colors[cat] || "bg-gray-400";
+                return (
+                  <div key={cat}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm font-semibold text-gray-700">{cat}</span>
+                      <span className="text-sm font-bold text-gray-900">{count} <span className="text-gray-400 font-normal">units</span></span>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div className={`h-full rounded-full ${barColor}`} style={{ width: `${pct}%` }}></div>
+                    </div>
                   </div>
-                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div
-                      className={`h-full rounded-full ${color}`}
-                      style={{ width: totalCars > 0 ? `${Math.round((count / totalCars) * 100)}%` : "0%" }}
-                    />
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
-            <h2 className="font-black text-gray-800 uppercase text-sm tracking-wide mb-4">Quick Actions</h2>
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+            <h3 className="font-bold text-gray-900 mb-4">Quick Actions</h3>
             <div className="space-y-2">
-              <Link
-                href="/admin/inventory/new"
-                className="flex items-center gap-3 p-3 bg-secondary text-white rounded-lg font-bold text-sm hover:bg-[#b82222] transition-colors"
-              >
-                <Plus size={16} /> Add New Vehicle
+              <Link href="/admin/inventory/new" className="flex items-center gap-3 p-3 rounded-xl border border-dashed border-red-200 bg-red-50 hover:bg-red-100 transition-colors group">
+                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Plus size={16} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-900">Add New Vehicle</p>
+                  <p className="text-xs text-gray-500">Add a car, bus, truck or parts</p>
+                </div>
               </Link>
-              <Link
-                href="/admin/inventory"
-                className="flex items-center gap-3 p-3 bg-gray-50 text-gray-700 rounded-lg font-bold text-sm hover:bg-gray-100 transition-colors"
-              >
-                <Car size={16} /> Manage Inventory
-              </Link>
-              <Link
-                href="/"
-                target="_blank"
-                className="flex items-center gap-3 p-3 bg-gray-50 text-gray-700 rounded-lg font-bold text-sm hover:bg-gray-100 transition-colors"
-              >
-                <AlertCircle size={16} /> View Live Site
+              <Link href="/admin/inventory" className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
+                <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Car size={16} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-900">Manage Inventory</p>
+                  <p className="text-xs text-gray-500">Edit, update or remove vehicles</p>
+                </div>
               </Link>
             </div>
           </div>
+
+          {/* Revenue Summary */}
+          {sold > 0 && (
+            <div className="bg-gradient-to-br from-[#0F172A] to-[#1e3a5f] rounded-2xl p-6 text-white">
+              <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">Revenue from Sales</p>
+              <p className="text-3xl font-black">{formatPrice(revenue)}</p>
+              <p className="text-white/50 text-xs mt-1">From {sold} sold unit{sold !== 1 ? "s" : ""}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
