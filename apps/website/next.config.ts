@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  trailingSlash: true,
   typescript: { ignoreBuildErrors: true },
   productionBrowserSourceMaps: false,
   images: {
@@ -18,11 +19,6 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      // Serve homepage from downloaded HTML
-      {
-        source: '/',
-        destination: '/index.html',
-      },
       // Proxy ALL Isuzu asset paths to the live site so CSS/JS/fonts load correctly
       {
         source: '/isuzu_tmplt/:path*',

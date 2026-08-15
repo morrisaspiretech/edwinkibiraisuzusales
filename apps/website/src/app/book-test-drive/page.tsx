@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
-import { ChevronRight, Calendar, User, Phone, Car, CheckCircle2, Loader2, MessageSquare, Mail, Shield, Clock, Truck } from "lucide-react";
+import { FaChevronRight, FaCalendarDay, FaUser, FaPhone, FaCar, FaCircleCheck, FaWhatsapp, FaEnvelope, FaShieldHalved, FaClock, FaTruckFront, FaSpinner } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 const isuzuModels = [
@@ -47,7 +47,7 @@ const BookTestDrivePage = () => {
         <div className="max-w-7xl mx-auto pt-10">
           <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary tracking-widest mb-4">
             <Link href="/" className="hover:text-white transition-all">Home</Link>
-            <ChevronRight size={10} className="text-white/30" />
+            <FaChevronRight size={10} className="text-white/30" />
             <span className="text-white/50">Book Test Drive</span>
           </nav>
           <div className="flex items-center gap-3 mb-3">
@@ -75,17 +75,17 @@ const BookTestDrivePage = () => {
                 <span className="text-secondary font-black text-xs uppercase tracking-widest">What to Expect</span>
               </div>
               <h2 className="text-2xl font-black text-primary uppercase mb-3">Your Isuzu Test Drive Experience</h2>
-              <p className="text-gray-500 leading-relaxed text-sm">
+              <p className="text-[#1a1a1a] font-medium leading-relaxed text-sm">
                 Our trained Isuzu advisors will prepare your chosen vehicle and guide you through all its features. We&apos;ll answer every question and make sure you leave confident in your choice.
               </p>
             </div>
 
             <div className="space-y-4">
               {[
-                { icon: <Truck size={20} />, title: "Any Isuzu Model", desc: "Test the D-Max, mu-X, or any commercial vehicle in our range." },
-                { icon: <Calendar size={20} />, title: "Flexible Scheduling", desc: "Mon–Sat: 8:00 AM – 6:00 PM. We work around you." },
-                { icon: <User size={20} />, title: "Isuzu-Trained Advisor", desc: "A specialist accompanies you to answer all your questions." },
-                { icon: <Shield size={20} />, title: "No Obligation", desc: "Take your time — zero pressure to buy on the day." },
+                { icon: <FaTruckFront size={20} />, title: "Any Isuzu Model", desc: "Test the D-Max, mu-X, or any commercial vehicle in our range." },
+                { icon: <FaCalendarDay size={20} />, title: "Flexible Scheduling", desc: "Mon–Sat: 8:00 AM – 6:00 PM. We work around you." },
+                { icon: <FaUser size={20} />, title: "Isuzu-Trained Advisor", desc: "A specialist accompanies you to answer all your questions." },
+                { icon: <FaShieldHalved size={20} />, title: "No Obligation", desc: "Take your time — zero pressure to buy on the day." },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -108,17 +108,17 @@ const BookTestDrivePage = () => {
             {/* Contact Box */}
             <div className="bg-primary p-8 text-white space-y-4 border-l-4 border-secondary">
               <p className="font-black uppercase text-xs tracking-widest text-secondary">Or Contact Us Directly</p>
-              <a href="tel:+254700000000" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
-                <Phone size={16} className="text-secondary" /> +254 700 000 000
+              <a href="tel:+254768351483" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <FaPhone size={16} className="text-secondary" /> 0768 351 483
               </a>
-              <a href="https://wa.me/254700000000" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
-                <MessageSquare size={16} className="text-secondary" /> WhatsApp Us
+              <a href="https://wa.me/254768351483" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <FaWhatsapp size={16} className="text-secondary" /> WhatsApp Us
               </a>
-              <a href="mailto:info@edwinkibiraisuzu.co.ke" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
-                <Mail size={16} className="text-secondary" /> info@edwinkibiraisuzu.co.ke
+              <a href="mailto:edwinkibiracfg@gmail.com" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <FaEnvelope size={16} className="text-secondary" /> edwinkibiracfg@gmail.com
               </a>
               <div className="flex items-center gap-3 text-white/40 text-sm pt-2 border-t border-white/10">
-                <Clock size={14} className="text-secondary flex-shrink-0" />
+                <FaClock size={14} className="text-secondary flex-shrink-0" />
                 <span>Mon–Fri: 8AM–6PM | Sat: 9AM–4PM</span>
               </div>
             </div>
@@ -133,7 +133,7 @@ const BookTestDrivePage = () => {
                 className="flex flex-col items-center justify-center text-center space-y-6 py-20 border-t-4 border-secondary bg-white shadow-xl px-10"
               >
                 <div className="w-20 h-20 bg-secondary flex items-center justify-center text-white">
-                  <CheckCircle2 size={40} />
+                  <FaCircleCheck size={40} />
                 </div>
                 <h2 className="text-3xl font-black text-primary uppercase">Test Drive Booked!</h2>
                 <p className="text-gray-500 max-w-md leading-relaxed">
@@ -178,7 +178,7 @@ const BookTestDrivePage = () => {
                     <input
                       required
                       type="tel"
-                      placeholder="+254 700 000 000"
+                      placeholder="0768 351 483"
                       value={formData.phone}
                       onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
                       className="w-full bg-white border border-gray-200 px-4 py-3.5 text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
@@ -257,9 +257,9 @@ const BookTestDrivePage = () => {
                   className="w-full bg-secondary text-white py-5 font-black uppercase tracking-widest text-sm hover:bg-accent-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50"
                 >
                   {isSubmitting ? (
-                    <><Loader2 className="animate-spin" size={18} /> Booking...</>
+                    <><FaSpinner className="animate-spin" size={18} /> Booking...</>
                   ) : (
-                    <><Calendar size={18} /> Confirm Isuzu Test Drive</>
+                    <><FaCalendarDay size={18} /> Confirm Isuzu Test Drive</>
                   )}
                 </button>
 

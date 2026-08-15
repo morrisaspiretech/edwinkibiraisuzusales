@@ -2,8 +2,9 @@
 
 import React, { useState, useTransition } from "react";
 import Link from "next/link";
-import { ChevronLeft, Plus, Trash2, Check, AlertCircle, Loader2, Image as ImageIcon } from "lucide-react";
+
 import { createVehicleAction } from "./actions";
+import { FaChevronLeft, FaPlus, FaTrash, FaCheck, FaCircleExclamation, FaSpinner, FaImage } from "react-icons/fa6";
 
 const FEATURES_LIST = [
   "Power Steering", "Air Conditioning", "ABS Brakes", "Dual Airbags",
@@ -54,7 +55,7 @@ export default function NewVehiclePage() {
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center bg-white rounded-2xl shadow-sm border border-gray-100 max-w-3xl mx-auto mt-10">
         <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
-          <Check size={36} className="text-green-600" />
+          <FaCheck size={36} className="text-green-600" />
         </div>
         <h2 className="text-3xl font-bold text-gray-900 mb-3">Vehicle Added Successfully</h2>
         <p className="text-gray-500 mb-8 max-w-md">The vehicle has been securely saved to the inventory database and is now live on the public showroom.</p>
@@ -76,7 +77,7 @@ export default function NewVehiclePage() {
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link href="/admin/inventory" className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors shadow-sm">
-            <ChevronLeft size={20} />
+            <FaChevronLeft size={20} />
           </Link>
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Add New Vehicle</h1>
@@ -87,7 +88,7 @@ export default function NewVehiclePage() {
 
       {error && (
         <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 rounded-xl p-5 mb-8 shadow-sm">
-          <AlertCircle size={20} className="flex-shrink-0" /> 
+          <FaCircleExclamation size={20} className="flex-shrink-0" /> 
           <p className="font-medium text-sm">{error}</p>
         </div>
       )}
@@ -184,7 +185,7 @@ export default function NewVehiclePage() {
                   <div className={`w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 ${
                     features.includes(feature) ? "bg-red-500" : "border-2 border-gray-300 bg-white"
                   }`}>
-                    {features.includes(feature) && <Check size={12} className="text-white font-bold" />}
+                    {features.includes(feature) && <FaCheck size={12} className="text-white font-bold" />}
                   </div>
                   {feature}
                 </button>
@@ -246,7 +247,7 @@ export default function NewVehiclePage() {
                 onClick={addImage}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 bg-red-50 px-3 py-1.5 rounded-lg hover:bg-red-100 transition-colors"
               >
-                <Plus size={14} /> Add Image
+                <FaPlus size={14} /> Add Image
               </button>
             </div>
             
@@ -263,7 +264,7 @@ export default function NewVehiclePage() {
                         <img src={img.url} alt="" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <ImageIcon size={18} className="text-gray-400" />
+                          <FaImage size={18} className="text-gray-400" />
                         </div>
                       )}
                     </div>
@@ -286,7 +287,7 @@ export default function NewVehiclePage() {
                         </button>
                         {images.length > 1 && (
                           <button type="button" onClick={() => removeImage(i)} className="text-gray-400 hover:text-red-500 transition-colors p-1 bg-white rounded shadow-sm border border-gray-200">
-                            <Trash2 size={14} />
+                            <FaTrash size={14} />
                           </button>
                         )}
                       </div>
@@ -308,7 +309,7 @@ export default function NewVehiclePage() {
                 disabled={isPending}
                 className="w-full bg-red-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-red-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2 shadow-sm"
               >
-                {isPending ? <><Loader2 size={18} className="animate-spin" /> Saving to Database...</> : "Publish Vehicle"}
+                {isPending ? <><FaSpinner size={18} className="animate-spin" /> Saving to Database...</> : "Publish Vehicle"}
               </button>
               
               <Link href="/admin/inventory" className="w-full border border-gray-200 text-gray-600 bg-gray-50 px-6 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center">

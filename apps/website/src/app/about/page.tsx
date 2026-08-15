@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { Shield, Award, Users, ChevronRight, ArrowRight, Truck, Car, Bus, Phone, MessageSquare } from "lucide-react";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
+import { FaShield, FaAward, FaUsers, FaChevronRight, FaArrowRight, FaTruck, FaCar, FaBus, FaPhone, FaMessage } from "react-icons/fa6";
 
 export default function AboutPage() {
   return (
@@ -32,7 +33,7 @@ export default function AboutPage() {
             {/* Breadcrumb */}
             <nav className="flex items-center justify-center gap-2 text-xs font-bold uppercase text-secondary mb-6 tracking-widest">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <ChevronRight size={14} className="text-white/30" />
+              <FaChevronRight size={14} className="text-white/30" />
               <span className="text-white/60">About Us</span>
             </nav>
 
@@ -61,10 +62,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: "Isuzu Vehicles Sold", value: "500+", icon: <Truck size={28} /> },
-              { label: "Happy Clients", value: "400+", icon: <Users size={28} /> },
-              { label: "Years Experience", value: "10+", icon: <Award size={28} /> },
-              { label: "Customer Satisfaction", value: "98%", icon: <Shield size={28} /> },
+              { label: "Isuzu Vehicles Sold", value: "500+", icon: <FaTruck size={28} /> },
+              { label: "Happy Clients", value: "400+", icon: <FaUsers size={28} /> },
+              { label: "Years Experience", value: "10+", icon: <FaAward size={28} /> },
+              { label: "Customer Satisfaction", value: "98%", icon: <FaShield size={28} /> },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -117,9 +118,9 @@ export default function AboutPage() {
 
             <div className="space-y-4 pt-2">
               {[
-                { title: "Genuine Isuzu Vehicles", desc: "Every vehicle is factory-certified and authentic", icon: <Shield className="text-secondary" size={20} /> },
-                { title: "Trained Isuzu Specialists", desc: "Our team knows every Isuzu model inside and out", icon: <Award className="text-secondary" size={20} /> },
-                { title: "Full After-Sales Support", desc: "Service, spare parts and technical assistance", icon: <Users className="text-secondary" size={20} /> },
+                { title: "Genuine Isuzu Vehicles", desc: "Every vehicle is factory-certified and authentic", icon: <FaShield className="text-secondary" size={20} /> },
+                { title: "Trained Isuzu Specialists", desc: "Our team knows every Isuzu model inside and out", icon: <FaAward className="text-secondary" size={20} /> },
+                { title: "Full After-Sales Support", desc: "Service, spare parts and technical assistance", icon: <FaUsers className="text-secondary" size={20} /> },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4 group">
                   <div className="w-10 h-10 bg-secondary/10 group-hover:bg-secondary flex items-center justify-center transition-all flex-shrink-0">
@@ -153,21 +154,21 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                icon: <Truck size={40} />,
+                icon: <FaTruck size={40} />,
                 title: "Isuzu D-Max",
                 subtitle: "Pickup Trucks",
                 desc: "From the workhorse D-Max SX to the premium V-Cross 4x4. The #1 pickup in Kenya for reliability and performance.",
                 link: "/inventory?search=D-Max",
               },
               {
-                icon: <Car size={40} />,
+                icon: <FaCar size={40} />,
                 title: "Isuzu mu-X",
                 subtitle: "SUV / Family Car",
                 desc: "A spacious 7-seater SUV with powerful diesel engine, modern technology, and premium interior. Perfect for Kenyan roads.",
                 link: "/inventory?search=mu-X",
               },
               {
-                icon: <Bus size={40} />,
+                icon: <FaBus size={40} />,
                 title: "Isuzu N-Series",
                 subtitle: "Commercial Trucks & Buses",
                 desc: "NPR, NQR, NPS trucks and FVR/FVZ heavy trucks for transport businesses, logistics and construction.",
@@ -187,7 +188,7 @@ export default function AboutPage() {
                 <p className="text-secondary font-bold text-xs uppercase tracking-widest mb-3">{model.subtitle}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{model.desc}</p>
                 <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 transition-all">
-                  Explore Models <ChevronRight size={14} />
+                  Explore Models <FaChevronRight size={14} />
                 </div>
               </Link>
             ))}
@@ -217,21 +218,21 @@ export default function AboutPage() {
                 href="/inventory"
                 className="bg-secondary text-white px-8 py-5 font-black uppercase text-sm tracking-widest hover:bg-accent-dark transition-all flex items-center justify-center gap-2"
               >
-                View All Vehicles <ArrowRight size={18} />
+                View All Vehicles <FaArrowRight size={18} />
               </Link>
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/254768351483"
                 target="_blank"
                 rel="noreferrer"
                 className="border-2 border-white/30 text-white px-8 py-5 font-black uppercase text-sm tracking-widest hover:border-secondary hover:text-secondary transition-all flex items-center justify-center gap-2"
               >
-                <MessageSquare size={18} /> WhatsApp Us
+                <FaMessage size={18} /> WhatsApp Us
               </a>
               <a
-                href="tel:+254700000000"
+                href="tel:+254768351483"
                 className="border-2 border-white/30 text-white px-8 py-5 font-black uppercase text-sm tracking-widest hover:border-secondary hover:text-secondary transition-all flex items-center justify-center gap-2"
               >
-                <Phone size={18} /> Call Us
+                <FaPhone size={18} /> Call Us
               </a>
             </div>
           </div>

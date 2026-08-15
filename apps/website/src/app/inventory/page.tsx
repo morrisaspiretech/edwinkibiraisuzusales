@@ -5,8 +5,9 @@ import Navbar from "@/components/layout/Navbar";
 import FilterSidebar from "@/components/inventory/FilterSidebar";
 import VehicleGrid from "@/components/inventory/VehicleGrid";
 import { Vehicle } from "@/types/vehicle";
-import { ChevronRight, LayoutGrid, List, SortAsc } from "lucide-react";
+
 import Link from "next/link";
+import { FaChevronRight, FaTableCells, FaList, FaArrowUpAZ } from "react-icons/fa6";
 
 const InventoryPage = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
@@ -44,107 +45,192 @@ const InventoryPage = () => {
 
   const getFallbackData = (): any[] => [
     {
-      id: 'isuzu-dmax-vcross',
+      id: 'isuzu-mux-ls-t',
       make: 'Isuzu',
-      model: 'D-Max V-Cross 4x4',
+      model: 'mu-X LS-T',
       year: 2024,
-      price: 6800000,
+      price: 0,
       engineCC: 2999,
       transmission: 'AUTOMATIC',
       fuelType: 'DIESEL',
-      condition: 'FOREIGN',
-      bodyType: 'PICKUP',
-      mileage: 0,
-      category: 'CAR',
-      status: 'AVAILABLE',
-      createdAt: new Date().toISOString(),
-      images: [{ id: 'img-1', url: '/vehicles/dmax-hero.png', isPrimary: true, position: 0 }]
-    },
-    {
-      id: 'isuzu-mux-lst',
-      make: 'Isuzu',
-      model: 'mu-X LS-T 4x2',
-      year: 2024,
-      price: 7800000,
-      engineCC: 1898,
-      transmission: 'AUTOMATIC',
-      fuelType: 'DIESEL',
-      condition: 'FOREIGN',
+      condition: 'NEW',
       bodyType: 'SUV',
       mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-2', url: '/vehicles/mux-hero.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-1', url: '/vehicles/mux-1900cc.png', isHero: true, orderIndex: 0 }]
     },
     {
-      id: 'isuzu-mux-lsu',
+      id: 'isuzu-mux-ls-u',
       make: 'Isuzu',
-      model: 'mu-X LS-U 4x4',
+      model: 'mu-X LS-U',
       year: 2024,
-      price: 9100000,
+      price: 0,
       engineCC: 2999,
       transmission: 'AUTOMATIC',
       fuelType: 'DIESEL',
-      condition: 'FOREIGN',
+      condition: 'NEW',
       bodyType: 'SUV',
       mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-3', url: '/vehicles/mux-hero.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-2', url: '/vehicles/mux-3000cc.png', isHero: true, orderIndex: 0 }]
     },
     {
-      id: 'isuzu-dmax-ls',
+      id: 'isuzu-dmax-single-cab',
       make: 'Isuzu',
-      model: 'D-Max LS 4x2',
+      model: 'D-Max Single Cab',
       year: 2024,
-      price: 5900000,
+      price: 0,
       engineCC: 1898,
-      transmission: 'AUTOMATIC',
+      transmission: 'MANUAL',
       fuelType: 'DIESEL',
-      condition: 'FOREIGN',
+      condition: 'NEW',
       bodyType: 'PICKUP',
       mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-4', url: '/vehicles/dmax-hero.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-3', url: '/vehicles/dmax-single.webp', isHero: true, orderIndex: 0 }]
     },
     {
-      id: 'isuzu-nqr',
+      id: 'isuzu-dmax-double-cab',
       make: 'Isuzu',
-      model: 'NQR 75 Medium Truck',
-      year: 2023,
-      price: 5200000,
+      model: 'D-Max Double Cab',
+      year: 2024,
+      price: 0,
+      engineCC: 1898,
+      transmission: 'AUTOMATIC',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'PICKUP',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-4', url: '/vehicles/dmax-double.webp', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'isuzu-nqr81k',
+      make: 'Isuzu',
+      model: 'NQR81K Light Truck',
+      year: 2024,
+      price: 0,
+      engineCC: 4778,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'TRUCK',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-5', url: '/vehicles/n-series-truck.webp', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'isuzu-frr90n',
+      make: 'Isuzu',
+      model: 'FRR 90N Medium Truck',
+      year: 2024,
+      price: 0,
       engineCC: 5193,
       transmission: 'MANUAL',
       fuelType: 'DIESEL',
-      condition: 'FOREIGN',
+      condition: 'NEW',
       bodyType: 'TRUCK',
       mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-5', url: '/vehicles/nqr-hero.png', isPrimary: true, position: 0 }]
+      images: [{ id: 'img-6', url: '/vehicles/f-series-truck.webp', isHero: true, orderIndex: 0 }]
     },
     {
-      id: 'isuzu-npr',
+      id: 'isuzu-gxz-heavy',
       make: 'Isuzu',
-      model: 'NPR 75 Light Truck',
-      year: 2023,
-      price: 4100000,
-      engineCC: 3856,
+      model: 'GXZ Heavy Duty Truck',
+      year: 2024,
+      price: 0,
+      engineCC: 15681,
       transmission: 'MANUAL',
       fuelType: 'DIESEL',
-      condition: 'FOREIGN',
+      condition: 'NEW',
       bodyType: 'TRUCK',
       mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-6', url: '/vehicles/nqr-hero.png', isPrimary: true, position: 0 }]
-    }
+      images: [{ id: 'img-7', url: '/vehicles/gxz-mover.webp', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'isuzu-nmr85-bus-25',
+      make: 'Isuzu',
+      model: 'NMR85 25 Seater Bus',
+      year: 2024,
+      price: 0,
+      engineCC: 2999,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'BUS',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-8', url: '/vehicles/nmr85-bus.webp', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'isuzu-nqr-bus-33',
+      make: 'Isuzu',
+      model: 'NQR 33 Seater Bus',
+      year: 2024,
+      price: 0,
+      engineCC: 4778,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'BUS',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-9', url: '/vehicles/nqr-bus.webp', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'isuzu-frr90-bus-50',
+      make: 'Isuzu',
+      model: 'FRR90 50 Seater Bus',
+      year: 2024,
+      price: 0,
+      engineCC: 5193,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'BUS',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-10', url: '/vehicles/frr90-bus.webp', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'isuzu-fvr34s-bus-67',
+      make: 'Isuzu',
+      model: 'FVR34S 67 Seater Bus',
+      year: 2024,
+      price: 0,
+      engineCC: 7790,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'BUS',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-11', url: '/vehicles/fvr34s-bus.webp', isHero: true, orderIndex: 0 }]
+    },
   ];
 
   // Filter Logic
@@ -203,20 +289,20 @@ const InventoryPage = () => {
       <Navbar />
       
       {/* Page Header */}
-      <div className="pt-8 pb-6 bg-primary px-6 border-b-4 border-secondary">
+      <div className="pt-8 pb-6 bg-white border-b-2 border-[#D62B2B] px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div>
-            <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary/60 tracking-widest mb-2">
-              <Link href="/" className="hover:text-secondary transition-all">Home</Link>
-              <ChevronRight size={10} />
-              <span className="text-white/40">Showroom</span>
+            <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-gray-400 tracking-widest mb-2">
+              <Link href="/" className="hover:text-[#D62B2B] transition-all">Home</Link>
+              <FaChevronRight size={10} />
+              <span className="text-[#D62B2B]">Showroom</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-black text-white uppercase leading-none">
-              Isuzu <span className="text-secondary">Showroom</span>
-              <span className="ml-4 text-sm font-bold text-white/30 tabular-nums">{filteredVehicles.length} vehicles</span>
+            <h1 className="text-2xl md:text-3xl font-black text-[#1a1a1a] uppercase leading-none">
+              Isuzu <span className="text-[#D62B2B]">Showroom</span>
+              <span className="ml-3 text-sm font-bold text-gray-400 tabular-nums">{filteredVehicles.length} vehicles</span>
             </h1>
           </div>
-          <p className="hidden md:block text-white/30 font-bold uppercase tracking-widest text-xs text-right">
+          <p className="hidden md:block text-[#D62B2B] font-black uppercase tracking-widest text-xs text-right">
             Edwin Kibira <br/> Isuzu Sales
           </p>
         </div>
@@ -235,14 +321,14 @@ const InventoryPage = () => {
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 sticky top-20 bg-white z-20 pt-2">
               <div className="flex items-center gap-6">
                 <button className="flex items-center gap-2 text-[10px] font-bold uppercase text-primary tracking-widest">
-                  <LayoutGrid className="w-4 h-4 text-secondary" /> Grid
+                  <FaTableCells className="w-4 h-4 text-secondary" /> Grid
                 </button>
                 <button className="flex items-center gap-2 text-[10px] font-bold uppercase text-primary/30 hover:text-primary transition-colors tracking-widest">
-                  <List className="w-4 h-4" /> List
+                  <FaList className="w-4 h-4" /> List
                 </button>
               </div>
               <div className="flex items-center gap-2">
-                <SortAsc className="w-4 h-4 text-secondary" />
+                <FaArrowUpAZ className="w-4 h-4 text-secondary" />
                 <select className="bg-transparent text-[10px] font-bold uppercase text-primary focus:outline-none cursor-pointer tracking-widest border-none">
                   <option>Newest Arrivals</option>
                   <option>Price: Low to High</option>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Phone, MessageSquare, ArrowRight } from "lucide-react";
+import { FaMessage, FaChevronLeft, FaChevronRight, FaPhone, FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { Vehicle } from "@/types/vehicle";
 
@@ -15,46 +15,46 @@ const isuzuSlides = [
   {
     id: "slide-dmax",
     eyebrow: "Best Seller · Pickup Truck",
-    title: "ISUZU",
-    highlight: "D-MAX",
-    subtitle: "Kenya's Most Trusted Pickup Truck",
-    body: "Built for rough terrain and long hauls. The D-Max delivers unmatched durability, power, and value across every road in Kenya.",
+    title: "Edwin Kibira",
+    highlight: "Isuzu Sales",
+    subtitle: "Your Trusted Authorised Isuzu Dealer in Kenya",
+    body: "Buy brand-new, zero-mileage Isuzu trucks, buses & pickups in Kenya. Edwin Kibira Isuzu Sales — serving Kenyans with pride.",
     image: "/vehicles/dmax-hero.png",
-    cta: "Explore D-Max",
-    ctaSecondary: "Book Test Drive",
-    link: "/inventory?search=D-Max",
+    cta: "Browse Pickups",
+    ctaSecondary: "Book a Test Drive",
+    link: "/vehicles/double-cabin",
     linkSecondary: "/book-test-drive",
-    badge: "BEST SELLER",
+    badge: "AUTHORISED DEALER",
     accent: "#D62B2B",
   },
   {
     id: "slide-mux",
-    eyebrow: "New Arrival · Premium SUV",
+    eyebrow: "Premium SUV · Zero Mileage",
     title: "ISUZU",
     highlight: "mu-X",
-    subtitle: "Premium 7-Seater Family SUV",
-    body: "Command every road in style. The mu-X combines luxurious comfort with legendary Isuzu off-road capability for the whole family.",
+    subtitle: "Premium 7-Seater Family SUV — Brand New",
+    body: "Command every road in style. The Isuzu mu-X combines luxurious comfort with legendary off-road capability. Up to 100% bank financing available.",
     image: "/vehicles/mux-hero.png",
-    cta: "Explore mu-X",
+    cta: "View mu-X SUV",
     ctaSecondary: "Request Quote",
-    link: "/inventory?search=mu-X",
+    link: "/vehicles/mu-x-3000cc",
     linkSecondary: "/contact",
-    badge: "NEW ARRIVAL",
+    badge: "NEW · ZERO MILEAGE",
     accent: "#D62B2B",
   },
   {
     id: "slide-truck",
-    eyebrow: "Commercial Fleet · N-Series",
+    eyebrow: "Commercial Fleet · N & F Series",
     title: "ISUZU",
-    highlight: "N-SERIES",
-    subtitle: "Commercial Trucks & Buses",
-    body: "Powering Kenya's business forward. The N-Series range delivers reliable commercial performance for fleets of every size.",
-    image: "/vehicles/nqr-hero.png",
-    cta: "View Commercial",
+    highlight: "Trucks & Buses",
+    subtitle: "Heavy Duty Commercial Vehicles",
+    body: "Powering Kenyan businesses forward. Our N-Series and F-Series trucks and buses deliver unmatched reliability for every fleet size.",
+    image: "/vehicles/n-series-truck.webp",
+    cta: "View Trucks",
     ctaSecondary: "Get a Quote",
-    link: "/inventory?search=N-Series",
+    link: "/vehicles/light-trucks-n-series",
     linkSecondary: "/contact",
-    badge: "COMMERCIAL",
+    badge: "COMMERCIAL FLEET",
     accent: "#D62B2B",
   },
 ];
@@ -119,49 +119,73 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
         />
       </div>
 
-      {/* ── Main content ── */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-5 sm:px-8 lg:px-16 max-w-7xl mx-auto w-full">
-        <div className="max-w-2xl">
-
-          {/* Eyebrow */}
+      {/* ── Background Image with 'Moving' Animation ── */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <div className="absolute inset-0 bg-black/60 z-10" /> {/* Dark overlay for text readability */}
           <motion.div
-            key={`eye-${currentSlide}`}
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-            className="flex items-center gap-3 mb-4 sm:mb-5"
+            animate={{ scale: [1, 1.05] }}
+            transition={{ duration: 10, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+            className="w-full h-full"
           >
-            <span className="bg-secondary text-white text-[10px] sm:text-xs font-black px-3 py-1 tracking-[0.18em] uppercase rounded-[2px]">
+            <Image
+              src={current.image}
+              alt={current.title}
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* ── Content ── */}
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 sm:px-8 flex flex-col justify-center">
+        <div className="max-w-3xl mt-20">
+          {/* Eyebrow badge */}
+          <motion.div
+            key={`badge-${currentSlide}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <span className="bg-secondary text-white text-[10px] sm:text-xs font-black px-4 py-1.5 uppercase tracking-widest shadow-lg">
               {current.badge}
             </span>
-            <div className="h-px w-10 bg-white/30" />
-            <span className="text-white/60 text-[10px] sm:text-xs font-semibold uppercase tracking-widest hidden sm:block">
+            <span className="text-white/80 text-[10px] sm:text-xs font-bold uppercase tracking-widest">
               {current.eyebrow}
             </span>
           </motion.div>
 
-          {/* Title */}
+          {/* Main Title - Fixed Typography */}
           <motion.div
             key={`title-${currentSlide}`}
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.28, duration: 0.6 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <h1 className="font-black uppercase leading-[0.9] tracking-tight text-white mb-3"
-              style={{ fontSize: "clamp(3rem, 9vw, 7rem)" }}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight text-white mb-4">
               {current.title}{" "}
-              <span className="text-secondary">{current.highlight}</span>
+              <span className="text-secondary block sm:inline">{current.highlight}</span>
             </h1>
           </motion.div>
 
           {/* Subtitle */}
           <motion.p
             key={`sub-${currentSlide}`}
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-white font-semibold mb-2 tracking-wide"
-            style={{ fontSize: "clamp(1rem, 2.5vw, 1.4rem)" }}
+            className="text-white/90 font-bold mb-4 text-lg sm:text-xl md:text-2xl"
           >
             {current.subtitle}
           </motion.p>
@@ -171,26 +195,26 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
             key={`body-${currentSlide}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.52 }}
-            className="text-white/60 text-sm sm:text-base leading-relaxed mb-8 sm:mb-10 max-w-xl"
+            transition={{ delay: 0.5 }}
+            className="text-white/70 text-sm sm:text-base leading-relaxed mb-10 max-w-2xl font-medium"
           >
             {current.body}
           </motion.p>
 
-          {/* CTA Buttons */}
+        {/* ── CTA Buttons ── */}
           <motion.div
             key={`cta-${currentSlide}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.62 }}
-            className="flex flex-wrap gap-3 sm:gap-4"
+            className="flex flex-wrap gap-3 sm:gap-4 mb-8"
           >
             <Link
               href={current.link}
               className="inline-flex items-center gap-2 bg-secondary text-white font-black uppercase text-xs sm:text-sm tracking-widest px-7 sm:px-10 py-3.5 sm:py-4 hover:bg-[#b82222] transition-all duration-200"
             >
               {current.cta}
-              <ArrowRight size={16} strokeWidth={2.5} />
+              <FaArrowRight size={16} />
             </Link>
             <Link
               href={current.linkSecondary}
@@ -199,6 +223,9 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
               {current.ctaSecondary}
             </Link>
           </motion.div>
+
+
+
         </div>
       </div>
 
@@ -209,7 +236,7 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
           aria-label="Previous slide"
           className="w-11 h-11 border border-white/30 text-white hover:bg-secondary hover:border-secondary transition-all flex items-center justify-center backdrop-blur-sm"
         >
-          <ChevronLeft size={20} />
+          <FaChevronLeft size={20} />
         </button>
         <span className="text-white/50 font-black text-xs tabular-nums">
           {String(currentSlide + 1).padStart(2, "0")}/{String(slides.length).padStart(2, "0")}
@@ -219,7 +246,7 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
           aria-label="Next slide"
           className="w-11 h-11 border border-white/30 text-white hover:bg-secondary hover:border-secondary transition-all flex items-center justify-center backdrop-blur-sm"
         >
-          <ChevronRight size={20} />
+          <FaChevronRight size={20} />
         </button>
       </div>
 
@@ -244,30 +271,30 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full flex items-center justify-between py-2.5 sm:py-3">
           <div className="flex items-center gap-4 sm:gap-8">
             <a
-              href="tel:+254700000000"
+              href="tel:0768351483"
               className="flex items-center gap-1.5 sm:gap-2 text-white text-xs sm:text-sm font-bold hover:text-white/80 transition-colors"
             >
-              <Phone size={13} />
-              <span className="hidden sm:inline">+254 700 000 000</span>
+              <FaPhone size={13} />
+              <span className="hidden sm:inline">0768 351 483</span>
               <span className="sm:hidden">Call</span>
             </a>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254768351483"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1.5 sm:gap-2 text-white text-xs sm:text-sm font-bold hover:text-white/80 transition-colors"
             >
-              <MessageSquare size={13} />
+              <FaMessage size={13} />
               WhatsApp
             </a>
           </div>
           <Link
-            href="/inventory"
+            href="/vehicles"
             className="text-white text-xs sm:text-sm font-black uppercase tracking-widest flex items-center gap-1.5 sm:gap-2 hover:gap-3 sm:hover:gap-4 transition-all"
           >
-            <span className="hidden sm:inline">View All Isuzu Vehicles</span>
+            <span className="hidden sm:inline">Browse All Vehicles</span>
             <span className="sm:hidden">View All</span>
-            <ChevronRight size={15} />
+            <FaChevronRight size={15} />
           </Link>
         </div>
       </div>

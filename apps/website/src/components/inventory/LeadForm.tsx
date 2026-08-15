@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, Loader2, User, Phone, Mail, MessageSquare } from "lucide-react";
+import { FaPaperPlane, FaCircleCheck, FaSpinner, FaUser, FaPhone, FaEnvelope, FaMessage } from "react-icons/fa6";
+
 
 interface LeadFormProps {
   vehicleId: string;
@@ -32,7 +33,7 @@ const LeadForm = ({ vehicleId, vehicleName }: LeadFormProps) => {
     return (
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 text-center space-y-3">
         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-600">
-          <CheckCircle2 size={24} />
+          <FaCircleCheck size={24} />
         </div>
         <h3 className="text-sm font-black text-primary uppercase">Request Received</h3>
         <p className="text-xs text-gray-500 font-medium">
@@ -59,7 +60,7 @@ const LeadForm = ({ vehicleId, vehicleName }: LeadFormProps) => {
         <div className="space-y-1">
           <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Name</label>
           <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
+            <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
             <input 
               required
               type="text" 
@@ -74,7 +75,7 @@ const LeadForm = ({ vehicleId, vehicleName }: LeadFormProps) => {
         <div className="space-y-1">
           <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Phone</label>
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
+            <FaPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
             <input 
               required
               type="tel" 
@@ -89,7 +90,7 @@ const LeadForm = ({ vehicleId, vehicleName }: LeadFormProps) => {
         <div className="space-y-1">
           <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Message</label>
           <div className="relative">
-            <MessageSquare className="absolute left-3 top-3 text-gray-400" size={14} />
+            <FaMessage className="absolute left-3 top-3 text-gray-400" size={14} />
             <textarea 
               rows={2}
               value={formData.message}
@@ -103,9 +104,9 @@ const LeadForm = ({ vehicleId, vehicleName }: LeadFormProps) => {
           disabled={isSubmitting}
           className="w-full bg-primary text-white py-3 rounded font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-black transition-all mt-2 disabled:opacity-50"
         >
-          {isSubmitting ? <Loader2 className="animate-spin" size={14} /> : (
+          {isSubmitting ? <FaSpinner className="animate-spin" size={14} /> : (
             <>
-              <Send size={14} /> Send
+              <FaPaperPlane size={14} /> Send
             </>
           )}
         </button>

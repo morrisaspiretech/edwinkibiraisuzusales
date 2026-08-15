@@ -2,11 +2,9 @@
 
 import React, { useState, useTransition } from "react";
 import Link from "next/link";
-import {
-  ChevronLeft, Plus, Trash2, Check, AlertCircle,
-  Loader2, Image as ImageIcon, CheckCircle
-} from "lucide-react";
+
 import { updateVehicleAction } from "./actions";
+import { FaChevronLeft, FaPlus, FaTrash, FaCheck, FaCircleExclamation, FaSpinner, FaImage, FaCircleCheck } from "react-icons/fa6";
 
 const FEATURES_LIST = [
   "Power Steering", "Air Conditioning", "ABS Brakes", "Dual Airbags",
@@ -63,7 +61,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
     return (
       <div className="flex flex-col items-center justify-center py-24 text-center bg-white rounded-2xl border border-gray-100 shadow-sm max-w-2xl mx-auto">
         <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mb-6">
-          <CheckCircle size={40} className="text-emerald-500" />
+          <FaCircleCheck size={40} className="text-emerald-500" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Vehicle Updated!</h2>
         <p className="text-gray-500 mb-8">The changes have been saved to the database and are live on the website.</p>
@@ -88,7 +86,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
       {/* Header */}
       <div className="mb-6 flex items-center gap-4">
         <Link href="/admin/inventory" className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors shadow-sm">
-          <ChevronLeft size={20} />
+          <FaChevronLeft size={20} />
         </Link>
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Edit Vehicle</h1>
@@ -103,7 +101,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
 
       {error && (
         <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 rounded-xl p-4 mb-6">
-          <AlertCircle size={18} className="flex-shrink-0" />
+          <FaCircleExclamation size={18} className="flex-shrink-0" />
           <p className="text-sm font-medium">{error}</p>
         </div>
       )}
@@ -205,7 +203,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
                   <div className={`w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 ${
                     features.includes(feature) ? "bg-red-500" : "border-2 border-gray-300 bg-white"
                   }`}>
-                    {features.includes(feature) && <Check size={11} className="text-white" />}
+                    {features.includes(feature) && <FaCheck size={11} className="text-white" />}
                   </div>
                   <span className="leading-tight text-xs">{feature}</span>
                 </button>
@@ -296,7 +294,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
             <div className="flex items-center justify-between mb-5 pb-4 border-b border-gray-100">
               <h2 className="text-base font-bold text-gray-900">Vehicle Images</h2>
               <button type="button" onClick={addImage} className="text-xs font-bold text-red-600 bg-red-50 px-3 py-1.5 rounded-lg hover:bg-red-100 transition-colors flex items-center gap-1">
-                <Plus size={13} /> Add Image
+                <FaPlus size={13} /> Add Image
               </button>
             </div>
             <p className="text-xs text-gray-400 mb-5 leading-relaxed">
@@ -311,7 +309,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
                         <img src={img.url} alt="" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <ImageIcon size={18} className="text-gray-400" />
+                          <FaImage size={18} className="text-gray-400" />
                         </div>
                       )}
                     </div>
@@ -334,7 +332,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
                         </button>
                         {images.length > 1 && (
                           <button type="button" onClick={() => removeImage(i)} className="p-1.5 text-gray-400 hover:text-red-500 bg-white rounded-lg border border-gray-200 transition-colors">
-                            <Trash2 size={13} />
+                            <FaTrash size={13} />
                           </button>
                         )}
                       </div>
@@ -355,7 +353,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
                 className="w-full bg-red-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-red-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2 shadow-sm"
               >
                 {isPending ? (
-                  <><Loader2 size={18} className="animate-spin" /> Saving Changes...</>
+                  <><FaSpinner size={18} className="animate-spin" /> Saving Changes...</>
                 ) : (
                   "Save All Changes"
                 )}

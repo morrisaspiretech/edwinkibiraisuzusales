@@ -1,6 +1,7 @@
 import { prisma } from "@repo/database";
 import Link from "next/link";
-import { Car, TrendingUp, CheckCircle, Clock, AlertCircle, Plus, ArrowRight, Eye } from "lucide-react";
+import { FaCar, FaArrowTrendUp, FaCircleCheck, FaClock, FaCircleExclamation, FaPlus, FaArrowRight, FaEye } from "react-icons/fa6";
+
 
 export const dynamic = "force-dynamic";
 
@@ -59,7 +60,7 @@ export default async function AdminDashboard() {
           href="/admin/inventory/new"
           className="bg-red-600 hover:bg-red-700 transition-colors text-white font-bold px-5 py-3 rounded-xl flex items-center gap-2 shadow-lg shadow-red-900/30 whitespace-nowrap"
         >
-          <Plus size={18} /> Add Vehicle
+          <FaPlus size={18} /> Add Vehicle
         </Link>
       </div>
 
@@ -68,7 +69,7 @@ export default async function AdminDashboard() {
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center">
-              <Car size={20} className="text-gray-600" />
+              <FaCar size={20} className="text-gray-600" />
             </div>
             <span className="text-xs font-semibold text-gray-400 bg-gray-50 px-2 py-1 rounded-md">Fleet</span>
           </div>
@@ -79,7 +80,7 @@ export default async function AdminDashboard() {
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center">
-              <CheckCircle size={20} className="text-emerald-600" />
+              <FaCircleCheck size={20} className="text-emerald-600" />
             </div>
             <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md">Live</span>
           </div>
@@ -90,7 +91,7 @@ export default async function AdminDashboard() {
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-              <TrendingUp size={20} className="text-blue-600" />
+              <FaArrowTrendUp size={20} className="text-blue-600" />
             </div>
             <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">Sold</span>
           </div>
@@ -101,7 +102,7 @@ export default async function AdminDashboard() {
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center">
-              <Clock size={20} className="text-amber-600" />
+              <FaClock size={20} className="text-amber-600" />
             </div>
             <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-md">Pending</span>
           </div>
@@ -117,7 +118,7 @@ export default async function AdminDashboard() {
           <div className="p-6 border-b border-gray-50 flex items-center justify-between">
             <h3 className="font-bold text-gray-900">Recent Inventory</h3>
             <Link href="/admin/inventory" className="text-sm text-red-600 font-semibold hover:underline flex items-center gap-1">
-              View All <ArrowRight size={14} />
+              View All <FaArrowRight size={14} />
             </Link>
           </div>
           <table className="w-full text-sm">
@@ -143,7 +144,7 @@ export default async function AdminDashboard() {
                             <img src={heroImg.url} alt={car.model} className="w-full h-full object-cover" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center">
-                              <Car size={16} className="text-gray-300" />
+                              <FaCar size={16} className="text-gray-300" />
                             </div>
                           )}
                         </div>
@@ -170,7 +171,7 @@ export default async function AdminDashboard() {
                     </td>
                     <td className="px-6 py-4 text-right">
                       <Link href={`/admin/inventory/${car.id}/edit`} className="text-gray-400 hover:text-red-600 transition-colors">
-                        <Eye size={15} />
+                        <FaEye size={15} />
                       </Link>
                     </td>
                   </tr>
@@ -218,7 +219,7 @@ export default async function AdminDashboard() {
             <div className="space-y-2">
               <Link href="/admin/inventory/new" className="flex items-center gap-3 p-3 rounded-xl border border-dashed border-red-200 bg-red-50 hover:bg-red-100 transition-colors group">
                 <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Plus size={16} className="text-white" />
+                  <FaPlus size={16} className="text-white" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900">Add New Vehicle</p>
@@ -227,7 +228,7 @@ export default async function AdminDashboard() {
               </Link>
               <Link href="/admin/inventory" className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
                 <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Car size={16} className="text-white" />
+                  <FaCar size={16} className="text-white" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900">Manage Inventory</p>

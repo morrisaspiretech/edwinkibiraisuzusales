@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
-import TopProgressBar from "@/components/layout/TopProgressBar";
+import NextTopLoader from "nextjs-toploader";
 import { Suspense } from "react";
 
 const montserrat = Montserrat({
@@ -36,15 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col`}
-      >
-        <Suspense fallback={null}>
-          <TopProgressBar />
-        </Suspense>
-        <div className="flex-1 flex flex-col">
+      <body className={`${montserrat.variable} font-sans bg-white antialiased text-[#1a1a1a]`}>
+        <NextTopLoader color="#D62B2B" height={4} showSpinner={true} />
+        <main className="min-h-screen flex flex-col">
           {children}
-        </div>
+        </main>
         <Footer />
       </body>
     </html>

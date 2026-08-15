@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Phone, Mail, MapPin, MessageSquare, Clock, Send, CheckCircle2, ChevronRight } from "lucide-react";
+
 import Link from "next/link";
+import { FaPhone, FaEnvelope, FaMapLocationDot, FaMessage, FaClock, FaPaperPlane, FaCircleCheck, FaChevronRight } from "react-icons/fa6";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,7 +37,7 @@ export default function ContactPage() {
           <div className="max-w-5xl mx-auto">
             <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary tracking-widest mb-3">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <ChevronRight size={10} className="text-white/30" />
+              <FaChevronRight size={10} className="text-white/30" />
               <span className="text-white/50">Contact Us</span>
             </nav>
             <div className="flex items-center gap-3 mb-2">
@@ -66,7 +67,7 @@ export default function ContactPage() {
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
-                      <MapPin size={18} />
+                      <FaMapLocationDot size={18} />
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Location</p>
@@ -77,36 +78,36 @@ export default function ContactPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
-                      <Phone size={18} />
+                      <FaPhone size={18} />
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Phone Calls</p>
-                      <a href="tel:+254700000000" className="text-sm font-bold text-secondary hover:underline block mt-0.5">
-                        +254 700 000 000
+                      <a href="tel:+254768351483" className="text-sm font-bold text-secondary hover:underline block mt-0.5">
+                        0768 351 483
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold shrink-0 mt-0.5">
-                      <MessageSquare size={18} />
+                      <FaMessage size={18} />
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase text-gray-400 tracking-wider">WhatsApp Line</p>
                       <a
-                        href="https://wa.me/254700000000"
+                        href="https://wa.me/254768351483"
                         target="_blank"
                         rel="noreferrer"
                         className="text-sm font-bold text-emerald-600 hover:underline block mt-0.5"
                       >
-                        +254 700 000 000 (Chat Now)
+                        0768 351 483 (Chat Now)
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
-                      <Mail size={18} />
+                      <FaEnvelope size={18} />
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Email Address</p>
@@ -118,7 +119,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start gap-4 pt-3 border-t border-gray-200">
                     <div className="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center font-bold shrink-0 mt-0.5">
-                      <Clock size={18} />
+                      <FaClock size={18} />
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Opening Hours</p>
@@ -136,7 +137,7 @@ export default function ContactPage() {
                 {isSuccess ? (
                   <div className="text-center py-12 space-y-4">
                     <div className="w-16 h-16 bg-secondary text-white flex items-center justify-center mx-auto">
-                      <CheckCircle2 size={32} />
+                      <FaCircleCheck size={32} />
                     </div>
                     <h3 className="text-2xl font-black text-primary uppercase">Thank You!</h3>
                     <p className="text-sm text-gray-500 max-w-md mx-auto">
@@ -177,7 +178,7 @@ export default function ContactPage() {
                         <input
                           required
                           type="tel"
-                          placeholder="+254 700 000 000"
+                          placeholder="0768 351 483"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="w-full border border-gray-200 px-3.5 py-3 text-xs md:text-sm font-medium focus:outline-none focus:border-secondary transition-colors"
@@ -228,7 +229,7 @@ export default function ContactPage() {
                       disabled={isSubmitting}
                       className="w-full bg-secondary text-white py-4 font-black uppercase tracking-widest text-xs md:text-sm hover:bg-accent-dark transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                     >
-                      <Send size={16} />
+                      <FaPaperPlane size={16} />
                       {isSubmitting ? "Sending Message..." : "Send Message"}
                     </button>
                   </form>

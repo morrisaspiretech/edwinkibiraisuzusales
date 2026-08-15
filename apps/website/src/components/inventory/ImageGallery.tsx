@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { VehicleImage } from "@/types/vehicle";
+import { FaChevronLeft, FaChevronRight, FaExpand } from "react-icons/fa6";
 
 interface ImageGalleryProps {
   images: VehicleImage[];
@@ -54,18 +55,18 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
             onClick={prev}
             className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-accent hover:text-primary transition-all shadow-xl"
           >
-            <ChevronLeft size={24} />
+            <FaChevronLeft size={24} />
           </button>
           <button 
             onClick={next}
             className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-accent hover:text-primary transition-all shadow-xl"
           >
-            <ChevronRight size={24} />
+            <FaChevronRight size={24} />
           </button>
         </div>
 
         <button className="absolute top-4 right-4 p-2 bg-black/30 backdrop-blur-md text-white/70 hover:text-white transition-colors">
-          <Maximize2 size={20} />
+          <FaExpand size={20} />
         </button>
       </div>
 

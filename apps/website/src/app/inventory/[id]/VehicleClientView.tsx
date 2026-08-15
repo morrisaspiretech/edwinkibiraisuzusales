@@ -3,16 +3,12 @@
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { Vehicle } from "@/types/vehicle";
-import {
-  ChevronRight, ChevronLeft, MapPin, Share2, Heart, Phone, MessageSquare,
-  Calendar, Gauge, Fuel, Settings2, ShieldCheck, CheckCircle2,
-  Maximize2, Check, X,
-} from "lucide-react";
+
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/inventory/LeadForm";
-
+import { FaChevronRight, FaChevronLeft, FaMapLocationDot, FaPhone, FaMessage, FaCircleCheck, FaExpand, FaCheck, FaXmark, FaShareNodes, FaHeart, FaCalendar, FaGauge, FaGasPump, FaSliders, FaShieldHeart } from "react-icons/fa6";
 interface Props {
   initialVehicle: Vehicle;
 }
@@ -25,17 +21,17 @@ export default function VehicleClientView({ initialVehicle }: Props) {
   const [activeTab, setActiveTab] = useState<"overview" | "specs" | "features" | "lead">("overview");
 
   const images = vehicle.images || [];
-  const primaryImg = images[activeImg]?.url || images[0]?.url || "/vehicles/dmax-hero.png";
+  const primaryImg = images[activeImg]?.url || images[0]?.url || "https://d2ekrm2045sfs2.cloudfront.net/cms/2024/10/15100939/1400.webp";
   const conditionLabel = vehicle.condition === "FOREIGN" ? "Foreign Used" : vehicle.condition === "NEW" ? "Brand New" : "Locally Used";
   const fuelLabel = vehicle.fuelType ? vehicle.fuelType.charAt(0) + vehicle.fuelType.slice(1).toLowerCase() : "Diesel";
 
   const specsList = [
-    { icon: <Fuel size={16} />, label: "Fuel Type", value: fuelLabel },
-    { icon: <Gauge size={16} />, label: "Engine", value: vehicle.engineCC ? `${vehicle.engineCC}cc` : "N/A" },
-    { icon: <Settings2 size={16} />, label: "Transmission", value: vehicle.transmission || "Manual" },
-    { icon: <Calendar size={16} />, label: "Year", value: String(vehicle.year) },
-    { icon: <MapPin size={16} />, label: "Condition", value: conditionLabel },
-    { icon: <ShieldCheck size={16} />, label: "Status", value: vehicle.status },
+    { icon: <FaGasPump size={16} />, label: "Fuel Type", value: fuelLabel },
+    { icon: <FaGauge size={16} />, label: "Engine", value: vehicle.engineCC ? `${vehicle.engineCC}cc` : "N/A" },
+    { icon: <FaSliders size={16} />, label: "Transmission", value: vehicle.transmission || "Manual" },
+    { icon: <FaCalendar size={16} />, label: "Year", value: String(vehicle.year) },
+    { icon: <FaMapLocationDot size={16} />, label: "Condition", value: conditionLabel },
+    { icon: <FaShieldHeart size={16} />, label: "Status", value: vehicle.status },
   ];
 
   return (
@@ -47,9 +43,9 @@ export default function VehicleClientView({ initialVehicle }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <nav className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-400 flex-wrap">
             <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
-            <ChevronRight size={12} className="opacity-40" />
+            <FaChevronRight size={12} className="opacity-40" />
             <Link href="/inventory" className="hover:text-secondary transition-colors">Inventory</Link>
-            <ChevronRight size={12} className="opacity-40" />
+            <FaChevronRight size={12} className="opacity-40" />
             <span className="text-primary">{vehicle.make} {vehicle.model}</span>
           </nav>
 
@@ -69,20 +65,26 @@ export default function VehicleClientView({ initialVehicle }: Props) {
             </div>
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setLiked(!liked)}
-                className={`w-10 h-10 border flex items-center justify-center transition-colors ${liked ? "border-secondary bg-secondary text-white" : "border-gray-200 text-gray-400 hover:border-secondary hover:text-secondary"}`}
+                onClick={() => {
+                  navigator.clipboard.writeText(window.location.href);
+                  alert("Link copied!");
+                }}
+                className="p-3 bg-white border border-gray-200 rounded-lg hover:border-[#D62B2B] hover:text-[#D62B2B] transition-colors"
               >
-                <Heart size={18} fill={liked ? "currentColor" : "none"} />
+                <FaShareNodes size={18} />
               </button>
-              <button className="w-10 h-10 border border-gray-200 text-gray-400 hover:border-secondary hover:text-secondary flex items-center justify-center transition-colors">
-                <Share2 size={18} />
+              <button
+                onClick={() => setLiked(!liked)}
+                className="p-3 bg-white border border-gray-200 rounded-lg hover:border-[#D62B2B] transition-colors"
+              >
+                <FaHeart
+                  size={18}
+                  className={liked ? "text-[#D62B2B]" : "text-gray-400"}
+                />
               </button>
               <div className="text-right">
                 <p className="text-[10px] uppercase font-black text-gray-400 tracking-widest">Asking Price</p>
-                <p className="text-3xl font-black text-secondary">
-                  <span className="text-sm mr-1">KES</span>
-                  {vehicle.price.toLocaleString()}
-                </p>
+                <p className="text-base font-black text-secondary">Contact for Price</p>
               </div>
             </div>
           </div>
@@ -114,18 +116,18 @@ export default function VehicleClientView({ initialVehicle }: Props) {
                 </motion.div>
               </AnimatePresence>
               <button className="absolute bottom-3 right-3 bg-black/50 text-white p-2 backdrop-blur-sm hover:bg-secondary transition-colors">
-                <Maximize2 size={16} />
+                <FaExpand size={16} />
               </button>
               {images.length > 1 && (
                 <>
                   <button
                     onClick={(e) => { e.stopPropagation(); setActiveImg(p => (p === 0 ? images.length - 1 : p - 1)); }}
                     className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 backdrop-blur-sm hover:bg-secondary transition-colors"
-                  ><ChevronLeft size={18} /></button>
+                  ><FaChevronLeft size={18} /></button>
                   <button
                     onClick={(e) => { e.stopPropagation(); setActiveImg(p => (p + 1) % images.length); }}
                     className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 backdrop-blur-sm hover:bg-secondary transition-colors"
-                  ><ChevronRight size={18} /></button>
+                  ><FaChevronRight size={18} /></button>
                 </>
               )}
             </div>
@@ -200,7 +202,7 @@ export default function VehicleClientView({ initialVehicle }: Props) {
                         "NTSA Compliant", "Parts Readily Available", "Fuel Efficient"
                       ]).map((f, i) => (
                         <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                          <CheckCircle2 size={14} className="text-secondary flex-shrink-0" />
+                          <FaCircleCheck size={14} className="text-secondary flex-shrink-0" />
                           {f}
                         </div>
                       ))}
@@ -222,23 +224,21 @@ export default function VehicleClientView({ initialVehicle }: Props) {
           <div className="lg:col-span-5 space-y-4">
             <div className="bg-white border border-gray-100 shadow-sm p-6">
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Asking Price</p>
-              <p className="text-4xl font-black text-secondary mb-1">
-                KES {vehicle.price.toLocaleString()}
-              </p>
-              <p className="text-xs text-gray-400 mb-6">VAT Inclusive · {conditionLabel}</p>
+              <p className="text-xl font-black text-secondary mb-1">Contact for Pricing</p>
+              <p className="text-xs text-gray-400 mb-6">{conditionLabel} · Zero Mileage · Genuine Isuzu</p>
               <a
-                href="tel:+254700000000"
+                href="tel:0768351483"
                 className="flex items-center justify-center gap-2 w-full bg-secondary text-white py-3.5 font-black uppercase text-sm tracking-widest hover:bg-[#b82222] transition-colors mb-3"
               >
-                <Phone size={16} /> Call Now
+                <FaPhone size={16} /> 0768 351 483
               </a>
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/254768351483"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full border-2 border-secondary text-secondary py-3.5 font-black uppercase text-sm tracking-widest hover:bg-secondary hover:text-white transition-colors"
               >
-                <MessageSquare size={16} /> WhatsApp
+                <FaMessage size={16} /> WhatsApp
               </a>
             </div>
 
@@ -257,19 +257,19 @@ export default function VehicleClientView({ initialVehicle }: Props) {
               </div>
             </div>
 
-            <div className="bg-[#1A1A1A] text-white p-6">
+            <div className="bg-[#f9f9f9] border border-gray-200 p-6">
               <div className="flex items-center gap-2 mb-3">
-                <ShieldCheck size={18} className="text-secondary" />
-                <h3 className="text-xs font-black uppercase tracking-widest">Edwin Kibira Isuzu Sales</h3>
+                <FaShieldHeart size={18} className="text-[#D62B2B]" />
+                <h3 className="text-xs font-black uppercase tracking-widest text-[#1a1a1a]">Edwin Kibira Isuzu Sales</h3>
               </div>
-              <p className="text-xs text-white/60 leading-relaxed">
-                Authorised Isuzu dealer in Kenya. All vehicles are genuine, tested, and meet NTSA requirements.
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Authorised Isuzu dealer in Kenya. All vehicles are brand-new, zero-mileage and meet NTSA requirements.
               </p>
               <Link
                 href="/contact"
-                className="mt-4 inline-flex items-center gap-1 text-xs font-black text-secondary uppercase tracking-widest hover:gap-2 transition-all"
+                className="mt-4 inline-flex items-center gap-1 text-xs font-black text-[#D62B2B] uppercase tracking-widest hover:gap-2 transition-all"
               >
-                Visit Showroom <ChevronRight size={14} />
+                Visit Showroom <FaChevronRight size={14} />
               </Link>
             </div>
           </div>
@@ -287,7 +287,7 @@ export default function VehicleClientView({ initialVehicle }: Props) {
             onClick={() => setLightbox(false)}
           >
             <button className="absolute top-4 right-4 text-white/60 hover:text-white">
-              <X size={28} />
+              <FaXmark size={28} />
             </button>
             <div className="relative w-full max-w-4xl" style={{ height: "80vh" }}>
               <Image src={primaryImg} alt={vehicle.model} fill className="object-contain" />

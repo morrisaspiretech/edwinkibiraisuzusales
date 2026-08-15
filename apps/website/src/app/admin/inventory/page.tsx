@@ -1,9 +1,10 @@
 import { prisma } from "@repo/database";
 import Link from "next/link";
-import { Plus, Trash2, Eye, Car, Search, Filter } from "lucide-react";
+
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import StatusSelect from "./StatusSelect";
+import { FaPlus, FaTrash, FaEye, FaCar, FaMagnifyingGlass, FaFilter } from "react-icons/fa6";
 
 export const dynamic = "force-dynamic";
 
@@ -48,7 +49,7 @@ export default async function AdminInventoryPage() {
         
         <div className="flex items-center gap-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+            <FaMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
             <input 
               type="text" 
               placeholder="Search vehicles..." 
@@ -57,7 +58,7 @@ export default async function AdminInventoryPage() {
           </div>
           
           <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 bg-gray-50 text-gray-600 rounded-xl font-semibold text-sm hover:bg-gray-100 transition-colors">
-            <Filter size={16} />
+            <FaFilter size={16} />
             Filter
           </button>
           
@@ -65,7 +66,7 @@ export default async function AdminInventoryPage() {
             href="/admin/inventory/new"
             className="flex items-center gap-2 bg-red-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-red-700 transition-colors shadow-sm"
           >
-            <Plus size={16} /> Add Vehicle
+            <FaPlus size={16} /> Add Vehicle
           </Link>
         </div>
       </div>
@@ -74,12 +75,12 @@ export default async function AdminInventoryPage() {
       {cars.length === 0 ? (
         <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.02)] p-20 text-center">
           <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-5">
-            <Car size={32} className="text-gray-400" />
+            <FaCar size={32} className="text-gray-400" />
           </div>
           <p className="text-xl font-bold text-gray-900 mb-2">No Vehicles Found</p>
           <p className="text-sm text-gray-500 mb-8 max-w-sm mx-auto">Your inventory is currently empty. Add your first vehicle to start tracking your stock.</p>
           <Link href="/admin/inventory/new" className="bg-red-600 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-red-700 transition-colors shadow-sm inline-flex items-center gap-2">
-            <Plus size={16} /> Add First Vehicle
+            <FaPlus size={16} /> Add First Vehicle
           </Link>
         </div>
       ) : (
@@ -106,7 +107,7 @@ export default async function AdminInventoryPage() {
                             <img src={car.images[0].url} alt={car.model} className="w-full h-full object-cover" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-gray-300">
-                              <Car size={20} />
+                              <FaCar size={20} />
                             </div>
                           )}
                         </div>
@@ -150,7 +151,7 @@ export default async function AdminInventoryPage() {
                           className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:bg-white hover:text-blue-600 hover:shadow-sm border border-transparent hover:border-gray-200 transition-all"
                           title="View Live on Website"
                         >
-                          <Eye size={16} />
+                          <FaEye size={16} />
                         </Link>
                         <form action={deleteCar} className="inline">
                           <input type="hidden" name="id" value={car.id} />
@@ -160,7 +161,7 @@ export default async function AdminInventoryPage() {
                             title="Delete Vehicle"
                             onClick={(e) => { if (!confirm(`Delete ${car.make} ${car.model}? This cannot be undone.`)) e.preventDefault(); }}
                           >
-                            <Trash2 size={16} />
+                            <FaTrash size={16} />
                           </button>
                         </form>
                       </div>

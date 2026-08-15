@@ -1,12 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Gauge, Fuel, Settings2, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
 import { Vehicle } from "@/types/vehicle";
-import { cn } from "@/lib/utils";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -14,77 +10,98 @@ interface VehicleCardProps {
 }
 
 const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
-  const primaryImage = vehicle.images.find(img => img.isPrimary) || vehicle.images[0];
-  const conditionLabel = vehicle.condition === 'FOREIGN' ? "Foreign Used" : "Locally Used";
+  const primaryImage = vehicle.images?.find(img => img.isHero) || vehicle.images?.[0];
+  
+  // Clean fallback image
+  const imageUrl = primaryImage?.url || "/vehicles/nqr-hero.png";
+
+  const getModelSlug = (modelName: string = "") => {
+    const m = modelName.toLowerCase();
+    if (m.includes("single")) return "single-cabin";
+    if (m.includes("kipchoge")) return "kipchoge-limited-edition";
+    if (m.includes("double") || m.includes("d-max") || m.includes("dmax")) return "double-cabin";
+    if (m.includes("mu-x") || m.includes("mux")) {
+      if (m.includes("1900")) return "mu-x-1900cc";
+      return "mu-x-3000cc";
+    }
+    if (m.includes("bus")) {
+      if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) return "f-series-buses";
+      return "n-series-buses";
+    }
+    if (m.includes("mover") || m.includes("gxz")) return "movers";
+    if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) return "heavy-trucks-f-series";
+    return "light-trucks-n-series"; // default to n-series
+  };
+
+  const modelSlug = getModelSlug(vehicle.model);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05 }}
-      className="group bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-xl transition-all duration-400 overflow-hidden flex flex-col"
+    <div
+      className="group bg-white border border-gray-100 hover:border-[#D62B2B]/30 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
     >
-      {/* Image Container - Strictly 4:3 Aspect Ratio */}
-      <Link href={`/inventory/${vehicle.id}`} className="block relative aspect-[4/3] overflow-hidden shrink-0 bg-gray-100">
-        <Image
-          src={primaryImage?.url || '/vehicles/dmax-hero.png'}
+      {/* Image Container */}
+      <Link 
+        href={`/vehicles/${modelSlug}`} 
+        className="block relative w-full h-48 bg-gray-50 overflow-hidden flex-shrink-0"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={imageUrl}
           alt={`${vehicle.make} ${vehicle.model}`}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
         />
-        
-        {/* Urgent Badge Overlays */}
-        <div className="absolute top-3 left-3 flex gap-2">
-          <span className="px-3 py-1.5 text-xs font-extrabold bg-primary text-white uppercase tracking-wider shadow-lg">
-            In Stock
-          </span>
-        </div>
-        <div className="absolute top-3 right-3">
-          <span className="px-3 py-1.5 text-xs font-extrabold bg-secondary text-white uppercase tracking-wider shadow-lg">
+        <div className="absolute top-3 left-3">
+          <span className="px-2.5 py-1 text-[10px] font-black bg-[#1a1a1a] text-white uppercase tracking-wider">
             {vehicle.year}
           </span>
         </div>
       </Link>
 
-      <div className="p-4 flex flex-col flex-1 bg-white">
-        {/* Title & Condition - Dense Hierarchy */}
-        <div className="mb-4">
-          <h3 className="text-lg font-bold text-primary leading-tight mb-0.5 group-hover:text-secondary transition-colors">
-            {vehicle.make} {vehicle.model}
-          </h3>
-          <p className="text-[10px] text-primary font-black uppercase tracking-widest">{conditionLabel}</p>
+      {/* Details Container */}
+      <div className="p-5 flex flex-col flex-grow">
+        {/* Title */}
+        <h3 className="text-sm font-black text-[#1a1a1a] leading-snug mb-3 group-hover:text-[#D62B2B] transition-colors uppercase tracking-tight line-clamp-2 min-h-[40px]">
+          {vehicle.make} {vehicle.model}
+        </h3>
+
+        {/* Specs Grid */}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-4 pt-3 border-t border-gray-100 text-xs flex-grow">
+          <div>
+            <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Engine</p>
+            <p className="font-black text-[#1a1a1a]">{vehicle.engineCC ? `${vehicle.engineCC}cc` : "N/A"}</p>
+          </div>
+          <div>
+            <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Fuel Type</p>
+            <p className="font-black text-[#1a1a1a] capitalize">{(vehicle.fuelType || "Diesel").toLowerCase()}</p>
+          </div>
+          {vehicle.transmission && (
+            <div>
+              <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Transmission</p>
+              <p className="font-black text-[#1a1a1a] capitalize">{vehicle.transmission.toLowerCase()}</p>
+            </div>
+          )}
+          {vehicle.bodyType && (
+            <div>
+              <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Type</p>
+              <p className="font-black text-[#1a1a1a] capitalize">{vehicle.bodyType.toLowerCase()}</p>
+            </div>
+          )}
         </div>
 
-        {/* Info Grid - Clean 2-column Sentence Case Specs */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-3 mb-6 pt-3 border-t border-black/5">
-          <div className="space-y-1">
-            <p className="text-[10px] text-primary font-black uppercase tracking-widest leading-none">Engine</p>
-            <p className="text-sm font-black text-primary">{vehicle.engineCC}cc</p>
-          </div>
-          <div className="space-y-1">
-            <p className="text-[10px] text-primary font-black uppercase tracking-widest leading-none">Fuel Type</p>
-            <p className="text-sm font-black text-primary capitalize">{(vehicle.fuelType || "Diesel").toLowerCase()}</p>
-          </div>
-        </div>
-
-        {/* Footer Row - Tight Price & VIEW Link */}
-        <div className="mt-auto flex items-center justify-between pt-4 border-t border-black/5">
-          <p className="text-2xl font-black text-primary tracking-tight">
-            <span className="text-[10px] uppercase text-primary mr-2 font-black">KSh</span>
-            {vehicle.price.toLocaleString()}
-          </p>
-          <Link 
-            href={`/inventory/${vehicle.id}`}
-            className="flex items-center gap-2 bg-secondary text-white px-6 py-2.5 text-xs font-black uppercase hover:bg-accent-dark transition-all active:scale-95"
+        {/* Action Button */}
+        <div className="pt-3 border-t border-gray-100 mt-auto">
+          <Link
+            href={`/vehicles/${modelSlug}`}
+            className="flex items-center justify-center gap-1.5 w-full bg-[#D62B2B] text-white px-4 py-2.5 text-xs font-black uppercase hover:bg-[#b82222] transition-colors"
           >
-            View
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            View Details
+            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14m-7-7 7 7-7 7"/>
+            </svg>
           </Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

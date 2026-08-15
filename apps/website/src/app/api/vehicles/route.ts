@@ -13,7 +13,8 @@ export async function GET() {
 
     const mapped = cars.map((car: any) => ({
       ...car,
-      price: Number(car.price),
+      price: 0,           // Never expose price — contact dealer for pricing
+      condition: 'NEW',   // All Edwin Kibira vehicles are brand new Isuzu
       mileage: car.mileage ? Number(car.mileage) : 0,
       fuelType: car.specs?.fuelType || "Diesel",
       engineCC: car.specs?.engineCc || 0,

@@ -4,8 +4,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import VehicleCard from "@/components/inventory/VehicleCard";
 import { Vehicle } from "@/types/vehicle";
-import { ChevronRight } from "lucide-react";
+
 import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa6";
 
 interface NewArrivalsProps {
   vehicles: Vehicle[];
@@ -31,12 +32,12 @@ const NewArrivals = ({ vehicles }: NewArrivalsProps) => {
             </p>
           </div>
           <Link
-            href="/inventory"
+            href="/vehicles"
             className="group flex items-center gap-3 text-xs font-black uppercase text-primary hover:text-secondary transition-colors tracking-widest flex-shrink-0"
           >
             View All Isuzu Vehicles
             <div className="w-10 h-10 border border-primary/20 flex items-center justify-center group-hover:border-secondary group-hover:bg-secondary group-hover:text-white transition-all">
-              <ChevronRight size={16} />
+              <FaChevronRight size={16} />
             </div>
           </Link>
         </div>
@@ -64,7 +65,7 @@ const NewArrivals = ({ vehicles }: NewArrivalsProps) => {
               href="/contact"
               className="inline-flex items-center gap-2 mt-4 bg-secondary text-white px-6 py-3 font-black uppercase text-sm tracking-wider hover:bg-accent-dark transition-all"
             >
-              Contact Us <ChevronRight size={16} />
+              Contact Us <FaChevronRight size={16} />
             </Link>
           </div>
         )}

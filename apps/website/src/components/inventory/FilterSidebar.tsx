@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, SlidersHorizontal, ChevronDown, X } from "lucide-react";
+
 import { cn } from "@/lib/utils";
+import { FaMagnifyingGlass, FaSliders, FaChevronDown, FaXmark } from "react-icons/fa6";
 
 interface FilterSidebarProps {
   onFilterChange: (filters: any) => void;
@@ -67,7 +68,7 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
           <div className="h-5 w-[3px] bg-secondary" />
           <h3 className="text-sm font-black text-primary tracking-wider uppercase">Filters</h3>
         </div>
-        <SlidersHorizontal className="w-4 h-4 text-secondary" />
+        <FaSliders className="w-4 h-4 text-secondary" />
       </div>
 
       {/* Isuzu Brand Badge */}
@@ -84,7 +85,7 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
           Search
         </label>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary w-4 h-4" />
+          <FaMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary w-4 h-4" />
           <input
             type="text"
             placeholder="D-Max, mu-X, NQR..."
@@ -97,7 +98,7 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
               onClick={() => updateFilter("search", "")}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-secondary transition-colors"
             >
-              <X size={14} />
+              <FaXmark size={14} />
             </button>
           )}
         </div>
@@ -117,7 +118,7 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
               </option>
             ))}
           </select>
-          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary pointer-events-none" />
+          <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary pointer-events-none" />
         </div>
       </FilterGroup>
 
@@ -224,7 +225,7 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
         onClick={clearFilters}
         className="w-full text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-secondary transition-colors flex items-center justify-center gap-2"
       >
-        <X size={12} /> Clear All Filters
+        <FaXmark size={12} /> Clear All Filters
       </button>
     </aside>
   );

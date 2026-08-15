@@ -1,26 +1,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  LayoutDashboard,
-  Car,
-  MessageSquare,
-  Users,
-  DollarSign,
-  BarChart2,
-  LogOut,
-  Search,
-  Bell,
-  Settings,
-} from "lucide-react";
+import { FaCar, FaMessage, FaUsers, FaMagnifyingGlass, FaGauge, FaDollarSign, FaChartBar, FaRightFromBracket, FaBell, FaGear } from "react-icons/fa6";
 
 const navItems = [
-  { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
-  { href: "/admin/inventory", label: "Inventory", icon: Car },
-  { href: "/admin/leads", label: "Enquiries", icon: MessageSquare },
-  { href: "/admin/customers", label: "Customers", icon: Users },
-  { href: "/admin/sales", label: "Sales", icon: DollarSign },
-  { href: "/admin/analytics", label: "Analytics", icon: BarChart2 },
+  { href: "/admin", label: "Dashboard", icon: FaGauge, exact: true },
+  { href: "/admin/inventory", label: "Inventory", icon: FaCar },
+  { href: "/admin/leads", label: "Enquiries", icon: FaMessage },
+  { href: "/admin/customers", label: "Customers", icon: FaUsers },
+  { href: "/admin/sales", label: "Sales", icon: FaDollarSign },
+  { href: "/admin/analytics", label: "Analytics", icon: FaChartBar },
 ];
 
 function Sidebar({ pathname }: { pathname: string }) {
@@ -73,7 +62,7 @@ function Sidebar({ pathname }: { pathname: string }) {
           </div>
         </div>
         <button className="flex items-center gap-2 px-3 py-2 w-full rounded-lg text-white/40 hover:text-white hover:bg-white/5 transition-all text-sm font-semibold">
-          <LogOut size={16} />
+          <FaRightFromBracket size={16} />
           Sign Out
         </button>
       </div>
@@ -87,7 +76,7 @@ function Topbar({ title }: { title?: string }) {
       <h1 className="text-xl font-bold text-gray-900">{title || "Dashboard"}</h1>
       <div className="flex items-center gap-3">
         <div className="relative">
-          <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+          <FaMagnifyingGlass size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
             placeholder="Search..."
@@ -95,11 +84,11 @@ function Topbar({ title }: { title?: string }) {
           />
         </div>
         <button className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 relative">
-          <Bell size={17} />
+          <FaBell size={17} />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
         </button>
         <button className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50">
-          <Settings size={17} />
+          <FaGear size={17} />
         </button>
         <div className="flex items-center gap-2 pl-3 border-l border-gray-200">
           <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold text-xs">

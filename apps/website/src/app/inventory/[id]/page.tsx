@@ -1,8 +1,5 @@
 import { prisma } from "@repo/database";
-import { notFound } from "next/navigation";
-import VehicleClientView from "./VehicleClientView";
-import { Suspense } from "react";
-import { Vehicle } from "@/types/vehicle";
+import { notFound, redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -12,28 +9,31 @@ export default async function VehicleDetailsPage({ params }: { params: Promise<{
   try {
     const car = await prisma.car.findUnique({
       where: { id },
-      include: {
-        images: { orderBy: { orderIndex: 'asc' } },
-        specs: true
-      }
+      select: { model: true }
     });
 
     if (!car) {
       notFound();
     }
 
-    const mappedVehicle = {
-      ...car,
-      price: Number(car.price),
-      mileage: car.mileage ? Number(car.mileage) : 0,
-      fuelType: car.specs?.fuelType || 'Diesel',
-      engineCC: car.specs?.engineCc || 0,
-      transmission: car.specs?.transmission || 'Manual',
-      bodyType: car.model.toLowerCase().includes('mu-x') ? 'SUV' : car.model.toLowerCase().includes('d-max') ? 'Pickup' : 'Truck',
-      category: 'CAR'
-    } as unknown as Vehicle;
+    const m = car.model.toLowerCase();
+    let slug = "light-trucks-n-series";
+    
+    if (m.includes("single")) slug = "single-cabin";
+    else if (m.includes("kipchoge")) slug = "kipchoge-limited-edition";
+    else if (m.includes("double") || m.includes("d-max") || m.includes("dmax")) slug = "double-cabin";
+    else if (m.includes("mu-x") || m.includes("mux")) {
+      if (m.includes("1900")) slug = "mu-x-1900cc";
+      else slug = "mu-x-3000cc";
+    }
+    else if (m.includes("bus")) {
+      if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) slug = "f-series-buses";
+      else slug = "n-series-buses";
+    }
+    else if (m.includes("mover") || m.includes("gxz")) slug = "movers";
+    else if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) slug = "heavy-trucks-f-series";
 
-    return <VehicleClientView initialVehicle={mappedVehicle} />;
+    redirect(`/vehicles/${slug}`);
   } catch (err) {
     console.error("Error fetching vehicle:", err);
     notFound();

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, Loader2, Phone, MessageSquare } from "lucide-react";
+import { FaPaperPlane, FaCircleCheck, FaSpinner, FaPhone, FaMessage } from "react-icons/fa6";
+
 
 const IsuzuEnquiryForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,7 +65,7 @@ const IsuzuEnquiryForm = () => {
     return (
       <div className="bg-white border-t-4 border-secondary p-12 text-center space-y-6 shadow-xl">
         <div className="w-20 h-20 bg-secondary flex items-center justify-center text-white mx-auto">
-          <CheckCircle2 size={40} />
+          <FaCircleCheck size={40} />
         </div>
         <h3 className="text-2xl font-black text-primary uppercase tracking-tight">Enquiry Received!</h3>
         <p className="text-gray-500 text-sm">
@@ -77,7 +78,7 @@ const IsuzuEnquiryForm = () => {
             rel="noreferrer"
             className="flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-3 font-bold uppercase text-xs tracking-wider hover:bg-green-700 transition-all"
           >
-            <MessageSquare size={16} /> WhatsApp Us Now
+            <FaMessage size={16} /> WhatsApp Us Now
           </a>
           <button
             onClick={() => setIsSuccess(false)}
@@ -190,7 +191,7 @@ const IsuzuEnquiryForm = () => {
               disabled={isSubmitting}
               className="flex-1 bg-secondary text-white py-4 font-black uppercase tracking-widest text-sm hover:bg-accent-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50"
             >
-              {isSubmitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
+              {isSubmitting ? <FaSpinner className="animate-spin" size={18} /> : <FaPaperPlane size={18} />}
               Send Enquiry
             </button>
             <a
@@ -199,12 +200,12 @@ const IsuzuEnquiryForm = () => {
               rel="noreferrer"
               className="flex items-center justify-center gap-2 border-2 border-green-600 text-green-700 py-4 px-6 font-black uppercase tracking-wider text-sm hover:bg-green-600 hover:text-white transition-all"
             >
-              <MessageSquare size={18} /> WhatsApp
+              <FaMessage size={18} /> WhatsApp
             </a>
           </div>
 
           <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
-            <Phone size={14} className="text-secondary flex-shrink-0" />
+            <FaPhone size={14} className="text-secondary flex-shrink-0" />
             <p className="text-xs text-gray-400">
               Or call us directly:{" "}
               <a href="tel:+254700000000" className="text-secondary font-bold hover:underline">
