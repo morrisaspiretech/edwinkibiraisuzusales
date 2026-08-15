@@ -28,8 +28,12 @@ const navCategories = [
   {
     label: "Pickups",
     items: [
-      { label: "Single Cabin", href: "/vehicles/single-cabin" },
-      { label: "Double Cabin", href: "/vehicles/double-cabin" },
+      { label: "TFR 87 Single Cab 4×2", href: "/vehicles/tfr87-4x2" },
+      { label: "TFS 87 Single Cab 4×4 Manual", href: "/vehicles/tfs87-4x4-manual" },
+      { label: "TFS 87 Single Cab 4×4 Auto", href: "/vehicles/tfs87-4x4-auto" },
+      { label: "TFS 87 Double Cab Manual", href: "/vehicles/tfs87-double-manual" },
+      { label: "TFS 87 Double Cab Auto", href: "/vehicles/tfs87-double-auto" },
+      { label: "D-Max 3.0L Double Cab", href: "/vehicles/double-cabin" },
       { label: "Kipchoge Limited Edition", href: "/vehicles/kipchoge-limited-edition" },
     ],
   },

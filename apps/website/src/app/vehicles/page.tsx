@@ -26,27 +26,46 @@ export default function ShowroomPage() {
     <main className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
 
-      {/* Page Header */}
-      <div className="bg-[#1a1a1a] px-4 sm:px-6 py-10">
-        <div className="max-w-7xl mx-auto">
-          <nav className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/40 mb-3">
+      {/* Page Header — Video Hero */}
+      <div className="relative w-full overflow-hidden bg-[#111]" style={{ height: "55vh", minHeight: 380 }}>
+        {/* Video */}
+        <video
+          src="/videos/hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlays */}
+        <div className="absolute inset-0 bg-black/65" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.50) 55%, rgba(0,0,0,0.20) 100%)",
+          }}
+        />
+        {/* Content */}
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col justify-center">
+          <nav className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/40 mb-4">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <FaChevronRight size={10} />
             <span className="text-[#D62B2B]">All Vehicles</span>
           </nav>
-          <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-tight mb-2">
             Isuzu <span className="text-[#D62B2B]">Vehicle Range</span>
           </h1>
-          <p className="text-white/50 text-sm mt-2 max-w-xl">
+          <p className="text-white/60 text-sm max-w-xl mb-6">
             Browse our full range of Isuzu vehicles — pickups, SUVs, trucks and buses.
           </p>
           {/* Category Jump Links */}
-          <div className="flex flex-wrap gap-2 mt-6">
+          <div className="flex flex-wrap gap-2">
             {Object.keys(groupedVehicles).map((cat) => (
               <a
                 key={cat}
                 href={`#${cat.toLowerCase()}`}
-                className="px-4 py-2 border border-white/20 text-white text-xs font-black uppercase tracking-widest hover:bg-[#D62B2B] hover:border-[#D62B2B] transition-colors"
+                className="px-4 py-2 border border-white/20 text-white text-xs font-black uppercase tracking-widest hover:bg-[#D62B2B] hover:border-[#D62B2B] transition-colors backdrop-blur-sm"
               >
                 {categoryIcons[cat]} {cat}
               </a>
