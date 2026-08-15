@@ -20,6 +20,7 @@ const isuzuSlides = [
     subtitle: "Your Trusted Authorised Isuzu Dealer in Kenya",
     body: "Buy brand-new, zero-mileage Isuzu trucks, buses & pickups in Kenya. Edwin Kibira Isuzu Sales — serving Kenyans with pride.",
     image: "/vehicles/dmax-hero.png",
+    video: "/videos/hero.mp4",
     cta: "Browse Pickups",
     ctaSecondary: "Book a Test Drive",
     link: "/vehicles/double-cabin",
@@ -35,6 +36,7 @@ const isuzuSlides = [
     subtitle: "Premium 7-Seater Family SUV — Brand New",
     body: "Command every road in style. The Isuzu mu-X combines luxurious comfort with legendary off-road capability. Up to 100% bank financing available.",
     image: "/vehicles/mux-hero.png",
+    video: undefined,
     cta: "View mu-X SUV",
     ctaSecondary: "Request Quote",
     link: "/vehicles/mu-x-3000cc",
@@ -50,6 +52,7 @@ const isuzuSlides = [
     subtitle: "Heavy Duty Commercial Vehicles",
     body: "Powering Kenyan businesses forward. Our N-Series and F-Series trucks and buses deliver unmatched reliability for every fleet size.",
     image: "/vehicles/n-series-truck.webp",
+    video: undefined,
     cta: "View Trucks",
     ctaSecondary: "Get a Quote",
     link: "/vehicles/light-trucks-n-series",
@@ -78,33 +81,44 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
   return (
     <section className="relative w-full overflow-hidden bg-[#111] hero-section" style={{ height: "92vh", minHeight: 560, maxHeight: 900 }}>
 
-      {/* ── Background Image ── */}
+      {/* ── Background: Video or Image ── */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`img-${currentSlide}`}
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
+          key={`bg-${currentSlide}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 1.0, ease: "easeOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 z-0"
         >
-          <Image
-            src={current.image}
-            alt={current.title + " " + current.highlight}
-            fill
-            priority
-            className="object-cover"
-            style={{ filter: "brightness(0.55)" }}
-          />
+          {current.video ? (
+            <video
+              src={current.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <Image
+              src={current.image}
+              alt={current.title + " " + current.highlight}
+              fill
+              priority
+              className="object-cover"
+            />
+          )}
         </motion.div>
       </AnimatePresence>
 
-      {/* ── Gradient: left-heavy so text is always readable ── */}
+      {/* ── Dark overlays for text readability ── */}
+      <div className="absolute inset-0 bg-black/55 z-[1]" />
       <div
-        className="absolute inset-0 z-[1]"
+        className="absolute inset-0 z-[2] pointer-events-none"
         style={{
           background:
-            "linear-gradient(105deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.15) 100%)",
+            "linear-gradient(105deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.10) 100%)",
         }}
       />
 
@@ -118,34 +132,6 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
           className="h-full bg-secondary"
         />
       </div>
-
-      {/* ── Background Image with 'Moving' Animation ── */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 z-0"
-        >
-          <div className="absolute inset-0 bg-black/60 z-10" /> {/* Dark overlay for text readability */}
-          <motion.div
-            animate={{ scale: [1, 1.05] }}
-            transition={{ duration: 10, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
-            className="w-full h-full"
-          >
-            <Image
-              src={current.image}
-              alt={current.title}
-              fill
-              className="object-cover object-center"
-              priority
-              sizes="100vw"
-            />
-          </motion.div>
-        </motion.div>
-      </AnimatePresence>
 
       {/* ── Content ── */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-6 sm:px-8 flex flex-col justify-center">
@@ -166,7 +152,7 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
             </span>
           </motion.div>
 
-          {/* Main Title - Fixed Typography */}
+          {/* Main Title */}
           <motion.div
             key={`title-${currentSlide}`}
             initial={{ opacity: 0, y: 20 }}
@@ -201,7 +187,7 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
             {current.body}
           </motion.p>
 
-        {/* ── CTA Buttons ── */}
+          {/* ── CTA Buttons ── */}
           <motion.div
             key={`cta-${currentSlide}`}
             initial={{ opacity: 0, y: 16 }}
@@ -223,9 +209,6 @@ const Hero = ({ featuredVehicles }: HeroProps) => {
               {current.ctaSecondary}
             </Link>
           </motion.div>
-
-
-
         </div>
       </div>
 

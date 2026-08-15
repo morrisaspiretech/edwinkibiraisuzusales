@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
@@ -43,28 +43,28 @@ const InventoryPage = () => {
     fetchVehicles();
   }, []);
 
-  const getFallbackData = (): any[] => [
+    const getFallbackData = (): any[] => [
     {
-      id: 'isuzu-mux-ls-t',
+      id: 'tfs87-double-auto',
       make: 'Isuzu',
-      model: 'mu-X LS-T',
+      model: 'TFS 87 Double Cab 1900cc (Automatic)',
       year: 2024,
       price: 0,
-      engineCC: 2999,
+      engineCC: 1898,
       transmission: 'AUTOMATIC',
       fuelType: 'DIESEL',
       condition: 'NEW',
-      bodyType: 'SUV',
+      bodyType: 'PICKUP',
       mileage: 0,
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-1', url: '/vehicles/mux-1900cc.png', isHero: true, orderIndex: 0 }]
+      images: [{ id: 'img-5', url: '/vehicles/gallery/img-5.jpg', isHero: true, orderIndex: 0 }]
     },
     {
       id: 'isuzu-mux-ls-u',
       make: 'Isuzu',
-      model: 'mu-X LS-U',
+      model: 'mu-X LS-U 3.0L',
       year: 2024,
       price: 0,
       engineCC: 2999,
@@ -79,9 +79,60 @@ const InventoryPage = () => {
       images: [{ id: 'img-2', url: '/vehicles/mux-3000cc.png', isHero: true, orderIndex: 0 }]
     },
     {
-      id: 'isuzu-dmax-single-cab',
+      id: 'tfr87-4x2',
       make: 'Isuzu',
-      model: 'D-Max Single Cab',
+      model: 'TFR 87 Single Cab 4×2',
+      year: 2024,
+      price: 3890000,
+      engineCC: 1898,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'PICKUP',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-3a', url: '/vehicles/gallery/img-1.jpg', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'tfs87-4x4-manual',
+      make: 'Isuzu',
+      model: 'TFS 87 Single Cab 4×4',
+      year: 2024,
+      price: 4390000,
+      engineCC: 1898,
+      transmission: 'MANUAL',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'PICKUP',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-3b', url: '/vehicles/gallery/img-2.jpg', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'tfs87-4x4-auto',
+      make: 'Isuzu',
+      model: 'TFS 87 Single Cab 4×4 Auto',
+      year: 2024,
+      price: 4600000,
+      engineCC: 1898,
+      transmission: 'AUTOMATIC',
+      fuelType: 'DIESEL',
+      condition: 'NEW',
+      bodyType: 'PICKUP',
+      mileage: 0,
+      category: 'CAR',
+      status: 'AVAILABLE',
+      createdAt: new Date().toISOString(),
+      images: [{ id: 'img-3c', url: '/vehicles/gallery/img-3.jpg', isHero: true, orderIndex: 0 }]
+    },
+    {
+      id: 'tfs87-double-manual',
+      make: 'Isuzu',
+      model: 'TFS 87 Double Cab 1900cc (Manual)',
       year: 2024,
       price: 0,
       engineCC: 1898,
@@ -93,24 +144,7 @@ const InventoryPage = () => {
       category: 'CAR',
       status: 'AVAILABLE',
       createdAt: new Date().toISOString(),
-      images: [{ id: 'img-3', url: '/vehicles/dmax-single.webp', isHero: true, orderIndex: 0 }]
-    },
-    {
-      id: 'isuzu-dmax-double-cab',
-      make: 'Isuzu',
-      model: 'D-Max Double Cab',
-      year: 2024,
-      price: 0,
-      engineCC: 1898,
-      transmission: 'AUTOMATIC',
-      fuelType: 'DIESEL',
-      condition: 'NEW',
-      bodyType: 'PICKUP',
-      mileage: 0,
-      category: 'CAR',
-      status: 'AVAILABLE',
-      createdAt: new Date().toISOString(),
-      images: [{ id: 'img-4', url: '/vehicles/dmax-double.webp', isHero: true, orderIndex: 0 }]
+      images: [{ id: 'img-4', url: '/vehicles/gallery/img-4.jpg', isHero: true, orderIndex: 0 }]
     },
     {
       id: 'isuzu-nqr81k',
