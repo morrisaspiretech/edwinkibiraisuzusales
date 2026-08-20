@@ -142,20 +142,13 @@ const Navbar = () => {
             <NavLink href="/contact">Contact</NavLink>
           </div>
 
-          {/* Calculate Financing CTA */}
-          <div className="hidden lg:flex items-center gap-5">
-            <Link
-              href="/faq"
-              className="text-[#B0B0B0] text-sm font-black uppercase tracking-widest hover:text-white transition-colors"
+          {/* CTA Desktop */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link 
+              href="/get-quote" 
+              className="bg-[#D62B2B] text-white px-6 py-2.5 text-xs font-black uppercase tracking-widest hover:bg-[#b02323] transition-colors"
             >
-              FAQ
-            </Link>
-            <Link
-              href="/loan-calculator"
-              className="flex items-center gap-2.5 bg-[#D62B2B] text-white px-6 py-3.5 font-black text-[13px] uppercase tracking-widest hover:bg-red-700 transition-all"
-            >
-              <FaCalculator size={16} />
-              Calculate Financing
+              Get a Quote
             </Link>
           </div>
 
@@ -227,11 +220,11 @@ const Navbar = () => {
         <MobileNavLink href="/faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</MobileNavLink>
 
         <Link
-          href="/loan-calculator"
+          href="/get-quote"
           onClick={() => setIsMobileMenuOpen(false)}
           className="bg-secondary text-white text-center py-4 font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-colors mt-4 mb-6 flex items-center justify-center gap-2"
         >
-          <FaCalculator size={14} /> Calculate Financing
+          Get a Quote
         </Link>
 
         <div className="flex flex-col gap-3 text-white/70 text-sm pb-10">

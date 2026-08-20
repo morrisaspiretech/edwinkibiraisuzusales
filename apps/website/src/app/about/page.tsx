@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
-import { FaShield, FaAward, FaUsers, FaChevronRight, FaArrowRight, FaTruck, FaCar, FaBus, FaPhone, FaMessage } from "react-icons/fa6";
+import { FaShield, FaAward, FaUsers, FaChevronRight, FaArrowRight, FaTruck, FaPhone, FaMessage } from "react-icons/fa6";
 
 export default function AboutPage() {
   return (
@@ -154,21 +154,21 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                icon: <FaTruck size={40} />,
+                image: "/vehicles/grouped/batch3/3.jpeg",
                 title: "Isuzu D-Max",
                 subtitle: "Pickup Trucks",
                 desc: "From the workhorse D-Max SX to the premium V-Cross 4x4. The #1 pickup in Kenya for reliability and performance.",
                 link: "/inventory?search=D-Max",
               },
               {
-                icon: <FaCar size={40} />,
+                image: "/vehicles/mu-x-1900cc-gallery/1.jpeg",
                 title: "Isuzu mu-X",
                 subtitle: "SUV / Family Car",
                 desc: "A spacious 7-seater SUV with powerful diesel engine, modern technology, and premium interior. Perfect for Kenyan roads.",
                 link: "/inventory?search=mu-X",
               },
               {
-                icon: <FaBus size={40} />,
+                image: "/vehicles/n-series-truck.webp",
                 title: "Isuzu N-Series",
                 subtitle: "Commercial Trucks & Buses",
                 desc: "NPR, NQR, NPS trucks and FVR/FVZ heavy trucks for transport businesses, logistics and construction.",
@@ -178,17 +178,27 @@ export default function AboutPage() {
               <Link
                 key={model.title}
                 href={model.link}
-                className="bg-white p-8 border border-gray-100 hover:border-secondary/50 hover:shadow-xl transition-all duration-300 group"
+                className="bg-white border border-gray-100 hover:border-secondary/50 hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col"
               >
-                <div className="h-1 bg-secondary mb-8 w-0 group-hover:w-full transition-all duration-500" />
-                <div className="w-16 h-16 bg-secondary/10 group-hover:bg-secondary flex items-center justify-center text-secondary group-hover:text-white transition-all mb-6">
-                  {model.icon}
+                {/* Vehicle Image */}
+                <div className="relative w-full h-44 overflow-hidden">
+                  <Image
+                    src={model.image}
+                    alt={model.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <h3 className="text-xl font-black text-primary uppercase mb-1">{model.title}</h3>
-                <p className="text-secondary font-bold text-xs uppercase tracking-widest mb-3">{model.subtitle}</p>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">{model.desc}</p>
-                <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 transition-all">
-                  Explore Models <FaChevronRight size={14} />
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="h-1 bg-secondary mb-4 w-0 group-hover:w-full transition-all duration-500" />
+                  <h3 className="text-xl font-black text-primary uppercase mb-1">{model.title}</h3>
+                  <p className="text-secondary font-bold text-xs uppercase tracking-widest mb-3">{model.subtitle}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">{model.desc}</p>
+                  <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 transition-all">
+                    Explore Models <FaChevronRight size={14} />
+                  </div>
                 </div>
               </Link>
             ))}

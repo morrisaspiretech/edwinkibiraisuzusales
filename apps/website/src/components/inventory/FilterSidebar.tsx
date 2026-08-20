@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-
 import { cn } from "@/lib/utils";
 import { FaMagnifyingGlass, FaSliders, FaChevronDown, FaXmark } from "react-icons/fa6";
 
@@ -40,13 +39,7 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
     onFilterChange(reset);
   };
 
-  const isuzuBodyTypes = [
-    "Pickup",
-    "SUV",
-    "Truck",
-    "Bus",
-    "Van",
-  ];
+  const isuzuBodyTypes = ["Pickup", "SUV", "Truck", "Bus", "Van"];
 
   const isuzuModels = [
     { label: "All Isuzu Models", value: "" },
@@ -71,19 +64,9 @@ const FilterSidebar = ({ onFilterChange }: FilterSidebarProps) => {
         <FaSliders className="w-4 h-4 text-secondary" />
       </div>
 
-      {/* Isuzu Brand Badge */}
-      <div className="bg-secondary/10 border border-secondary/20 px-4 py-3 flex items-center gap-3">
-        <div className="w-2 h-2 rounded-full bg-secondary" />
-        <span className="text-xs font-black uppercase tracking-widest text-secondary">
-          Isuzu Vehicles Only
-        </span>
-      </div>
-
       {/* Search */}
       <div className="space-y-2">
-        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
-          Search
-        </label>
+        <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">Search</label>
         <div className="relative">
           <FaMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary w-4 h-4" />
           <input
