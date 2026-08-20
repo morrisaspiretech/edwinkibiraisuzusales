@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
 
   // ── Performance: compress responses
   compress: true,
+  experimental: {
+    cpus: 1,
+    workerThreads: false,
+    memoryBasedWorkersCount: true,
+  },
 
   // ── Image Optimization
   images: {
