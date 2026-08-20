@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
   trailingSlash: true,
   typescript: { ignoreBuildErrors: true },
   productionBrowserSourceMaps: false,
@@ -16,11 +15,7 @@ const nextConfig: NextConfig = {
 
   // ── Image Optimization
   images: {
-    formats: ['image/avif', 'image/webp'],   // serve modern formats
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 64, 128, 256, 384],
-    minimumCacheTTL: 31536000,               // cache images for 1 year
-    dangerouslyAllowSVG: true,
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
