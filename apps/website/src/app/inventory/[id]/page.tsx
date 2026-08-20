@@ -20,7 +20,7 @@ export default async function VehicleDetailsPage({ params }: { params: Promise<{
     let slug = "light-trucks-n-series";
     
     if (m.includes("single")) slug = "single-cabin";
-    else if (m.includes("kipchoge")) slug = "kipchoge-limited-edition";
+    else if (m.includes("tfs40") || m.includes("tfs 40")) slug = "tfs40-double-auto";
     else if (m.includes("double") || m.includes("d-max") || m.includes("dmax")) slug = "double-cabin";
     else if (m.includes("mu-x") || m.includes("mux")) {
       if (m.includes("1900")) slug = "mu-x-1900cc";

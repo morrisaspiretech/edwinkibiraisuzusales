@@ -34,14 +34,14 @@ const navCategories = [
       { label: "TFS 87 Double Cab Manual", href: "/vehicles/tfs87-double-manual" },
       { label: "TFS 87 Double Cab Auto", href: "/vehicles/tfs87-double-auto" },
       { label: "D-Max 3.0L Double Cab", href: "/vehicles/double-cabin" },
-      { label: "Kipchoge Limited Edition", href: "/vehicles/kipchoge-limited-edition" },
+      { label: "TFS 40 Double Cab Automatic", href: "/vehicles/tfs40-double-auto" },
     ],
   },
   {
     label: "SUVs",
     items: [
-      { label: "Isuzu MU-X 1900cc", href: "/vehicles/mu-x-1900cc" },
-      { label: "Isuzu MU-X 3000cc", href: "/vehicles/mu-x-3000cc" },
+      { label: "Isuzu MU-X LS-U 1900cc", href: "/vehicles/mu-x-1900cc" },
+      { label: "Isuzu MU-X LS-T 3000cc", href: "/vehicles/mu-x-3000cc" },
     ],
   },
 ];

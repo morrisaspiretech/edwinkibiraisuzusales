@@ -5,6 +5,11 @@ export interface VehicleSpec {
   description: string;
   heroImage: string;
   gallery: string[];
+  presentationVideo?: {
+    url: string;
+    title: string;
+    description: string;
+  };
   quickSpecs: {
     engine: string;
     transmission: string;
@@ -50,12 +55,13 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "mu-x-1900cc": {
     id: "mu-x-1900cc",
     category: "SUVs",
-    title: "Isuzu MU-X 1900cc",
+    title: "Isuzu MU-X LS-U 1900cc",
     description: "The Isuzu mu-X 1.9L is a refined 7-seater SUV that delivers excellent fuel efficiency without compromising on capability. Powered by the advanced 1.9L RZ4E turbo-diesel engine, it is ideal for families who want a comfortable, modern SUV that handles both city roads and weekend adventures with confidence.",
-    heroImage: "/vehicles/mux-1900cc.png",
+    heroImage: "/vehicles/mu-x-1900cc-gallery/1.jpeg",
     gallery: [
-      "/vehicles/mux-1900cc.png",
-      "/vehicles/mux-3000cc.png",
+      "/vehicles/mu-x-1900cc-gallery/1.jpeg",
+      "/vehicles/mu-x-1900cc-gallery/2.jpeg",
+      "/vehicles/mu-x-1900cc-gallery/3.jpeg",
     ],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
@@ -107,12 +113,25 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "mu-x-3000cc": {
     id: "mu-x-3000cc",
     category: "SUVs",
-    title: "Isuzu MU-X 3000cc",
+    title: "Isuzu MU-X LS-T 3000cc",
     description: "The flagship Isuzu mu-X 3.0L LS-T is the ultimate 7-seater SUV, blending commanding off-road capability with genuine premium luxury. Powered by the legendary 3.0L 4JJ3-TCX turbo-diesel and paired with a 6-speed automatic, it features advanced driver assistance systems, premium leather seating, and full 4WD capability for any terrain.",
-    heroImage: "/vehicles/mux-3000cc.png",
+    heroImage: "/vehicles/mu-x-3000cc-gallery/1.jpeg",
     gallery: [
-      "/vehicles/mux-3000cc.png",
-      "/vehicles/mux-1900cc.png",
+      "/vehicles/mu-x-3000cc-gallery/1.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/2.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/3.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/4.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/5.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/6.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/7.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/8.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/9.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/10.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/11.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/12.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/13.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/14.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/15.jpeg",
     ],
     quickSpecs: {
       engine: "3.0L Turbo Diesel",
@@ -172,8 +191,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFR 87 Single Cab 4×2",
     description: "The Isuzu TFR 87 4×2 Single Cab is built for serious commercial work. Powered by the 1.9L RZ4E Turbodiesel engine and paired with a 6-speed manual gearbox, it delivers outstanding fuel economy and reliability.",
-    heroImage: "/vehicles/gallery/img-1.jpg",
-    gallery: ['/vehicles/gallery/img-1.jpg', '/vehicles/gallery/img-2.jpg', '/vehicles/gallery/img-3.jpg', '/vehicles/gallery/img-4.jpg', '/vehicles/gallery/img-5.jpg', '/vehicles/gallery/img-6.jpg', '/vehicles/gallery/img-7.jpg', '/vehicles/gallery/img-8.jpg', '/vehicles/gallery/img-9.jpg', '/vehicles/gallery/img-10.jpg', '/vehicles/gallery/img-11.jpg', '/vehicles/gallery/img-12.jpg'],
+    heroImage: "/vehicles/grouped/batch1/2.jpeg",
+    gallery: ['/vehicles/grouped/batch1/2.jpeg', '/vehicles/grouped/batch1/4.jpeg', '/vehicles/grouped/batch1/6.jpeg', '/vehicles/grouped/batch1/1.jpeg', '/vehicles/grouped/batch1/3.jpeg', '/vehicles/grouped/batch1/5.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Manual",
@@ -221,8 +240,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Single Cab 4×4 (Manual)",
     description: "The Isuzu TFS 87 4×4 Single Cab combines rugged off-road capability with the productivity of a full-size single cab. Manual transmission.",
-    heroImage: "/vehicles/gallery/img-2.jpg",
-    gallery: ['/vehicles/gallery/img-13.jpg', '/vehicles/gallery/img-14.jpg', '/vehicles/gallery/img-15.jpg', '/vehicles/gallery/img-16.jpg', '/vehicles/gallery/img-17.jpg', '/vehicles/gallery/img-18.jpg', '/vehicles/gallery/img-19.jpg', '/vehicles/gallery/img-20.jpg', '/vehicles/gallery/img-21.jpg', '/vehicles/gallery/img-22.jpg', '/vehicles/gallery/img-23.jpg', '/vehicles/gallery/img-24.jpg'],
+    heroImage: "/vehicles/grouped/batch2/4.jpeg",
+    gallery: ['/vehicles/grouped/batch2/1.jpeg', '/vehicles/grouped/batch2/2.jpeg', '/vehicles/grouped/batch2/3.jpeg', '/vehicles/grouped/batch2/4.jpeg', '/vehicles/grouped/batch2/5.jpeg', '/vehicles/grouped/batch2/6.jpeg', '/vehicles/grouped/batch2/7.jpeg', '/vehicles/grouped/batch2/8.jpeg', '/vehicles/grouped/batch2/9.jpeg', '/vehicles/grouped/batch2/10.jpeg', '/vehicles/grouped/batch2/11.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Manual",
@@ -249,8 +268,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Single Cab 4×4 (Automatic)",
     description: "The Isuzu TFS 87 4×4 Single Cab Automatic. Rugged off-road capability with the convenience of an automatic transmission.",
-    heroImage: "/vehicles/gallery/img-3.jpg",
-    gallery: ['/vehicles/gallery/img-25.jpg', '/vehicles/gallery/img-26.jpg', '/vehicles/gallery/img-27.jpg', '/vehicles/gallery/img-28.jpg', '/vehicles/gallery/img-29.jpg', '/vehicles/gallery/img-30.jpg', '/vehicles/gallery/img-31.jpg', '/vehicles/gallery/img-32.jpg', '/vehicles/gallery/img-33.jpg', '/vehicles/gallery/img-34.jpg', '/vehicles/gallery/img-35.jpg', '/vehicles/gallery/img-36.jpg'],
+    heroImage: "/vehicles/grouped/batch2/4.jpeg",
+    gallery: ['/vehicles/grouped/batch2/1.jpeg', '/vehicles/grouped/batch2/2.jpeg', '/vehicles/grouped/batch2/3.jpeg', '/vehicles/grouped/batch2/4.jpeg', '/vehicles/grouped/batch2/5.jpeg', '/vehicles/grouped/batch2/6.jpeg', '/vehicles/grouped/batch2/7.jpeg', '/vehicles/grouped/batch2/8.jpeg', '/vehicles/grouped/batch2/9.jpeg', '/vehicles/grouped/batch2/10.jpeg', '/vehicles/grouped/batch2/11.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Automatic",
@@ -271,8 +290,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Double Cab 1900cc (Manual)",
     description: "The D-Max Double Cab 1.9L Manual. Bridges work and lifestyle perfectly.",
-    heroImage: "/vehicles/gallery/img-4.jpg",
-    gallery: ['/vehicles/gallery/img-37.jpg', '/vehicles/gallery/img-38.jpg', '/vehicles/gallery/img-39.jpg', '/vehicles/gallery/img-40.jpg', '/vehicles/gallery/img-41.jpg', '/vehicles/gallery/img-42.jpg', '/vehicles/gallery/img-43.jpg', '/vehicles/gallery/img-44.jpg', '/vehicles/gallery/img-45.jpg', '/vehicles/gallery/img-46.jpg', '/vehicles/gallery/img-47.jpg', '/vehicles/gallery/img-48.jpg'],
+    heroImage: "/vehicles/grouped/batch3/3.jpeg",
+    gallery: ['/vehicles/grouped/batch3/3.jpeg', '/vehicles/grouped/batch3/1.jpeg', '/vehicles/grouped/batch3/2.jpeg', '/vehicles/grouped/batch3/4.jpeg', '/vehicles/grouped/batch3/5.jpeg', '/vehicles/grouped/batch3/6.jpeg', '/vehicles/grouped/batch3/7.jpeg', '/vehicles/grouped/batch3/8.jpeg', '/vehicles/grouped/batch3/9.jpeg', '/vehicles/grouped/batch3/10.jpeg', '/vehicles/grouped/batch3/11.jpeg', '/vehicles/grouped/batch3/12.jpeg', '/vehicles/grouped/batch3/13.jpeg', '/vehicles/grouped/batch3/14.jpeg', '/vehicles/grouped/batch3/15.jpeg', '/vehicles/grouped/batch3/16.jpeg', '/vehicles/grouped/batch3/17.jpeg', '/vehicles/grouped/batch3/18.jpeg', '/vehicles/grouped/batch3/19.jpeg', '/vehicles/grouped/batch3/20.jpeg', '/vehicles/grouped/batch3/21.jpeg', '/vehicles/grouped/batch3/22.jpeg', '/vehicles/grouped/batch3/23.jpeg', '/vehicles/grouped/batch3/24.jpeg', '/vehicles/grouped/batch3/25.jpeg', '/vehicles/grouped/batch3/26.jpeg', '/vehicles/grouped/batch3/27.jpeg', '/vehicles/grouped/batch3/28.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Manual",
@@ -293,8 +312,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Double Cab 1900cc (Automatic)",
     description: "The D-Max Double Cab 1.9L Automatic. The ultimate all-rounder for the modern Kenyan.",
-    heroImage: "/vehicles/gallery/img-5.jpg",
-    gallery: ['/vehicles/gallery/img-49.jpg', '/vehicles/gallery/img-50.jpg', '/vehicles/gallery/img-51.jpg', '/vehicles/gallery/img-52.jpg', '/vehicles/gallery/img-53.jpg', '/vehicles/gallery/img-54.jpg', '/vehicles/gallery/img-55.jpg', '/vehicles/gallery/img-56.jpg', '/vehicles/gallery/img-57.jpg', '/vehicles/gallery/img-58.jpg', '/vehicles/gallery/img-59.jpg', '/vehicles/gallery/img-60.jpg', '/vehicles/gallery/img-61.jpg'],
+    heroImage: "/vehicles/grouped/batch4/3.jpeg",
+    gallery: ['/vehicles/grouped/batch4/3.jpeg', '/vehicles/grouped/batch4/5.jpeg', '/vehicles/grouped/batch4/1.jpeg', '/vehicles/grouped/batch4/2.jpeg', '/vehicles/grouped/batch4/4.jpeg', '/vehicles/grouped/batch4/6.jpeg', '/vehicles/grouped/batch4/7.jpeg', '/vehicles/grouped/batch4/8.jpeg', '/vehicles/grouped/batch4/9.jpeg', '/vehicles/grouped/batch4/10.jpeg', '/vehicles/grouped/batch4/11.jpeg', '/vehicles/grouped/batch4/12.jpeg', '/vehicles/grouped/batch4/13.jpeg', '/vehicles/grouped/batch4/14.jpeg', '/vehicles/grouped/batch4/15.jpeg', '/vehicles/grouped/batch4/16.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Automatic",
@@ -315,8 +334,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "Isuzu D-Max 3.0L Double Cab",
     description: "The most popular Isuzu in Kenya, the D-Max 3.0L Double Cab perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and available in both manual and automatic.",
-    heroImage: "/vehicles/dmax-double.webp",
-    gallery: ["/vehicles/dmax-double.webp"],
+    heroImage: "/vehicles/dmax-single.webp",
+    gallery: ["/vehicles/dmax-single.webp"],
     quickSpecs: { engine: "3.0L Turbo Diesel", transmission: "6-Speed Auto / Manual", power: "140 kW @ 3,600 rpm", fuel: "Diesel" },
     detailedSpecs: {
       engine: { type: "4JJ3-TCX", displacement: "2,999 cc", maxPower: "140 kW", maxTorque: "450 Nm", fuelSystem: "Common Rail" },
@@ -327,15 +346,26 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     features: ["Seating for 5", "Shift-on-the-fly 4WD", "9-inch Touchscreen", "Reversing Camera", "Leather seats"],
   },
 
-  "kipchoge-limited-edition": {
-    id: "kipchoge-limited-edition",
+
+  "tfs40-double-auto": {
+    id: "tfs40-double-auto",
     category: "Pickups",
-    title: "Kipchoge Limited Edition",
-    description: "Celebrating the spirit of Kenya's greatest champion, Eliud Kipchoge, the Isuzu D-Max Kipchoge Limited Edition is a tribute to greatness. Featuring exclusive Kipchoge badging, premium two-tone exterior, a specially tuned suspension, and interior appointments that match the champion's class — this is a collector's pickup for those who settle for nothing less.",
-    heroImage: "/vehicles/dmax-kipchoge.webp",
+    title: "TFS 40 Double Cab Automatic",
+    description: "The Isuzu TFS 40 Double Cab Automatic is a premium 4×4 pickup built for those who demand the best. Featuring an aggressive sport-tuned exterior with blacked-out trims, black alloy wheels, and wide fender flares, it commands attention on any road. Powered by a 3.0L turbodiesel and paired with a 6-speed automatic, it combines raw capability with refined comfort.",
+    heroImage: "/vehicles/tfs40-double-auto/1.jpeg",
     gallery: [
-      "/vehicles/dmax-kipchoge.webp",
+      "/vehicles/tfs40-double-auto/1.jpeg",
+      "/vehicles/tfs40-double-auto/3.jpeg",
+      "/vehicles/tfs40-double-auto/4.jpeg",
+      "/vehicles/tfs40-double-auto/5.jpeg",
+      "/vehicles/tfs40-double-auto/6.jpeg",
+      "/vehicles/tfs40-double-auto/2.jpeg",
     ],
+    presentationVideo: {
+      url: "/vehicles/tfs40-double-auto/tfs40-video.mp4",
+      title: "Experience the TFS 40",
+      description: "Take a closer look at the bold styling, aggressive stance, and premium finish of the Isuzu TFS 40 Double Cab Automatic. Built for power and presence.",
+    },
     quickSpecs: {
       engine: "3.0L Turbo Diesel",
       transmission: "6-Speed Automatic",
@@ -358,8 +388,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         groundClearance: "240 mm",
       },
       chassis: {
-        suspensionFront: "Independent Double-Wishbone, Torsion Bar, Upgraded Sport Tuning, Stabiliser Bar",
-        suspensionRear: "Rigid Axle, Semi-Elliptic Leaf Springs, Upgraded Shock Absorbers",
+        suspensionFront: "Independent Double-Wishbone, Torsion Bar Springs, Stabiliser Bar",
+        suspensionRear: "Rigid Axle, Semi-Elliptic Leaf Springs",
         brakes: "Front Ventilated Disc, Rear Drum with ABS, EBD & BA",
         steering: "Rack & Pinion with Power Assist",
       },
@@ -370,17 +400,18 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       },
     },
     features: [
-      "Exclusive Kipchoge Champion Badging",
-      "Two-Tone Black Roof with Premium Paint",
-      "Custom Sport-Tuned Suspension",
-      "Kipchoge Edition Black Alloy Wheels (18-inch)",
-      "Premium Nappa Leather Seats with Kipchoge Stitching",
-      "9-inch Infotainment with Apple CarPlay & Android Auto",
-      "360° Surround View Camera",
-      "Wireless Phone Charging",
-      "Shift-on-the-fly 4WD (2H / 4H / 4L)",
-      "8 Airbags & Advanced Safety Suite",
-      "Numbered Limited Edition Plaque",
+      "Aggressive Sport Exterior with Black Trims",
+      "Black 18-inch Alloy Wheels",
+      "Wide Fender Flares for Bold Stance",
+      "6-Speed Automatic Transmission",
+      "Shift-on-the-Fly 4WD (2H / 4H / 4L)",
+      "4×4 with Differential Lock",
+      "9-inch Touchscreen with Apple CarPlay & Android Auto",
+      "Reversing Camera",
+      "Leather-Appointed Seats",
+      "Seating for 5",
+      "Air Conditioning",
+      "6 Airbags",
     ],
   },
 

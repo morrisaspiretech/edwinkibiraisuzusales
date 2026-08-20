@@ -46,4 +46,8 @@ node-v20.12.2-win-x64/
 *.tmp*
 tmp/
 
-
+# Large media files (too big for GitHub — host separately)
+*.mp4
+*.mov
+*.avi
+*.mkv

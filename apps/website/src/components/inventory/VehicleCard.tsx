@@ -23,7 +23,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
     if (m.includes("tfs 87") && (m.includes("auto") || m.includes("automatic"))) return "tfs87-4x4-auto";
     if (m.includes("tfs 87") || m.includes("tfs87")) return "tfs87-4x4-manual";
     if (m.includes("single")) return "tfr87-4x2";
-    if (m.includes("kipchoge")) return "kipchoge-limited-edition";
+    if (m.includes("tfs40") || m.includes("tfs 40")) return "tfs40-double-auto";
     if (m.includes("double") || m.includes("d-max") || m.includes("dmax")) return "double-cabin";
     if (m.includes("mu-x") || m.includes("mux")) {
       if (m.includes("1900") || m.includes("1.9")) return "mu-x-1900cc";

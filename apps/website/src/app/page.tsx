@@ -43,56 +43,63 @@ const FEATURED_VEHICLES = [
     id: 'tfr87-4x2',
     title: 'TFR 87 Single Cab 4×2',
     category: 'Pickups',
-    img: '/vehicles/gallery/img-1.jpg',
+    img: '/vehicles/grouped/batch1/2.jpeg',
     spec: '1.9L Turbo Diesel · 150 hp · Manual',
   },
   {
     id: 'tfs87-4x4-manual',
     title: 'TFS 87 Single Cab 4×4',
     category: 'Pickups',
-    img: '/vehicles/gallery/img-2.jpg',
+    img: '/vehicles/grouped/batch2/2.jpeg',
     spec: '1.9L Turbo Diesel · Manual · 4×4',
   },
   {
     id: 'tfs87-4x4-auto',
     title: 'TFS 87 Single Cab 4×4',
     category: 'Pickups',
-    img: '/vehicles/gallery/img-3.jpg',
+    img: '/vehicles/grouped/batch2/3.jpeg',
     spec: '1.9L Turbo Diesel · Auto · 4×4',
   },
   {
     id: 'tfs87-double-manual',
     title: 'TFS 87 Double Cab',
     category: 'Pickups',
-    img: '/vehicles/gallery/img-4.jpg',
+    img: '/vehicles/grouped/batch3/3.jpeg',
     spec: '1.9L Turbo Diesel · Manual · 4×4',
   },
   {
     id: 'tfs87-double-auto',
     title: 'TFS 87 Double Cab',
     category: 'Pickups',
-    img: '/vehicles/gallery/img-5.jpg',
+    img: '/vehicles/grouped/batch4/3.jpeg',
     spec: '1.9L Turbo Diesel · Auto · 4×4',
+  },
+  {
+    id: 'tfs40-double-auto',
+    title: 'TFS 40 Double Cab Automatic',
+    category: 'Pickups',
+    img: '/vehicles/tfs40-double-auto/1.jpeg',
+    spec: '3.0L Turbo Diesel · 190 hp · 4×4',
   },
   {
     id: 'double-cabin',
     title: 'D-Max 3.0L Double Cab',
     category: 'Pickups',
-    img: '/vehicles/dmax-double.webp',
+    img: '/vehicles/dmax-single.webp',
     spec: '3.0L Turbo Diesel · 190 hp · 4×4',
   },
   {
     id: 'mu-x-1900cc',
-    title: 'MU-X 1900cc',
+    title: 'MU-X LS-U 1900cc',
     category: 'SUVs',
-    img: '/vehicles/mux-1900cc.png',
+    img: '/vehicles/mu-x-1900cc-gallery/1.jpeg',
     spec: '1.9L Turbo Diesel · 150 hp · 7-Seater',
   },
   {
     id: 'mu-x-3000cc',
-    title: 'MU-X 3000cc',
+    title: 'MU-X LS-T 3000cc',
     category: 'SUVs',
-    img: '/vehicles/mux-3000cc.png',
+    img: '/vehicles/mu-x-3000cc-gallery/1.jpeg',
     spec: '3.0L Turbo Diesel · 190 hp · 7-Seater',
   },
   {
@@ -408,6 +415,158 @@ export default async function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+
+      {/* ── TIKTOK SHOWCASE ── */}
+      <section className="py-14 px-4 sm:px-6 bg-[#0d0d0d] border-t border-gray-900">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-1 w-10 bg-[#D62B2B]" />
+                <span className="text-[#D62B2B] font-black text-xs uppercase tracking-widest">As Seen on TikTok</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white uppercase leading-tight">
+                From Our <span className="text-[#D62B2B]">Showroom</span> to You
+              </h2>
+              <p className="text-gray-400 text-sm mt-2 max-w-xl">
+                Real vehicles. Real deliveries. Real customers. See why thousands of Kenyans trust Edwin Kibira Isuzu Sales for their next vehicle.
+              </p>
+            </div>
+            <a
+              href="https://www.tiktok.com/@edwinkibiraisuzusales"
+              target="_blank"
+              rel="noreferrer"
+              className="flex-shrink-0 flex items-center gap-2 border border-white/20 text-white px-5 py-2.5 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-[#1a1a1a] transition-all"
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z"/></svg>
+              Follow @edwinkibiraisuzusales
+            </a>
+          </div>
+
+          {/* Videos Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
+            {/* Video 1 */}
+            <div className="group flex flex-col">
+              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
+                <iframe
+                  src="https://www.tiktok.com/embed/v2/7675848927463165202"
+                  className="w-full h-full"
+                  allow="fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Isuzu TikTok Video 1"
+                  style={{border:'none'}}
+                />
+              </div>
+              <div className="mt-3 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">New Arrival</p>
+                <p className="text-white font-bold text-sm leading-snug">Fresh Off the Lot — Brand New Isuzu Delivery</p>
+                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">A brand-new Isuzu rolls off our lot straight into the hands of a happy customer. This is what we do every day — matching Kenyans with the perfect vehicle.</p>
+              </div>
+            </div>
+
+            {/* Video 2 */}
+            <div className="group flex flex-col">
+              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
+                <iframe
+                  src="https://www.tiktok.com/embed/v2/7675446772679920917"
+                  className="w-full h-full"
+                  allow="fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Isuzu TikTok Video 2"
+                  style={{border:'none'}}
+                />
+              </div>
+              <div className="mt-3 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">Showroom</p>
+                <p className="text-white font-bold text-sm leading-snug">Inside the Edwin Kibira Isuzu Showroom</p>
+                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">Step inside our showroom and explore the full Isuzu range — from rugged pickups to premium SUVs — all lined up and ready for you to experience.</p>
+              </div>
+            </div>
+
+            {/* Video 3 */}
+            <div className="group flex flex-col">
+              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
+                <iframe
+                  src="https://www.tiktok.com/embed/v2/7673221439557831957"
+                  className="w-full h-full"
+                  allow="fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Isuzu TikTok Video 3"
+                  style={{border:'none'}}
+                />
+              </div>
+              <div className="mt-3 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">Feature Spotlight</p>
+                <p className="text-white font-bold text-sm leading-snug">Isuzu D-Max — Built for Kenya's Roads</p>
+                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">The Isuzu D-Max is engineered for Kenyan terrain. Whether it's city commuting or off-road adventures, this pickup delivers unmatched durability and performance.</p>
+              </div>
+            </div>
+
+            {/* Video 4 */}
+            <div className="group flex flex-col">
+              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
+                <iframe
+                  src="https://www.tiktok.com/embed/v2/7672472169426734357"
+                  className="w-full h-full"
+                  allow="fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Isuzu TikTok Video 4"
+                  style={{border:'none'}}
+                />
+              </div>
+              <div className="mt-3 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">Customer Delivery</p>
+                <p className="text-white font-bold text-sm leading-snug">Another Happy Customer — A Proud Moment</p>
+                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">Nothing beats the joy on a customer's face when they drive away in their new Isuzu. We take pride in making every delivery a memorable occasion.</p>
+              </div>
+            </div>
+
+            {/* Video 5 */}
+            <div className="group flex flex-col">
+              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
+                <iframe
+                  src="https://www.tiktok.com/embed/v2/7670236623962918164"
+                  className="w-full h-full"
+                  allow="fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Isuzu TikTok Video 5"
+                  style={{border:'none'}}
+                />
+              </div>
+              <div className="mt-3 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">MU-X SUV</p>
+                <p className="text-white font-bold text-sm leading-snug">The Isuzu MU-X — Kenya's Premium 7-Seater SUV</p>
+                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">Commanding presence. Premium comfort. The Isuzu MU-X is for families and executives who demand the very best — locally assembled right here in Kenya.</p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="mt-10 text-center border-t border-white/10 pt-8">
+            <p className="text-gray-500 text-sm mb-4">Like what you see? We post new content every week.</p>
+            <a
+              href="https://www.tiktok.com/@edwinkibiraisuzusales"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 bg-[#D62B2B] text-white px-8 py-3 font-black text-xs uppercase tracking-widest hover:bg-[#b01e1e] transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z"/></svg>
+              Follow Us on TikTok — @edwinkibiraisuzusales
+            </a>
+          </div>
+
         </div>
       </section>
 

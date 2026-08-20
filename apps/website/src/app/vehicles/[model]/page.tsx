@@ -253,21 +253,57 @@ export default async function VehiclePage({
           </div>
 
           {/* Features */}
-          <div className="mt-6 bg-white border border-gray-200 p-6">
-            <h3 className="text-xs font-black uppercase tracking-widest text-[#D62B2B] mb-4 pb-2 border-b border-gray-100">
+          <div className="mt-8 bg-white border border-gray-200 p-6 sm:p-8">
+            <h3 className="text-sm font-black uppercase tracking-widest text-[#D62B2B] mb-6 pb-3 border-b border-gray-100">
               Key Features &amp; Highlights
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-8">
               {vehicle.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-2 py-1.5">
-                  <FaCheck size={14} className="text-[#D62B2B] mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                <div key={i} className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#D62B2B]/10 flex items-center justify-center mt-0.5">
+                    <FaCheck size={10} className="text-[#D62B2B]" />
+                  </div>
+                  <span className="text-sm text-gray-800 font-medium leading-relaxed">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* ── VIDEO SHOWCASE ── */}
+      {vehicle.presentationVideo && (
+        <div className="bg-[#111] border-b border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-1 bg-[#D62B2B]" />
+              <h2 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">
+                {vehicle.presentationVideo.title}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2 relative aspect-video bg-black rounded-lg overflow-hidden border border-gray-800">
+                <video
+                  src={vehicle.presentationVideo.url}
+                  controls
+                  playsInline
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  {vehicle.presentationVideo.description}
+                </p>
+                <div className="bg-white/10 p-6 border-l-4 border-[#D62B2B]">
+                  <p className="text-white font-bold uppercase tracking-widest text-xs mb-2">Experience It Live</p>
+                  <p className="text-gray-400 text-xs mb-4">See the aggressive styling and premium features of this incredible pickup in motion.</p>
+                  <a href="https://wa.me/254768351483" target="_blank" rel="noreferrer" className="inline-block bg-[#D62B2B] text-white px-6 py-3 font-black text-[10px] uppercase tracking-widest hover:bg-[#b01e1e] transition-colors">Book a Test Drive</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── GALLERY ── */}
       {vehicle.gallery && vehicle.gallery.length > 0 && (
@@ -361,8 +397,8 @@ export default async function VehiclePage({
 }
 
 const SpecRow = ({ label, value }: { label: string; value: string }) => (
-  <div className="flex justify-between items-start gap-2 border-b border-gray-50 pb-2 last:border-0">
-    <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wide w-2/5 flex-shrink-0 pt-0.5">{label}</span>
-    <span className="text-xs font-bold text-[#1a1a1a] text-right leading-tight">{value}</span>
+  <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 py-3 border-b border-gray-100 last:border-0">
+    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest sm:w-1/3 flex-shrink-0 pt-0.5">{label}</span>
+    <span className="text-sm font-semibold text-[#1a1a1a] leading-snug">{value}</span>
   </div>
 );
