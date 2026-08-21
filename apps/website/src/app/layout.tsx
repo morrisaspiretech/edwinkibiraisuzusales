@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   },
 };
 
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +43,7 @@ export default function RootLayout({
         <main className="min-h-screen flex flex-col">
           {children}
         </main>
+        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>

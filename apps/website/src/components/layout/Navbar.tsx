@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FaBars, FaXmark, FaPhone, FaChevronDown, FaWhatsapp, FaCalculator } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
 
+import { usePathname } from "next/navigation";
+
 const PHONE = "0768351483";
 const WHATSAPP = "254768351483";
 
@@ -58,11 +60,39 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const pathname = usePathname();
+
+  const getWhatsAppMessage = () => {
+    let message = "Hi Edwin, I'm interested in buying an Isuzu vehicle and would like to get more details.";
+    
+    if (pathname === "/about") {
+      message = "Hi Edwin, I was reading about your dealership on the About page and I'm interested in purchasing an Isuzu.";
+    } else if (pathname === "/vehicles") {
+      message = "Hi Edwin, I'm looking at your Isuzu Vehicle Range online and I'd like to discuss pricing and options.";
+    } else if (pathname.startsWith("/vehicles/")) {
+      const modelSlug = pathname.split('/').pop() || "";
+      const formattedModel = modelSlug.replace(/-/g, " ").toUpperCase();
+      message = `Hi Edwin, I am interested in the ${formattedModel} I saw on your website. Is it currently available for viewing/test drive?`;
+    } else if (pathname === "/get-quote") {
+      message = "Hi Edwin, I'm on the Get a Quote page and would like to request a custom quote for a vehicle.";
+    } else if (pathname === "/contact") {
+      message = "Hi Edwin, I'm reaching out from your contact page. I'd love to chat about your Isuzu vehicles.";
+    }
+    
+    return message;
+  };
+
   return (
     <>
       {/* ── Top Bar ── */}
-      <div className="bg-secondary text-white text-xs py-2 px-4 hidden sm:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="bg-secondary text-white text-xs py-2 px-4 hidden sm:block relative overflow-hidden">
+        {/* Twinkle Background Effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_white_1.5px,_transparent_1.5px)] [background-size:24px_24px] opacity-40 animate-pulse mix-blend-overlay" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_white_2.5px,_transparent_2px)] [background-size:37px_37px] opacity-30 animate-[pulse_3s_ease-in-out_infinite_1s] mix-blend-overlay" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto flex justify-between items-center relative z-10">
           <span className="font-semibold tracking-wide">
             Kenya&apos;s Trusted Authorised Isuzu Dealer — Edwin Kibira Isuzu Sales
           </span>
@@ -71,12 +101,15 @@ const Navbar = () => {
               <FaPhone size={12} /> {PHONE}
             </a>
             <a
-              href={`https://wa.me/${WHATSAPP}`}
+              href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(getWhatsAppMessage())}`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 hover:text-white/80 transition-colors font-bold"
+              className="flex items-center gap-1.5 hover:text-white transition-colors font-bold group"
             >
-              <FaWhatsapp size={14} /> WhatsApp
+              <div className="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
+                <FaWhatsapp size={13} className="text-white" />
+              </div>
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
@@ -89,7 +122,13 @@ const Navbar = () => {
           isScrolled ? "shadow-2xl py-1" : "py-2"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20">
+        {/* Twinkle Background Effect for Black Nav */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_white_1.5px,_transparent_1.5px)] [background-size:30px_30px] opacity-25 animate-[pulse_4s_ease-in-out_infinite] mix-blend-overlay" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_white_2px,_transparent_2px)] [background-size:45px_45px] opacity-20 animate-[pulse_3s_ease-in-out_infinite_1.5s] mix-blend-overlay" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20 relative z-10">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">

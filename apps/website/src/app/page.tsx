@@ -2,7 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import Link from "next/link";
 import Image from "next/image";
-import { FaMessage, FaPhone, FaChevronRight, FaMapLocationDot, FaClock, FaCircleCheck, FaStar, FaTruckFront, FaBusSimple, FaCar, FaShieldHalved, FaWhatsapp } from "react-icons/fa6";
+import { FaMessage, FaPhone, FaChevronRight, FaArrowRight, FaMapLocationDot, FaClock, FaCircleCheck, FaStar, FaTruckFront, FaBusSimple, FaCar, FaShieldHalved, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
+import MovingCatalog from "@/components/home/MovingCatalog";
 
 export const dynamic = "force-dynamic";
 
@@ -245,6 +246,9 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* ── MOVING CATALOG ── */}
+      <MovingCatalog />
+
       {/* ── WHY CHOOSE US ── */}
       <section className="py-12 px-4 sm:px-6 bg-[#f9f9f9] border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
@@ -371,45 +375,83 @@ export default async function Home() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-12 px-4 sm:px-6 bg-[#f9f9f9] border-t border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <div className="h-1 w-10 bg-[#D62B2B]" />
-              <span className="text-[#D62B2B] font-black text-xs uppercase tracking-widest">Happy Clients</span>
-              <div className="h-1 w-10 bg-[#D62B2B]" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#1a1a1a] uppercase">
-              What Our <span className="text-[#D62B2B]">Customers Say</span>
-            </h2>
+      <section className="py-14 bg-[#f9f9f9] border-t border-gray-100 overflow-hidden">
+        {/* Header */}
+        <div className="text-center mb-10 px-4">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <div className="h-1 w-10 bg-[#D62B2B]" />
+            <span className="text-[#D62B2B] font-black text-xs uppercase tracking-widest">Happy Clients</span>
+            <div className="h-1 w-10 bg-[#D62B2B]" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#1a1a1a] uppercase">
+            What Our <span className="text-[#D62B2B]">Customers Say</span>
+          </h2>
+          <p className="text-gray-500 text-sm mt-2">Real stories from real Kenyans who trust Edwin Kibira Isuzu Sales.</p>
+        </div>
+
+        {/* Row 1 — scrolls left */}
+        <div className="relative flex overflow-hidden mb-5 group">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
+          <div className="flex w-max animate-marquee gap-5 px-2">
             {[
-              {
-                name: "James Mwangi",
-                role: "Fleet Owner, Nairobi",
-                text: "I bought three NQR trucks from Edwin Kibira and the experience was seamless. Great financing terms and after-sales support has been excellent.",
-              },
-              {
-                name: "Grace Achieng",
-                role: "Transport Business Owner",
-                text: "Edwin walked me through everything — from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services.",
-              },
-              {
-                name: "Peter Kamau",
-                role: "Construction Company, Mombasa",
-                text: "We've purchased 5 Isuzu trucks through Edwin Kibira Isuzu Sales. Their pricing is transparent and delivery has always been on time.",
-              },
-            ].map((t) => (
-              <div key={t.name} className="bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B]">
+              { name: "James Mwangi", role: "Fleet Owner, Nairobi", text: "I bought three NQR trucks from Edwin Kibira and the experience was seamless. Great financing terms and after-sales support has been excellent." },
+              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything — from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
+              { name: "Peter Kamau", role: "Construction Company, Mombasa", text: "We've purchased 5 Isuzu trucks through Edwin Kibira Isuzu Sales. Transparent pricing and delivery has always been on time." },
+              { name: "Samuel Otieno", role: "Agribusiness, Nakuru", text: "Needed a reliable pickup for my farm operations. The D-Max has been absolutely incredible. Edwin helped me secure 90% bank financing with ease." },
+              { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
+              { name: "David Kimani", role: "Logistics Company, Nairobi", text: "Our entire delivery fleet is Isuzu N-Series from Edwin Kibira. Best investment we've ever made. Low maintenance, high uptime, every time." },
+              { name: "Fatuma Hassan", role: "Trader, Mombasa", text: "I was skeptical at first but the team was so professional. They helped me compare models and I left with the perfect pickup for my business." },
+              { name: "James Mwangi", role: "Fleet Owner, Nairobi", text: "I bought three NQR trucks from Edwin Kibira and the experience was seamless. Great financing terms and after-sales support has been excellent." },
+              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything — from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
+              { name: "Peter Kamau", role: "Construction Company, Mombasa", text: "We've purchased 5 Isuzu trucks through Edwin Kibira Isuzu Sales. Transparent pricing and delivery has always been on time." },
+              { name: "Samuel Otieno", role: "Agribusiness, Nakuru", text: "Needed a reliable pickup for my farm operations. The D-Max has been absolutely incredible. Edwin helped me secure 90% bank financing with ease." },
+              { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
+            ].map((t, i) => (
+              <div key={i} className="flex-shrink-0 w-72 sm:w-80 bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B] shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} size={12} className="text-yellow-400 fill-yellow-400" />
+                  {[...Array(5)].map((_, j) => (
+                    <FaStar key={j} size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-3 italic">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                 <div>
-                  <p className="font-black text-[#1a1a1a] text-xs uppercase">{t.name}</p>
+                  <p className="font-black text-[#1a1a1a] text-xs uppercase tracking-wide">{t.name}</p>
+                  <p className="text-[#D62B2B] text-xs font-bold">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — scrolls right (reverse) */}
+        <div className="relative flex overflow-hidden group">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
+          <div className="flex w-max animate-marquee-reverse gap-5 px-2">
+            {[
+              { name: "Brian Omondi", role: "Contractor, Eldoret", text: "I've been running Isuzu trucks for 8 years. Switched to buying from Edwin Kibira Isuzu Sales and the service level is unmatched in Kenya." },
+              { name: "Susan Wanjiku", role: "Entrepreneur, Nairobi", text: "Bought a brand new mu-X for my family. The vehicle is a dream. Edwin's team made the entire process smooth, from financing to delivery." },
+              { name: "Ahmed Ibrahim", role: "Import/Export, Mombasa", text: "Needed reliable trucks for my port operations. Got 3 FRR trucks from Edwin. Zero downtime in 2 years. Truly the best commercial vehicles." },
+              { name: "Ruth Chebet", role: "Dairy Farmer, Rift Valley", text: "Edwin helped me get a single cab D-Max for farm use. The off-road capability is incredible and maintenance costs are very low." },
+              { name: "John Njoroge", role: "Real Estate Developer, Karen", text: "Bought an Isuzu mu-X for site visits. The 4x4 capability is phenomenal. Would absolutely buy from Edwin Kibira again without hesitation." },
+              { name: "Mary Auma", role: "NGO Fleet Manager, Kisumu", text: "Our organisation needed 4 pickups for field operations. Edwin's team gave us excellent bulk pricing and the vehicles have never let us down." },
+              { name: "Joseph Kiprotich", role: "Mining Company, Taita Taveta", text: "Extreme terrain demands extreme vehicles. The Isuzu D-Max 4x4 from Edwin Kibira handles everything we throw at it. Outstanding machine." },
+              { name: "Brian Omondi", role: "Contractor, Eldoret", text: "I've been running Isuzu trucks for 8 years. Switched to buying from Edwin Kibira Isuzu Sales and the service level is unmatched in Kenya." },
+              { name: "Susan Wanjiku", role: "Entrepreneur, Nairobi", text: "Bought a brand new mu-X for my family. The vehicle is a dream. Edwin's team made the entire process smooth, from financing to delivery." },
+              { name: "Ahmed Ibrahim", role: "Import/Export, Mombasa", text: "Needed reliable trucks for my port operations. Got 3 FRR trucks from Edwin. Zero downtime in 2 years. Truly the best commercial vehicles." },
+              { name: "Ruth Chebet", role: "Dairy Farmer, Rift Valley", text: "Edwin helped me get a single cab D-Max for farm use. The off-road capability is incredible and maintenance costs are very low." },
+              { name: "John Njoroge", role: "Real Estate Developer, Karen", text: "Bought an Isuzu mu-X for site visits. The 4x4 capability is phenomenal. Would absolutely buy from Edwin Kibira again without hesitation." },
+            ].map((t, i) => (
+              <div key={i} className="flex-shrink-0 w-72 sm:w-80 bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B] shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, j) => (
+                    <FaStar key={j} size={12} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
+                <div>
+                  <p className="font-black text-[#1a1a1a] text-xs uppercase tracking-wide">{t.name}</p>
                   <p className="text-[#D62B2B] text-xs font-bold">{t.role}</p>
                 </div>
               </div>
@@ -571,70 +613,112 @@ export default async function Home() {
       </section>
 
       {/* ── CONTACT / SHOWROOM ── */}
-      <section className="py-12 px-4 sm:px-6 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-1 w-10 bg-[#D62B2B]" />
-                <span className="text-[#D62B2B] font-black text-xs uppercase tracking-widest">Get In Touch</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#1a1a1a] uppercase mb-4">
-                Visit Our <span className="text-[#D62B2B]">Showroom</span>
-              </h2>
-              <p className="text-gray-600 text-sm mb-6">
-                Come experience the full Isuzu range in person. Our trained specialists will guide you through every model, feature, and financing option.
-              </p>
-              <div className="space-y-4">
-                {[
-                  { icon: <FaMapLocationDot size={16} />, label: "Location", value: "Nairobi, Kenya", href: "https://maps.google.com/?q=Nairobi+Kenya" },
-                  { icon: <FaPhone size={16} />, label: "Phone", value: "0768 351 483", href: "tel:0768351483" },
-                  { icon: <FaMessage size={16} />, label: "WhatsApp", value: "Chat with us now", href: "https://wa.me/254768351483" },
-                  { icon: <FaClock size={16} />, label: "Hours", value: "Mon–Sat: 8AM–6PM", href: null },
-                ].map((item) => {
-                  const inner = (
-                    <div className="flex items-center gap-3 group">
-                      <div className="w-9 h-9 bg-[#D62B2B]/10 flex items-center justify-center text-[#D62B2B] group-hover:bg-[#D62B2B] group-hover:text-white transition-all flex-shrink-0">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-black uppercase tracking-wider text-gray-400">{item.label}</p>
-                        <p className="text-sm font-bold text-[#1a1a1a]">{item.value}</p>
-                      </div>
-                    </div>
-                  );
-                  return item.href ? (
-                    <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer">{inner}</a>
-                  ) : (
-                    <div key={item.label}>{inner}</div>
-                  );
-                })}
-              </div>
+      <section className="bg-[#0d0d0d] border-t border-white/10 overflow-hidden">
+
+        {/* Top accent strip */}
+        <div className="h-1 w-full bg-gradient-to-r from-[#D62B2B] via-[#ff5555] to-[#D62B2B]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 lg:py-20">
+
+          {/* Section Header */}
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="h-px w-12 bg-[#D62B2B]" />
+              <span className="text-[#D62B2B] font-black text-xs uppercase tracking-widest">Visit Us Today</span>
+              <div className="h-px w-12 bg-[#D62B2B]" />
             </div>
-            <div className="bg-[#f9f9f9] border border-gray-200 p-8">
-              <h3 className="text-lg font-black text-[#1a1a1a] uppercase mb-1">Get a Quote Today</h3>
-              <p className="text-gray-500 text-sm mb-5">Tell us which vehicle you&apos;re interested in and we&apos;ll get back to you within the hour.</p>
-              <div className="space-y-3">
-                <Link
-                  href="/book-test-drive"
-                  className="flex items-center justify-center gap-2 bg-[#D62B2B] text-white px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all w-full"
-                >
-                  Book Test Drive <FaChevronRight size={14} />
-                </Link>
-                <Link
-                  href="/vehicles"
-                  className="flex items-center justify-center gap-2 border-2 border-[#1a1a1a] text-[#1a1a1a] px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#1a1a1a] hover:text-white transition-all w-full"
-                >
-                  View All Vehicles <FaChevronRight size={14} />
-                </Link>
-                <a
-                  href="https://wa.me/254768351483"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#1da851] transition-all w-full"
-                >
-                  <FaMessage size={14} /> WhatsApp Us Now
-                </a>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase leading-tight">
+              Come See Our <span className="text-[#D62B2B]">Showroom</span>
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+              Experience every Isuzu model in person. Our experts will guide you through features, financing, and test drives — no pressure.
+            </p>
+          </div>
+
+          {/* Main Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+            {/* Left: Contact Details — 2 cols */}
+            <div className="lg:col-span-2 flex flex-col gap-6">
+
+              {/* Contact Cards */}
+              {[
+                { icon: <FaMapLocationDot size={20} />, label: "Location", value: "Nairobi, Kenya", sub: "Visit us at our main showroom", href: "https://maps.google.com/?q=Nairobi+Kenya", color: "#D62B2B" },
+                { icon: <FaPhone size={20} />, label: "Call Us", value: "0768 351 483", sub: "Mon – Sat: 8AM – 6PM", href: "tel:0768351483", color: "#D62B2B" },
+                { icon: <FaWhatsapp size={20} />, label: "WhatsApp", value: "Chat With Us", sub: "Get a reply within minutes", href: "https://wa.me/254768351483?text=Hi+Edwin%2C+I+would+like+to+visit+your+showroom+and+view+the+Isuzu+vehicles.", color: "#25D366" },
+                { icon: <FaClock size={20} />, label: "Working Hours", value: "Mon – Sat: 8AM – 6PM", sub: "Closed on Sundays & Public Holidays", href: null, color: "#D62B2B" },
+              ].map((item) => {
+                const content = (
+                  <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-5 rounded-lg hover:border-[#D62B2B]/50 hover:bg-white/8 transition-all group">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: item.color + "20", color: item.color }}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-0.5">{item.label}</p>
+                      <p className="text-white font-bold text-base leading-tight">{item.value}</p>
+                      <p className="text-gray-500 text-xs mt-0.5">{item.sub}</p>
+                    </div>
+                    {item.href && (
+                      <FaArrowRight size={12} className="ml-auto mt-1 text-gray-600 group-hover:text-[#D62B2B] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                    )}
+                  </div>
+                );
+                return item.href ? (
+                  <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer">{content}</a>
+                ) : (
+                  <div key={item.label}>{content}</div>
+                );
+              })}
+            </div>
+
+            {/* Right: Map + CTA — 3 cols */}
+            <div className="lg:col-span-3 flex flex-col gap-6">
+
+              {/* Google Map Embed */}
+              <div className="w-full rounded-lg overflow-hidden border border-white/10 shadow-2xl" style={{ height: "280px" }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853743808!2d36.68258174648438!3d-1.3028617999999981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Edwin Kibira Isuzu Sales Location"
+                />
+              </div>
+
+              {/* CTA Panel */}
+              <div className="bg-white/5 border border-white/10 rounded-lg p-7">
+                <h3 className="text-xl font-black text-white uppercase mb-1">Ready to Drive Your Dream Isuzu?</h3>
+                <p className="text-gray-400 text-sm mb-6">Tell us what you need — we respond within the hour. Zero pressure, 100% honest advice.</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Link
+                    href="/get-quote"
+                    className="flex items-center justify-center gap-2 bg-[#D62B2B] text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all shadow-lg shadow-[#D62B2B]/20 group"
+                  >
+                    Get a Quote
+                    <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/vehicles"
+                    className="flex items-center justify-center gap-2 border border-white/30 bg-white/5 text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-white hover:text-[#1a1a1a] transition-all group"
+                  >
+                    Browse Vehicles
+                    <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a
+                    href="https://wa.me/254768351483?text=Hi+Edwin%2C+I+would+like+to+book+a+test+drive+for+an+Isuzu+vehicle."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="sm:col-span-2 flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#1da851] transition-all shadow-lg shadow-[#25D366]/20 group"
+                  >
+                    <FaWhatsapp size={16} />
+                    WhatsApp Us Now — Instant Reply
+                    <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
