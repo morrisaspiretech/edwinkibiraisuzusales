@@ -240,8 +240,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Single Cab 4×4 (Manual)",
     description: "The Isuzu TFS 87 4×4 Single Cab combines rugged off-road capability with the productivity of a full-size single cab. Manual transmission.",
-    heroImage: "/vehicles/grouped/batch2/4.jpeg",
-    gallery: ['/vehicles/grouped/batch2/1.jpeg', '/vehicles/grouped/batch2/2.jpeg', '/vehicles/grouped/batch2/3.jpeg', '/vehicles/grouped/batch2/4.jpeg', '/vehicles/grouped/batch2/5.jpeg', '/vehicles/grouped/batch2/6.jpeg', '/vehicles/grouped/batch2/7.jpeg', '/vehicles/grouped/batch2/8.jpeg', '/vehicles/grouped/batch2/9.jpeg', '/vehicles/grouped/batch2/10.jpeg', '/vehicles/grouped/batch2/11.jpeg'],
+    heroImage: "/vehicles/tfs87-single-1.jpg",
+    gallery: [
+      "/vehicles/tfs87-single-1.jpg",
+      "/vehicles/tfs87-single-2.jpg",
+      "/vehicles/tfs87-single-3.jpg",
+      "/vehicles/tfs87-single-4.jpg",
+      "/vehicles/tfs87-single-5.jpg"
+    ],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Manual",
@@ -268,8 +274,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Single Cab 4×4 (Automatic)",
     description: "The Isuzu TFS 87 4×4 Single Cab Automatic. Rugged off-road capability with the convenience of an automatic transmission.",
-    heroImage: "/vehicles/grouped/batch2/4.jpeg",
-    gallery: ['/vehicles/grouped/batch2/1.jpeg', '/vehicles/grouped/batch2/2.jpeg', '/vehicles/grouped/batch2/3.jpeg', '/vehicles/grouped/batch2/4.jpeg', '/vehicles/grouped/batch2/5.jpeg', '/vehicles/grouped/batch2/6.jpeg', '/vehicles/grouped/batch2/7.jpeg', '/vehicles/grouped/batch2/8.jpeg', '/vehicles/grouped/batch2/9.jpeg', '/vehicles/grouped/batch2/10.jpeg', '/vehicles/grouped/batch2/11.jpeg'],
+    heroImage: "/vehicles/tfs87-single-1.jpg",
+    gallery: [
+      "/vehicles/tfs87-single-1.jpg",
+      "/vehicles/tfs87-single-2.jpg",
+      "/vehicles/tfs87-single-3.jpg",
+      "/vehicles/tfs87-single-4.jpg",
+      "/vehicles/tfs87-single-5.jpg"
+    ],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Automatic",

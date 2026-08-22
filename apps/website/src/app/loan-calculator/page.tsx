@@ -14,13 +14,14 @@ function formatKES(value: number) {
 
 export default function LoanCalculatorPage() {
   const [vehiclePrice, setVehiclePrice] = useState(4500000);
-  const [depositPct, setDepositPct] = useState(20);
+  const [depositAmount, setDepositAmount] = useState(900000);
   const [interestRate, setInterestRate] = useState(14);
-  const [months, setMonths] = useState(48);
+  const [months, setMonths] = useState(72);
 
   const results = useMemo(() => {
-    const deposit = (depositPct / 100) * vehiclePrice;
-    const principal = vehiclePrice - deposit;
+    // Ensure deposit doesn't exceed vehicle price
+    const actualDeposit = Math.min(depositAmount, vehiclePrice);
+    const principal = vehiclePrice - actualDeposit;
     const monthlyRate = interestRate / 100 / 12;
     let monthly = 0;
     if (monthlyRate === 0) {
@@ -30,10 +31,10 @@ export default function LoanCalculatorPage() {
         (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
         (Math.pow(1 + monthlyRate, months) - 1);
     }
-    const totalPayable = monthly * months + deposit;
+    const totalPayable = monthly * months + actualDeposit;
     const totalInterest = totalPayable - vehiclePrice;
-    return { deposit, principal, monthly, totalPayable, totalInterest };
-  }, [vehiclePrice, depositPct, interestRate, months]);
+    return { deposit: actualDeposit, principal, monthly, totalPayable, totalInterest };
+  }, [vehiclePrice, depositAmount, interestRate, months]);
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
@@ -97,32 +98,45 @@ export default function LoanCalculatorPage() {
             {/* Deposit */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-3">
-                <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Deposit (%)</label>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-400 font-bold">({formatKES(results.deposit)})</span>
-                  <input
-                    type="number"
-                    min={0}
-                    max={100}
-                    value={depositPct}
-                    onChange={(e) => setDepositPct(Number(e.target.value))}
-                    className="w-16 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
-                  />
-                  <span className="text-sm font-black text-[#D62B2B]">%</span>
+                <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Deposit Amount</label>
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs text-gray-400 font-bold">KSH</span>
+                    <input
+                      type="number"
+                      min={0}
+                      max={vehiclePrice}
+                      value={depositAmount}
+                      onChange={(e) => setDepositAmount(Number(e.target.value))}
+                      className="w-24 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
+                    />
+                  </div>
+                  <span className="text-gray-300">|</span>
+                  <div className="flex items-center gap-1">
+                    <input
+                      type="number"
+                      min={0}
+                      max={100}
+                      value={vehiclePrice > 0 ? ((depositAmount / vehiclePrice) * 100).toFixed(1) : 0}
+                      onChange={(e) => setDepositAmount(Math.round((Number(e.target.value) / 100) * vehiclePrice))}
+                      className="w-12 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
+                    />
+                    <span className="text-xs font-black text-[#D62B2B]">%</span>
+                  </div>
                 </div>
               </div>
               <input
                 type="range"
                 min={0}
-                max={50}
-                step={5}
-                value={depositPct}
-                onChange={(e) => setDepositPct(Number(e.target.value))}
+                max={vehiclePrice}
+                step={50000}
+                value={depositAmount}
+                onChange={(e) => setDepositAmount(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#D62B2B]"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>0% (No deposit)</span>
-                <span>50%</span>
+                <span>KSH 0</span>
+                <span>{formatKES(vehiclePrice)}</span>
               </div>
             </div>
 
@@ -165,6 +179,7 @@ export default function LoanCalculatorPage() {
                   <input
                     type="number"
                     min={1}
+                    max={72}
                     value={months}
                     onChange={(e) => setMonths(Number(e.target.value))}
                     className="w-16 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
@@ -174,16 +189,16 @@ export default function LoanCalculatorPage() {
               </div>
               <input
                 type="range"
-                min={12}
-                max={60}
-                step={6}
+                min={1}
+                max={72}
+                step={1}
                 value={months}
                 onChange={(e) => setMonths(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#D62B2B]"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
-                <span>12 months</span>
-                <span>60 months</span>
+                <span>1 month</span>
+                <span>72 months</span>
               </div>
             </div>
           </div>
@@ -207,8 +222,6 @@ export default function LoanCalculatorPage() {
                 { label: "Vehicle Price", value: vehiclePrice },
                 { label: "Deposit Amount", value: results.deposit },
                 { label: "Loan Amount", value: results.principal },
-                { label: "Total Interest Paid", value: results.totalInterest },
-                { label: "Total Amount Payable", value: results.totalPayable },
               ].map(({ label, value }) => (
                 <div key={label} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
                   <span className="text-gray-600 font-medium">{label}</span>
