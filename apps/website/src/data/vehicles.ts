@@ -341,24 +341,6 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     features: ["Seating for 5", "6-Speed Automatic", "Shift-on-the-fly 4WD", "Touchscreen Infotainment", "Reversing Camera"],
   },
 
-  "double-cabin": {
-    id: "double-cabin",
-    category: "Pickups",
-    title: "Isuzu D-Max 3.0L Double Cab",
-    description: "The most popular Isuzu in Kenya, the D-Max 3.0L Double Cab perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and available in both manual and automatic.",
-    heroImage: "/vehicles/dmax-single.webp",
-    gallery: ["/vehicles/dmax-single.webp"],
-    quickSpecs: { engine: "3.0L Turbo Diesel", transmission: "6-Speed Auto / Manual", power: "140 kW @ 3,600 rpm", fuel: "Diesel" },
-    detailedSpecs: {
-      engine: { type: "4JJ3-TCX", displacement: "2,999 cc", maxPower: "140 kW", maxTorque: "450 Nm", fuelSystem: "Common Rail" },
-      dimensions: { length: "5,295 mm", width: "1,865 mm", height: "1,790 mm", wheelbase: "3,095 mm", groundClearance: "240 mm" },
-      chassis: { suspensionFront: "Double-Wishbone", suspensionRear: "Rigid Axle", brakes: "Disc/Drum", steering: "Power Assist" },
-      capacities: { fuelTank: "76 Litres", seating: "5 Seats", gvm: "3,100 kg" },
-    },
-    features: ["Seating for 5", "Shift-on-the-fly 4WD", "9-inch Touchscreen", "Reversing Camera", "Leather seats"],
-  },
-
-
   "tfs40-double-auto": {
     id: "tfs40-double-auto",
     category: "Pickups",
@@ -425,6 +407,23 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "Air Conditioning",
       "6 Airbags",
     ],
+  },
+
+  "double-cabin": {
+    id: "double-cabin",
+    category: "Pickups",
+    title: "Isuzu D-Max Kipchoge Edition",
+    description: "The Kipchoge Edition perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and available in both manual and automatic.",
+    heroImage: "/vehicles/dmax-single.webp",
+    gallery: ["/vehicles/dmax-single.webp"],
+    quickSpecs: { engine: "3.0L Turbo Diesel", transmission: "6-Speed Auto / Manual", power: "140 kW @ 3,600 rpm", fuel: "Diesel" },
+    detailedSpecs: {
+      engine: { type: "4JJ3-TCX", displacement: "2,999 cc", maxPower: "140 kW", maxTorque: "450 Nm", fuelSystem: "Common Rail" },
+      dimensions: { length: "5,295 mm", width: "1,865 mm", height: "1,790 mm", wheelbase: "3,095 mm", groundClearance: "240 mm" },
+      chassis: { suspensionFront: "Double-Wishbone", suspensionRear: "Rigid Axle", brakes: "Disc/Drum", steering: "Power Assist" },
+      capacities: { fuelTank: "76 Litres", seating: "5 Seats", gvm: "3,100 kg" },
+    },
+    features: ["Seating for 5", "Shift-on-the-fly 4WD", "9-inch Touchscreen", "Reversing Camera", "Leather seats"],
   },
 
   // ══════════════════════════════════════════
