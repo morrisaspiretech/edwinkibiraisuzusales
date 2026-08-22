@@ -13,26 +13,31 @@ function formatKES(value: number) {
 }
 
 export default function LoanCalculatorPage() {
-  const [vehiclePrice, setVehiclePrice] = useState(4500000);
-  const [depositAmount, setDepositAmount] = useState(900000);
-  const [interestRate, setInterestRate] = useState(14);
-  const [months, setMonths] = useState(72);
+  const [vehiclePrice, setVehiclePrice] = useState<string | number>(4500000);
+  const [depositAmount, setDepositAmount] = useState<string | number>(900000);
+  const [interestRate, setInterestRate] = useState<string | number>(14);
+  const [months, setMonths] = useState<string | number>(72);
 
   const results = useMemo(() => {
+    const vPrice = Number(vehiclePrice) || 0;
+    const dAmount = Number(depositAmount) || 0;
+    const iRate = Number(interestRate) || 0;
+    const m = Number(months) || 1;
+
     // Ensure deposit doesn't exceed vehicle price
-    const actualDeposit = Math.min(depositAmount, vehiclePrice);
-    const principal = vehiclePrice - actualDeposit;
-    const monthlyRate = interestRate / 100 / 12;
+    const actualDeposit = Math.min(dAmount, vPrice);
+    const principal = vPrice - actualDeposit;
+    const monthlyRate = iRate / 100 / 12;
     let monthly = 0;
     if (monthlyRate === 0) {
-      monthly = principal / months;
+      monthly = principal / m;
     } else {
       monthly =
-        (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
-        (Math.pow(1 + monthlyRate, months) - 1);
+        (principal * monthlyRate * Math.pow(1 + monthlyRate, m)) /
+        (Math.pow(1 + monthlyRate, m) - 1);
     }
-    const totalPayable = monthly * months + actualDeposit;
-    const totalInterest = totalPayable - vehiclePrice;
+    const totalPayable = monthly * m + actualDeposit;
+    const totalInterest = totalPayable - vPrice;
     return { deposit: actualDeposit, principal, monthly, totalPayable, totalInterest };
   }, [vehiclePrice, depositAmount, interestRate, months]);
 
@@ -76,7 +81,7 @@ export default function LoanCalculatorPage() {
                   type="number"
                   min={0}
                   value={vehiclePrice}
-                  onChange={(e) => setVehiclePrice(Number(e.target.value))}
+                  onChange={(e) => setVehiclePrice(e.target.value)}
                   className="w-32 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
                 />
               </div>
@@ -85,7 +90,7 @@ export default function LoanCalculatorPage() {
                 min={500000}
                 max={20000000}
                 step={100000}
-                value={vehiclePrice}
+                value={Number(vehiclePrice) || 0}
                 onChange={(e) => setVehiclePrice(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#D62B2B]"
               />
@@ -105,9 +110,9 @@ export default function LoanCalculatorPage() {
                     <input
                       type="number"
                       min={0}
-                      max={vehiclePrice}
+                      max={Number(vehiclePrice) || 0}
                       value={depositAmount}
-                      onChange={(e) => setDepositAmount(Number(e.target.value))}
+                      onChange={(e) => setDepositAmount(e.target.value)}
                       className="w-24 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
                     />
                   </div>
@@ -117,8 +122,8 @@ export default function LoanCalculatorPage() {
                       type="number"
                       min={0}
                       max={100}
-                      value={vehiclePrice > 0 ? ((depositAmount / vehiclePrice) * 100).toFixed(1) : 0}
-                      onChange={(e) => setDepositAmount(Math.round((Number(e.target.value) / 100) * vehiclePrice))}
+                      value={Number(vehiclePrice) > 0 ? ((Number(depositAmount) / Number(vehiclePrice)) * 100).toFixed(1) : 0}
+                      onChange={(e) => setDepositAmount(Math.round((Number(e.target.value) / 100) * (Number(vehiclePrice) || 0)))}
                       className="w-12 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
                     />
                     <span className="text-xs font-black text-[#D62B2B]">%</span>
@@ -128,15 +133,15 @@ export default function LoanCalculatorPage() {
               <input
                 type="range"
                 min={0}
-                max={vehiclePrice}
+                max={Number(vehiclePrice) || 0}
                 step={50000}
-                value={depositAmount}
+                value={Number(depositAmount) || 0}
                 onChange={(e) => setDepositAmount(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#D62B2B]"
               />
               <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>KSH 0</span>
-                <span>{formatKES(vehiclePrice)}</span>
+                <span>{formatKES(Number(vehiclePrice) || 0)}</span>
               </div>
             </div>
 
@@ -150,7 +155,7 @@ export default function LoanCalculatorPage() {
                     min={0}
                     step={0.1}
                     value={interestRate}
-                    onChange={(e) => setInterestRate(Number(e.target.value))}
+                    onChange={(e) => setInterestRate(e.target.value)}
                     className="w-16 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
                   />
                   <span className="text-sm font-black text-[#D62B2B]">%</span>
@@ -161,7 +166,7 @@ export default function LoanCalculatorPage() {
                 min={10}
                 max={24}
                 step={0.5}
-                value={interestRate}
+                value={Number(interestRate) || 0}
                 onChange={(e) => setInterestRate(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#D62B2B]"
               />
@@ -181,7 +186,7 @@ export default function LoanCalculatorPage() {
                     min={1}
                     max={72}
                     value={months}
-                    onChange={(e) => setMonths(Number(e.target.value))}
+                    onChange={(e) => setMonths(e.target.value)}
                     className="w-16 text-right text-sm font-black text-[#D62B2B] bg-transparent border-b-2 border-gray-200 focus:border-[#D62B2B] outline-none pb-1"
                   />
                   <span className="text-sm font-black text-[#D62B2B]">months</span>
@@ -192,7 +197,7 @@ export default function LoanCalculatorPage() {
                 min={1}
                 max={72}
                 step={1}
-                value={months}
+                value={Number(months) || 1}
                 onChange={(e) => setMonths(Number(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer accent-[#D62B2B]"
               />
@@ -211,7 +216,7 @@ export default function LoanCalculatorPage() {
               <p className="text-4xl sm:text-5xl font-black text-white mb-2">
                 {formatKES(results.monthly)}
               </p>
-              <p className="text-white/40 text-xs font-medium">per month for {months} months</p>
+              <p className="text-white/40 text-xs font-medium">per month for {Number(months) || 1} months</p>
             </div>
 
             {/* Breakdown */}
@@ -219,7 +224,7 @@ export default function LoanCalculatorPage() {
               <h3 className="text-sm font-black text-gray-900 uppercase tracking-wider mb-6">Loan Breakdown</h3>
 
               {[
-                { label: "Vehicle Price", value: vehiclePrice },
+                { label: "Vehicle Price", value: Number(vehiclePrice) || 0 },
                 { label: "Deposit Amount", value: results.deposit },
                 { label: "Loan Amount", value: results.principal },
               ].map(({ label, value }) => (
