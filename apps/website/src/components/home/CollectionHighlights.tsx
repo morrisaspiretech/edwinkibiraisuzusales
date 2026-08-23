@@ -32,7 +32,7 @@ const categories = [
     title: "Isuzu N-Series",
     type: "Commercial Trucks & Buses",
     desc: "N-Series trucks, buses and coaches powering every business across Kenya.",
-    image: "/vehicles/n-series-truck.webp",
+    image: "/vehicles/n-series/nlr-chassis.png",
     link: "/vehicles/light-trucks-n-series",
     bodyType: "truck",
     model: "n-series",

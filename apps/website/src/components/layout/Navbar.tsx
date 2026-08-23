@@ -15,16 +15,29 @@ const navCategories = [
   {
     label: "Trucks",
     items: [
-      { label: "Heavy Trucks — F Series", href: "/vehicles/heavy-trucks-f-series" },
-      { label: "Light Trucks — N Series", href: "/vehicles/light-trucks-n-series" },
+      { label: "N-Series NLR", href: "/vehicles/n-series-nlr" },
+      { label: "N-Series NMR 85", href: "/vehicles/n-series-nmr85" },
+      { label: "N-Series NPS 81H 4×4", href: "/vehicles/n-series-nps" },
+      { label: "N-Series NQR 81", href: "/vehicles/n-series-nqr81" },
+      { label: "N-Series NQR Xtra", href: "/vehicles/n-series-nqr-xtra" },
+      { label: "FRR 90N", href: "/vehicles/f-series-frr90n" },
+      { label: "FVR 90L", href: "/vehicles/f-series-fvr90l" },
+      { label: "FVR 90P", href: "/vehicles/f-series-fvr90p" },
+      { label: "FVZ 34N Truck", href: "/vehicles/f-series-fvz34n" },
+      { label: "FVZ 34T Tipper", href: "/vehicles/f-series-fvz34t" },
       { label: "Movers", href: "/vehicles/movers" },
     ],
   },
   {
     label: "Buses",
     items: [
-      { label: "F-Series Buses", href: "/vehicles/f-series-buses" },
-      { label: "N-Series Buses", href: "/vehicles/n-series-buses" },
+      { label: "NMR 26 Seater", href: "/vehicles/bus-nmr-26" },
+      { label: "NQR 29 Seater", href: "/vehicles/bus-nqr-29" },
+      { label: "NQR 33 Seater", href: "/vehicles/bus-nqr-33" },
+      { label: "FRR 90N 51 Seater", href: "/vehicles/bus-frr90n-51" },
+      { label: "FRR 90Q 51 Seater", href: "/vehicles/bus-frr90q-51" },
+      { label: "FVR 34 67 Seater 4×2", href: "/vehicles/bus-fvr34-67-4x2" },
+      { label: "FVR 34 67 Seater 6×2", href: "/vehicles/bus-fvr34-67-6x2" },
     ],
   },
   {

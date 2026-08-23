@@ -1,4 +1,4 @@
-import { VEHICLES_DATA } from "@/data/vehicles";
+import { VEHICLES_DATA, VehicleVariant } from "@/data/vehicles";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -104,6 +104,7 @@ export default async function VehiclePage({
         description={vehicle.description}
         quickSpecs={vehicle.quickSpecs}
         features={vehicle.features}
+        variants={vehicle.variants}
       />
 
       {/* ── TECHNICAL SPECIFICATIONS ── */}
@@ -182,6 +183,85 @@ export default async function VehiclePage({
           )}
         </div>
       </div>
+
+      {/* ── MODEL RANGE & PRICING TABLE (only for multi-variant vehicles) ── */}
+      {vehicle.variants && vehicle.variants.length > 0 && (
+        <div className="bg-white border-t border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-[3px] bg-[#D62B2B]" />
+                <h2 className="text-lg font-black uppercase tracking-tight text-[#1a1a1a]">
+                  Model Range &amp; Pricing
+                </h2>
+              </div>
+              <span className="text-[11px] text-gray-400 font-semibold italic sm:ml-auto">* Prices are indicative — contact Edwin for current offers</span>
+            </div>
+
+            <div className="overflow-x-auto rounded-sm border border-gray-200 shadow-sm">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-[#1a1a1a]">
+                  <tr>
+                    {["Model", "Displacement", "Payload", "Drive Config", "GVM", "Power", "Chassis Price", "With Body"].map(h => (
+                      <th key={h} className="px-4 py-3.5 text-left text-[10px] font-black uppercase tracking-widest text-white whitespace-nowrap">
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 bg-white">
+                  {vehicle.variants.map((v, i) => (
+                    <tr key={v.model} className={`transition-colors hover:bg-[#D62B2B]/5 ${i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"}`}>
+                      <td className="px-4 py-4">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[#D62B2B] flex-shrink-0" />
+                          <span className="font-black text-[#1a1a1a] text-sm uppercase tracking-wide">{v.model}</span>
+                        </div>
+                      </td>
+                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.displacement}</td>
+                      <td className="px-4 py-4">
+                        <span className="inline-block bg-[#D62B2B]/10 text-[#D62B2B] font-black text-xs px-2.5 py-1 rounded">{v.payload}</span>
+                      </td>
+                      <td className="px-4 py-4">
+                        <span className={`inline-block px-2.5 py-1 text-xs font-black uppercase tracking-wide rounded border ${
+                          v.drive === "4×4"
+                            ? "bg-amber-50 text-amber-700 border-amber-200"
+                            : "bg-gray-50 text-gray-600 border-gray-200"
+                        }`}>
+                          {v.drive}
+                        </span>
+                      </td>
+                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.gvm ?? "—"}</td>
+                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.power ?? "—"}</td>
+                      <td className="px-4 py-4">
+                        <span className="font-black text-[#1a1a1a] text-sm whitespace-nowrap">{v.chassisPrice}</span>
+                      </td>
+                      <td className="px-4 py-4">
+                        <span className="font-black text-[#D62B2B] text-sm whitespace-nowrap">{v.withBodyPrice}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-[#f9f9f9] border border-gray-200 p-5">
+              <div>
+                <p className="font-black text-[#1a1a1a] text-sm uppercase tracking-tight">Ready to order your N-Series?</p>
+                <p className="text-xs text-gray-500 mt-0.5">Up to 100% bank financing available. Delivery nationwide.</p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <a href="tel:0768351483" className="flex items-center gap-2 bg-[#D62B2B] text-white px-5 py-2.5 font-black text-xs uppercase tracking-widest hover:bg-[#b01e1e] transition-colors">
+                  Call Edwin
+                </a>
+                <a href="https://wa.me/254768351483" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 font-black text-xs uppercase tracking-widest hover:bg-[#1da851] transition-colors">
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── VIDEO SHOWCASE ── */}
       {vehicle.presentationVideo && (

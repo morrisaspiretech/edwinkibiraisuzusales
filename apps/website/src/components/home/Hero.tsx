@@ -23,7 +23,7 @@ const textContainerVariant = {
   }
 };
 
-const textItemVariant = {
+const textItemVariant: any = {
   hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
   visible: { 
     opacity: 1, 

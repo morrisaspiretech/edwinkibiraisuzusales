@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
       {
         source: '/vehicles/:path*',
         headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
         ],
       },
       {

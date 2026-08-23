@@ -5,8 +5,9 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaChevronLeft, FaChevronRight, FaExpand, FaXmark,
-  FaPhone, FaWhatsapp, FaCheck,
+  FaPhone, FaWhatsapp, FaCheck, FaTruck,
 } from "react-icons/fa6";
+import type { VehicleVariant } from "@/data/vehicles";
 
 interface Props {
   images: string[];
@@ -14,9 +15,10 @@ interface Props {
   description: string;
   quickSpecs: { engine: string; transmission: string; power: string; fuel: string };
   features: string[];
+  variants?: VehicleVariant[];
 }
 
-export default function VehicleGalleryClient({ images, title, description, quickSpecs, features }: Props) {
+export default function VehicleGalleryClient({ images, title, description, quickSpecs, features, variants }: Props) {
   const [activeImg, setActiveImg] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -210,6 +212,68 @@ export default function VehicleGalleryClient({ images, title, description, quick
                   ))}
                 </div>
               </div>
+
+              {/* ── VARIANTS PRICING TABLE (N-Series / multi-variant vehicles) ── */}
+              {variants && variants.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
+                    <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Model Range & Pricing</span>
+                  </div>
+                  <div className="overflow-x-auto -mx-2">
+                    <table className="min-w-full text-xs border-collapse">
+                      <thead>
+                        <tr className="bg-[#1a1a1a] text-white">
+                          <th className="text-left px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Model</th>
+                          <th className="text-center px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Payload</th>
+                          <th className="text-center px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Drive</th>
+                          <th className="text-right px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Chassis</th>
+                          <th className="text-right px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">With Body</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {variants.map((v, i) => (
+                          <tr
+                            key={v.model}
+                            className={`border-b border-gray-100 transition-colors hover:bg-[#D62B2B]/5 ${
+                              i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
+                            }`}
+                          >
+                            <td className="px-3 py-3">
+                              <div className="flex items-center gap-2">
+                                <FaTruck size={11} className="text-[#D62B2B] flex-shrink-0" />
+                                <div>
+                                  <p className="font-black text-[#1a1a1a] text-xs uppercase tracking-wide">{v.model}</p>
+                                  {v.power && <p className="text-[9px] text-gray-400 font-semibold">{v.power}</p>}
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-3 py-3 text-center">
+                              <span className="font-bold text-[#1a1a1a] text-[11px]">{v.payload}</span>
+                            </td>
+                            <td className="px-3 py-3 text-center">
+                              <span className={`inline-block px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded ${
+                                v.drive === "4×4"
+                                  ? "bg-amber-100 text-amber-700 border border-amber-200"
+                                  : "bg-gray-100 text-gray-600 border border-gray-200"
+                              }`}>
+                                {v.drive}
+                              </span>
+                            </td>
+                            <td className="px-3 py-3 text-right">
+                              <p className="font-black text-[11px] text-[#1a1a1a] whitespace-nowrap">{v.chassisPrice}</p>
+                            </td>
+                            <td className="px-3 py-3 text-right">
+                              <p className="font-black text-[11px] text-[#D62B2B] whitespace-nowrap">{v.withBodyPrice}</p>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-[9px] text-gray-400 mt-2 font-medium italic">* Prices are indicative. Contact Edwin for current offers & financing.</p>
+                </div>
+              )}
 
               {/* Key Features */}
               <div>
