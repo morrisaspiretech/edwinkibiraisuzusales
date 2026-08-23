@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { VEHICLES_DATA } from "@/data/vehicles";
 
 // We select 3 real vehicles from our data to feature in the hero section
-const featuredIds = ["double-cabin", "mu-x-3000cc", "light-trucks-n-series"];
+const featuredIds = ["double-cabin", "mu-x-3000cc", "n-series-nmr85"];
 
 // Staggered text reveal variants
 const textContainerVariant = {
