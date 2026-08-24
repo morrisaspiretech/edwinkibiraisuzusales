@@ -1,0 +1,1 @@
+const fs = require('fs'); const txt = fs.readFileSync('src/app/page.tsx', 'utf8'); const start = txt.indexOf('const FEATURED_VEHICLES'); const end = txt.indexOf('const WHY_FEATURES'); console.log(txt.substring(start, end));

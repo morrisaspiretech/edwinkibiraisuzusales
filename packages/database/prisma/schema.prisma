@@ -208,6 +208,7 @@ model Review {
   createdAt DateTime @default(now())
 }
 
+
 model Inspection {
   id           String   @id @default(uuid())
   carId        String
@@ -216,4 +217,12 @@ model Inspection {
   reportUrl    String?
   notes        String?
   createdAt    DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  name        String?
+  source      String   @default("footer") // where they signed up: "footer", "popup", etc.
+  createdAt   DateTime @default(now())
 }

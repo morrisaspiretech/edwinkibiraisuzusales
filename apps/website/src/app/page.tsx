@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaMessage, FaPhone, FaChevronRight, FaArrowRight, FaMapLocationDot, FaClock, FaCircleCheck, FaStar, FaTruckFront, FaBusSimple, FaCar, FaShieldHalved, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
 import MovingCatalog from "@/components/home/MovingCatalog";
+import { VEHICLES_DATA } from "@/data/vehicles";
+import FeaturedVehicleCard from "@/components/inventory/FeaturedVehicleCard";
 
 export const dynamic = "force-dynamic";
 
@@ -302,36 +304,7 @@ export default async function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {FEATURED_VEHICLES.map((v) => (
-              <Link
-                key={v.id}
-                href={`/vehicles/${v.id}`}
-                className="group bg-white rounded-xl border border-gray-100 hover:border-transparent hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden"
-              >
-                <div className="relative aspect-[16/10] bg-gradient-to-b from-[#f8f8f8] to-white p-4">
-                  <Image
-                    src={v.img}
-                    alt={v.title}
-                    fill
-                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[9px] font-black text-[#D62B2B] uppercase tracking-widest shadow-sm">
-                    {v.category}
-                  </div>
-                </div>
-                <div className="p-5 flex flex-col flex-1 bg-white border-t border-gray-50">
-                  <h3 className="text-sm font-black text-[#1a1a1a] uppercase mb-1.5 group-hover:text-[#D62B2B] transition-colors line-clamp-1">{v.title}</h3>
-                  <p className="text-xs text-gray-500 mb-4 line-clamp-2 leading-relaxed">{v.spec}</p>
-                  <div className="mt-auto flex items-center justify-between border-t border-gray-50 pt-3">
-                    <span className="text-[10px] font-black uppercase text-[#1a1a1a] tracking-widest transition-colors">
-                      Explore Model
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-gray-50 group-hover:bg-[#D62B2B] flex items-center justify-center transition-colors">
-                      <FaChevronRight size={10} className="text-gray-400 group-hover:text-white transition-colors" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              <FeaturedVehicleCard key={v.id} v={v} />
             ))}
           </div>
         </div>
@@ -768,7 +741,7 @@ export default async function Home() {
               {/* Google Map Embed */}
               <div className="w-full rounded-lg overflow-hidden border border-white/10 shadow-2xl" style={{ height: "280px" }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853743808!2d36.68258174648438!3d-1.3028617999999981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=Isuzu%20East%20Africa,%20Enterprise%20Road,%20Nairobi+(Edwin%20Kibira%20Isuzu%20Sales)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

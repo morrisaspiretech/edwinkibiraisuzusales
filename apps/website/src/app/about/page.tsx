@@ -322,7 +322,7 @@ export default function AboutPage() {
             <div className="lg:col-span-3 flex flex-col gap-5">
               <div className="w-full rounded-lg overflow-hidden border border-white/10 shadow-2xl" style={{ height: "260px" }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853743808!2d36.68258174648438!3d-1.3028617999999981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=Isuzu%20East%20Africa,%20Enterprise%20Road,%20Nairobi+(Edwin%20Kibira%20Isuzu%20Sales)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                   width="100%" height="100%"
                   style={{ border: 0 }}
                   allowFullScreen loading="lazy"

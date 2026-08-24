@@ -50,6 +50,25 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
+      
+      {/* ── SEO SCHEMA MARKUP ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
 
       {/* Header */}
       <section className="bg-[#1A1A1A] pt-32 pb-20 px-6 sm:px-8 relative overflow-hidden">

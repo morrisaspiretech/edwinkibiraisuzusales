@@ -7,18 +7,22 @@ import {
   FaChevronLeft, FaChevronRight, FaExpand, FaXmark,
   FaPhone, FaWhatsapp, FaCheck, FaTruck,
 } from "react-icons/fa6";
-import type { VehicleVariant } from "@/data/vehicles";
+import type { VehicleVariant, VehicleSpec } from "@/data/vehicles";
+import CompareCheckbox from "@/components/inventory/CompareCheckbox";
+import FavouriteButton from "@/components/inventory/FavouriteButton";
 
 interface Props {
+  vehicleId: string;
   images: string[];
   title: string;
   description: string;
-  quickSpecs: { engine: string; transmission: string; power: string; fuel: string };
+  quickSpecs: { engine: string; transmission: string; power?: string; payload?: string; fuel: string };
   features: string[];
   variants?: VehicleVariant[];
+  price?: VehicleSpec["price"];
 }
 
-export default function VehicleGalleryClient({ images, title, description, quickSpecs, features, variants }: Props) {
+export default function VehicleGalleryClient({ vehicleId, images, title, description, quickSpecs, features, variants, price }: Props) {
   const [activeImg, setActiveImg] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -194,24 +198,71 @@ export default function VehicleGalleryClient({ images, title, description, quick
 
               {/* Quick Specs */}
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
-                  <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Quick Specs</span>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
+                    <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Quick Specs</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CompareCheckbox vehicleId={vehicleId} />
+                    <FavouriteButton vehicleId={vehicleId} />
+                  </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     { label: "Engine", value: quickSpecs.engine },
                     { label: "Transmission", value: quickSpecs.transmission },
-                    { label: "Power", value: quickSpecs.power },
+                    quickSpecs.power
+                      ? { label: "Power", value: quickSpecs.power }
+                      : quickSpecs.payload
+                        ? { label: "Payload", value: quickSpecs.payload }
+                        : null,
                     { label: "Fuel", value: quickSpecs.fuel },
-                  ].map(spec => (
-                    <div key={spec.label} className="bg-[#f7f7f7] border-l-4 border-[#D62B2B] px-4 py-3">
-                      <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-1">{spec.label}</p>
-                      <p className="text-sm font-black text-[#1a1a1a] leading-tight">{spec.value}</p>
+                  ].filter(Boolean).map(spec => (
+                    <div key={spec!.label} className="bg-[#f7f7f7] border-l-4 border-[#D62B2B] px-4 py-3">
+                      <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-1">{spec!.label}</p>
+                      <p className="text-sm font-black text-[#1a1a1a] leading-tight">{spec!.value}</p>
                     </div>
                   ))}
                 </div>
               </div>
+
+              {/* ── PRICE BLOCK — only renders when real price data is available ── */}
+              {price && (price.chassisPrice || price.withBodyPrice || price.unitPrice) && (
+                <div className="bg-[#1a1a1a] rounded-sm border border-[#D62B2B]/30 overflow-hidden">
+                  <div className="bg-[#D62B2B] px-5 py-2.5 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-white/80 flex-shrink-0" />
+                    <span className="text-white font-black text-[10px] uppercase tracking-widest">
+                      {price.label ? `${price.label} Price` : "Price"}
+                    </span>
+                  </div>
+                  <div className="px-5 py-4 space-y-3">
+                    {price.chassisPrice && (
+                      <div className="flex items-baseline justify-between gap-4">
+                        <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">Chassis</span>
+                        <span className="text-white font-black text-lg tabular-nums">{price.chassisPrice}</span>
+                      </div>
+                    )}
+                    {price.withBodyPrice && (
+                      <div className="flex items-baseline justify-between gap-4">
+                        <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">With Body</span>
+                        <span className="text-[#D62B2B] font-black text-lg tabular-nums">{price.withBodyPrice}</span>
+                      </div>
+                    )}
+                    {price.unitPrice && (
+                      <div className="flex items-baseline justify-between gap-4">
+                        <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
+                          {price.label ?? "Unit"}
+                        </span>
+                        <span className="text-[#D62B2B] font-black text-xl tabular-nums">{price.unitPrice}</span>
+                      </div>
+                    )}
+                    <p className="text-gray-600 text-[9px] pt-2 border-t border-white/10 font-medium leading-relaxed">
+                      * Prices are indicative. Contact Edwin for current offers, colour options &amp; financing.
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* ── VARIANTS PRICING TABLE (N-Series / multi-variant vehicles) ── */}
               {variants && variants.length > 0 && (

@@ -9,14 +9,36 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "footer" }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
       setIsSubscribed(true);
       setTimeout(() => {
         setEmail("");
         setIsSubscribed(false);
       }, 5000);
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,6 +99,8 @@ export default function Footer() {
                 { label: "Isuzu mu-X SUV", href: "/vehicles/mu-x-3000cc" },
                 { label: "F-Series Heavy Trucks", href: "/vehicles/heavy-trucks-f-series" },
                 { label: "N-Series Light Trucks", href: "/vehicles/light-trucks-n-series" },
+                { label: "Fleet & Corporate Sales", href: "/fleet-sales" },
+                { label: "Blog & News", href: "/blog" },
                 { label: "Book a Test Drive", href: "/book-test-drive" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Calculate Financing", href: "/loan-calculator" },
@@ -150,13 +174,23 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
                   required
-                  className="bg-white/5 border border-white/10 text-white placeholder:text-white/30 px-3.5 py-3 focus:outline-none focus:border-secondary transition-all w-full text-xs"
+                  disabled={isLoading}
+                  className="bg-white/5 border border-white/10 text-white placeholder:text-white/30 px-3.5 py-3 focus:outline-none focus:border-secondary transition-all w-full text-xs disabled:opacity-50"
                 />
+                {error && <p className="text-red-400 text-[10px] font-bold">{error}</p>}
                 <button
                   type="submit"
-                  className="bg-secondary text-white font-black uppercase tracking-widest text-[11px] px-4 py-3 hover:bg-accent-dark transition-all w-full"
+                  disabled={isLoading}
+                  className="bg-secondary text-white font-black uppercase tracking-widest text-[11px] px-4 py-3 hover:bg-accent-dark transition-all w-full disabled:opacity-70 flex items-center justify-center gap-2"
                 >
-                  Subscribe
+                  {isLoading ? (
+                    <>
+                      <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Subscribing...
+                    </>
+                  ) : (
+                    "Subscribe"
+                  )}
                 </button>
               </form>
             )}
@@ -174,8 +208,8 @@ export default function Footer() {
         <div className="border-t border-white/10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/40 font-medium">
           <p>&copy; {new Date().getFullYear()} Edwin Kibira Isuzu Sales. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-secondary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-secondary transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-secondary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

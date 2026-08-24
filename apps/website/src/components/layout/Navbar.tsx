@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaBars, FaXmark, FaPhone, FaChevronDown, FaWhatsapp, FaCalculator } from "react-icons/fa6";
+import { FaBars, FaXmark, FaPhone, FaChevronDown, FaWhatsapp, FaCalculator, FaHeart } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
+import { useFavourites } from "@/context/FavouritesContext";
 
 import { usePathname } from "next/navigation";
 
@@ -66,6 +67,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
+  const { count: favouritesCount } = useFavourites();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -90,6 +92,8 @@ const Navbar = () => {
       message = "Hi Edwin, I'm on the Get a Quote page and would like to request a custom quote for a vehicle.";
     } else if (pathname === "/contact") {
       message = "Hi Edwin, I'm reaching out from your contact page. I'd love to chat about your Isuzu vehicles.";
+    } else if (pathname === "/fleet-sales") {
+      message = "Hi Edwin, I'm interested in fleet/corporate pricing for Isuzu vehicles. Can you send me a proposal?";
     }
     
     return message;
@@ -191,11 +195,26 @@ const Navbar = () => {
             ))}
 
             <NavLink href="/about">About</NavLink>
+            <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contact">Contact</NavLink>
+            <Link
+              href="/fleet-sales"
+              className="flex items-center gap-1.5 text-white font-black text-xs hover:text-white bg-[#D62B2B] hover:bg-red-700 transition-all px-4 py-2 uppercase tracking-wider ml-2"
+            >
+              Fleet Sales
+            </Link>
           </div>
 
           {/* CTA Desktop */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link href="/favourites" className="relative text-white hover:text-[#D62B2B] transition-colors group">
+              <FaHeart size={20} />
+              {favouritesCount > 0 && (
+                <span className="absolute -top-2 -right-3 w-5 h-5 bg-[#D62B2B] text-white rounded-full flex items-center justify-center text-[10px] font-black shadow-sm group-hover:scale-110 transition-transform">
+                  {favouritesCount}
+                </span>
+              )}
+            </Link>
             <Link 
               href="/get-quote" 
               className="bg-[#D62B2B] text-white px-6 py-2.5 text-xs font-black uppercase tracking-widest hover:bg-[#b02323] transition-colors"
@@ -267,9 +286,11 @@ const Navbar = () => {
           </div>
         ))}
 
-        <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</MobileNavLink>
+        <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)}>About</MobileNavLink>
+        <MobileNavLink href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</MobileNavLink>
         <MobileNavLink href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</MobileNavLink>
         <MobileNavLink href="/faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</MobileNavLink>
+        <MobileNavLink href="/fleet-sales" onClick={() => setIsMobileMenuOpen(false)}>🚛 Fleet & Corporate Sales</MobileNavLink>
 
         <Link
           href="/get-quote"

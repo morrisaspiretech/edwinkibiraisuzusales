@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@repo/database": "^0.0.0",
+    "@tailwindcss/typography": "^0.5.20",
     "clsx": "^2.1.1",
     "framer-motion": "^12.43.0",
     "lucide-react": "^1.28.0",

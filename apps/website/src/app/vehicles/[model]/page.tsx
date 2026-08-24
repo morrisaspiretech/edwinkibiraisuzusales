@@ -34,6 +34,30 @@ export default async function VehiclePage({
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
+      
+      {/* ── SEO SCHEMA MARKUP ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Vehicle",
+            name: vehicle.title,
+            image: `https://edwinkibiraisuzusales.co.ke${vehicle.heroImage}`,
+            description: vehicle.description,
+            brand: {
+              "@type": "Brand",
+              name: "Isuzu",
+            },
+            vehicleEngine: {
+              "@type": "EngineSpecification",
+              engineDisplacement: vehicle.quickSpecs.engine,
+            },
+            fuelType: vehicle.quickSpecs.fuel,
+            vehicleTransmission: vehicle.quickSpecs.transmission,
+          }),
+        }}
+      />
 
       {/* ── COMPACT HERO WITH VIDEO BACKGROUND ── */}
       <div className="relative bg-[#0d0d0d] overflow-hidden" style={{ minHeight: 320 }}>
@@ -64,9 +88,18 @@ export default async function VehiclePage({
             <span className="text-white/70">{vehicle.title}</span>
           </nav>
 
-          <span className="inline-block bg-[#D62B2B] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 mb-4 shadow-lg">
-            {vehicle.category}
-          </span>
+          <div className="flex gap-2 mb-4">
+            <span className="inline-block bg-[#D62B2B] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 shadow-lg">
+              {vehicle.category}
+            </span>
+            <span className={`inline-block text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 shadow-lg ${
+              vehicle.availability === 'Order Only' ? 'bg-amber-500' :
+              vehicle.availability === 'Limited Stock' ? 'bg-orange-500' :
+              'bg-green-600'
+            }`}>
+              {vehicle.availability || 'In Stock'}
+            </span>
+          </div>
           
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase leading-tight tracking-tight max-w-3xl mb-8 drop-shadow-xl">
             {vehicle.title}
@@ -99,12 +132,14 @@ export default async function VehiclePage({
 
       {/* ── SPLIT: INTERACTIVE GALLERY + STICKY DETAILS ── */}
       <VehicleGalleryClient
+        vehicleId={vehicle.id}
         images={allImages}
         title={vehicle.title}
         description={vehicle.description}
         quickSpecs={vehicle.quickSpecs}
         features={vehicle.features}
         variants={vehicle.variants}
+        price={vehicle.price}
       />
 
       {/* ── TECHNICAL SPECIFICATIONS ── */}

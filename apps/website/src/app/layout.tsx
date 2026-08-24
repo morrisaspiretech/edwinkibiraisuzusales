@@ -30,6 +30,10 @@ export const metadata: Metadata = {
 };
 
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+import { CompareProvider } from "@/context/CompareContext";
+import CompareBar from "@/components/inventory/CompareBar";
+import LiveChat from "@/components/layout/LiveChat";
+import { FavouritesProvider } from "@/context/FavouritesContext";
 
 export default function RootLayout({
   children,
@@ -40,11 +44,48 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} font-sans bg-white antialiased text-[#1a1a1a]`}>
         <NextTopLoader color="#D62B2B" height={4} showSpinner={true} />
-        <main className="min-h-screen flex flex-col">
-          {children}
-        </main>
-        <FloatingWhatsApp />
-        <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutoDealer",
+              name: "Edwin Kibira Isuzu Sales",
+              image: "https://edwinkibiraisuzusales.co.ke/logo.jpg",
+              "@id": "https://edwinkibiraisuzusales.co.ke",
+              url: "https://edwinkibiraisuzusales.co.ke",
+              telephone: "+254768351483",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Enterprise Road",
+                addressLocality: "Nairobi",
+                addressCountry: "KE",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: -1.3005887,
+                longitude: 36.8580214,
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                opens: "08:00",
+                closes: "17:00",
+              },
+            }),
+          }}
+        />
+        <FavouritesProvider>
+          <CompareProvider>
+          <main className="min-h-screen flex flex-col">
+            {children}
+          </main>
+          <FloatingWhatsApp />
+          <LiveChat />
+          <Footer />
+          <CompareBar />
+          </CompareProvider>
+        </FavouritesProvider>
       </body>
     </html>
   );

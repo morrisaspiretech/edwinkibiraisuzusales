@@ -24,9 +24,27 @@ export interface VehicleSpec {
   quickSpecs: {
     engine: string;
     transmission: string;
-    power: string;
+    power?: string;    // horsepower/kW — omitted on trucks where payload is more relevant
+    payload?: string;  // payload capacity — used on N-Series & F-Series trucks instead of power
     fuel: string;
   };
+  /**
+   * Pricing information for this vehicle.
+   * Only populated when real, confirmed prices are available.
+   * chassisPrice: price for chassis-only (trucks)
+   * withBodyPrice: price with standard body fitted (trucks)
+   * unitPrice: complete unit price (buses, tippers, SUVs, pickups)
+   */
+  price?: {
+    chassisPrice?: string;   // e.g. "Ksh 5,950,000"
+    withBodyPrice?: string;  // e.g. "Ksh 6,400,000"
+    unitPrice?: string;      // e.g. "Ksh 8,450,000"
+    label?: string;          // optional override label e.g. "Starting from"
+  };
+  /**
+   * Stock availability status. Defaults to 'In Stock' if not provided.
+   */
+  availability?: "In Stock" | "Order Only" | "Limited Stock";
   detailedSpecs: {
     engine: {
       type: string;
@@ -238,10 +256,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "3,020 kg",
       },
     },
+    price: {
+      unitPrice: "Ksh 3,890,000",
+    },
     features: [
       "Payload capacity up to 1,225 kg",
       "High-strength ladder frame chassis",
-      "Ksh 3,890,000",
       "Vinyl cabin floor for easy cleaning",
       "Power steering & Air conditioning",
     ],
@@ -278,7 +298,10 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       chassis: { suspensionFront: "Independent Double-Wishbone", suspensionRear: "Rigid Axle", brakes: "Disc/Drum with ABS", steering: "Power Assist" },
       capacities: { fuelTank: "76 Litres", seating: "2 Seats", gvm: "3,020 kg" },
     },
-    features: ["Ksh 4,390,000", "Shift-on-the-Fly 4WD", "Payload capacity up to 1,225 kg", "Air conditioning"],
+    price: {
+      unitPrice: "Ksh 4,390,000",
+    },
+    features: ["Shift-on-the-Fly 4WD", "Payload capacity up to 1,225 kg", "Air conditioning"],
   },
 
   "tfs87-4x4-auto": {
@@ -306,7 +329,10 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       chassis: { suspensionFront: "Double-Wishbone", suspensionRear: "Rigid Axle", brakes: "Disc/Drum", steering: "Power Assist" },
       capacities: { fuelTank: "76 Litres", seating: "2 Seats", gvm: "3,020 kg" },
     },
-    features: ["Ksh 4,600,000", "6-Speed Automatic Transmission", "Shift-on-the-Fly 4WD", "Air conditioning"],
+    price: {
+      unitPrice: "Ksh 4,600,000",
+    },
+    features: ["6-Speed Automatic Transmission", "Shift-on-the-Fly 4WD", "Air conditioning"],
   },
 
   "tfs87-double-manual": {
@@ -490,9 +516,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "10,500 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 5,950,000",
+      label: "Chassis Price",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 5,950,000",
       "Payload: 11 Tonnes",
       "Full Air Brake System with ABS",
       "Exhaust Brake for safer descents",
@@ -553,9 +582,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "15,000 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 7,820,000",
+      label: "Chassis Price",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 7,820,000",
       "Payload: 13 Tonnes",
       "Full Air Brake System with ABS",
       "Exhaust Brake for safer descents",
@@ -608,9 +640,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "18,000 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 7,999,000",
+      label: "Chassis Price",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 7,999,000",
       "Payload: 13 Tonnes",
       "Full Air Brake System with ABS",
       "Exhaust Brake for safer descents",
@@ -668,9 +703,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "26,000 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 10,860,000",
+      label: "Chassis Price",
+    },
     features: [
       "Drive Configuration: 6×4",
-      "Chassis Price: Ksh 10,860,000",
       "Payload: 16 Tonnes",
       "Full Air Brake System with ABS",
       "Exhaust Brake for safer descents",
@@ -728,9 +766,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "26,000 kg",
       },
     },
+    price: {
+      unitPrice: "Ksh 11,650,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 6×4",
-      "Complete Unit Price: Ksh 11,650,000",
       "Payload: 16 Tonnes",
       "Hydraulic Tipper Body for bulk haulage",
       "Full Air Brake System with ABS",
@@ -788,10 +829,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "4,500 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 3,612,000",
+      withBodyPrice: "Ksh 3,923,000",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 3,612,000",
-      "With Body Price: Ksh 3,923,000",
       "Service intervals: 15,000kms",
       "Warranty: 2 years or 100,000Kms",
       "High-tensile ladder-frame chassis",
@@ -847,10 +890,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "5,500 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 4,200,000",
+      withBodyPrice: "Ksh 4,578,000",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 4,200,000",
-      "With Body Price: Ksh 4,578,000",
       "Anti-lock Braking System (ABS)",
       "Service intervals: 15,000kms",
       "Warranty: 2 years or 100,000Kms",
@@ -900,9 +945,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "6,000 kg",
       },
     },
+    price: {
+      unitPrice: "Ksh 6,100,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 4×4 Off-Road",
-      "Complete Unit Price: Ksh 6,100,000",
       "True 4WD capability for rough terrain",
       "Service intervals: 15,000kms",
       "Warranty: 2 years or 100,000Kms",
@@ -952,10 +1000,11 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "8,000 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 4,775,000",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 4,775,000",
-      "With Body Price: On Request",
       "Anti-lock Braking System (ABS)",
       "Service intervals: 15,000kms",
       "Warranty: 2 years or 100,000Kms",
@@ -1005,10 +1054,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "8,700 kg",
       },
     },
+    price: {
+      chassisPrice: "Ksh 5,250,000",
+      label: "Chassis Price",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Chassis Price: Ksh 5,250,000",
-      "With Body Price: On Request",
       "Anti-lock Braking System (ABS)",
       "Extended chassis for maximum body length",
       "Service intervals: 15,000kms",
@@ -1246,9 +1297,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "TBA",
       },
     },
+    price: {
+      unitPrice: "Ksh 5,850,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Complete Unit Price: Ksh 5,850,000",
       "Seating Capacity: 26 Passengers",
       "Ideal for Schools and Staff Transport",
       "Warranty: 2 years or 100,000Kms",
@@ -1298,7 +1352,6 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     },
     features: [
       "Drive Configuration: 4×2",
-      "Price: On Request",
       "Seating Capacity: 29 Passengers",
       "Robust NQR chassis foundation",
       "Warranty: 2 years or 100,000Kms",
@@ -1351,9 +1404,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "TBA",
       },
     },
+    price: {
+      unitPrice: "Ksh 6,850,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Complete Unit Price: Ksh 6,850,000",
       "Seating Capacity: 33 Passengers",
       "Maximum capacity on N-Series platform",
       "Warranty: 2 years or 100,000Kms",
@@ -1404,9 +1460,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "TBA",
       },
     },
+    price: {
+      unitPrice: "Ksh 8,450,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Complete Unit Price: Ksh 8,450,000",
       "Seating Capacity: 51 Passengers",
       "Full Air Brake System with ABS",
       "Warranty: 2 years or 100,000Kms",
@@ -1457,9 +1516,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "TBA",
       },
     },
+    price: {
+      unitPrice: "Ksh 10,425,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Complete Unit Price: Ksh 10,425,000",
       "Seating Capacity: 51 Passengers",
       "Premium FRR 90Q variant",
       "Full Air Brake System with ABS",
@@ -1517,9 +1579,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "TBA",
       },
     },
+    price: {
+      unitPrice: "Ksh 14,916,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 4×2",
-      "Complete Unit Price: Ksh 14,916,000",
       "Seating Capacity: 67 Passengers",
       "Semi-Luxury Coach Interior",
       "Full Air Brake System with ABS",
@@ -1578,9 +1643,12 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "TBA",
       },
     },
+    price: {
+      unitPrice: "Ksh 16,623,000",
+      label: "Complete Unit",
+    },
     features: [
       "Drive Configuration: 6×2",
-      "Complete Unit Price: Ksh 16,623,000",
       "Seating Capacity: 67 Passengers",
       "Semi-Luxury Coach Interior",
       "Superior load distribution — 6×2 axle config",
