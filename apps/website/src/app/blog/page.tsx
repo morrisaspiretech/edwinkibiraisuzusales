@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { BLOG_POSTS } from "@/data/posts";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { FaCalendar, FaUser, FaArrowRight } from "react-icons/fa6";
 
 export const metadata: Metadata = {
@@ -23,10 +22,10 @@ export default function BlogIndexPage() {
       <section className="bg-[#1A1A1A] pt-32 pb-16 px-4 sm:px-8 border-b-4 border-[#D62B2B]">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight mb-4">
-            Isuzu <span className="text-[#D62B2B]">Insights</span>
+            Isuzu <span className="text-[#D62B2B]">Buyer Guides</span>
           </h1>
           <p className="text-white/70 text-lg max-w-2xl">
-            Expert guides, industry news, and in-depth reviews to help you make informed decisions about your commercial fleet.
+            Expert pricing guides, financing options, and in-depth reviews to help you make the best commercial fleet decisions.
           </p>
         </div>
       </section>
@@ -117,7 +116,6 @@ export default function BlogIndexPage() {
           
         </div>
       </section>
-      <Footer />
-    </div>
+</div>
   );
 }

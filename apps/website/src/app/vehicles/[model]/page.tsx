@@ -20,11 +20,11 @@ export default async function VehiclePage({
     notFound();
   }
 
-  // Combine heroImage + gallery for the interactive viewer
-  const allImages = [
+  // Combine heroImage + gallery for the interactive viewer and deduplicate them
+  const allImages = Array.from(new Set([
     vehicle.heroImage,
     ...(vehicle.gallery || []),
-  ].filter(Boolean) as string[];
+  ].filter(Boolean))) as string[];
 
   // Get related vehicles from same category
   const related = Object.values(VEHICLES_DATA)
@@ -401,9 +401,12 @@ export default async function VehiclePage({
   );
 }
 
-const SpecRow = ({ label, value }: { label: string; value: string }) => (
-  <div className="flex justify-between items-center py-1.5 border-b border-gray-50 last:border-0 gap-4">
-    <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex-shrink-0">{label}</span>
-    <span className="text-xs font-semibold text-[#1a1a1a] text-right leading-snug">{value}</span>
-  </div>
-);
+const SpecRow = ({ label, value }: { label: string; value: string }) => {
+  if (!value || value.toUpperCase() === "TBA" || value === "N/A") return null;
+  return (
+    <div className="flex justify-between items-center py-1.5 border-b border-gray-50 last:border-0 gap-4">
+      <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex-shrink-0">{label}</span>
+      <span className="text-xs font-semibold text-[#1a1a1a] text-right leading-snug">{value}</span>
+    </div>
+  );
+};

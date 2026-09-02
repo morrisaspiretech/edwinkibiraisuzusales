@@ -103,7 +103,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       engine: {
         type: "RZ4E-TC, 4-Cylinder, In-Line, DOHC, Intercooled Turbo",
         displacement: "1,898 cc",
-        maxPower: "110 kW (150 PS) @ 3,600 rpm",
+        maxPower: "110 kW (150 HP) @ 3,600 rpm",
         maxTorque: "350 Nm @ 1,800 – 2,600 rpm",
         fuelSystem: "Common Rail Direct Injection",
       },
@@ -118,7 +118,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         suspensionFront: "Independent Double-Wishbone, Coil Springs, Gas Shock Absorbers, Stabiliser Bar",
         suspensionRear: "Multi-Link Coil Suspension, Gas Shock Absorbers, Stabiliser Bar",
         brakes: "Front & Rear Ventilated Disc Brakes with ABS, EBD & BA",
-        steering: "Electric Power Steering (EPS)",
+        steering: "Electric Power Steering (EHP)",
       },
       capacities: {
         fuelTank: "80 Litres",
@@ -173,7 +173,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       engine: {
         type: "4JJ3-TCX, 4-Cylinder, In-Line, DOHC, Intercooled VGS Turbo",
         displacement: "2,999 cc",
-        maxPower: "140 kW (190 PS) @ 3,600 rpm",
+        maxPower: "140 kW (190 HP) @ 3,600 rpm",
         maxTorque: "450 Nm @ 1,600 – 2,600 rpm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
@@ -188,7 +188,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         suspensionFront: "Independent Double-Wishbone, Coil Springs, Gas Shock Absorbers, Stabiliser Bar",
         suspensionRear: "Multi-Link Coil Suspension, Gas Shock Absorbers, Stabiliser Bar",
         brakes: "Front & Rear Ventilated Disc Brakes with ABS, EBD & BA",
-        steering: "Electric Power Steering (EPS)",
+        steering: "Electric Power Steering (EHP)",
       },
       capacities: {
         fuelTank: "80 Litres",
@@ -233,7 +233,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       engine: {
         type: "RZ4E-TC, 4-Cylinder, In-Line, DOHC, Intercooled Turbo",
         displacement: "1,898 cc",
-        maxPower: "110 kW (150 PS) @ 3,600 rpm",
+        maxPower: "110 kW (150 HP) @ 3,600 rpm",
         maxTorque: "350 Nm @ 1,800 – 2,600 rpm",
         fuelSystem: "Common Rail Direct Injection",
       },
@@ -290,7 +290,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       engine: {
         type: "RZ4E-TC, 4-Cylinder, In-Line, DOHC, Intercooled Turbo",
         displacement: "1,898 cc",
-        maxPower: "110 kW (150 PS)",
+        maxPower: "110 kW (150 HP)",
         maxTorque: "350 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
@@ -408,7 +408,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       engine: {
         type: "4JJ3-TCX, 4-Cylinder, In-Line, DOHC, Intercooled VGS Turbo",
         displacement: "2,999 cc",
-        maxPower: "140 kW (190 PS) @ 3,600 rpm",
+        maxPower: "140 kW (190 HP) @ 3,600 rpm",
         maxTorque: "450 Nm @ 1,600 – 2,600 rpm",
         fuelSystem: "Common Rail Direct Injection",
       },
@@ -486,15 +486,15 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     quickSpecs: {
       engine: "5,193cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "177 kW (240 PS)",
+      power: "140 kW (190 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4HK1-TCS, 4-Cylinder, DOHC, Intercooled Turbo",
+        type: "4HK1-TCS, 4-Cylinder, OHC, Intercooled Turbo",
         displacement: "5,193 cc",
-        maxPower: "177 kW (240 PS)",
-        maxTorque: "637 Nm",
+        maxPower: "140 kW (190 HP)",
+        maxTorque: "510 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
@@ -513,23 +513,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "200 Litres",
         seating: "3 Seats",
-        gvm: "10,500 kg",
+        gvm: "11,000 kg",
       },
     },
     price: {
       chassisPrice: "Ksh 5,950,000",
       label: "Chassis Price",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Payload: 11 Tonnes",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "Ergonomic driver-oriented cab",
-      "Air-suspended driver seat",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "f-series-fvr90l": {
@@ -550,17 +541,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/f-series/fvr90l/9.jpeg",
     ],
     quickSpecs: {
-      engine: "5,193cc Turbo Diesel",
+      engine: "7,790cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "206 kW (280 PS)",
+      power: "177 kW (240 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4HK1-TCS, 4-Cylinder, DOHC, Intercooled Turbo",
-        displacement: "5,193 cc",
-        maxPower: "206 kW (280 PS)",
-        maxTorque: "785 Nm",
+        type: "6HK1-TCN, 6-Cylinder, OHC, Intercooled Turbo",
+        displacement: "7,790 cc",
+        maxPower: "177 kW (240 HP)",
+        maxTorque: "706 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
@@ -579,23 +570,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "200 Litres",
         seating: "3 Seats",
-        gvm: "15,000 kg",
+        gvm: "18,000 kg",
       },
     },
     price: {
       chassisPrice: "Ksh 7,820,000",
       label: "Chassis Price",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Payload: 13 Tonnes",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "6-Cylinder pulling power for long-haul routes",
-      "Air-suspended driver seat",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "f-series-fvr90p": {
@@ -608,17 +590,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/f-series/fvr90p/1.jpg",
     ],
     quickSpecs: {
-      engine: "5,193cc Turbo Diesel",
+      engine: "7,790cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "221 kW (300 PS)",
+      power: "177 kW (240 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4HK1-TCS, 4-Cylinder, DOHC, Intercooled Turbo",
-        displacement: "5,193 cc",
-        maxPower: "221 kW (300 PS)",
-        maxTorque: "882 Nm",
+        type: "6HK1-TCN, 6-Cylinder, OHC, Intercooled Turbo",
+        displacement: "7,790 cc",
+        maxPower: "177 kW (240 HP)",
+        maxTorque: "706 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
@@ -644,16 +626,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       chassisPrice: "Ksh 7,999,000",
       label: "Chassis Price",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Payload: 13 Tonnes",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "Maximum power output in the FVR range",
-      "Air-suspended driver seat",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "f-series-fvz34n": {
@@ -672,16 +645,16 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     ],
     quickSpecs: {
       engine: "7,790cc Turbo Diesel",
-      transmission: "6-Speed Manual",
-      power: "221 kW (300 PS)",
+      transmission: "9-Speed Manual",
+      power: "206 kW (280 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "6HK1-TCS, 6-Cylinder, DOHC, Intercooled Turbo",
+        type: "6HK1-TCS, 6-Cylinder, OHC, Intercooled Turbo",
         displacement: "7,790 cc",
-        maxPower: "221 kW (300 PS)",
-        maxTorque: "980 Nm",
+        maxPower: "206 kW (280 HP)",
+        maxTorque: "883 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
@@ -707,17 +680,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       chassisPrice: "Ksh 10,860,000",
       label: "Chassis Price",
     },
-    features: [
-      "Drive Configuration: 6×4",
-      "Payload: 16 Tonnes",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "Highest GVM in the F-Series range",
-      "Air-suspended driver seat",
-      "Corrosion-resistant high-tensile chassis",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "f-series-fvz34t": {
@@ -735,16 +698,16 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     ],
     quickSpecs: {
       engine: "7,790cc Turbo Diesel",
-      transmission: "6-Speed Manual",
-      power: "221 kW (300 PS)",
+      transmission: "9-Speed Manual",
+      power: "206 kW (280 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "6HK1-TCS, 6-Cylinder, DOHC, Intercooled Turbo",
+        type: "6HK1-TCS, 6-Cylinder, OHC, Intercooled Turbo",
         displacement: "7,790 cc",
-        maxPower: "221 kW (300 PS)",
-        maxTorque: "980 Nm",
+        maxPower: "206 kW (280 HP)",
+        maxTorque: "883 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
@@ -770,18 +733,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       unitPrice: "Ksh 11,650,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 6×4",
-      "Payload: 16 Tonnes",
-      "Hydraulic Tipper Body for bulk haulage",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "Ideal for construction, quarrying, aggregate transport",
-      "Air-suspended driver seat",
-      "Corrosion-resistant high-tensile chassis",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
 
@@ -804,9 +756,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     },
     detailedSpecs: {
       engine: {
-        type: "4JJ1-TCC, 4-Cylinder Turbocharged",
+        type: "4JH1-TC, 4-Cylinder Turbocharged",
         displacement: "2,999 cc",
-        maxPower: "77 kW (105 PS) @ 3,200 rpm",
+        maxPower: "77 kW (105 HP)",
         maxTorque: "230 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
@@ -826,20 +778,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "75 Litres",
         seating: "3 Seats",
-        gvm: "4,500 kg",
+        gvm: "4,800 kg",
       },
     },
     price: {
       chassisPrice: "Ksh 3,612,000",
       withBodyPrice: "Ksh 3,923,000",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Service intervals: 15,000kms",
-      "Warranty: 2 years or 100,000Kms",
-      "High-tensile ladder-frame chassis",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "n-series-nmr85": {
@@ -865,9 +811,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     },
     detailedSpecs: {
       engine: {
-        type: "4JJ1-TCC, 4-Cylinder Turbocharged",
+        type: "4JJ1-TCC, 4-Cylinder, DOHC, Intercooled Turbo",
         displacement: "2,999 cc",
-        maxPower: "96 kW (130 PS) @ 2,800 rpm",
+        maxPower: "96 kW (130 HP)",
         maxTorque: "330 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
@@ -887,27 +833,21 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "75 Litres",
         seating: "3 Seats",
-        gvm: "5,500 kg",
+        gvm: "5,200 kg",
       },
     },
     price: {
       chassisPrice: "Ksh 4,200,000",
       withBodyPrice: "Ksh 4,578,000",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Anti-lock Braking System (ABS)",
-      "Service intervals: 15,000kms",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "n-series-nps": {
     id: "n-series-nps",
     category: "Trucks",
-    title: "N-Series NPS 81H 4×4",
-    description: "Built for Kenya's toughest terrains, the NPS 81H 4×4 delivers true off-road capability combined with a 3.0-tonne payload and a powerful 4.8L engine, making it the ideal choice for remote operations, agriculture, and rough terrain.",
+    title: "N-Series NHP 81H 4×4",
+    description: "Built for Kenya's toughest terrains, the NHP 81H 4×4 delivers true off-road capability combined with a 3.0-tonne payload and a powerful 4.8L engine, making it the ideal choice for remote operations, agriculture, and rough terrain.",
     heroImage: "/vehicles/n-series/nps-81h-real.png",
     gallery: [
       "/vehicles/n-series/nps-81h-real.png",
@@ -920,10 +860,10 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     },
     detailedSpecs: {
       engine: {
-        type: "4-Cylinder Turbocharged",
+        type: "4HL1, 4-Cylinder, OHC",
         displacement: "4,778 cc",
-        maxPower: "110 kW (150 PS)",
-        maxTorque: "400 Nm",
+        maxPower: "110 kW (150 HP)",
+        maxTorque: "404 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -949,13 +889,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       unitPrice: "Ksh 6,100,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 4×4 Off-Road",
-      "True 4WD capability for rough terrain",
-      "Service intervals: 15,000kms",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "n-series-nqr81": {
@@ -968,17 +902,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/nqr-hero.png",
     ],
     quickSpecs: {
-      engine: "4,778cc Turbo Diesel",
+      engine: "5,193cc Turbo Diesel",
       transmission: "6-Speed Manual",
       payload: "5.0 Tonnes",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4HL1-TC, 4-Cylinder Turbocharged",
+        type: "4HL1-TC, 4-Cylinder, OHC, Intercooled Turbo",
         displacement: "4,778 cc",
-        maxPower: "110 kW (150 PS)",
-        maxTorque: "400 Nm",
+        maxPower: "103 kW (140 HP)",
+        maxTorque: "334 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -997,19 +931,13 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "110 Litres",
         seating: "3 Seats",
-        gvm: "8,000 kg",
+        gvm: "8,500 kg",
       },
     },
     price: {
       chassisPrice: "Ksh 4,775,000",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Anti-lock Braking System (ABS)",
-      "Service intervals: 15,000kms",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "n-series-nqr-xtra": {
@@ -1022,17 +950,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/n-series/nqr-xtra-real.png",
     ],
     quickSpecs: {
-      engine: "4,778cc Turbo Diesel",
+      engine: "5,193cc Turbo Diesel",
       transmission: "6-Speed Manual",
       payload: "6.0 Tonnes",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4HL1-TC, 4-Cylinder Turbocharged",
-        displacement: "4,778 cc",
-        maxPower: "110 kW (150 PS)",
-        maxTorque: "400 Nm",
+        type: "4HK1-TCN, 4-Cylinder, OHC, Intercooled Turbo",
+        displacement: "5,193 cc",
+        maxPower: "114 kW (155 HP)",
+        maxTorque: "419 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -1051,21 +979,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "110 Litres",
         seating: "3 Seats",
-        gvm: "8,700 kg",
+        gvm: "8,500 kg",
       },
     },
     price: {
       chassisPrice: "Ksh 5,250,000",
       label: "Chassis Price",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Anti-lock Braking System (ABS)",
-      "Extended chassis for maximum body length",
-      "Service intervals: 15,000kms",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "movers": {
@@ -1110,19 +1031,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "Up to 60 Tonnes GCM",
       },
     },
-    features: [
-      "Up to 60 Tonne Gross Combination Mass (GCM)",
-      "Full Air Brake System with ABS & EBS",
-      "Exhaust Brake for controlled descents",
-      "Retarder braking system",
-      "10/12-speed synchromesh gearbox",
-      "Air-suspended driver seat with lumbar support",
-      "Dual 400L+ fuel tanks for long-haul routes",
-      "Sleeper cab option for overnight drivers",
-      "Hill Start Assist",
-      "Anti-Roll protection",
-      "Long 20,000 km service intervals",
-    ],
+    features: [],
   },
 
   // ══════════════════════════════════════════
@@ -1172,19 +1081,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "11,000 kg (FRR90) – 15,000 kg (FVR34S)",
       },
     },
-    features: [
-      "50-Seater (FRR90) and 67-Seater (FVR34S) variants available",
-      "Full Air Brakes with ABS on FVR",
-      "Air Over Hydraulic Brakes on FRR",
-      "Exhaust Brake for safe hill descents",
-      "Locally assembled bus body options",
-      "Underfloor luggage storage compartments",
-      "Driver's air-conditioned cab",
-      "Passenger ventilation windows",
-      "Safety grab rails throughout",
-      "Wide entry/exit doors",
-      "Long 20,000 km service intervals",
-    ],
+    features: [],
   },
 
   "n-series-buses": {
@@ -1230,19 +1127,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         gvm: "5,200 kg (NMR85) / 8,500 kg (NQR81)",
       },
     },
-    features: [
-      "25-Seater (NMR85) and 33-Seater (NQR81) variants",
-      "Locally assembled bus body",
-      "Wide entry/exit doors for passenger flow",
-      "Safety handrails at all seating positions",
-      "Comfortable, padded passenger seats",
-      "Roof ventilation windows",
-      "Driver air conditioning",
-      "Anti-lock Braking System (ABS) — NQR81",
-      "Excellent fuel economy — low operating cost",
-      "Easy to maintain — wide spare parts availability",
-      "NTSA compliant school bus options",
-    ],
+    features: [],
   },
   // ══════════════════════════════════════════
   //  Buses
@@ -1267,23 +1152,23 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     quickSpecs: {
       engine: "2,999cc Turbo Diesel",
       transmission: "5-Speed Manual",
-      power: "130 PS",
+      power: "96 kW (130 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4-Cylinder Turbocharged",
+        type: "4JJ1-TCC, 4-Cylinder",
         displacement: "2,999 cc",
-        maxPower: "96 kW (130 PS)",
+        maxPower: "96 kW (130 HP)",
         maxTorque: "330 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs",
@@ -1294,20 +1179,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "75 Litres",
         seating: "26 Seats",
-        gvm: "TBA",
+        gvm: "5,200 kg",
       },
     },
     price: {
       unitPrice: "Ksh 5,850,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Seating Capacity: 26 Passengers",
-      "Ideal for Schools and Staff Transport",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "bus-nqr-29": {
@@ -1315,28 +1194,31 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "NQR 29 Seater Bus",
     description: "The Isuzu NQR 29-Seater Bus delivers reliable, efficient transportation on the proven NQR chassis. Built for durability and passenger safety.",
-    heroImage: "/vehicles/nqr-hero.png",
-    gallery: ["/vehicles/nqr-hero.png"],
+    heroImage: "/vehicles/buses/nqr29/10.jpg",
+    gallery: [
+      "/vehicles/buses/nqr29/9.png",
+      "/vehicles/buses/nqr29/10.jpg"
+    ],
     quickSpecs: {
       engine: "4,778cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "150 PS",
+      power: "103 kW (140 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4-Cylinder Turbocharged",
+        type: "4HL1-TC, 4-Cylinder, Intercooled Turbo",
         displacement: "4,778 cc",
-        maxPower: "110 kW (150 PS)",
-        maxTorque: "400 Nm",
+        maxPower: "103 kW (140 HP)",
+        maxTorque: "334 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs",
@@ -1347,16 +1229,10 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "110 Litres",
         seating: "29 Seats",
-        gvm: "TBA",
+        gvm: "8,500 kg",
       },
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Seating Capacity: 29 Passengers",
-      "Robust NQR chassis foundation",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "bus-nqr-33": {
@@ -1370,27 +1246,28 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/buses/nqr33/2.jpeg",
       "/vehicles/buses/nqr33/3.jpeg",
       "/vehicles/buses/nqr33/4.jpeg",
+      "/vehicles/buses/nqr33/5.jpg",
     ],
     quickSpecs: {
       engine: "4,778cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "150 PS",
+      power: "103 kW (140 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4-Cylinder Turbocharged",
+        type: "4HL1-TC, 4-Cylinder, Intercooled Turbo",
         displacement: "4,778 cc",
-        maxPower: "110 kW (150 PS)",
-        maxTorque: "400 Nm",
+        maxPower: "103 kW (140 HP)",
+        maxTorque: "334 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs",
@@ -1401,20 +1278,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "110 Litres",
         seating: "33 Seats",
-        gvm: "TBA",
+        gvm: "8,500 kg",
       },
     },
     price: {
       unitPrice: "Ksh 6,850,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Seating Capacity: 33 Passengers",
-      "Maximum capacity on N-Series platform",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "bus-frr90n-51": {
@@ -1430,23 +1301,23 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     quickSpecs: {
       engine: "5,193cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "240 PS",
+      power: "140 kW (190 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4-Cylinder Turbocharged",
+        type: "4HK1-TCS, 4-Cylinder",
         displacement: "5,193 cc",
-        maxPower: "177 kW (240 PS)",
-        maxTorque: "637 Nm",
+        maxPower: "140 kW (190 HP)",
+        maxTorque: "510 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs with Shock Absorbers",
@@ -1457,20 +1328,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "200 Litres",
         seating: "51 Seats",
-        gvm: "TBA",
+        gvm: "11,000 kg",
       },
     },
     price: {
       unitPrice: "Ksh 8,450,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Seating Capacity: 51 Passengers",
-      "Full Air Brake System with ABS",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "bus-frr90q-51": {
@@ -1486,23 +1351,23 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     quickSpecs: {
       engine: "5,193cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "240 PS",
+      power: "140 kW (190 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4-Cylinder Turbocharged",
+        type: "4HK1-TCS, 4-Cylinder",
         displacement: "5,193 cc",
-        maxPower: "177 kW (240 PS)",
-        maxTorque: "637 Nm",
+        maxPower: "140 kW (190 HP)",
+        maxTorque: "510 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs with Shock Absorbers",
@@ -1513,21 +1378,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "200 Litres",
         seating: "51 Seats",
-        gvm: "TBA",
+        gvm: "11,000 kg",
       },
     },
     price: {
       unitPrice: "Ksh 10,425,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Seating Capacity: 51 Passengers",
-      "Premium FRR 90Q variant",
-      "Full Air Brake System with ABS",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "bus-fvr34-67-4x2": {
@@ -1535,37 +1393,30 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "FVR 34 67 Seater Bus 4×2",
     description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (4×2) is Kenya's premier high-capacity coach. Powered by a massive 7.8L six-cylinder engine, it delivers exceptional comfort and reliability for long-distance intercounty routes, schools, and corporate transport.",
-    heroImage: "/vehicles/buses/fvr34-4x2/1.jpeg",
+    heroImage: "/vehicles/buses/fvr34-4x2/9.jpg",
     gallery: [
-      "/vehicles/buses/fvr34-4x2/1.jpeg",
-      "/vehicles/buses/fvr34-4x2/2.jpeg",
-      "/vehicles/buses/fvr34-4x2/3.jpeg",
-      "/vehicles/buses/fvr34-4x2/4.jpeg",
-      "/vehicles/buses/fvr34-4x2/5.jpeg",
-      "/vehicles/buses/fvr34-4x2/6.jpeg",
-      "/vehicles/buses/fvr34-4x2/7.jpeg",
-      "/vehicles/buses/fvr34-4x2/8.jpeg",
+      "/vehicles/buses/fvr34-4x2/10.jpg",
     ],
     quickSpecs: {
       engine: "7,790cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "280 PS",
+      power: "177 kW (240 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "6HK1-TCS, 6-Cylinder, DOHC, Intercooled Turbo",
+        type: "6HK1-TCN, 6-Cylinder",
         displacement: "7,790 cc",
-        maxPower: "206 kW (280 PS)",
-        maxTorque: "785 Nm",
+        maxPower: "177 kW (240 HP)",
+        maxTorque: "706 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs with Shock Absorbers",
@@ -1576,22 +1427,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "200 Litres",
         seating: "67 Seats",
-        gvm: "TBA",
+        gvm: "18,000 kg",
       },
     },
     price: {
       unitPrice: "Ksh 14,916,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 4×2",
-      "Seating Capacity: 67 Passengers",
-      "Semi-Luxury Coach Interior",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 
   "bus-fvr34-67-6x2": {
@@ -1599,37 +1442,34 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "FVR 34 67 Seater Bus 6×2",
     description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (6×2) is the top-of-the-range coach for Kenya's most demanding intercounty routes. The 6×2 configuration delivers superior load distribution and stability for operators who carry full loads every day.",
-    heroImage: "/vehicles/buses/fvr34-6x2/1.jpeg",
+    heroImage: "/vehicles/buses/fvr34-6x2/10.jpg",
     gallery: [
-      "/vehicles/buses/fvr34-6x2/1.jpeg",
-      "/vehicles/buses/fvr34-6x2/2.jpeg",
-      "/vehicles/buses/fvr34-6x2/3.jpeg",
-      "/vehicles/buses/fvr34-6x2/4.jpeg",
-      "/vehicles/buses/fvr34-6x2/5.jpeg",
-      "/vehicles/buses/fvr34-6x2/6.jpeg",
-      "/vehicles/buses/fvr34-6x2/7.jpeg",
-      "/vehicles/buses/fvr34-6x2/8.jpeg",
+      "/vehicles/buses/fvr34-6x2/9.png",
+      "/vehicles/buses/fvr34-6x2/10.jpg",
+      "/vehicles/buses/fvr34-6x2/11.png",
+      "/vehicles/buses/fvr34-6x2/12.jpg",
+      "/vehicles/buses/fvr34-6x2/13.png",
     ],
     quickSpecs: {
       engine: "7,790cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "280 PS",
+      power: "177 kW (240 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "6HK1-TCS, 6-Cylinder, DOHC, Intercooled Turbo",
+        type: "6HK1-TCN, 6-Cylinder",
         displacement: "7,790 cc",
-        maxPower: "206 kW (280 PS)",
-        maxTorque: "785 Nm",
+        maxPower: "177 kW (240 HP)",
+        maxTorque: "706 Nm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
-        length: "TBA",
-        width: "TBA",
-        height: "TBA",
-        wheelbase: "TBA",
-        groundClearance: "TBA",
+        length: "Varies by Body Builder",
+        width: "Varies by Body Builder",
+        height: "Varies by Body Builder",
+        wheelbase: "Chassis Dependent (e.g., 3,345mm - 6,050mm)",
+        groundClearance: "Min 190 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Leaf Springs with Shock Absorbers",
@@ -1640,22 +1480,13 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       capacities: {
         fuelTank: "200 Litres",
         seating: "67 Seats",
-        gvm: "TBA",
+        gvm: "18,000 kg",
       },
     },
     price: {
       unitPrice: "Ksh 16,623,000",
       label: "Complete Unit",
     },
-    features: [
-      "Drive Configuration: 6×2",
-      "Seating Capacity: 67 Passengers",
-      "Semi-Luxury Coach Interior",
-      "Superior load distribution — 6×2 axle config",
-      "Full Air Brake System with ABS",
-      "Exhaust Brake for safer descents",
-      "Warranty: 2 years or 100,000Kms",
-      "Up to 100% bank financing available",
-    ],
+    features: [],
   },
 };

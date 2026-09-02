@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { useCompare } from "@/context/CompareContext";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import { FaChevronLeft, FaXmark, FaCheck } from "react-icons/fa6";
@@ -154,9 +153,7 @@ export default function ComparePage() {
           )}
         </div>
       </section>
-
-      <Footer />
-    </main>
+</main>
   );
 }
 

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { FaChevronDown, FaChevronUp, FaCircleQuestion } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -164,8 +163,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </main>
+</main>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { Vehicle } from "@/types/vehicle";
 
@@ -20,6 +20,19 @@ export default function VehicleClientView({ initialVehicle }: Props) {
   const [lightbox, setLightbox] = useState(false);
   const [liked, setLiked] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "features" | "lead">("overview");
+
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setMousePosition({ x, y });
+  };
 
   const images = vehicle.images || [];
   const primaryImg = images[activeImg]?.url || images[0]?.url || "https://d2ekrm2045sfs2.cloudfront.net/cms/2024/10/15100939/1400.webp";
@@ -75,20 +88,40 @@ export default function VehicleClientView({ initialVehicle }: Props) {
 
             {/* Main Interactive Viewer */}
             <div
-              className="relative w-full overflow-hidden bg-gray-900 cursor-zoom-in rounded-lg shadow-md group"
+              className="relative w-full overflow-hidden bg-gray-900 cursor-crosshair rounded-lg shadow-md group"
               style={{ height: "60vh", minHeight: 400, maxHeight: 600 }}
               onClick={() => setLightbox(true)}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
             >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeImg}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                   className="absolute inset-0"
                 >
-                  <Image src={primaryImg} alt={`${vehicle.make} ${vehicle.model}`} fill className="object-cover" />
+                  <Image 
+                    src={primaryImg} 
+                    alt={`${vehicle.make} ${vehicle.model}`} 
+                    fill 
+                    className={`object-cover pointer-events-none transition-opacity duration-200 ${mounted && isHovering ? "opacity-0" : "opacity-100"}`} 
+                  />
+                  {/* Zoom Overlay */}
+                  {mounted && (
+                  <div 
+                    className={`absolute inset-0 pointer-events-none transition-opacity duration-150 ${isHovering ? "opacity-100" : "opacity-0"}`}
+                    style={{
+                      backgroundImage: `url(${primaryImg})`,
+                      backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
+                      backgroundSize: "250%",
+                      backgroundRepeat: "no-repeat"
+                    }}
+                  />
+                  )}
                 </motion.div>
               </AnimatePresence>
               

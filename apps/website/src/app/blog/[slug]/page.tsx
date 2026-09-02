@@ -5,7 +5,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/data/posts";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { FaChevronLeft, FaCalendar, FaLink, FaShareNodes } from "react-icons/fa6";
 
 interface Props {
@@ -97,6 +96,117 @@ export default function BlogPostPage({ params }: Props) {
               className="prose prose-lg max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tight prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-[#1a1a1a] prose-h2:border-l-4 prose-h2:border-[#D62B2B] prose-h2:pl-4 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-li:marker:text-[#D62B2B] prose-a:text-[#D62B2B] hover:prose-a:text-red-700 prose-strong:text-[#1a1a1a]"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            {/* Structured SEO Blocks */}
+            <div className="mt-12 space-y-12">
+              
+              {/* Pricing Table */}
+              {post.pricingTable && post.pricingTable.length > 0 && (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                  <div className="bg-[#1a1a1a] p-4 border-b-4 border-[#D62B2B]">
+                    <h3 className="text-white font-black uppercase tracking-widest text-lg">Price Comparison & Variants</h3>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm text-left">
+                      <thead className="bg-gray-50 text-gray-500 uppercase font-black text-[10px] tracking-widest">
+                        <tr>
+                          <th className="px-6 py-4">Model / Condition</th>
+                          <th className="px-6 py-4">Price Range</th>
+                          <th className="px-6 py-4">Est. Deposit</th>
+                          <th className="px-6 py-4">Best For</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {post.pricingTable.map((row, idx) => (
+                          <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                            <td className="px-6 py-4 font-bold text-[#1a1a1a]">{row.model}</td>
+                            <td className="px-6 py-4 font-bold text-[#D62B2B]">{row.priceRange}</td>
+                            <td className="px-6 py-4 text-gray-600">{row.deposit}</td>
+                            <td className="px-6 py-4 text-gray-600">{row.bestUses}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Price Factors */}
+              {post.priceFactors && post.priceFactors.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-black text-[#1a1a1a] uppercase tracking-tight mb-4 border-l-4 border-[#D62B2B] pl-4">Key Price Factors</h3>
+                  <ul className="space-y-3">
+                    {post.priceFactors.map((factor, idx) => (
+                      <li key={idx} className="flex gap-3 text-gray-600 leading-relaxed">
+                        <span className="text-[#D62B2B] font-black mt-1">•</span>
+                        <span>{factor}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Financing Block */}
+              {post.financing && (
+                <div className="bg-gray-50 p-6 md:p-8 rounded-xl border border-gray-200">
+                  <h3 className="text-xl font-black text-[#1a1a1a] uppercase tracking-tight mb-4 border-l-4 border-[#D62B2B] pl-4">Asset Financing Options</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">{post.financing.description}</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Deposit</p>
+                      <p className="text-[#D62B2B] font-black text-lg">{post.financing.depositPercent}</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Term</p>
+                      <p className="text-[#1a1a1a] font-black text-lg">Up to {post.financing.maxMonths}m</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">SACCO</p>
+                      <p className="text-[#1a1a1a] font-black text-lg">{post.financing.saccoAvailable ? 'Yes' : 'N/A'}</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                      <a href="tel:0768351483" className="text-[#D62B2B] font-black uppercase text-xs hover:underline">Call for Pre-approval</a>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* FAQs with Schema */}
+              {post.faqs && post.faqs.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-black text-[#1a1a1a] uppercase tracking-tight mb-6 border-l-4 border-[#D62B2B] pl-4">Frequently Asked Questions</h3>
+                  
+                  {/* Invisible JSON-LD Schema for Google */}
+                  <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": post.faqs.map(faq => ({
+                          "@type": "Question",
+                          "name": faq.question,
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": faq.answer
+                          }
+                        }))
+                      })
+                    }}
+                  />
+                  
+                  <div className="space-y-4">
+                    {post.faqs.map((faq, idx) => (
+                      <div key={idx} className="bg-white border border-gray-100 p-5 rounded-lg shadow-sm">
+                        <h4 className="font-bold text-[#1a1a1a] mb-2">{faq.question}</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
             
             {/* Share & Source Attribution */}
             <div className="mt-16 py-8 border-t border-b border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -158,8 +268,6 @@ export default function BlogPostPage({ params }: Props) {
           </aside>
         </div>
       </section>
-
-      <Footer />
-    </div>
+</div>
   );
 }

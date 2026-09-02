@@ -12,18 +12,18 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Edwin Kibira Isuzu Sales | Authorized Isuzu Dealer in Kenya",
+  title: "Edwin Kibira Isuzu Sales - Authorized Isuzu Dealerships in Kenya | Trucks, Buses, Pickups & SUVs",
   description:
-    "Edwin Kibira Isuzu Sales – Kenya's trusted Isuzu dealer. Browse D-Max pickups, mu-X SUVs, commercial trucks and buses. Built tough. Built for Kenya.",
-  keywords: ["Isuzu Kenya", "Isuzu dealer Nairobi", "D-Max Kenya", "mu-X Kenya", "Isuzu trucks Kenya", "Edwin Kibira Isuzu"],
+    "Edwin Kibira Isuzu Sales is a Leading Authorized Dealer for Isuzu Trucks (like the ever popular Isuzu FRR90), Buses, Pickups and SUVs in Kenya. Multi-Award Winning Dealer for Vehicle Sales, Service, Parts and Customer Experience.",
+  keywords: ["Isuzu Kenya", "Authorized Isuzu Dealer", "Isuzu dealer Nairobi", "D-Max Kenya", "mu-X Kenya", "Isuzu trucks Kenya", "Isuzu FRR90", "Isuzu Buses Kenya", "Edwin Kibira Isuzu", "Isuzu Parts Kenya", "Isuzu Service"],
   icons: {
     icon: "/logo.jpg",
     apple: "/logo.jpg",
     shortcut: "/logo.jpg",
   },
   openGraph: {
-    title: "Edwin Kibira Isuzu Sales",
-    description: "Authorized Isuzu dealer in Kenya. D-Max, mu-X, N-Series trucks, buses and more.",
+    title: "Edwin Kibira Isuzu Sales - Authorized Isuzu Dealership in Kenya",
+    description: "Leading Authorized Dealer for Isuzu Trucks, Buses, Pickups and SUVs in Kenya. Get the best deals on Isuzu FRR90, N-Series, and D-Max.",
     type: "website",
     images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibira Isuzu Sales" }],
   },

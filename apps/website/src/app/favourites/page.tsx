@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { useFavourites } from "@/context/FavouritesContext";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import { FaChevronLeft, FaHeartCrack } from "react-icons/fa6";
@@ -76,8 +75,6 @@ export default function FavouritesPage() {
           )}
         </div>
       </section>
-
-      <Footer />
-    </main>
+</main>
   );
 }

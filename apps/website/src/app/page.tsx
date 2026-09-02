@@ -221,7 +221,7 @@ const FEATURED_VEHICLES = [
     id: 'bus-fvr34-67-6x2',
     title: 'FVR 34 67 Seater 6×2',
     category: 'Buses',
-    img: '/vehicles/buses/fvr34-6x2/1.jpeg',
+    img: '/vehicles/buses/fvr34-6x2/10.jpg',
     spec: '67 Seater Semi-Luxury · Ksh 16,623,000',
   },
 ];
@@ -398,14 +398,14 @@ export default async function Home() {
                 Your Trusted <span className="text-[#D62B2B]">Isuzu Dealer</span> in Kenya
               </h2>
               <p className="text-gray-600 leading-relaxed text-sm">
-                Edwin Kibira Isuzu Sales is your trusted, authorised Isuzu dealer in Kenya. We carry the full range of Isuzu vehicles — from the legendary D-Max pickup built for Kenya&apos;s tough terrain, to the premium MU-X SUV, and the powerful N-Series and F-Series commercial trucks and buses. Every vehicle is brand-new, zero-mileage.
+                Edwin Kibira Isuzu Sales is a multi-award winning, authorised Isuzu dealer in Kenya. We are recognized for excellence across Vehicle Sales, Service, Parts, and Customer Experience. We carry the full range of Isuzu vehicles — from the legendary D-Max pickup built for Kenya&apos;s tough terrain, to the premium MU-X SUV, and the powerful, inter-city distribution champions like the N-Series and FRR90 commercial trucks and buses. Every vehicle is brand-new and zero-mileage.
               </p>
               <ul className="space-y-2">
                 {[
-                  "Authorised Isuzu dealer — brand-new, zero-mileage vehicles only",
-                  "Full model range: Trucks (N & F Series), Buses, Pickups & SUVs",
+                  "Multi-Award Winning Authorized Isuzu Dealer — brand-new, zero-mileage vehicles",
+                  "Full model range: Trucks (FRR90, N-Series), Buses, Pickups & SUVs",
                   "Up to 100% bank financing available with flexible repayment",
-                  "Trained Isuzu-certified specialists for sales and after-sales support",
+                  "360-Degree After-Sales Solutions: Genuine Parts, Lubricants, and Certified Servicing",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
                     <FaCircleCheck size={14} className="text-[#D62B2B] mt-0.5 flex-shrink-0" />

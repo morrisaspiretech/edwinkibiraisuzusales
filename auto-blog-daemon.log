@@ -1,0 +1,20 @@
+[2026-09-02T08:57:20.344Z] 🤖 Edwin Isuzu AI Blog Daemon started.
+[2026-09-02T08:57:20.352Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-02T08:57:20.353Z] Triggering AI blog generation...
+[2026-09-02T08:57:20.415Z] ❌ Invalid response: /api/blog/auto/?secret=edwinkibira_blog_auto_2026
+[2026-09-02T08:57:20.418Z] First run failed — will retry on next cycle.
+[2026-09-02T08:58:44.008Z] 🤖 Edwin Isuzu AI Blog Daemon started.
+[2026-09-02T08:58:44.023Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-02T08:58:44.026Z] Triggering AI blog generation...
+[2026-09-02T08:58:44.146Z] ❌ Invalid response: /api/blog/auto/?secret=edwinkibira_blog_auto_2026
+[2026-09-02T08:58:44.148Z] First run failed — will retry on next cycle.
+[2026-09-02T09:00:01.365Z] 🤖 Edwin Isuzu AI Blog Daemon started.
+[2026-09-02T09:00:01.372Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-02T09:00:01.374Z] Triggering AI blog generation...
+[2026-09-02T09:00:01.431Z] ❌ Invalid response: /api/blog/auto/?secret=edwinkibira_blog_auto_2026
+[2026-09-02T09:00:01.432Z] First run failed — will retry on next cycle.
+[2026-09-02T09:06:24.131Z] 🤖 Edwin Isuzu AI Blog Daemon started.
+[2026-09-02T09:06:24.139Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-02T09:06:24.141Z] Triggering AI blog generation...
+[2026-09-02T09:06:25.120Z] ❌ Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-09-02T09:06:25.123Z] First run failed — will retry on next cycle.

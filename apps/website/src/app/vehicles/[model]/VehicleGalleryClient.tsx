@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -28,7 +28,13 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dragStart = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
+  const imgContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setMounted(true); }, []);
 
   const currentImg = images[activeImg] || images[0] || "";
 
@@ -62,6 +68,18 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
   };
   const handleMouseUp = () => setIsDragging(false);
 
+
+  const handleParallaxMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!imgContainerRef.current) return;
+    const rect = imgContainerRef.current.getBoundingClientRect();
+    // Normalize to -0.5 .. 0.5
+    const nx = (e.clientX - rect.left) / rect.width - 0.5;
+    const ny = (e.clientY - rect.top) / rect.height - 0.5;
+    // Max shift in px
+    const MAX = 14;
+    setParallax({ x: nx * MAX, y: ny * MAX });
+  };
+
   return (
     <>
       {/* ── SPLIT: GALLERY + DETAILS ── */}
@@ -72,12 +90,14 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
           {/* Main Viewer */}
           <div
+            ref={imgContainerRef}
             className="relative flex-1 overflow-hidden select-none"
-            style={{ minHeight: 420, cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "crosshair" }}
+            style={{ minHeight: 420, cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default" }}
             onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
+            onMouseMove={(e) => { handleMouseMove(e); handleParallaxMove(e); }}
             onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => { handleMouseUp(); setIsHovered(false); setParallax({ x: 0, y: 0 }); }}
             onWheel={handleWheel}
           >
             <AnimatePresence mode="wait">
@@ -93,9 +113,13 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                 <div
                   className="w-full h-full flex items-center justify-center"
                   style={{
-                    transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
+                    transform: !mounted
+                      ? "scale(1)"
+                      : zoom > 1
+                        ? `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`
+                        : `scale(1.06) translate(${parallax.x}px, ${parallax.y}px)`,
                     transformOrigin: "center center",
-                    transition: isDragging ? "none" : "transform 0.15s ease-out",
+                    transition: isDragging ? "none" : "transform 0.12s ease-out",
                     cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default",
                   }}
                 >
@@ -109,6 +133,8 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                 </div>
               </motion.div>
             </AnimatePresence>
+
+
 
             {/* Image Counter */}
             <div className="absolute top-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 backdrop-blur-sm">

@@ -111,14 +111,15 @@ const ISUZU_VEHICLES = [
     price: 5200000,
     condition: "NEW",
     status: "AVAILABLE",
-    description: "Robust NQR truck capable of hauling heavy loads safely.",
+    description: "Robust NQR truck capable of hauling heavy loads safely. 155 HP.",
     specs: {
-      engineType: "Diesel",
+      engineType: "Turbo Diesel",
       engineCc: 5193,
       fuelType: "DIESEL",
       transmission: "MANUAL",
       drivetrain: "4x2",
-      seatingCapacity: 3
+      seatingCapacity: 3,
+      horsepower: 155
     },
     images: [{ url: "/vehicles/nqr-hero.png", isHero: true, orderIndex: 0 }]
   },
@@ -129,14 +130,15 @@ const ISUZU_VEHICLES = [
     price: 4100000,
     condition: "NEW",
     status: "AVAILABLE",
-    description: "The preferred light commercial truck for urban distribution.",
+    description: "The preferred light commercial truck for urban distribution. 150 HP.",
     specs: {
-      engineType: "Diesel",
-      engineCc: 3856,
+      engineType: "Turbo Diesel",
+      engineCc: 5193,
       fuelType: "DIESEL",
       transmission: "MANUAL",
       drivetrain: "4x2",
-      seatingCapacity: 3
+      seatingCapacity: 3,
+      horsepower: 150
     },
     images: [{ url: "/vehicles/fvr-truck.png", isHero: true, orderIndex: 0 }]
   },
@@ -147,14 +149,15 @@ const ISUZU_VEHICLES = [
     price: 7800000,
     condition: "NEW",
     status: "AVAILABLE",
-    description: "Heavy-duty F-Series truck for long-haul logistics and transportation.",
+    description: "Heavy-duty F-Series truck for long-haul logistics and transportation. 240 HP.",
     specs: {
       engineType: "Turbo Diesel",
       engineCc: 7790,
       fuelType: "DIESEL",
       transmission: "MANUAL",
       drivetrain: "4x2",
-      seatingCapacity: 3
+      seatingCapacity: 3,
+      horsepower: 240
     },
     images: [{ url: "/vehicles/fvr-truck.png", isHero: true, orderIndex: 0 }]
   },
@@ -167,14 +170,15 @@ const ISUZU_VEHICLES = [
     price: 9500000,
     condition: "NEW",
     status: "AVAILABLE",
-    description: "Comfortable and safe passenger bus ideal for schools and institutions.",
+    description: "Comfortable and safe passenger bus ideal for schools and institutions. 195 HP.",
     specs: {
-      engineType: "Diesel",
-      engineCc: 5193,
+      engineType: "Turbo Diesel",
+      engineCc: 7127,
       fuelType: "DIESEL",
       transmission: "MANUAL",
       drivetrain: "4x2",
-      seatingCapacity: 33
+      seatingCapacity: 33,
+      horsepower: 195
     },
     images: [{ url: "/vehicles/nqr-hero.png", isHero: true, orderIndex: 0 }] // Using nqr-hero placeholder for now
   }
@@ -222,7 +226,16 @@ async function seed() {
       });
       console.log(`Created: ${car.make} ${car.model}`);
     } else {
-      console.log(`Skipped (already exists): ${v.make} ${v.model}`);
+      await prisma.car.update({
+        where: { id: existing.id },
+        data: {
+          description: v.description,
+          specs: {
+            update: v.specs
+          }
+        }
+      });
+      console.log(`Updated: ${v.make} ${v.model}`);
     }
   }
   
