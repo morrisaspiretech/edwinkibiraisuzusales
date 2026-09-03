@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   // 🔴 Replace the content value below with your actual Google Search Console verification code
   // Get it from: https://search.google.com/search-console → Add Property → HTML tag method
   verification: {
-    google: "REPLACE_WITH_YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "84Q1D5R1_Y8vdOBKd_F1GaIeEsQ0vt6Q3eq51zM9bjs",
   },
   icons: {
     icon: "/logo.jpg",
