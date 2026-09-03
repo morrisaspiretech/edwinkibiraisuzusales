@@ -186,7 +186,7 @@ const FEATURED_VEHICLES = [
     id: 'bus-nqr-29',
     title: 'NQR 29 Seater Bus',
     category: 'Buses',
-    img: '/vehicles/nqr-hero.png',
+    img: '/vehicles/buses/nqr29/2.jpg',
     spec: '29 Seater · Commuter',
   },
   {

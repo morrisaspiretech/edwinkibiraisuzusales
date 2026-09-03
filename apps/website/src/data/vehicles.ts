@@ -1194,10 +1194,10 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "NQR 29 Seater Bus",
     description: "The Isuzu NQR 29-Seater Bus delivers reliable, efficient transportation on the proven NQR chassis. Built for durability and passenger safety.",
-    heroImage: "/vehicles/buses/nqr29/1.png",
+    heroImage: "/vehicles/buses/nqr29/2.jpg",
     gallery: [
-      "/vehicles/buses/nqr29/1.png",
-      "/vehicles/buses/nqr29/2.jpg"
+      "/vehicles/buses/nqr29/2.jpg",
+      "/vehicles/buses/nqr29/1.png"
     ],
     quickSpecs: {
       engine: "4,778cc Turbo Diesel",
