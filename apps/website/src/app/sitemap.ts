@@ -17,6 +17,30 @@ const staticRoutes: MetadataRoute.Sitemap = [
     priority: 0.9,
   },
   {
+    url: `${BASE_URL}/vehicles/d-max`,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 0.95,
+  },
+  {
+    url: `${BASE_URL}/vehicles/mu-x`,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 0.95,
+  },
+  {
+    url: `${BASE_URL}/trucks`,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 0.95,
+  },
+  {
+    url: `${BASE_URL}/buses`,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 0.95,
+  },
+  {
     url: `${BASE_URL}/inventory`,
     lastModified: new Date(),
     changeFrequency: "daily",

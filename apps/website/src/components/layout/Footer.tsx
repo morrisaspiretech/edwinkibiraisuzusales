@@ -95,15 +95,16 @@ export default function Footer() {
             <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Quick Links</h4>
             <div className="flex flex-col gap-2.5">
               {[
-                { label: "Isuzu D-Max Pickups", href: "/vehicles/double-cabin" },
-                { label: "Isuzu mu-X SUV", href: "/vehicles/mu-x-3000cc" },
-                { label: "F-Series Heavy Trucks", href: "/vehicles/heavy-trucks-f-series" },
-                { label: "N-Series Light Trucks", href: "/vehicles/light-trucks-n-series" },
-                { label: "Fleet & Corporate Sales", href: "/fleet-sales" },
-                { label: "Blog & News", href: "/blog" },
+                { label: "Isuzu D-MAX (All Models)", href: "/vehicles/d-max" },
+                { label: "Isuzu mu-X (7-Seater SUV)", href: "/vehicles/mu-x" },
+                { label: "Isuzu Trucks (N & F-Series, GXZ)", href: "/trucks" },
+                { label: "Isuzu Buses (25-67 Seaters)", href: "/buses" },
+                { label: "Fleet & Corporate Solutions", href: "/fleet-sales" },
+                { label: "Asset Financing Calculator", href: "/loan-calculator" },
+                { label: "The Ultimate Isuzu Guide", href: "/ultimate-isuzu-guide" },
                 { label: "Book a Test Drive", href: "/book-test-drive" },
+                { label: "Blog & Technical News", href: "/blog" },
                 { label: "FAQ", href: "/faq" },
-                { label: "Calculate Financing", href: "/loan-calculator" },
               ].map((link) => (
                 <Link
                   key={link.label}
@@ -208,6 +209,7 @@ export default function Footer() {
         <div className="border-t border-white/10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/40 font-medium">
           <p>&copy; {new Date().getFullYear()} Edwin Kibira Isuzu Sales. All rights reserved.</p>
           <div className="flex gap-4">
+            <Link href="/ultimate-isuzu-guide" className="hover:text-secondary transition-colors text-secondary font-bold">Isuzu Global Hub</Link>
             <Link href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-secondary transition-colors">Terms of Service</Link>
           </div>
