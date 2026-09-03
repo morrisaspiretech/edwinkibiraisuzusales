@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   description:
     "Edwin Kibira Isuzu Sales is a Leading Authorized Dealer for Isuzu Trucks (like the ever popular Isuzu FRR90), Buses, Pickups and SUVs in Kenya. Multi-Award Winning Dealer for Vehicle Sales, Service, Parts and Customer Experience.",
   keywords: ["Isuzu Kenya", "Authorized Isuzu Dealer", "Isuzu dealer Nairobi", "D-Max Kenya", "mu-X Kenya", "Isuzu trucks Kenya", "Isuzu FRR90", "Isuzu Buses Kenya", "Edwin Kibira Isuzu", "Isuzu Parts Kenya", "Isuzu Service"],
+  metadataBase: new URL("https://edwinkibiraisuzusales.onrender.com"),
+  // 🔴 Replace the content value below with your actual Google Search Console verification code
+  // Get it from: https://search.google.com/search-console → Add Property → HTML tag method
+  verification: {
+    google: "REPLACE_WITH_YOUR_GOOGLE_VERIFICATION_CODE",
+  },
   icons: {
     icon: "/logo.jpg",
     apple: "/logo.jpg",
@@ -25,6 +31,8 @@ export const metadata: Metadata = {
     title: "Edwin Kibira Isuzu Sales - Authorized Isuzu Dealership in Kenya",
     description: "Leading Authorized Dealer for Isuzu Trucks, Buses, Pickups and SUVs in Kenya. Get the best deals on Isuzu FRR90, N-Series, and D-Max.",
     type: "website",
+    url: "https://edwinkibiraisuzusales.onrender.com",
+    siteName: "Edwin Kibira Isuzu Sales",
     images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibira Isuzu Sales" }],
   },
 };
@@ -51,9 +59,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "AutoDealer",
               name: "Edwin Kibira Isuzu Sales",
-              image: "https://edwinkibiraisuzusales.co.ke/logo.jpg",
-              "@id": "https://edwinkibiraisuzusales.co.ke",
-              url: "https://edwinkibiraisuzusales.co.ke",
+              image: "https://edwinkibiraisuzusales.onrender.com/logo.jpg",
+              "@id": "https://edwinkibiraisuzusales.onrender.com",
+              url: "https://edwinkibiraisuzusales.onrender.com",
               telephone: "+254768351483",
               address: {
                 "@type": "PostalAddress",
