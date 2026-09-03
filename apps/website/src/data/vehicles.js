@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VEHICLES_DATA = void 0;
 exports.VEHICLES_DATA = {
@@ -1174,10 +1174,10 @@ exports.VEHICLES_DATA = {
         category: "Buses",
         title: "NQR 29 Seater Bus",
         description: "The Isuzu NQR 29-Seater Bus delivers reliable, efficient transportation on the proven NQR chassis. Built for durability and passenger safety.",
-        heroImage: "/vehicles/buses/nqr29/10.jpg",
+        heroImage: "/vehicles/buses/nqr29/1.png",
         gallery: [
-            "/vehicles/buses/nqr29/9.png",
-            "/vehicles/buses/nqr29/10.jpg"
+            "/vehicles/buses/nqr29/1.png",
+            "/vehicles/buses/nqr29/2.jpg"
         ],
         quickSpecs: {
             engine: "4,778cc Turbo Diesel",

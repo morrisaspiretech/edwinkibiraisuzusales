@@ -214,7 +214,7 @@ const FEATURED_VEHICLES = [
     id: 'bus-fvr34-67-4x2',
     title: 'FVR 34 67 Seater 4×2',
     category: 'Buses',
-    img: '/vehicles/buses/fvr34-4x2/1.jpeg',
+    img: '/vehicles/buses/fvr34-4x2/10.jpg',
     spec: '67 Seater Semi-Luxury · Ksh 14,916,000',
   },
   {
