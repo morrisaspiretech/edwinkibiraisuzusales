@@ -1,4 +1,4 @@
-﻿import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
@@ -13,12 +13,9 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["framer-motion", "react-icons", "lucide-react"],
   },
 
-  // Image Optimization with WebP/AVIF and caching
+  // Image Optimization disabled to prevent timeouts on Render free tier
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 2592000,
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "**" },
       { protocol: "http", hostname: "**" },

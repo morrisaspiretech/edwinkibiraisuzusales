@@ -146,7 +146,7 @@ export default function DMaxHub() {
               <div className="bg-white p-3 text-center border rounded shadow-sm">Bed Liners & Roll Bars</div>
             </div>
             <div className="mt-6 text-center">
-              <Link href="/parts" className="text-red-600 font-bold hover:underline">View all D-MAX genuine spare parts →</Link>
+              <Link href="/contact" className="text-red-600 font-bold hover:underline">Enquire about genuine spare parts →</Link>
             </div>
           </div>
         </div>
