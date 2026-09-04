@@ -171,27 +171,27 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
             <div className="divide-y divide-gray-50">
 
               {/* OVERVIEW */}
-              <div className="p-7 lg:p-9">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
+              <div className="p-5 lg:p-6">
+                <div className="flex items-center gap-2.5 mb-2.5">
+                  <div className="h-[2px] w-6 bg-[#D62B2B] flex-shrink-0" />
                   <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Overview</span>
                 </div>
-                <p className="text-gray-600 leading-relaxed text-sm">{description}</p>
+                <p className="text-gray-700 leading-relaxed text-sm font-normal">{description}</p>
               </div>
 
               {/* QUICK SPECS */}
-              <div className="p-7 lg:p-9">
-                <div className="flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-3">
-                    <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
+              <div className="p-5 lg:p-6">
+                <div className="flex items-center justify-between mb-3.5">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-[2px] w-6 bg-[#D62B2B] flex-shrink-0" />
                     <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Quick Specs</span>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <CompareCheckbox vehicleId={vehicleId} />
                     <FavouriteButton vehicleId={vehicleId} />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {[
                     { label: "Engine", value: quickSpecs.engine },
                     { label: "Transmission", value: quickSpecs.transmission },
@@ -202,9 +202,9 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                         : null,
                     { label: "Fuel", value: quickSpecs.fuel },
                   ].filter(Boolean).map(spec => (
-                    <div key={spec!.label} className="group bg-gray-50 hover:bg-[#1a1a1a] transition-colors duration-200 rounded-xl p-4 border border-gray-100 hover:border-[#D62B2B]">
-                      <p className="text-[9px] text-gray-400 group-hover:text-gray-500 font-black uppercase tracking-widest mb-1.5">{spec!.label}</p>
-                      <p className="text-sm font-black text-[#1a1a1a] group-hover:text-white leading-tight">{spec!.value}</p>
+                    <div key={spec!.label} className="group bg-gray-50/90 hover:bg-[#1a1a1a] transition-all duration-200 rounded-lg px-3 py-2.5 border border-gray-100 hover:border-[#D62B2B]">
+                      <p className="text-[9px] text-gray-400 group-hover:text-gray-400 font-black uppercase tracking-wider mb-0.5">{spec!.label}</p>
+                      <p className="text-xs sm:text-sm font-black text-[#1a1a1a] group-hover:text-white leading-snug">{spec!.value}</p>
                     </div>
                   ))}
                 </div>
@@ -212,34 +212,34 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
               {/* PRICE BLOCK */}
               {price && (price.chassisPrice || price.withBodyPrice || price.unitPrice) && (
-                <div className="px-7 lg:px-9 py-6">
-                  <div className="bg-[#1a1a1a] rounded-xl overflow-hidden">
-                    <div className="bg-[#D62B2B] px-5 py-3 flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-white/80 flex-shrink-0" />
-                      <span className="text-white font-black text-[10px] uppercase tracking-widest">
+                <div className="px-5 lg:px-6 py-3">
+                  <div className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-sm">
+                    <div className="bg-[#D62B2B] px-4 py-2 flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/90 flex-shrink-0" />
+                      <span className="text-white font-black text-[9px] uppercase tracking-widest">
                         {price.label ? `${price.label} Price` : "Price"}
                       </span>
                     </div>
-                    <div className="px-5 py-5 space-y-4">
+                    <div className="px-4 py-3 space-y-2.5">
                       {price.chassisPrice && (
-                        <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-white/10">
+                        <div className="flex items-baseline justify-between gap-3 pb-2 border-b border-white/10">
                           <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">Chassis</span>
-                          <span className="text-white font-black text-xl tabular-nums">{price.chassisPrice}</span>
+                          <span className="text-white font-black text-lg tabular-nums">{price.chassisPrice}</span>
                         </div>
                       )}
                       {price.withBodyPrice && (
-                        <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-white/10">
+                        <div className="flex items-baseline justify-between gap-3 pb-2 border-b border-white/10">
                           <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">With Body</span>
-                          <span className="text-[#D62B2B] font-black text-xl tabular-nums">{price.withBodyPrice}</span>
+                          <span className="text-[#D62B2B] font-black text-lg tabular-nums">{price.withBodyPrice}</span>
                         </div>
                       )}
                       {price.unitPrice && (
-                        <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-white/10">
+                        <div className="flex items-baseline justify-between gap-3 pb-2 border-b border-white/10">
                           <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">{price.label ?? "Unit"}</span>
-                          <span className="text-[#D62B2B] font-black text-2xl tabular-nums">{price.unitPrice}</span>
+                          <span className="text-[#D62B2B] font-black text-xl tabular-nums">{price.unitPrice}</span>
                         </div>
                       )}
-                      <p className="text-gray-500 text-[9px] font-medium leading-relaxed">
+                      <p className="text-gray-400 text-[8.5px] font-medium leading-tight">
                         * Prices are indicative. Contact Edwin for current offers, colour options &amp; financing.
                       </p>
                     </div>
@@ -249,65 +249,65 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
               {/* VARIANTS PRICING TABLE */}
               {variants && variants.length > 0 && (
-                <div className="px-7 lg:px-9 py-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
+                <div className="px-5 lg:px-6 py-4">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div className="h-[2px] w-6 bg-[#D62B2B] flex-shrink-0" />
                     <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Model Range &amp; Pricing</span>
                   </div>
-                  <div className="overflow-x-auto rounded-xl border border-gray-100">
+                  <div className="overflow-x-auto rounded-lg border border-gray-100">
                     <table className="min-w-full text-xs border-collapse">
                       <thead>
                         <tr className="bg-[#1a1a1a] text-white">
-                          <th className="text-left px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Model</th>
-                          <th className="text-center px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Payload</th>
-                          <th className="text-center px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Drive</th>
-                          <th className="text-right px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Chassis</th>
-                          <th className="text-right px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">With Body</th>
+                          <th className="text-left px-3 py-2.5 font-black uppercase tracking-wider text-[9px] whitespace-nowrap">Model</th>
+                          <th className="text-center px-3 py-2.5 font-black uppercase tracking-wider text-[9px] whitespace-nowrap">Payload</th>
+                          <th className="text-center px-3 py-2.5 font-black uppercase tracking-wider text-[9px] whitespace-nowrap">Drive</th>
+                          <th className="text-right px-3 py-2.5 font-black uppercase tracking-wider text-[9px] whitespace-nowrap">Chassis</th>
+                          <th className="text-right px-3 py-2.5 font-black uppercase tracking-wider text-[9px] whitespace-nowrap">With Body</th>
                         </tr>
                       </thead>
                       <tbody>
                         {variants.map((v, i) => (
                           <tr key={v.model} className={`border-b border-gray-50 transition-colors hover:bg-red-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
-                            <td className="px-3 py-3">
+                            <td className="px-3 py-2.5">
                               <div className="flex items-center gap-2">
-                                <FaTruck size={11} className="text-[#D62B2B] flex-shrink-0" />
+                                <FaTruck size={10} className="text-[#D62B2B] flex-shrink-0" />
                                 <div>
                                   <p className="font-black text-[#1a1a1a] text-xs uppercase tracking-wide">{v.model}</p>
                                   {v.power && <p className="text-[9px] text-gray-400 font-semibold">{v.power}</p>}
                                 </div>
                               </div>
                             </td>
-                            <td className="px-3 py-3 text-center"><span className="font-bold text-[#1a1a1a] text-[11px]">{v.payload}</span></td>
-                            <td className="px-3 py-3 text-center">
+                            <td className="px-3 py-2.5 text-center"><span className="font-bold text-[#1a1a1a] text-[11px]">{v.payload}</span></td>
+                            <td className="px-3 py-2.5 text-center">
                               <span className={`inline-block px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded ${v.drive === "4×4" ? "bg-amber-100 text-amber-700 border border-amber-200" : "bg-gray-100 text-gray-600 border border-gray-200"}`}>
                                 {v.drive}
                               </span>
                             </td>
-                            <td className="px-3 py-3 text-right"><p className="font-black text-[11px] text-[#1a1a1a] whitespace-nowrap">{v.chassisPrice}</p></td>
-                            <td className="px-3 py-3 text-right"><p className="font-black text-[11px] text-[#D62B2B] whitespace-nowrap">{v.withBodyPrice}</p></td>
+                            <td className="px-3 py-2.5 text-right"><p className="font-black text-[11px] text-[#1a1a1a] whitespace-nowrap">{v.chassisPrice}</p></td>
+                            <td className="px-3 py-2.5 text-right"><p className="font-black text-[11px] text-[#D62B2B] whitespace-nowrap">{v.withBodyPrice}</p></td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-[9px] text-gray-400 mt-2 font-medium italic">* Prices are indicative. Contact Edwin for current offers &amp; financing.</p>
+                  <p className="text-[8.5px] text-gray-400 mt-1.5 font-medium italic">* Prices are indicative. Contact Edwin for current offers &amp; financing.</p>
                 </div>
               )}
 
               {/* KEY FEATURES */}
               {features && features.length > 0 && (
-                <div className="p-7 lg:p-9">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
+                <div className="p-5 lg:p-6">
+                  <div className="flex items-center gap-2.5 mb-3.5">
+                    <div className="h-[2px] w-6 bg-[#D62B2B] flex-shrink-0" />
                     <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Key Features</span>
                   </div>
-                  <div className="grid grid-cols-1 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {features.slice(0, 8).map((f, i) => (
-                      <div key={i} className="flex items-start gap-3 bg-gray-50 hover:bg-red-50 transition-colors rounded-lg px-4 py-3 border border-gray-100 hover:border-[#D62B2B]/20">
-                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#D62B2B] flex items-center justify-center mt-0.5 shadow-sm shadow-red-200">
-                          <FaCheck size={9} className="text-white" />
+                      <div key={i} className="flex items-center gap-2 bg-gray-50/80 hover:bg-red-50/40 transition-colors rounded-lg px-3 py-2 border border-gray-100">
+                        <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#D62B2B] flex items-center justify-center shadow-xs">
+                          <FaCheck size={7.5} className="text-white" />
                         </div>
-                        <span className="text-sm text-gray-700 font-medium leading-snug">{f}</span>
+                        <span className="text-xs text-gray-800 font-semibold leading-snug">{f}</span>
                       </div>
                     ))}
                   </div>
@@ -315,22 +315,22 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
               )}
 
               {/* CTA BUTTONS */}
-              <div className="p-7 lg:p-9 bg-gray-50">
-                <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-4">Ready to own this vehicle?</p>
-                <div className="space-y-3">
+              <div className="p-5 lg:p-6 bg-gray-50/80 border-t border-gray-100">
+                <p className="text-[9px] text-gray-400 font-black uppercase tracking-widest mb-2.5">Ready to own this vehicle?</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <a
                     href="tel:0768351483"
-                    className="flex items-center justify-center gap-2.5 w-full bg-[#D62B2B] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b01e1e] transition-colors shadow-lg shadow-red-100 rounded-xl"
+                    className="flex items-center justify-center gap-2 w-full bg-[#D62B2B] text-white py-3 font-black uppercase text-xs tracking-wider hover:bg-[#b01e1e] transition-colors shadow-md shadow-red-100 rounded-lg"
                   >
-                    <FaPhone size={16} /> Call Edwin — 0768 351 483
+                    <FaPhone size={13} /> Call Edwin
                   </a>
                   <a
                     href="https://wa.me/254768351483"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center gap-2.5 w-full bg-[#25D366] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#1ebe5c] transition-colors rounded-xl"
+                    className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-3 font-black uppercase text-xs tracking-wider hover:bg-[#1ebe5c] transition-colors shadow-md shadow-green-100 rounded-lg"
                   >
-                    <FaWhatsapp size={18} /> WhatsApp Us
+                    <FaWhatsapp size={15} /> WhatsApp
                   </a>
                 </div>
               </div>

@@ -151,53 +151,60 @@ export default async function VehiclePage({
       />
 
       {/* ── TECHNICAL SPECIFICATIONS ── */}
-      <div className="bg-[#f5f5f5] border-t border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-[3px] bg-[#D62B2B]" />
-            <h2 className="text-lg font-black uppercase tracking-tight text-[#1a1a1a]">
+      <div className="bg-[#f8f9fa] border-t border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-7">
+          <div className="flex items-center gap-2.5 mb-5">
+            <div className="w-6 h-[2.5px] bg-[#D62B2B]" />
+            <h2 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#1a1a1a]">
               Technical Specifications
             </h2>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded shadow-sm overflow-hidden max-w-4xl">
-            <div className="divide-y divide-gray-100 p-2 sm:p-4">
-              <SpecRow label="Transmission" value={vehicle.quickSpecs.transmission} />
-              <SpecRow label="Power" value={vehicle.detailedSpecs.engine.maxPower} />
-              <SpecRow label="Displacement(Cc)" value={vehicle.detailedSpecs.engine.displacement} />
-              {/* @ts-ignore */}
-              <SpecRow label="Axle Layout" value={vehicle.detailedSpecs.chassis?.axleLayout || vehicle.variants?.[0]?.drive} />
-              <SpecRow label="Torque" value={vehicle.detailedSpecs.engine.maxTorque} />
-              <SpecRow label="Gross Vehicle Weights (GVW) (KG)" value={vehicle.detailedSpecs.capacities.gvm} />
-              <SpecRow label="Fuel Tank Capacity(Litres)" value={vehicle.detailedSpecs.capacities.fuelTank} />
-              <SpecRow 
-                label="Suspension(Front & Rear)" 
-                value={(vehicle.detailedSpecs.chassis.suspensionFront && vehicle.detailedSpecs.chassis.suspensionRear) ? `${vehicle.detailedSpecs.chassis.suspensionFront} & ${vehicle.detailedSpecs.chassis.suspensionRear}` : undefined} 
-              />
-              <SpecRow label="Engine Model" value={vehicle.detailedSpecs.engine.type} />
-              {/* @ts-ignore */}
-              <SpecRow label="Clutch Diameter (Mm/Inch)" value={vehicle.detailedSpecs.chassis?.clutchDiameter} />
-              <SpecRow label="Seating Capacity" value={vehicle.detailedSpecs.capacities.seating} />
-              {/* @ts-ignore */}
-              <SpecRow label="Emission Standard" value={vehicle.detailedSpecs.engine?.emissionStandard} />
-              {/* @ts-ignore */}
-              <SpecRow label="Fleet Management System" value={vehicle.detailedSpecs?.fleetManagementSystem} />
+          <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+              <div className="divide-y divide-gray-100">
+                <SpecRow label="Transmission" value={vehicle.quickSpecs.transmission} />
+                <SpecRow label="Power" value={vehicle.detailedSpecs.engine.maxPower} />
+                <SpecRow label="Displacement (Cc)" value={vehicle.detailedSpecs.engine.displacement} />
+                <SpecRow label="Engine Model" value={vehicle.detailedSpecs.engine.type} />
+                <SpecRow label="Torque" value={vehicle.detailedSpecs.engine.maxTorque} />
+                {/* @ts-ignore */}
+                <SpecRow label="Emission Standard" value={vehicle.detailedSpecs.engine?.emissionStandard} />
+                <SpecRow label="Seating Capacity" value={vehicle.detailedSpecs.capacities.seating} />
+              </div>
+              <div className="divide-y divide-gray-100">
+                {/* @ts-ignore */}
+                <SpecRow label="Axle Layout / Drive" value={vehicle.detailedSpecs.chassis?.axleLayout || vehicle.variants?.[0]?.drive} />
+                <SpecRow label="Gross Vehicle Weight (GVW)" value={vehicle.detailedSpecs.capacities.gvm} />
+                <SpecRow label="Fuel Tank Capacity" value={vehicle.detailedSpecs.capacities.fuelTank} />
+                <SpecRow 
+                  label="Suspension (Front & Rear)" 
+                  value={(vehicle.detailedSpecs.chassis.suspensionFront && vehicle.detailedSpecs.chassis.suspensionRear) ? `${vehicle.detailedSpecs.chassis.suspensionFront} & ${vehicle.detailedSpecs.chassis.suspensionRear}` : undefined} 
+                />
+                {/* @ts-ignore */}
+                <SpecRow label="Clutch Diameter" value={vehicle.detailedSpecs.chassis?.clutchDiameter} />
+                {/* @ts-ignore */}
+                <SpecRow label="Fleet Management System" value={vehicle.detailedSpecs?.fleetManagementSystem} />
+              </div>
             </div>
           </div>
 
           {/* Full Features Grid */}
           {vehicle.features.length > 8 && (
-            <div className="mt-4 bg-white border border-gray-200 p-5">
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-4 pb-2 border-b border-gray-100">
-                All Features &amp; Highlights
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-2 gap-x-6">
+            <div className="mt-5 bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+              <div className="flex items-center gap-2 mb-3.5 pb-2 border-b border-gray-100">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D62B2B]" />
+                <h3 className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B]">
+                  All Features &amp; Highlights
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
                 {vehicle.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#D62B2B]/10 flex items-center justify-center mt-0.5">
-                      <FaCheck size={10} className="text-[#D62B2B]" />
+                  <div key={i} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-gray-50/70 hover:bg-red-50/40 transition-colors border border-gray-100">
+                    <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#D62B2B] flex items-center justify-center">
+                      <FaCheck size={8} className="text-white" />
                     </div>
-                    <span className="text-sm text-gray-800 font-medium leading-relaxed">{feature}</span>
+                    <span className="text-xs text-gray-800 font-semibold leading-snug">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -321,33 +328,92 @@ export default async function VehiclePage({
 
       {/* ── RELATED VEHICLES ── */}
       {related.length > 0 && (
-        <div className="bg-white border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-1 bg-[#D62B2B]" />
-              <h2 className="text-xl font-black uppercase tracking-tight text-[#1a1a1a]">
-                Also in {vehicle.category}
-              </h2>
+        <div className="bg-[#f9fafb] border-b border-gray-200 py-10 sm:py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <div className="flex items-center justify-between mb-7">
+              <div className="flex items-center gap-2.5">
+                <div className="w-6 h-[2.5px] bg-[#D62B2B]" />
+                <h2 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#1a1a1a]">
+                  Also in {vehicle.category}
+                </h2>
+              </div>
+              <Link 
+                href="/vehicles" 
+                className="text-xs font-bold text-[#D62B2B] hover:text-[#b01e1e] flex items-center gap-1 uppercase tracking-wider transition-colors"
+              >
+                View Full Range <FaChevronRight size={10} />
+              </Link>
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {related.map((v) => (
-                <Link
-                  key={v.id}
-                  href={`/vehicles/${v.id}`}
-                  className="group flex gap-4 bg-[#f9f9f9] border border-gray-200 hover:border-[#D62B2B] transition-colors p-4"
-                >
-                  <div className="relative w-24 h-20 flex-shrink-0 bg-white">
-                    <Image src={v.heroImage} alt={v.title} fill className="object-contain p-2" />
-                  </div>
-                  <div className="flex flex-col justify-center">
-                    <p className="text-[10px] font-bold text-[#D62B2B] uppercase tracking-widest mb-1">{v.category}</p>
-                    <p className="text-sm font-black text-[#1a1a1a] uppercase leading-tight group-hover:text-[#D62B2B] transition-colors">{v.title}</p>
-                    <p className="text-xs text-gray-500 mt-1.5 flex items-center gap-1 font-bold">
-                      View Details <FaChevronRight size={10} />
-                    </p>
-                  </div>
-                </Link>
-              ))}
+              {related.map((v) => {
+                const price = v.price?.unitPrice ?? v.price?.chassisPrice;
+                return (
+                  <Link
+                    key={v.id}
+                    href={`/vehicles/${v.id}`}
+                    className="group bg-white rounded-xl border border-gray-200/80 hover:border-[#D62B2B]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden shadow-xs"
+                  >
+                    {/* Vehicle Image Stage */}
+                    <div className="relative aspect-[16/10] bg-gradient-to-b from-gray-50 to-white p-4 overflow-hidden">
+                      <Image 
+                        src={v.heroImage} 
+                        alt={v.title} 
+                        fill 
+                        className="object-contain p-3 transition-transform duration-500 group-hover:scale-105" 
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-md text-[9px] font-black text-[#D62B2B] uppercase tracking-widest shadow-xs border border-gray-100">
+                        {v.category}
+                      </div>
+                      <div className={`absolute top-3 right-3 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-widest text-white shadow-xs ${
+                        v.availability === 'Order Only' ? 'bg-amber-500' :
+                        v.availability === 'Limited Stock' ? 'bg-orange-500' :
+                        'bg-green-600'
+                      }`}>
+                        {v.availability || 'In Stock'}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 flex flex-col flex-1 border-t border-gray-100 bg-white">
+                      <h3 className="text-sm font-black text-[#1a1a1a] uppercase mb-1.5 group-hover:text-[#D62B2B] transition-colors line-clamp-1">
+                        {v.title}
+                      </h3>
+                      <p className="text-xs text-gray-500 mb-4 line-clamp-2 leading-relaxed">
+                        {v.description}
+                      </p>
+
+                      {/* Quick Specs Badges */}
+                      <div className="grid grid-cols-2 gap-2 mb-4 mt-auto">
+                        <div className="bg-gray-50 rounded-md px-2.5 py-1.5 border border-gray-100/80">
+                          <span className="block text-[8.5px] font-bold text-gray-400 uppercase tracking-wider">Engine</span>
+                          <span className="block text-xs font-black text-[#1a1a1a] truncate">{v.quickSpecs.engine}</span>
+                        </div>
+                        <div className="bg-gray-50 rounded-md px-2.5 py-1.5 border border-gray-100/80">
+                          <span className="block text-[8.5px] font-bold text-gray-400 uppercase tracking-wider">Transmission</span>
+                          <span className="block text-xs font-black text-[#1a1a1a] truncate">{v.quickSpecs.transmission}</span>
+                        </div>
+                      </div>
+
+                      {/* Bottom Price & View CTA */}
+                      <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+                        {price ? (
+                          <div>
+                            <span className="text-[8.5px] text-gray-400 font-bold uppercase tracking-wider block">From</span>
+                            <span className="text-xs sm:text-sm font-black text-[#D62B2B] tabular-nums">{price}</span>
+                          </div>
+                        ) : (
+                          <span className="text-[10px] text-gray-400 font-bold uppercase">Price On Enquiry</span>
+                        )}
+                        <span className="text-xs font-bold text-gray-700 group-hover:text-[#D62B2B] flex items-center gap-1 transition-colors">
+                          View Details <FaChevronRight size={10} className="transition-transform group-hover:translate-x-0.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -391,9 +457,9 @@ export default async function VehiclePage({
 const SpecRow = ({ label, value }: { label: string; value?: string }) => {
   if (!value || value.toUpperCase() === "TBA" || value === "N/A") return null;
   return (
-    <div className="flex justify-between items-center py-3 px-2 border-b border-gray-50 last:border-0 gap-4">
-      <span className="text-[11px] text-gray-500 font-bold uppercase tracking-wider flex-shrink-0">{label}</span>
-      <span className="text-xs font-semibold text-[#1a1a1a] text-right leading-snug">{value}</span>
+    <div className="flex justify-between items-center py-2.5 px-4 sm:px-5 hover:bg-gray-50/70 transition-colors gap-4">
+      <span className="text-[10.5px] text-gray-400 font-bold uppercase tracking-wider flex-shrink-0">{label}</span>
+      <span className="text-xs font-bold text-[#1a1a1a] text-right leading-snug">{value}</span>
     </div>
   );
 };

@@ -34,14 +34,14 @@ export default function FloatingWhatsApp() {
       href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(getWhatsAppMessage())}`}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 group"
+      className="fixed bottom-5 right-5 z-40 flex items-center justify-center w-12 h-12 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 group"
       aria-label="Chat on WhatsApp"
     >
       {/* Ping animation ring */}
       <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping" />
       
       {/* Icon */}
-      <FaWhatsapp size={32} className="relative z-10" />
+      <FaWhatsapp size={28} className="relative z-10" />
       
       {/* Tooltip on hover */}
       <span className="absolute right-full mr-4 bg-white text-[#1a1a1a] text-xs font-bold px-3 py-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap border border-gray-100">

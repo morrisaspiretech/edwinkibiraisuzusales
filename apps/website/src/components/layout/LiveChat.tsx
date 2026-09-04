@@ -99,7 +99,7 @@ export default function LiveChat() {
   return (
     <>
       {/* ── CHAT BUBBLE BUTTON ── */}
-      <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-2">
+      <div className="fixed bottom-[76px] right-5 z-50 flex flex-col items-end gap-2">
 
         {/* Notification pop-up bubble */}
         <AnimatePresence>
@@ -134,24 +134,24 @@ export default function LiveChat() {
         {/* Main toggle button */}
         <motion.button
           onClick={() => (isOpen ? closeChat() : openChat())}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          className="relative w-14 h-14 bg-[#1a1a1a] text-white rounded-full shadow-2xl shadow-black/40 flex items-center justify-center border-2 border-[#D62B2B]"
+          className="relative w-12 h-12 bg-[#1a1a1a] text-white rounded-full shadow-2xl shadow-black/40 flex items-center justify-center border-2 border-[#D62B2B]"
           aria-label="Live Chat"
         >
           {!isOpen && !hasAutoOpened && (
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#D62B2B] rounded-full flex items-center justify-center text-[10px] font-black text-white">
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#D62B2B] rounded-full flex items-center justify-center text-[9px] font-black text-white">
               1
             </span>
           )}
           <AnimatePresence mode="wait">
             {isOpen ? (
               <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                <FaXmark size={22} />
+                <FaXmark size={18} />
               </motion.div>
             ) : (
               <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
-                <FaMessage size={20} />
+                <FaMessage size={17} />
               </motion.div>
             )}
           </AnimatePresence>
