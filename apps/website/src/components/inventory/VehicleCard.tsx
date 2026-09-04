@@ -73,10 +73,12 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
 
         {/* Specs Grid */}
         <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-5 pt-4 border-t border-gray-50 text-xs flex-grow">
-          <div>
-            <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-0.5">Engine</p>
-            <p className="font-black text-[#1a1a1a]">{vehicle.engineCC ? `${vehicle.engineCC}cc` : "N/A"}</p>
-          </div>
+          {vehicle.engineCC ? (
+            <div>
+              <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-0.5">Engine</p>
+              <p className="font-black text-[#1a1a1a]">{vehicle.engineCC}cc</p>
+            </div>
+          ) : null}
           <div>
             <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-0.5">Fuel Type</p>
             <p className="font-black text-[#1a1a1a] capitalize">{(vehicle.fuelType || "Diesel").toLowerCase()}</p>

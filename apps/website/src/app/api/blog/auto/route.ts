@@ -60,7 +60,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
     const prompt = `You are a senior SEO content strategist specializing in the Kenya commercial vehicle market. 
 Write a full Google E-E-A-T compliant Buyer's Guide for the Isuzu ${topic.model} (${topic.label}) targeting Kenyan buyers.

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FaCheckCircle, FaTools, FaTractor, FaShieldAlt, FaGasPump } from "react-icons/fa";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
   title: "Isuzu D-MAX Kenya | Price, Specs, Single & Double Cab For Sale",
@@ -28,6 +29,7 @@ export default function DMaxHub() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Navbar />
       {/* Hero Section */}
       <section className="relative bg-[#1a1a1a] text-white py-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -44,8 +46,8 @@ export default function DMaxHub() {
             </div>
           </div>
           <div className="relative h-[300px] md:h-[450px]">
-            {/* Using hero-car.png as placeholder */}
-            <Image src="/hero-car.png" alt="Isuzu D-MAX Double Cab" fill className="object-contain" priority />
+            {/* Using an actual D-Max image instead of the AI placeholder */}
+            <Image src="/vehicles/grouped/batch3/3.jpeg" alt="Isuzu D-MAX Double Cab" fill className="object-contain" priority />
           </div>
         </div>
       </section>

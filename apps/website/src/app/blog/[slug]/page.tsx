@@ -8,13 +8,12 @@ import Navbar from "@/components/layout/Navbar";
 import { FaChevronLeft, FaCalendar, FaLink, FaShareNodes } from "react-icons/fa6";
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
   
   if (!post) {
     return { title: "Post Not Found" };
@@ -31,8 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
@@ -162,7 +162,7 @@ export default function BlogPostPage({ params }: Props) {
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
                       <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">SACCO</p>
-                      <p className="text-[#1a1a1a] font-black text-lg">{post.financing.saccoAvailable ? 'Yes' : 'N/A'}</p>
+                      <p className="text-[#1a1a1a] font-black text-lg">{post.financing.saccoAvailable ? 'Yes' : 'No'}</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
                       <a href="tel:0768351483" className="text-[#D62B2B] font-black uppercase text-xs hover:underline">Call for Pre-approval</a>
@@ -268,6 +268,6 @@ export default function BlogPostPage({ params }: Props) {
           </aside>
         </div>
       </section>
-</div>
+    </div>
   );
 }

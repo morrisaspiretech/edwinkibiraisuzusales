@@ -87,21 +87,24 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ── HERO HEADER ── */}
-      <header className="relative bg-[#111] overflow-hidden" style={{ minHeight: 520 }}>
+      <header className="relative bg-[#111] overflow-hidden" style={{ minHeight: 480 }}>
         <div className="absolute inset-0">
-          <img
-            src="/vehicles/mux-launch.png"
-            alt="Edwin Kibira Isuzu Sales — Locally Assembled MU-X"
-            className="w-full h-full object-cover opacity-80"
+          <video
+            src="/videos/hero.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-50"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         </div>
 
         {/* Red top stripe */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D62B2B] via-[#ff5555] to-[#D62B2B]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-28">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-20">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-xs font-bold uppercase text-[#D62B2B] mb-6 tracking-widest">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>

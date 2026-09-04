@@ -70,18 +70,26 @@ export default function FAQPage() {
       />
 
       {/* Header */}
-      <section className="bg-[#1A1A1A] pt-32 pb-20 px-6 sm:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#D62B2B] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
-        </div>
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#D62B2B]/10 text-[#D62B2B] mb-6">
+      <section className="relative bg-[#1A1A1A] overflow-hidden" style={{ minHeight: 320 }}>
+        <video
+          src="/videos/hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f9fafb] via-[#1A1A1A]/70 to-[#1A1A1A]/90" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-[#D62B2B] z-20" />
+        
+        <div className="max-w-4xl mx-auto relative z-10 text-center py-20 px-6 sm:px-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#D62B2B]/20 text-[#D62B2B] mb-6 shadow-lg">
             <FaCircleQuestion size={32} />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight mb-6 drop-shadow-md">
             Frequently Asked <span className="text-[#D62B2B]">Questions</span>
           </h1>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow">
             Everything you need to know about purchasing your brand-new Isuzu, financing options, warranties, and our delivery process.
           </p>
         </div>

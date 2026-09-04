@@ -452,8 +452,15 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "Isuzu D-Max Kipchoge Edition",
     description: "The Kipchoge Edition perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and available in both manual and automatic.",
-    heroImage: "/vehicles/dmax-single.webp",
-    gallery: ["/vehicles/dmax-single.webp"],
+    heroImage: "/vehicles/tfs40/tfs40-1.jpeg",
+    gallery: [
+      "/vehicles/tfs40/tfs40-1.jpeg",
+      "/vehicles/tfs40/tfs40-2.jpeg",
+      "/vehicles/tfs40/tfs40-3.jpeg",
+      "/vehicles/tfs40/tfs40-4.jpeg",
+      "/vehicles/tfs40/tfs40-5.jpeg",
+      "/vehicles/tfs40/tfs40-6.jpeg",
+    ],
     quickSpecs: { engine: "3.0L Turbo Diesel", transmission: "6-Speed Auto / Manual", power: "140 kW @ 3,600 rpm", fuel: "Diesel" },
     detailedSpecs: {
       engine: { type: "4JJ3-TCX", displacement: "2,999 cc", maxPower: "140 kW", maxTorque: "450 Nm", fuelSystem: "Common Rail" },
@@ -897,9 +904,15 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "N-Series NQR 81",
     description: "The Isuzu NQR 81 is the powerhouse of the N-Series. With a 4.8-litre engine and a heavy-duty 5.0-tonne payload, it bridges the gap between light and medium commercial trucks.",
-    heroImage: "/vehicles/nqr-hero.png",
+    heroImage: "/vehicles/nqr/nqr-2.jpeg",
     gallery: [
-      "/vehicles/nqr-hero.png",
+      "/vehicles/nqr/nqr-2.jpeg",
+      "/vehicles/nqr/nqr-3.jpeg",
+      "/vehicles/nqr/nqr-4.jpeg",
+      "/vehicles/nqr/nqr-5.jpeg",
+      "/vehicles/nqr/nqr-6.jpeg",
+      "/vehicles/nqr/nqr-8.jpeg",
+      "/vehicles/nqr/nqr-9.jpeg"
     ],
     quickSpecs: {
       engine: "5,193cc Turbo Diesel",
@@ -937,7 +950,14 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     price: {
       chassisPrice: "Ksh 4,775,000",
     },
-    features: [],
+    features: [
+      "Anti-Lock Braking System (ABS)",
+      "Recirculating Ball Power Steering",
+      "Reinforced heavy-duty chassis",
+      "Tilt-cab for easy engine access and maintenance",
+      "110-Litre fuel tank for long haul",
+      "High capacity 5.0 Tonne Payload design"
+    ],
   },
 
   "n-series-nqr-xtra": {

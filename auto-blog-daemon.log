@@ -18,3 +18,28 @@
 [2026-09-02T09:06:24.141Z] Triggering AI blog generation...
 [2026-09-02T09:06:25.120Z] ❌ Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
 [2026-09-02T09:06:25.123Z] First run failed — will retry on next cycle.
+[2026-09-04T07:44:51.263Z] 🤖 Edwin Isuzu AI Blog Daemon started (direct Gemini API — no server required).
+[2026-09-04T07:44:51.265Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-04T07:44:51.267Z] 🧠 Generating article for: Isuzu NMR85 (25 Seater School Bus)...
+[2026-09-04T07:44:52.302Z] ❌ Gemini API error: Gemini returned no text. Status: 404. Body: {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.",
+    "status": "NOT_FOUND"
+  }
+}
+
+[2026-09-04T07:45:41.299Z] 🤖 Edwin Isuzu AI Blog Daemon started (direct Gemini API — no server required).
+[2026-09-04T07:45:41.302Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-04T07:45:41.304Z] 🧠 Generating article for: Isuzu NMR85 (25 Seater School Bus)...
+[2026-09-04T07:46:27.618Z] ❌ AI returned no valid JSON. Raw: {
+  "slug": "isuzu-nmr85-price-kenya-2026-buyers-guide",
+  "title": "Isuzu NMR85 Price in Kenya 2026: Complete Buyer's Guide",
+  "excerpt": "Looking for the official Isuzu NMR85 price in Kenya for 202
+[2026-09-04T07:51:15.050Z] 🤖 Edwin Isuzu AI Blog Daemon started (direct Gemini API — no server required).
+[2026-09-04T07:51:15.053Z] 📅 Will publish a new buyer guide every 3 days automatically.
+[2026-09-04T07:51:15.054Z] 🧠 Generating article for: Isuzu NMR85 (25 Seater School Bus)...
+[2026-09-04T07:54:49.692Z] ❌ JSON parse failed: Expected ',' or ']' after array element in JSON at position 10121 (line 55 column 6). Raw: {
+  "slug": "isuzu-nmr85-price-kenya-2026-buyers-guide",
+  "title": "Isuzu NMR85 Price in Kenya 2026: Complete Buyer's Guide",
+  "excerpt": "Looking to buy the Isuzu NMR85 25-seater school bus in Keny

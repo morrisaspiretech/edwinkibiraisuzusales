@@ -59,21 +59,29 @@ export default async function VehiclePage({
         }}
       />
 
-      {/* ── COMPACT HERO WITH VIDEO BACKGROUND ── */}
+      {/* ── COMPACT HERO ── */}
       <div className="relative bg-[#0d0d0d] overflow-hidden" style={{ minHeight: 320 }}>
-        {/* Video background (fallback to hero.mp4 if presentationVideo is missing) */}
-        <video
-          src={vehicle.presentationVideo?.url || "/videos/hero.mp4"}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
+        {/* Show vehicle's actual hero image OR presentation video */}
+        {vehicle.presentationVideo?.url ? (
+          <video
+            src={vehicle.presentationVideo.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
+          />
+        ) : (
+          <img
+            src={vehicle.heroImage}
+            alt={vehicle.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
+          />
+        )}
         
         {/* Gradients to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/50 to-black/30" />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/60 to-black/20" />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Red top line */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-[#D62B2B] z-20" />
@@ -152,49 +160,28 @@ export default async function VehiclePage({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Engine */}
-            <div className="bg-white border border-gray-200 p-4">
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-3 pb-2 border-b border-gray-100">
-                Engine &amp; Performance
-              </h3>
-              <div className="space-y-0.5">
-                <SpecRow label="Type" value={vehicle.detailedSpecs.engine.type} />
-                <SpecRow label="Displacement" value={vehicle.detailedSpecs.engine.displacement} />
-                <SpecRow label="Max Power" value={vehicle.detailedSpecs.engine.maxPower} />
-                <SpecRow label="Max Torque" value={vehicle.detailedSpecs.engine.maxTorque} />
-                <SpecRow label="Fuel System" value={vehicle.detailedSpecs.engine.fuelSystem} />
-              </div>
-            </div>
-
-            {/* Dimensions */}
-            <div className="bg-white border border-gray-200 p-4">
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-3 pb-2 border-b border-gray-100">
-                Dimensions &amp; Capacities
-              </h3>
-              <div className="space-y-0.5">
-                <SpecRow label="Length" value={vehicle.detailedSpecs.dimensions.length} />
-                <SpecRow label="Width" value={vehicle.detailedSpecs.dimensions.width} />
-                <SpecRow label="Height" value={vehicle.detailedSpecs.dimensions.height} />
-                <SpecRow label="Wheelbase" value={vehicle.detailedSpecs.dimensions.wheelbase} />
-                <SpecRow label="Ground Clearance" value={vehicle.detailedSpecs.dimensions.groundClearance} />
-                <SpecRow label="Fuel Tank" value={vehicle.detailedSpecs.capacities.fuelTank} />
-                <SpecRow label="Seating" value={vehicle.detailedSpecs.capacities.seating} />
-                <SpecRow label="GVM" value={vehicle.detailedSpecs.capacities.gvm} />
-              </div>
-            </div>
-
-            {/* Chassis */}
-            <div className="bg-white border border-gray-200 p-4">
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-3 pb-2 border-b border-gray-100">
-                Chassis &amp; Suspension
-              </h3>
-              <div className="space-y-0.5">
-                <SpecRow label="Front Suspension" value={vehicle.detailedSpecs.chassis.suspensionFront} />
-                <SpecRow label="Rear Suspension" value={vehicle.detailedSpecs.chassis.suspensionRear} />
-                <SpecRow label="Brakes" value={vehicle.detailedSpecs.chassis.brakes} />
-                <SpecRow label="Steering" value={vehicle.detailedSpecs.chassis.steering} />
-              </div>
+          <div className="bg-white border border-gray-200 rounded shadow-sm overflow-hidden max-w-4xl">
+            <div className="divide-y divide-gray-100 p-2 sm:p-4">
+              <SpecRow label="Transmission" value={vehicle.quickSpecs.transmission} />
+              <SpecRow label="Power" value={vehicle.detailedSpecs.engine.maxPower} />
+              <SpecRow label="Displacement(Cc)" value={vehicle.detailedSpecs.engine.displacement} />
+              {/* @ts-ignore */}
+              <SpecRow label="Axle Layout" value={vehicle.detailedSpecs.chassis?.axleLayout || vehicle.variants?.[0]?.drive} />
+              <SpecRow label="Torque" value={vehicle.detailedSpecs.engine.maxTorque} />
+              <SpecRow label="Gross Vehicle Weights (GVW) (KG)" value={vehicle.detailedSpecs.capacities.gvm} />
+              <SpecRow label="Fuel Tank Capacity(Litres)" value={vehicle.detailedSpecs.capacities.fuelTank} />
+              <SpecRow 
+                label="Suspension(Front & Rear)" 
+                value={(vehicle.detailedSpecs.chassis.suspensionFront && vehicle.detailedSpecs.chassis.suspensionRear) ? `${vehicle.detailedSpecs.chassis.suspensionFront} & ${vehicle.detailedSpecs.chassis.suspensionRear}` : undefined} 
+              />
+              <SpecRow label="Engine Model" value={vehicle.detailedSpecs.engine.type} />
+              {/* @ts-ignore */}
+              <SpecRow label="Clutch Diameter (Mm/Inch)" value={vehicle.detailedSpecs.chassis?.clutchDiameter} />
+              <SpecRow label="Seating Capacity" value={vehicle.detailedSpecs.capacities.seating} />
+              {/* @ts-ignore */}
+              <SpecRow label="Emission Standard" value={vehicle.detailedSpecs.engine?.emissionStandard} />
+              {/* @ts-ignore */}
+              <SpecRow label="Fleet Management System" value={vehicle.detailedSpecs?.fleetManagementSystem} />
             </div>
           </div>
 
@@ -401,11 +388,11 @@ export default async function VehiclePage({
   );
 }
 
-const SpecRow = ({ label, value }: { label: string; value: string }) => {
+const SpecRow = ({ label, value }: { label: string; value?: string }) => {
   if (!value || value.toUpperCase() === "TBA" || value === "N/A") return null;
   return (
-    <div className="flex justify-between items-center py-1.5 border-b border-gray-50 last:border-0 gap-4">
-      <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex-shrink-0">{label}</span>
+    <div className="flex justify-between items-center py-3 px-2 border-b border-gray-50 last:border-0 gap-4">
+      <span className="text-[11px] text-gray-500 font-bold uppercase tracking-wider flex-shrink-0">{label}</span>
       <span className="text-xs font-semibold text-[#1a1a1a] text-right leading-snug">{value}</span>
     </div>
   );

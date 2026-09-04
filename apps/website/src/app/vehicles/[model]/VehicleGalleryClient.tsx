@@ -37,47 +37,33 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
   useEffect(() => { setMounted(true); }, []);
 
   const currentImg = images[activeImg] || images[0] || "";
-
   const resetZoom = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
-
   const zoomIn = () => setZoom(z => Math.min(parseFloat((z + 0.5).toFixed(1)), 4));
   const zoomOut = () => setZoom(z => {
     const next = parseFloat((z - 0.5).toFixed(1));
     if (next <= 1) { setPan({ x: 0, y: 0 }); return 1; }
     return next;
   });
-
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
-    if (e.deltaY < 0) zoomIn();
-    else zoomOut();
+    if (e.deltaY < 0) zoomIn(); else zoomOut();
   };
-
   const goNext = () => { setActiveImg(p => (p + 1) % images.length); resetZoom(); };
   const goPrev = () => { setActiveImg(p => (p === 0 ? images.length - 1 : p - 1)); resetZoom(); };
-
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoom > 1) {
-      setIsDragging(true);
-      dragStart.current = { x: e.clientX, y: e.clientY, panX: pan.x, panY: pan.y };
-    }
+    if (zoom > 1) { setIsDragging(true); dragStart.current = { x: e.clientX, y: e.clientY, panX: pan.x, panY: pan.y }; }
   };
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
     setPan({ x: dragStart.current.panX + (e.clientX - dragStart.current.x), y: dragStart.current.panY + (e.clientY - dragStart.current.y) });
   };
   const handleMouseUp = () => setIsDragging(false);
-
-
   const handleParallaxMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!imgContainerRef.current) return;
     const rect = imgContainerRef.current.getBoundingClientRect();
-    // Normalize to -0.5 .. 0.5
     const nx = (e.clientX - rect.left) / rect.width - 0.5;
     const ny = (e.clientY - rect.top) / rect.height - 0.5;
-    // Max shift in px
-    const MAX = 14;
-    setParallax({ x: nx * MAX, y: ny * MAX });
+    setParallax({ x: nx * 14, y: ny * 14 });
   };
 
   return (
@@ -87,8 +73,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
         {/* LEFT: Interactive Image Gallery */}
         <div className="lg:col-span-7 bg-[#0d0d0d] flex flex-col" style={{ minHeight: "55vh" }}>
-
-          {/* Main Viewer */}
           <div
             ref={imgContainerRef}
             className="relative flex-1 overflow-hidden select-none"
@@ -109,7 +93,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                 transition={{ duration: 0.25 }}
                 className="absolute inset-0"
               >
-                {/* Zoom/Pan layer — separate from Framer so transforms don't conflict */}
                 <div
                   className="w-full h-full flex items-center justify-center"
                   style={{
@@ -134,8 +117,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
               </motion.div>
             </AnimatePresence>
 
-
-
             {/* Image Counter */}
             <div className="absolute top-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 backdrop-blur-sm">
               {activeImg + 1} / {images.length}
@@ -144,16 +125,10 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
             {/* Arrow Navigation */}
             {images.length > 1 && (
               <>
-                <button
-                  onClick={goPrev}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-[#D62B2B] text-white p-3 rounded-full transition-all z-10 hover:scale-110 backdrop-blur-sm"
-                >
+                <button onClick={goPrev} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-[#D62B2B] text-white p-3 rounded-full transition-all z-10 hover:scale-110 backdrop-blur-sm">
                   <FaChevronLeft size={20} />
                 </button>
-                <button
-                  onClick={goNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-[#D62B2B] text-white p-3 rounded-full transition-all z-10 hover:scale-110 backdrop-blur-sm"
-                >
+                <button onClick={goNext} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-[#D62B2B] text-white p-3 rounded-full transition-all z-10 hover:scale-110 backdrop-blur-sm">
                   <FaChevronRight size={20} />
                 </button>
               </>
@@ -161,25 +136,10 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
             {/* Zoom Controls + Fullscreen */}
             <div className="absolute bottom-4 right-4 flex items-center gap-2 z-10">
-              <button
-                onClick={zoomOut}
-                className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm"
-                title="Zoom Out"
-              >−</button>
-              <span
-                onClick={resetZoom}
-                className="bg-black/70 text-white text-xs font-bold px-3 py-2 rounded-full cursor-pointer hover:bg-white/20 transition-all backdrop-blur-sm select-none"
-              >{Math.round(zoom * 100)}%</span>
-              <button
-                onClick={zoomIn}
-                className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm"
-                title="Zoom In"
-              >+</button>
-              <button
-                onClick={() => setLightbox(true)}
-                className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full transition-all backdrop-blur-sm"
-                title="View Fullscreen"
-              >
+              <button onClick={zoomOut} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm" title="Zoom Out">−</button>
+              <span onClick={resetZoom} className="bg-black/70 text-white text-xs font-bold px-3 py-2 rounded-full cursor-pointer hover:bg-white/20 transition-all backdrop-blur-sm select-none">{Math.round(zoom * 100)}%</span>
+              <button onClick={zoomIn} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm" title="Zoom In">+</button>
+              <button onClick={() => setLightbox(true)} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full transition-all backdrop-blur-sm" title="View Fullscreen">
                 <FaExpand size={15} />
               </button>
             </div>
@@ -193,10 +153,7 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                   <button
                     key={i}
                     onClick={() => { setActiveImg(i); resetZoom(); }}
-                    className={`relative flex-shrink-0 rounded-sm overflow-hidden transition-all border-2 ${i === activeImg
-                      ? "border-[#D62B2B] opacity-100"
-                      : "border-transparent opacity-40 hover:opacity-80 hover:border-white/30"
-                    }`}
+                    className={`relative flex-shrink-0 rounded-sm overflow-hidden transition-all border-2 ${i === activeImg ? "border-[#D62B2B] opacity-100" : "border-transparent opacity-40 hover:opacity-80 hover:border-white/30"}`}
                     style={{ width: 80, height: 58 }}
                     title={`View image ${i + 1}`}
                   >
@@ -211,22 +168,22 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
         {/* RIGHT: Sticky Details Sidebar */}
         <div className="lg:col-span-5 bg-white border-l border-gray-100">
           <div className="lg:sticky lg:top-20 overflow-y-auto" style={{ maxHeight: "calc(100vh - 80px)" }}>
-            <div className="p-7 lg:p-9 space-y-8">
+            <div className="divide-y divide-gray-50">
 
-              {/* Description */}
-              <div>
+              {/* OVERVIEW */}
+              <div className="p-7 lg:p-9">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
+                  <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
                   <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Overview</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm">{description}</p>
               </div>
 
-              {/* Quick Specs */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
+              {/* QUICK SPECS */}
+              <div className="p-7 lg:p-9">
+                <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
-                    <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
+                    <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
                     <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Quick Specs</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -245,77 +202,72 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                         : null,
                     { label: "Fuel", value: quickSpecs.fuel },
                   ].filter(Boolean).map(spec => (
-                    <div key={spec!.label} className="bg-[#f7f7f7] border-l-4 border-[#D62B2B] px-4 py-3">
-                      <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest mb-1">{spec!.label}</p>
-                      <p className="text-sm font-black text-[#1a1a1a] leading-tight">{spec!.value}</p>
+                    <div key={spec!.label} className="group bg-gray-50 hover:bg-[#1a1a1a] transition-colors duration-200 rounded-xl p-4 border border-gray-100 hover:border-[#D62B2B]">
+                      <p className="text-[9px] text-gray-400 group-hover:text-gray-500 font-black uppercase tracking-widest mb-1.5">{spec!.label}</p>
+                      <p className="text-sm font-black text-[#1a1a1a] group-hover:text-white leading-tight">{spec!.value}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* ── PRICE BLOCK — only renders when real price data is available ── */}
+              {/* PRICE BLOCK */}
               {price && (price.chassisPrice || price.withBodyPrice || price.unitPrice) && (
-                <div className="bg-[#1a1a1a] rounded-sm border border-[#D62B2B]/30 overflow-hidden">
-                  <div className="bg-[#D62B2B] px-5 py-2.5 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-white/80 flex-shrink-0" />
-                    <span className="text-white font-black text-[10px] uppercase tracking-widest">
-                      {price.label ? `${price.label} Price` : "Price"}
-                    </span>
-                  </div>
-                  <div className="px-5 py-4 space-y-3">
-                    {price.chassisPrice && (
-                      <div className="flex items-baseline justify-between gap-4">
-                        <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">Chassis</span>
-                        <span className="text-white font-black text-lg tabular-nums">{price.chassisPrice}</span>
-                      </div>
-                    )}
-                    {price.withBodyPrice && (
-                      <div className="flex items-baseline justify-between gap-4">
-                        <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">With Body</span>
-                        <span className="text-[#D62B2B] font-black text-lg tabular-nums">{price.withBodyPrice}</span>
-                      </div>
-                    )}
-                    {price.unitPrice && (
-                      <div className="flex items-baseline justify-between gap-4">
-                        <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
-                          {price.label ?? "Unit"}
-                        </span>
-                        <span className="text-[#D62B2B] font-black text-xl tabular-nums">{price.unitPrice}</span>
-                      </div>
-                    )}
-                    <p className="text-gray-600 text-[9px] pt-2 border-t border-white/10 font-medium leading-relaxed">
-                      * Prices are indicative. Contact Edwin for current offers, colour options &amp; financing.
-                    </p>
+                <div className="px-7 lg:px-9 py-6">
+                  <div className="bg-[#1a1a1a] rounded-xl overflow-hidden">
+                    <div className="bg-[#D62B2B] px-5 py-3 flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-white/80 flex-shrink-0" />
+                      <span className="text-white font-black text-[10px] uppercase tracking-widest">
+                        {price.label ? `${price.label} Price` : "Price"}
+                      </span>
+                    </div>
+                    <div className="px-5 py-5 space-y-4">
+                      {price.chassisPrice && (
+                        <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-white/10">
+                          <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">Chassis</span>
+                          <span className="text-white font-black text-xl tabular-nums">{price.chassisPrice}</span>
+                        </div>
+                      )}
+                      {price.withBodyPrice && (
+                        <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-white/10">
+                          <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">With Body</span>
+                          <span className="text-[#D62B2B] font-black text-xl tabular-nums">{price.withBodyPrice}</span>
+                        </div>
+                      )}
+                      {price.unitPrice && (
+                        <div className="flex items-baseline justify-between gap-4 pb-4 border-b border-white/10">
+                          <span className="text-gray-400 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">{price.label ?? "Unit"}</span>
+                          <span className="text-[#D62B2B] font-black text-2xl tabular-nums">{price.unitPrice}</span>
+                        </div>
+                      )}
+                      <p className="text-gray-500 text-[9px] font-medium leading-relaxed">
+                        * Prices are indicative. Contact Edwin for current offers, colour options &amp; financing.
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
 
-              {/* ── VARIANTS PRICING TABLE (N-Series / multi-variant vehicles) ── */}
+              {/* VARIANTS PRICING TABLE */}
               {variants && variants.length > 0 && (
-                <div>
+                <div className="px-7 lg:px-9 py-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
-                    <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Model Range & Pricing</span>
+                    <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
+                    <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Model Range &amp; Pricing</span>
                   </div>
-                  <div className="overflow-x-auto -mx-2">
+                  <div className="overflow-x-auto rounded-xl border border-gray-100">
                     <table className="min-w-full text-xs border-collapse">
                       <thead>
                         <tr className="bg-[#1a1a1a] text-white">
-                          <th className="text-left px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Model</th>
-                          <th className="text-center px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Payload</th>
-                          <th className="text-center px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Drive</th>
-                          <th className="text-right px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Chassis</th>
-                          <th className="text-right px-3 py-2.5 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">With Body</th>
+                          <th className="text-left px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Model</th>
+                          <th className="text-center px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Payload</th>
+                          <th className="text-center px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Drive</th>
+                          <th className="text-right px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">Chassis</th>
+                          <th className="text-right px-3 py-3 font-black uppercase tracking-wider text-[10px] whitespace-nowrap">With Body</th>
                         </tr>
                       </thead>
                       <tbody>
                         {variants.map((v, i) => (
-                          <tr
-                            key={v.model}
-                            className={`border-b border-gray-100 transition-colors hover:bg-[#D62B2B]/5 ${
-                              i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
-                            }`}
-                          >
+                          <tr key={v.model} className={`border-b border-gray-50 transition-colors hover:bg-red-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
                             <td className="px-3 py-3">
                               <div className="flex items-center gap-2">
                                 <FaTruck size={11} className="text-[#D62B2B] flex-shrink-0" />
@@ -325,68 +277,62 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                                 </div>
                               </div>
                             </td>
+                            <td className="px-3 py-3 text-center"><span className="font-bold text-[#1a1a1a] text-[11px]">{v.payload}</span></td>
                             <td className="px-3 py-3 text-center">
-                              <span className="font-bold text-[#1a1a1a] text-[11px]">{v.payload}</span>
-                            </td>
-                            <td className="px-3 py-3 text-center">
-                              <span className={`inline-block px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded ${
-                                v.drive === "4×4"
-                                  ? "bg-amber-100 text-amber-700 border border-amber-200"
-                                  : "bg-gray-100 text-gray-600 border border-gray-200"
-                              }`}>
+                              <span className={`inline-block px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded ${v.drive === "4×4" ? "bg-amber-100 text-amber-700 border border-amber-200" : "bg-gray-100 text-gray-600 border border-gray-200"}`}>
                                 {v.drive}
                               </span>
                             </td>
-                            <td className="px-3 py-3 text-right">
-                              <p className="font-black text-[11px] text-[#1a1a1a] whitespace-nowrap">{v.chassisPrice}</p>
-                            </td>
-                            <td className="px-3 py-3 text-right">
-                              <p className="font-black text-[11px] text-[#D62B2B] whitespace-nowrap">{v.withBodyPrice}</p>
-                            </td>
+                            <td className="px-3 py-3 text-right"><p className="font-black text-[11px] text-[#1a1a1a] whitespace-nowrap">{v.chassisPrice}</p></td>
+                            <td className="px-3 py-3 text-right"><p className="font-black text-[11px] text-[#D62B2B] whitespace-nowrap">{v.withBodyPrice}</p></td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-[9px] text-gray-400 mt-2 font-medium italic">* Prices are indicative. Contact Edwin for current offers & financing.</p>
+                  <p className="text-[9px] text-gray-400 mt-2 font-medium italic">* Prices are indicative. Contact Edwin for current offers &amp; financing.</p>
                 </div>
               )}
 
-              {/* Key Features */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-[3px] w-10 bg-[#D62B2B] flex-shrink-0" />
-                  <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Key Features</span>
-                </div>
-                <div className="space-y-2.5">
-                  {features.slice(0, 8).map((f, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#D62B2B]/10 flex items-center justify-center mt-0.5">
-                        <FaCheck size={10} className="text-[#D62B2B]" />
+              {/* KEY FEATURES */}
+              {features && features.length > 0 && (
+                <div className="p-7 lg:p-9">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="h-[3px] w-8 bg-[#D62B2B] flex-shrink-0" />
+                    <span className="text-[#D62B2B] font-black text-[10px] uppercase tracking-widest">Key Features</span>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2">
+                    {features.slice(0, 8).map((f, i) => (
+                      <div key={i} className="flex items-start gap-3 bg-gray-50 hover:bg-red-50 transition-colors rounded-lg px-4 py-3 border border-gray-100 hover:border-[#D62B2B]/20">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#D62B2B] flex items-center justify-center mt-0.5 shadow-sm shadow-red-200">
+                          <FaCheck size={9} className="text-white" />
+                        </div>
+                        <span className="text-sm text-gray-700 font-medium leading-snug">{f}</span>
                       </div>
-                      <span className="text-sm text-gray-700 font-medium leading-snug">{f}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {/* CTA Buttons */}
-              <div className="space-y-3 pt-3 border-t border-gray-100">
-                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Ready to own this vehicle?</p>
-                <a
-                  href="tel:0768351483"
-                  className="flex items-center justify-center gap-2.5 w-full bg-[#D62B2B] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b01e1e] transition-colors shadow-lg shadow-red-100 rounded-sm"
-                >
-                  <FaPhone size={16} /> Call Edwin — 0768 351 483
-                </a>
-                <a
-                  href="https://wa.me/254768351483"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2.5 w-full bg-[#25D366] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#1ebe5c] transition-colors rounded-sm"
-                >
-                  <FaWhatsapp size={18} /> WhatsApp Us
-                </a>
+              {/* CTA BUTTONS */}
+              <div className="p-7 lg:p-9 bg-gray-50">
+                <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-4">Ready to own this vehicle?</p>
+                <div className="space-y-3">
+                  <a
+                    href="tel:0768351483"
+                    className="flex items-center justify-center gap-2.5 w-full bg-[#D62B2B] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b01e1e] transition-colors shadow-lg shadow-red-100 rounded-xl"
+                  >
+                    <FaPhone size={16} /> Call Edwin — 0768 351 483
+                  </a>
+                  <a
+                    href="https://wa.me/254768351483"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2.5 w-full bg-[#25D366] text-white py-4 font-black uppercase text-sm tracking-widest hover:bg-[#1ebe5c] transition-colors rounded-xl"
+                  >
+                    <FaWhatsapp size={18} /> WhatsApp Us
+                  </a>
+                </div>
               </div>
 
             </div>
@@ -404,7 +350,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
             className="fixed inset-0 z-[200] bg-black/98 flex flex-col items-center justify-center"
             onClick={() => setLightbox(false)}
           >
-            {/* Top bar */}
             <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-4 bg-gradient-to-b from-black/80 to-transparent z-10">
               <span className="text-white/70 font-bold text-sm">{activeImg + 1} / {images.length}</span>
               <button onClick={(e) => { e.stopPropagation(); setLightbox(false); }} className="text-white hover:text-[#D62B2B] bg-white/10 p-3 rounded-full transition-all hover:scale-110">
@@ -412,16 +357,10 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
               </button>
             </div>
 
-            {/* Image */}
-            <div
-              className="relative w-full flex-1 max-w-6xl mx-auto px-16"
-              style={{ maxHeight: "80vh" }}
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative w-full flex-1 max-w-6xl mx-auto px-16" style={{ maxHeight: "80vh" }} onClick={(e) => e.stopPropagation()}>
               <Image src={currentImg} alt={title} fill className="object-contain" />
             </div>
 
-            {/* Navigation */}
             {images.length > 1 && (
               <>
                 <button onClick={(e) => { e.stopPropagation(); goPrev(); }} className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-[#D62B2B] text-white p-4 rounded-full transition-all hover:scale-110">
@@ -433,7 +372,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
               </>
             )}
 
-            {/* Lightbox Thumbnails */}
             {images.length > 1 && (
               <div className="flex gap-2 px-6 py-5 overflow-x-auto flex-shrink-0 z-10" onClick={(e) => e.stopPropagation()}>
                 {images.map((img, i) => (

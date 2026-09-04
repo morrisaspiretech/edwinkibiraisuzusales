@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "Edwin Kibira Isuzu Sales is a Leading Authorized Dealer for Isuzu Trucks (like the ever popular Isuzu FRR90), Buses, Pickups and SUVs in Kenya. Multi-Award Winning Dealer for Vehicle Sales, Service, Parts and Customer Experience.",
   keywords: [
     // Core Kenya
-    "Isuzu Kenya", "Authorized Isuzu Dealer", "Isuzu dealer Nairobi", "Edwin Kibira Isuzu", 
+    "Isuzu Kenya", "Authorized Isuzu Dealer", "Isuzu dealer Nairobi", "Edwin Kibira Isuzu",
     // Global & Regional
     "Isuzu East Africa", "Isuzu Africa", "Global Isuzu Dealer", "International Isuzu Sales", "Isuzu Exporters", "Buy Isuzu Online",
     // Vehicle Types
     "Isuzu Trucks", "Isuzu Buses", "Isuzu Pickups", "Isuzu SUVs", "Commercial Vehicles", "Light Duty Trucks", "Medium Duty Trucks", "Heavy Duty Trucks",
     // Specific Models (Current & Legacy)
-    "D-Max Kenya", "mu-X Kenya", "Isuzu FRR90", "Isuzu FVR90", "Isuzu FTS", "Isuzu FVZ", "Isuzu NQR", "Isuzu NMR", "Isuzu NLR", "Isuzu NPS", "Isuzu GXZ", 
+    "D-Max Kenya", "mu-X Kenya", "Isuzu FRR90", "Isuzu FVR90", "Isuzu FTS", "Isuzu FVZ", "Isuzu NQR", "Isuzu NMR", "Isuzu NLR", "Isuzu NPS", "Isuzu GXZ",
     // Engine & Tech Specs
     "Isuzu 4JJ3 Engine", "Isuzu 4HK1 Engine", "Isuzu 6HK1 Engine", "Isuzu Tech Specs", "Isuzu Payload", "Isuzu Chassis",
     // Services
@@ -132,13 +132,13 @@ export default function RootLayout({
         />
         <FavouritesProvider>
           <CompareProvider>
-          <main className="min-h-screen flex flex-col">
-            {children}
-          </main>
-          <FloatingWhatsApp />
-          <LiveChat />
-          <Footer />
-          <CompareBar />
+            <main className="min-h-screen flex flex-col">
+              {children}
+            </main>
+            <FloatingWhatsApp />
+            <LiveChat />
+            <Footer />
+            <CompareBar />
           </CompareProvider>
         </FavouritesProvider>
       </body>
