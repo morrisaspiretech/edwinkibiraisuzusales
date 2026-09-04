@@ -450,8 +450,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "double-cabin": {
     id: "double-cabin",
     category: "Pickups",
-    title: "Isuzu D-Max Kipchoge Edition",
-    description: "The Kipchoge Edition perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and available in both manual and automatic.",
+    title: "Isuzu D-Max TFS 40",
+    description: "The D-Max TFS 40 Double Cab Automatic perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and a robust build for any terrain.",
     heroImage: "/vehicles/tfs40/tfs40-1.jpeg",
     gallery: [
       "/vehicles/tfs40/tfs40-1.jpeg",
