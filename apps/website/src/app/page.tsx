@@ -6,6 +6,7 @@ import { FaMessage, FaPhone, FaChevronRight, FaArrowRight, FaMapLocationDot, FaC
 import MovingCatalog from "@/components/home/MovingCatalog";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import FeaturedVehicleCard from "@/components/inventory/FeaturedVehicleCard";
+import TikTokGallery from "@/components/TikTokGallery";
 
 export const dynamic = "force-dynamic";
 
@@ -554,110 +555,8 @@ export default async function Home() {
             </a>
           </div>
 
-          {/* Videos Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-
-            {/* Video 1 */}
-            <div className="group flex flex-col">
-              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
-                <iframe
-                  src="https://www.tiktok.com/embed/v2/7675848927463165202"
-                  className="w-full h-full"
-                  allow="fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Isuzu TikTok Video 1"
-                  style={{border:'none'}}
-                />
-              </div>
-              <div className="mt-3 flex-1">
-                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">New Arrival</p>
-                <p className="text-white font-bold text-sm leading-snug">Fresh Off the Lot — Brand New Isuzu Delivery</p>
-                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">A brand-new Isuzu rolls off our lot straight into the hands of a happy customer. This is what we do every day — matching Kenyans with the perfect vehicle.</p>
-              </div>
-            </div>
-
-            {/* Video 2 */}
-            <div className="group flex flex-col">
-              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
-                <iframe
-                  src="https://www.tiktok.com/embed/v2/7675446772679920917"
-                  className="w-full h-full"
-                  allow="fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Isuzu TikTok Video 2"
-                  style={{border:'none'}}
-                />
-              </div>
-              <div className="mt-3 flex-1">
-                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">Showroom</p>
-                <p className="text-white font-bold text-sm leading-snug">Inside the Edwin Kibira Isuzu Showroom</p>
-                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">Step inside our showroom and explore the full Isuzu range — from rugged pickups to premium SUVs — all lined up and ready for you to experience.</p>
-              </div>
-            </div>
-
-            {/* Video 3 */}
-            <div className="group flex flex-col">
-              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
-                <iframe
-                  src="https://www.tiktok.com/embed/v2/7673221439557831957"
-                  className="w-full h-full"
-                  allow="fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Isuzu TikTok Video 3"
-                  style={{border:'none'}}
-                />
-              </div>
-              <div className="mt-3 flex-1">
-                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">Feature Spotlight</p>
-                <p className="text-white font-bold text-sm leading-snug">Isuzu D-Max — Built for Kenya's Roads</p>
-                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">The Isuzu D-Max is engineered for Kenyan terrain. Whether it's city commuting or off-road adventures, this pickup delivers unmatched durability and performance.</p>
-              </div>
-            </div>
-
-            {/* Video 4 */}
-            <div className="group flex flex-col">
-              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
-                <iframe
-                  src="https://www.tiktok.com/embed/v2/7672472169426734357"
-                  className="w-full h-full"
-                  allow="fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Isuzu TikTok Video 4"
-                  style={{border:'none'}}
-                />
-              </div>
-              <div className="mt-3 flex-1">
-                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">Customer Delivery</p>
-                <p className="text-white font-bold text-sm leading-snug">Another Happy Customer — A Proud Moment</p>
-                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">Nothing beats the joy on a customer's face when they drive away in their new Isuzu. We take pride in making every delivery a memorable occasion.</p>
-              </div>
-            </div>
-
-            {/* Video 5 */}
-            <div className="group flex flex-col">
-              <div className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300" style={{aspectRatio:'9/16', maxHeight:'420px'}}>
-                <iframe
-                  src="https://www.tiktok.com/embed/v2/7670236623962918164"
-                  className="w-full h-full"
-                  allow="fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Isuzu TikTok Video 5"
-                  style={{border:'none'}}
-                />
-              </div>
-              <div className="mt-3 flex-1">
-                <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">MU-X SUV</p>
-                <p className="text-white font-bold text-sm leading-snug">The Isuzu MU-X — Kenya's Premium 7-Seater SUV</p>
-                <p className="text-gray-400 text-xs mt-1.5 leading-relaxed">Commanding presence. Premium comfort. The Isuzu MU-X is for families and executives who demand the very best — locally assembled right here in Kenya.</p>
-              </div>
-            </div>
-
-          </div>
+          {/* Videos Grid — one video plays at a time */}
+          <TikTokGallery />
 
           {/* Bottom CTA */}
           <div className="mt-10 text-center border-t border-white/10 pt-8">
