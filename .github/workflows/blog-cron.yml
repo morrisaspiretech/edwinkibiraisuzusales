@@ -1,0 +1,42 @@
+name: Auto Blog Auto-Publisher
+
+on:
+  schedule:
+    # Run at 00:00 every 3rd day of the month (roughly every 3 days)
+    - cron: '0 0 */3 * *'
+  # Allow manual triggering from the GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  generate_blog_post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Run Auto Blog Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          node auto-blog-daemon.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          git add apps/website/src/data/posts.ts
+          
+          # Only commit and push if there are changes
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(blog): auto-publish new Isuzu buyer's guide [skip ci]"
+            git push
+          else
+            echo "No new blog posts generated."
+          fi

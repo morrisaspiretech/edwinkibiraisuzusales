@@ -235,16 +235,13 @@ Return ONLY a valid JSON object (no markdown, no code fences):
 }
 
 async function run() {
-  log("🤖 Edwin Isuzu AI Blog Daemon started (direct Gemini API — no server required).");
-  log(`📅 Will publish a new buyer guide every ${INTERVAL_DAYS} days automatically.`);
+  log("🤖 Edwin Isuzu AI Blog Script started (direct Gemini API).");
+  log("📅 Generating a new buyer guide...");
 
-  // Publish one immediately on start
+  // Publish one immediately on start and exit
   await generateAndPublish();
-
-  // Then repeat every N days
-  setInterval(async () => {
-    await generateAndPublish();
-  }, INTERVAL_MS);
+  
+  log("✅ Script finished successfully.");
 }
 
 run();
