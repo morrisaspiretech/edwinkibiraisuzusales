@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useCallback } from "react";
-
 interface TikTokVideo {
   id: string;
   embedId: string;
@@ -53,60 +51,52 @@ const VIDEOS: TikTokVideo[] = [
   },
 ];
 
-function TikTokCard({
-  video,
-  isActive,
-  onPlay,
-}: {
-  video: TikTokVideo;
-  isActive: boolean;
-  onPlay: (id: string) => void;
-}) {
+function TikTokCard({ video }: { video: TikTokVideo }) {
+  // Direct link to this specific video on TikTok under Edwin's account
+  const tiktokUrl = `https://www.tiktok.com/@edwinkibiraisuzusales/video/${video.embedId}`;
+
   return (
     <div className="group flex flex-col">
-      <div
-        className="relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300"
+      <a
+        href={tiktokUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="block relative bg-black overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300"
         style={{ aspectRatio: "9/16", maxHeight: "420px" }}
+        aria-label={`Watch on TikTok: ${video.title}`}
       >
-        {isActive ? (
-          /* Only render the iframe when this card is active */
-          <iframe
-            src={`https://www.tiktok.com/embed/v2/${video.embedId}?autoplay=1`}
-            className="w-full h-full"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            title={video.title}
-            style={{ border: "none" }}
-          />
-        ) : (
-          /* Thumbnail / Play button overlay */
-          <button
-            onClick={() => onPlay(video.id)}
-            className="w-full h-full flex flex-col items-center justify-center gap-4 bg-[#111] hover:bg-[#1a1a1a] transition-colors cursor-pointer"
-            aria-label={`Play: ${video.title}`}
-          >
-            {/* TikTok logo watermark */}
-            <div className="absolute top-3 right-3 opacity-40">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z" />
-              </svg>
-            </div>
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
 
-            {/* Play button */}
-            <div className="w-16 h-16 rounded-full bg-[#D62B2B] flex items-center justify-center shadow-lg shadow-[#D62B2B]/30 group-hover:scale-110 transition-transform duration-300">
-              <svg
-                viewBox="0 0 24 24"
-                className="w-7 h-7 fill-white ml-1"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-            <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">
-              Tap to Play
-            </span>
-          </button>
-        )}
-      </div>
+        {/* TikTok logo top-right */}
+        <div className="absolute top-3 right-3 z-20 opacity-80">
+          <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white drop-shadow">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z" />
+          </svg>
+        </div>
+
+        {/* Centered play button */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 gap-3">
+          <div className="w-16 h-16 rounded-full bg-[#D62B2B] flex items-center justify-center shadow-lg shadow-[#D62B2B]/40 group-hover:scale-110 transition-transform duration-300">
+            <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white ml-1">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <span className="text-white/80 text-[10px] font-bold uppercase tracking-widest">
+            Watch on TikTok
+          </span>
+        </div>
+
+        {/* Account badge at bottom */}
+        <div className="absolute bottom-3 left-3 z-20 flex items-center gap-1.5">
+          <div className="w-5 h-5 rounded-full bg-[#D62B2B] flex items-center justify-center">
+            <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z" />
+            </svg>
+          </div>
+          <span className="text-white text-[10px] font-bold">@edwinkibiraisuzusales</span>
+        </div>
+      </a>
 
       {/* Card info */}
       <div className="mt-3 flex-1">
@@ -123,23 +113,10 @@ function TikTokCard({
 }
 
 export default function TikTokGallery() {
-  // Only one video plays at a time — tracked by its id, or null if none
-  const [activeId, setActiveId] = useState<string | null>(null);
-
-  const handlePlay = useCallback((id: string) => {
-    // Clicking the same video again deactivates it (stops playback by unmounting iframe)
-    setActiveId((prev) => (prev === id ? null : id));
-  }, []);
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
       {VIDEOS.map((video) => (
-        <TikTokCard
-          key={video.id}
-          video={video}
-          isActive={activeId === video.id}
-          onPlay={handlePlay}
-        />
+        <TikTokCard key={video.id} video={video} />
       ))}
     </div>
   );
