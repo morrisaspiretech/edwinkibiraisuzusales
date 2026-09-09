@@ -2,8 +2,8 @@ name: Auto Blog Auto-Publisher
 
 on:
   schedule:
-    # Run at 00:00 every 3rd day of the month (roughly every 3 days)
-    - cron: '0 0 */3 * *'
+    # Run daily at 6:00 AM UTC (9:00 AM Kenya time)
+    - cron: '0 6 * * *'
   # Allow manual triggering from the GitHub Actions tab
   workflow_dispatch:
 

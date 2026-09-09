@@ -1,43 +1,87 @@
 /**
- * Edwin Isuzu — AI Blog Auto-Publisher Daemon
+ * Edwin Isuzu — AI Blog Auto-Publisher
  * Calls Gemini API directly — no need for the dev server to be running.
- * Generates and prepends a new SEO buyer guide to posts.ts every 3 days.
- * Start with: node auto-blog-daemon.js
+ * Generates a new high-ranking SEO article daily targeting Kenya Google searches.
+ * Runs once and exits — designed to be called by a cron job or GitHub Actions.
  */
 
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
-const dotenv = require("dotenv");
 
-// Load env from the website's .env.local
-dotenv.config({ path: path.join(__dirname, "apps/website/.env.local") });
+// Load dotenv only if available (local dev), in GitHub Actions env vars are injected
+try { require("dotenv").config({ path: path.join(__dirname, "apps/website/.env.local") }); } catch {}
 
-const INTERVAL_DAYS = 3;
-const INTERVAL_MS = INTERVAL_DAYS * 24 * 60 * 60 * 1000;
 const LOG_FILE = path.join(__dirname, "auto-blog-daemon.log");
 const POSTS_FILE = path.join(__dirname, "apps/website/src/data/posts.ts");
 
-const GEMINI_MODEL = "gemini-3.6-flash";
+const GEMINI_MODEL = "gemini-2.0-flash";
 
+// 40+ topics targeting real Kenyan Google search intent
+// Based on: price queries, financing, comparisons, maintenance, business use, body types
 const TOPICS = [
-  { model: "NMR85",      type: "bus",    label: "25 Seater School Bus" },
-  { model: "NQR81",      type: "bus",    label: "33 Seater PSV Bus" },
-  { model: "NLR",        type: "truck",  label: "Light Duty Cargo Truck" },
-  { model: "FRR 90",     type: "truck",  label: "10 Ton Cargo Truck" },
-  { model: "FVR 34",     type: "truck",  label: "14 Ton Tipper Truck" },
-  { model: "FVZ 34",     type: "truck",  label: "Heavy Duty Tipper" },
-  { model: "GXZ",        type: "truck",  label: "Prime Mover / Tractor Head" },
-  { model: "D-Max TFS",  type: "pickup", label: "Double Cab 4x4 Pickup" },
-  { model: "D-Max TFR",  type: "pickup", label: "Single Cab Pickup" },
-  { model: "mu-X 3000cc",type: "suv",    label: "7 Seater Diesel SUV" },
-  { model: "FRR 90 Bus", type: "bus",    label: "51 Seater City Bus" },
-  { model: "FVR 34 Bus", type: "bus",    label: "67 Seater Coach Bus" },
+  // ── VEHICLE BUYER GUIDES (price/spec focused) ──
+  { slug: "isuzu-nqr-price-kenya",          model: "NQR81",         type: "bus",       label: "33-Seater PSV/School Bus",           searchIntent: "Isuzu NQR price in Kenya 2026" },
+  { slug: "isuzu-nmr85-price-kenya",        model: "NMR85",         type: "bus",       label: "25-Seater School Bus",               searchIntent: "Isuzu NMR85 price in Kenya 2026" },
+  { slug: "isuzu-nlr-price-kenya",          model: "NLR",           type: "truck",     label: "Light Duty Cargo Truck",             searchIntent: "Isuzu NLR price in Kenya 2026" },
+  { slug: "isuzu-frr90-price-kenya",        model: "FRR 90",        type: "truck",     label: "10 Ton Cargo/Tipper Truck",          searchIntent: "Isuzu FRR 90 price in Kenya 2026" },
+  { slug: "isuzu-fvr34-price-kenya",        model: "FVR 34",        type: "truck",     label: "14 Ton Heavy Truck",                 searchIntent: "Isuzu FVR 34 price in Kenya 2026" },
+  { slug: "isuzu-fvz34-price-kenya",        model: "FVZ 34",        type: "truck",     label: "Heavy Duty Tipper Truck",            searchIntent: "Isuzu FVZ 34 price in Kenya 2026" },
+  { slug: "isuzu-gxz-prime-mover-kenya",   model: "GXZ",           type: "truck",     label: "Prime Mover / Tractor Head",         searchIntent: "Isuzu GXZ prime mover price Kenya 2026" },
+  { slug: "isuzu-dmax-double-cab-kenya",   model: "D-Max TFS",     type: "pickup",    label: "D-Max Double Cab 4x4 Pickup",        searchIntent: "Isuzu D-Max double cab price Kenya 2026" },
+  { slug: "isuzu-dmax-single-cab-kenya",   model: "D-Max TFR",     type: "pickup",    label: "D-Max Single Cab Pickup",            searchIntent: "Isuzu D-Max single cab price Kenya 2026" },
+  { slug: "isuzu-mux-price-kenya",         model: "mu-X 3000cc",   type: "suv",       label: "mu-X 7-Seater Diesel SUV",           searchIntent: "Isuzu mu-X price in Kenya 2026" },
+  { slug: "isuzu-frr90-51-seater-kenya",   model: "FRR 90 Bus",    type: "bus",       label: "51-Seater City Bus",                 searchIntent: "Isuzu FRR 90 51 seater bus price Kenya" },
+  { slug: "isuzu-fvr34-67-seater-kenya",   model: "FVR 34 Bus",    type: "bus",       label: "67-Seater Coach Bus",                searchIntent: "Isuzu FVR 34 67 seater bus price Kenya" },
+  { slug: "isuzu-nqr-xtra-price-kenya",    model: "NQR XTRA",      type: "bus",       label: "NQR XTRA Heavy Bus",                 searchIntent: "Isuzu NQR XTRA price Kenya 2026" },
+
+  // ── FINANCING GUIDES (high search volume) ──
+  { slug: "isuzu-truck-financing-kenya",         model: "FRR 90",      type: "financing", label: "Truck Financing Guide Kenya",         searchIntent: "how to finance an Isuzu truck in Kenya banks 2026" },
+  { slug: "isuzu-bus-financing-zero-deposit",    model: "NQR81",       type: "financing", label: "Zero Deposit Bus Financing Kenya",    searchIntent: "Isuzu bus zero deposit financing Kenya" },
+  { slug: "isuzu-dmax-bank-loan-kenya",          model: "D-Max TFS",   type: "financing", label: "D-Max Bank Loan Guide",               searchIntent: "Isuzu D-Max bank loan Kenya 2026" },
+  { slug: "isuzu-mux-sacco-financing-kenya",     model: "mu-X 3000cc", type: "financing", label: "mu-X SACCO Financing Guide",          searchIntent: "Isuzu mu-X SACCO loan Kenya" },
+  { slug: "isuzu-truck-logbook-loan-kenya",      model: "FVR 34",      type: "financing", label: "Truck Logbook Loan Explained",         searchIntent: "Isuzu truck logbook loan Kenya 2026" },
+
+  // ── COMPARISONS (ranking opportunity) ──
+  { slug: "isuzu-dmax-vs-toyota-hilux-kenya",    model: "D-Max TFS",   type: "comparison",label: "D-Max vs Toyota Hilux Kenya",          searchIntent: "Isuzu D-Max vs Toyota Hilux Kenya 2026 price" },
+  { slug: "isuzu-mux-vs-toyota-fortuner-kenya",  model: "mu-X 3000cc", type: "comparison",label: "mu-X vs Toyota Fortuner Kenya",        searchIntent: "Isuzu mu-X vs Toyota Fortuner Kenya price" },
+  { slug: "isuzu-nqr-vs-toyota-coaster-kenya",   model: "NQR81",       type: "comparison",label: "Isuzu NQR vs Toyota Coaster Bus",      searchIntent: "Isuzu NQR vs Toyota Coaster Kenya price" },
+  { slug: "isuzu-frr-vs-mitsubishi-fuso-kenya",  model: "FRR 90",      type: "comparison",label: "FRR 90 vs Mitsubishi Fuso Kenya",      searchIntent: "Isuzu FRR vs Mitsubishi Fuso price Kenya" },
+  { slug: "isuzu-gxz-vs-man-prime-mover-kenya",  model: "GXZ",         type: "comparison",label: "GXZ vs MAN Prime Mover Kenya",         searchIntent: "Isuzu GXZ vs MAN truck Kenya price" },
+
+  // ── MAINTENANCE & OWNERSHIP ──
+  { slug: "isuzu-truck-maintenance-cost-kenya",  model: "FRR 90",      type: "maintenance",label: "Truck Maintenance Cost Guide Kenya",  searchIntent: "Isuzu truck maintenance cost Kenya 2026" },
+  { slug: "isuzu-dmax-service-intervals-kenya",  model: "D-Max TFS",   type: "maintenance",label: "D-Max Service Schedule Kenya",        searchIntent: "Isuzu D-Max service schedule Kenya" },
+  { slug: "isuzu-spare-parts-availability-kenya",model: "NQR81",       type: "maintenance",label: "Spare Parts Guide Kenya",             searchIntent: "Isuzu spare parts Kenya availability price" },
+  { slug: "isuzu-fuel-consumption-kenya",        model: "FVR 34",      type: "maintenance",label: "Fuel Consumption Guide Kenya",        searchIntent: "Isuzu truck fuel consumption Kenya per km" },
+
+  // ── BUSINESS USE CASES ──
+  { slug: "isuzu-truck-for-construction-kenya",  model: "FVZ 34",      type: "business",  label: "Best Truck for Construction Kenya",   searchIntent: "best truck for construction business Kenya 2026" },
+  { slug: "isuzu-for-school-transport-kenya",    model: "NMR85",       type: "business",  label: "Best Bus for School Transport Kenya", searchIntent: "best school bus Kenya 2026 price" },
+  { slug: "isuzu-for-logistics-business-kenya",  model: "NLR",         type: "business",  label: "Cargo Truck for Logistics Business",  searchIntent: "best cargo truck for logistics Kenya 2026" },
+  { slug: "isuzu-tipper-for-quarry-kenya",       model: "FVR 34",      type: "business",  label: "Tipper Truck for Quarry Business",    searchIntent: "Isuzu tipper truck quarry Kenya price" },
+  { slug: "isuzu-dmax-for-safari-tour-kenya",    model: "D-Max TFS",   type: "business",  label: "D-Max for Safari & Tour Business",    searchIntent: "4x4 pickup for safari Kenya best price 2026" },
+  { slug: "isuzu-psv-bus-business-kenya",        model: "NQR81",       type: "business",  label: "PSV Bus Business Guide Kenya",        searchIntent: "start PSV bus business Kenya Isuzu NQR 2026" },
+  { slug: "isuzu-mux-company-car-kenya",         model: "mu-X 3000cc", type: "business",  label: "mu-X as Company/Staff Car Kenya",     searchIntent: "Isuzu mu-X company car Kenya 2026" },
+
+  // ── BODY TYPES (highly specific, low competition) ──
+  { slug: "isuzu-tipper-body-price-kenya",       model: "FVR 34",      type: "bodytype",  label: "Tipper Body Building Cost Kenya",     searchIntent: "Isuzu tipper body price Kenya 2026" },
+  { slug: "isuzu-box-body-truck-kenya",          model: "FRR 90",      type: "bodytype",  label: "Box Body Truck Kenya",                searchIntent: "Isuzu box body truck price Kenya 2026" },
+  { slug: "isuzu-flatbed-truck-kenya",           model: "NLR",         type: "bodytype",  label: "Flatbed/Open Body Truck Kenya",       searchIntent: "Isuzu flatbed truck Kenya price 2026" },
+  { slug: "isuzu-refrigerator-truck-kenya",      model: "FRR 90",      type: "bodytype",  label: "Refrigerated Body Truck Kenya",       searchIntent: "Isuzu refrigerator truck Kenya price 2026" },
+
+  // ── MARKET/BUYING TIPS ──
+  { slug: "new-vs-used-isuzu-truck-kenya",       model: "NQR81",       type: "buying",    label: "New vs Used Isuzu Truck Guide",       searchIntent: "new vs used Isuzu truck Kenya which is better" },
+  { slug: "isuzu-authorized-dealer-kenya",       model: "D-Max TFS",   type: "buying",    label: "How to Find Authorized Isuzu Dealer", searchIntent: "authorized Isuzu dealer Kenya 2026 list" },
+  { slug: "isuzu-kenya-pricelist-2026",          model: "FRR 90",      type: "buying",    label: "Complete Isuzu Kenya Pricelist 2026", searchIntent: "Isuzu Kenya pricelist 2026 all models" },
+  { slug: "isuzu-chassis-vs-body-fitted-kenya",  model: "NQR81",       type: "buying",    label: "Chassis vs Body-Fitted Price Diff",   searchIntent: "Isuzu chassis vs body fitted price difference Kenya" },
+  { slug: "isuzu-insurance-cost-kenya",          model: "D-Max TFS",   type: "buying",    label: "Isuzu Insurance Cost Kenya Guide",    searchIntent: "Isuzu truck insurance cost Kenya 2026" },
 ];
 
 const IMAGE_MAP = {
   "NMR85":       "/vehicles/n-series/nmr85/1.jpeg",
   "NQR81":       "/vehicles/n-series/nqr-xtra-real.png",
+  "NQR XTRA":   "/vehicles/n-series/nqr-xtra-real.png",
   "NLR":         "/vehicles/n-series/nlr-chassis.png",
   "FRR 90":      "/vehicles/grouped/batch1/1.jpeg",
   "FVR 34":      "/vehicles/f-series/fvr90l/1.jpeg",
@@ -61,8 +105,7 @@ function getNextTopic() {
   try { content = fs.readFileSync(POSTS_FILE, "utf-8"); } catch { /**/ }
 
   for (const topic of TOPICS) {
-    const slug = `isuzu-${topic.model.toLowerCase().replace(/\s+/g, "-")}-price-kenya`;
-    if (!content.includes(slug)) return topic;
+    if (!content.includes(topic.slug)) return topic;
   }
   // All covered — pick a random one to refresh
   return TOPICS[Math.floor(Math.random() * TOPICS.length)];
@@ -117,38 +160,45 @@ async function generateAndPublish() {
   }
 
   const topic = getNextTopic();
-  log(`🧠 Generating article for: Isuzu ${topic.model} (${topic.label})...`);
+  log(`🧠 Generating article: [${topic.type.toUpperCase()}] ${topic.label} — targeting: "${topic.searchIntent}"`);
 
-  const prompt = `You are a senior SEO content strategist specialising in the Kenya commercial vehicle market.
-Write a full Google E-E-A-T compliant Buyer's Guide for the Isuzu ${topic.model} (${topic.label}) targeting Kenyan buyers.
+  const prompt = `You are a senior SEO content strategist and Kenya commercial vehicle expert with 15+ years experience.
+Your goal is to write the #1 ranking Google article for the search query: "${topic.searchIntent}"
 
-RULES:
-- All prices MUST be realistic 2026 Kenya market prices in KES
-- Write from genuine expertise — cite real Isuzu Kenya specs
-- Target search intent: "Isuzu ${topic.model} price in Kenya 2026"
-- Minimum 700 words of real, helpful content in the HTML body
-- Use h2 headings, p tags, strong tags, ul/li lists only
-- Do NOT include markdown — ONLY valid HTML for the content field
-- The slug must be in kebab-case
+This article is for Edwin Kibira Isuzu — an authorized Isuzu dealer in Kenya.
+The article must outrank isuzu.co.ke, lydiaisuzutrucks.com, and jiji.co.ke on Google Kenya.
 
-Return ONLY a valid JSON object (no markdown, no code fences):
+ARTICLE TYPE: ${topic.type} — Isuzu ${topic.model} (${topic.label})
+
+MANDATORY RULES:
+- Target keyword: "${topic.searchIntent}" — use it in the title, first paragraph, and h2 headings naturally
+- All prices MUST be realistic 2026 Kenya market prices in KES (check typical ranges: trucks KSh 3M–25M, pickups KSh 4M–8M, buses KSh 4M–12M)
+- Minimum 900 words of genuinely helpful, expert content in the HTML body
+- Structure: Introduction → Key Facts/Specs → Pricing → Financing Options → Comparison/Tips → FAQs → CTA
+- Use ONLY h2, h3, p, strong, ul, li tags — NO markdown, NO code fences in content
+- Include Kenya-specific context: local roads, spare parts availability in Nairobi, NTSA compliance, PSV licensing where relevant
+- Add a strong CTA at the end: "Contact Edwin Kibira on WhatsApp for the best 2026 price"
+- The slug must exactly be: "${topic.slug}"
+- Write 5–7 FAQs covering what Kenyan buyers actually ask on Google
+
+Return ONLY a valid JSON object (no markdown fences, no extra text):
 {
-  "slug": "isuzu-${topic.model.toLowerCase().replace(/\s+/g, "-")}-price-kenya-2026-buyers-guide",
-  "title": "Isuzu ${topic.model} Price in Kenya 2026: Complete Buyer's Guide",
-  "excerpt": "Compelling 2-sentence meta description mentioning price range and year",
-  "content": "<p>Full HTML article body (min 700 words)...</p>",
+  "slug": "${topic.slug}",
+  "title": "SEO-optimized title containing the target keyword",
+  "excerpt": "Compelling 2-sentence meta description containing the target keyword and a price range",
+  "content": "<h2>...</h2><p>Full HTML article body (min 900 words)...</p>",
   "pricingTable": [
     { "model": "string", "priceRange": "KSh X.XM – X.XM", "deposit": "KSh XXX,XXX", "bestUses": "string" }
   ],
-  "priceFactors": ["factor 1", "factor 2", "factor 3"],
+  "priceFactors": ["factor 1", "factor 2", "factor 3", "factor 4"],
   "financing": {
     "depositPercent": "10% – 20%",
-    "maxMonths": 60,
+    "maxMonths": 72,
     "saccoAvailable": true,
-    "description": "Detailed financing paragraph for Kenya market"
+    "description": "Detailed financing paragraph specific to Kenya market including banks, SACCOs, and Isuzu EA financing"
   },
   "faqs": [
-    { "question": "string", "answer": "string" }
+    { "question": "Exact question a Kenyan buyer would Google", "answer": "Direct, helpful answer" }
   ]
 }`;
 
