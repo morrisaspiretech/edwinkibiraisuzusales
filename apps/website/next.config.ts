@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   experimental: {
-    optimizePackageImports: ["framer-motion", "react-icons", "lucide-react"],
+    optimizePackageImports: ["react-icons", "lucide-react"],
   },
 
   // Image Optimization disabled to prevent timeouts on Render free tier

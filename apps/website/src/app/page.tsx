@@ -527,7 +527,7 @@ export default async function Home() {
 
 
       {/* ── TIKTOK SHOWCASE ── */}
-      <section className="py-14 px-4 sm:px-6 bg-[#0d0d0d] border-t border-gray-900">
+      <section className="pt-8 pb-14 px-4 sm:px-6 bg-[#0d0d0d] border-t border-gray-900">
         <div className="max-w-7xl mx-auto">
 
           {/* Section Header */}
