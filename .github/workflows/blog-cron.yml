@@ -1,4 +1,4 @@
-﻿name: Auto Blog Auto-Publisher
+﻿name: Auto Blog & Database Keep-Alive Cron
 
 on:
   schedule:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  generate_blog_post:
+  daily_maintenance:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install dotenv
+
+      - name: Supabase Database Keep-Alive
+        run: |
+          node scripts/supabase-keepalive.js
 
       - name: Run Auto Blog Script
         env:
