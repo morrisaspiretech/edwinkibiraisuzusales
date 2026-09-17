@@ -43,3 +43,71 @@
   "slug": "isuzu-nmr85-price-kenya-2026-buyers-guide",
   "title": "Isuzu NMR85 Price in Kenya 2026: Complete Buyer's Guide",
   "excerpt": "Looking to buy the Isuzu NMR85 25-seater school bus in Keny
+[2026-09-07T08:27:32.580Z] 🧠 Generating article for: Isuzu NMR85 (25 Seater School Bus)...
+[2026-09-07T08:27:32.670Z] ❌ Gemini API error: getaddrinfo ENOTFOUND generativelanguage.googleapis.com
+[2026-09-17T08:06:36.307Z] 📋 Found 1 topic(s) to generate.
+[2026-09-17T08:06:36.316Z] 🚀 Generating article: [BUS] 33-Seater PSV/School Bus – Search query: "Isuzu NQR price in Kenya 2026"
+[2026-09-17T08:07:07.848Z] ✅ Successfully published: "Isuzu NQR Price in Kenya 2026: Your Definitive Guide to the 33-Seater PSV Bus" (/blog/isuzu-nqr-price-kenya)
+[2026-09-17T08:07:07.849Z] 🎉 Completed! Successfully published 1/1 articles.
+[2026-09-17T08:15:18.202Z] 📋 Found 10 topic(s) to generate.
+[2026-09-17T08:15:18.208Z] 🚀 Generating article: [BUS] 25-Seater School Bus – Search query: "Isuzu NMR85 price in Kenya 2026"
+[2026-09-17T08:15:19.390Z] ⚠️ Model gemini-2.5-flash failed (503). Retrying with gemini-flash-latest...
+[2026-09-17T08:15:32.514Z] ✅ Successfully published: "Isuzu NMR85 Price in Kenya 2026: Official 25-Seater School Bus Guide & Specs" (/blog/isuzu-nmr85-price-kenya)
+[2026-09-17T08:15:34.530Z] 🚀 Generating article: [TRUCK] Light Duty Cargo Truck – Search query: "Isuzu NLR price in Kenya 2026"
+[2026-09-17T08:16:14.791Z] ✅ Successfully published: "Isuzu NLR Price in Kenya 2026: Your Definitive Guide to Official Quotes & Financing" (/blog/isuzu-nlr-price-kenya)
+[2026-09-17T08:16:16.801Z] 🚀 Generating article: [TRUCK] 10 Ton Cargo/Tipper Truck – Search query: "Isuzu FRR 90 price in Kenya 2026"
+[2026-09-17T08:16:46.309Z] ✅ Successfully published: "Isuzu FRR 90 Price in Kenya 2026: Your Definitive Guide to Investing in a 10-Ton Truck" (/blog/isuzu-frr90-price-kenya)
+[2026-09-17T08:16:48.319Z] 🚀 Generating article: [TRUCK] 14 Ton Heavy Truck – Search query: "Isuzu FVR 34 price in Kenya 2026"
+[2026-09-17T08:17:09.061Z] ✅ Successfully published: "Isuzu FVR 34 Price in Kenya 2026: Your Ultimate Guide to the 14-Ton Heavy Truck" (/blog/isuzu-fvr34-price-kenya)
+[2026-09-17T08:17:11.066Z] 🚀 Generating article: [TRUCK] Heavy Duty Tipper Truck – Search query: "Isuzu FVZ 34 price in Kenya 2026"
+[2026-09-17T08:17:36.918Z] ✅ Successfully published: "Isuzu FVZ 34 Price in Kenya 2026: The Ultimate Guide for Smart Buyers & Businesses" (/blog/isuzu-fvz34-price-kenya)
+[2026-09-17T08:17:38.933Z] 🚀 Generating article: [TRUCK] Prime Mover / Tractor Head – Search query: "Isuzu GXZ prime mover price Kenya 2026"
+[2026-09-17T08:18:10.583Z] ✅ Successfully published: "Isuzu GXZ Prime Mover Price Kenya 2026: Your Ultimate Guide to Heavy Haulage Investment" (/blog/isuzu-gxz-prime-mover-kenya)
+[2026-09-17T08:18:12.586Z] 🚀 Generating article: [PICKUP] D-Max Double Cab 4x4 Pickup – Search query: "Isuzu D-Max double cab price Kenya 2026"
+[2026-09-17T08:18:57.882Z] ❌ Failed generating "isuzu-dmax-double-cab-kenya": Unterminated string in JSON at position 6104 (line 6 column 5659)
+[2026-09-17T08:18:57.883Z] 🚀 Generating article: [PICKUP] D-Max Single Cab Pickup – Search query: "Isuzu D-Max single cab price Kenya 2026"
+[2026-09-17T08:19:13.826Z] ⚠️ Model gemini-2.5-flash failed (503). Retrying with gemini-flash-latest...
+[2026-09-17T08:19:35.443Z] ⚠️ Model gemini-flash-latest failed (503). Retrying with gemini-1.5-flash...
+[2026-09-17T08:19:36.322Z] ❌ Failed generating "isuzu-dmax-single-cab-kenya": Gemini API error. Status: 404. Body: {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+[2026-09-17T08:19:36.323Z] 🚀 Generating article: [SUV] mu-X 7-Seater Diesel SUV – Search query: "Isuzu mu-X price in Kenya 2026"
+[2026-09-17T08:19:58.946Z] ⚠️ Model gemini-2.5-flash failed (503). Retrying with gemini-flash-latest...
+[2026-09-17T08:20:05.869Z] ⚠️ Model gemini-flash-latest failed (503). Retrying with gemini-1.5-flash...
+[2026-09-17T08:20:07.227Z] ❌ Failed generating "isuzu-mux-price-kenya": Gemini API error. Status: 404. Body: {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+[2026-09-17T08:20:07.229Z] 🚀 Generating article: [BUS] 51-Seater City Bus – Search query: "Isuzu FRR 90 51 seater bus price Kenya"
+[2026-09-17T08:20:09.540Z] ⚠️ Model gemini-2.5-flash failed (503). Retrying with gemini-flash-latest...
+[2026-09-17T08:20:16.748Z] ⚠️ Model gemini-flash-latest failed (503). Retrying with gemini-1.5-flash...
+[2026-09-17T08:20:17.407Z] ❌ Failed generating "isuzu-frr90-51-seater-kenya": Gemini API error. Status: 404. Body: {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+[2026-09-17T08:20:17.408Z] 🎉 Completed! Successfully published 6/10 articles.
+[2026-09-17T08:26:38.838Z] 📋 Found 5 topic(s) to generate.
+[2026-09-17T08:26:38.845Z] 🚀 Generating article: [PICKUP] D-Max Double Cab 4x4 Pickup – Search query: "Isuzu D-Max double cab price Kenya 2026"
+[2026-09-17T08:27:03.699Z] ✅ Successfully published: "Isuzu D-Max Double Cab Price Kenya 2026: Your Ultimate Guide for Business & Adventure" (/blog/isuzu-dmax-double-cab-kenya)
+[2026-09-17T08:27:06.705Z] 🚀 Generating article: [PICKUP] D-Max Single Cab Pickup – Search query: "Isuzu D-Max single cab price Kenya 2026"
+[2026-09-17T08:27:29.921Z] ✅ Successfully published: "Isuzu D-Max Single Cab Price Kenya 2026: Your Ultimate Guide for Business Owners" (/blog/isuzu-dmax-single-cab-kenya)
+[2026-09-17T08:27:32.937Z] 🚀 Generating article: [SUV] mu-X 7-Seater Diesel SUV – Search query: "Isuzu mu-X price in Kenya 2026"
+[2026-09-17T08:28:29.413Z] ✅ Successfully published: "Isuzu mu-X Price in Kenya 2026: Your Ultimate Guide for Business & Family" (/blog/isuzu-mux-price-kenya)
+[2026-09-17T08:28:32.426Z] 🚀 Generating article: [BUS] 51-Seater City Bus – Search query: "Isuzu FRR 90 51 seater bus price Kenya"
+[2026-09-17T08:28:55.581Z] ✅ Successfully published: "Isuzu FRR 90 51 Seater Bus Price Kenya 2026: Your Ultimate Guide to Value & Performance" (/blog/isuzu-frr90-51-seater-kenya)
+[2026-09-17T08:28:58.593Z] 🚀 Generating article: [BUS] 67-Seater Coach Bus – Search query: "Isuzu FVR 34 67 seater bus price Kenya"
+[2026-09-17T08:29:22.121Z] ✅ Successfully published: "Isuzu FVR 34 67 Seater Bus Price Kenya 2026: Your Ultimate Guide to Investment" (/blog/isuzu-fvr34-67-seater-kenya)
+[2026-09-17T08:29:25.125Z] 🎉 Completed! Successfully published 5/5 articles.
