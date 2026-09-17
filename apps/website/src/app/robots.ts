@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+﻿import { MetadataRoute } from "next";
 
 const BASE_URL = "https://edwinkibiraisuzusales.onrender.com";
 
@@ -12,7 +12,6 @@ export default function robots(): MetadataRoute.Robots {
           "/admin/",
           "/api/",
           "/favourites",
-          "/_next/",
         ],
       },
     ],

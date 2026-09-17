@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +9,12 @@ import { FaChevronLeft, FaCalendar, FaLink, FaShareNodes } from "react-icons/fa6
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -138,7 +144,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <ul className="space-y-3">
                     {post.priceFactors.map((factor, idx) => (
                       <li key={idx} className="flex gap-3 text-gray-600 leading-relaxed">
-                        <span className="text-[#D62B2B] font-black mt-1">•</span>
+                        <span className="text-[#D62B2B] font-black mt-1">â€¢</span>
                         <span>{factor}</span>
                       </li>
                     ))}
@@ -271,3 +277,4 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   );
 }
+
