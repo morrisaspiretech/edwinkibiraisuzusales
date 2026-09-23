@@ -12,22 +12,24 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Edwin Kibira Isuzu Sales - Authorized Isuzu Dealerships in Kenya | Trucks, Buses, Pickups & SUVs",
+  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales — Trucks, Buses, Pickups & SUVs Nairobi",
   description:
-    "Edwin Kibira Isuzu Sales is a Leading Authorized Dealer for Isuzu Trucks (like the ever popular Isuzu FRR90), Buses, Pickups and SUVs in Kenya. Multi-Award Winning Dealer for Vehicle Sales, Service, Parts and Customer Experience.",
+    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales — authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
   keywords: [
-    // Core Kenya
-    "Isuzu Kenya", "Authorized Isuzu Dealer", "Isuzu dealer Nairobi", "Edwin Kibira Isuzu",
-    // Global & Regional
-    "Isuzu East Africa", "Isuzu Africa", "Global Isuzu Dealer", "International Isuzu Sales", "Isuzu Exporters", "Buy Isuzu Online",
-    // Vehicle Types
-    "Isuzu Trucks", "Isuzu Buses", "Isuzu Pickups", "Isuzu SUVs", "Commercial Vehicles", "Light Duty Trucks", "Medium Duty Trucks", "Heavy Duty Trucks",
-    // Specific Models (Current & Legacy)
-    "D-Max Kenya", "mu-X Kenya", "Isuzu FRR90", "Isuzu FVR90", "Isuzu FTS", "Isuzu FVZ", "Isuzu NQR", "Isuzu NMR", "Isuzu NLR", "Isuzu NPS", "Isuzu GXZ",
-    // Engine & Tech Specs
-    "Isuzu 4JJ3 Engine", "Isuzu 4HK1 Engine", "Isuzu 6HK1 Engine", "Isuzu Tech Specs", "Isuzu Payload", "Isuzu Chassis",
-    // Services
-    "Isuzu Parts Kenya", "Genuine Isuzu Parts", "Isuzu Service Center", "Isuzu Maintenance", "Isuzu Telematics", "MaxIT"
+    // High-intent Kenya buyer keywords
+    "Isuzu truck price Kenya", "Isuzu dealer Nairobi", "buy Isuzu Kenya", "Isuzu Kenya 2024",
+    "Edwin Kibirai Isuzu", "authorized Isuzu dealer Kenya", "Isuzu East Africa dealer",
+    // Model-specific (what people actually search)
+    "Isuzu FRR90 price Kenya", "Isuzu NLR price Kenya", "Isuzu NQR price Kenya",
+    "Isuzu NMR price Kenya", "Isuzu FVR price Kenya", "Isuzu FVZ price Kenya",
+    "Isuzu D-Max price Kenya", "Isuzu D-Max double cab Kenya", "Isuzu MU-X price Kenya",
+    "Isuzu NPS 4x4 Kenya", "UD Quester price Kenya", "Isuzu bus price Kenya",
+    // Financing
+    "Isuzu truck financing Kenya", "Isuzu bank loan Kenya", "buy Isuzu on loan Kenya",
+    // Location
+    "Isuzu dealer Nairobi", "Isuzu trucks Nairobi", "commercial vehicles Kenya",
+    // Engine/tech (for spec searchers)
+    "Isuzu 4HK1 engine", "Isuzu 4JJ3 engine", "Isuzu 6HK1 engine", "Isuzu 4773cc",
   ],
   metadataBase: new URL("https://edwinkibiraisuzusales.onrender.com"),
   alternates: {
@@ -80,16 +82,18 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "AutoDealer",
-                name: "Edwin Kibira Isuzu Sales",
+                name: "Edwin Kibirai Isuzu Sales",
                 image: "https://edwinkibiraisuzusales.onrender.com/logo.jpg",
                 "@id": "https://edwinkibiraisuzusales.onrender.com",
                 url: "https://edwinkibiraisuzusales.onrender.com",
                 telephone: "+254768351483",
-                description: "Global authorized dealer for Isuzu commercial and passenger vehicles. Offering sales, genuine parts, and comprehensive service.",
+                email: "edwin@cfg.co.ke",
+                description: "Authorized Isuzu dealer in Nairobi, Kenya. Selling brand-new Isuzu trucks (FRR90, NLR, NQR, NMR, FVR, FVZ), buses, D-Max pickups, MU-X SUVs and UD Quester prime movers. Up to 100% bank financing available.",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "Enterprise Road",
                   addressLocality: "Nairobi",
+                  addressRegion: "Nairobi County",
                   addressCountry: "KE",
                 },
                 geo: {
@@ -103,7 +107,22 @@ export default function RootLayout({
                   opens: "08:00",
                   closes: "17:00",
                 },
-                priceRange: "$$$"
+                priceRange: "KES 2,500,000 - KES 16,500,000",
+                areaServed: "Kenya",
+                currenciesAccepted: "KES",
+                paymentAccepted: "Cash, Bank Transfer, Bank Financing",
+                hasOfferCatalog: {
+                  "@type": "OfferCatalog",
+                  name: "Isuzu Vehicles Kenya",
+                  itemListElement: [
+                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu FRR90 Truck" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu NLR Truck" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu NQR Truck" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu D-Max Pickup" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu MU-X SUV" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "UD Quester Prime Mover" } },
+                  ]
+                }
               },
               {
                 "@context": "https://schema.org",

@@ -1,19 +1,20 @@
-﻿import { MetadataRoute } from "next";
+import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/posts";
 
 const BASE_URL = "https://edwinkibiraisuzusales.onrender.com";
+const TODAY = new Date();
 
 // Static routes with their priorities and change frequencies
 const staticRoutes: MetadataRoute.Sitemap = [
   {
     url: BASE_URL,
-    lastModified: new Date("2026-09-01"),
+    lastModified: TODAY,
     changeFrequency: "daily",
     priority: 1.0,
   },
   {
     url: `${BASE_URL}/vehicles`,
-    lastModified: new Date("2026-09-01"),
+    lastModified: TODAY,
     changeFrequency: "daily",
     priority: 0.95,
   },
@@ -31,7 +32,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
   },
   {
     url: `${BASE_URL}/trucks`,
-    lastModified: new Date("2026-09-01"),
+    lastModified: TODAY,
     changeFrequency: "daily",
     priority: 0.95,
   },
@@ -143,7 +144,7 @@ const vehicleModelRoutes: MetadataRoute.Sitemap = [
   "nmr85-bus",
   "nqr81-bus",
   "nps81h",
-  "gxz",
+  "ud-quester",
   "maxit",
   "kipchoge-limited-edition",
 ].map((model) => ({

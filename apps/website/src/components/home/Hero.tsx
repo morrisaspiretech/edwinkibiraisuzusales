@@ -170,11 +170,11 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={textItemVariant} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight text-white mb-3">
-              {current.title}
-            </motion.h1>
-            <motion.h1 variants={textItemVariant} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight text-[#D62B2B] mb-6 drop-shadow-md">
-              {current.highlight}
+            {/* Single SEO-correct H1 — Google reads this as the page headline */}
+            <motion.h1 variants={textItemVariant} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
+              <span className="text-white block">{current.title}</span>
+              <span className="text-[#D62B2B] block">{current.highlight}</span>
+              <span className="sr-only"> — Authorized Isuzu Dealer Kenya, Nairobi</span>
             </motion.h1>
             
             <motion.p variants={textItemVariant} className="text-white font-bold mb-4 text-lg sm:text-xl md:text-2xl drop-shadow-md line-clamp-2">

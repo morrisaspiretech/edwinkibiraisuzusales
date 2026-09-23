@@ -1,12 +1,42 @@
-﻿import { VEHICLES_DATA, VehicleVariant } from "@/data/vehicles";
+import { VEHICLES_DATA, VehicleVariant } from "@/data/vehicles";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { FaChevronLeft, FaCheck, FaPhone, FaMessage, FaChevronRight } from "react-icons/fa6";
 import VehicleGalleryClient from "./VehicleGalleryClient";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() { return Object.keys(VEHICLES_DATA).map((model) => ({ model })); }
+
+// Per-model SEO metadata — each vehicle page gets its own title + description
+export async function generateMetadata({ params }: { params: Promise<{ model: string }> }): Promise<Metadata> {
+  const { model } = await params;
+  const vehicle = VEHICLES_DATA[model];
+  if (!vehicle) return {};
+
+  const price = vehicle.price?.unitPrice ?? vehicle.price?.chassisPrice;
+  const priceText = price ? ` Price: ${price}.` : " Contact for price.";
+
+  return {
+    title: `${vehicle.title} Price in Kenya 2024 | Edwin Kibirai Isuzu Sales`,
+    description: `Buy the ${vehicle.title} in Kenya.${ priceText} ${vehicle.quickSpecs.engine} engine, ${vehicle.quickSpecs.transmission}. Authorized Isuzu dealer Nairobi. Up to 100% bank financing. Call 0768 351 483.`,
+    keywords: [
+      `${vehicle.title} price Kenya`,
+      `${vehicle.title} Kenya`,
+      `${vehicle.title} specs`,
+      `Isuzu ${vehicle.category} Kenya`,
+      "Isuzu dealer Nairobi",
+      "buy Isuzu Kenya",
+      "Isuzu financing Kenya",
+    ],
+    openGraph: {
+      title: `${vehicle.title} — Edwin Kibirai Isuzu Sales Kenya`,
+      description: `${vehicle.description.split('.')[0]}. Available now in Kenya with bank financing.`,
+      images: [{ url: vehicle.heroImage, alt: vehicle.title }],
+    },
+  };
+}
 
 export default async function VehiclePage({
   params,
@@ -39,23 +69,83 @@ export default async function VehiclePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Vehicle",
-            name: vehicle.title,
-            image: `https://edwinkibiraisuzusales.onrender.com${vehicle.heroImage}`,
-            description: vehicle.description,
-            brand: {
-              "@type": "Brand",
-              name: "Isuzu",
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Vehicle",
+              name: vehicle.title,
+              image: `https://edwinkibiraisuzusales.onrender.com${vehicle.heroImage}`,
+              description: vehicle.description,
+              brand: { "@type": "Brand", name: "Isuzu" },
+              vehicleEngine: {
+                "@type": "EngineSpecification",
+                engineDisplacement: vehicle.quickSpecs.engine,
+              },
+              fuelType: vehicle.quickSpecs.fuel,
+              vehicleTransmission: vehicle.quickSpecs.transmission,
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "KES",
+                availability: "https://schema.org/InStock",
+                seller: {
+                  "@type": "AutoDealer",
+                  name: "Edwin Kibirai Isuzu Sales",
+                  telephone: "+254768351483",
+                  email: "edwin@cfg.co.ke",
+                  address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" }
+                }
+              }
             },
-            vehicleEngine: {
-              "@type": "EngineSpecification",
-              engineDisplacement: vehicle.quickSpecs.engine,
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: `What is the price of the ${vehicle.title} in Kenya?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: vehicle.price?.unitPrice
+                      ? `The ${vehicle.title} is priced at ${vehicle.price.unitPrice} in Kenya. Contact Edwin Kibirai Isuzu Sales at 0768 351 483 for the latest pricing and financing options.`
+                      : `Contact Edwin Kibirai Isuzu Sales at 0768 351 483 or email edwin@cfg.co.ke for the current ${vehicle.title} price in Kenya. We offer up to 100% bank financing.`,
+                  }
+                },
+                {
+                  "@type": "Question",
+                  name: `What engine does the ${vehicle.title} have?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `The ${vehicle.title} is powered by a ${vehicle.quickSpecs.engine} engine with ${vehicle.quickSpecs.transmission} transmission.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  name: `Is bank financing available for the ${vehicle.title} in Kenya?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Yes. Edwin Kibirai Isuzu Sales offers up to 100% bank financing for the ${vehicle.title} in Kenya. Call 0768 351 483 or WhatsApp us for financing terms.`
+                  }
+                },
+                {
+                  "@type": "Question",
+                  name: `Where can I buy the ${vehicle.title} in Kenya?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Buy the ${vehicle.title} from Edwin Kibirai Isuzu Sales, an authorized Isuzu dealer in Nairobi, Kenya (Enterprise Road). Call 0768 351 483 or email edwin@cfg.co.ke.`
+                  }
+                },
+              ]
             },
-            fuelType: vehicle.quickSpecs.fuel,
-            vehicleTransmission: vehicle.quickSpecs.transmission,
-          }),
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://edwinkibiraisuzusales.onrender.com" },
+                { "@type": "ListItem", position: 2, name: "Vehicles", item: "https://edwinkibiraisuzusales.onrender.com/vehicles" },
+                { "@type": "ListItem", position: 3, name: vehicle.title, item: `https://edwinkibiraisuzusales.onrender.com/vehicles/${vehicle.id}` },
+              ]
+            }
+          ]),
         }}
       />
 
