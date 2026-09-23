@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,12 +25,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Post Not Found" };
   }
 
+  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}`;
+
   return {
-    title: `${post.title} | Edwin Kibira Isuzu Sales`,
+    title: `${post.title} | Edwin Kibirai Isuzu Sales`,
     description: post.excerpt,
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: postUrl,
+      type: "article",
       images: [post.image],
     },
   };
@@ -45,9 +52,68 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const relatedPosts = BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 3);
+  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": [`https://edwinkibiraisuzusales.onrender.com${post.image}`],
+    "datePublished": "2026-09-23T00:00:00Z",
+    "dateModified": "2026-09-23T00:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Edwin Kibirai",
+      "jobTitle": "Isuzu Commercial Sales Specialist",
+      "url": "https://edwinkibiraisuzusales.onrender.com/about",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Edwin Kibirai Isuzu Sales",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://edwinkibiraisuzusales.onrender.com/logo.jpg",
+      },
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://edwinkibiraisuzusales.onrender.com",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog & Price Reports",
+        "item": "https://edwinkibiraisuzusales.onrender.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": postUrl,
+      },
+    ],
+  };
 
   return (
     <div className="bg-white min-h-screen font-sans pb-20">
+      {/* Article & Breadcrumb Structured Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema, breadcrumbSchema]) }}
+      />
       <Navbar />
       {/* HERO SECTION */}
       <section className="relative h-[50vh] min-h-[400px] w-full bg-[#1a1a1a]">

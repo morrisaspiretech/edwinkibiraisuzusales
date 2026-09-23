@@ -5,21 +5,71 @@ import { FaCheckCircle, FaTools, FaTractor, FaShieldAlt, FaGasPump } from "react
 import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
-  title: "Isuzu D-MAX Kenya | Price, Specs, Single & Double Cab For Sale",
-  description: "Explore the new Isuzu D-MAX in Kenya. Comprehensive guide on D-MAX Single Cab, Double Cab, 4x4, payload, fuel consumption, and accessories at Edwin Kibira Isuzu Sales.",
+  title: "Isuzu D-MAX Kenya Prices 2026 | Single Cab & Double Cab 4x4 | Edwin Kibirai",
+  description: "Official 2026 Isuzu D-MAX price guide in Kenya. Single Cab (TFR/TFS) from Ksh 4.45M, Double Cab 4x4 (LS, LSE, V-Cross) up to Ksh 8.9M. Up to 95% financing with Edwin Kibirai.",
   keywords: [
-    "Isuzu D-MAX Kenya", "Isuzu D-Max price Kenya", "Isuzu D-Max for sale Kenya",
-    "new Isuzu D-Max Kenya", "Isuzu D-Max pickup", "Isuzu D-Max single cab",
-    "Isuzu D-Max double cab", "Isuzu D-Max 4x4", "Isuzu D-Max 4x2", "Isuzu D-Max diesel",
-    "Isuzu D-Max specifications", "Isuzu D-Max payload", "Isuzu D-Max fuel consumption",
-    "D-MAX vs Toyota Hilux", "Isuzu D-Max accessories", "Isuzu D-Max financing"
+    "Isuzu D-MAX Kenya", "Isuzu D-Max price Kenya", "Isuzu D-Max single cab price",
+    "Isuzu D-Max double cab price Kenya", "Isuzu D-Max 4x4 price", "Isuzu D-Max TFS87", "Isuzu D-Max TFR",
+    "Isuzu D-Max V-Cross Kenya", "Isuzu pickup financing Kenya"
   ],
   alternates: {
-    canonical: "/vehicles/d-max",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max",
   },
 };
 
 export default function DMaxHub() {
+  const dmaxFaqs = [
+    {
+      q: "How much is an Isuzu D-Max Single Cab in Kenya in 2026?",
+      a: "A brand new Isuzu D-Max Single Cab ranges from Ksh 4,450,000 for the 1.9L TFR 4x2 workhorse to approx Ksh 5,500,000 for the 3.0L TFS 4x4 heavy-duty single cab. Asset financing is available with Edwin Kibirai starting from 10% deposit.",
+    },
+    {
+      q: "How much is an Isuzu D-Max Double Cab in Kenya?",
+      a: "An Isuzu D-Max Double Cab ranges from Ksh 5,850,000 for the 1.9L Standard Double Cab 4x2 up to Ksh 8,900,000 for the top-of-the-range 3.0L V-Cross / LS-E Double Cab 4x4 Automatic.",
+    },
+    {
+      q: "What is the fuel consumption of the Isuzu D-Max 1.9L vs 3.0L in Kenya?",
+      a: "The 1.9L Ddi BluePower engine delivers an impressive 14–16 km/L in mixed driving conditions, while the 3.0L 4JJ3 engine delivers 10–13 km/L with superior 450 Nm low-end torque for heavy towing and tough off-road terrain.",
+    },
+    {
+      q: "Can I get bank financing for an Isuzu D-Max pickup in Kenya?",
+      a: "Yes. Edwin Kibirai partners with Co-op Bank, Equity Bank, NCBA, KCB, Stanbic, and Family Bank to provide up to 80%–95% asset finance with repayment periods of up to 60 to 72 months.",
+    },
+  ];
+
+  const dmaxSchemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": dmaxFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://edwinkibiraisuzusales.onrender.com",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Isuzu D-Max",
+          "item": "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max",
+        },
+      ],
+    },
+  ];
+
   const models = [
     { name: "D-MAX Single Cab 4x2", use: "Urban deliveries, light commercial", payload: "1,150 kg", engine: "1.9L / 2.5L Turbo Diesel" },
     { name: "D-MAX Single Cab 4x4", use: "Farming, construction, off-road cargo", payload: "1,100 kg", engine: "3.0L Turbo Diesel (4JJ3)" },
@@ -29,6 +79,11 @@ export default function DMaxHub() {
 
   return (
     <div className="bg-white min-h-screen">
+      {/* Structured Schema Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dmaxSchemas) }}
+      />
       <Navbar />
       {/* Hero Section */}
       <section className="relative bg-[#1a1a1a] text-white py-24 px-6 overflow-hidden">

@@ -3,19 +3,42 @@ import Link from "next/link";
 import { FaTruck, FaIndustry, FaCogs, FaGasPump, FaCheckCircle, FaPhoneAlt, FaFileAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Isuzu Trucks Kenya | N-Series, F-Series & GXZ Commercial Trucks",
-  description: "Official specs & price guide for Isuzu Trucks in Kenya. NLR77E, NMR85H, NQR81K, NQR Xtra, NPS81H, FRR90N, FVR90, FTS, FVZ Tipper/Cargo and GXZ heavy haulage.",
+  title: "Isuzu Trucks Kenya Prices & Specs 2026 | Edwin Kibirai Isuzu Sales",
+  description: "Official 2026 specs & price guide for Isuzu Trucks in Kenya. NLR 77E, NMR 85H, NQR 81K, NQR Xtra, NPS 81H, FRR 90N, FVR 90, FVZ Tipper & UD Quester prime movers in Nairobi.",
   keywords: [
     "Isuzu trucks Kenya", "Isuzu commercial vehicles Kenya", "Isuzu N-Series Kenya", "Isuzu F-Series Kenya",
-    "Isuzu FRR90 price Kenya", "Isuzu NQR81K", "Isuzu NMR85H", "Isuzu NLR77E", "Isuzu FVR90L", "Isuzu FVZ34N Tipper",
-    "Isuzu GXZ prime mover Kenya", "Isuzu truck financing Kenya", "Isuzu tipper Kenya", "Isuzu refrigerated truck"
+    "Isuzu FRR90 price Kenya", "Isuzu NQR81K price", "Isuzu NMR85H price", "Isuzu NLR77E price", "Isuzu FVR90 price", "Isuzu FVZ34N Tipper",
+    "UD Quester Kenya", "Isuzu truck financing Kenya", "Isuzu tipper Kenya", "Isuzu refrigerated truck Nairobi"
   ],
   alternates: {
-    canonical: "/trucks",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/trucks",
   },
 };
 
 export default function TrucksHub() {
+  const truckFaqs = [
+    {
+      q: "How much is an Isuzu FRR 90 truck in Kenya in 2026?",
+      a: "The Isuzu FRR 90 (11-tonne GVW, 7-8 tonne payload) chassis starts from approximately Ksh 6,800,000 to Ksh 7,600,000 before body building. Full packages with standard cargo or box bodies range from Ksh 7.5M to Ksh 8.5M. Asset financing is available from 10% deposit through Edwin Kibirai (0768 351 483).",
+    },
+    {
+      q: "What is the price of an Isuzu NQR 81 truck in Kenya?",
+      a: "The Isuzu NQR 81K (8.5-tonne GVW, 5.5-6 tonne payload) is priced from approx Ksh 4,775,000, while the extended chassis NQR Xtra Long is approx Ksh 5,250,000. Body fabrication options include dropside, box body, curtainsider, and refrigerated units.",
+    },
+    {
+      q: "How much is an Isuzu NMR 85 and NLR 77 truck in Kenya?",
+      a: "The Isuzu NLR 77E (4.5-tonne GVW, 2.5-3.0 tonne payload) starts around Ksh 3,850,000, while the Isuzu NMR 85H (5.5-tonne GVW, 3.5 tonne payload) starts around Ksh 4,350,000. Both qualify for up to 95% asset financing with Edwin Kibirai.",
+    },
+    {
+      q: "What is the price of UD Quester prime movers in Kenya?",
+      a: "UD Quester 6x4 tractor-only models: UD Quester GWE 420 MT is Ksh 14,000,000; UD Quester GWE 440 AMT is Ksh 15,900,000; UD Quester GWE 460 AMT is Ksh 16,450,000. All include factory warranty and nationwide service support.",
+    },
+    {
+      q: "How do I get asset financing for an Isuzu commercial truck in Kenya?",
+      a: "Edwin Kibirai partners with Co-operative Bank, Equity Bank, KCB, NCBA, Family Bank, and major transport SACCOs. You can obtain up to 80%–95% financing with repayment tenures between 12 and 60 months with minimal documentation.",
+    },
+  ];
+
   const lightDuty = [
     {
       model: "Isuzu NLR 77 E",
@@ -161,8 +184,47 @@ export default function TrucksHub() {
     { name: "Curtainsider", desc: "Fast-loading tautliner bodies optimized for beverage crates and palletized distribution." },
   ];
 
+  const truckSchemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": truckFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://edwinkibiraisuzusales.onrender.com",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Commercial Trucks",
+          "item": "https://edwinkibiraisuzusales.onrender.com/trucks",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="bg-white min-h-screen text-[#1a1a1a]">
+      {/* Structured Schema Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(truckSchemas) }}
+      />
+
       {/* Hero Header */}
       <section className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-black text-white py-20 px-6 border-b-4 border-red-600">
         <div className="max-w-7xl mx-auto">
@@ -173,7 +235,7 @@ export default function TrucksHub() {
             Isuzu Commercial Trucks <span className="text-red-500 block">N-Series, F-Series & GXZ</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
-            From 4.5-ton inner-city distribution vans to 26-ton heavy-duty construction tippers and cross-border 6x4 prime movers. Edwin Kibira Isuzu Sales supplies Kenya&apos;s leading logistics, manufacturing, and agricultural transport operators.
+            From 4.5-ton inner-city distribution vans to 26-ton heavy-duty construction tippers and cross-border 6x4 prime movers. Edwin Kibirai Isuzu Sales supplies Kenya&apos;s leading logistics, manufacturing, and agricultural transport operators.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -339,7 +401,7 @@ export default function TrucksHub() {
       <section className="bg-neutral-900 text-white py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <h2 className="text-3xl font-black uppercase">Speak With Edwin Kibira — Isuzu Truck Specialist</h2>
+            <h2 className="text-3xl font-black uppercase">Speak With Edwin Kibirai — Isuzu Truck Specialist</h2>
             <p className="text-gray-400 text-sm mt-2">Enterprise Road, Industrial Area, Nairobi. Fleet delivery available across all 47 counties in Kenya.</p>
           </div>
           <div className="flex gap-4">

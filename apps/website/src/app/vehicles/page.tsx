@@ -4,9 +4,18 @@ import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import { FaChevronRight, FaTruck, FaCar, FaBus, FaArrowRight } from "react-icons/fa6";
 
-export const metadata = {
-  title: "Isuzu Vehicle Range | Edwin Kibira Isuzu Sales",
-  description: "Browse the full Isuzu vehicle range — D-Max pickups, mu-X SUVs, N-Series trucks, F-Series buses and more. Available in Kenya.",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Isuzu Kenya Prices & Vehicle Showroom 2026 | Edwin Kibirai Isuzu Sales",
+  description: "Official 2026 Isuzu showroom in Kenya. Explore prices, specs, and financing for D-Max Pickups, mu-X SUVs, N-Series & F-Series Trucks, and Buses in Nairobi.",
+  keywords: [
+    "Isuzu vehicles Kenya", "Isuzu price list Kenya", "Isuzu showroom Nairobi", "Isuzu D-Max price",
+    "Isuzu mu-X price Kenya", "Isuzu trucks Kenya", "Isuzu buses Kenya", "Edwin Kibirai Isuzu"
+  ],
+  alternates: {
+    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles",
+  },
 };
 
 export default function ShowroomPage() {
@@ -28,8 +37,27 @@ export default function ShowroomPage() {
 
   const totalModels = vehicles.length;
 
+  const showroomSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Isuzu Vehicle Catalog Kenya 2026",
+    "description": "Brand new Isuzu trucks, buses, pickups and SUVs available in Kenya with asset financing",
+    "numberOfItems": totalModels,
+    "itemListElement": vehicles.map((v, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "url": `https://edwinkibiraisuzusales.onrender.com/vehicles/${v.slug}`,
+      "name": v.name,
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-[#f8f8f8] font-sans text-[#1a1a1a]">
+      {/* Structured Schema Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(showroomSchema) }}
+      />
       <Navbar />
 
       {/* ── HERO ── */}

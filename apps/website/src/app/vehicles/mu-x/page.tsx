@@ -4,23 +4,78 @@ import Image from "next/image";
 import { FaShieldAlt, FaSuitcase, FaMountain, FaChild } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Isuzu mu-X Kenya | 7-Seater Family SUV Price & Specs",
-  description: "Discover the Isuzu mu-X 7-seater SUV in Kenya. Compare the 1.9L and 3.0L engines, 4x2 vs 4x4, safety features, towing capacity and off-road capability.",
+  title: "Isuzu mu-X Kenya Prices 2026 | 7-Seater Luxury SUV | Edwin Kibirai",
+  description: "Official 2026 Isuzu mu-X price guide in Kenya. 1.9L LS-U from Ksh 8.6M, 3.0L LS-T 4x4 from Ksh 10.8M. 7-seater luxury SUV with up to 95% asset financing with Edwin Kibirai.",
   keywords: [
-    "Isuzu mu-X Kenya", "Isuzu mu-X price Kenya", "Isuzu mu-X for sale",
-    "Isuzu mu-X SUV Kenya", "Isuzu mu-X 3.0", "Isuzu mu-X 1.9",
-    "Isuzu mu-X 4x4", "Isuzu mu-X 4x2", "Isuzu mu-X seven seater",
-    "family SUV Kenya", "Isuzu mu-X specifications", "Isuzu mu-X interior",
-    "Isuzu mu-X safety features"
+    "Isuzu mu-X Kenya", "Isuzu mu-X price Kenya", "Isuzu mu-X 7 seater price",
+    "Isuzu mu-X SUV Kenya", "Isuzu mu-X 3.0 price", "Isuzu mu-X 1.9 price",
+    "Isuzu mu-X 4x4 price Kenya", "family SUV Kenya", "Edwin Kibirai Isuzu mu-X"
   ],
   alternates: {
-    canonical: "/vehicles/mu-x",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x",
   },
 };
 
 export default function MuXHub() {
+  const muxFaqs = [
+    {
+      q: "How much is an Isuzu mu-X in Kenya in 2026?",
+      a: "A brand new Isuzu mu-X 7-seater SUV in Kenya ranges from Ksh 8,600,000 for the 1.9L LS-U model up to Ksh 10,800,000 for the flagship 3.0L LS-T 4x4 Automatic luxury model. Asset financing is available with Edwin Kibirai (0768 351 483).",
+    },
+    {
+      q: "Is the Isuzu mu-X 1.9L or 3.0L better for Kenyan terrain?",
+      a: "The 1.9L BluePower diesel is ideal for fuel-conscious families and executive highway commutes (12–14 km/L), while the 3.0L 4JJ3 (190 HP / 450 Nm) offers commanding torque for steep terrain, off-roading, and heavy towing.",
+    },
+    {
+      q: "Does the Isuzu mu-X have 7 seats and advanced safety features?",
+      a: "Yes. The mu-X comes standard with 3-row flexible 7-passenger seating, leather upholstery, dual-zone climate control, and Isuzu's Advanced Driver Assist System (ADAS) including Autonomous Emergency Braking (AEB), Adaptive Cruise Control, and 8 airbags.",
+    },
+    {
+      q: "How can I finance an Isuzu mu-X in Kenya?",
+      a: "Financing is available through Co-op Bank, Equity, NCBA, KCB, and Stanbic Bank with deposits starting from 10% to 20% and repayment periods up to 60 to 72 months.",
+    },
+  ];
+
+  const muxSchemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": muxFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://edwinkibiraisuzusales.onrender.com",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Isuzu mu-X",
+          "item": "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="bg-white min-h-screen">
+      {/* Structured Schema Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(muxSchemas) }}
+      />
       {/* Hero Section */}
       <section className="relative bg-gray-900 text-white py-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">

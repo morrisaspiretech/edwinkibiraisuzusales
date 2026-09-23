@@ -38,7 +38,7 @@ const VALUES = [
 ];
 
 const MILESTONES = [
-  { year: "2025", title: "Journey Begins", desc: "Edwin Kibira Isuzu Sales was established with a clear mission: to connect Kenyans with genuine, zero-mileage Isuzu vehicles at honest prices." },
+  { year: "2025", title: "Journey Begins", desc: "Edwin Kibirai Isuzu Sales was established with a clear mission: to connect Kenyans with genuine, zero-mileage Isuzu vehicles at honest prices." },
   { year: "2025", title: "Full Range Launch", desc: "From day one, we stocked the complete Isuzu lineup — D-Max pickups, mu-X SUVs, N-Series commercial trucks and FRR/FVR buses." },
   { year: "2025", title: "Bank Financing Partnerships", desc: "Partnered with all major Kenyan banks to offer up to 100% vehicle financing, making Isuzu ownership accessible to every Kenyan." },
   { year: "2025", title: "Digital Showroom Live", desc: "Launched our full online platform so customers across Kenya can browse every model, view specs, and get instant quotes from anywhere." },

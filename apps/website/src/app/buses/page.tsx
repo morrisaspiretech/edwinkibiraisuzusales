@@ -3,19 +3,71 @@ import Link from "next/link";
 import { FaBus, FaGraduationCap, FaUsers, FaRoad, FaShieldAlt, FaPhoneAlt, FaFileInvoiceDollar } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Isuzu Buses Kenya | 25, 33, 50 & 67 Seater School & PSV Buses",
-  description: "Authorized dealer for Isuzu Buses in Kenya. Complete specs & financing for 25-seater (NMR/NPS), 33-seater (NQR/FRR90), 50-seater and 67-seater school buses, PSV matatus, and executive staff shuttles.",
+  title: "Isuzu Buses Kenya Prices 2026 | 29, 33, 51 & 67 Seater Buses | Edwin Kibirai",
+  description: "Official 2026 Isuzu Bus price guide in Kenya: NMR 29-seater, NQR 33-seater PSV matatus, FRR 90 51-seater school buses, and FVR 67-seater coaches. Up to 95% asset financing with Edwin Kibirai.",
   keywords: [
-    "Isuzu bus Kenya", "Isuzu school bus Kenya", "Isuzu PSV bus Kenya", "Isuzu 33 seater price Kenya",
-    "Isuzu FRR bus Kenya", "Isuzu NQR bus", "Isuzu 50 seater bus", "Isuzu 67 seater bus",
-    "Isuzu bus body building Kenya", "Isuzu bus financing Kenya", "Isuzu matatu price Kenya"
+    "Isuzu bus Kenya", "Isuzu 33 seater price Kenya", "Isuzu school bus Kenya", "Isuzu PSV bus Kenya",
+    "Isuzu FRR bus price Kenya", "Isuzu NQR bus price", "Isuzu 51 seater bus price Kenya", "Isuzu 67 seater bus price Kenya",
+    "Isuzu matatu price Kenya", "Isuzu bus financing Kenya", "Isuzu school bus financing"
   ],
   alternates: {
-    canonical: "/buses",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/buses",
   },
 };
 
 export default function BusesHub() {
+  const busFaqs = [
+    {
+      q: "How much is an Isuzu 33-seater bus in Kenya in 2026?",
+      a: "A complete Isuzu 33-seater bus (NQR / FRR chassis with accredited body fabrication from LSHS, Banbros, or Mastermind) ranges between Ksh 7,200,000 and Ksh 8,400,000 depending on PSV vs institutional trim, high-back reclining seats, CCTV, and audio/visual setup.",
+    },
+    {
+      q: "How much is an Isuzu 51-seater school bus in Kenya?",
+      a: "A new Isuzu FRR 90 51-seater school bus built to full Ministry of Transport / NTSA standards (yellow exterior, speed governor, 3-point seatbelts, emergency exits) ranges from Ksh 10,500,000 to Ksh 12,800,000 complete.",
+    },
+    {
+      q: "How much is an Isuzu 67-seater bus in Kenya?",
+      a: "An Isuzu FVR 34 67-seater heavy passenger coach ranges from Ksh 14,500,000 to Ksh 18,500,000 complete with high-tensile body construction, dual-circuit air brakes, and underfloor luggage compartments.",
+    },
+    {
+      q: "How does school bus asset financing work in Kenya?",
+      a: "Edwin Kibirai partners with Co-operative Bank, Equity Bank, KCB, and NCBA to offer termly installment repayment plans aligned with school fee collection terms. Schools can access up to 95% asset financing with tenures of up to 60 months.",
+    },
+  ];
+
+  const busSchemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": busFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://edwinkibiraisuzusales.onrender.com",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Buses",
+          "item": "https://edwinkibiraisuzusales.onrender.com/buses",
+        },
+      ],
+    },
+  ];
+
   const busCategories = [
     {
       seats: "25 - 29 Seater",
@@ -53,6 +105,12 @@ export default function BusesHub() {
 
   return (
     <div className="bg-white min-h-screen text-[#1a1a1a]">
+      {/* Structured Schema Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(busSchemas) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-800 via-red-700 to-neutral-900 text-white py-20 px-6 border-b-4 border-black">
         <div className="max-w-7xl mx-auto">

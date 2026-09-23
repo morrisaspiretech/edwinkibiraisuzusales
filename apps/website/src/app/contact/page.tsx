@@ -24,7 +24,7 @@ export default function ContactPage() {
 
     // Build a clear, structured WhatsApp message from all form fields
     const lines = [
-      `👋 *New Inquiry — Edwin Kibira Isuzu Website*`,
+      `👋 *New Inquiry — Edwin Kibirai Isuzu Website*`,
       ``,
       `📋 *Subject:* ${formData.subject}`,
       `👤 *Name:* ${formData.name}`,
