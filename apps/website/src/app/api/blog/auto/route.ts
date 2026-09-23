@@ -11,7 +11,7 @@ const TOPICS = [
   { model: "FRR 90", type: "truck", label: "10 Ton Cargo Truck" },
   { model: "FVR 34", type: "truck", label: "14 Ton Tipper Truck" },
   { model: "FVZ 34", type: "truck", label: "Heavy Duty Tipper" },
-  { model: "GXZ", type: "truck", label: "Prime Mover / Tractor Head" },
+  { model: "UD Quester GWE", type: "truck", label: "6x4 Prime Mover Tractor" },
   { model: "D-Max TFS", type: "pickup", label: "Double Cab 4x4 Pickup" },
   { model: "D-Max TFR", type: "pickup", label: "Single Cab Pickup" },
   { model: "mu-X 3000cc", type: "suv", label: "7 Seater Diesel SUV" },
@@ -20,11 +20,11 @@ const TOPICS = [
 const IMAGE_MAP: Record<string, string> = {
   "NMR85": "/vehicles/n-series/nmr85/1.jpeg",
   "NQR81": "/vehicles/n-series/nqr-xtra-real.png",
-  "NLR": "/vehicles/n-series/nlr-canopy.jpg",
+  "NLR": "/vehicles/n-series/nlr-chassis.png",
   "FRR 90": "/vehicles/grouped/batch1/1.jpeg",
   "FVR 34": "/vehicles/grouped/batch2/1.jpeg",
   "FVZ 34": "/vehicles/grouped/batch3/1.jpeg",
-  "GXZ": "/vehicles/grouped/batch4/1.jpeg",
+  "UD Quester GWE": "/vehicles/movers/ud-quester-460-hero.png",
   "D-Max TFS": "/vehicles/tfs87-double-auto/img-1.jpeg",
   "D-Max TFR": "/vehicles/tfs87-single-1.jpg",
   "mu-X 3000cc": "/vehicles/mu-x-3000cc-gallery/1.jpeg",
@@ -143,11 +143,32 @@ Return ONLY a valid JSON object:
     );
     fs.writeFileSync(postsFile, postsContent, "utf-8");
 
+    // ── TRIGGER AUTHORIZED SEO ROBOT ──
+    const newPostUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${postData.slug}`;
+    const blogIndexUrl = `https://edwinkibiraisuzusales.onrender.com/blog`;
+    const sitemapUrl = `https://edwinkibiraisuzusales.onrender.com/sitemap.xml`;
+
+    // Asynchronously notify IndexNow and ping search engines
+    fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        host: "edwinkibiraisuzusales.onrender.com",
+        key: "c7e29b104a8f3d654029b38fa19e82c7",
+        keyLocation: "https://edwinkibiraisuzusales.onrender.com/c7e29b104a8f3d654029b38fa19e82c7.txt",
+        urlList: [newPostUrl, blogIndexUrl, sitemapUrl],
+      }),
+    }).catch(() => {});
+
+    fetch(`https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`).catch(() => {});
+    fetch(`https://www.bing.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`).catch(() => {});
+
     return NextResponse.json({
       success: true,
       slug: postData.slug,
       title: postData.title,
       publishedAt: dateStr,
+      indexingPushed: true,
     });
 
   } catch (err: unknown) {

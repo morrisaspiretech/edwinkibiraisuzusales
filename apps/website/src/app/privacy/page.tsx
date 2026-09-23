@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
             If you have any questions about this privacy policy or our privacy practices, please contact us at:
           </p>
           <ul className="list-disc pl-5 space-y-2">
-            <li>Email: edwinkibiracfg@gmail.com</li>
+            <li>Email: edwin@cfg.co.ke</li>
             <li>Phone: 0768 351 483</li>
           </ul>
         </div>

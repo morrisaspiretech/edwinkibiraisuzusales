@@ -36,6 +36,424 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "qa-isuzu-buses",
+    slug: "isuzu-bus-prices-kenya-school-psv-guide",
+    title: "Isuzu Bus Prices in Kenya 2026: School Buses, PSV Matatus & 67-Seater Coaches",
+    seoTitle: "Isuzu Bus Prices in Kenya 2026: School Buses, PSV Matatus & 67-Seater Coaches",
+    excerpt: "Comprehensive guide to Isuzu bus prices in Kenya: NMR 26-seater, NQR 29 & 33-seater matatus, FRR 51-seater, and FVR 67-seater coaches with NTSA compliance and SACCO financing.",
+    content: "<h2>The Complete Isuzu Bus Buyer's Guide in Kenya</h2><p>Isuzu buses are the backbone of Kenya's public transport system, school transport fleets, and corporate shuttles. With unmatched durability and low running costs, investing in an Isuzu bus guarantees long-term profitability.</p>",
+    image: "/vehicles/buses/nqr33/1.jpeg",
+    date: "23 September 2026",
+    category: "Buses",
+    author: {
+      name: "Edwin Kibira",
+      role: "Isuzu Sales Specialist",
+      avatar: "/logo.jpg",
+    },
+    pricingTable: [
+      {
+            "model": "Isuzu NMR 26-Seater Bus",
+            "priceRange": "Ksh 5,850,000 – Ksh 6,800,000",
+            "deposit": "From Ksh 585,000",
+            "bestUses": "School transport, hotel shuttles, staff bus, executive city commuter"
+      },
+      {
+            "model": "Isuzu NQR 29/33-Seater Bus",
+            "priceRange": "Ksh 7,200,000 – Ksh 8,400,000",
+            "deposit": "From Ksh 720,000",
+            "bestUses": "PSV Matatu SACCOs, institutional transport, inter-county routes"
+      },
+      {
+            "model": "Isuzu FRR 90 51-Seater Bus",
+            "priceRange": "Ksh 10,500,000 – Ksh 12,800,000",
+            "deposit": "From Ksh 1,050,000",
+            "bestUses": "Secondary schools, colleges, church groups, long-distance PSV"
+      },
+      {
+            "model": "Isuzu FVR 34 67-Seater Coach",
+            "priceRange": "Ksh 14,500,000 – Ksh 18,500,000",
+            "deposit": "From Ksh 1,450,000",
+            "bestUses": "Major national highway express coaches, cross-border passenger travel"
+      }
+],
+    priceFactors: [
+      "Seating capacity and configuration: Standard vinyl vs high-back reclining velvet",
+      "Body builder: Master Fabricators, Labh Singh Harmar (LSH), Choda, Kenya Coach",
+      "School bus vs PSV specifications (speed limiter, camera systems, luggage racks)",
+      "Chassis wheelbase and engine power (4JJ1 vs 4HL1 vs 4HK1 vs 6HK1)"
+],
+    financing: {
+      "depositPercent": "10% – 20%",
+      "maxMonths": 60,
+      "saccoAvailable": true,
+      "description": "Dedicated PSV and school bus asset financing with structured repayment schedules aligned with school terms or daily matatu SACCO cashflows."
+},
+    faqs: [
+      {
+            "question": "How much is an Isuzu 33-seater bus in Kenya in 2026?",
+            "answer": "A complete 33-seater Isuzu NQR bus with coachwork by accredited body builders ranges from Ksh 7,200,000 to Ksh 8,400,000 depending on interior luxury, reclining seats, CCTV, and audio/visual setup."
+      },
+      {
+            "question": "How much is an Isuzu 51-seater school bus in Kenya?",
+            "answer": "A new Isuzu FRR 90 51-seater school bus with yellow paint, speed governor, seatbelts, and emergency exits built to MOE/NTSA standards ranges from Ksh 10,500,000 to Ksh 12,800,000 complete."
+      },
+      {
+            "question": "What is the price of an Isuzu FVR 67-seater coach bus in Kenya?",
+            "answer": "An Isuzu FVR 34 67-seater luxury coach bus ranges from Ksh 14,500,000 to Ksh 18,500,000 complete with premium bodywork, air suspension options, and luggage compartments."
+      },
+      {
+            "question": "Can SACCOs get asset financing for Isuzu PSV buses in Kenya?",
+            "answer": "Yes, Edwin Kibira partners with Co-operative Bank, Equity, NCBA, KCB, and transport SACCOs to offer tailored asset financing with deposit requirements as low as 10%–20% and flexible repayment tenures."
+      }
+],
+  },
+  {
+    id: "qa-prime-movers",
+    slug: "ud-quester-gwe-prime-mover-price-kenya",
+    title: "UD Quester GWE Prime Movers (460 AMT, 440 AMT, 420 MT): Prices & Specs in Kenya",
+    seoTitle: "UD Quester GWE Prime Movers (460 AMT, 440 AMT, 420 MT): Prices & Specs in Kenya",
+    excerpt: "Authoritative pricing and technical specs for UD Quester GWE 6x4 Prime Movers in Kenya: GWE 460 AMT (Ksh 16.45M), GWE 440 AMT (Ksh 15.9M), GWE 420 MT (Ksh 14.0M), 80T GCM.",
+    content: "<h2>UD Quester GWE 6x4 Heavy-Duty Prime Movers in Kenya</h2><p>The <strong>UD Quester GWE series</strong> (GWE 460 AMT, GWE 440 AMT, GWE 420 MT) represents the gold standard for heavy prime movers in East Africa, offering maximum payload capacity, industry-leading fuel economy, and unmatched driver comfort.</p>",
+    image: "/vehicles/movers/ud-quester-460-hero.png",
+    date: "23 September 2026",
+    category: "Prime Movers",
+    author: {
+      name: "Edwin Kibira",
+      role: "Isuzu Sales Specialist",
+      avatar: "/logo.jpg",
+    },
+    pricingTable: [
+      {
+            "model": "UD QUESTER GWE 420 MT (6x4 Tractor Only)",
+            "priceRange": "Ksh 14,000,000",
+            "deposit": "From Ksh 1,400,000 (10%)",
+            "bestUses": "Long-haul highway freight, container transport, flatbed trailers"
+      },
+      {
+            "model": "UD QUESTER GWE 440 AMT (6x4 Tractor Only)",
+            "priceRange": "Ksh 15,900,000",
+            "deposit": "From Ksh 1,590,000 (10%)",
+            "bestUses": "Mombasa-Kampala corridor, petroleum tankers, heavy bulk transit"
+      },
+      {
+            "model": "UD QUESTER GWE 460 AMT (6x4 Tractor Only)",
+            "priceRange": "Ksh 16,450,000",
+            "deposit": "From Ksh 1,645,000 (10%)",
+            "bestUses": "Maximum 80T payload, heavy industrial cargo, severe terrain haulage"
+      }
+],
+    priceFactors: [
+      "Horsepower rating: 420 HP vs 440 HP vs 460 HP GH11E powertrain",
+      "Transmission: 12-Speed Manual MT vs ESCOT-E 12-Speed Automated Manual (AMT)",
+      "Axle reduction: Single reduction vs Hub reduction for extreme terrain",
+      "Auxiliary equipment: Hydraulic PTO for tipping trailers"
+],
+    financing: {
+      "depositPercent": "10% – 20%",
+      "maxMonths": 60,
+      "saccoAvailable": true,
+      "description": "Dedicated heavy asset financing with major banks and SACCOs for cross-border transport operators."
+},
+    faqs: [
+      {
+            "question": "What is the price of a UD Quester GWE Prime Mover in Kenya?",
+            "answer": "Official Kenyan dealership pricing for UD Quester GWE 6x4 Prime Movers (Tractor Only) is: UD QUESTER GWE 460 AMT at Ksh 16,450,000; UD QUESTER GWE 440 AMT at Ksh 15,900,000; and UD QUESTER GWE 420 MT at Ksh 14,000,000. Flexible asset financing is available."
+      },
+      {
+            "question": "What engine and transmission does the UD Quester GWE 460 use?",
+            "answer": "The GWE 460 is powered by the heavy-duty 11-Litre GH11E common-rail engine delivering 460 HP (338 kW) and a massive 2,200 Nm of torque at 1,050–1,400 rpm, paired with UD's ESCOT-E 12-Speed Automated Manual Transmission (AMT)."
+      },
+      {
+            "question": "What is the Gross Combination Mass (GCM) of the UD Quester GWE in Kenya?",
+            "answer": "The UD Quester GWE 6x4 is rated for up to 80 Tonnes Gross Combination Mass (GCM), making it the ideal tractor head for 40ft shipping containers, bulk clinker, cement, petroleum tankers, and cross-border transit across the Northern Corridor."
+      },
+      {
+            "question": "Is asset financing available for UD Quester prime movers in Kenya?",
+            "answer": "Yes, Edwin Kibira facilitates asset financing with up to 80%–90% funding through commercial banks and SACCOs, with repayment periods from 12 to 60 months."
+      }
+],
+  },
+  {
+    id: "qa-fseries-trucks",
+    slug: "isuzu-frr-90-fvr-fvz-price-kenya-guide",
+    title: "Isuzu FRR 90, FVR 90 & FVZ 34 Price in Kenya 2026: Specs, Tippers & Payloads",
+    seoTitle: "Isuzu FRR 90, FVR 90 & FVZ 34 Price in Kenya 2026: Specs, Tippers & Payloads",
+    excerpt: "Official guide to Isuzu FRR 90, FVR 90, and FVZ 34 tipper/cargo prices in Kenya: 10T, 14T & 18T payloads, 6HK1 & 4HK1 engines, body fabrication, and bank financing.",
+    content: "<h2>The Definitive Guide to Isuzu Medium and Heavy Trucks in Kenya</h2><p>When heavy cargo demands absolute reliability, the <strong>Isuzu F-Series (FRR, FVR, FVZ)</strong> provides unmatched power, chassis strength, and fuel economy across East Africa.</p>",
+    image: "/vehicles/f-series/frr90n/1.jpeg",
+    date: "23 September 2026",
+    category: "Medium & Heavy Trucks",
+    author: {
+      name: "Edwin Kibira",
+      role: "Isuzu Sales Specialist",
+      avatar: "/logo.jpg",
+    },
+    pricingTable: [
+      {
+            "model": "Isuzu FRR 90N (10-11 Ton Payload · 5,193cc)",
+            "priceRange": "Ksh 6,100,000 – Ksh 6,600,000",
+            "deposit": "From Ksh 610,000",
+            "bestUses": "Inter-county general haulage, agricultural transit, beverage distribution"
+      },
+      {
+            "model": "Isuzu FVR 90L / 90P (14 Ton Payload · 5,193cc)",
+            "priceRange": "Ksh 8,200,000 – Ksh 8,800,000",
+            "deposit": "From Ksh 820,000",
+            "bestUses": "Heavy container chassis, bulk grain distribution, fuel tankers"
+      },
+      {
+            "model": "Isuzu FVZ 34N / 34T (6x4 16-18 Ton · 7,790cc)",
+            "priceRange": "Ksh 11,200,000 – Ksh 12,500,000",
+            "deposit": "From Ksh 1,120,000",
+            "bestUses": "Heavy dump tipper, quarry aggregate, infrastructure projects"
+      }
+],
+    priceFactors: [
+      "Axle setup: 4x2 single axle vs 6x4 bogie tandem drive with differential locks",
+      "Transmission: 6-speed vs 9-speed heavy haulage gearbox",
+      "Tipper hydraulic system capacity: 10 CBM to 16 CBM dump body",
+      "Financing tenure and bank repayment structuring"
+],
+    financing: {
+      "depositPercent": "10% – 20%",
+      "maxMonths": 60,
+      "saccoAvailable": true,
+      "description": "Specialized asset financing for logistics and construction firms with repayment periods up to 60 months."
+},
+    faqs: [
+      {
+            "question": "How much is an Isuzu FRR 90 in Kenya in 2026?",
+            "answer": "A brand new Isuzu FRR 90N chassis starts from approximately Ksh 6,100,000 to Ksh 6,600,000 depending on body specifications. It carries a rated payload of up to 10–11 tonnes with the 4HK1-TCC 5.2L engine."
+      },
+      {
+            "question": "What is the difference between Isuzu FVR 90 and FVZ 34?",
+            "answer": "The Isuzu FVR 90 is a 4x2 heavy-duty truck with a 14-tonne payload powered by a 5.2L or 7.8L engine. The Isuzu FVZ 34 is a 6x4 double-differential heavy-duty chassis (26 Tonnes GVW) powered by the 7.8L 6HK1-TCS engine delivering 280 HP, ideal for 16–18 tonne dump tippers and long-distance cargo."
+      },
+      {
+            "question": "What is the price of an Isuzu FVZ 34 Tipper in Kenya?",
+            "answer": "An Isuzu FVZ 34 6x4 Tipper complete with high-tensile Hardox steel dump body ranges from Ksh 11,800,000 to Ksh 12,500,000, perfect for quarrying, sand harvesting, ballast, and major road construction projects."
+      }
+],
+  },
+  {
+    id: "qa-nseries-trucks",
+    slug: "isuzu-n-series-trucks-price-kenya-qa",
+    title: "Isuzu N-Series Trucks in Kenya (NLR, NMR, NPS, NQR 81, NQR Xtra): Specs & Prices",
+    seoTitle: "Isuzu N-Series Trucks in Kenya (NLR, NMR, NPS, NQR 81, NQR Xtra): Specs & Prices",
+    excerpt: "Detailed Q&A answering all Google search queries about Isuzu N-Series trucks in Kenya: NQR 81 and NQR Xtra 4,773cc engines, NMR 85, NLR 2.3T, NPS 4x4, payloads, prices & financing.",
+    content: "<h2>Everything You Need to Know About Isuzu N-Series Light Commercial Trucks</h2><p>The <strong>Isuzu N-Series</strong> is the backbone of Kenya's retail, logistics, and agricultural economy. From the agile <strong>NLR</strong> to the heavy-duty <strong>NQR 81 and NQR Xtra (4,773cc)</strong>, these trucks are engineered for maximum tonne-kilometres and minimal maintenance costs.</p>",
+    image: "/vehicles/nqr-hero.png",
+    date: "23 September 2026",
+    category: "Light Trucks",
+    author: {
+      name: "Edwin Kibira",
+      role: "Isuzu Sales Specialist",
+      avatar: "/logo.jpg",
+    },
+    pricingTable: [
+      {
+            "model": "Isuzu NLR (2.3 Ton Payload · 2,999cc)",
+            "priceRange": "Ksh 3,612,000 (Chassis) / Ksh 3,923,000 (With Body)",
+            "deposit": "From Ksh 361,200",
+            "bestUses": "City distribution, bakery & beverage supply, express cargo"
+      },
+      {
+            "model": "Isuzu NMR 85 (3.5 Ton Payload · 2,999cc)",
+            "priceRange": "Ksh 4,200,000 (Chassis) / Ksh 4,578,000 (With Body)",
+            "deposit": "From Ksh 420,000",
+            "bestUses": "Hardware supply, agricultural produce, inter-county deliveries"
+      },
+      {
+            "model": "Isuzu NPS / NHP 81H (3.0 Ton 4x4 · 4,773cc)",
+            "priceRange": "Ksh 6,100,000 (Complete Unit)",
+            "deposit": "From Ksh 610,000",
+            "bestUses": "Off-road terrain, remote farming, safari supply, emergency response"
+      },
+      {
+            "model": "Isuzu NQR 81 (5.0 Ton Payload · 4,773cc)",
+            "priceRange": "Ksh 4,775,000 (Chassis Only)",
+            "deposit": "From Ksh 477,500",
+            "bestUses": "Heavy general haulage, wholesale distribution, beverage crates"
+      },
+      {
+            "model": "Isuzu NQR Xtra (6.0 Ton Payload · 4,773cc)",
+            "priceRange": "Ksh 5,250,000 (Chassis Only)",
+            "deposit": "From Ksh 525,000",
+            "bestUses": "Bulky light cargo, expanded volume box bodies, maximum payload"
+      }
+],
+    priceFactors: [
+      "Chassis length: Standard wheelbase vs NQR Xtra extended frame",
+      "Body builder specifications: Labh Singh Harmar (LSH), Choda Fabricators, Master Fabricators, Banbros",
+      "Hydraulic PTO additions for tipper operations",
+      "Asset finance deposit and loan insurance inclusions"
+],
+    financing: {
+      "depositPercent": "10% – 20%",
+      "maxMonths": 60,
+      "saccoAvailable": true,
+      "description": "Structured commercial asset financing through NCBA, Co-op Bank, Equity Bank, and transport SACCOs."
+},
+    faqs: [
+      {
+            "question": "What is the exact engine displacement of the Isuzu NQR 81 and NQR Xtra in Kenya?",
+            "answer": "The Isuzu NQR 81 and NQR Xtra in Kenya are powered by the 4HL1-TC 4,773cc (4.8-litre) intercooled turbocharged diesel engine, delivering 110 kW (150 HP) and 404 Nm of high-torque pulling power."
+      },
+      {
+            "question": "How much is an Isuzu NQR 81 and NQR Xtra chassis in Kenya?",
+            "answer": "As of 2026, the Isuzu NQR 81 chassis is priced at Ksh 4,775,000 (5.0-tonne payload), while the extended chassis NQR Xtra is priced at Ksh 5,250,000 (6.0-tonne payload). Contact Edwin Kibira at 0768 351 483 for body fabrication packages."
+      },
+      {
+            "question": "What payload can an Isuzu NMR 85 carry?",
+            "answer": "The Isuzu NMR 85 carries a rated 3.5-tonne payload (GVM 5,200 kg) and is powered by the 4JJ1-TCC 2,999cc intercooled turbo engine producing 96 kW (130 HP) and 330 Nm torque."
+      },
+      {
+            "question": "Is there a 4x4 truck in the Isuzu N-Series for rough terrain?",
+            "answer": "Yes, the Isuzu NHP 81H / NPS 81H 4x4 is built specifically for severe off-road conditions, humanitarian relief, drilling support, and remote agriculture, featuring a 3.0-tonne payload and 4,773cc engine."
+      },
+      {
+            "question": "What body types can be fitted on the Isuzu N-Series chassis?",
+            "answer": "Popular body types include High-Sided Cargo Dropside, Insulated Refrigerated Body, Dry Freight Box Body, Steel Dump Tipper, and Water/Fuel Tanker."
+      }
+],
+  },
+  {
+    id: "qa-mux-2026",
+    slug: "isuzu-mux-price-kenya-questions-answers",
+    title: "Isuzu MU-X Price in Kenya 2026: Frequently Asked Questions & Comparison",
+    seoTitle: "Isuzu MU-X Price in Kenya 2026: Frequently Asked Questions & Comparison",
+    excerpt: "Comprehensive guide answering all Google search questions about the Isuzu mu-X in Kenya: 1.9L vs 3.0L prices, 7-seater comfort, fuel economy vs Prado/Fortuner, and financing options.",
+    content: "<h2>The Ultimate Guide to Owning an Isuzu mu-X in Kenya</h2><p>The <strong>Isuzu mu-X</strong> has earned its place as Kenya's premier luxury 7-seater SUV, blending the rugged DNA of the D-Max chassis with premium comfort, refined styling, and unmatched family safety.</p>",
+    image: "/vehicles/mu-x-3000cc-gallery/1.jpeg",
+    date: "23 September 2026",
+    category: "SUVs",
+    author: {
+      name: "Edwin Kibira",
+      role: "Isuzu Sales Specialist",
+      avatar: "/logo.jpg",
+    },
+    pricingTable: [
+      {
+            "model": "Isuzu mu-X LS-U 1.9L Turbo Diesel (4x2)",
+            "priceRange": "Ksh 8,600,000 – Ksh 9,200,000",
+            "deposit": "From Ksh 860,000",
+            "bestUses": "Urban family luxury, daily executive commuting, school runs"
+      },
+      {
+            "model": "Isuzu mu-X LS-T 3.0L 4x4 Luxury (7-Seater)",
+            "priceRange": "Ksh 9,800,000 – Ksh 10,800,000",
+            "deposit": "From Ksh 980,000",
+            "bestUses": "Cross-country safari, all-terrain family expeditions, VIP transport"
+      }
+],
+    priceFactors: [
+      "Engine variant: 1.9L Ddi BluePower vs 3.0L 4JJ3 Powerplant",
+      "Drive system: 4x2 Rear-Wheel Drive vs 4x4 Terrain Command with Low-Range & Diff Lock",
+      "Interior trim: Premium leather-accented upholstery, 9-inch touchscreen with wireless Apple CarPlay/Android Auto",
+      "Safety: Advanced Driver Assist System (Autonomous Emergency Braking, Lane Keep Assist, Adaptive Cruise Control)"
+],
+    financing: {
+      "depositPercent": "10% – 20%",
+      "maxMonths": 72,
+      "saccoAvailable": true,
+      "description": "Competitive bank asset finance options available with up to 90% funding and fast 48-hour approvals."
+},
+    faqs: [
+      {
+            "question": "How much is an Isuzu mu-X in Kenya in 2026?",
+            "answer": "A brand new Isuzu mu-X in Kenya ranges from Ksh 8,600,000 for the 1.9L LS-U model to Ksh 10,800,000 for the flagship 3.0L LS-T 4x4 7-seater luxury SUV. Contact Edwin Kibira at 0768 351 483 for current stock and customized quotes."
+      },
+      {
+            "question": "How does the Isuzu mu-X compare to the Toyota Fortuner and Prado in Kenya?",
+            "answer": "The Isuzu mu-X offers superior ride comfort due to its 5-link rear coil spring suspension, better standard active safety (ADAS suite), higher fuel efficiency from the 1.9L and 3.0L engines, and significantly lower maintenance costs with comprehensive local dealer warranty."
+      },
+      {
+            "question": "Is the Isuzu mu-X a true 7-seater suitable for Kenyan families?",
+            "answer": "Yes, the mu-X features three full rows of adult-sized seating, dedicated rear roof-mounted air conditioning vents with fan speed control for all 3 rows, and split-folding second and third-row seats for flexible luggage capacity."
+      },
+      {
+            "question": "What is the fuel economy of the Isuzu mu-X in Kenya?",
+            "answer": "The 1.9L mu-X delivers exceptional fuel economy of 13.5 to 15.5 km/L on highways. The 3.0L 4x4 mu-X achieves 11.0 to 13.0 km/L on long distance journeys and 9.5 km/L in city commuting."
+      }
+],
+  },
+  {
+    id: "qa-dmax-2026",
+    slug: "isuzu-dmax-price-kenya-questions-answers",
+    title: "Isuzu D-Max Price in Kenya 2026: All Your Questions Answered (Single Cab, Double Cab & 4x4)",
+    seoTitle: "Isuzu D-Max Price in Kenya 2026: All Your Questions Answered (Single Cab, Double Cab & 4x4)",
+    excerpt: "Get clear answers to all Google questions about Isuzu D-Max in Kenya: 2026 prices, Single Cab vs Double Cab (TFS40 vs TFS87), fuel consumption, and asset financing with Edwin Kibira.",
+    content: "<h2>Everything Kenyan Buyers Ask About the Isuzu D-Max</h2><p>The <strong>Isuzu D-Max</strong> continues to dominate Kenya's pickup segment as the undisputed king of reliability, resale value, and rugged durability. Whether you are outfitting a commercial agribusiness fleet with <strong>TFR Single Cabs</strong> or investing in an executive <strong>TFS87 3.0L Double Cab 4x4</strong>, here are authoritative answers to the most frequently searched questions on Google and AI search engines.</p>",
+    image: "/vehicles/tfs87-double-auto/img-1.jpeg",
+    date: "23 September 2026",
+    category: "Pickups",
+    author: {
+      name: "Edwin Kibira",
+      role: "Isuzu Sales Specialist",
+      avatar: "/logo.jpg",
+    },
+    pricingTable: [
+      {
+            "model": "Isuzu TFR87 Single Cab (4x2 Manual)",
+            "priceRange": "Ksh 4,450,000 – Ksh 4,750,000",
+            "deposit": "From Ksh 445,000",
+            "bestUses": "Farm produce, hardware distribution, courier & field cargo"
+      },
+      {
+            "model": "Isuzu TFS87 Single Cab (4x4 Manual)",
+            "priceRange": "Ksh 5,200,000 – Ksh 5,500,000",
+            "deposit": "From Ksh 520,000",
+            "bestUses": "Off-road agriculture, mining, relief supplies, terrain cargo"
+      },
+      {
+            "model": "Isuzu TFS40 Double Cab 1.9L (Manual/Auto)",
+            "priceRange": "Ksh 5,950,000 – Ksh 6,650,000",
+            "deposit": "From Ksh 595,000",
+            "bestUses": "Fleet supervisors, construction managers, family lifestyle"
+      },
+      {
+            "model": "Isuzu TFS87 Double Cab 3.0L (4x4 Luxury)",
+            "priceRange": "Ksh 7,600,000 – Ksh 8,900,000",
+            "deposit": "From Ksh 760,000",
+            "bestUses": "Executive transport, premium overland safari, extreme utility"
+      }
+],
+    priceFactors: [
+      "Engine displacement: 1.9L RZ4E vs 3.0L 4JJ3 BluePower",
+      "Drive configuration: 4x2 rear-wheel drive vs 4x4 Terrain Command with rear differential lock",
+      "Transmission: 6-speed manual vs 6-speed Rev-Tronic automatic",
+      "Body accessories: Rhino canopy, bull bar, bedliner, tow hitch, and leather upholstery"
+],
+    financing: {
+      "depositPercent": "10% – 20%",
+      "maxMonths": 72,
+      "saccoAvailable": true,
+      "description": "Fast-track asset financing with pre-approved rates at NCBA, Co-operative Bank, Equity, and major Kenyan SACCOs."
+},
+    faqs: [
+      {
+            "question": "How much is a brand new Isuzu D-Max in Kenya in 2026?",
+            "answer": "A brand new Isuzu D-Max in Kenya ranges from Ksh 4,450,000 for the TFR 4x2 Single Cab workhorse up to Ksh 8,900,000 for the top-of-the-range TFS87 3.0L Double Cab 4x4 Automatic (V-Cross / LS-E). Official dealership pricing is available through Edwin Kibira (0768 351 483 / edwin@cfg.co.ke)."
+      },
+      {
+            "question": "What is the difference between Isuzu TFS40 and TFS87 in Kenya?",
+            "answer": "The TFS40 features the ultra-economical 1.9L RZ4E Turbo-Diesel engine (150 HP, 350 Nm torque), ideal for high mileage and fuel-conscious fleet operations. The TFS87 is powered by the legendary 3.0L 4JJ3-TCX BluePower engine (190 HP, 450 Nm torque), engineered for heavy towing, extreme off-roading, and executive highway comfort."
+      },
+      {
+            "question": "What is the actual fuel consumption of the Isuzu D-Max in Kenya?",
+            "answer": "The 1.9L D-Max (TFS40/TFR) averages 14.5 to 16.5 km/L on highway driving and 11.5 to 13.0 km/L in city traffic. The 3.0L D-Max (TFS87) averages 12.0 to 14.0 km/L on highways and 9.5 to 11.0 km/L under heavy load or city driving."
+      },
+      {
+            "question": "Can I get 90% asset financing for an Isuzu D-Max in Kenya?",
+            "answer": "Yes. Edwin Kibira partners with Co-op Bank, Equity Bank, NCBA, KCB, Family Bank, and leading SACCOs to offer up to 80%–90% asset financing. Buyers only need a 10% to 20% deposit with flexible repayment terms spanning up to 60 to 72 months."
+      },
+      {
+            "question": "Is the Single Cab Isuzu D-Max available with 4x4 in Kenya?",
+            "answer": "Yes, Isuzu Kenya offers both the TFR87 (4x2 Single Cab) and the TFS87 (4x4 Single Cab), the latter built specifically for challenging rural terrain, tea and coffee estates, farm transport, and telecommunications towers."
+      }
+],
+  },
+  {
     id: "1789633762112-0iic",
     slug: "isuzu-fvr34-67-seater-kenya",
     title: "Isuzu FVR 34 67 Seater Bus Price Kenya 2026: Your Ultimate Guide to Investment",

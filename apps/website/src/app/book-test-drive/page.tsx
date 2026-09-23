@@ -114,8 +114,8 @@ const BookTestDrivePage = () => {
               <a href="https://wa.me/254768351483" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
                 <FaWhatsapp size={16} className="text-secondary" /> WhatsApp Us
               </a>
-              <a href="mailto:edwinkibiracfg@gmail.com" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
-                <FaEnvelope size={16} className="text-secondary" /> edwinkibiracfg@gmail.com
+              <a href="mailto:edwin@cfg.co.ke" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors font-bold text-sm">
+                <FaEnvelope size={16} className="text-secondary" /> edwin@cfg.co.ke
               </a>
               <div className="flex items-center gap-3 text-white/40 text-sm pt-2 border-t border-white/10">
                 <FaClock size={14} className="text-secondary flex-shrink-0" />

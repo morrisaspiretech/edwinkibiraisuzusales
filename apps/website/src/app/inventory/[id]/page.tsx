@@ -36,7 +36,7 @@ export default async function VehicleDetailsPage({ params }: { params: Promise<{
     if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) slug = "f-series-buses";
     else slug = "n-series-buses";
   }
-  else if (m.includes("mover") || m.includes("gxz")) slug = "movers";
+  else if (m.includes("mover") || m.includes("gxz") || m.includes("quester") || m.includes("gwe") || m.includes("ud")) slug = "movers";
   else if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) slug = "heavy-trucks-f-series";
 
   redirect(`/vehicles/${slug}`);

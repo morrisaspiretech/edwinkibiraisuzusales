@@ -752,8 +752,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     description: "The Isuzu NLR is Kenya's most trusted light commercial truck, engineered for city deliveries and navigating tight spaces with ease. It offers outstanding fuel efficiency, a low cab-forward design, and rugged reliability.",
     heroImage: "/vehicles/n-series/nlr-chassis.png",
     gallery: [
-      "/vehicles/n-series/nlr-chassis.png",
-      "/vehicles/n-series/nlr-canopy.jpg"
+      "/vehicles/n-series/nlr-chassis.png"
     ],
     quickSpecs: {
       engine: "2,999cc Turbo Diesel",
@@ -860,7 +859,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/n-series/nps-81h-real.png",
     ],
     quickSpecs: {
-      engine: "4,778cc Turbo Diesel",
+      engine: "4,773cc Turbo Diesel",
       transmission: "5-Speed Manual 4x4",
       payload: "3.0 Tonnes",
       fuel: "Diesel",
@@ -868,7 +867,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     detailedSpecs: {
       engine: {
         type: "4HL1, 4-Cylinder, OHC",
-        displacement: "4,778 cc",
+        displacement: "4,773 cc",
         maxPower: "110 kW (150 HP)",
         maxTorque: "404 Nm",
         fuelSystem: "Common Rail Direct Injection",
@@ -915,7 +914,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/nqr/nqr-9.jpeg"
     ],
     quickSpecs: {
-      engine: "5,193cc Turbo Diesel",
+      engine: "4,773cc Turbo Diesel",
       transmission: "6-Speed Manual",
       payload: "5.0 Tonnes",
       fuel: "Diesel",
@@ -923,9 +922,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     detailedSpecs: {
       engine: {
         type: "4HL1-TC, 4-Cylinder, OHC, Intercooled Turbo",
-        displacement: "4,778 cc",
-        maxPower: "103 kW (140 HP)",
-        maxTorque: "334 Nm",
+        displacement: "4,773 cc",
+        maxPower: "110 kW (150 HP)",
+        maxTorque: "404 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -970,17 +969,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/n-series/nqr-xtra-real.png",
     ],
     quickSpecs: {
-      engine: "5,193cc Turbo Diesel",
+      engine: "4,773cc Turbo Diesel",
       transmission: "6-Speed Manual",
       payload: "6.0 Tonnes",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
-        type: "4HK1-TCN, 4-Cylinder, OHC, Intercooled Turbo",
-        displacement: "5,193 cc",
-        maxPower: "114 kW (155 HP)",
-        maxTorque: "419 Nm",
+        type: "4HL1-TC, 4-Cylinder, OHC, Intercooled Turbo",
+        displacement: "4,773 cc",
+        maxPower: "110 kW (150 HP)",
+        maxTorque: "404 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -1012,46 +1011,95 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "movers": {
     id: "movers",
     category: "Trucks",
-    title: "Movers",
-    description: "Isuzu Heavy-Duty Movers — the GXZ and CYZ series — are Kenya's most powerful prime movers. Built for maximum tonne-kilometres, these 6x4 tractors feature massive turbocharged engines, 10-speed gearboxes, and full air brake systems capable of hauling up to 60 tonnes GCM on East Africa's most demanding routes.",
-    heroImage: "/vehicles/gxz-mover.webp",
+    title: "Movers (UD Quester)",
+    description: "The UD Quester GWE 6x4 Heavy-Duty Prime Mover series — featuring the GWE 460 AMT, GWE 440 AMT, and GWE 420 MT — is engineered for maximum uptime, extreme payloads, and unmatched fuel efficiency across East Africa's most demanding transit corridors. Powered by the heavy-duty 11-litre GH11E engine delivering up to 460 HP and 2,200 Nm of low-end torque, paired with UD's legendary ESCOT-E 12-Speed Automated Manual Transmission (AMT) or robust multi-speed Manual Transmission. Sold as Tractor Only with attractive bank and SACCO asset financing available.",
+    heroImage: "/vehicles/movers/ud-quester-460-hero.png",
     gallery: [
-      "/vehicles/gxz-mover.webp",
+      "/vehicles/movers/ud-quester-460-hero.png",
+      "/vehicles/movers/ud-quester-fleet.png",
+      "/vehicles/movers/ud-quester-tractor-rear.png",
+      "/vehicles/movers/ud-quester-side.png",
     ],
     quickSpecs: {
-      engine: "9.8L – 15.6L Turbo Diesel",
-      transmission: "10/12-Speed Manual or AMT",
-      power: "280 kW – 382 kW",
+      engine: "10.8L (GH11E) Turbo Diesel",
+      transmission: "ESCOT 12-Speed AMT / MT",
+      power: "420 HP – 460 HP",
+      payload: "Up to 80 Tonnes GCM (Tractor Only)",
       fuel: "Diesel",
     },
+    price: {
+      chassisPrice: "Ksh 14,000,000",
+      unitPrice: "Ksh 16,450,000",
+      label: "Tractor Only",
+    },
+    variants: [
+      {
+        model: "UD QUESTER GWE 460 AMT",
+        displacement: "10,837 cc",
+        payload: "Up to 80T GCM",
+        drive: "6×4",
+        chassisPrice: "Ksh 16,450,000",
+        withBodyPrice: "Tractor Only (Financing Available)",
+        power: "460 HP (338 kW) @ 1,800 rpm · 2,200 Nm · ESCOT-E 12-Speed AMT",
+      },
+      {
+        model: "UD QUESTER GWE 440 AMT",
+        displacement: "10,837 cc",
+        payload: "Up to 80T GCM",
+        drive: "6×4",
+        chassisPrice: "Ksh 15,900,000",
+        withBodyPrice: "Tractor Only (Financing Available)",
+        power: "440 HP (324 kW) @ 1,800 rpm · 2,000 Nm · ESCOT-E 12-Speed AMT",
+      },
+      {
+        model: "UD QUESTER GWE 420 MT",
+        displacement: "10,837 cc",
+        payload: "Up to 80T GCM",
+        drive: "6×4",
+        chassisPrice: "Ksh 14,000,000",
+        withBodyPrice: "Tractor Only (Financing Available)",
+        power: "420 HP (309 kW) @ 1,800 rpm · 2,000 Nm · 12-Speed Manual MT",
+      },
+    ],
     detailedSpecs: {
       engine: {
-        type: "6WF1-TC (GXZ) / 6WG1-TCC (CYZ), 6-Cylinder In-Line, DOHC, Intercooled Turbo",
-        displacement: "9,839 cc (GXZ) / 15,681 cc (CYZ)",
-        maxPower: "280 kW (GXZ380) – 382 kW (CYZ52S)",
-        maxTorque: "1,373 Nm (GXZ) – 2,256 Nm (CYZ)",
-        fuelSystem: "High-Pressure Common Rail Direct Injection",
+        type: "GH11E 11-Litre 6-Cylinder In-Line, 24-Valve, OHC, Intercooled Turbocharged Common Rail (Euro 3/5)",
+        displacement: "10,837 cc",
+        maxPower: "460 HP (338 kW) / 440 HP (324 kW) / 420 HP (309 kW) @ 1,800 rpm",
+        maxTorque: "2,200 Nm (GWE 460) / 2,000 Nm (GWE 440 & 420) @ 1,050–1,400 rpm",
+        fuelSystem: "Electronically Controlled High-Pressure Unit Injector / Common Rail",
       },
       dimensions: {
-        length: "6,800 mm (tractor only)",
-        width: "2,490 mm",
-        height: "3,500 mm",
-        wheelbase: "3,700 mm (6x4 configuration)",
-        groundClearance: "260 mm",
+        length: "7,040 mm (Tractor Only)",
+        width: "2,500 mm",
+        height: "3,750 mm (High-Roof Sleeper Cab)",
+        wheelbase: "3,400 mm + 1,370 mm (6x4 configuration)",
+        groundClearance: "275 mm",
       },
       chassis: {
-        suspensionFront: "Semi-Elliptic Leaf Springs, Double-Acting Shock Absorbers",
-        suspensionRear: "Tandem Axle, Bogie Suspension with Semi-Elliptic Leaf Springs",
-        brakes: "Full Air Brakes with ABS & EBS",
-        steering: "Power Assisted, Recirculating Ball (optional Air-Assisted)",
+        suspensionFront: "Parabolic Leaf Springs with Shock Absorbers and Stabilizer Bar",
+        suspensionRear: "T-Ride Heavy-Duty Bogie Leaf Springs with V-Stay & Torque Rods",
+        brakes: "Full Air S-Cam Drum Brakes with ABS & UD Extra Engine Brake (EEB)",
+        steering: "Power Assisted Recirculating Ball with Tilt & Telescopic Column",
       },
       capacities: {
-        fuelTank: "400 – 600 Litres (dual tanks)",
-        seating: "2 Seats (Sleeper cab available)",
-        gvm: "Up to 60 Tonnes GCM",
+        fuelTank: "600 Litres (Dual Aluminum Tanks: 400L + 200L)",
+        seating: "2 Seats + Full Sleeper Rest Bunk with Mattress",
+        gvm: "Up to 80 Tonnes Gross Combination Mass (GCM)",
       },
     },
-    features: [],
+    features: [
+      "Tractor Only configuration ready for standard 2\" and 3.5\" fifth-wheel trailer kingpins",
+      "Asset Financing Available — up to 90% funding with flexible 12 to 60-month tenures via leading banks and SACCOs",
+      "UD ESCOT-E 12-Speed Automated Manual Transmission (AMT) for fatigue-free driving and optimized fuel economy",
+      "GH11E 11-Litre heavy-duty powertrain delivering massive 2,200 Nm torque at low RPM (1,050–1,400 rpm)",
+      "UD Extra Engine Brake (EEB) auxiliary braking system for safer downhill descent with full loads",
+      "High-Roof Sleeper Cab with aerodynamic wind deflector, air-suspension driver seat, and full sleeping berth",
+      "Heavy-duty 6x4 drive axles with inter-axle and inter-wheel differential locks for severe off-highway conditions",
+      "600-Litre long-haul dual aluminum fuel tanks (400L + 200L) for extended non-stop range",
+      "Reinforced high-tensile steel ladder chassis engineered specifically for East African terrain and cross-border haulage",
+      "Full manufacturer warranty, telematics capability, and nationwide genuine UD Trucks parts & service support"
+    ],
   },
 
   // ══════════════════════════════════════════
@@ -1123,7 +1171,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     detailedSpecs: {
       engine: {
         type: "4JJ1-TCC (NMR85) / 4HL1-TC (NQR81), 4-Cylinder, Turbocharged",
-        displacement: "2,999 cc (NMR85) / 4,778 cc (NQR81)",
+        displacement: "2,999 cc (NMR85) / 4,773 cc (NQR81)",
         maxPower: "96 kW @ 2,800 rpm (NMR85) / 110 kW (NQR81)",
         maxTorque: "330 Nm (NMR85) / 400 Nm (NQR81)",
         fuelSystem: "Common Rail Direct Injection",
@@ -1220,17 +1268,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/buses/nqr29/1.png"
     ],
     quickSpecs: {
-      engine: "4,778cc Turbo Diesel",
+      engine: "4,773cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "103 kW (140 HP)",
+      power: "110 kW (150 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
         type: "4HL1-TC, 4-Cylinder, Intercooled Turbo",
-        displacement: "4,778 cc",
-        maxPower: "103 kW (140 HP)",
-        maxTorque: "334 Nm",
+        displacement: "4,773 cc",
+        maxPower: "110 kW (150 HP)",
+        maxTorque: "404 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -1269,17 +1317,17 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "/vehicles/buses/nqr33/5.jpg",
     ],
     quickSpecs: {
-      engine: "4,778cc Turbo Diesel",
+      engine: "4,773cc Turbo Diesel",
       transmission: "6-Speed Manual",
-      power: "103 kW (140 HP)",
+      power: "110 kW (150 HP)",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
         type: "4HL1-TC, 4-Cylinder, Intercooled Turbo",
-        displacement: "4,778 cc",
-        maxPower: "103 kW (140 HP)",
-        maxTorque: "334 Nm",
+        displacement: "4,773 cc",
+        maxPower: "110 kW (150 HP)",
+        maxTorque: "404 Nm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {

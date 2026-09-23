@@ -28,8 +28,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [parallax, setParallax] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
   const dragStart = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
   const imgContainerRef = useRef<HTMLDivElement>(null);
@@ -44,10 +42,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
     if (next <= 1) { setPan({ x: 0, y: 0 }); return 1; }
     return next;
   });
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    if (e.deltaY < 0) zoomIn(); else zoomOut();
-  };
   const goNext = () => { setActiveImg(p => (p + 1) % images.length); resetZoom(); };
   const goPrev = () => { setActiveImg(p => (p === 0 ? images.length - 1 : p - 1)); resetZoom(); };
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -58,13 +52,6 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
     setPan({ x: dragStart.current.panX + (e.clientX - dragStart.current.x), y: dragStart.current.panY + (e.clientY - dragStart.current.y) });
   };
   const handleMouseUp = () => setIsDragging(false);
-  const handleParallaxMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!imgContainerRef.current) return;
-    const rect = imgContainerRef.current.getBoundingClientRect();
-    const nx = (e.clientX - rect.left) / rect.width - 0.5;
-    const ny = (e.clientY - rect.top) / rect.height - 0.5;
-    setParallax({ x: nx * 14, y: ny * 14 });
-  };
 
   return (
     <>
@@ -78,11 +65,9 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
             className="relative flex-1 overflow-hidden select-none"
             style={{ minHeight: 420, cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default" }}
             onMouseDown={handleMouseDown}
-            onMouseMove={(e) => { handleMouseMove(e); handleParallaxMove(e); }}
+            onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => { handleMouseUp(); setIsHovered(false); setParallax({ x: 0, y: 0 }); }}
-            onWheel={handleWheel}
+            onMouseLeave={handleMouseUp}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -100,9 +85,9 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                       ? "scale(1)"
                       : zoom > 1
                         ? `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`
-                        : `scale(1.06) translate(${parallax.x}px, ${parallax.y}px)`,
+                        : "scale(1)",
                     transformOrigin: "center center",
-                    transition: isDragging ? "none" : "transform 0.12s ease-out",
+                    transition: isDragging ? "none" : "transform 0.15s ease-out",
                     cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default",
                   }}
                 >

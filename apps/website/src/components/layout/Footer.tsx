@@ -148,8 +148,8 @@ export default function Footer() {
               </div>
               <div className="flex gap-3 items-center">
                 <FaEnvelope className="text-secondary flex-shrink-0" size={16} />
-                <a href="mailto:edwinkibiracfg@gmail.com" className="text-white/70 hover:text-secondary transition-colors font-medium">
-                  edwinkibiracfg@gmail.com
+                <a href="mailto:edwin@cfg.co.ke" className="text-white/70 hover:text-secondary transition-colors font-medium">
+                  edwin@cfg.co.ke
                 </a>
               </div>
             </div>

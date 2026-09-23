@@ -33,7 +33,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
       if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) return "f-series-buses";
       return "n-series-buses";
     }
-    if (m.includes("mover") || m.includes("gxz")) return "movers";
+    if (m.includes("mover") || m.includes("gxz") || m.includes("quester") || m.includes("gwe") || m.includes("ud")) return "movers";
     if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) return "heavy-trucks-f-series";
     return "light-trucks-n-series";
   };

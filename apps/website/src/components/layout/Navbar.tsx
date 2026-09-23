@@ -26,7 +26,7 @@ const navCategories = [
       { label: "FVR 90P", href: "/vehicles/f-series-fvr90p" },
       { label: "FVZ 34N Truck", href: "/vehicles/f-series-fvz34n" },
       { label: "FVZ 34T Tipper", href: "/vehicles/f-series-fvz34t" },
-      { label: "Movers", href: "/vehicles/movers" },
+      { label: "Movers (UD Quester)", href: "/vehicles/movers" },
     ],
   },
   {

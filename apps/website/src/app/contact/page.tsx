@@ -130,8 +130,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Email Address</p>
-                    <a href="mailto:info@edwinkibiraisuzu.co.ke" className="text-sm font-bold text-[#1a1a1a] hover:text-[#D62B2B] transition-colors block mt-0.5">
-                      info@edwinkibiraisuzu.co.ke
+                    <a href="mailto:edwin@cfg.co.ke" className="text-sm font-bold text-[#1a1a1a] hover:text-[#D62B2B] transition-colors block mt-0.5">
+                      edwin@cfg.co.ke
                     </a>
                   </div>
                 </div>

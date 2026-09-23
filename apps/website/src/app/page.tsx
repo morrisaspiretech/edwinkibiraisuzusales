@@ -125,21 +125,21 @@ const FEATURED_VEHICLES = [
     title: 'N-Series NPS 81H 4×4',
     category: 'Trucks',
     img: '/vehicles/n-series/nps-81h-real.png',
-    spec: '4.778cc Turbo Diesel · 3.0T Payload',
+    spec: '4,773cc Turbo Diesel · 3.0T Payload',
   },
   {
     id: 'n-series-nqr81',
     title: 'N-Series NQR 81',
     category: 'Trucks',
     img: '/vehicles/nqr-hero.png',
-    spec: '4.778cc Turbo Diesel · 5.0T Payload',
+    spec: '4,773cc Turbo Diesel · 5.0T Payload',
   },
   {
     id: 'n-series-nqr-xtra',
     title: 'N-Series NQR Xtra',
     category: 'Trucks',
     img: '/vehicles/n-series/nqr-xtra-real.png',
-    spec: '4.778cc Turbo Diesel · 6.0T Payload',
+    spec: '4,773cc Turbo Diesel · 6.0T Payload',
   },
   {
     id: 'f-series-frr90n',
@@ -175,6 +175,13 @@ const FEATURED_VEHICLES = [
     category: 'Trucks',
     img: '/vehicles/f-series/fvz34t/1.jpeg',
     spec: '7,790cc Turbo Diesel · 16T Tipper',
+  },
+  {
+    id: 'movers',
+    title: 'Movers (UD Quester)',
+    category: 'Trucks',
+    img: '/vehicles/movers/ud-quester-460-hero.png',
+    spec: '10.8L Turbo Diesel · 420–460 HP · ESCOT AMT / MT · Tractor Only',
   },
   {
     id: 'bus-nmr-26',

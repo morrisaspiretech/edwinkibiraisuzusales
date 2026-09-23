@@ -70,7 +70,7 @@ export default function TermsOfServicePage() {
             If you have any questions about these Terms, please contact us:
           </p>
           <ul className="list-disc pl-5 space-y-2">
-            <li>Email: edwinkibiracfg@gmail.com</li>
+            <li>Email: edwin@cfg.co.ke</li>
             <li>Phone: 0768 351 483</li>
           </ul>
         </div>
