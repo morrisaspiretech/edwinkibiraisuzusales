@@ -40,6 +40,36 @@ export default function DMaxHub() {
   const dmaxSchemas = [
     {
       "@context": "https://schema.org",
+      "@type": "Vehicle",
+      "name": "Isuzu D-MAX Pickup",
+      "image": "https://edwinkibiraisuzusales.onrender.com/vehicles/grouped/batch3/3.jpeg",
+      "description": "The Isuzu D-MAX is Kenya's most capable 1-ton pickup truck, available in Single Cab and Double Cab, 4x2 and 4x4 configurations. Powered by 1.9L or 3.0L turbo diesel engines.",
+      "brand": { "@type": "Brand", "name": "Isuzu" },
+      "vehicleEngine": {
+        "@type": "EngineSpecification",
+        "engineDisplacement": "1.9L / 3.0L Turbo Diesel"
+      },
+      "fuelType": "Diesel",
+      "vehicleTransmission": "Manual / Automatic",
+      "offers": {
+        "@type": "Offer",
+        "@context": "https://schema.org",
+        "priceCurrency": "KES",
+        "price": "4450000",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max",
+        "seller": {
+          "@type": "AutoDealer",
+          "name": "Edwin Kibirai Isuzu Sales",
+          "telephone": "+254768351483",
+          "email": "edwin@cfg.co.ke",
+          "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" }
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": dmaxFaqs.map((faq) => ({
         "@type": "Question",

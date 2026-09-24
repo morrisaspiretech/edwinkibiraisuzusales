@@ -39,6 +39,36 @@ export default function MuXHub() {
   const muxSchemas = [
     {
       "@context": "https://schema.org",
+      "@type": "Vehicle",
+      "name": "Isuzu MU-X SUV",
+      "image": "https://edwinkibiraisuzusales.onrender.com/hero-car.png",
+      "description": "The Isuzu mu-X is a premium 7-seater luxury SUV available in Kenya. Powered by 1.9L or 3.0L turbo diesel engines, with 4x2 and 4x4 options. Features ADAS safety systems, dual-zone climate control, and executive leather interior.",
+      "brand": { "@type": "Brand", "name": "Isuzu" },
+      "vehicleEngine": {
+        "@type": "EngineSpecification",
+        "engineDisplacement": "1.9L / 3.0L Turbo Diesel"
+      },
+      "fuelType": "Diesel",
+      "vehicleTransmission": "Automatic",
+      "offers": {
+        "@type": "Offer",
+        "@context": "https://schema.org",
+        "priceCurrency": "KES",
+        "price": "8600000",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x",
+        "seller": {
+          "@type": "AutoDealer",
+          "name": "Edwin Kibirai Isuzu Sales",
+          "telephone": "+254768351483",
+          "email": "edwin@cfg.co.ke",
+          "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" }
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": muxFaqs.map((faq) => ({
         "@type": "Question",

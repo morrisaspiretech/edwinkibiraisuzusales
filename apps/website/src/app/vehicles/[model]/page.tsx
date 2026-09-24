@@ -86,7 +86,13 @@ export default async function VehiclePage({
               offers: {
                 "@type": "Offer",
                 priceCurrency: "KES",
+                ...(vehicle.price?.unitPrice
+                  ? { price: vehicle.price.unitPrice.replace(/[^0-9.]/g, "") }
+                  : vehicle.price?.chassisPrice
+                  ? { price: vehicle.price.chassisPrice.replace(/[^0-9.]/g, "") }
+                  : { priceRange: "Contact for price" }),
                 availability: "https://schema.org/InStock",
+                url: `https://edwinkibiraisuzusales.onrender.com/vehicles/${vehicle.id}`,
                 seller: {
                   "@type": "AutoDealer",
                   name: "Edwin Kibirai Isuzu Sales",
