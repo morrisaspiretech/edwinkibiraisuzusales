@@ -110,19 +110,7 @@ export default function RootLayout({
                 priceRange: "KES 2,500,000 - KES 16,500,000",
                 areaServed: "Kenya",
                 currenciesAccepted: "KES",
-                paymentAccepted: "Cash, Bank Transfer, Bank Financing",
-                hasOfferCatalog: {
-                  "@type": "OfferCatalog",
-                  name: "Isuzu Vehicles Kenya",
-                  itemListElement: [
-                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu FRR90 Truck" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu NLR Truck" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu NQR Truck" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu D-Max Pickup" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "Isuzu MU-X SUV" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Vehicle", name: "UD Quester Prime Mover" } },
-                  ]
-                }
+                paymentAccepted: "Cash, Bank Transfer, Bank Financing"
               },
               {
                 "@context": "https://schema.org",
