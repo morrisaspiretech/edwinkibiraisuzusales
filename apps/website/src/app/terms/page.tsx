@@ -3,8 +3,11 @@ import Navbar from "@/components/layout/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Edwin Kibira Isuzu Sales",
-  description: "Terms and conditions for using the Edwin Kibira Isuzu Sales website.",
+  title: "Terms of Service | Edwin Kibirai Isuzu Sales",
+  description: "Terms and conditions for using the Edwin Kibirai Isuzu Sales website.",
+  alternates: {
+    canonical: "https://edwinkibiraisuzusales.onrender.com/terms/",
+  },
 };
 
 export default function TermsOfServicePage() {

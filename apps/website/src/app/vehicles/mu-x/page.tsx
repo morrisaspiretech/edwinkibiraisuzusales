@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Isuzu mu-X 4x4 price Kenya", "family SUV Kenya", "Edwin Kibirai Isuzu mu-X"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x/",
   },
 };
 

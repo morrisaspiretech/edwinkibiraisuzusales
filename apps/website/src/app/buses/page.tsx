@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Isuzu matatu price Kenya", "Isuzu bus financing Kenya", "Isuzu school bus financing"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/buses",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/buses/",
   },
 };
 

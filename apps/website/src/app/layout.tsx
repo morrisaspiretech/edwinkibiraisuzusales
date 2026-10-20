@@ -32,15 +32,7 @@ export const metadata: Metadata = {
     "Isuzu 4HK1 engine", "Isuzu 4JJ3 engine", "Isuzu 6HK1 engine", "Isuzu 4773cc",
   ],
   metadataBase: new URL("https://edwinkibiraisuzusales.onrender.com"),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-      'en-GB': '/en-GB',
-      'en-KE': '/',
-    },
-  },
-  // 🔴 Replace the content value below with your actual Google Search Console verification code
+  // Google Search Console verification code
   // Get it from: https://search.google.com/search-console → Add Property → HTML tag method
   verification: {
     google: "84Q1D5R1_Y8vdOBKd_F1GaIeEsQ0vt6Q3eq51zM9bjs",

@@ -2,8 +2,11 @@ import WhatsAppEnquiryForm from "@/components/forms/WhatsAppEnquiryForm";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'Get a Quote | Edwin Kibira Isuzu Sales',
-  description: 'Request a custom quote for your new Isuzu vehicle. Fast response, flexible financing, and nationwide delivery in Kenya.',
+  title: 'Get an Official Isuzu Quote Nairobi | Edwin Kibirai Isuzu Sales',
+  description: 'Request a custom quote for your brand-new Isuzu vehicle in Kenya. Fast response, flexible bank asset financing, and official warranty.',
+  alternates: {
+    canonical: 'https://edwinkibiraisuzusales.onrender.com/get-quote/',
+  },
 };
 
 export default function GetQuotePage() {

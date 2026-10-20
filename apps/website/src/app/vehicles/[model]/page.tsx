@@ -18,12 +18,17 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
   const price = vehicle.price?.unitPrice ?? vehicle.price?.chassisPrice;
   const priceText = price ? ` Price: ${price}.` : " Contact for price.";
 
+  const canonicalUrl = `https://edwinkibiraisuzusales.onrender.com/vehicles/${model}/`;
+
   return {
-    title: `${vehicle.title} Price in Kenya 2024 | Edwin Kibirai Isuzu Sales`,
-    description: `Buy the ${vehicle.title} in Kenya.${ priceText} ${vehicle.quickSpecs.engine} engine, ${vehicle.quickSpecs.transmission}. Authorized Isuzu dealer Nairobi. Up to 100% bank financing. Call 0768 351 483.`,
+    title: `${vehicle.title} Price in Kenya 2026 | Edwin Kibirai Isuzu Sales`,
+    description: `Buy the ${vehicle.title} in Kenya.${priceText} ${vehicle.quickSpecs.engine} engine, ${vehicle.quickSpecs.transmission}. Authorized Isuzu dealer Nairobi. Up to 100% bank financing. Call 0768 351 483.`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     keywords: [
       `${vehicle.title} price Kenya`,
-      `${vehicle.title} Kenya`,
+      `${vehicle.title} Kenya 2026`,
       `${vehicle.title} specs`,
       `Isuzu ${vehicle.category} Kenya`,
       "Isuzu dealer Nairobi",
@@ -33,6 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
     openGraph: {
       title: `${vehicle.title} — Edwin Kibirai Isuzu Sales Kenya`,
       description: `${vehicle.description.split('.')[0]}. Available now in Kenya with bank financing.`,
+      url: canonicalUrl,
       images: [{ url: vehicle.heroImage, alt: vehicle.title }],
     },
   };

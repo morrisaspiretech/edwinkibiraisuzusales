@@ -7,8 +7,18 @@ import MovingCatalog from "@/components/home/MovingCatalog";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import FeaturedVehicleCard from "@/components/inventory/FeaturedVehicleCard";
 import TikTokGallery from "@/components/TikTokGallery";
+import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales — Trucks, Buses, Pickups & SUVs Nairobi",
+  description:
+    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales — authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
+  alternates: {
+    canonical: "https://edwinkibiraisuzusales.onrender.com/",
+  },
+};
 
 const VEHICLE_CATEGORIES = [
   {

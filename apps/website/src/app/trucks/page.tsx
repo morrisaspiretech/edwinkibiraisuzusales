@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "UD Quester Kenya", "Isuzu truck financing Kenya", "Isuzu tipper Kenya", "Isuzu refrigerated truck Nairobi"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/trucks",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/trucks/",
   },
 };
 

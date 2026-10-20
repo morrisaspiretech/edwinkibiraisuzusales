@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Post Not Found" };
   }
 
-  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}`;
+  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}/`;
 
   return {
     title: `${post.title} | Edwin Kibirai Isuzu Sales`,
@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const relatedPosts = BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 3);
-  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}`;
+  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}/`;
 
   const articleSchema = {
     "@context": "https://schema.org",

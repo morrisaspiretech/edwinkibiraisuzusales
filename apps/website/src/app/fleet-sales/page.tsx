@@ -11,8 +11,11 @@ import {
 } from "react-icons/fa6";
 
 export const metadata: Metadata = {
-  title: "Fleet & Corporate Sales | Edwin Kibira Isuzu Sales",
+  title: "Fleet & Corporate Sales Kenya | Edwin Kibirai Isuzu Sales",
   description: "Premium fleet solutions for businesses, NGOs, schools, government, and logistics companies in Kenya. Dedicated fleet sales team, custom body building, and volume financing available.",
+  alternates: {
+    canonical: "https://edwinkibiraisuzusales.onrender.com/fleet-sales/",
+  },
 };
 
 const industries = [

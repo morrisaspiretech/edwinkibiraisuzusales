@@ -33,7 +33,21 @@ const BookTestDrivePage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: `[TEST DRIVE BOOKING]\nVehicle: ${formData.vehicleInterest || "Not specified"}\nPreferred Date: ${formData.preferredDate || "Anytime"}\nPreferred Time: ${formData.preferredTime || "Anytime"}\nNotes: ${formData.message || "None"}`,
+          source: "book-test-drive",
+        }),
+      });
+    } catch (err) {
+      console.error("Test drive lead submission error:", err);
+    }
     setIsSuccess(true);
     setIsSubmitting(false);
   };

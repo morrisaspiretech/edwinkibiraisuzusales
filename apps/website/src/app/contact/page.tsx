@@ -22,6 +22,19 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Save lead to database asynchronously
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: `[CONTACT FORM - ${formData.subject}]\n${formData.message}`,
+        source: "contact-form",
+      }),
+    }).catch((err) => console.error("Contact lead save error:", err));
+
     // Build a clear, structured WhatsApp message from all form fields
     const lines = [
       `👋 *New Inquiry — Edwin Kibirai Isuzu Website*`,

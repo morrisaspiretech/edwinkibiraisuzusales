@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Isuzu D-Max V-Cross Kenya", "Isuzu pickup financing Kenya"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max",
+    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max/",
   },
 };
 

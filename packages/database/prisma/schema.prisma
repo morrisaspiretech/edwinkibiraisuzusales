@@ -227,3 +227,15 @@ model NewsletterSubscriber {
   source      String   @default("footer") // where they signed up: "footer", "popup", etc.
   createdAt   DateTime @default(now())
 }
+
+model Lead {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @default("")
+  phone     String
+  message   String?
+  vehicleId String?
+  source    String   @default("website")
+  status    String   @default("NEW") // NEW, CONTACTED, CLOSED, SPAM
+  createdAt DateTime @default(now())
+}

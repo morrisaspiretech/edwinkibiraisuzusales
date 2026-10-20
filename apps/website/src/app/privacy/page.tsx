@@ -3,8 +3,11 @@ import Navbar from "@/components/layout/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Edwin Kibira Isuzu Sales",
+  title: "Privacy Policy | Edwin Kibirai Isuzu Sales",
   description: "Our privacy policy explains how we collect, use, and protect your data.",
+  alternates: {
+    canonical: "https://edwinkibiraisuzusales.onrender.com/privacy/",
+  },
 };
 
 export default function PrivacyPolicyPage() {
