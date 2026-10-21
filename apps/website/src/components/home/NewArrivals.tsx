@@ -28,7 +28,7 @@ const NewArrivals = ({ vehicles }: NewArrivalsProps) => {
               New <span className="text-secondary">Isuzu</span> Arrivals
             </h2>
             <p className="text-gray-500 font-medium mt-2 max-w-md">
-              Browse our latest genuine Isuzu vehicles ââ fresh stock available now.
+              Browse our latest genuine Isuzu vehicles — fresh stock available now.
             </p>
           </div>
           <Link

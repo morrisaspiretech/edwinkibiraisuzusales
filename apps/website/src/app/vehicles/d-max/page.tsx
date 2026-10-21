@@ -29,11 +29,11 @@ export default function DMaxHub() {
     },
     {
       q: "What is the fuel consumption of the Isuzu D-Max 1.9L vs 3.0L in Kenya?",
-      a: "The 1.9L Ddi BluePower engine delivers an impressive 14ââ16 km/L in mixed driving conditions, while the 3.0L 4JJ3 engine delivers 10ââ13 km/L with superior 450 Nm low-end torque for heavy towing and tough off-road terrain.",
+      a: "The 1.9L Ddi BluePower engine delivers an impressive 14–16 km/L in mixed driving conditions, while the 3.0L 4JJ3 engine delivers 10–13 km/L with superior 450 Nm low-end torque for heavy towing and tough off-road terrain.",
     },
     {
       q: "Can I get bank financing for an Isuzu D-Max pickup in Kenya?",
-      a: "Yes. Edwin Kibirai partners with Co-op Bank, Equity Bank, NCBA, KCB, Stanbic, and Family Bank to provide up to 80%ââ95% asset finance with repayment periods of up to 60 to 72 months.",
+      a: "Yes. Edwin Kibirai partners with Co-op Bank, Equity Bank, NCBA, KCB, Stanbic, and Family Bank to provide up to 80%–95% asset finance with repayment periods of up to 60 to 72 months.",
     },
   ];
 
@@ -233,7 +233,7 @@ export default function DMaxHub() {
               <div className="bg-white p-3 text-center border rounded shadow-sm">Bed Liners & Roll Bars</div>
             </div>
             <div className="mt-6 text-center">
-              <Link href="/contact" className="text-red-600 font-bold hover:underline">Enquire about genuine spare parts ââ</Link>
+              <Link href="/contact" className="text-red-600 font-bold hover:underline">Enquire about genuine spare parts →</Link>
             </div>
           </div>
         </div>

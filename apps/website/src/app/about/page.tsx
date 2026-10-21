@@ -18,17 +18,17 @@ const VALUES = [
   {
     icon: <FaHandshake size={28} />,
     title: "Integrity First",
-    desc: "We give honest advice on the right vehicle for your needs and budget. No hidden charges, no pressure sales ââ just transparent, trustworthy service.",
+    desc: "We give honest advice on the right vehicle for your needs and budget. No hidden charges, no pressure sales — just transparent, trustworthy service.",
   },
   {
     icon: <FaGraduationCap size={28} />,
     title: "Expert Knowledge",
-    desc: "Our team has deep knowledge of every Isuzu model ââ from engine specs to financing options. We educate our clients so they make confident decisions.",
+    desc: "Our team has deep knowledge of every Isuzu model — from engine specs to financing options. We educate our clients so they make confident decisions.",
   },
   {
     icon: <FaBuildingFlag size={28} />,
     title: "Nationwide Reach",
-    desc: "While we're headquartered in Nairobi, we serve clients from every corner of Kenya ââ Mombasa, Kisumu, Eldoret, Nakuru and beyond.",
+    desc: "While we're headquartered in Nairobi, we serve clients from every corner of Kenya — Mombasa, Kisumu, Eldoret, Nakuru and beyond.",
   },
   {
     icon: <FaStar size={28} />,
@@ -39,11 +39,11 @@ const VALUES = [
 
 const MILESTONES = [
   { year: "2025", title: "Journey Begins", desc: "Edwin Kibirai Isuzu Sales was established with a clear mission: to connect Kenyans with genuine, zero-mileage Isuzu vehicles at honest prices." },
-  { year: "2025", title: "Full Range Launch", desc: "From day one, we stocked the complete Isuzu lineup ââ D-Max pickups, mu-X SUVs, N-Series commercial trucks and FRR/FVR buses." },
+  { year: "2025", title: "Full Range Launch", desc: "From day one, we stocked the complete Isuzu lineup — D-Max pickups, mu-X SUVs, N-Series commercial trucks and FRR/FVR buses." },
   { year: "2025", title: "Bank Financing Partnerships", desc: "Partnered with all major Kenyan banks to offer up to 100% vehicle financing, making Isuzu ownership accessible to every Kenyan." },
   { year: "2025", title: "Digital Showroom Live", desc: "Launched our full online platform so customers across Kenya can browse every model, view specs, and get instant quotes from anywhere." },
   { year: "2025", title: "Fleet Sales Division", desc: "Opened a dedicated fleet sales division to serve NGOs, corporates, construction companies, and government clients with bulk purchasing." },
-  { year: "2026", title: "Growing Nationwide", desc: "Serving clients from Mombasa to Eldoret, Nakuru to Kisumu ââ our reach extends across every county in Kenya and growing." },
+  { year: "2026", title: "Growing Nationwide", desc: "Serving clients from Mombasa to Eldoret, Nakuru to Kisumu — our reach extends across every county in Kenya and growing." },
 ];
 
 const MODELS = [
@@ -67,7 +67,7 @@ const MODELS = [
     image: "/vehicles/n-series-truck.webp",
     title: "Isuzu N-Series",
     subtitle: "Commercial Trucks",
-    desc: "NPR, NQR, and NPS trucks ââ the backbone of Kenyan logistics. Reliable, fuel-efficient, and built for the long haul.",
+    desc: "NPR, NQR, and NPS trucks — the backbone of Kenyan logistics. Reliable, fuel-efficient, and built for the long haul.",
     tags: ["NPR 71", "NQR 90", "NPS 75", "Fleet"],
     link: "/vehicles#trucks",
   },
@@ -86,7 +86,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ââââ HERO HEADER ââââ */}
+      {/* ── HERO HEADER ── */}
       <header className="relative bg-[#111] overflow-hidden" style={{ minHeight: 480 }}>
         <div className="absolute inset-0">
           <video
@@ -122,7 +122,7 @@ export default function AboutPage() {
               <span className="text-[#D62B2B]">Isuzu Sales</span>
             </h1>
             <p className="text-white/70 text-lg md:text-xl max-w-2xl font-medium leading-relaxed mb-8">
-              Kenya&apos;s dedicated Isuzu dealer ââ serving Kenyans with genuine vehicles, honest advice, and unmatched after-sales care.
+              Kenya&apos;s dedicated Isuzu dealer — serving Kenyans with genuine vehicles, honest advice, and unmatched after-sales care.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -142,7 +142,7 @@ export default function AboutPage() {
       </header>
 
 
-      {/* ââââ WHO WE ARE ââââ */}
+      {/* ── WHO WE ARE ── */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -173,22 +173,22 @@ export default function AboutPage() {
               in Kenya
             </h2>
             <p className="text-gray-600 leading-relaxed text-base">
-              Edwin Kibira Isuzu Sales is a <strong className="text-[#1a1a1a]">dedicated, authorised Isuzu dealership</strong> proudly serving Kenyans. We specialise in the full Isuzu range ââ from the iconic D-Max pickup that dominates Kenya&apos;s roads, to the premium mu-X SUV, and the powerful N-Series & F-Series commercial trucks and buses.
+              Edwin Kibira Isuzu Sales is a <strong className="text-[#1a1a1a]">dedicated, authorised Isuzu dealership</strong> proudly serving Kenyans. We specialise in the full Isuzu range — from the iconic D-Max pickup that dominates Kenya&apos;s roads, to the premium mu-X SUV, and the powerful N-Series & F-Series commercial trucks and buses.
             </p>
             <p className="text-gray-600 leading-relaxed text-base">
-              We started this journey with one simple goal: to make it easy for every Kenyan to own a genuine, zero-mileage Isuzu vehicle. We work with all major Kenyan banks to help our clients secure the best financing options available ââ making ownership accessible to individuals, families, and businesses of all sizes.
+              We started this journey with one simple goal: to make it easy for every Kenyan to own a genuine, zero-mileage Isuzu vehicle. We work with all major Kenyan banks to help our clients secure the best financing options available — making ownership accessible to individuals, families, and businesses of all sizes.
             </p>
             <p className="text-gray-600 leading-relaxed text-base">
-              We believe every Kenyan deserves a vehicle that is <strong className="text-[#1a1a1a]">built to last</strong>. Isuzu ââ with their legendary durability, low running costs, and wide service network across Kenya ââ is the right choice for every lifestyle and every business.
+              We believe every Kenyan deserves a vehicle that is <strong className="text-[#1a1a1a]">built to last</strong>. Isuzu — with their legendary durability, low running costs, and wide service network across Kenya — is the right choice for every lifestyle and every business.
             </p>
 
             <div className="space-y-3 pt-2">
               {[
-                "100% Genuine Isuzu Vehicles ââ Zero Mileage, Factory Certified",
-                "Bank Financing Available ââ Up to 100% with Major Kenyan Banks",
+                "100% Genuine Isuzu Vehicles — Zero Mileage, Factory Certified",
+                "Bank Financing Available — Up to 100% with Major Kenyan Banks",
                 "Trained Isuzu Specialists with 10+ Years of Product Knowledge",
                 "Serving Individual, Corporate, NGO & Government Clients",
-                "Transparent Pricing ââ No Hidden Fees or Pressure Selling",
+                "Transparent Pricing — No Hidden Fees or Pressure Selling",
               ].map((point) => (
                 <div key={point} className="flex items-start gap-3">
                   <FaCircleCheck size={16} className="text-[#D62B2B] flex-shrink-0 mt-0.5" />
@@ -200,7 +200,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ââââ OUR VALUES ââââ */}
+      {/* ── OUR VALUES ── */}
       <section className="py-20 px-6 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -229,7 +229,7 @@ export default function AboutPage() {
 
 
 
-      {/* ââââ MODELS WE SELL ââââ */}
+      {/* ── MODELS WE SELL ── */}
       <section className="py-20 px-6 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -241,7 +241,7 @@ export default function AboutPage() {
             <h2 className="text-3xl sm:text-4xl font-black text-[#1a1a1a] uppercase">
               The Full <span className="text-[#D62B2B]">Isuzu Range</span>
             </h2>
-            <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">From personal pickups to heavy commercial fleets ââ we have the right Isuzu for every Kenyan.</p>
+            <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">From personal pickups to heavy commercial fleets — we have the right Isuzu for every Kenyan.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -272,7 +272,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ââââ CONTACT / SHOWROOM CTA ââââ */}
+      {/* ── CONTACT / SHOWROOM CTA ── */}
       <section className="bg-[#1a1a1a] border-t border-white/10 overflow-hidden">
         <div className="h-1 w-full bg-gradient-to-r from-[#D62B2B] via-[#ff5555] to-[#D62B2B]" />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 lg:py-20">
@@ -287,7 +287,7 @@ export default function AboutPage() {
               Ready to Own <span className="text-[#D62B2B]">an Isuzu?</span>
             </h2>
             <p className="text-gray-400 text-sm sm:text-base mt-3 max-w-xl mx-auto">
-              Talk to our Isuzu specialists today. Visit our showroom in Nairobi or reach out online ââ we&apos;re here to help.
+              Talk to our Isuzu specialists today. Visit our showroom in Nairobi or reach out online — we&apos;re here to help.
             </p>
           </div>
 
@@ -296,9 +296,9 @@ export default function AboutPage() {
             <div className="lg:col-span-2 flex flex-col gap-5">
               {[
                 { icon: <FaMapLocationDot size={20} />, label: "Location", value: "Nairobi, Kenya", sub: "Visit our main showroom", href: "https://maps.google.com/?q=Nairobi+Kenya", color: "#D62B2B" },
-                { icon: <FaPhone size={20} />, label: "Phone", value: "0768 351 483", sub: "Mon ââ Sat: 8AM ââ 6PM", href: "tel:0768351483", color: "#D62B2B" },
+                { icon: <FaPhone size={20} />, label: "Phone", value: "0768 351 483", sub: "Mon – Sat: 8AM – 6PM", href: "tel:0768351483", color: "#D62B2B" },
                 { icon: <FaWhatsapp size={20} />, label: "WhatsApp", value: "Chat With Us Now", sub: "We reply within minutes", href: "https://wa.me/254768351483?text=Hi+Edwin%2C+I+read+your+About+page+and+I%27m+interested+in+an+Isuzu+vehicle.", color: "#25D366" },
-                { icon: <FaClock size={20} />, label: "Working Hours", value: "Mon ââ Sat: 8AM ââ 6PM", sub: "Closed Sundays & Holidays", href: null, color: "#D62B2B" },
+                { icon: <FaClock size={20} />, label: "Working Hours", value: "Mon – Sat: 8AM – 6PM", sub: "Closed Sundays & Holidays", href: null, color: "#D62B2B" },
               ].map((item) => {
                 const content = (
                   <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-5 rounded-lg hover:border-[#D62B2B]/50 transition-all group">
@@ -351,7 +351,7 @@ export default function AboutPage() {
                     target="_blank" rel="noreferrer"
                     className="sm:col-span-2 flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#1da851] transition-all shadow-lg shadow-[#25D366]/20 group">
                     <FaWhatsapp size={16} />
-                    WhatsApp Us ââ Instant Reply
+                    WhatsApp Us — Instant Reply
                     <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

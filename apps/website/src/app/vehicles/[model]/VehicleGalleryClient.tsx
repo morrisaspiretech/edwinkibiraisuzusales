@@ -55,7 +55,7 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
   return (
     <>
-      {/* ââââ SPLIT: GALLERY + DETAILS ââââ */}
+      {/* ── SPLIT: GALLERY + DETAILS ── */}
       <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200" style={{ minHeight: "85vh" }}>
 
         {/* LEFT: Interactive Image Gallery */}
@@ -121,7 +121,7 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
             {/* Zoom Controls + Fullscreen */}
             <div className="absolute bottom-4 right-4 flex items-center gap-2 z-10">
-              <button onClick={zoomOut} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm" title="Zoom Out">ââ</button>
+              <button onClick={zoomOut} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm" title="Zoom Out">−</button>
               <span onClick={resetZoom} className="bg-black/70 text-white text-xs font-bold px-3 py-2 rounded-full cursor-pointer hover:bg-white/20 transition-all backdrop-blur-sm select-none">{Math.round(zoom * 100)}%</span>
               <button onClick={zoomIn} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full font-black text-xl transition-all backdrop-blur-sm" title="Zoom In">+</button>
               <button onClick={() => setLightbox(true)} className="bg-black/70 hover:bg-[#D62B2B] text-white w-10 h-10 flex items-center justify-center rounded-full transition-all backdrop-blur-sm" title="View Fullscreen">
@@ -264,7 +264,7 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                             </td>
                             <td className="px-3 py-2.5 text-center"><span className="font-bold text-[#1a1a1a] text-[11px]">{v.payload}</span></td>
                             <td className="px-3 py-2.5 text-center">
-                              <span className={`inline-block px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded ${v.drive === "4Ãââ4" ? "bg-amber-100 text-amber-700 border border-amber-200" : "bg-gray-100 text-gray-600 border border-gray-200"}`}>
+                              <span className={`inline-block px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded ${v.drive === "4x4" ? "bg-amber-100 text-amber-700 border border-amber-200" : "bg-gray-100 text-gray-600 border border-gray-200"}`}>
                                 {v.drive}
                               </span>
                             </td>

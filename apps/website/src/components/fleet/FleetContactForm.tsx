@@ -14,10 +14,10 @@ const vehicleTypeOptions = [
 ];
 
 const fleetSizeOptions = [
-  "1ââ5 Vehicles",
-  "6ââ10 Vehicles",
-  "11ââ20 Vehicles",
-  "21ââ50 Vehicles",
+  "1–5 Vehicles",
+  "6–10 Vehicles",
+  "11–20 Vehicles",
+  "21–50 Vehicles",
   "50+ Vehicles",
 ];
 

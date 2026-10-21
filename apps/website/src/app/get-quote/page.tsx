@@ -12,7 +12,7 @@ export const metadata = {
 export default function GetQuotePage() {
   return (
     <main className="min-h-screen bg-[#f8f9fa]">
-      {/* ââââ HEADER ââââ */}
+      {/* ── HEADER ── */}
       <section className="bg-[#0d0d0d] pt-32 pb-24 px-4 sm:px-6 relative overflow-hidden">
         {/* Background Accent */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#d62b2b]/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
@@ -47,7 +47,7 @@ export default function GetQuotePage() {
         </div>
       </section>
 
-      {/* ââââ FORM SECTION ââââ */}
+      {/* ── FORM SECTION ── */}
       <section className="py-16 px-4 sm:px-6 -mt-10 relative z-20">
         <WhatsAppEnquiryForm />
       </section>

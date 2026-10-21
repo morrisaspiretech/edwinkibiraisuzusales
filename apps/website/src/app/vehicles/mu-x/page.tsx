@@ -24,7 +24,7 @@ export default function MuXHub() {
     },
     {
       q: "Is the Isuzu mu-X 1.9L or 3.0L better for Kenyan terrain?",
-      a: "The 1.9L BluePower diesel is ideal for fuel-conscious families and executive highway commutes (12ââ14 km/L), while the 3.0L 4JJ3 (190 HP / 450 Nm) offers commanding torque for steep terrain, off-roading, and heavy towing.",
+      a: "The 1.9L BluePower diesel is ideal for fuel-conscious families and executive highway commutes (12–14 km/L), while the 3.0L 4JJ3 (190 HP / 450 Nm) offers commanding torque for steep terrain, off-roading, and heavy towing.",
     },
     {
       q: "Does the Isuzu mu-X have 7 seats and advanced safety features?",
@@ -151,9 +151,9 @@ export default function MuXHub() {
             <h4 className="text-lg font-semibold text-gray-900 mb-4">The Efficiency Master</h4>
             <p className="text-gray-600 mb-6">Perfect for urban commuting, executive transport, and school runs. This advanced lightweight engine delivers incredible fuel economy while still producing 110kW of power and 350Nm of torque.</p>
             <ul className="space-y-2 text-sm font-medium text-gray-700">
-              <li>ââ Exceptional fuel consumption</li>
-              <li>ââ Lower emissions</li>
-              <li>ââ Smooth 6-speed automatic</li>
+              <li>✓ Exceptional fuel consumption</li>
+              <li>✓ Lower emissions</li>
+              <li>✓ Smooth 6-speed automatic</li>
             </ul>
           </div>
           
@@ -162,9 +162,9 @@ export default function MuXHub() {
             <h4 className="text-lg font-semibold text-gray-900 mb-4">The Safari Powerhouse</h4>
             <p className="text-gray-600 mb-6">Built for cross-country touring, heavy towing, and steep off-road inclines. Derived from Isuzu's commercial trucks, this 140kW / 450Nm engine is virtually indestructible.</p>
             <ul className="space-y-2 text-sm font-medium text-gray-700">
-              <li>ââ Massive low-end torque</li>
-              <li>ââ 3,500kg towing capacity</li>
-              <li>ââ Built for severe off-road use</li>
+              <li>✓ Massive low-end torque</li>
+              <li>✓ 3,500kg towing capacity</li>
+              <li>✓ Built for severe off-road use</li>
             </ul>
           </div>
         </div>

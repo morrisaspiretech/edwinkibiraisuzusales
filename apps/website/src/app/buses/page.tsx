@@ -208,9 +208,9 @@ export default function BusesHub() {
               We partner with Co-operative Bank, Equity Bank, KCB, and NCBA to offer termly installment repayment plans tailored to school calendar fees collections. Get up to 95% asset financing with extended repayment tenures of up to 60 months.
             </p>
             <ul className="mt-4 space-y-1.5 text-xs text-gray-800 font-semibold">
-              <li>ââ Termly payment holidays aligned with school fee collections</li>
-              <li>ââ Standard NTSA safety package: 3-point seatbelts, speed governors, emergency exits</li>
-              <li>ââ High-visibility yellow exterior coating complying with Ministry of Transport guidelines</li>
+              <li>✓ Termly payment holidays aligned with school fee collections</li>
+              <li>✓ Standard NTSA safety package: 3-point seatbelts, speed governors, emergency exits</li>
+              <li>✓ High-visibility yellow exterior coating complying with Ministry of Transport guidelines</li>
             </ul>
           </div>
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-yellow-300 min-w-[300px] text-center">

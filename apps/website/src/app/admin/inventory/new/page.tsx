@@ -283,7 +283,7 @@ export default function NewVehiclePage() {
                             img.isHero ? "bg-red-600 text-white border-red-600" : "bg-white border-gray-200 text-gray-500 hover:border-red-300 hover:text-red-600"
                           }`}
                         >
-                          {img.isHero ? "Main Image ââ" : "Set Main Image"}
+                          {img.isHero ? "Main Image ✓" : "Set Main Image"}
                         </button>
                         {images.length > 1 && (
                           <button type="button" onClick={() => removeImage(i)} className="text-gray-400 hover:text-red-500 transition-colors p-1 bg-white rounded shadow-sm border border-gray-200">

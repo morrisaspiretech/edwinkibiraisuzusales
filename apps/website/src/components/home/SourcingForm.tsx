@@ -50,11 +50,11 @@ const IsuzuEnquiryForm = () => {
       if (response.ok || response.status === 201) {
         setIsSuccess(true);
       } else {
-        // Even if API fails, show success ââ don't block the user
+        // Even if API fails, show success — don't block the user
         setIsSuccess(true);
       }
     } catch {
-      // Show success anyway ââ form is a lead capture, not transactional
+      // Show success anyway — form is a lead capture, not transactional
       setIsSuccess(true);
     } finally {
       setIsSubmitting(false);

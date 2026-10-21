@@ -86,7 +86,7 @@ const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[#111] hero-section" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
 
-      {/* ââââ Background: Cinematic Ken Burns Effect ââââ */}
+      {/* ── Background: Cinematic Ken Burns Effect ── */}
       {/* Removed mode="wait" so backgrounds crossfade instantly without delay */}
       <AnimatePresence>
         <motion.div
@@ -121,7 +121,7 @@ const Hero = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* ââââ Dark overlays for text readability ââââ */}
+      {/* ── Dark overlays for text readability ── */}
       <div className="absolute inset-0 bg-black/50 z-[1]" />
       <div
         className="absolute inset-0 z-[2] pointer-events-none"
@@ -131,7 +131,7 @@ const Hero = () => {
         }}
       />
 
-      {/* ââââ Progress bar ââââ */}
+      {/* ── Progress bar ── */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-white/10 z-30">
         <motion.div
           key={`bar-${currentSlide}`}
@@ -142,7 +142,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* ââââ Content Container ââââ */}
+      {/* ── Content Container ── */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between pb-24">
         
         {/* Left Side: Text Content */}
@@ -170,11 +170,11 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Single SEO-correct H1 ââ Google reads this as the page headline */}
+            {/* Single SEO-correct H1 — Google reads this as the page headline */}
             <motion.h1 variants={textItemVariant} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
               <span className="text-white block">{current.title}</span>
               <span className="text-[#D62B2B] block">{current.highlight}</span>
-              <span className="sr-only"> – Best Authorized Isuzu Dealer in Kenya, Nairobi</span>
+              <span className="sr-only"> — Authorized Isuzu Dealer Kenya, Nairobi</span>
             </motion.h1>
             
             <motion.p variants={textItemVariant} className="text-white font-bold mb-4 text-lg sm:text-xl md:text-2xl drop-shadow-md line-clamp-2">
@@ -186,7 +186,7 @@ const Hero = () => {
             </motion.p>
           </motion.div>
 
-          {/* ââââ CTA Buttons ââââ */}
+          {/* ── CTA Buttons ── */}
           <motion.div
             key={`cta-${currentSlide}`}
             initial={{ opacity: 0, y: 16 }}
@@ -232,7 +232,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ââââ Slide Controls ââââ */}
+      {/* ── Slide Controls ── */}
       <div className="absolute right-6 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-4">
         <button
           onClick={prevSlide}
@@ -253,7 +253,7 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* ââââ Dot indicators ââââ */}
+      {/* ── Dot indicators ── */}
       <div className="absolute bottom-20 sm:bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-3">
         {slides.map((_, idx) => (
           <button
@@ -269,7 +269,7 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* ââââ Quick Contact Strip ââââ */}
+      {/* ── Quick Contact Strip ── */}
       <div className="absolute bottom-0 left-0 right-0 z-30 bg-black/80 border-t border-white/10 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full flex items-center justify-between py-3">
           <div className="flex items-center gap-6 sm:gap-10">
