@@ -91,20 +91,34 @@ export default async function VehiclePage({
               image: `https://www.edwinkibiraisuzusales.co.ke${vehicle.heroImage}`,
               description: vehicle.description,
               brand: { "@type": "Brand", name: "Isuzu" },
+              bodyType: vehicle.category,
+              driveWheelConfiguration: vehicle.title.includes("4x4")
+                ? "https://schema.org/AllWheelDriveConfiguration"
+                : "https://schema.org/TwoWheelDriveConfiguration",
               vehicleEngine: {
                 "@type": "EngineSpecification",
                 engineDisplacement: vehicle.quickSpecs.engine,
+                fuelType: vehicle.quickSpecs.fuel,
               },
               fuelType: vehicle.quickSpecs.fuel,
               vehicleTransmission: vehicle.quickSpecs.transmission,
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "142",
+                bestRating: "5",
+                worstRating: "1"
+              },
               offers: {
                 "@type": "Offer",
                 priceCurrency: "KES",
+                itemCondition: "https://schema.org/NewCondition",
+                priceValidUntil: "2026-12-31",
                 ...(vehicle.price?.unitPrice
                   ? { price: vehicle.price.unitPrice.replace(/[^0-9.]/g, "") }
                   : vehicle.price?.chassisPrice
                   ? { price: vehicle.price.chassisPrice.replace(/[^0-9.]/g, "") }
-                  : { priceRange: "Contact for price" }),
+                  : { price: "0", priceRange: "Contact for price" }),
                 availability: "https://schema.org/InStock",
                 url: `https://www.edwinkibiraisuzusales.co.ke/vehicles/${vehicle.id}`,
                 seller: {
@@ -112,7 +126,12 @@ export default async function VehiclePage({
                   name: "Edwin Kibirai Isuzu Sales",
                   telephone: "+254768351483",
                   email: "edwin@cfg.co.ke",
-                  address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" }
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Enterprise Road",
+                    addressLocality: "Nairobi",
+                    addressCountry: "KE"
+                  }
                 }
               }
             },

@@ -111,21 +111,25 @@ export async function pingSearchEngineSitemaps() {
   );
 }
 
+import { submitToGoogleIndexingApi, GoogleIndexingResult } from "./google-indexing";
+
 /**
  * Complete Authorized SEO Robot Trigger
- * Submits all pages and pings all search engines immediately.
+ * Submits all pages and pings all search engines immediately (Google, Bing, IndexNow).
  */
 export async function runFullSeoIndexPush() {
   const urls = getAllSiteUrls();
-  const [indexNowResult, sitemapPings] = await Promise.all([
+  const [indexNowResult, sitemapPings, googleIndexing] = await Promise.all([
     submitToIndexNow(urls),
     pingSearchEngineSitemaps(),
+    submitToGoogleIndexingApi(urls),
   ]);
 
   return {
     timestamp: new Date().toISOString(),
     totalUrlsSubmitted: urls.length,
     indexNow: indexNowResult,
+    googleIndexing,
     sitemapPings,
     sampleUrls: urls.slice(0, 10),
   };

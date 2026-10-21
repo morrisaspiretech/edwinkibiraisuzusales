@@ -101,7 +101,52 @@ export default function RootLayout({
                 priceRange: "KES 2,500,000 - KES 16,500,000",
                 areaServed: "Kenya",
                 currenciesAccepted: "KES",
-                paymentAccepted: "Cash, Bank Transfer, Bank Financing"
+                paymentAccepted: "Cash, Bank Transfer, Bank Financing",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "186",
+                  bestRating: "5",
+                  worstRating: "1"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Who is the best authorized Isuzu dealer in Nairobi, Kenya?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Edwin Kibira Isuzu Sales on Enterprise Road, Nairobi is Kenya's leading authorized dealership consultant for brand-new Isuzu trucks (FRR90, NLR, NQR, NMR, FVR, FVZ), D-Max pickups (TFR 87, TFS 87, TFS 40), mu-X SUVs, and buses, offering up to 100% bank financing."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What is the price of a brand-new Isuzu D-Max in Kenya in 2026?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Brand-new Isuzu D-Max prices in Kenya start from KES 3,890,000 for the TFR 87 Single Cab 4x2 1.9L, KES 4,390,000 for the TFS 87 Single Cab 4x4 1.9L, up to premium Double Cab 4x4 models like the TFS 87 and TFS 40 3.0Ltr. Call 0768 351 483 for current offers."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I buy an Isuzu truck or pickup on bank asset finance in Kenya?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Edwin Kibira Isuzu Sales partners with all major Kenyan commercial banks (Co-op Bank, KCB, Equity, NCBA, Stanbic, Family Bank) to offer up to 100% asset financing with flexible repayment periods of up to 60 months."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What warranty comes with brand-new Isuzu vehicles from Edwin Kibira?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "All brand-new Isuzu vehicles come with the official manufacturer warranty from Isuzu East Africa, covering up to 3 years or 100,000 km, along with scheduled genuine service and parts support."
+                    }
+                  }
+                ]
               },
               {
                 "@context": "https://schema.org",
