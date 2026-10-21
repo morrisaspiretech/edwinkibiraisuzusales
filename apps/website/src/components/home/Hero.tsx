@@ -8,8 +8,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { VEHICLES_DATA } from "@/data/vehicles";
 
-// We select 3 real vehicles from our data to feature in the hero section
-const featuredIds = ["double-cabin", "mu-x-3000cc", "n-series-nmr85"];
+// We select 3 active flagship vehicles from our data to feature in the hero section
+const featuredIds = ["tfs87-double-manual", "mu-x-3000cc", "f-series-frr90n"];
 
 // Staggered text reveal variants
 const textContainerVariant = {
@@ -38,7 +38,7 @@ const Hero = () => {
   const pathname = usePathname();
   
   // Build dynamic slides from real vehicle data
-  const slides = featuredIds.map((id, index) => {
+  const slides = featuredIds.map((id) => {
     const vehicle = VEHICLES_DATA[id as keyof typeof VEHICLES_DATA];
     
     return {
@@ -49,7 +49,6 @@ const Hero = () => {
       subtitle: vehicle.description.split('.')[0] + ".", // First sentence of description
       body: vehicle.description,
       image: vehicle.heroImage,
-      video: index === 0 ? "/videos/hero.mp4" : undefined, // Only use video for the first slide as an atmospheric background
       cta: `Explore ${vehicle.category}`,
       ctaSecondary: "Get a Quote",
       link: `/vehicles/${vehicle.id}`,
@@ -87,7 +86,6 @@ const Hero = () => {
     <section className="relative w-full overflow-hidden bg-[#111] hero-section" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
 
       {/* ── Background: Cinematic Ken Burns Effect ── */}
-      {/* Removed mode="wait" so backgrounds crossfade instantly without delay */}
       <AnimatePresence>
         <motion.div
           key={`bg-${currentSlide}`}
@@ -100,24 +98,14 @@ const Hero = () => {
           }}
           className="absolute inset-0 z-0 origin-center"
         >
-          {current.video ? (
-            <video
-              src={current.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <Image
-              src={current.image}
-              alt={current.title + " " + current.highlight}
-              fill
-              priority
-              className="object-cover"
-            />
-          )}
+          <Image
+            src={current.image}
+            alt={current.title + " " + current.highlight}
+            fill
+            priority={true}
+            sizes="100vw"
+            className="object-cover"
+          />
         </motion.div>
       </AnimatePresence>
 

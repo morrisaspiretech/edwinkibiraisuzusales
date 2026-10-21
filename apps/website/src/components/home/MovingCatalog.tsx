@@ -6,9 +6,20 @@ import Link from "next/link";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import { FaArrowRight } from "react-icons/fa6";
 
+const POPULAR_CATALOG_IDS = [
+  "tfs87-double-manual",
+  "tfs40-double-auto",
+  "tfr87-4x2",
+  "mu-x-3000cc",
+  "f-series-frr90n",
+  "n-series-nmr85",
+  "f-series-fvz34n",
+  "bus-frr90n-51",
+];
+
 export default function MovingCatalog() {
-  // Use a selection of our top vehicles or all of them
-  const vehicles = Object.values(VEHICLES_DATA);
+  // Use a curated selection of our top flagship vehicles
+  const vehicles = POPULAR_CATALOG_IDS.map((id) => VEHICLES_DATA[id]).filter(Boolean);
   
   // Duplicate the array to ensure a seamless infinite scrolling loop
   const duplicatedVehicles = [...vehicles, ...vehicles];
@@ -50,6 +61,7 @@ export default function MovingCatalog() {
                   src={vehicle.heroImage}
                   alt={vehicle.title}
                   fill
+                  loading="lazy"
                   className="object-contain p-4 group-hover/card:scale-110 transition-transform duration-700 ease-in-out"
                   sizes="288px"
                 />

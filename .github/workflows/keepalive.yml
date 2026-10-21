@@ -1,0 +1,19 @@
+name: Render Web Service Keep-Alive
+
+on:
+  schedule:
+    # Run every 10 minutes to prevent Render free-tier cold spin-down
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Ping Live Website & Warmer API
+        run: |
+          echo "Pinging live site to keep container and database pool active..."
+          curl -s -f -m 30 "https://www.edwinkibiraisuzusales.co.ke/api/ping/" || true
+          curl -s -f -m 30 "https://www.edwinkibiraisuzusales.co.ke/" > /dev/null || true

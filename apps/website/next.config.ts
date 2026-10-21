@@ -100,35 +100,61 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
+        source: "/",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
+          { key: "CDN-Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
+        ],
+      },
+      {
         source: "/vehicles/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+      {
+        source: "/trucks/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+      {
+        source: "/buses/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+      {
+        source: "/blog/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
         ],
       },
       {
         source: "/_next/static/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "CDN-Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
       {
-        source: "/:path(.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|woff2?|ttf|otf))",
+        source: "/:path(.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|woff2?|ttf|otf|mp4|webm))",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" },
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "CDN-Cache-Control", value: "public, max-age=31536000, immutable" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
-    ];
-  },
-
-  async rewrites() {
-    return [
-      { source: "/isuzu_tmplt/:path*", destination: "https://www.isuzu.co.ke/isuzu_tmplt/:path*" },
-      { source: "/isuzu_plg/:path*",   destination: "https://www.isuzu.co.ke/isuzu_plg/:path*" },
-      { source: "/isuzu_inc/:path*",   destination: "https://www.isuzu.co.ke/isuzu_inc/:path*" },
-      { source: "/isuzu_uplds/:path*", destination: "https://www.isuzu.co.ke/isuzu_uplds/:path*" },
-      { source: "/mod/:path*",         destination: "https://www.isuzu.co.ke/mod/:path*" },
-      { source: "/cms/:path*",         destination: "https://www.isuzu.co.ke/cms/:path*" },
-      { source: "/isuzu-json/:path*",  destination: "https://www.isuzu.co.ke/isuzu-json/:path*" },
     ];
   },
 };

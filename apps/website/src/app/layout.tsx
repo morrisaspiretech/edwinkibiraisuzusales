@@ -58,8 +58,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://api.whatsapp.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`${montserrat.variable} font-sans bg-white antialiased text-[#1a1a1a]`}>
-        <NextTopLoader color="#D62B2B" height={4} showSpinner={true} />
+        <NextTopLoader color="#D62B2B" height={4} showSpinner={false} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
