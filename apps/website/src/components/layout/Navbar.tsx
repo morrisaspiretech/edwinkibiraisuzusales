@@ -44,12 +44,12 @@ const navCategories = [
   {
     label: "Pickups",
     items: [
-      { label: "TFR 87 Single Cab 4x2", href: "/vehicles/tfr87-4x2" },
-      { label: "TFS 87 Single Cab 4x4 Manual", href: "/vehicles/tfs87-4x4-manual" },
-      { label: "TFS 87 Single Cab 4x4 Auto", href: "/vehicles/tfs87-4x4-auto" },
-      { label: "TFS 87 Double Cab 4x4 Manual", href: "/vehicles/tfs87-double-manual" },
-      { label: "TFS 87 Double Cab 4x4 Auto", href: "/vehicles/tfs87-double-auto" },
-      { label: "TFS 40 3.0Ltr Double Cab Automatic", href: "/vehicles/tfs40-double-auto" },
+      { label: "TFR 87 Single Cab 4x2 1.9L", href: "/vehicles/tfr87-4x2" },
+      { label: "TFS 87 Single Cab 4x4 1.9L Manual", href: "/vehicles/tfs87-4x4-manual" },
+      { label: "TFS 87 Single Cab 4x4 1.9L Auto", href: "/vehicles/tfs87-4x4-auto" },
+      { label: "TFS 87 Double Cab 4x4 1.9L Manual", href: "/vehicles/tfs87-double-manual" },
+      { label: "TFS 87 Double Cab 4x4 1.9L Auto", href: "/vehicles/tfs87-double-auto" },
+      { label: "TFS 40 3.0Ltr Double Cab 4x4 Automatic", href: "/vehicles/tfs40-double-auto" },
     ],
   },
   {

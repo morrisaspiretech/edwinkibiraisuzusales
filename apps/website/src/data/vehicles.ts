@@ -219,7 +219,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfr87-4x2": {
     id: "tfr87-4x2",
     category: "Pickups",
-    title: "TFR 87 Single Cab 4x2",
+    title: "TFR 87 Single Cab 4x2 1.9L",
     description: "The Isuzu TFR 87 4x2 Single Cab is built for serious commercial work. Powered by the 1.9L RZ4E Turbodiesel engine and paired with a 6-speed manual gearbox, it delivers outstanding fuel economy and reliability.",
     heroImage: "/vehicles/grouped/batch1/2.jpeg",
     gallery: ['/vehicles/grouped/batch1/2.jpeg', '/vehicles/grouped/batch1/4.jpeg', '/vehicles/grouped/batch1/6.jpeg', '/vehicles/grouped/batch1/1.jpeg', '/vehicles/grouped/batch1/3.jpeg', '/vehicles/grouped/batch1/5.jpeg'],
@@ -270,7 +270,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs87-4x4-manual": {
     id: "tfs87-4x4-manual",
     category: "Pickups",
-    title: "TFS 87 Single Cab 4x4 (Manual)",
+    title: "TFS 87 Single Cab 4x4 1.9L (Manual)",
     description: "The Isuzu TFS 87 4x4 Single Cab combines rugged off-road capability with the productivity of a full-size single cab. Manual transmission.",
     heroImage: "/vehicles/tfs87-single-1.jpg",
     gallery: [
@@ -307,7 +307,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs87-4x4-auto": {
     id: "tfs87-4x4-auto",
     category: "Pickups",
-    title: "TFS 87 Single Cab 4x4 (Automatic)",
+    title: "TFS 87 Single Cab 4x4 1.9L (Automatic)",
     description: "The Isuzu TFS 87 4x4 Single Cab Automatic. Rugged off-road capability with the convenience of an automatic transmission.",
     heroImage: "/vehicles/tfs87-single-1.jpg",
     gallery: [
@@ -338,7 +338,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs87-double-manual": {
     id: "tfs87-double-manual",
     category: "Pickups",
-    title: "TFS 87 Double Cab 4x4 (Manual)",
+    title: "TFS 87 Double Cab 4x4 1.9L (Manual)",
     description: "The D-Max Double Cab 1.9L Manual. Bridges work and lifestyle perfectly.",
     heroImage: "/vehicles/grouped/batch3/3.jpeg",
     gallery: ['/vehicles/grouped/batch3/3.jpeg', '/vehicles/grouped/batch3/1.jpeg', '/vehicles/grouped/batch3/2.jpeg', '/vehicles/grouped/batch3/4.jpeg', '/vehicles/grouped/batch3/5.jpeg', '/vehicles/grouped/batch3/6.jpeg', '/vehicles/grouped/batch3/7.jpeg', '/vehicles/grouped/batch3/8.jpeg', '/vehicles/grouped/batch3/9.jpeg', '/vehicles/grouped/batch3/10.jpeg', '/vehicles/grouped/batch3/11.jpeg', '/vehicles/grouped/batch3/12.jpeg', '/vehicles/grouped/batch3/13.jpeg', '/vehicles/grouped/batch3/14.jpeg', '/vehicles/grouped/batch3/15.jpeg', '/vehicles/grouped/batch3/16.jpeg', '/vehicles/grouped/batch3/17.jpeg', '/vehicles/grouped/batch3/18.jpeg', '/vehicles/grouped/batch3/19.jpeg', '/vehicles/grouped/batch3/20.jpeg', '/vehicles/grouped/batch3/21.jpeg', '/vehicles/grouped/batch3/22.jpeg', '/vehicles/grouped/batch3/23.jpeg', '/vehicles/grouped/batch3/24.jpeg', '/vehicles/grouped/batch3/25.jpeg', '/vehicles/grouped/batch3/26.jpeg', '/vehicles/grouped/batch3/27.jpeg', '/vehicles/grouped/batch3/28.jpeg'],
@@ -360,7 +360,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs87-double-auto": {
     id: "tfs87-double-auto",
     category: "Pickups",
-    title: "TFS 87 Double Cab 4x4 (Automatic)",
+    title: "TFS 87 Double Cab 4x4 1.9L (Automatic)",
     description: "The D-Max Double Cab 1.9L Automatic. The ultimate all-rounder for the modern Kenyan.",
     heroImage: "/vehicles/grouped/batch4/3.jpeg",
     gallery: ['/vehicles/grouped/batch4/3.jpeg', '/vehicles/grouped/batch4/5.jpeg', '/vehicles/grouped/batch4/1.jpeg', '/vehicles/grouped/batch4/2.jpeg', '/vehicles/grouped/batch4/4.jpeg', '/vehicles/grouped/batch4/6.jpeg', '/vehicles/grouped/batch4/7.jpeg', '/vehicles/grouped/batch4/8.jpeg', '/vehicles/grouped/batch4/9.jpeg', '/vehicles/grouped/batch4/10.jpeg', '/vehicles/grouped/batch4/11.jpeg', '/vehicles/grouped/batch4/12.jpeg', '/vehicles/grouped/batch4/13.jpeg', '/vehicles/grouped/batch4/14.jpeg', '/vehicles/grouped/batch4/15.jpeg', '/vehicles/grouped/batch4/16.jpeg'],
@@ -382,7 +382,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs40-double-auto": {
     id: "tfs40-double-auto",
     category: "Pickups",
-    title: "TFS 40 3.0Ltr Double Cab Automatic",
+    title: "TFS 40 3.0Ltr Double Cab 4x4 Automatic",
     description: "The Isuzu TFS 40 Double Cab Automatic is a premium 4x4 pickup built for those who demand the best. Featuring an aggressive sport-tuned exterior with blacked-out trims, black alloy wheels, and wide fender flares, it commands attention on any road. Powered by a 3.0L turbodiesel and paired with a 6-speed automatic, it combines raw capability with refined comfort.",
     heroImage: "/vehicles/tfs40-double-auto/1.jpeg",
     gallery: [
