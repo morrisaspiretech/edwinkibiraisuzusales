@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/60 leading-relaxed text-xs md:text-sm">
-              Kenya&apos;s trusted Isuzu dealer — bringing durable, reliable Isuzu vehicles (D-Max, mu-X, trucks, and buses) to Kenyans across the country.
+              Kenya&apos;s trusted Isuzu dealer �” bringing durable, reliable Isuzu vehicles (D-Max, mu-X, trucks, and buses) to Kenyans across the country.
             </p>
             <div className="flex gap-2.5 mt-1">
               <a href="https://www.facebook.com/share/1H61ocz1S5/" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-8 h-8 rounded border border-white/20 flex items-center justify-center hover:bg-[#1877F2] hover:border-[#1877F2] transition-all text-white">
@@ -201,7 +201,7 @@ export default function Footer() {
         {/* Authorized Dealer Ribbon */}
         <div className="border-t border-white/10 py-4 text-center">
           <p className="text-secondary text-[11px] font-black uppercase tracking-widest">
-            Authorized Isuzu Dealer — Kenya
+            Authorized Isuzu Dealer �” Kenya
           </p>
         </div>
 

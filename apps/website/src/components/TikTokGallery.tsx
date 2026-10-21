@@ -17,9 +17,9 @@ const VIDEOS: TikTokVideo[] = [
     id: "1",
     embedId: "7675848927463165202",
     tag: "New Arrival",
-    title: "Fresh Off the Lot — Brand New Isuzu Delivery",
+    title: "Fresh Off the Lot �” Brand New Isuzu Delivery",
     description:
-      "A brand-new Isuzu rolls off our lot straight into the hands of a happy customer. This is what we do every day — matching Kenyans with the perfect vehicle.",
+      "A brand-new Isuzu rolls off our lot straight into the hands of a happy customer. This is what we do every day �” matching Kenyans with the perfect vehicle.",
     thumbnailUrl: "/tiktok/1.jpg",
   },
   {
@@ -28,14 +28,14 @@ const VIDEOS: TikTokVideo[] = [
     tag: "Showroom",
     title: "Inside the Edwin Kibira Isuzu Showroom",
     description:
-      "Step inside our showroom and explore the full Isuzu range — from rugged pickups to premium SUVs — all lined up and ready for you to experience.",
+      "Step inside our showroom and explore the full Isuzu range �” from rugged pickups to premium SUVs �” all lined up and ready for you to experience.",
     thumbnailUrl: "/tiktok/2.jpg",
   },
   {
     id: "3",
     embedId: "7673221439557831957",
     tag: "Feature Spotlight",
-    title: "Isuzu D-Max — Built for Kenya's Roads",
+    title: "Isuzu D-Max �” Built for Kenya's Roads",
     description:
       "The Isuzu D-Max is engineered for Kenyan terrain. Whether it's city commuting or off-road adventures, this pickup delivers unmatched durability and performance.",
     thumbnailUrl: "/tiktok/3.jpg",
@@ -44,7 +44,7 @@ const VIDEOS: TikTokVideo[] = [
     id: "4",
     embedId: "7672472169426734357",
     tag: "Customer Delivery",
-    title: "Another Happy Customer — A Proud Moment",
+    title: "Another Happy Customer �” A Proud Moment",
     description:
       "Nothing beats the joy on a customer's face when they drive away in their new Isuzu. We take pride in making every delivery a memorable occasion.",
     thumbnailUrl: "/tiktok/4.jpg",
@@ -53,9 +53,9 @@ const VIDEOS: TikTokVideo[] = [
     id: "5",
     embedId: "7670236623962918164",
     tag: "MU-X SUV",
-    title: "The Isuzu MU-X — Kenya's Premium 7-Seater SUV",
+    title: "The Isuzu MU-X �” Kenya's Premium 7-Seater SUV",
     description:
-      "Commanding presence. Premium comfort. The Isuzu MU-X is for families and executives who demand the very best — locally assembled right here in Kenya.",
+      "Commanding presence. Premium comfort. The Isuzu MU-X is for families and executives who demand the very best �” locally assembled right here in Kenya.",
     thumbnailUrl: "/tiktok/5.jpg",
   },
 ];

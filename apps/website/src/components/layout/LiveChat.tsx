@@ -79,7 +79,7 @@ export default function LiveChat() {
         }),
       });
     } catch (err) {
-      // Fail silently â€” WhatsApp redirect is more important
+      // Fail silently â€â€ WhatsApp redirect is more important
       console.error("Lead save failed", err);
     }
 
@@ -98,7 +98,7 @@ export default function LiveChat() {
 
   return (
     <>
-      {/* â”€â”€ CHAT BUBBLE BUTTON â”€â”€ */}
+      {/* ââ€€ââ€€ CHAT BUBBLE BUTTON ââ€€ââ€€ */}
       <div className="fixed bottom-[76px] right-5 z-50 flex flex-col items-end gap-2">
 
         {/* Notification pop-up bubble */}
@@ -124,9 +124,9 @@ export default function LiveChat() {
                 </div>
               </div>
               <p className="text-xs text-gray-600 leading-snug">
-                ğŸ‘‹ Hi! Looking for an Isuzu? I can help you find the perfect vehicle.
+                ğŸâ€˜‹ Hi! Looking for an Isuzu? I can help you find the perfect vehicle.
               </p>
-              <p className="text-[10px] text-[#D62B2B] font-bold mt-1.5">Click to chat â†’</p>
+              <p className="text-[10px] text-[#D62B2B] font-bold mt-1.5">Click to chat â†â€™</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -158,7 +158,7 @@ export default function LiveChat() {
         </motion.button>
       </div>
 
-      {/* â”€â”€ CHAT WINDOW â”€â”€ */}
+      {/* ââ€€ââ€€ CHAT WINDOW ââ€€ââ€€ */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -222,7 +222,7 @@ export default function LiveChat() {
                       </div>
                       <div className="bg-white rounded-xl rounded-tl-none p-3.5 shadow-sm border border-gray-100 max-w-[230px]">
                         <p className="text-sm text-gray-700 leading-relaxed">
-                          ğŸ‘‹ Habari! I'm Edwin. Welcome to <strong>Edwin Kibira Isuzu Sales</strong>.<br /><br />
+                          ğŸâ€˜‹ Habari! I'm Edwin. Welcome to <strong>Edwin Kibira Isuzu Sales</strong>.<br /><br />
                           What Isuzu are you looking for today? I can help with pricing, financing, and test drives!
                         </p>
                       </div>
@@ -271,7 +271,7 @@ export default function LiveChat() {
                           {form.interest
                             ? `Great choice! The <strong>${form.interest}</strong> is very popular in Kenya.`
                             : "Happy to help!"}{" "}
-                          Let me get your details so I can call or WhatsApp you with pricing. ğŸš—
+                          Let me get your details so I can call or WhatsApp you with pricing. ğŸšâ€â€
                         </p>
                       </div>
                     </div>

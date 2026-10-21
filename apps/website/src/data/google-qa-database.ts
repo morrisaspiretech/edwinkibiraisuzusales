@@ -35,9 +35,9 @@ export interface GoogleQAItem {
 }
 
 export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   // 1. ISUZU D-MAX PICKUPS
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   {
     id: "qa-dmax-2026",
     category: "Pickups",
@@ -46,8 +46,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     title: "Isuzu D-Max Price in Kenya 2026: All Your Questions Answered (Single Cab, Double Cab & 4x4)",
     metaDescription: "Get clear answers to all Google questions about Isuzu D-Max in Kenya: 2026 prices, Single Cab vs Double Cab (TFS40 vs TFS87), fuel consumption, and asset financing with Edwin Kibira.",
     heroImage: "/vehicles/tfs87-double-auto/img-1.jpeg",
-    corePrice: "Ksh 4,450,000 â€“ Ksh 8,900,000",
-    depositRange: "Ksh 445,000 â€“ Ksh 1,780,000 (10%â€“20%)",
+    corePrice: "Ksh 4,450,000 â€â€œ Ksh 8,900,000",
+    depositRange: "Ksh 445,000 â€â€œ Ksh 1,780,000 (10%â€â€œ20%)",
     targetKeywords: [
       "isuzu dmax price in kenya",
       "isuzu d-max double cab price",
@@ -71,7 +71,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       },
       {
         question: "Can I get 90% asset financing for an Isuzu D-Max in Kenya?",
-        answer: "Yes. Edwin Kibira partners with Co-op Bank, Equity Bank, NCBA, KCB, Family Bank, and leading SACCOs to offer up to 80%â€“90% asset financing. Buyers only need a 10% to 20% deposit with flexible repayment terms spanning up to 60 to 72 months."
+        answer: "Yes. Edwin Kibira partners with Co-op Bank, Equity Bank, NCBA, KCB, Family Bank, and leading SACCOs to offer up to 80%â€â€œ90% asset financing. Buyers only need a 10% to 20% deposit with flexible repayment terms spanning up to 60 to 72 months."
       },
       {
         question: "Is the Single Cab Isuzu D-Max available with 4x4 in Kenya?",
@@ -79,10 +79,10 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       }
     ],
     pricingTable: [
-      { model: "Isuzu TFR87 Single Cab (4x2 Manual)", priceRange: "Ksh 4,450,000 â€“ Ksh 4,750,000", deposit: "From Ksh 445,000", bestUses: "Farm produce, hardware distribution, courier & field cargo" },
-      { model: "Isuzu TFS87 Single Cab (4x4 Manual)", priceRange: "Ksh 5,200,000 â€“ Ksh 5,500,000", deposit: "From Ksh 520,000", bestUses: "Off-road agriculture, mining, relief supplies, terrain cargo" },
-      { model: "Isuzu TFS40 Double Cab 1.9L (Manual/Auto)", priceRange: "Ksh 5,950,000 â€“ Ksh 6,650,000", deposit: "From Ksh 595,000", bestUses: "Fleet supervisors, construction managers, family lifestyle" },
-      { model: "Isuzu TFS87 Double Cab 3.0L (4x4 Luxury)", priceRange: "Ksh 7,600,000 â€“ Ksh 8,900,000", deposit: "From Ksh 760,000", bestUses: "Executive transport, premium overland safari, extreme utility" }
+      { model: "Isuzu TFR87 Single Cab (4x2 Manual)", priceRange: "Ksh 4,450,000 â€â€œ Ksh 4,750,000", deposit: "From Ksh 445,000", bestUses: "Farm produce, hardware distribution, courier & field cargo" },
+      { model: "Isuzu TFS87 Single Cab (4x4 Manual)", priceRange: "Ksh 5,200,000 â€â€œ Ksh 5,500,000", deposit: "From Ksh 520,000", bestUses: "Off-road agriculture, mining, relief supplies, terrain cargo" },
+      { model: "Isuzu TFS40 Double Cab 1.9L (Manual/Auto)", priceRange: "Ksh 5,950,000 â€â€œ Ksh 6,650,000", deposit: "From Ksh 595,000", bestUses: "Fleet supervisors, construction managers, family lifestyle" },
+      { model: "Isuzu TFS87 Double Cab 3.0L (4x4 Luxury)", priceRange: "Ksh 7,600,000 â€â€œ Ksh 8,900,000", deposit: "From Ksh 760,000", bestUses: "Executive transport, premium overland safari, extreme utility" }
     ],
     priceFactors: [
       "Engine displacement: 1.9L RZ4E vs 3.0L 4JJ3 BluePower",
@@ -91,7 +91,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       "Body accessories: Rhino canopy, bull bar, bedliner, tow hitch, and leather upholstery"
     ],
     financing: {
-      depositPercent: "10% â€“ 20%",
+      depositPercent: "10% â€â€œ 20%",
       maxMonths: 72,
       saccoAvailable: true,
       description: "Fast-track asset financing with pre-approved rates at NCBA, Co-operative Bank, Equity, and major Kenyan SACCOs."
@@ -99,9 +99,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     articleHtml: `<h2>Everything Kenyan Buyers Ask About the Isuzu D-Max</h2><p>The <strong>Isuzu D-Max</strong> continues to dominate Kenya's pickup segment as the undisputed king of reliability, resale value, and rugged durability. Whether you are outfitting a commercial agribusiness fleet with <strong>TFR Single Cabs</strong> or investing in an executive <strong>TFS87 3.0L Double Cab 4x4</strong>, here are authoritative answers to the most frequently searched questions.</p><h3>1. Which D-Max Engine is Best for Kenya?</h3><p>For daily commercial deliveries, city runs, and supervisor duties, the <strong>1.9L RZ4E Turbo-Diesel</strong> delivers incredible fuel efficiency without compromising reliability. If your operations require towing heavy trailers, crossing muddy unpaved roads in Narok or Meru, or you prefer effortless highway acceleration, the <strong>3.0L 4JJ3 (190 HP / 450 Nm)</strong> is the industry benchmark.</p>`
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   // 2. ISUZU MU-X 7-SEATER SUV
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   {
     id: "qa-mux-2026",
     category: "SUVs",
@@ -110,8 +110,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     title: "Isuzu MU-X Price in Kenya 2026: Frequently Asked Questions & Comparison",
     metaDescription: "Comprehensive guide answering all Google search questions about the Isuzu mu-X in Kenya: 1.9L vs 3.0L prices, 7-seater comfort, fuel economy vs Prado/Fortuner, and financing options.",
     heroImage: "/vehicles/mu-x-3000cc-gallery/1.jpeg",
-    corePrice: "Ksh 8,600,000 â€“ Ksh 10,800,000",
-    depositRange: "Ksh 860,000 â€“ Ksh 2,160,000 (10%â€“20%)",
+    corePrice: "Ksh 8,600,000 â€â€œ Ksh 10,800,000",
+    depositRange: "Ksh 860,000 â€â€œ Ksh 2,160,000 (10%â€â€œ20%)",
     targetKeywords: [
       "isuzu mux price in kenya",
       "isuzu mux 1.9 vs 3.0 kenya",
@@ -138,8 +138,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       }
     ],
     pricingTable: [
-      { model: "Isuzu mu-X LS-U 1.9L Turbo Diesel (4x2)", priceRange: "Ksh 8,600,000 â€“ Ksh 9,200,000", deposit: "From Ksh 860,000", bestUses: "Urban family luxury, daily executive commuting, school runs" },
-      { model: "Isuzu mu-X LS-T 3.0L 4x4 Luxury (7-Seater)", priceRange: "Ksh 9,800,000 â€“ Ksh 10,800,000", deposit: "From Ksh 980,000", bestUses: "Cross-country safari, all-terrain family expeditions, VIP transport" }
+      { model: "Isuzu mu-X LS-U 1.9L Turbo Diesel (4x2)", priceRange: "Ksh 8,600,000 â€â€œ Ksh 9,200,000", deposit: "From Ksh 860,000", bestUses: "Urban family luxury, daily executive commuting, school runs" },
+      { model: "Isuzu mu-X LS-T 3.0L 4x4 Luxury (7-Seater)", priceRange: "Ksh 9,800,000 â€â€œ Ksh 10,800,000", deposit: "From Ksh 980,000", bestUses: "Cross-country safari, all-terrain family expeditions, VIP transport" }
     ],
     priceFactors: [
       "Engine variant: 1.9L Ddi BluePower vs 3.0L 4JJ3 Powerplant",
@@ -148,7 +148,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       "Safety: Advanced Driver Assist System (Autonomous Emergency Braking, Lane Keep Assist, Adaptive Cruise Control)"
     ],
     financing: {
-      depositPercent: "10% â€“ 20%",
+      depositPercent: "10% â€â€œ 20%",
       maxMonths: 72,
       saccoAvailable: true,
       description: "Competitive bank asset finance options available with up to 90% funding and fast 48-hour approvals."
@@ -156,9 +156,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     articleHtml: `<h2>The Ultimate Guide to Owning an Isuzu mu-X in Kenya</h2><p>The <strong>Isuzu mu-X</strong> has earned its place as Kenya's premier luxury 7-seater SUV, blending the rugged DNA of the D-Max chassis with premium comfort, refined styling, and unmatched family safety.</p>`
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   // 3. ISUZU N-SERIES (NLR, NMR 85, NPS 81H, NQR 81, NQR XTRA)
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   {
     id: "qa-nseries-trucks",
     category: "Light Trucks",
@@ -167,8 +167,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     title: "Isuzu N-Series Trucks in Kenya (NLR, NMR, NPS, NQR 81, NQR Xtra): Specs & Prices",
     metaDescription: "Detailed Q&A answering all Google search queries about Isuzu N-Series trucks in Kenya: NQR 81 and NQR Xtra 4,773cc engines, NMR 85, NLR 2.3T, NPS 4x4, payloads, prices & financing.",
     heroImage: "/vehicles/nqr-hero.png",
-    corePrice: "Ksh 3,612,000 â€“ Ksh 5,250,000 (Chassis)",
-    depositRange: "Ksh 361,200 â€“ Ksh 1,050,000 (10%â€“20%)",
+    corePrice: "Ksh 3,612,000 â€â€œ Ksh 5,250,000 (Chassis)",
+    depositRange: "Ksh 361,200 â€â€œ Ksh 1,050,000 (10%â€â€œ20%)",
     targetKeywords: [
       "isuzu nqr 81 price in kenya",
       "isuzu nqr xtra price kenya",
@@ -213,7 +213,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       "Asset finance deposit and loan insurance inclusions"
     ],
     financing: {
-      depositPercent: "10% â€“ 20%",
+      depositPercent: "10% â€â€œ 20%",
       maxMonths: 60,
       saccoAvailable: true,
       description: "Structured commercial asset financing through NCBA, Co-op Bank, Equity Bank, and transport SACCOs."
@@ -221,9 +221,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     articleHtml: `<h2>Everything You Need to Know About Isuzu N-Series Light Commercial Trucks</h2><p>The <strong>Isuzu N-Series</strong> is the backbone of Kenya's retail, logistics, and agricultural economy. From the agile <strong>NLR</strong> to the heavy-duty <strong>NQR 81 and NQR Xtra (4,773cc)</strong>, these trucks are engineered for maximum tonne-kilometres and minimal maintenance costs.</p>`
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   // 4. ISUZU F-SERIES (FRR 90, FVR 90, FVZ 34)
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   {
     id: "qa-fseries-trucks",
     category: "Medium & Heavy Trucks",
@@ -232,8 +232,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     title: "Isuzu FRR 90, FVR 90 & FVZ 34 Price in Kenya 2026: Specs, Tippers & Payloads",
     metaDescription: "Official guide to Isuzu FRR 90, FVR 90, and FVZ 34 tipper/cargo prices in Kenya: 10T, 14T & 18T payloads, 6HK1 & 4HK1 engines, body fabrication, and bank financing.",
     heroImage: "/vehicles/f-series/frr90n/1.jpeg",
-    corePrice: "Ksh 6,100,000 â€“ Ksh 12,500,000",
-    depositRange: "Ksh 610,000 â€“ Ksh 2,500,000 (10%â€“20%)",
+    corePrice: "Ksh 6,100,000 â€â€œ Ksh 12,500,000",
+    depositRange: "Ksh 610,000 â€â€œ Ksh 2,500,000 (10%â€â€œ20%)",
     targetKeywords: [
       "isuzu frr 90 price in kenya",
       "isuzu fvr 90 price in kenya",
@@ -244,11 +244,11 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     faqs: [
       {
         question: "How much is an Isuzu FRR 90 in Kenya in 2026?",
-        answer: "A brand new Isuzu FRR 90N chassis starts from approximately Ksh 6,100,000 to Ksh 6,600,000 depending on body specifications. It carries a rated payload of up to 10â€“11 tonnes with the 4HK1-TCC 5.2L engine."
+        answer: "A brand new Isuzu FRR 90N chassis starts from approximately Ksh 6,100,000 to Ksh 6,600,000 depending on body specifications. It carries a rated payload of up to 10â€â€œ11 tonnes with the 4HK1-TCC 5.2L engine."
       },
       {
         question: "What is the difference between Isuzu FVR 90 and FVZ 34?",
-        answer: "The Isuzu FVR 90 is a 4x2 heavy-duty truck with a 14-tonne payload powered by a 5.2L or 7.8L engine. The Isuzu FVZ 34 is a 6x4 double-differential heavy-duty chassis (26 Tonnes GVW) powered by the 7.8L 6HK1-TCS engine delivering 280 HP, ideal for 16â€“18 tonne dump tippers and long-distance cargo."
+        answer: "The Isuzu FVR 90 is a 4x2 heavy-duty truck with a 14-tonne payload powered by a 5.2L or 7.8L engine. The Isuzu FVZ 34 is a 6x4 double-differential heavy-duty chassis (26 Tonnes GVW) powered by the 7.8L 6HK1-TCS engine delivering 280 HP, ideal for 16â€â€œ18 tonne dump tippers and long-distance cargo."
       },
       {
         question: "What is the price of an Isuzu FVZ 34 Tipper in Kenya?",
@@ -256,9 +256,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       }
     ],
     pricingTable: [
-      { model: "Isuzu FRR 90N (10-11 Ton Payload Â· 5,193cc)", priceRange: "Ksh 6,100,000 â€“ Ksh 6,600,000", deposit: "From Ksh 610,000", bestUses: "Inter-county general haulage, agricultural transit, beverage distribution" },
-      { model: "Isuzu FVR 90L / 90P (14 Ton Payload Â· 5,193cc)", priceRange: "Ksh 8,200,000 â€“ Ksh 8,800,000", deposit: "From Ksh 820,000", bestUses: "Heavy container chassis, bulk grain distribution, fuel tankers" },
-      { model: "Isuzu FVZ 34N / 34T (6x4 16-18 Ton Â· 7,790cc)", priceRange: "Ksh 11,200,000 â€“ Ksh 12,500,000", deposit: "From Ksh 1,120,000", bestUses: "Heavy dump tipper, quarry aggregate, infrastructure projects" }
+      { model: "Isuzu FRR 90N (10-11 Ton Payload Â· 5,193cc)", priceRange: "Ksh 6,100,000 â€â€œ Ksh 6,600,000", deposit: "From Ksh 610,000", bestUses: "Inter-county general haulage, agricultural transit, beverage distribution" },
+      { model: "Isuzu FVR 90L / 90P (14 Ton Payload Â· 5,193cc)", priceRange: "Ksh 8,200,000 â€â€œ Ksh 8,800,000", deposit: "From Ksh 820,000", bestUses: "Heavy container chassis, bulk grain distribution, fuel tankers" },
+      { model: "Isuzu FVZ 34N / 34T (6x4 16-18 Ton Â· 7,790cc)", priceRange: "Ksh 11,200,000 â€â€œ Ksh 12,500,000", deposit: "From Ksh 1,120,000", bestUses: "Heavy dump tipper, quarry aggregate, infrastructure projects" }
     ],
     priceFactors: [
       "Axle setup: 4x2 single axle vs 6x4 bogie tandem drive with differential locks",
@@ -267,7 +267,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       "Financing tenure and bank repayment structuring"
     ],
     financing: {
-      depositPercent: "10% â€“ 20%",
+      depositPercent: "10% â€â€œ 20%",
       maxMonths: 60,
       saccoAvailable: true,
       description: "Specialized asset financing for logistics and construction firms with repayment periods up to 60 months."
@@ -275,9 +275,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     articleHtml: `<h2>The Definitive Guide to Isuzu Medium and Heavy Trucks in Kenya</h2><p>When heavy cargo demands absolute reliability, the <strong>Isuzu F-Series (FRR, FVR, FVZ)</strong> provides unmatched power, chassis strength, and fuel economy across East Africa.</p>`
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   // 5. PRIME MOVERS (UD QUESTER GWE & GXZ)
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   {
     id: "qa-prime-movers",
     category: "Prime Movers",
@@ -286,8 +286,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     title: "UD Quester GWE Prime Movers (460 AMT, 440 AMT, 420 MT): Prices & Specs in Kenya",
     metaDescription: "Authoritative pricing and technical specs for UD Quester GWE 6x4 Prime Movers in Kenya: GWE 460 AMT (Ksh 16.45M), GWE 440 AMT (Ksh 15.9M), GWE 420 MT (Ksh 14.0M), 80T GCM.",
     heroImage: "/vehicles/movers/ud-quester-460-hero.png",
-    corePrice: "Ksh 14,000,000 â€“ Ksh 16,450,000 (Tractor Only)",
-    depositRange: "Ksh 1,400,000 â€“ Ksh 3,290,000 (10%â€“20%)",
+    corePrice: "Ksh 14,000,000 â€â€œ Ksh 16,450,000 (Tractor Only)",
+    depositRange: "Ksh 1,400,000 â€â€œ Ksh 3,290,000 (10%â€â€œ20%)",
     targetKeywords: [
       "ud quester price in kenya",
       "ud quester gwe 460 amt price",
@@ -303,7 +303,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       },
       {
         question: "What engine and transmission does the UD Quester GWE 460 use?",
-        answer: "The GWE 460 is powered by the heavy-duty 11-Litre GH11E common-rail engine delivering 460 HP (338 kW) and a massive 2,200 Nm of torque at 1,050â€“1,400 rpm, paired with UD's ESCOT-E 12-Speed Automated Manual Transmission (AMT)."
+        answer: "The GWE 460 is powered by the heavy-duty 11-Litre GH11E common-rail engine delivering 460 HP (338 kW) and a massive 2,200 Nm of torque at 1,050â€â€œ1,400 rpm, paired with UD's ESCOT-E 12-Speed Automated Manual Transmission (AMT)."
       },
       {
         question: "What is the Gross Combination Mass (GCM) of the UD Quester GWE in Kenya?",
@@ -311,7 +311,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       },
       {
         question: "Is asset financing available for UD Quester prime movers in Kenya?",
-        answer: "Yes, Edwin Kibira facilitates asset financing with up to 80%â€“90% funding through commercial banks and SACCOs, with repayment periods from 12 to 60 months."
+        answer: "Yes, Edwin Kibira facilitates asset financing with up to 80%â€â€œ90% funding through commercial banks and SACCOs, with repayment periods from 12 to 60 months."
       }
     ],
     pricingTable: [
@@ -326,7 +326,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       "Auxiliary equipment: Hydraulic PTO for tipping trailers"
     ],
     financing: {
-      depositPercent: "10% â€“ 20%",
+      depositPercent: "10% â€â€œ 20%",
       maxMonths: 60,
       saccoAvailable: true,
       description: "Dedicated heavy asset financing with major banks and SACCOs for cross-border transport operators."
@@ -334,9 +334,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     articleHtml: `<h2>UD Quester GWE 6x4 Heavy-Duty Prime Movers in Kenya</h2><p>The <strong>UD Quester GWE series</strong> (GWE 460 AMT, GWE 440 AMT, GWE 420 MT) represents the gold standard for heavy prime movers in East Africa, offering maximum payload capacity, industry-leading fuel economy, and unmatched driver comfort.</p>`
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   // 6. ISUZU BUSES (NMR 26, NQR 29/33, FRR 51, FVR 67)
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€ââ€€
   {
     id: "qa-isuzu-buses",
     category: "Buses",
@@ -345,8 +345,8 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
     title: "Isuzu Bus Prices in Kenya 2026: School Buses, PSV Matatus & 67-Seater Coaches",
     metaDescription: "Comprehensive guide to Isuzu bus prices in Kenya: NMR 26-seater, NQR 29 & 33-seater matatus, FRR 51-seater, and FVR 67-seater coaches with NTSA compliance and SACCO financing.",
     heroImage: "/vehicles/buses/nqr33/1.jpeg",
-    corePrice: "Ksh 5,850,000 â€“ Ksh 18,500,000",
-    depositRange: "Ksh 585,000 â€“ Ksh 3,700,000 (10%â€“20%)",
+    corePrice: "Ksh 5,850,000 â€â€œ Ksh 18,500,000",
+    depositRange: "Ksh 585,000 â€â€œ Ksh 3,700,000 (10%â€â€œ20%)",
     targetKeywords: [
       "isuzu bus price in kenya",
       "isuzu 33 seater bus price",
@@ -370,14 +370,14 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       },
       {
         question: "Can SACCOs get asset financing for Isuzu PSV buses in Kenya?",
-        answer: "Yes, Edwin Kibira partners with Co-operative Bank, Equity, NCBA, KCB, and transport SACCOs to offer tailored asset financing with deposit requirements as low as 10%â€“20% and flexible repayment tenures."
+        answer: "Yes, Edwin Kibira partners with Co-operative Bank, Equity, NCBA, KCB, and transport SACCOs to offer tailored asset financing with deposit requirements as low as 10%â€â€œ20% and flexible repayment tenures."
       }
     ],
     pricingTable: [
-      { model: "Isuzu NMR 26-Seater Bus", priceRange: "Ksh 5,850,000 â€“ Ksh 6,800,000", deposit: "From Ksh 585,000", bestUses: "School transport, hotel shuttles, staff bus, executive city commuter" },
-      { model: "Isuzu NQR 29/33-Seater Bus", priceRange: "Ksh 7,200,000 â€“ Ksh 8,400,000", deposit: "From Ksh 720,000", bestUses: "PSV Matatu SACCOs, institutional transport, inter-county routes" },
-      { model: "Isuzu FRR 90 51-Seater Bus", priceRange: "Ksh 10,500,000 â€“ Ksh 12,800,000", deposit: "From Ksh 1,050,000", bestUses: "Secondary schools, colleges, church groups, long-distance PSV" },
-      { model: "Isuzu FVR 34 67-Seater Coach", priceRange: "Ksh 14,500,000 â€“ Ksh 18,500,000", deposit: "From Ksh 1,450,000", bestUses: "Major national highway express coaches, cross-border passenger travel" }
+      { model: "Isuzu NMR 26-Seater Bus", priceRange: "Ksh 5,850,000 â€â€œ Ksh 6,800,000", deposit: "From Ksh 585,000", bestUses: "School transport, hotel shuttles, staff bus, executive city commuter" },
+      { model: "Isuzu NQR 29/33-Seater Bus", priceRange: "Ksh 7,200,000 â€â€œ Ksh 8,400,000", deposit: "From Ksh 720,000", bestUses: "PSV Matatu SACCOs, institutional transport, inter-county routes" },
+      { model: "Isuzu FRR 90 51-Seater Bus", priceRange: "Ksh 10,500,000 â€â€œ Ksh 12,800,000", deposit: "From Ksh 1,050,000", bestUses: "Secondary schools, colleges, church groups, long-distance PSV" },
+      { model: "Isuzu FVR 34 67-Seater Coach", priceRange: "Ksh 14,500,000 â€â€œ Ksh 18,500,000", deposit: "From Ksh 1,450,000", bestUses: "Major national highway express coaches, cross-border passenger travel" }
     ],
     priceFactors: [
       "Seating capacity and configuration: Standard vinyl vs high-back reclining velvet",
@@ -386,7 +386,7 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       "Chassis wheelbase and engine power (4JJ1 vs 4HL1 vs 4HK1 vs 6HK1)"
     ],
     financing: {
-      depositPercent: "10% â€“ 20%",
+      depositPercent: "10% â€â€œ 20%",
       maxMonths: 60,
       saccoAvailable: true,
       description: "Dedicated PSV and school bus asset financing with structured repayment schedules aligned with school terms or daily matatu SACCO cashflows."

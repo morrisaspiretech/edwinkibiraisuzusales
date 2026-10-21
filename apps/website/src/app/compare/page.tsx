@@ -60,7 +60,7 @@ export default function ComparePage() {
           ) : (
             <div className="bg-white rounded-xl shadow-xl border border-gray-200 overflow-x-auto">
               <div className="min-w-[800px]">
-                {/* в”Ђв”Ђ HEADER ROW в”Ђв”Ђ */}
+                {/* ввЂќЂввЂќЂ HEADER ROW ввЂќЂввЂќЂ */}
                 <div className="grid grid-cols-4 border-b border-gray-200">
                   <div className="p-6 bg-gray-50 flex items-center">
                     <span className="text-sm font-black text-gray-400 uppercase tracking-widest">Overview</span>
@@ -103,21 +103,21 @@ export default function ComparePage() {
                   ))}
                 </div>
 
-                {/* в”Ђв”Ђ QUICK SPECS в”Ђв”Ђ */}
+                {/* ввЂќЂввЂќЂ QUICK SPECS ввЂќЂввЂќЂ */}
                 <CompareSection title="Quick Specs" />
                 <CompareRow label="Engine" vehicles={vehicles} getValue={(v) => v.quickSpecs.engine} />
                 <CompareRow label="Transmission" vehicles={vehicles} getValue={(v) => v.quickSpecs.transmission} />
                 <CompareRow label="Fuel" vehicles={vehicles} getValue={(v) => v.quickSpecs.fuel} />
                 <CompareRow label="Power / Payload" vehicles={vehicles} getValue={(v) => v.quickSpecs.power || v.quickSpecs.payload || "-"} />
 
-                {/* в”Ђв”Ђ DETAILED ENGINE в”Ђв”Ђ */}
+                {/* ввЂќЂввЂќЂ DETAILED ENGINE ввЂќЂввЂќЂ */}
                 <CompareSection title="Engine & Performance" />
                 <CompareRow label="Type" vehicles={vehicles} getValue={(v) => v.detailedSpecs.engine.type} />
                 <CompareRow label="Displacement" vehicles={vehicles} getValue={(v) => v.detailedSpecs.engine.displacement} />
                 <CompareRow label="Max Power" vehicles={vehicles} getValue={(v) => v.detailedSpecs.engine.maxPower} />
                 <CompareRow label="Max Torque" vehicles={vehicles} getValue={(v) => v.detailedSpecs.engine.maxTorque} />
 
-                {/* в”Ђв”Ђ DIMENSIONS в”Ђв”Ђ */}
+                {/* ввЂќЂввЂќЂ DIMENSIONS ввЂќЂввЂќЂ */}
                 <CompareSection title="Dimensions & Capacities" />
                 <CompareRow label="Length" vehicles={vehicles} getValue={(v) => v.detailedSpecs.dimensions.length} />
                 <CompareRow label="Width" vehicles={vehicles} getValue={(v) => v.detailedSpecs.dimensions.width} />
@@ -125,7 +125,7 @@ export default function ComparePage() {
                 <CompareRow label="Wheelbase" vehicles={vehicles} getValue={(v) => v.detailedSpecs.dimensions.wheelbase} />
                 <CompareRow label="Ground Clearance" vehicles={vehicles} getValue={(v) => v.detailedSpecs.dimensions.groundClearance} />
                 
-                {/* в”Ђв”Ђ FEATURES в”Ђв”Ђ */}
+                {/* ввЂќЂввЂќЂ FEATURES ввЂќЂввЂќЂ */}
                 <CompareSection title="Key Features" />
                 <div className="grid grid-cols-4 border-b border-gray-200 bg-white">
                   <div className="p-4 px-6 border-r border-gray-200 bg-gray-50/50">

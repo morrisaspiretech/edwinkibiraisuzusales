@@ -28,20 +28,20 @@ const industries = [
   {
     icon: <FaHelmetSafety size={28} />,
     title: "Construction & Mining",
-    description: "Built for the toughest Kenyan terrain. Our 4Ã—4 and high-capacity trucks handle everything from site deliveries to heavy earth-moving support.",
-    models: ["N-Series NPS 81H 4Ã—4", "F-Series FVZ 34N", "F-Series FVZ 34T Tipper"],
+    description: "Built for the toughest Kenyan terrain. Our 4Ãâ€â€4 and high-capacity trucks handle everything from site deliveries to heavy earth-moving support.",
+    models: ["N-Series NPS 81H 4Ãâ€â€4", "F-Series FVZ 34N", "F-Series FVZ 34T Tipper"],
   },
   {
     icon: <FaBusSimple size={28} />,
     title: "Schools & Institutions",
-    description: "Safe, reliable and passenger-friendly. Our certified Isuzu buses seat 26 to 67 passengers â€” perfect for schools, hospitals, and employee transport.",
+    description: "Safe, reliable and passenger-friendly. Our certified Isuzu buses seat 26 to 67 passengers â€â€ perfect for schools, hospitals, and employee transport.",
     models: ["NMR 26 Seater", "NQR 29/33 Seater", "FVR 34 67 Seater"],
   },
   {
     icon: <FaLandmark size={28} />,
     title: "Government & NGOs",
-    description: "We understand procurement processes and provide full documentation for tenders. Our D-Max 4Ã—4 and NPS trucks are favorites across government agencies and international NGOs.",
-    models: ["D-Max TFS87 4Ã—4", "N-Series NPS 81H", "mu-X SUV"],
+    description: "We understand procurement processes and provide full documentation for tenders. Our D-Max 4Ãâ€â€4 and NPS trucks are favorites across government agencies and international NGOs.",
+    models: ["D-Max TFS87 4Ãâ€â€4", "N-Series NPS 81H", "mu-X SUV"],
   },
   {
     icon: <FaSeedling size={28} />,
@@ -64,7 +64,7 @@ const benefits = [
   },
   {
     title: "Custom Body Building",
-    description: "Box bodies, matatu bodies, tipper bodies, refrigerated units â€” we work with Kenya's best body builders to deliver exactly what your operations need.",
+    description: "Box bodies, matatu bodies, tipper bodies, refrigerated units â€â€ we work with Kenya's best body builders to deliver exactly what your operations need.",
   },
   {
     title: "Flexible Fleet Financing",
@@ -72,7 +72,7 @@ const benefits = [
   },
   {
     title: "Dedicated Account Manager",
-    description: "Every fleet client gets a dedicated point of contact â€” Edwin personally manages fleet relationships to ensure fast, seamless service.",
+    description: "Every fleet client gets a dedicated point of contact â€â€ Edwin personally manages fleet relationships to ensure fast, seamless service.",
   },
   {
     title: "Priority After-Sales Service",
@@ -80,7 +80,7 @@ const benefits = [
   },
   {
     title: "Full Documentation",
-    description: "We provide all necessary documentation for procurement, LPO processing, and compliance â€” including local purchase orders and government tenders.",
+    description: "We provide all necessary documentation for procurement, LPO processing, and compliance â€â€ including local purchase orders and government tenders.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function FleetSalesPage() {
     <main className="min-h-screen bg-white font-sans">
       <Navbar />
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ââ€€ââ€€ HERO ââ€€ââ€€ */}
       <section className="relative bg-[#0d0d0d] overflow-hidden" style={{ minHeight: 520 }}>
         <video
           src="/videos/hero.mp4"
@@ -139,14 +139,14 @@ export default function FleetSalesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ STATS BAND â”€â”€ */}
+      {/* ââ€€ââ€€ STATS BAND ââ€€ââ€€ */}
       <section className="bg-[#D62B2B] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-white">
             {[
               { num: "35+", label: "Isuzu Models Available" },
               { num: "100%", label: "Brand New Units" },
-              { num: "2â€“4 wks", label: "Custom Body Build Time" },
+              { num: "2â€â€œ4 wks", label: "Custom Body Build Time" },
               { num: "80%", label: "Max Fleet Financing" },
             ].map((stat) => (
               <div key={stat.label}>
@@ -158,7 +158,7 @@ export default function FleetSalesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ WHY CHOOSE US FOR FLEET â”€â”€ */}
+      {/* ââ€€ââ€€ WHY CHOOSE US FOR FLEET ââ€€ââ€€ */}
       <section className="py-20 px-4 sm:px-8 bg-[#f9f9f9]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -185,7 +185,7 @@ export default function FleetSalesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ INDUSTRIES WE SERVE â”€â”€ */}
+      {/* ââ€€ââ€€ INDUSTRIES WE SERVE ââ€€ââ€€ */}
       <section className="py-20 px-4 sm:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -222,7 +222,7 @@ export default function FleetSalesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ CTA + FORM â”€â”€ */}
+      {/* ââ€€ââ€€ CTA + FORM ââ€€ââ€€ */}
       <section id="fleet-form" className="py-20 px-4 sm:px-8 bg-[#f9f9f9] border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
@@ -236,7 +236,7 @@ export default function FleetSalesPage() {
                 Request Your <span className="text-[#D62B2B]">Fleet Proposal</span>
               </h2>
               <p className="text-gray-500 leading-relaxed mb-8 text-sm">
-                Fill in your requirements and our Fleet Sales Manager will prepare a tailored vehicle proposal with competitive pricing and financing options â€” typically within 24 hours.
+                Fill in your requirements and our Fleet Sales Manager will prepare a tailored vehicle proposal with competitive pricing and financing options â€â€ typically within 24 hours.
               </p>
 
               <div className="space-y-5">

@@ -37,14 +37,14 @@ export default function ContactPage() {
 
     // Build a clear, structured WhatsApp message from all form fields
     const lines = [
-      `ğŸ‘‹ *New Inquiry â€” Edwin Kibirai Isuzu Website*`,
+      `ğŸâ€˜‹ *New Inquiry â€â€ Edwin Kibirai Isuzu Website*`,
       ``,
-      `ğŸ“‹ *Subject:* ${formData.subject}`,
-      `ğŸ‘¤ *Name:* ${formData.name}`,
-      `ğŸ“ *Phone:* ${formData.phone}`,
-      formData.email ? `ğŸ“§ *Email:* ${formData.email}` : null,
+      `ğŸâ€œ‹ *Subject:* ${formData.subject}`,
+      `ğŸâ€˜¤ *Name:* ${formData.name}`,
+      `ğŸâ€œ *Phone:* ${formData.phone}`,
+      formData.email ? `ğŸâ€œ§ *Email:* ${formData.email}` : null,
       ``,
-      `ğŸ’¬ *Message:*`,
+      `ğŸâ€™¬ *Message:*`,
       formData.message,
     ]
       .filter((line) => line !== null)
@@ -64,7 +64,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white flex flex-col">
       <Navbar />
 
-      {/* â”€â”€ Page Header â”€â”€ */}
+      {/* ââ€€ââ€€ Page Header ââ€€ââ€€ */}
       <div className="bg-[#1a1a1a] text-white py-12 px-4 md:px-6 border-b-4 border-[#D62B2B]">
         <div className="max-w-5xl mx-auto">
           <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-[#D62B2B] tracking-widest mb-3">
@@ -85,7 +85,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* â”€â”€ Main Content Container â”€â”€ */}
+      {/* ââ€€ââ€€ Main Content Container ââ€€ââ€€ */}
       <div className="max-w-5xl mx-auto px-4 md:px-6 py-10 md:py-16 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
@@ -155,15 +155,15 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase text-gray-400 tracking-wider">Opening Hours</p>
-                    <p className="text-xs text-[#1a1a1a] font-bold mt-0.5">Monday â€“ Friday: 8:00 AM â€“ 6:00 PM</p>
-                    <p className="text-xs text-[#1a1a1a] font-bold">Saturday: 9:00 AM â€“ 4:00 PM</p>
+                    <p className="text-xs text-[#1a1a1a] font-bold mt-0.5">Monday â€â€œ Friday: 8:00 AM â€â€œ 6:00 PM</p>
+                    <p className="text-xs text-[#1a1a1a] font-bold">Saturday: 9:00 AM â€â€œ 4:00 PM</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Contact Form â†’ WhatsApp */}
+          {/* Right Column: Contact Form â†â€™ WhatsApp */}
           <div className="lg:col-span-7">
             <div className="border border-gray-100 p-6 md:p-8 bg-white shadow-lg border-t-4 border-[#D62B2B]">
               {isSuccess ? (
@@ -189,7 +189,7 @@ export default function ContactPage() {
                       Send Us a Message
                     </h3>
                     <p className="text-xs text-gray-400 mt-0.5">
-                      Fill out the form â€” your message will open directly in WhatsApp, ready to send to Edwin.
+                      Fill out the form â€â€ your message will open directly in WhatsApp, ready to send to Edwin.
                     </p>
                   </div>
 
@@ -266,7 +266,7 @@ export default function ContactPage() {
                     {isSubmitting ? "Opening WhatsApp..." : "Send via WhatsApp"}
                   </button>
                   <p className="text-center text-[10px] text-gray-400">
-                    Clicking Send will open WhatsApp with your message pre-filled â€” just press Send.
+                    Clicking Send will open WhatsApp with your message pre-filled â€â€ just press Send.
                   </p>
                 </form>
               )}

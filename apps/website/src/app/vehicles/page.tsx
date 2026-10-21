@@ -60,7 +60,7 @@ export default function ShowroomPage() {
       />
       <Navbar />
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ââ€€ââ€€ HERO ââ€€ââ€€ */}
       <div className="relative w-full overflow-hidden bg-[#0d0d0d]" style={{ minHeight: 480 }}>
         {/* Background Video */}
         <video
@@ -91,7 +91,7 @@ export default function ShowroomPage() {
               Range
             </h1>
             <p className="text-white/55 text-base max-w-lg leading-relaxed mb-8">
-              Kenya&apos;s most trusted Isuzu dealer. Browse our full lineup â€” from rugged D-Max pickups to powerful F-Series trucks, all available for financing.
+              Kenya&apos;s most trusted Isuzu dealer. Browse our full lineup â€â€ from rugged D-Max pickups to powerful F-Series trucks, all available for financing.
             </p>
 
             {/* Stats row */}
@@ -108,7 +108,7 @@ export default function ShowroomPage() {
               ))}
             </div>
 
-            {/* Category jump pills â€” premium style */}
+            {/* Category jump pills â€â€ premium style */}
             <div className="flex flex-wrap gap-3">
               {Object.entries(categoryMeta).map(([cat, meta]) => (
                 <a
@@ -137,7 +137,7 @@ export default function ShowroomPage() {
         </div>
       </div>
 
-      {/* â”€â”€ VEHICLE SECTIONS â”€â”€ */}
+      {/* ââ€€ââ€€ VEHICLE SECTIONS ââ€€ââ€€ */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 space-y-20">
         {Object.entries(groupedVehicles).map(([category, categoryVehicles]) => {
           if (categoryVehicles.length === 0) return null;
@@ -223,7 +223,7 @@ export default function ShowroomPage() {
         })}
       </div>
 
-      {/* â”€â”€ BOTTOM CTA â”€â”€ */}
+      {/* ââ€€ââ€€ BOTTOM CTA ââ€€ââ€€ */}
       <div className="bg-[#0d0d0d] py-16 px-4 sm:px-6 mt-10">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#D62B2B] text-xs font-black uppercase tracking-widest mb-3">Can&apos;t find what you need?</p>

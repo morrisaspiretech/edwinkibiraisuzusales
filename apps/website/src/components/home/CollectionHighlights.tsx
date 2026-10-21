@@ -72,7 +72,7 @@ const CollectionHighlights = ({ vehicles }: CollectionHighlightsProps) => {
 
   return (
     <>
-      {/* â”€â”€ Vehicle Categories â”€â”€ */}
+      {/* ââ€€ââ€€ Vehicle Categories ââ€€ââ€€ */}
       <section className="py-10 sm:py-14 bg-[#F7F7F7] px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section header */}
@@ -89,7 +89,7 @@ const CollectionHighlights = ({ vehicles }: CollectionHighlightsProps) => {
             </h2>
           </div>
 
-          {/* Category cards â€” local images */}
+          {/* Category cards â€â€ local images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {categories.map((cat) => {
               return (
@@ -136,7 +136,7 @@ const CollectionHighlights = ({ vehicles }: CollectionHighlightsProps) => {
         </div>
       </section>
 
-      {/* â”€â”€ Why Edwin Kibira Isuzu â”€â”€ */}
+      {/* ââ€€ââ€€ Why Edwin Kibira Isuzu ââ€€ââ€€ */}
       <section className="py-10 sm:py-14 bg-white border-t border-gray-100 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section header */}

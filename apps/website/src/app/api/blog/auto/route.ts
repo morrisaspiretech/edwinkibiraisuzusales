@@ -39,12 +39,12 @@ function getNextTopic(postsFile: string): typeof TOPICS[0] {
     const slug = `isuzu-${topic.model.toLowerCase().replace(/\s+/g, "-")}-price-kenya`;
     if (!content.includes(slug)) return topic;
   }
-  // All topics covered ‚Äî start repeating with updated year
+  // All topics covered ‚Ä‚Äù start repeating with updated year
   return TOPICS[Math.floor(Math.random() * TOPICS.length)];
 }
 
 export async function GET(req: NextRequest) {
-  // Protect the endpoint ‚Äî only allow calls with the secret
+  // Protect the endpoint ‚Ä‚Äù only allow calls with the secret
   const secret = req.nextUrl.searchParams.get("secret");
   if (secret !== process.env.CRON_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -80,11 +80,11 @@ Return ONLY a valid JSON object:
   "excerpt": "Compelling 2-sentence meta description with price range and year",
   "content": "Full HTML article body (min 700 words)",
   "pricingTable": [
-    { "model": "string", "priceRange": "KSh X.XM ‚Äì X.XM", "deposit": "KSh XXX,XXX", "bestUses": "string" }
+    { "model": "string", "priceRange": "KSh X.XM ‚Ä‚Äú X.XM", "deposit": "KSh XXX,XXX", "bestUses": "string" }
   ],
   "priceFactors": ["3-5 key price factor strings"],
   "financing": {
-    "depositPercent": "10% ‚Äì 20%",
+    "depositPercent": "10% ‚Ä‚Äú 20%",
     "maxMonths": 60,
     "saccoAvailable": true,
     "description": "Detailed financing paragraph for Kenya market"
@@ -143,7 +143,7 @@ Return ONLY a valid JSON object:
     );
     fs.writeFileSync(postsFile, postsContent, "utf-8");
 
-    // ‚îÄ‚îÄ TRIGGER AUTHORIZED SEO ROBOT ‚îÄ‚îÄ
+    // ‚‚ÄùÄ‚‚ÄùÄ TRIGGER AUTHORIZED SEO ROBOT ‚‚ÄùÄ‚‚ÄùÄ
     const newPostUrl = `https://www.edwinkibiraisuzusales.co.ke/blog/${postData.slug}`;
     const blogIndexUrl = `https://www.edwinkibiraisuzusales.co.ke/blog`;
     const sitemapUrl = `https://www.edwinkibiraisuzusales.co.ke/sitemap.xml`;

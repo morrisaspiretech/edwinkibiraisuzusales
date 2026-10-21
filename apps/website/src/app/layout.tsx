@@ -12,9 +12,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales — Trucks, Buses, Pickups & SUVs Nairobi",
+  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales �” Trucks, Buses, Pickups & SUVs Nairobi",
   description:
-    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales — authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
+    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales �” authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
   keywords: [
     // High-intent Kenya buyer keywords
     "Isuzu truck price Kenya", "Isuzu dealer Nairobi", "buy Isuzu Kenya", "Isuzu Kenya 2024",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://www.edwinkibiraisuzusales.co.ke"),
   // Google Search Console verification code
-  // Get it from: https://search.google.com/search-console → Add Property → HTML tag method
+  // Get it from: https://search.google.com/search-console �’ Add Property �’ HTML tag method
   verification: {
     google: "84Q1D5R1_Y8vdOBKd_F1GaIeEsQ0vt6Q3eq51zM9bjs",
   },

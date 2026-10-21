@@ -38,7 +38,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
     return "light-trucks-n-series";
   };
 
-  // Use vehicle.id first — it is already the correct URL slug.
+  // Use vehicle.id first �” it is already the correct URL slug.
   // Fall back to name-based mapping only for legacy API data without a proper id.
   const modelSlug = vehicle.id || getModelSlug(vehicle.model);
 

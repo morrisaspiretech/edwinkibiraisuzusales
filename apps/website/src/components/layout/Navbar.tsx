@@ -18,7 +18,7 @@ const navCategories = [
     items: [
       { label: "N-Series NLR", href: "/vehicles/n-series-nlr" },
       { label: "N-Series NMR 85", href: "/vehicles/n-series-nmr85" },
-      { label: "N-Series NPS 81H 4Ã—4", href: "/vehicles/n-series-nps" },
+      { label: "N-Series NPS 81H 4Ãâ€â€4", href: "/vehicles/n-series-nps" },
       { label: "N-Series NQR 81", href: "/vehicles/n-series-nqr81" },
       { label: "N-Series NQR Xtra", href: "/vehicles/n-series-nqr-xtra" },
       { label: "FRR 90N", href: "/vehicles/f-series-frr90n" },
@@ -37,16 +37,16 @@ const navCategories = [
       { label: "NQR 33 Seater", href: "/vehicles/bus-nqr-33" },
       { label: "FRR 90N 51 Seater", href: "/vehicles/bus-frr90n-51" },
       { label: "FRR 90Q 51 Seater", href: "/vehicles/bus-frr90q-51" },
-      { label: "FVR 34 67 Seater 4Ã—2", href: "/vehicles/bus-fvr34-67-4x2" },
-      { label: "FVR 34 67 Seater 6Ã—2", href: "/vehicles/bus-fvr34-67-6x2" },
+      { label: "FVR 34 67 Seater 4Ãâ€â€2", href: "/vehicles/bus-fvr34-67-4x2" },
+      { label: "FVR 34 67 Seater 6Ãâ€â€2", href: "/vehicles/bus-fvr34-67-6x2" },
     ],
   },
   {
     label: "Pickups",
     items: [
-      { label: "TFR 87 Single Cab 4Ã—2", href: "/vehicles/tfr87-4x2" },
-      { label: "TFS 87 Single Cab 4Ã—4 Manual", href: "/vehicles/tfs87-4x4-manual" },
-      { label: "TFS 87 Single Cab 4Ã—4 Auto", href: "/vehicles/tfs87-4x4-auto" },
+      { label: "TFR 87 Single Cab 4Ãâ€â€2", href: "/vehicles/tfr87-4x2" },
+      { label: "TFS 87 Single Cab 4Ãâ€â€4 Manual", href: "/vehicles/tfs87-4x4-manual" },
+      { label: "TFS 87 Single Cab 4Ãâ€â€4 Auto", href: "/vehicles/tfs87-4x4-auto" },
       { label: "TFS 87 Double Cab Manual", href: "/vehicles/tfs87-double-manual" },
       { label: "TFS 87 Double Cab Auto", href: "/vehicles/tfs87-double-auto" },
       { label: "D-Max 3.0L Double Cab", href: "/vehicles/double-cabin" },
@@ -101,7 +101,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* â”€â”€ Top Bar â”€â”€ */}
+      {/* ââ€€ââ€€ Top Bar ââ€€ââ€€ */}
       <div className="bg-secondary text-white text-xs py-2 px-4 hidden sm:block relative overflow-hidden">
         {/* Twinkle Background Effect */}
         <div className="absolute inset-0 pointer-events-none">
@@ -111,7 +111,7 @@ const Navbar = () => {
         
         <div className="max-w-7xl mx-auto flex justify-between items-center relative z-10">
           <span className="font-semibold tracking-wide">
-            Kenya&apos;s Trusted Authorised Isuzu Dealer â€” Edwin Kibira Isuzu Sales
+            Kenya&apos;s Trusted Authorised Isuzu Dealer â€â€ Edwin Kibira Isuzu Sales
           </span>
           <div className="flex items-center gap-6">
             <a href={`tel:${PHONE}`} className="flex items-center gap-1.5 hover:text-white/80 transition-colors font-bold">
@@ -132,7 +132,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* â”€â”€ Main Nav â”€â”€ */}
+      {/* ââ€€ââ€€ Main Nav ââ€€ââ€€ */}
       <nav
         className={cn(
           "sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#1a1a1a]",

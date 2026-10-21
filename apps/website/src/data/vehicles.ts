@@ -24,8 +24,8 @@ export interface VehicleSpec {
   quickSpecs: {
     engine: string;
     transmission: string;
-    power?: string;    // horsepower/kW â€” omitted on trucks where payload is more relevant
-    payload?: string;  // payload capacity â€” used on N-Series & F-Series trucks instead of power
+    power?: string;    // horsepower/kW â€â€ omitted on trucks where payload is more relevant
+    payload?: string;  // payload capacity â€â€ used on N-Series & F-Series trucks instead of power
     fuel: string;
   };
   /**
@@ -78,9 +78,9 @@ export interface VehicleSpec {
 
 export const VEHICLES_DATA: Record<string, VehicleSpec> = {
 
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
   //  SUVs
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
 
   "mu-x-1900cc": {
     id: "mu-x-1900cc",
@@ -104,7 +104,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         type: "RZ4E-TC, 4-Cylinder, In-Line, DOHC, Intercooled Turbo",
         displacement: "1,898 cc",
         maxPower: "110 kW (150 HP) @ 3,600 rpm",
-        maxTorque: "350 Nm @ 1,800 â€“ 2,600 rpm",
+        maxTorque: "350 Nm @ 1,800 â€â€œ 2,600 rpm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -174,7 +174,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         type: "4JJ3-TCX, 4-Cylinder, In-Line, DOHC, Intercooled VGS Turbo",
         displacement: "2,999 cc",
         maxPower: "140 kW (190 HP) @ 3,600 rpm",
-        maxTorque: "450 Nm @ 1,600 â€“ 2,600 rpm",
+        maxTorque: "450 Nm @ 1,600 â€â€œ 2,600 rpm",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
@@ -197,7 +197,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       },
     },
     features: [
-      "Advanced Driver Assistance Systems (ADAS) â€” Lane Departure Warning, Blind Spot Monitoring",
+      "Advanced Driver Assistance Systems (ADAS) â€â€ Lane Departure Warning, Blind Spot Monitoring",
       "Adaptive Cruise Control",
       "9-inch Infotainment with Apple CarPlay & Android Auto",
       "Premium Leather-Appointed Seats with Power Adjustment",
@@ -212,15 +212,15 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     ],
   },
 
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
   //  Pickups
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
 
   "tfr87-4x2": {
     id: "tfr87-4x2",
     category: "Pickups",
-    title: "TFR 87 Single Cab 4Ã—2",
-    description: "The Isuzu TFR 87 4Ã—2 Single Cab is built for serious commercial work. Powered by the 1.9L RZ4E Turbodiesel engine and paired with a 6-speed manual gearbox, it delivers outstanding fuel economy and reliability.",
+    title: "TFR 87 Single Cab 4Ãâ€â€2",
+    description: "The Isuzu TFR 87 4Ãâ€â€2 Single Cab is built for serious commercial work. Powered by the 1.9L RZ4E Turbodiesel engine and paired with a 6-speed manual gearbox, it delivers outstanding fuel economy and reliability.",
     heroImage: "/vehicles/grouped/batch1/2.jpeg",
     gallery: ['/vehicles/grouped/batch1/2.jpeg', '/vehicles/grouped/batch1/4.jpeg', '/vehicles/grouped/batch1/6.jpeg', '/vehicles/grouped/batch1/1.jpeg', '/vehicles/grouped/batch1/3.jpeg', '/vehicles/grouped/batch1/5.jpeg'],
     quickSpecs: {
@@ -234,7 +234,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         type: "RZ4E-TC, 4-Cylinder, In-Line, DOHC, Intercooled Turbo",
         displacement: "1,898 cc",
         maxPower: "110 kW (150 HP) @ 3,600 rpm",
-        maxTorque: "350 Nm @ 1,800 â€“ 2,600 rpm",
+        maxTorque: "350 Nm @ 1,800 â€â€œ 2,600 rpm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -270,8 +270,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs87-4x4-manual": {
     id: "tfs87-4x4-manual",
     category: "Pickups",
-    title: "TFS 87 Single Cab 4Ã—4 (Manual)",
-    description: "The Isuzu TFS 87 4Ã—4 Single Cab combines rugged off-road capability with the productivity of a full-size single cab. Manual transmission.",
+    title: "TFS 87 Single Cab 4Ãâ€â€4 (Manual)",
+    description: "The Isuzu TFS 87 4Ãâ€â€4 Single Cab combines rugged off-road capability with the productivity of a full-size single cab. Manual transmission.",
     heroImage: "/vehicles/tfs87-single-1.jpg",
     gallery: [
       "/vehicles/tfs87-single-1.jpg",
@@ -307,8 +307,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "tfs87-4x4-auto": {
     id: "tfs87-4x4-auto",
     category: "Pickups",
-    title: "TFS 87 Single Cab 4Ã—4 (Automatic)",
-    description: "The Isuzu TFS 87 4Ã—4 Single Cab Automatic. Rugged off-road capability with the convenience of an automatic transmission.",
+    title: "TFS 87 Single Cab 4Ãâ€â€4 (Automatic)",
+    description: "The Isuzu TFS 87 4Ãâ€â€4 Single Cab Automatic. Rugged off-road capability with the convenience of an automatic transmission.",
     heroImage: "/vehicles/tfs87-single-1.jpg",
     gallery: [
       "/vehicles/tfs87-single-1.jpg",
@@ -383,7 +383,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     id: "tfs40-double-auto",
     category: "Pickups",
     title: "TFS 40 Double Cab Automatic",
-    description: "The Isuzu TFS 40 Double Cab Automatic is a premium 4Ã—4 pickup built for those who demand the best. Featuring an aggressive sport-tuned exterior with blacked-out trims, black alloy wheels, and wide fender flares, it commands attention on any road. Powered by a 3.0L turbodiesel and paired with a 6-speed automatic, it combines raw capability with refined comfort.",
+    description: "The Isuzu TFS 40 Double Cab Automatic is a premium 4Ãâ€â€4 pickup built for those who demand the best. Featuring an aggressive sport-tuned exterior with blacked-out trims, black alloy wheels, and wide fender flares, it commands attention on any road. Powered by a 3.0L turbodiesel and paired with a 6-speed automatic, it combines raw capability with refined comfort.",
     heroImage: "/vehicles/tfs40-double-auto/1.jpeg",
     gallery: [
       "/vehicles/tfs40-double-auto/1.jpeg",
@@ -409,7 +409,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         type: "4JJ3-TCX, 4-Cylinder, In-Line, DOHC, Intercooled VGS Turbo",
         displacement: "2,999 cc",
         maxPower: "140 kW (190 HP) @ 3,600 rpm",
-        maxTorque: "450 Nm @ 1,600 â€“ 2,600 rpm",
+        maxTorque: "450 Nm @ 1,600 â€â€œ 2,600 rpm",
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
@@ -437,7 +437,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "Wide Fender Flares for Bold Stance",
       "6-Speed Automatic Transmission",
       "Shift-on-the-Fly 4WD (2H / 4H / 4L)",
-      "4Ã—4 with Differential Lock",
+      "4Ãâ€â€4 with Differential Lock",
       "9-inch Touchscreen with Apple CarPlay & Android Auto",
       "Reversing Camera",
       "Leather-Appointed Seats",
@@ -471,9 +471,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     features: ["Seating for 5", "Shift-on-the-fly 4WD", "9-inch Touchscreen", "Reversing Camera", "Leather seats"],
   },
 
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
   //  Trucks
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
 
   "f-series-frr90n": {
     id: "f-series-frr90n",
@@ -591,7 +591,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     id: "f-series-fvr90p",
     category: "Trucks",
     title: "F-Series FVR 90P",
-    description: "The Isuzu FVR 90P is the premium variant of the FVR range â€” Kenya's top choice for high-volume intercounty haulage. Its 5.2L turbocharged engine delivers exceptional torque, hauling 13 tonnes with confidence on even the toughest routes.",
+    description: "The Isuzu FVR 90P is the premium variant of the FVR range â€â€ Kenya's top choice for high-volume intercounty haulage. Its 5.2L turbocharged engine delivers exceptional torque, hauling 13 tonnes with confidence on even the toughest routes.",
     heroImage: "/vehicles/f-series/fvr90p/1.jpg",
     gallery: [
       "/vehicles/f-series/fvr90p/1.jpg",
@@ -640,7 +640,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     id: "f-series-fvz34n",
     category: "Trucks",
     title: "F-Series FVZ 34N Truck",
-    description: "The Isuzu FVZ 34N is Kenya's premier heavy haulage truck. Its massive 7.8L six-cylinder engine and 6Ã—4 drive configuration conquer the most demanding routes, delivering a massive 16-tonne payload for nationwide distribution.",
+    description: "The Isuzu FVZ 34N is Kenya's premier heavy haulage truck. Its massive 7.8L six-cylinder engine and 6Ãâ€â€4 drive configuration conquer the most demanding routes, delivering a massive 16-tonne payload for nationwide distribution.",
     heroImage: "/vehicles/f-series/fvz34n/1.jpeg",
     gallery: [
       "/vehicles/f-series/fvz34n/1.jpeg",
@@ -852,8 +852,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "n-series-nps": {
     id: "n-series-nps",
     category: "Trucks",
-    title: "N-Series NHP 81H 4Ã—4",
-    description: "Built for Kenya's toughest terrains, the NHP 81H 4Ã—4 delivers true off-road capability combined with a 3.0-tonne payload and a powerful 4.8L engine, making it the ideal choice for remote operations, agriculture, and rough terrain.",
+    title: "N-Series NHP 81H 4Ãâ€â€4",
+    description: "Built for Kenya's toughest terrains, the NHP 81H 4Ãâ€â€4 delivers true off-road capability combined with a 3.0-tonne payload and a powerful 4.8L engine, making it the ideal choice for remote operations, agriculture, and rough terrain.",
     heroImage: "/vehicles/n-series/nps-81h-real.png",
     gallery: [
       "/vehicles/n-series/nps-81h-real.png",
@@ -1012,7 +1012,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     id: "movers",
     category: "Trucks",
     title: "Movers (UD Quester)",
-    description: "The UD Quester GWE 6x4 Heavy-Duty Prime Mover series â€” featuring the GWE 460 AMT, GWE 440 AMT, and GWE 420 MT â€” is engineered for maximum uptime, extreme payloads, and unmatched fuel efficiency across East Africa's most demanding transit corridors. Powered by the heavy-duty 11-litre GH11E engine delivering up to 460 HP and 2,200 Nm of low-end torque, paired with UD's legendary ESCOT-E 12-Speed Automated Manual Transmission (AMT) or robust multi-speed Manual Transmission. Sold as Tractor Only with attractive bank and SACCO asset financing available.",
+    description: "The UD Quester GWE 6x4 Heavy-Duty Prime Mover series â€â€ featuring the GWE 460 AMT, GWE 440 AMT, and GWE 420 MT â€â€ is engineered for maximum uptime, extreme payloads, and unmatched fuel efficiency across East Africa's most demanding transit corridors. Powered by the heavy-duty 11-litre GH11E engine delivering up to 460 HP and 2,200 Nm of low-end torque, paired with UD's legendary ESCOT-E 12-Speed Automated Manual Transmission (AMT) or robust multi-speed Manual Transmission. Sold as Tractor Only with attractive bank and SACCO asset financing available.",
     heroImage: "/vehicles/movers/ud-quester-460-hero.png",
     gallery: [
       "/vehicles/movers/ud-quester-460-hero.png",
@@ -1023,7 +1023,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     quickSpecs: {
       engine: "10.8L (GH11E) Turbo Diesel",
       transmission: "ESCOT 12-Speed AMT / MT",
-      power: "420 HP â€“ 460 HP",
+      power: "420 HP â€â€œ 460 HP",
       payload: "Up to 80 Tonnes GCM (Tractor Only)",
       fuel: "Diesel",
     },
@@ -1037,7 +1037,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         model: "UD QUESTER GWE 460 AMT",
         displacement: "10,837 cc",
         payload: "Up to 80T GCM",
-        drive: "6Ã—4",
+        drive: "6Ãâ€â€4",
         chassisPrice: "Ksh 16,450,000",
         withBodyPrice: "Tractor Only (Financing Available)",
         power: "460 HP (338 kW) @ 1,800 rpm Â· 2,200 Nm Â· ESCOT-E 12-Speed AMT",
@@ -1046,7 +1046,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         model: "UD QUESTER GWE 440 AMT",
         displacement: "10,837 cc",
         payload: "Up to 80T GCM",
-        drive: "6Ã—4",
+        drive: "6Ãâ€â€4",
         chassisPrice: "Ksh 15,900,000",
         withBodyPrice: "Tractor Only (Financing Available)",
         power: "440 HP (324 kW) @ 1,800 rpm Â· 2,000 Nm Â· ESCOT-E 12-Speed AMT",
@@ -1055,7 +1055,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         model: "UD QUESTER GWE 420 MT",
         displacement: "10,837 cc",
         payload: "Up to 80T GCM",
-        drive: "6Ã—4",
+        drive: "6Ãâ€â€4",
         chassisPrice: "Ksh 14,000,000",
         withBodyPrice: "Tractor Only (Financing Available)",
         power: "420 HP (309 kW) @ 1,800 rpm Â· 2,000 Nm Â· 12-Speed Manual MT",
@@ -1066,7 +1066,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         type: "GH11E 11-Litre 6-Cylinder In-Line, 24-Valve, OHC, Intercooled Turbocharged Common Rail (Euro 3/5)",
         displacement: "10,837 cc",
         maxPower: "460 HP (338 kW) / 440 HP (324 kW) / 420 HP (309 kW) @ 1,800 rpm",
-        maxTorque: "2,200 Nm (GWE 460) / 2,000 Nm (GWE 440 & 420) @ 1,050â€“1,400 rpm",
+        maxTorque: "2,200 Nm (GWE 460) / 2,000 Nm (GWE 440 & 420) @ 1,050â€â€œ1,400 rpm",
         fuelSystem: "Electronically Controlled High-Pressure Unit Injector / Common Rail",
       },
       dimensions: {
@@ -1090,9 +1090,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     },
     features: [
       "Tractor Only configuration ready for standard 2\" and 3.5\" fifth-wheel trailer kingpins",
-      "Asset Financing Available â€” up to 90% funding with flexible 12 to 60-month tenures via leading banks and SACCOs",
+      "Asset Financing Available â€â€ up to 90% funding with flexible 12 to 60-month tenures via leading banks and SACCOs",
       "UD ESCOT-E 12-Speed Automated Manual Transmission (AMT) for fatigue-free driving and optimized fuel economy",
-      "GH11E 11-Litre heavy-duty powertrain delivering massive 2,200 Nm torque at low RPM (1,050â€“1,400 rpm)",
+      "GH11E 11-Litre heavy-duty powertrain delivering massive 2,200 Nm torque at low RPM (1,050â€â€œ1,400 rpm)",
       "UD Extra Engine Brake (EEB) auxiliary braking system for safer downhill descent with full loads",
       "High-Roof Sleeper Cab with aerodynamic wind deflector, air-suspension driver seat, and full sleeping berth",
       "Heavy-duty 6x4 drive axles with inter-axle and inter-wheel differential locks for severe off-highway conditions",
@@ -1102,40 +1102,40 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     ],
   },
 
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
   //  Buses
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
 
   "f-series-buses": {
     id: "f-series-buses",
     category: "Buses",
     title: "F-Series Buses",
-    description: "The Isuzu F-Series buses â€” including the FRR90 (50-seater) and FVR34S (67-seater) â€” are Kenya's benchmark for inter-city passenger transport. With powerful turbodiesel engines, full air-over-hydraulic or full air brake systems, and locally assembled coachwork, these buses offer unmatched reliability for SACCO operators and institutions.",
+    description: "The Isuzu F-Series buses â€â€ including the FRR90 (50-seater) and FVR34S (67-seater) â€â€ are Kenya's benchmark for inter-city passenger transport. With powerful turbodiesel engines, full air-over-hydraulic or full air brake systems, and locally assembled coachwork, these buses offer unmatched reliability for SACCO operators and institutions.",
     heroImage: "/vehicles/frr90-bus.webp",
     gallery: [
       "/vehicles/frr90-bus.webp",
       "/vehicles/fvr34s-bus.webp",
     ],
     quickSpecs: {
-      engine: "5.2L â€“ 7.8L Turbo Diesel",
+      engine: "5.2L â€â€œ 7.8L Turbo Diesel",
       transmission: "6-Speed Manual (Synchromesh)",
-      power: "177 kW â€“ 206 kW",
+      power: "177 kW â€â€œ 206 kW",
       fuel: "Diesel",
     },
     detailedSpecs: {
       engine: {
         type: "4HK1-TCC (FRR90) / 6HK1-TCN (FVR34S), DOHC, Intercooled Turbo",
         displacement: "5,193 cc (FRR90) / 7,790 cc (FVR34S)",
-        maxPower: "177 kW â€“ 206 kW",
-        maxTorque: "637 Nm (FRR90) â€“ 882 Nm (FVR34S)",
+        maxPower: "177 kW â€â€œ 206 kW",
+        maxTorque: "637 Nm (FRR90) â€â€œ 882 Nm (FVR34S)",
         fuelSystem: "High-Pressure Common Rail Direct Injection",
       },
       dimensions: {
-        length: "8,900 mm (FRR90) â€“ 12,000 mm (FVR34S body)",
+        length: "8,900 mm (FRR90) â€â€œ 12,000 mm (FVR34S body)",
         width: "2,490 mm",
-        height: "3,100 â€“ 3,300 mm",
+        height: "3,100 â€â€œ 3,300 mm",
         wheelbase: "4,860 mm (FRR90) / 6,050 mm (FVR34S)",
-        groundClearance: "220 â€“ 240 mm",
+        groundClearance: "220 â€â€œ 240 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Alloy Steel Leaf Springs, Double-Acting Shock Absorbers",
@@ -1145,8 +1145,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       },
       capacities: {
         fuelTank: "200 Litres",
-        seating: "50 â€“ 67 Passengers (body dependent)",
-        gvm: "11,000 kg (FRR90) â€“ 15,000 kg (FVR34S)",
+        seating: "50 â€â€œ 67 Passengers (body dependent)",
+        gvm: "11,000 kg (FRR90) â€â€œ 15,000 kg (FVR34S)",
       },
     },
     features: [],
@@ -1156,16 +1156,16 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     id: "n-series-buses",
     category: "Buses",
     title: "N-Series Buses",
-    description: "The Isuzu N-Series buses â€” the NMR85 (25-seater) and NQR81 (33-seater) â€” are Kenya's most popular school, staff, and public service buses. Built on the ultra-reliable N-Series truck chassis, they deliver the lowest total cost of ownership, outstanding fuel economy, and easy maintenance that fleet operators depend on.",
+    description: "The Isuzu N-Series buses â€â€ the NMR85 (25-seater) and NQR81 (33-seater) â€â€ are Kenya's most popular school, staff, and public service buses. Built on the ultra-reliable N-Series truck chassis, they deliver the lowest total cost of ownership, outstanding fuel economy, and easy maintenance that fleet operators depend on.",
     heroImage: "/vehicles/nmr85-bus.webp",
     gallery: [
       "/vehicles/nmr85-bus.webp",
       "/vehicles/nqr-bus.webp",
     ],
     quickSpecs: {
-      engine: "3.0L â€“ 4.8L Turbo Diesel",
+      engine: "3.0L â€â€œ 4.8L Turbo Diesel",
       transmission: "5 or 6-Speed Manual",
-      power: "96 kW â€“ 110 kW",
+      power: "96 kW â€â€œ 110 kW",
       fuel: "Diesel",
     },
     detailedSpecs: {
@@ -1177,11 +1177,11 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         fuelSystem: "Common Rail Direct Injection",
       },
       dimensions: {
-        length: "6,200 mm (NMR85 body) â€“ 7,500 mm (NQR81 body)",
-        width: "2,050 â€“ 2,200 mm",
-        height: "2,600 â€“ 2,800 mm",
+        length: "6,200 mm (NMR85 body) â€â€œ 7,500 mm (NQR81 body)",
+        width: "2,050 â€â€œ 2,200 mm",
+        height: "2,600 â€â€œ 2,800 mm",
         wheelbase: "2,750 mm (NMR85) / 3,815 mm (NQR81)",
-        groundClearance: "190 â€“ 210 mm",
+        groundClearance: "190 â€â€œ 210 mm",
       },
       chassis: {
         suspensionFront: "Semi-Elliptic Alloy Steel Leaf Springs",
@@ -1190,16 +1190,16 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         steering: "Power Assisted Recirculating Ball",
       },
       capacities: {
-        fuelTank: "75 â€“ 100 Litres",
+        fuelTank: "75 â€â€œ 100 Litres",
         seating: "25 Passengers (NMR85) / 33 Passengers (NQR81)",
         gvm: "5,200 kg (NMR85) / 8,500 kg (NQR81)",
       },
     },
     features: [],
   },
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
   //  Buses
-  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢ââ€¢
 
   "bus-nmr-26": {
     id: "bus-nmr-26",
@@ -1459,8 +1459,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "bus-fvr34-67-4x2": {
     id: "bus-fvr34-67-4x2",
     category: "Buses",
-    title: "FVR 34 67 Seater Bus 4Ã—2",
-    description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (4Ã—2) is Kenya's premier high-capacity coach. Powered by a massive 7.8L six-cylinder engine, it delivers exceptional comfort and reliability for long-distance intercounty routes, schools, and corporate transport.",
+    title: "FVR 34 67 Seater Bus 4Ãâ€â€2",
+    description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (4Ãâ€â€2) is Kenya's premier high-capacity coach. Powered by a massive 7.8L six-cylinder engine, it delivers exceptional comfort and reliability for long-distance intercounty routes, schools, and corporate transport.",
     heroImage: "/vehicles/buses/fvr34-4x2/9.jpg",
     gallery: [
       "/vehicles/buses/fvr34-4x2/10.jpg",
@@ -1508,8 +1508,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
   "bus-fvr34-67-6x2": {
     id: "bus-fvr34-67-6x2",
     category: "Buses",
-    title: "FVR 34 67 Seater Bus 6Ã—2",
-    description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (6Ã—2) is the top-of-the-range coach for Kenya's most demanding intercounty routes. The 6Ã—2 configuration delivers superior load distribution and stability for operators who carry full loads every day.",
+    title: "FVR 34 67 Seater Bus 6Ãâ€â€2",
+    description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (6Ãâ€â€2) is the top-of-the-range coach for Kenya's most demanding intercounty routes. The 6Ãâ€â€2 configuration delivers superior load distribution and stability for operators who carry full loads every day.",
     heroImage: "/vehicles/buses/fvr34-6x2/10.jpg",
     gallery: [
       "/vehicles/buses/fvr34-6x2/9.png",

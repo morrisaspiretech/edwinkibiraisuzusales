@@ -114,7 +114,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#D62B2B] animate-pulse" />
             <span className="text-[11px] font-black uppercase tracking-widest text-white/90">
-              Kenya Commercial Vehicle Intelligence • 2026 Verified
+              Kenya Commercial Vehicle Intelligence â€¢ 2026 Verified
             </span>
           </div>
 

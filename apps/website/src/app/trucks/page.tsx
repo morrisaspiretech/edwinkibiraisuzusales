@@ -35,7 +35,7 @@ export default function TrucksHub() {
     },
     {
       q: "How do I get asset financing for an Isuzu commercial truck in Kenya?",
-      a: "Edwin Kibirai partners with Co-operative Bank, Equity Bank, KCB, NCBA, Family Bank, and major transport SACCOs. You can obtain up to 80%–95% financing with repayment tenures between 12 and 60 months with minimal documentation.",
+      a: "Edwin Kibirai partners with Co-operative Bank, Equity Bank, KCB, NCBA, Family Bank, and major transport SACCOs. You can obtain up to 80%�“95% financing with repayment tenures between 12 and 60 months with minimal documentation.",
     },
   ];
 
@@ -401,7 +401,7 @@ export default function TrucksHub() {
       <section className="bg-neutral-900 text-white py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <h2 className="text-3xl font-black uppercase">Speak With Edwin Kibirai — Isuzu Truck Specialist</h2>
+            <h2 className="text-3xl font-black uppercase">Speak With Edwin Kibirai �” Isuzu Truck Specialist</h2>
             <p className="text-gray-400 text-sm mt-2">Enterprise Road, Industrial Area, Nairobi. Fleet delivery available across all 47 counties in Kenya.</p>
           </div>
           <div className="flex gap-4">

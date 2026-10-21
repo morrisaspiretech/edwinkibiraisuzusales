@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export async function generateStaticParams() { return Object.keys(VEHICLES_DATA).map((model) => ({ model })); }
 
-// Per-model SEO metadata — each vehicle page gets its own title + description
+// Per-model SEO metadata �” each vehicle page gets its own title + description
 export async function generateMetadata({ params }: { params: Promise<{ model: string }> }): Promise<Metadata> {
   const { model } = await params;
   const vehicle = VEHICLES_DATA[model];
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
       "Isuzu financing Kenya",
     ],
     openGraph: {
-      title: `${vehicle.title} — Edwin Kibirai Isuzu Sales Kenya`,
+      title: `${vehicle.title} �” Edwin Kibirai Isuzu Sales Kenya`,
       description: `${vehicle.description.split('.')[0]}. Available now in Kenya with bank financing.`,
       url: canonicalUrl,
       images: [{ url: vehicle.heroImage, alt: vehicle.title }],
@@ -355,7 +355,7 @@ export default async function VehiclePage({
                       </td>
                       <td className="px-4 py-4">
                         <span className={`inline-block px-2.5 py-1 text-xs font-black uppercase tracking-wide rounded border ${
-                          v.drive === "4Ã—4"
+                          v.drive === "4Ã�”4"
                             ? "bg-amber-50 text-amber-700 border-amber-200"
                             : "bg-gray-50 text-gray-600 border-gray-200"
                         }`}>
