@@ -2,7 +2,7 @@ import { VEHICLES_DATA } from "@/data/vehicles";
 import { BLOG_POSTS } from "@/data/posts";
 
 export const INDEXNOW_KEY = "c7e29b104a8f3d654029b38fa19e82c7";
-export const HOST = "edwinkibiraisuzusales.onrender.com";
+export const HOST = "www.edwinkibiraisuzusales.co.ke";
 export const BASE_URL = `https://${HOST}`;
 export const KEY_LOCATION = `${BASE_URL}/${INDEXNOW_KEY}.txt`;
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "UD Quester Kenya", "Isuzu truck financing Kenya", "Isuzu tipper Kenya", "Isuzu refrigerated truck Nairobi"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/trucks/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/trucks/",
   },
 };
 
@@ -205,13 +205,13 @@ export default function TrucksHub() {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://edwinkibiraisuzusales.onrender.com",
+          "item": "https://www.edwinkibiraisuzusales.co.ke",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Commercial Trucks",
-          "item": "https://edwinkibiraisuzusales.onrender.com/trucks",
+          "item": "https://www.edwinkibiraisuzusales.co.ke/trucks",
         },
       ],
     },

@@ -144,18 +144,18 @@ Return ONLY a valid JSON object:
     fs.writeFileSync(postsFile, postsContent, "utf-8");
 
     // ── TRIGGER AUTHORIZED SEO ROBOT ──
-    const newPostUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${postData.slug}`;
-    const blogIndexUrl = `https://edwinkibiraisuzusales.onrender.com/blog`;
-    const sitemapUrl = `https://edwinkibiraisuzusales.onrender.com/sitemap.xml`;
+    const newPostUrl = `https://www.edwinkibiraisuzusales.co.ke/blog/${postData.slug}`;
+    const blogIndexUrl = `https://www.edwinkibiraisuzusales.co.ke/blog`;
+    const sitemapUrl = `https://www.edwinkibiraisuzusales.co.ke/sitemap.xml`;
 
     // Asynchronously notify IndexNow and ping search engines
     fetch("https://api.indexnow.org/indexnow", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        host: "edwinkibiraisuzusales.onrender.com",
+        host: "www.edwinkibiraisuzusales.co.ke",
         key: "c7e29b104a8f3d654029b38fa19e82c7",
-        keyLocation: "https://edwinkibiraisuzusales.onrender.com/c7e29b104a8f3d654029b38fa19e82c7.txt",
+        keyLocation: "https://www.edwinkibiraisuzusales.co.ke/c7e29b104a8f3d654029b38fa19e82c7.txt",
         urlList: [newPostUrl, blogIndexUrl, sitemapUrl],
       }),
     }).catch(() => {});

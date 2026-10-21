@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
   const price = vehicle.price?.unitPrice ?? vehicle.price?.chassisPrice;
   const priceText = price ? ` Price: ${price}.` : " Contact for price.";
 
-  const canonicalUrl = `https://edwinkibiraisuzusales.onrender.com/vehicles/${model}/`;
+  const canonicalUrl = `https://www.edwinkibiraisuzusales.co.ke/vehicles/${model}/`;
 
   return {
     title: `${vehicle.title} Price in Kenya 2026 | Edwin Kibirai Isuzu Sales`,
@@ -80,7 +80,7 @@ export default async function VehiclePage({
               "@context": "https://schema.org",
               "@type": "Vehicle",
               name: vehicle.title,
-              image: `https://edwinkibiraisuzusales.onrender.com${vehicle.heroImage}`,
+              image: `https://www.edwinkibiraisuzusales.co.ke${vehicle.heroImage}`,
               description: vehicle.description,
               brand: { "@type": "Brand", name: "Isuzu" },
               vehicleEngine: {
@@ -98,7 +98,7 @@ export default async function VehiclePage({
                   ? { price: vehicle.price.chassisPrice.replace(/[^0-9.]/g, "") }
                   : { priceRange: "Contact for price" }),
                 availability: "https://schema.org/InStock",
-                url: `https://edwinkibiraisuzusales.onrender.com/vehicles/${vehicle.id}`,
+                url: `https://www.edwinkibiraisuzusales.co.ke/vehicles/${vehicle.id}`,
                 seller: {
                   "@type": "AutoDealer",
                   name: "Edwin Kibirai Isuzu Sales",
@@ -152,9 +152,9 @@ export default async function VehiclePage({
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://edwinkibiraisuzusales.onrender.com" },
-                { "@type": "ListItem", position: 2, name: "Vehicles", item: "https://edwinkibiraisuzusales.onrender.com/vehicles" },
-                { "@type": "ListItem", position: 3, name: vehicle.title, item: `https://edwinkibiraisuzusales.onrender.com/vehicles/${vehicle.id}` },
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.edwinkibiraisuzusales.co.ke" },
+                { "@type": "ListItem", position: 2, name: "Vehicles", item: "https://www.edwinkibiraisuzusales.co.ke/vehicles" },
+                { "@type": "ListItem", position: 3, name: vehicle.title, item: `https://www.edwinkibiraisuzusales.co.ke/vehicles/${vehicle.id}` },
               ]
             }
           ]),

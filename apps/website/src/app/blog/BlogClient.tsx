@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
@@ -114,7 +114,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#D62B2B] animate-pulse" />
             <span className="text-[11px] font-black uppercase tracking-widest text-white/90">
-              Kenya Commercial Vehicle Intelligence • 2026 Verified
+              Kenya Commercial Vehicle Intelligence � 2026 Verified
             </span>
           </div>
 
@@ -222,7 +222,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
           {filteredPosts.length === 0 && (
             <div className="bg-white rounded-3xl p-12 text-center border border-gray-200 max-w-lg mx-auto shadow-sm">
               <div className="w-16 h-16 bg-red-50 text-[#D62B2B] rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-black">
-                🔍
+                ??
               </div>
               <h3 className="text-xl font-black text-gray-900 mb-2">No Guides Found</h3>
               <p className="text-gray-500 text-sm mb-6 leading-relaxed">

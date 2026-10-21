@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Terms of Service | Edwin Kibirai Isuzu Sales",
   description: "Terms and conditions for using the Edwin Kibirai Isuzu Sales website.",
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/terms/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/terms/",
   },
 };
 

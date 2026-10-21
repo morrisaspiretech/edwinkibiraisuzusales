@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     // Engine/tech (for spec searchers)
     "Isuzu 4HK1 engine", "Isuzu 4JJ3 engine", "Isuzu 6HK1 engine", "Isuzu 4773cc",
   ],
-  metadataBase: new URL("https://edwinkibiraisuzusales.onrender.com"),
+  metadataBase: new URL("https://www.edwinkibiraisuzusales.co.ke"),
   // Google Search Console verification code
   // Get it from: https://search.google.com/search-console → Add Property → HTML tag method
   verification: {
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     title: "Edwin Kibira Isuzu Sales - Global & Authorized Isuzu Dealership",
     description: "The ultimate destination for Isuzu Trucks, Buses, Pickups, and SUVs globally. Comprehensive specs, sales, and service for all Isuzu models.",
     type: "website",
-    url: "https://edwinkibiraisuzusales.onrender.com",
-    siteName: "Edwin Kibira Isuzu Sales - Global Hub",
-    images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibira Isuzu Sales" }],
+    url: "https://www.edwinkibiraisuzusales.co.ke",
+    siteName: "Edwin Kibirai Isuzu Sales Kenya",
+    images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibirai Isuzu Sales" }],
   },
 };
 
@@ -75,9 +75,9 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "AutoDealer",
                 name: "Edwin Kibirai Isuzu Sales",
-                image: "https://edwinkibiraisuzusales.onrender.com/logo.jpg",
-                "@id": "https://edwinkibiraisuzusales.onrender.com",
-                url: "https://edwinkibiraisuzusales.onrender.com",
+                image: "https://www.edwinkibiraisuzusales.co.ke/logo.jpg",
+                "@id": "https://www.edwinkibiraisuzusales.co.ke",
+                url: "https://www.edwinkibiraisuzusales.co.ke",
                 telephone: "+254768351483",
                 email: "edwin@cfg.co.ke",
                 description: "Authorized Isuzu dealer in Nairobi, Kenya. Selling brand-new Isuzu trucks (FRR90, NLR, NQR, NMR, FVR, FVZ), buses, D-Max pickups, MU-X SUVs and UD Quester prime movers. Up to 100% bank financing available.",
@@ -108,10 +108,10 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "Edwin Kibira Isuzu Sales",
-                "url": "https://edwinkibiraisuzusales.onrender.com",
+                "url": "https://www.edwinkibiraisuzusales.co.ke",
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": "https://edwinkibiraisuzusales.onrender.com/inventory?q={search_term_string}",
+                  "target": "https://www.edwinkibiraisuzusales.co.ke/inventory?q={search_term_string}",
                   "query-input": "required name=search_term_string"
                 }
               },
@@ -119,8 +119,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Isuzu",
-                "url": "https://edwinkibiraisuzusales.onrender.com/ultimate-isuzu-guide",
-                "logo": "https://edwinkibiraisuzusales.onrender.com/logo.jpg",
+                "url": "https://www.edwinkibiraisuzusales.co.ke/ultimate-isuzu-guide",
+                "logo": "https://www.edwinkibiraisuzusales.co.ke/logo.jpg",
                 "sameAs": [
                   "https://en.wikipedia.org/wiki/Isuzu_Motors",
                   "https://www.isuzu.co.jp/world/"

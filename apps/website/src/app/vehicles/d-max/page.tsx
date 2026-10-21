@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Isuzu D-Max V-Cross Kenya", "Isuzu pickup financing Kenya"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/vehicles/d-max/",
   },
 };
 
@@ -42,7 +42,7 @@ export default function DMaxHub() {
       "@context": "https://schema.org",
       "@type": "Vehicle",
       "name": "Isuzu D-MAX Pickup",
-      "image": "https://edwinkibiraisuzusales.onrender.com/vehicles/grouped/batch3/3.jpeg",
+      "image": "https://www.edwinkibiraisuzusales.co.ke/vehicles/grouped/batch3/3.jpeg",
       "description": "The Isuzu D-MAX is Kenya's most capable 1-ton pickup truck, available in Single Cab and Double Cab, 4x2 and 4x4 configurations. Powered by 1.9L or 3.0L turbo diesel engines.",
       "brand": { "@type": "Brand", "name": "Isuzu" },
       "vehicleEngine": {
@@ -58,7 +58,7 @@ export default function DMaxHub() {
         "price": "4450000",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
-        "url": "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max",
+        "url": "https://www.edwinkibiraisuzusales.co.ke/vehicles/d-max",
         "seller": {
           "@type": "AutoDealer",
           "name": "Edwin Kibirai Isuzu Sales",
@@ -88,13 +88,13 @@ export default function DMaxHub() {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://edwinkibiraisuzusales.onrender.com",
+          "item": "https://www.edwinkibiraisuzusales.co.ke",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Isuzu D-Max",
-          "item": "https://edwinkibiraisuzusales.onrender.com/vehicles/d-max",
+          "item": "https://www.edwinkibiraisuzusales.co.ke/vehicles/d-max",
         },
       ],
     },

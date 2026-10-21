@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Isuzu trucks for sale", "International Isuzu dealer", "Isuzu payload capacity", "Genuine Isuzu parts"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/ultimate-isuzu-guide/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/ultimate-isuzu-guide/",
   },
 };
 

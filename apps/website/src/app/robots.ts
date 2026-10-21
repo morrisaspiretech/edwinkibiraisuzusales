@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://edwinkibiraisuzusales.onrender.com";
+const BASE_URL = "https://www.edwinkibiraisuzusales.co.ke";
 
 export default function robots(): MetadataRoute.Robots {
   return {

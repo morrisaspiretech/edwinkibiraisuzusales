@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales — authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/",
   },
 };
 

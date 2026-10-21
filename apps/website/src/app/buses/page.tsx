@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Isuzu matatu price Kenya", "Isuzu bus financing Kenya", "Isuzu school bus financing"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/buses/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/buses/",
   },
 };
 
@@ -56,13 +56,13 @@ export default function BusesHub() {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://edwinkibiraisuzusales.onrender.com",
+          "item": "https://www.edwinkibiraisuzusales.co.ke",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Buses",
-          "item": "https://edwinkibiraisuzusales.onrender.com/buses",
+          "item": "https://www.edwinkibiraisuzusales.co.ke/buses",
         },
       ],
     },

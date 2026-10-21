@@ -1,6 +1,6 @@
 export async function register() {
   if (process.env.NEXT_RUNTIME === "nodejs") {
-    const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "https://edwinkibiraisuzu.onrender.com";
+    const websiteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "https://www.edwinkibiraisuzusales.co.ke";
 
     // Self-ping every 10 minutes to prevent Render free instance from sleeping
     const globalWithPing = global as typeof globalThis & { _keepAliveInterval?: NodeJS.Timeout };

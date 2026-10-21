@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Isuzu mu-X price Kenya", "Isuzu trucks Kenya", "Isuzu buses Kenya", "Edwin Kibirai Isuzu"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/vehicles/",
   },
 };
 
@@ -46,7 +46,7 @@ export default function ShowroomPage() {
     "itemListElement": vehicles.map((v, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
-      "url": `https://edwinkibiraisuzusales.onrender.com/vehicles/${v.slug}`,
+      "url": `https://www.edwinkibiraisuzusales.co.ke/vehicles/${v.slug}`,
       "name": v.name,
     })),
   };

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Isuzu mu-X 4x4 price Kenya", "family SUV Kenya", "Edwin Kibirai Isuzu mu-X"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/vehicles/mu-x/",
   },
 };
 
@@ -41,7 +41,7 @@ export default function MuXHub() {
       "@context": "https://schema.org",
       "@type": "Vehicle",
       "name": "Isuzu MU-X SUV",
-      "image": "https://edwinkibiraisuzusales.onrender.com/hero-car.png",
+      "image": "https://www.edwinkibiraisuzusales.co.ke/hero-car.png",
       "description": "The Isuzu mu-X is a premium 7-seater luxury SUV available in Kenya. Powered by 1.9L or 3.0L turbo diesel engines, with 4x2 and 4x4 options. Features ADAS safety systems, dual-zone climate control, and executive leather interior.",
       "brand": { "@type": "Brand", "name": "Isuzu" },
       "vehicleEngine": {
@@ -57,7 +57,7 @@ export default function MuXHub() {
         "price": "8600000",
         "priceValidUntil": "2027-12-31",
         "availability": "https://schema.org/InStock",
-        "url": "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x",
+        "url": "https://www.edwinkibiraisuzusales.co.ke/vehicles/mu-x",
         "seller": {
           "@type": "AutoDealer",
           "name": "Edwin Kibirai Isuzu Sales",
@@ -87,13 +87,13 @@ export default function MuXHub() {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://edwinkibiraisuzusales.onrender.com",
+          "item": "https://www.edwinkibiraisuzusales.co.ke",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Isuzu mu-X",
-          "item": "https://edwinkibiraisuzusales.onrender.com/vehicles/mu-x",
+          "item": "https://www.edwinkibiraisuzusales.co.ke/vehicles/mu-x",
         },
       ],
     },

@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     "Isuzu truck prices Kenya", "Isuzu bus price report", "Edwin Kibirai Isuzu"
   ],
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/blog/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/blog/",
   },
   openGraph: {
     title: "Official Isuzu Kenya Buyer Guides & 2026 Price Reports | Edwin Kibirai",
     description: "Explore in-depth 2026 Isuzu buyer guides, pricing tables, bank & SACCO financing options, and comparisons in Kenya.",
-    url: "https://edwinkibiraisuzusales.onrender.com/blog/",
+    url: "https://www.edwinkibiraisuzusales.co.ke/blog/",
   },
 };
 
@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
     "itemListElement": BLOG_POSTS.slice(0, 20).map((post, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
-      "url": `https://edwinkibiraisuzusales.onrender.com/blog/${post.slug}`,
+      "url": `https://www.edwinkibiraisuzusales.co.ke/blog/${post.slug}`,
       "name": post.title,
     })),
   };

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Edwin Kibirai Isuzu Sales",
   description: "Our privacy policy explains how we collect, use, and protect your data.",
   alternates: {
-    canonical: "https://edwinkibiraisuzusales.onrender.com/privacy/",
+    canonical: "https://www.edwinkibiraisuzusales.co.ke/privacy/",
   },
 };
 

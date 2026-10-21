@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/posts";
 import { VEHICLES_DATA } from "@/data/vehicles";
 
-const BASE_URL = "https://edwinkibiraisuzusales.onrender.com";
+const BASE_URL = "https://www.edwinkibiraisuzusales.co.ke";
 const TODAY = new Date();
 
 // Static high-value routes (with trailing slashes matching next.config.ts trailingSlash: true)

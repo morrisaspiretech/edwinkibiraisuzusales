@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Post Not Found" };
   }
 
-  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}/`;
+  const postUrl = `https://www.edwinkibiraisuzusales.co.ke/blog/${slug}/`;
 
   return {
     title: `${post.title} | Edwin Kibirai Isuzu Sales`,
@@ -52,14 +52,14 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const relatedPosts = BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 3);
-  const postUrl = `https://edwinkibiraisuzusales.onrender.com/blog/${slug}/`;
+  const postUrl = `https://www.edwinkibiraisuzusales.co.ke/blog/${slug}/`;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt,
-    "image": [`https://edwinkibiraisuzusales.onrender.com${post.image}`],
+    "image": [`https://www.edwinkibiraisuzusales.co.ke${post.image}`],
     "datePublished": "2026-09-23T00:00:00Z",
     "dateModified": "2026-09-23T00:00:00Z",
     "mainEntityOfPage": {
@@ -70,14 +70,14 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "Person",
       "name": "Edwin Kibirai",
       "jobTitle": "Isuzu Commercial Sales Specialist",
-      "url": "https://edwinkibiraisuzusales.onrender.com/about",
+      "url": "https://www.edwinkibiraisuzusales.co.ke/about",
     },
     "publisher": {
       "@type": "Organization",
       "name": "Edwin Kibirai Isuzu Sales",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://edwinkibiraisuzusales.onrender.com/logo.jpg",
+        "url": "https://www.edwinkibiraisuzusales.co.ke/logo.jpg",
       },
     },
   };
@@ -90,13 +90,13 @@ export default async function BlogPostPage({ params }: Props) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://edwinkibiraisuzusales.onrender.com",
+        "item": "https://www.edwinkibiraisuzusales.co.ke",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog & Price Reports",
-        "item": "https://edwinkibiraisuzusales.onrender.com/blog",
+        "item": "https://www.edwinkibiraisuzusales.co.ke/blog",
       },
       {
         "@type": "ListItem",
