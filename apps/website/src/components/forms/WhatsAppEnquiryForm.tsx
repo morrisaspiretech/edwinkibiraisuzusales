@@ -53,7 +53,7 @@ export default function WhatsAppEnquiryForm() {
     const selectedVehicle = vehiclesList.find(v => v.id === model)?.title || model;
     
     // Construct WhatsApp message
-    const message = `*New Website Enquiry!* 🚀\n\n*Customer Details:*\n�‘� Name: ${name}\n�“� Location: ${location || 'Not provided'}\n�’� Business: ${business || 'Not selected'}\n�’� Payment: ${payment || 'Not selected'}\n\n*Vehicle of Interest:*\n🚙 Model: ${selectedVehicle}\n\nPlease assist me with a quote and availability.`;
+    const message = `*New Website Enquiry!* ð\n\n*Customer Details:*\nðâ¤ Name: ${name}\nðâ Location: ${location || 'Not provided'}\nðâ¼ Business: ${business || 'Not selected'}\nðâ³ Payment: ${payment || 'Not selected'}\n\n*Vehicle of Interest:*\nð Model: ${selectedVehicle}\n\nPlease assist me with a quote and availability.`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/254768351483?text=${encodedMessage}`;
@@ -64,12 +64,12 @@ export default function WhatsAppEnquiryForm() {
   return (
     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-start">
       
-      {/* �”��”� LEFT COLUMN: INPUT FORM �”��”� */}
+      {/* ââââ LEFT COLUMN: INPUT FORM ââââ */}
       <div className="w-full lg:w-3/5 bg-white shadow-xl rounded-2xl p-6 sm:p-10 border border-gray-100 relative overflow-hidden">
         
         <div className="bg-gradient-to-r from-[#d62b2b] to-[#ff4d4d] text-white p-5 rounded-xl shadow-md mb-10">
           <p className="font-medium text-sm sm:text-base leading-snug">
-            �‘� Hi! To serve you best, please fill in the details below and we&apos;ll get back to you with the perfect match.
+            ðâ Hi! To serve you best, please fill in the details below and we&apos;ll get back to you with the perfect match.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function WhatsAppEnquiryForm() {
               className="w-full p-4 border border-gray-200 rounded-lg bg-gray-50 text-gray-800 font-medium focus:ring-2 focus:ring-[#d62b2b] focus:border-transparent outline-none transition-all cursor-pointer"
               required
             >
-              <option value="" disabled>�” Select a model �”</option>
+              <option value="" disabled>ââ Select a model ââ</option>
               {Object.entries(groupedVehicles).map(([category, vehicles]) => (
                 <optgroup key={category} label={category}>
                   {vehicles.map(v => (
@@ -160,7 +160,7 @@ export default function WhatsAppEnquiryForm() {
                   onChange={(e) => setPayment(e.target.value)}
                   className="w-full p-3.5 border border-gray-200 rounded-lg bg-gray-50 focus:ring-2 focus:ring-[#d62b2b] outline-none cursor-pointer"
                 >
-                  <option value="">�” Select Payment Method �”</option>
+                  <option value="">ââ Select Payment Method ââ</option>
                   <option value="Cash">Cash / Bank Transfer</option>
                   <option value="Asset Finance">Asset Finance (Bank Loan)</option>
                   <option value="Trade-in">Trade-in</option>
@@ -179,7 +179,7 @@ export default function WhatsAppEnquiryForm() {
         </form>
       </div>
 
-      {/* �”��”� RIGHT COLUMN: LIVE SUMMARY �”��”� */}
+      {/* ââââ RIGHT COLUMN: LIVE SUMMARY ââââ */}
       <div className="w-full lg:w-2/5 sticky top-24">
         <div className="bg-gradient-to-br from-[#d62b2b] to-[#a31b1b] rounded-2xl shadow-2xl p-8 text-white relative overflow-hidden">
           
@@ -200,29 +200,29 @@ export default function WhatsAppEnquiryForm() {
               <div className="flex items-center gap-4">
                 <span className="w-5 text-[#ffadad]"><FaUser size={14} /></span>
                 <span className="text-sm font-bold w-20">Name</span>
-                <span className={`text-sm ${name ? 'text-white' : 'text-white/40'}`}>{name || '�”'}</span>
+                <span className={`text-sm ${name ? 'text-white' : 'text-white/40'}`}>{name || 'ââ'}</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="w-5 text-[#ffadad]"><FaCarSide size={14} /></span>
                 <span className="text-sm font-bold w-20">Model</span>
                 <span className={`text-sm font-medium ${model ? 'text-white' : 'text-white/40'}`}>
-                  {model ? vehiclesList.find(v => v.id === model)?.title : '�”'}
+                  {model ? vehiclesList.find(v => v.id === model)?.title : 'ââ'}
                 </span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="w-5 text-[#ffadad]"><FaStore size={14} /></span>
                 <span className="text-sm font-bold w-20">Business</span>
-                <span className={`text-sm ${business ? 'text-white' : 'text-white/40'}`}>{business || '�”'}</span>
+                <span className={`text-sm ${business ? 'text-white' : 'text-white/40'}`}>{business || 'ââ'}</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="w-5 text-[#ffadad]"><FaMapMarkerAlt size={14} /></span>
                 <span className="text-sm font-bold w-20">Location</span>
-                <span className={`text-sm ${location ? 'text-white' : 'text-white/40'}`}>{location || '�”'}</span>
+                <span className={`text-sm ${location ? 'text-white' : 'text-white/40'}`}>{location || 'ââ'}</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="w-5 text-[#ffadad]"><FaCreditCard size={14} /></span>
                 <span className="text-sm font-bold w-20">Payment</span>
-                <span className={`text-sm ${payment ? 'text-white' : 'text-white/40'}`}>{payment || '�”'}</span>
+                <span className={`text-sm ${payment ? 'text-white' : 'text-white/40'}`}>{payment || 'ââ'}</span>
               </div>
             </div>
           </div>

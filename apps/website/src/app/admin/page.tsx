@@ -50,7 +50,7 @@ export default async function AdminDashboard() {
       {/* Welcome Banner */}
       <div className="bg-gradient-to-r from-[#0F172A] to-[#1E293B] rounded-2xl p-6 text-white flex items-center justify-between">
         <div>
-          <p className="text-white/60 text-sm mb-1">Good day, Edwin �‘�</p>
+          <p className="text-white/60 text-sm mb-1">Good day, Edwin ðâ</p>
           <h2 className="text-2xl font-bold">Welcome to your Dealership Dashboard</h2>
           <p className="text-white/50 text-sm mt-1">
             You have {available} vehicle{available !== 1 ? "s" : ""} available for sale
@@ -150,13 +150,13 @@ export default async function AdminDashboard() {
                         </div>
                         <div>
                           <p className="font-bold text-gray-900 text-[13px] leading-tight">{car.model}</p>
-                          <p className="text-gray-400 text-[11px]">{car.make} · {car.year}</p>
+                          <p className="text-gray-400 text-[11px]">{car.make} Â· {car.year}</p>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       <span className="text-xs font-semibold text-gray-600 bg-gray-100 px-2.5 py-1 rounded-md">
-                        {car.category || "�”"}
+                        {car.category || "ââ"}
                       </span>
                     </td>
                     <td className="px-6 py-4">

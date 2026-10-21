@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export async function generateStaticParams() { return Object.keys(VEHICLES_DATA).map((model) => ({ model })); }
 
-// Per-model SEO metadata �” each vehicle page gets its own title + description
+// Per-model SEO metadata ââ each vehicle page gets its own title + description
 export async function generateMetadata({ params }: { params: Promise<{ model: string }> }): Promise<Metadata> {
   const { model } = await params;
   const vehicle = VEHICLES_DATA[model];
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ model: st
       "Isuzu financing Kenya",
     ],
     openGraph: {
-      title: `${vehicle.title} �” Edwin Kibirai Isuzu Sales Kenya`,
+      title: `${vehicle.title} ââ Edwin Kibirai Isuzu Sales Kenya`,
       description: `${vehicle.description.split('.')[0]}. Available now in Kenya with bank financing.`,
       url: canonicalUrl,
       images: [{ url: vehicle.heroImage, alt: vehicle.title }],
@@ -71,7 +71,7 @@ export default async function VehiclePage({
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* â”€â”€ SEO SCHEMA MARKUP â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ SEO SCHEMA MARKUP Ã¢ââ¬Ã¢ââ¬ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -161,7 +161,7 @@ export default async function VehiclePage({
         }}
       />
 
-      {/* â”€â”€ COMPACT HERO â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ COMPACT HERO Ã¢ââ¬Ã¢ââ¬ */}
       <div className="relative bg-[#0d0d0d] overflow-hidden" style={{ minHeight: 320 }}>
         {/* Show vehicle's actual hero image OR presentation video */}
         {vehicle.presentationVideo?.url ? (
@@ -240,7 +240,7 @@ export default async function VehiclePage({
         </div>
       </div>
 
-      {/* â”€â”€ SPLIT: INTERACTIVE GALLERY + STICKY DETAILS â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ SPLIT: INTERACTIVE GALLERY + STICKY DETAILS Ã¢ââ¬Ã¢ââ¬ */}
       <VehicleGalleryClient
         vehicleId={vehicle.id}
         images={allImages}
@@ -252,7 +252,7 @@ export default async function VehiclePage({
         price={vehicle.price}
       />
 
-      {/* â”€â”€ TECHNICAL SPECIFICATIONS â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ TECHNICAL SPECIFICATIONS Ã¢ââ¬Ã¢ââ¬ */}
       <div className="bg-[#f8f9fa] border-t border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-7">
           <div className="flex items-center gap-2.5 mb-5">
@@ -315,7 +315,7 @@ export default async function VehiclePage({
         </div>
       </div>
 
-      {/* â”€â”€ MODEL RANGE & PRICING TABLE (only for multi-variant vehicles) â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ MODEL RANGE & PRICING TABLE (only for multi-variant vehicles) Ã¢ââ¬Ã¢ââ¬ */}
       {vehicle.variants && vehicle.variants.length > 0 && (
         <div className="bg-white border-t border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
@@ -326,7 +326,7 @@ export default async function VehiclePage({
                   Model Range &amp; Pricing
                 </h2>
               </div>
-              <span className="text-[11px] text-gray-400 font-semibold italic sm:ml-auto">* Prices are indicative â€” contact Edwin for current offers</span>
+              <span className="text-[11px] text-gray-400 font-semibold italic sm:ml-auto">* Prices are indicative Ã¢â¬â contact Edwin for current offers</span>
             </div>
 
             <div className="overflow-x-auto rounded-sm border border-gray-200 shadow-sm">
@@ -355,15 +355,15 @@ export default async function VehiclePage({
                       </td>
                       <td className="px-4 py-4">
                         <span className={`inline-block px-2.5 py-1 text-xs font-black uppercase tracking-wide rounded border ${
-                          v.drive === "4Ã�”4"
+                          v.drive === "4Ãââ4"
                             ? "bg-amber-50 text-amber-700 border-amber-200"
                             : "bg-gray-50 text-gray-600 border-gray-200"
                         }`}>
                           {v.drive}
                         </span>
                       </td>
-                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.gvm ?? "â€”"}</td>
-                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.power ?? "â€”"}</td>
+                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.gvm ?? "Ã¢â¬â"}</td>
+                      <td className="px-4 py-4 text-sm font-semibold text-gray-700">{v.power ?? "Ã¢â¬â"}</td>
                       <td className="px-4 py-4">
                         <span className="font-black text-[#1a1a1a] text-sm whitespace-nowrap">{v.chassisPrice}</span>
                       </td>
@@ -394,7 +394,7 @@ export default async function VehiclePage({
         </div>
       )}
 
-      {/* â”€â”€ VIDEO SHOWCASE â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ VIDEO SHOWCASE Ã¢ââ¬Ã¢ââ¬ */}
       {vehicle.presentationVideo && (
         <div className="bg-[#111] border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 py-14">
@@ -428,7 +428,7 @@ export default async function VehiclePage({
         </div>
       )}
 
-      {/* â”€â”€ RELATED VEHICLES â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ RELATED VEHICLES Ã¢ââ¬Ã¢ââ¬ */}
       {related.length > 0 && (
         <div className="bg-[#f9fafb] border-b border-gray-200 py-10 sm:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -521,7 +521,7 @@ export default async function VehiclePage({
         </div>
       )}
 
-      {/* â”€â”€ CONTACT CTA â”€â”€ */}
+      {/* Ã¢ââ¬Ã¢ââ¬ CONTACT CTA Ã¢ââ¬Ã¢ââ¬ */}
       <div className="bg-[#D62B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">

@@ -50,7 +50,7 @@ export default function FAQPage() {
     <main className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
       
-      {/* �”��”� SEO SCHEMA MARKUP �”��”� */}
+      {/* ââââ SEO SCHEMA MARKUP ââââ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

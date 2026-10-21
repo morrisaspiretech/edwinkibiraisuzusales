@@ -22,7 +22,7 @@ export default function FeaturedVehicleCard({ v }: Props) {
   const vehicleData = VEHICLES_DATA[v.id];
   const price = vehicleData?.price;
   const priceLabel = price?.unitPrice ?? price?.chassisPrice ?? null;
-  const priceSuffix = price?.withBodyPrice && !price?.unitPrice ? ` �“ ${price.withBodyPrice} w/body` : "";
+  const priceSuffix = price?.withBodyPrice && !price?.unitPrice ? ` ââ ${price.withBodyPrice} w/body` : "";
 
   return (
     <div className="group bg-white rounded-xl border border-gray-100 hover:border-transparent hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">

@@ -79,7 +79,7 @@ export default function LiveChat() {
         }),
       });
     } catch (err) {
-      // Fail silently �” WhatsApp redirect is more important
+      // Fail silently ââ WhatsApp redirect is more important
       console.error("Lead save failed", err);
     }
 
@@ -98,7 +98,7 @@ export default function LiveChat() {
 
   return (
     <>
-      {/* �”��”� CHAT BUBBLE BUTTON �”��”� */}
+      {/* ââââ CHAT BUBBLE BUTTON ââââ */}
       <div className="fixed bottom-[76px] right-5 z-50 flex flex-col items-end gap-2">
 
         {/* Notification pop-up bubble */}
@@ -124,9 +124,9 @@ export default function LiveChat() {
                 </div>
               </div>
               <p className="text-xs text-gray-600 leading-snug">
-                �‘� Hi! Looking for an Isuzu? I can help you find the perfect vehicle.
+                ðâ Hi! Looking for an Isuzu? I can help you find the perfect vehicle.
               </p>
-              <p className="text-[10px] text-[#D62B2B] font-bold mt-1.5">Click to chat �’</p>
+              <p className="text-[10px] text-[#D62B2B] font-bold mt-1.5">Click to chat ââ</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -158,7 +158,7 @@ export default function LiveChat() {
         </motion.button>
       </div>
 
-      {/* �”��”� CHAT WINDOW �”��”� */}
+      {/* ââââ CHAT WINDOW ââââ */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -179,7 +179,7 @@ export default function LiveChat() {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-white font-black text-sm leading-tight">Edwin Kibira</p>
-                <p className="text-white/60 text-[11px]">Isuzu Sales Specialist · Online</p>
+                <p className="text-white/60 text-[11px]">Isuzu Sales Specialist Â· Online</p>
               </div>
               <div className="flex items-center gap-2">
                 <a
@@ -222,7 +222,7 @@ export default function LiveChat() {
                       </div>
                       <div className="bg-white rounded-xl rounded-tl-none p-3.5 shadow-sm border border-gray-100 max-w-[230px]">
                         <p className="text-sm text-gray-700 leading-relaxed">
-                          �‘� Habari! I'm Edwin. Welcome to <strong>Edwin Kibira Isuzu Sales</strong>.<br /><br />
+                          ðâ Habari! I'm Edwin. Welcome to <strong>Edwin Kibira Isuzu Sales</strong>.<br /><br />
                           What Isuzu are you looking for today? I can help with pricing, financing, and test drives!
                         </p>
                       </div>
@@ -271,7 +271,7 @@ export default function LiveChat() {
                           {form.interest
                             ? `Great choice! The <strong>${form.interest}</strong> is very popular in Kenya.`
                             : "Happy to help!"}{" "}
-                          Let me get your details so I can call or WhatsApp you with pricing. ��”
+                          Let me get your details so I can call or WhatsApp you with pricing. ðââ
                         </p>
                       </div>
                     </div>

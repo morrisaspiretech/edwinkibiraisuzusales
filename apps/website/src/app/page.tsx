@@ -12,9 +12,9 @@ import type { Metadata } from "next";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales �” Trucks, Buses, Pickups & SUVs Nairobi",
+  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales ââ Trucks, Buses, Pickups & SUVs Nairobi",
   description:
-    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales �” authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
+    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales ââ authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
   alternates: {
     canonical: "https://www.edwinkibiraisuzusales.co.ke/",
   },
@@ -55,192 +55,192 @@ const VEHICLE_CATEGORIES = [
 const FEATURED_VEHICLES = [
   {
     id: 'tfr87-4x2',
-    title: 'TFR 87 Single Cab 4��”2',
+    title: 'TFR 87 Single Cab 4Ãââ2',
     category: 'Pickups',
     img: '/vehicles/grouped/batch1/2.jpeg',
-    spec: '1.9L Turbo Diesel · 150 hp · Manual',
+    spec: '1.9L Turbo Diesel Â· 150 hp Â· Manual',
   },
   {
     id: 'tfs87-4x4-manual',
-    title: 'TFS 87 Single Cab 4��”4',
+    title: 'TFS 87 Single Cab 4Ãââ4',
     category: 'Pickups',
     img: '/vehicles/grouped/batch2/2.jpeg',
-    spec: '1.9L Turbo Diesel · Manual · 4��”4',
+    spec: '1.9L Turbo Diesel Â· Manual Â· 4Ãââ4',
   },
   {
     id: 'tfs87-4x4-auto',
-    title: 'TFS 87 Single Cab 4��”4',
+    title: 'TFS 87 Single Cab 4Ãââ4',
     category: 'Pickups',
     img: '/vehicles/grouped/batch2/3.jpeg',
-    spec: '1.9L Turbo Diesel · Auto · 4��”4',
+    spec: '1.9L Turbo Diesel Â· Auto Â· 4Ãââ4',
   },
   {
     id: 'tfs87-double-manual',
     title: 'TFS 87 Double Cab',
     category: 'Pickups',
     img: '/vehicles/grouped/batch3/3.jpeg',
-    spec: '1.9L Turbo Diesel · Manual · 4��”4',
+    spec: '1.9L Turbo Diesel Â· Manual Â· 4Ãââ4',
   },
   {
     id: 'tfs87-double-auto',
     title: 'TFS 87 Double Cab',
     category: 'Pickups',
     img: '/vehicles/grouped/batch4/3.jpeg',
-    spec: '1.9L Turbo Diesel · Auto · 4��”4',
+    spec: '1.9L Turbo Diesel Â· Auto Â· 4Ãââ4',
   },
   {
     id: 'tfs40-double-auto',
     title: 'TFS 40 Double Cab Automatic',
     category: 'Pickups',
     img: '/vehicles/tfs40-double-auto/1.jpeg',
-    spec: '3.0L Turbo Diesel · 190 hp · 4��”4',
+    spec: '3.0L Turbo Diesel Â· 190 hp Â· 4Ãââ4',
   },
   {
     id: 'double-cabin',
     title: 'D-Max 3.0L Double Cab',
     category: 'Pickups',
     img: '/vehicles/dmax-single.webp',
-    spec: '3.0L Turbo Diesel · 190 hp · 4��”4',
+    spec: '3.0L Turbo Diesel Â· 190 hp Â· 4Ãââ4',
   },
   {
     id: 'mu-x-1900cc',
     title: 'MU-X LS-U 1900cc',
     category: 'SUVs',
     img: '/vehicles/mu-x-1900cc-gallery/1.jpeg',
-    spec: '1.9L Turbo Diesel · 150 hp · 7-Seater',
+    spec: '1.9L Turbo Diesel Â· 150 hp Â· 7-Seater',
   },
   {
     id: 'mu-x-3000cc',
     title: 'MU-X LS-T 3000cc',
     category: 'SUVs',
     img: '/vehicles/mu-x-3000cc-gallery/1.jpeg',
-    spec: '3.0L Turbo Diesel · 190 hp · 7-Seater',
+    spec: '3.0L Turbo Diesel Â· 190 hp Â· 7-Seater',
   },
   {
     id: 'n-series-nlr',
     title: 'N-Series NLR',
     category: 'Trucks',
     img: '/vehicles/n-series/nlr-chassis.png',
-    spec: '2.999cc Turbo Diesel · 2.3T Payload',
+    spec: '2.999cc Turbo Diesel Â· 2.3T Payload',
   },
   {
     id: 'n-series-nmr85',
     title: 'N-Series NMR 85',
     category: 'Trucks',
     img: '/vehicles/n-series/nmr85/1.jpeg',
-    spec: '2.999cc Turbo Diesel · 3.5T Payload',
+    spec: '2.999cc Turbo Diesel Â· 3.5T Payload',
   },
   {
     id: 'n-series-nps',
-    title: 'N-Series NPS 81H 4��”4',
+    title: 'N-Series NPS 81H 4Ãââ4',
     category: 'Trucks',
     img: '/vehicles/n-series/nps-81h-real.png',
-    spec: '4,773cc Turbo Diesel · 3.0T Payload',
+    spec: '4,773cc Turbo Diesel Â· 3.0T Payload',
   },
   {
     id: 'n-series-nqr81',
     title: 'N-Series NQR 81',
     category: 'Trucks',
     img: '/vehicles/nqr-hero.png',
-    spec: '4,773cc Turbo Diesel · 5.0T Payload',
+    spec: '4,773cc Turbo Diesel Â· 5.0T Payload',
   },
   {
     id: 'n-series-nqr-xtra',
     title: 'N-Series NQR Xtra',
     category: 'Trucks',
     img: '/vehicles/n-series/nqr-xtra-real.png',
-    spec: '4,773cc Turbo Diesel · 6.0T Payload',
+    spec: '4,773cc Turbo Diesel Â· 6.0T Payload',
   },
   {
     id: 'f-series-frr90n',
     title: 'F-Series FRR 90N',
     category: 'Trucks',
     img: '/vehicles/f-series/frr90n/1.jpeg',
-    spec: '5,193cc Turbo Diesel · 11T Payload',
+    spec: '5,193cc Turbo Diesel Â· 11T Payload',
   },
   {
     id: 'f-series-fvr90l',
     title: 'F-Series FVR 90L',
     category: 'Trucks',
     img: '/vehicles/f-series/fvr90l/1.jpeg',
-    spec: '5,193cc Turbo Diesel · 13T Payload',
+    spec: '5,193cc Turbo Diesel Â· 13T Payload',
   },
   {
     id: 'f-series-fvr90p',
     title: 'F-Series FVR 90P',
     category: 'Trucks',
     img: '/vehicles/f-series/fvr90p/1.jpg',
-    spec: '5,193cc Turbo Diesel · 13T Payload',
+    spec: '5,193cc Turbo Diesel Â· 13T Payload',
   },
   {
     id: 'f-series-fvz34n',
     title: 'F-Series FVZ 34N Truck',
     category: 'Trucks',
     img: '/vehicles/f-series/fvz34n/1.jpeg',
-    spec: '7,790cc Turbo Diesel · 6��”4 · 16T Payload',
+    spec: '7,790cc Turbo Diesel Â· 6Ãââ4 Â· 16T Payload',
   },
   {
     id: 'f-series-fvz34t',
     title: 'F-Series FVZ 34T Tipper',
     category: 'Trucks',
     img: '/vehicles/f-series/fvz34t/1.jpeg',
-    spec: '7,790cc Turbo Diesel · 16T Tipper',
+    spec: '7,790cc Turbo Diesel Â· 16T Tipper',
   },
   {
     id: 'movers',
     title: 'Movers (UD Quester)',
     category: 'Trucks',
     img: '/vehicles/movers/ud-quester-460-hero.png',
-    spec: '10.8L Turbo Diesel · 420�“460 HP · ESCOT AMT / MT · Tractor Only',
+    spec: '10.8L Turbo Diesel Â· 420ââ460 HP Â· ESCOT AMT / MT Â· Tractor Only',
   },
   {
     id: 'bus-nmr-26',
     title: 'NMR 26 Seater Bus',
     category: 'Buses',
     img: '/vehicles/buses/nmr26/1.jpg',
-    spec: '26 Seater · School / Staff',
+    spec: '26 Seater Â· School / Staff',
   },
   {
     id: 'bus-nqr-29',
     title: 'NQR 29 Seater Bus',
     category: 'Buses',
     img: '/vehicles/buses/nqr29/2.jpg',
-    spec: '29 Seater · Commuter',
+    spec: '29 Seater Â· Commuter',
   },
   {
     id: 'bus-nqr-33',
     title: 'NQR 33 Seater Bus',
     category: 'Buses',
     img: '/vehicles/buses/nqr33/1.jpeg',
-    spec: '33 Seater · Commuter',
+    spec: '33 Seater Â· Commuter',
   },
   {
     id: 'bus-frr90n-51',
     title: 'FRR 90N 51 Seater',
     category: 'Buses',
     img: '/vehicles/buses/frr90n-51/1.jpg',
-    spec: '51 Seater · Ksh 8,450,000',
+    spec: '51 Seater Â· Ksh 8,450,000',
   },
   {
     id: 'bus-frr90q-51',
     title: 'FRR 90Q 51 Seater',
     category: 'Buses',
     img: '/vehicles/buses/frr90q-51/2.jpg',
-    spec: '51 Seater · Ksh 10,425,000',
+    spec: '51 Seater Â· Ksh 10,425,000',
   },
   {
     id: 'bus-fvr34-67-4x2',
-    title: 'FVR 34 67 Seater 4��”2',
+    title: 'FVR 34 67 Seater 4Ãââ2',
     category: 'Buses',
     img: '/vehicles/buses/fvr34-4x2/10.jpg',
-    spec: '67 Seater Semi-Luxury · Ksh 14,916,000',
+    spec: '67 Seater Semi-Luxury Â· Ksh 14,916,000',
   },
   {
     id: 'bus-fvr34-67-6x2',
-    title: 'FVR 34 67 Seater 6��”2',
+    title: 'FVR 34 67 Seater 6Ãââ2',
     category: 'Buses',
     img: '/vehicles/buses/fvr34-6x2/10.jpg',
-    spec: '67 Seater Semi-Luxury · Ksh 16,623,000',
+    spec: '67 Seater Semi-Luxury Â· Ksh 16,623,000',
   },
 ];
 
@@ -248,22 +248,22 @@ const WHY_FEATURES = [
   {
     icon: <FaShieldHalved size={28} className="text-[#D62B2B]" />,
     title: "100% Genuine Isuzu",
-    desc: "Every vehicle is brand-new, zero-mileage, and sourced directly from Isuzu East Africa �” backed by an official manufacturer warranty.",
+    desc: "Every vehicle is brand-new, zero-mileage, and sourced directly from Isuzu East Africa ââ backed by an official manufacturer warranty.",
   },
   {
     icon: <FaStar size={28} className="text-[#D62B2B]" />,
     title: "Up to 100% Bank Financing",
-    desc: "We partner with leading Kenyan banks to offer flexible financing packages �” get your Isuzu with as little as 0% deposit.",
+    desc: "We partner with leading Kenyan banks to offer flexible financing packages ââ get your Isuzu with as little as 0% deposit.",
   },
   {
     icon: <FaTruckFront size={28} className="text-[#D62B2B]" />,
     title: "Full Range Available",
-    desc: "From light N-Series trucks to heavy F-Series, pickups, buses, and SUVs �” we carry the complete Isuzu lineup under one roof.",
+    desc: "From light N-Series trucks to heavy F-Series, pickups, buses, and SUVs ââ we carry the complete Isuzu lineup under one roof.",
   },
   {
     icon: <FaPhone size={28} className="text-[#D62B2B]" />,
     title: "Dedicated Sales Support",
-    desc: "Our experienced Isuzu specialists are available 6 days a week to guide you through every step �” from selection to financing to delivery.",
+    desc: "Our experienced Isuzu specialists are available 6 days a week to guide you through every step ââ from selection to financing to delivery.",
   },
 ];
 
@@ -273,7 +273,7 @@ export default async function Home() {
       <Navbar />
       <Hero />
 
-      {/* �”��”� VEHICLE CATEGORIES (SEPARATED FROM HERO) �”��”� */}
+      {/* ââââ VEHICLE CATEGORIES (SEPARATED FROM HERO) ââââ */}
       <section className="bg-white py-12 px-4 sm:px-6 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
@@ -307,7 +307,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* �”��”� FULL VEHICLE RANGE �”��”� */}
+      {/* ââââ FULL VEHICLE RANGE ââââ */}
       <section className="py-12 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
@@ -328,10 +328,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* �”��”� MOVING CATALOG �”��”� */}
+      {/* ââââ MOVING CATALOG ââââ */}
       <MovingCatalog />
 
-      {/* �”��”� WHY CHOOSE US �”��”� */}
+      {/* ââââ WHY CHOOSE US ââââ */}
       <section className="py-12 px-4 sm:px-6 bg-[#f9f9f9] border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
@@ -356,7 +356,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* �”��”� FINANCING BANNER �”��”� */}
+      {/* ââââ FINANCING BANNER ââââ */}
       <section
         className="relative py-12 px-4 sm:px-6 overflow-hidden"
         style={{ background: "linear-gradient(135deg, #D62B2B 0%, #a81e1e 100%)" }}
@@ -368,7 +368,7 @@ export default async function Home() {
               Get Up To 100% Bank Financing
             </h2>
             <p className="text-white/70 mt-2 text-sm max-w-lg">
-              Drive your new Isuzu today. We partner with leading Kenyan banks �” low deposits, flexible repayment terms.
+              Drive your new Isuzu today. We partner with leading Kenyan banks ââ low deposits, flexible repayment terms.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
@@ -390,7 +390,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* �”��”� ABOUT SECTION �”��”� */}
+      {/* ââââ ABOUT SECTION ââââ */}
       <section className="py-12 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -416,11 +416,11 @@ export default async function Home() {
                 Your Trusted <span className="text-[#D62B2B]">Isuzu Dealer</span> in Kenya
               </h2>
               <p className="text-gray-600 leading-relaxed text-sm">
-                Edwin Kibira Isuzu Sales is a multi-award winning, authorised Isuzu dealer in Kenya. We are recognized for excellence across Vehicle Sales, Service, Parts, and Customer Experience. We carry the full range of Isuzu vehicles �” from the legendary D-Max pickup built for Kenya&apos;s tough terrain, to the premium MU-X SUV, and the powerful, inter-city distribution champions like the N-Series and FRR90 commercial trucks and buses. Every vehicle is brand-new and zero-mileage.
+                Edwin Kibira Isuzu Sales is a multi-award winning, authorised Isuzu dealer in Kenya. We are recognized for excellence across Vehicle Sales, Service, Parts, and Customer Experience. We carry the full range of Isuzu vehicles ââ from the legendary D-Max pickup built for Kenya&apos;s tough terrain, to the premium MU-X SUV, and the powerful, inter-city distribution champions like the N-Series and FRR90 commercial trucks and buses. Every vehicle is brand-new and zero-mileage.
               </p>
               <ul className="space-y-2">
                 {[
-                  "Multi-Award Winning Authorized Isuzu Dealer �” brand-new, zero-mileage vehicles",
+                  "Multi-Award Winning Authorized Isuzu Dealer ââ brand-new, zero-mileage vehicles",
                   "Full model range: Trucks (FRR90, N-Series), Buses, Pickups & SUVs",
                   "Up to 100% bank financing available with flexible repayment",
                   "360-Degree After-Sales Solutions: Genuine Parts, Lubricants, and Certified Servicing",
@@ -456,7 +456,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* �”��”� TESTIMONIALS �”��”� */}
+      {/* ââââ TESTIMONIALS ââââ */}
       <section className="py-14 bg-[#f9f9f9] border-t border-gray-100 overflow-hidden">
         {/* Header */}
         <div className="text-center mb-10 px-4">
@@ -471,21 +471,21 @@ export default async function Home() {
           <p className="text-gray-500 text-sm mt-2">Real stories from real Kenyans who trust Edwin Kibira Isuzu Sales.</p>
         </div>
 
-        {/* Row 1 �” scrolls left */}
+        {/* Row 1 ââ scrolls left */}
         <div className="relative flex overflow-hidden mb-5 group">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
           <div className="flex w-max animate-marquee gap-5 px-2">
             {[
               { name: "James Mwangi", role: "Fleet Owner, Nairobi", text: "I bought three NQR trucks from Edwin Kibira and the experience was seamless. Great financing terms and after-sales support has been excellent." },
-              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything �” from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
+              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything ââ from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
               { name: "Peter Kamau", role: "Construction Company, Mombasa", text: "We've purchased 5 Isuzu trucks through Edwin Kibira Isuzu Sales. Transparent pricing and delivery has always been on time." },
               { name: "Samuel Otieno", role: "Agribusiness, Nakuru", text: "Needed a reliable pickup for my farm operations. The D-Max has been absolutely incredible. Edwin helped me secure 90% bank financing with ease." },
               { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
               { name: "David Kimani", role: "Logistics Company, Nairobi", text: "Our entire delivery fleet is Isuzu N-Series from Edwin Kibira. Best investment we've ever made. Low maintenance, high uptime, every time." },
               { name: "Fatuma Hassan", role: "Trader, Mombasa", text: "I was skeptical at first but the team was so professional. They helped me compare models and I left with the perfect pickup for my business." },
               { name: "James Mwangi", role: "Fleet Owner, Nairobi", text: "I bought three NQR trucks from Edwin Kibira and the experience was seamless. Great financing terms and after-sales support has been excellent." },
-              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything �” from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
+              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything ââ from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
               { name: "Peter Kamau", role: "Construction Company, Mombasa", text: "We've purchased 5 Isuzu trucks through Edwin Kibira Isuzu Sales. Transparent pricing and delivery has always been on time." },
               { name: "Samuel Otieno", role: "Agribusiness, Nakuru", text: "Needed a reliable pickup for my farm operations. The D-Max has been absolutely incredible. Edwin helped me secure 90% bank financing with ease." },
               { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
@@ -506,7 +506,7 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Row 2 �” scrolls right (reverse) */}
+        {/* Row 2 ââ scrolls right (reverse) */}
         <div className="relative flex overflow-hidden group">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f9f9f9] to-transparent z-10 pointer-events-none" />
@@ -543,7 +543,7 @@ export default async function Home() {
       </section>
 
 
-      {/* �”��”� TIKTOK SHOWCASE �”��”� */}
+      {/* ââââ TIKTOK SHOWCASE ââââ */}
       <section className="pt-8 pb-14 px-4 sm:px-6 bg-[#0d0d0d] border-t border-gray-900">
         <div className="max-w-7xl mx-auto">
 
@@ -572,7 +572,7 @@ export default async function Home() {
             </a>
           </div>
 
-          {/* Videos Grid �” one video plays at a time */}
+          {/* Videos Grid ââ one video plays at a time */}
           <TikTokGallery />
 
           {/* Bottom CTA */}
@@ -585,14 +585,14 @@ export default async function Home() {
               className="inline-flex items-center gap-2 bg-[#D62B2B] text-white px-8 py-3 font-black text-xs uppercase tracking-widest hover:bg-[#b01e1e] transition-colors"
             >
               <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z"/></svg>
-              Follow Us on TikTok �” @edwinkibiraisuzusales
+              Follow Us on TikTok ââ @edwinkibiraisuzusales
             </a>
           </div>
 
         </div>
       </section>
 
-      {/* �”��”� CONTACT / SHOWROOM �”��”� */}
+      {/* ââââ CONTACT / SHOWROOM ââââ */}
       <section className="bg-[#0d0d0d] border-t border-white/10 overflow-hidden">
 
         {/* Top accent strip */}
@@ -611,22 +611,22 @@ export default async function Home() {
               Come See Our <span className="text-[#D62B2B]">Showroom</span>
             </h2>
             <p className="text-gray-400 text-sm sm:text-base mt-3 max-w-xl mx-auto">
-              Experience every Isuzu model in person. Our experts will guide you through features, financing, and test drives �” no pressure.
+              Experience every Isuzu model in person. Our experts will guide you through features, financing, and test drives ââ no pressure.
             </p>
           </div>
 
           {/* Main Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
 
-            {/* Left: Contact Details �” 2 cols */}
+            {/* Left: Contact Details ââ 2 cols */}
             <div className="lg:col-span-2 flex flex-col gap-6">
 
               {/* Contact Cards */}
               {[
                 { icon: <FaMapLocationDot size={20} />, label: "Location", value: "Nairobi, Kenya", sub: "Visit us at our main showroom", href: "https://maps.google.com/?q=Nairobi+Kenya", color: "#D62B2B" },
-                { icon: <FaPhone size={20} />, label: "Call Us", value: "0768 351 483", sub: "Mon �“ Sat: 8AM �“ 6PM", href: "tel:0768351483", color: "#D62B2B" },
+                { icon: <FaPhone size={20} />, label: "Call Us", value: "0768 351 483", sub: "Mon ââ Sat: 8AM ââ 6PM", href: "tel:0768351483", color: "#D62B2B" },
                 { icon: <FaWhatsapp size={20} />, label: "WhatsApp", value: "Chat With Us", sub: "Get a reply within minutes", href: "https://wa.me/254768351483?text=Hi+Edwin%2C+I+would+like+to+visit+your+showroom+and+view+the+Isuzu+vehicles.", color: "#25D366" },
-                { icon: <FaClock size={20} />, label: "Working Hours", value: "Mon �“ Sat: 8AM �“ 6PM", sub: "Closed on Sundays & Public Holidays", href: null, color: "#D62B2B" },
+                { icon: <FaClock size={20} />, label: "Working Hours", value: "Mon ââ Sat: 8AM ââ 6PM", sub: "Closed on Sundays & Public Holidays", href: null, color: "#D62B2B" },
               ].map((item) => {
                 const content = (
                   <div className="flex items-start gap-4 bg-white/5 border border-white/10 p-5 rounded-lg hover:border-[#D62B2B]/50 hover:bg-white/8 transition-all group">
@@ -651,7 +651,7 @@ export default async function Home() {
               })}
             </div>
 
-            {/* Right: Map + CTA �” 3 cols */}
+            {/* Right: Map + CTA ââ 3 cols */}
             <div className="lg:col-span-3 flex flex-col gap-6">
 
               {/* Google Map Embed */}
@@ -671,7 +671,7 @@ export default async function Home() {
               {/* CTA Panel */}
               <div className="bg-white/5 border border-white/10 rounded-lg p-7">
                 <h3 className="text-xl font-black text-white uppercase mb-1">Ready to Drive Your Dream Isuzu?</h3>
-                <p className="text-gray-400 text-sm mb-6">Tell us what you need �” we respond within the hour. Zero pressure, 100% honest advice.</p>
+                <p className="text-gray-400 text-sm mb-6">Tell us what you need ââ we respond within the hour. Zero pressure, 100% honest advice.</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Link
@@ -695,7 +695,7 @@ export default async function Home() {
                     className="sm:col-span-2 flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#1da851] transition-all shadow-lg shadow-[#25D366]/20 group"
                   >
                     <FaWhatsapp size={16} />
-                    WhatsApp Us Now �” Instant Reply
+                    WhatsApp Us Now ââ Instant Reply
                     <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

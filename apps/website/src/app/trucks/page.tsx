@@ -35,7 +35,7 @@ export default function TrucksHub() {
     },
     {
       q: "How do I get asset financing for an Isuzu commercial truck in Kenya?",
-      a: "Edwin Kibirai partners with Co-operative Bank, Equity Bank, KCB, NCBA, Family Bank, and major transport SACCOs. You can obtain up to 80%�“95% financing with repayment tenures between 12 and 60 months with minimal documentation.",
+      a: "Edwin Kibirai partners with Co-operative Bank, Equity Bank, KCB, NCBA, Family Bank, and major transport SACCOs. You can obtain up to 80%ââ95% financing with repayment tenures between 12 and 60 months with minimal documentation.",
     },
   ];
 
@@ -149,7 +149,7 @@ export default function TrucksHub() {
       engine: "GH11E 10.8L Turbo Diesel (Euro 3/5)",
       power: "460 HP @ 1,800 rpm | 2,200 Nm",
       gvw: "Up to 80,000 kg Gross Combination Mass (GCM)",
-      payload: "Ksh 16,450,000 (Tractor Only · Financing Available)",
+      payload: "Ksh 16,450,000 (Tractor Only Â· Financing Available)",
       transmission: "ESCOT-E 12-Speed Automated Manual (AMT)",
       idealFor: "Northern Corridor cross-border transit, heavy 40ft container haulage, clinker & bulk cargo",
     },
@@ -159,7 +159,7 @@ export default function TrucksHub() {
       engine: "GH11E 10.8L Turbo Diesel (Euro 3/5)",
       power: "440 HP @ 1,800 rpm | 2,000 Nm",
       gvw: "Up to 80,000 kg Gross Combination Mass (GCM)",
-      payload: "Ksh 15,900,000 (Tractor Only · Financing Available)",
+      payload: "Ksh 15,900,000 (Tractor Only Â· Financing Available)",
       transmission: "ESCOT-E 12-Speed Automated Manual (AMT)",
       idealFor: "Mombasa-Nairobi-Kampala container freight, fuel tankers, cement & clinker haulage",
     },
@@ -169,7 +169,7 @@ export default function TrucksHub() {
       engine: "GH11E 10.8L Turbo Diesel (Euro 3/5)",
       power: "420 HP @ 1,800 rpm | 2,000 Nm",
       gvw: "Up to 80,000 kg Gross Combination Mass (GCM)",
-      payload: "Ksh 14,000,000 (Tractor Only · Financing Available)",
+      payload: "Ksh 14,000,000 (Tractor Only Â· Financing Available)",
       transmission: "12-Speed Heavy Haulage Manual (MT)",
       idealFor: "Long-haul highway logistics, flatbed semi-trailers, heavy construction transport",
     },
@@ -177,7 +177,7 @@ export default function TrucksHub() {
 
   const applications = [
     { name: "Box Body & Courier", desc: "Dry freight transport with aerodynamic cab fairings and security roller shutters." },
-    { name: "Refrigerated (Cold Chain)", desc: "Insulated polyurethane panels with Carrier or Thermo King refrigeration units down to -20°C." },
+    { name: "Refrigerated (Cold Chain)", desc: "Insulated polyurethane panels with Carrier or Thermo King refrigeration units down to -20Â°C." },
     { name: "Hydraulic Tipper", desc: "Hardox reinforced steel dump bodies for aggregate, ballast, sand, and excavation." },
     { name: "Fuel & Water Bowser", desc: "Epoxy-lined potable water tanks or multi-compartment certified petroleum tanks." },
     { name: "Dropside & Flatbed", desc: "Heavy hardwood or high-tensile steel folding dropsides for general open freight." },
@@ -229,7 +229,7 @@ export default function TrucksHub() {
       <section className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-black text-white py-20 px-6 border-b-4 border-red-600">
         <div className="max-w-7xl mx-auto">
           <span className="text-red-500 font-black tracking-widest text-xs uppercase mb-3 block">
-            Authorized Dealer • Kenya & East Africa
+            Authorized Dealer â¢ Kenya & East Africa
           </span>
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
             Isuzu Commercial Trucks <span className="text-red-500 block">N-Series, F-Series & GXZ</span>
@@ -401,7 +401,7 @@ export default function TrucksHub() {
       <section className="bg-neutral-900 text-white py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <h2 className="text-3xl font-black uppercase">Speak With Edwin Kibirai �” Isuzu Truck Specialist</h2>
+            <h2 className="text-3xl font-black uppercase">Speak With Edwin Kibirai ââ Isuzu Truck Specialist</h2>
             <p className="text-gray-400 text-sm mt-2">Enterprise Road, Industrial Area, Nairobi. Fleet delivery available across all 47 counties in Kenya.</p>
           </div>
           <div className="flex gap-4">

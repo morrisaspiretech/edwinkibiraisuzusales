@@ -90,11 +90,11 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
         </Link>
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Edit Vehicle</h1>
-          <p className="text-sm text-gray-500 mt-0.5">{vehicle.make} {vehicle.model} · {vehicle.year}</p>
+          <p className="text-sm text-gray-500 mt-0.5">{vehicle.make} {vehicle.model} Â· {vehicle.year}</p>
         </div>
         <div className="ml-auto flex items-center gap-3">
           <Link href={`/inventory/${vehicle.id}`} target="_blank" className="border border-gray-200 text-gray-600 bg-white px-4 py-2.5 rounded-xl font-semibold text-sm hover:bg-gray-50 transition-colors">
-            View Live ��”
+            View Live âââ
           </Link>
         </div>
       </div>
@@ -177,7 +177,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
             <div className="mt-5">
               <label className={labelCls}>Description / Selling Points</label>
               <textarea name="description" rows={4} defaultValue={vehicle.description || ""}
-                placeholder="Describe the vehicle in detail �” condition, history, unique features..."
+                placeholder="Describe the vehicle in detail ââ condition, history, unique features..."
                 className={`${inputCls} resize-none`} />
             </div>
           </div>
@@ -328,7 +328,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
                             img.isHero ? "bg-red-600 text-white border-red-600" : "bg-white border-gray-200 text-gray-500 hover:border-red-300 hover:text-red-600"
                           }`}
                         >
-                          {img.isHero ? "Main �“" : "Set Main"}
+                          {img.isHero ? "Main ââ" : "Set Main"}
                         </button>
                         {images.length > 1 && (
                           <button type="button" onClick={() => removeImage(i)} className="p-1.5 text-gray-400 hover:text-red-500 bg-white rounded-lg border border-gray-200 transition-colors">

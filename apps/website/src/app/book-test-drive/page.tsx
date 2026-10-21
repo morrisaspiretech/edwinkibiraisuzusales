@@ -56,7 +56,7 @@ const BookTestDrivePage = () => {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      {/* �”��”� Hero Header �”��”� */}
+      {/* ââââ Hero Header ââââ */}
       <div className="pb-12 bg-primary px-6 border-b-4 border-secondary">
         <div className="max-w-7xl mx-auto pt-10">
           <nav className="flex items-center gap-2 text-[10px] font-bold uppercase text-secondary tracking-widest mb-4">
@@ -73,7 +73,7 @@ const BookTestDrivePage = () => {
             Before You Buy
           </h1>
           <p className="text-white/50 mt-4 max-w-xl font-medium text-sm leading-relaxed">
-            Experience the legendary Isuzu D-Max, mu-X SUV, or any of our commercial vehicles firsthand. No obligation �” just pure Isuzu performance.
+            Experience the legendary Isuzu D-Max, mu-X SUV, or any of our commercial vehicles firsthand. No obligation ââ just pure Isuzu performance.
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@ const BookTestDrivePage = () => {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
 
-          {/* �”��”� Left: Info Panel �”��”� */}
+          {/* ââââ Left: Info Panel ââââ */}
           <div className="lg:col-span-2 space-y-10">
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -97,9 +97,9 @@ const BookTestDrivePage = () => {
             <div className="space-y-4">
               {[
                 { icon: <FaTruckFront size={20} />, title: "Any Isuzu Model", desc: "Test the D-Max, mu-X, or any commercial vehicle in our range." },
-                { icon: <FaCalendarDay size={20} />, title: "Flexible Scheduling", desc: "Mon�“Sat: 8:00 AM �“ 6:00 PM. We work around you." },
+                { icon: <FaCalendarDay size={20} />, title: "Flexible Scheduling", desc: "MonââSat: 8:00 AM ââ 6:00 PM. We work around you." },
                 { icon: <FaUser size={20} />, title: "Isuzu-Trained Advisor", desc: "A specialist accompanies you to answer all your questions." },
-                { icon: <FaShieldHalved size={20} />, title: "No Obligation", desc: "Take your time �” zero pressure to buy on the day." },
+                { icon: <FaShieldHalved size={20} />, title: "No Obligation", desc: "Take your time ââ zero pressure to buy on the day." },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -133,12 +133,12 @@ const BookTestDrivePage = () => {
               </a>
               <div className="flex items-center gap-3 text-white/40 text-sm pt-2 border-t border-white/10">
                 <FaClock size={14} className="text-secondary flex-shrink-0" />
-                <span>Mon�“Fri: 8AM�“6PM | Sat: 9AM�“4PM</span>
+                <span>MonââFri: 8AMââ6PM | Sat: 9AMââ4PM</span>
               </div>
             </div>
           </div>
 
-          {/* �”��”� Right: Form �”��”� */}
+          {/* ââââ Right: Form ââââ */}
           <div className="lg:col-span-3">
             {isSuccess ? (
               <motion.div
