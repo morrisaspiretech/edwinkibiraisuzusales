@@ -6,20 +6,9 @@ import Link from "next/link";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import { FaArrowRight } from "react-icons/fa6";
 
-const POPULAR_CATALOG_IDS = [
-  "tfs87-double-manual",
-  "tfs40-double-auto",
-  "tfr87-4x2",
-  "mu-x-3000cc",
-  "f-series-frr90n",
-  "n-series-nmr85",
-  "f-series-fvz34n",
-  "bus-frr90n-51",
-];
-
 export default function MovingCatalog() {
-  // Use a curated selection of our top flagship vehicles
-  const vehicles = POPULAR_CATALOG_IDS.map((id) => VEHICLES_DATA[id]).filter(Boolean);
+  // Use all vehicles from data for full lineup
+  const vehicles = Object.values(VEHICLES_DATA);
   
   // Duplicate the array to ensure a seamless infinite scrolling loop
   const duplicatedVehicles = [...vehicles, ...vehicles];
@@ -42,8 +31,11 @@ export default function MovingCatalog() {
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#111] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#111] to-transparent z-10 pointer-events-none" />
 
-        {/* Scrolling Track */}
-        <div className="flex w-max animate-marquee gap-6 px-3">
+        {/* Scrolling Track with GPU hardware acceleration */}
+        <div 
+          className="flex w-max animate-marquee gap-6 px-3"
+          style={{ willChange: "transform", transform: "translateZ(0)" }}
+        >
           {duplicatedVehicles.map((vehicle, idx) => (
             <Link
               key={`${vehicle.id}-${idx}`}

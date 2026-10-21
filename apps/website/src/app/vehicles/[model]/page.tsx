@@ -171,13 +171,26 @@ export default async function VehiclePage({
 
       {/* â”€â”€ COMPACT HERO â”€â”€ */}
       <div className="relative bg-[#0d0d0d] overflow-hidden" style={{ minHeight: 320 }}>
-        {/* Show vehicle's actual hero image with instant loading */}
-        <img
-          src={vehicle.heroImage}
-          alt={vehicle.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-          loading="eager"
-        />
+        {/* Show vehicle's actual hero image OR presentation video */}
+        {vehicle.presentationVideo?.url ? (
+          <video
+            src={vehicle.presentationVideo.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster={vehicle.heroImage}
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
+          />
+        ) : (
+          <img
+            src={vehicle.heroImage}
+            alt={vehicle.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
+            loading="eager"
+          />
+        )}
         
         {/* Gradients to ensure text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-black/60 to-black/20" />
