@@ -1207,7 +1207,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     pricingTable: [],
     priceFactors: [],
-    financing: null,
+    financing: undefined,
     faqs: [],
   },
   {

@@ -46,8 +46,8 @@ export default function ShowroomPage() {
     "itemListElement": vehicles.map((v, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
-      "url": `https://www.edwinkibiraisuzusales.co.ke/vehicles/${v.slug}`,
-      "name": v.name,
+      "url": `https://www.edwinkibiraisuzusales.co.ke/vehicles/${v.id}`,
+      "name": v.title,
     })),
   };
 

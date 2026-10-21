@@ -76,30 +76,23 @@ const FEATURED_VEHICLES = [
   },
   {
     id: 'tfs87-double-manual',
-    title: 'TFS 87 Double Cab',
+    title: 'TFS 87 Double Cab 4x4',
     category: 'Pickups',
     img: '/vehicles/grouped/batch3/3.jpeg',
     spec: '1.9L Turbo Diesel · Manual · 4x4',
   },
   {
     id: 'tfs87-double-auto',
-    title: 'TFS 87 Double Cab',
+    title: 'TFS 87 Double Cab 4x4',
     category: 'Pickups',
     img: '/vehicles/grouped/batch4/3.jpeg',
     spec: '1.9L Turbo Diesel · Auto · 4x4',
   },
   {
     id: 'tfs40-double-auto',
-    title: 'TFS 40 Double Cab Automatic',
+    title: 'TFS 40 3.0Ltr Double Cab Automatic',
     category: 'Pickups',
     img: '/vehicles/tfs40-double-auto/1.jpeg',
-    spec: '3.0L Turbo Diesel · 190 hp · 4x4',
-  },
-  {
-    id: 'double-cabin',
-    title: 'D-Max 3.0L Double Cab',
-    category: 'Pickups',
-    img: '/vehicles/dmax-single.webp',
     spec: '3.0L Turbo Diesel · 190 hp · 4x4',
   },
   {

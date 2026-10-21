@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+
 import { CompareProvider } from "@/context/CompareContext";
 import CompareBar from "@/components/inventory/CompareBar";
 import LiveChat from "@/components/layout/LiveChat";
@@ -127,7 +127,7 @@ export default function RootLayout({
             <main className="min-h-screen flex flex-col">
               {children}
             </main>
-            <FloatingWhatsApp />
+
             <LiveChat />
             <Footer />
             <CompareBar />

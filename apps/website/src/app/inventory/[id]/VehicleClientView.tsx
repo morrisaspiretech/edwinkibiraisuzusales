@@ -45,7 +45,7 @@ export default function VehicleClientView({ initialVehicle }: Props) {
     { icon: <FaSliders size={16} />, label: "Trans", value: vehicle.transmission || "Manual" },
     { icon: <FaCalendar size={16} />, label: "Year", value: String(vehicle.year) },
     { icon: <FaMapLocationDot size={16} />, label: "Condition", value: conditionLabel },
-  ].filter(Boolean) as { icon: JSX.Element; label: string; value: string }[];
+  ].filter(Boolean) as { icon: React.ReactElement; label: string; value: string }[];
 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">

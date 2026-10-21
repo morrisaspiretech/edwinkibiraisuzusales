@@ -34,6 +34,10 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
 
   useEffect(() => { setMounted(true); }, []);
 
+  const priceLabel = price?.unitPrice ?? price?.chassisPrice ?? null;
+  const waMessage = `Hi Edwin, I am viewing the Isuzu ${title}${priceLabel ? ` (${priceLabel})` : ""} on your website. Is it available for delivery / viewing, and what are the financing options?`;
+  const waUrl = `https://wa.me/254768351483?text=${encodeURIComponent(waMessage)}`;
+
   const currentImg = images[activeImg] || images[0] || "";
   const resetZoom = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
   const zoomIn = () => setZoom(z => Math.min(parseFloat((z + 0.5).toFixed(1)), 4));
@@ -310,7 +314,7 @@ export default function VehicleGalleryClient({ vehicleId, images, title, descrip
                     <FaPhone size={13} /> Call Edwin
                   </a>
                   <a
-                    href="https://wa.me/254768351483"
+                    href={waUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-3 font-black uppercase text-xs tracking-wider hover:bg-[#1ebe5c] transition-colors shadow-md shadow-green-100 rounded-lg"
