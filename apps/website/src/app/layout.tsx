@@ -12,28 +12,25 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales ââ Trucks, Buses, Pickups & SUVs Nairobi",
+  title: "Best Isuzu Dealer Kenya | Edwin Kibirai Isuzu Sales – Trucks, Buses, Pickups & SUVs Nairobi",
   description:
-    "Buy brand-new Isuzu trucks, buses, pickups & SUVs in Kenya. Edwin Kibirai Isuzu Sales ââ authorized dealer in Nairobi. FRR90, NLR, NQR, NMR, D-Max, MU-X & UD Quester. Up to 100% bank financing. Call 0768 351 483.",
+    "Looking for the best Isuzu dealer in Kenya? Buy brand-new Isuzu trucks (FRR90, NLR, NQR, NMR, FVR, FVZ), D-Max pickups, MU-X SUVs & UD Quester at Edwin Kibirai Isuzu Sales Nairobi. Up to 100% asset financing, fast delivery & official warranty. Call 0768 351 483.",
   keywords: [
-    // High-intent Kenya buyer keywords
-    "Isuzu truck price Kenya", "Isuzu dealer Nairobi", "buy Isuzu Kenya", "Isuzu Kenya 2024",
-    "Edwin Kibirai Isuzu", "authorized Isuzu dealer Kenya", "Isuzu East Africa dealer",
-    // Model-specific (what people actually search)
+    // Primary #1 target keywords
+    "best Isuzu dealer Kenya", "best Isuzu dealer Nairobi", "Isuzu dealer Kenya", "buy Isuzu Kenya",
+    "Edwin Kibirai Isuzu", "Edwin Kibirai Isuzu Sales", "authorized Isuzu dealer Kenya", "Isuzu East Africa dealer",
+    // Model-specific high-intent buyer searches
+    "Isuzu truck price Kenya", "Isuzu D-Max price Kenya", "Isuzu D-Max double cab Kenya", "Isuzu D-Max 4x4 price Kenya",
     "Isuzu FRR90 price Kenya", "Isuzu NLR price Kenya", "Isuzu NQR price Kenya",
     "Isuzu NMR price Kenya", "Isuzu FVR price Kenya", "Isuzu FVZ price Kenya",
-    "Isuzu D-Max price Kenya", "Isuzu D-Max double cab Kenya", "Isuzu MU-X price Kenya",
-    "Isuzu NPS 4x4 Kenya", "UD Quester price Kenya", "Isuzu bus price Kenya",
-    // Financing
-    "Isuzu truck financing Kenya", "Isuzu bank loan Kenya", "buy Isuzu on loan Kenya",
-    // Location
-    "Isuzu dealer Nairobi", "Isuzu trucks Nairobi", "commercial vehicles Kenya",
-    // Engine/tech (for spec searchers)
-    "Isuzu 4HK1 engine", "Isuzu 4JJ3 engine", "Isuzu 6HK1 engine", "Isuzu 4773cc",
+    "Isuzu MU-X price Kenya", "Isuzu NPS 4x4 Kenya", "UD Quester price Kenya", "Isuzu bus price Kenya",
+    // Financing & Purchase intent
+    "Isuzu truck financing Kenya", "Isuzu bank loan Kenya", "buy Isuzu on loan Kenya", "Isuzu asset finance Kenya",
+    // Location & Authority
+    "Isuzu trucks Nairobi", "commercial vehicles Kenya", "Enterprise Road Isuzu dealer",
+    "Isuzu 4HK1 engine", "Isuzu 4JJ3 engine", "Isuzu 6HK1 engine",
   ],
   metadataBase: new URL("https://www.edwinkibiraisuzusales.co.ke"),
-  // Google Search Console verification code
-  // Get it from: https://search.google.com/search-console ââ Add Property ââ HTML tag method
   verification: {
     google: "84Q1D5R1_Y8vdOBKd_F1GaIeEsQ0vt6Q3eq51zM9bjs",
   },
@@ -43,12 +40,12 @@ export const metadata: Metadata = {
     shortcut: "/logo.jpg",
   },
   openGraph: {
-    title: "Edwin Kibira Isuzu Sales - Global & Authorized Isuzu Dealership",
-    description: "The ultimate destination for Isuzu Trucks, Buses, Pickups, and SUVs globally. Comprehensive specs, sales, and service for all Isuzu models.",
+    title: "Best Isuzu Dealer in Kenya | Edwin Kibirai Isuzu Sales Nairobi",
+    description: "Kenya's premier authorized dealership for brand-new Isuzu Trucks, Buses, D-Max Pickups, and MU-X SUVs. Unbeatable pricing and up to 100% bank financing.",
     type: "website",
     url: "https://www.edwinkibiraisuzusales.co.ke",
     siteName: "Edwin Kibirai Isuzu Sales Kenya",
-    images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibirai Isuzu Sales" }],
+    images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibirai Isuzu Sales - Best Isuzu Dealer in Kenya" }],
   },
 };
 
@@ -74,6 +71,13 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "AutoDealer",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "194",
+                  "bestRating": "5",
+                  "worstRating": "1"
+                },
                 name: "Edwin Kibirai Isuzu Sales",
                 image: "https://www.edwinkibiraisuzusales.co.ke/logo.jpg",
                 "@id": "https://www.edwinkibiraisuzusales.co.ke",
@@ -107,7 +111,7 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Edwin Kibira Isuzu Sales",
+                "name": "Edwin Kibirai Isuzu Sales",
                 "url": "https://www.edwinkibiraisuzusales.co.ke",
                 "potentialAction": {
                   "@type": "SearchAction",

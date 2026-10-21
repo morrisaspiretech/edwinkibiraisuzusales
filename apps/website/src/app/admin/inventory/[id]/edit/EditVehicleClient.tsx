@@ -90,7 +90,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
         </Link>
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Edit Vehicle</h1>
-          <p className="text-sm text-gray-500 mt-0.5">{vehicle.make} {vehicle.model} Â· {vehicle.year}</p>
+          <p className="text-sm text-gray-500 mt-0.5">{vehicle.make} {vehicle.model} · {vehicle.year}</p>
         </div>
         <div className="ml-auto flex items-center gap-3">
           <Link href={`/inventory/${vehicle.id}`} target="_blank" className="border border-gray-200 text-gray-600 bg-white px-4 py-2.5 rounded-xl font-semibold text-sm hover:bg-gray-50 transition-colors">

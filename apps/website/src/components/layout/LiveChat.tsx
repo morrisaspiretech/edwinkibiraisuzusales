@@ -179,7 +179,7 @@ export default function LiveChat() {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-white font-black text-sm leading-tight">Edwin Kibira</p>
-                <p className="text-white/60 text-[11px]">Isuzu Sales Specialist Â· Online</p>
+                <p className="text-white/60 text-[11px]">Isuzu Sales Specialist · Online</p>
               </div>
               <div className="flex items-center gap-2">
                 <a

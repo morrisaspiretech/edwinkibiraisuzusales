@@ -150,7 +150,7 @@ export default async function AdminDashboard() {
                         </div>
                         <div>
                           <p className="font-bold text-gray-900 text-[13px] leading-tight">{car.model}</p>
-                          <p className="text-gray-400 text-[11px]">{car.make} Â· {car.year}</p>
+                          <p className="text-gray-400 text-[11px]">{car.make} · {car.year}</p>
                         </div>
                       </div>
                     </td>

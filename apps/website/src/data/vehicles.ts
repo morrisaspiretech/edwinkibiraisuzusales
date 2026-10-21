@@ -202,7 +202,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
       "9-inch Infotainment with Apple CarPlay & Android Auto",
       "Premium Leather-Appointed Seats with Power Adjustment",
       "Power Tailgate",
-      "360Â° Surround View Camera",
+      "360° Surround View Camera",
       "Dual-Zone Automatic Climate Control",
       "Terrain Command 4WD (2H / 4H / 4L)",
       "Hill Descent Control & Hill Start Assist",
@@ -1040,7 +1040,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         drive: "6Ãââ4",
         chassisPrice: "Ksh 16,450,000",
         withBodyPrice: "Tractor Only (Financing Available)",
-        power: "460 HP (338 kW) @ 1,800 rpm Â· 2,200 Nm Â· ESCOT-E 12-Speed AMT",
+        power: "460 HP (338 kW) @ 1,800 rpm · 2,200 Nm · ESCOT-E 12-Speed AMT",
       },
       {
         model: "UD QUESTER GWE 440 AMT",
@@ -1049,7 +1049,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         drive: "6Ãââ4",
         chassisPrice: "Ksh 15,900,000",
         withBodyPrice: "Tractor Only (Financing Available)",
-        power: "440 HP (324 kW) @ 1,800 rpm Â· 2,000 Nm Â· ESCOT-E 12-Speed AMT",
+        power: "440 HP (324 kW) @ 1,800 rpm · 2,000 Nm · ESCOT-E 12-Speed AMT",
       },
       {
         model: "UD QUESTER GWE 420 MT",
@@ -1058,7 +1058,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
         drive: "6Ãââ4",
         chassisPrice: "Ksh 14,000,000",
         withBodyPrice: "Tractor Only (Financing Available)",
-        power: "420 HP (309 kW) @ 1,800 rpm Â· 2,000 Nm Â· 12-Speed Manual MT",
+        power: "420 HP (309 kW) @ 1,800 rpm · 2,000 Nm · 12-Speed Manual MT",
       },
     ],
     detailedSpecs: {

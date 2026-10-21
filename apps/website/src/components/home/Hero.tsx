@@ -43,7 +43,7 @@ const Hero = () => {
     
     return {
       id: vehicle.id,
-      eyebrow: `${vehicle.category} Â· Brand New`,
+      eyebrow: `${vehicle.category} · Brand New`,
       title: "ISUZU",
       highlight: vehicle.title,
       subtitle: vehicle.description.split('.')[0] + ".", // First sentence of description
@@ -174,7 +174,7 @@ const Hero = () => {
             <motion.h1 variants={textItemVariant} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
               <span className="text-white block">{current.title}</span>
               <span className="text-[#D62B2B] block">{current.highlight}</span>
-              <span className="sr-only"> ââ Authorized Isuzu Dealer Kenya, Nairobi</span>
+              <span className="sr-only"> – Best Authorized Isuzu Dealer in Kenya, Nairobi</span>
             </motion.h1>
             
             <motion.p variants={textItemVariant} className="text-white font-bold mb-4 text-lg sm:text-xl md:text-2xl drop-shadow-md line-clamp-2">

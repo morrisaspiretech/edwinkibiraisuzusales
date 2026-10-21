@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <ul className="space-y-3">
                     {post.priceFactors.map((factor, idx) => (
                       <li key={idx} className="flex gap-3 text-gray-600 leading-relaxed">
-                        <span className="text-[#D62B2B] font-black mt-1">â€¢</span>
+                        <span className="text-[#D62B2B] font-black mt-1">"¢</span>
                         <span>{factor}</span>
                       </li>
                     ))}

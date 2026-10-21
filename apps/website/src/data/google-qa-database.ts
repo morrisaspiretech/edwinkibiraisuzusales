@@ -200,11 +200,11 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       }
     ],
     pricingTable: [
-      { model: "Isuzu NLR (2.3 Ton Payload Â· 2,999cc)", priceRange: "Ksh 3,612,000 (Chassis) / Ksh 3,923,000 (With Body)", deposit: "From Ksh 361,200", bestUses: "City distribution, bakery & beverage supply, express cargo" },
-      { model: "Isuzu NMR 85 (3.5 Ton Payload Â· 2,999cc)", priceRange: "Ksh 4,200,000 (Chassis) / Ksh 4,578,000 (With Body)", deposit: "From Ksh 420,000", bestUses: "Hardware supply, agricultural produce, inter-county deliveries" },
-      { model: "Isuzu NPS / NHP 81H (3.0 Ton 4x4 Â· 4,773cc)", priceRange: "Ksh 6,100,000 (Complete Unit)", deposit: "From Ksh 610,000", bestUses: "Off-road terrain, remote farming, safari supply, emergency response" },
-      { model: "Isuzu NQR 81 (5.0 Ton Payload Â· 4,773cc)", priceRange: "Ksh 4,775,000 (Chassis Only)", deposit: "From Ksh 477,500", bestUses: "Heavy general haulage, wholesale distribution, beverage crates" },
-      { model: "Isuzu NQR Xtra (6.0 Ton Payload Â· 4,773cc)", priceRange: "Ksh 5,250,000 (Chassis Only)", deposit: "From Ksh 525,000", bestUses: "Bulky light cargo, expanded volume box bodies, maximum payload" }
+      { model: "Isuzu NLR (2.3 Ton Payload · 2,999cc)", priceRange: "Ksh 3,612,000 (Chassis) / Ksh 3,923,000 (With Body)", deposit: "From Ksh 361,200", bestUses: "City distribution, bakery & beverage supply, express cargo" },
+      { model: "Isuzu NMR 85 (3.5 Ton Payload · 2,999cc)", priceRange: "Ksh 4,200,000 (Chassis) / Ksh 4,578,000 (With Body)", deposit: "From Ksh 420,000", bestUses: "Hardware supply, agricultural produce, inter-county deliveries" },
+      { model: "Isuzu NPS / NHP 81H (3.0 Ton 4x4 · 4,773cc)", priceRange: "Ksh 6,100,000 (Complete Unit)", deposit: "From Ksh 610,000", bestUses: "Off-road terrain, remote farming, safari supply, emergency response" },
+      { model: "Isuzu NQR 81 (5.0 Ton Payload · 4,773cc)", priceRange: "Ksh 4,775,000 (Chassis Only)", deposit: "From Ksh 477,500", bestUses: "Heavy general haulage, wholesale distribution, beverage crates" },
+      { model: "Isuzu NQR Xtra (6.0 Ton Payload · 4,773cc)", priceRange: "Ksh 5,250,000 (Chassis Only)", deposit: "From Ksh 525,000", bestUses: "Bulky light cargo, expanded volume box bodies, maximum payload" }
     ],
     priceFactors: [
       "Chassis length: Standard wheelbase vs NQR Xtra extended frame",
@@ -256,9 +256,9 @@ export const GOOGLE_QA_DATABASE: GoogleQAItem[] = [
       }
     ],
     pricingTable: [
-      { model: "Isuzu FRR 90N (10-11 Ton Payload Â· 5,193cc)", priceRange: "Ksh 6,100,000 ââ Ksh 6,600,000", deposit: "From Ksh 610,000", bestUses: "Inter-county general haulage, agricultural transit, beverage distribution" },
-      { model: "Isuzu FVR 90L / 90P (14 Ton Payload Â· 5,193cc)", priceRange: "Ksh 8,200,000 ââ Ksh 8,800,000", deposit: "From Ksh 820,000", bestUses: "Heavy container chassis, bulk grain distribution, fuel tankers" },
-      { model: "Isuzu FVZ 34N / 34T (6x4 16-18 Ton Â· 7,790cc)", priceRange: "Ksh 11,200,000 ââ Ksh 12,500,000", deposit: "From Ksh 1,120,000", bestUses: "Heavy dump tipper, quarry aggregate, infrastructure projects" }
+      { model: "Isuzu FRR 90N (10-11 Ton Payload · 5,193cc)", priceRange: "Ksh 6,100,000 ââ Ksh 6,600,000", deposit: "From Ksh 610,000", bestUses: "Inter-county general haulage, agricultural transit, beverage distribution" },
+      { model: "Isuzu FVR 90L / 90P (14 Ton Payload · 5,193cc)", priceRange: "Ksh 8,200,000 ââ Ksh 8,800,000", deposit: "From Ksh 820,000", bestUses: "Heavy container chassis, bulk grain distribution, fuel tankers" },
+      { model: "Isuzu FVZ 34N / 34T (6x4 16-18 Ton · 7,790cc)", priceRange: "Ksh 11,200,000 ââ Ksh 12,500,000", deposit: "From Ksh 1,120,000", bestUses: "Heavy dump tipper, quarry aggregate, infrastructure projects" }
     ],
     priceFactors: [
       "Axle setup: 4x2 single axle vs 6x4 bogie tandem drive with differential locks",
