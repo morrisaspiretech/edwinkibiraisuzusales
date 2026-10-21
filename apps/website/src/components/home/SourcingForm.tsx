@@ -73,7 +73,7 @@ const IsuzuEnquiryForm = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href="https://wa.me/254700000000"
+            href="https://wa.me/254768351483?text=Hi%20Edwin%2C%20I%20just%20submitted%20a%20vehicle%20enquiry%20on%20your%20website%20and%20would%20like%20to%20follow%20up."
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-3 font-bold uppercase text-xs tracking-wider hover:bg-green-700 transition-all"
@@ -195,7 +195,7 @@ const IsuzuEnquiryForm = () => {
               Send Enquiry
             </button>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254768351483?text=Hi%20Edwin%2C%20I%20am%20looking%20to%20source%20a%20brand-new%20Isuzu%20vehicle.%20Can%20you%20help%20me%20with%20options%20and%20pricing%3F"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 border-2 border-green-600 text-green-700 py-4 px-6 font-black uppercase tracking-wider text-sm hover:bg-green-600 hover:text-white transition-all"

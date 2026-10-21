@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaChevronRight } from "react-icons/fa6";
+import { FaChevronRight, FaWhatsapp } from "react-icons/fa6";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import CompareCheckbox from "./CompareCheckbox";
 import FavouriteButton from "./FavouriteButton";
@@ -22,7 +22,10 @@ export default function FeaturedVehicleCard({ v }: Props) {
   const vehicleData = VEHICLES_DATA[v.id];
   const price = vehicleData?.price;
   const priceLabel = price?.unitPrice ?? price?.chassisPrice ?? null;
-  const priceSuffix = price?.withBodyPrice && !price?.unitPrice ? ` – ${price.withBodyPrice} w/body` : "";
+  const priceSuffix = price?.withBodyPrice && !price?.unitPrice ? ` - ${price.withBodyPrice} w/body` : "";
+
+  const waMessage = `Hi Edwin, I am interested in the Isuzu ${v.title}${priceLabel ? ` (${priceLabel})` : ""}. Is it currently in stock, and what are the financing options?`;
+  const waUrl = `https://wa.me/254768351483?text=${encodeURIComponent(waMessage)}`;
 
   return (
     <div className="group bg-white rounded-xl border border-gray-100 hover:border-transparent hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
@@ -60,11 +63,27 @@ export default function FeaturedVehicleCard({ v }: Props) {
             {priceSuffix && <span className="text-[9px] text-gray-400 font-semibold">{priceSuffix}</span>}
           </div>
         )}
-        <div className="mt-auto flex items-center justify-between border-t border-gray-50 pt-3 pointer-events-auto">
+        <div className="mt-auto pt-3 border-t border-gray-50 flex items-center justify-between gap-2 pointer-events-auto">
           <CompareCheckbox vehicleId={v.id} />
-          <Link href={`/vehicles/${v.id}`} className="w-6 h-6 rounded-full bg-gray-50 group-hover:bg-[#D62B2B] flex items-center justify-center transition-colors">
-            <FaChevronRight size={10} className="text-gray-400 group-hover:text-white transition-colors" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Chat on WhatsApp about ${v.title}`}
+              className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all shadow-sm"
+            >
+              <FaWhatsapp size={13} />
+              <span>WhatsApp</span>
+            </a>
+            <Link
+              href={`/vehicles/${v.id}`}
+              className="w-7 h-7 rounded-lg bg-gray-50 group-hover:bg-[#D62B2B] flex items-center justify-center transition-colors"
+              title="View specs"
+            >
+              <FaChevronRight size={10} className="text-gray-400 group-hover:text-white transition-colors" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -208,7 +208,7 @@ export default function VehicleClientView({ initialVehicle }: Props) {
                     <FaPhone size={16} /> Call Edwin
                   </a>
                   <a
-                    href="https://wa.me/254768351483"
+                    href={`https://wa.me/254768351483?text=${encodeURIComponent(`Hi Edwin, I am interested in the ${vehicle.make} ${vehicle.model} (KES ${vehicle.price.toLocaleString()}). Is it available and can we discuss asset financing options?`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full border-2 border-green-500 text-green-600 bg-green-50 rounded py-3.5 font-black uppercase text-sm tracking-widest hover:bg-green-500 hover:text-white transition-colors"

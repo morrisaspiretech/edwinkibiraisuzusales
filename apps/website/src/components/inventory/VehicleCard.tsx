@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Vehicle } from "@/types/vehicle";
 
 interface VehicleCardProps {
@@ -97,14 +98,23 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
           )}
         </div>
 
-        {/* Action Button */}
-        <div className="pt-2 mt-auto">
+        {/* Action Buttons */}
+        <div className="pt-3 mt-auto flex items-center gap-2">
+          <a
+            href={`https://wa.me/254768351483?text=${encodeURIComponent(`Hi Edwin, I am interested in the ${vehicle.make} ${vehicle.model}. Is it in stock, and what are the asset financing options?`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-1.5 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-2.5 text-[11px] font-black uppercase tracking-wider transition-all shadow-sm"
+          >
+            <FaWhatsapp size={14} />
+            <span>WhatsApp</span>
+          </a>
           <Link
             href={`/vehicles/${modelSlug}`}
-            className="flex items-center justify-center gap-2 w-full rounded-2xl bg-[#f8f9fa] border border-gray-100 text-[#1a1a1a] px-4 py-3 text-[11px] font-black uppercase hover:bg-[#D62B2B] hover:border-[#D62B2B] hover:text-white transition-all duration-300"
+            className="flex-1 flex items-center justify-center gap-1 rounded-xl bg-[#f8f9fa] border border-gray-100 text-[#1a1a1a] px-3 py-2.5 text-[11px] font-black uppercase hover:bg-[#D62B2B] hover:border-[#D62B2B] hover:text-white transition-all duration-300"
           >
-            View Details
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <span>Details</span>
+            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14m-7-7 7 7-7 7"/>
             </svg>
           </Link>

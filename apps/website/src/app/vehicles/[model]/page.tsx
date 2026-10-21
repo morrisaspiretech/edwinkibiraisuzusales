@@ -56,6 +56,14 @@ export default async function VehiclePage({
     notFound();
   }
 
+  const priceStr = vehicle.price?.unitPrice || vehicle.price?.chassisPrice || "";
+  const waVehicleMessage = encodeURIComponent(
+    `Hi Edwin, I am interested in the Isuzu ${vehicle.title}${priceStr ? ` (${priceStr})` : ""}. Please share current availability, formal quotation, and bank financing options.`
+  );
+  const waTestDriveMessage = encodeURIComponent(
+    `Hi Edwin, I would like to book a test drive / showroom viewing for the Isuzu ${vehicle.title}. When is the earliest available time?`
+  );
+
   // Combine heroImage + gallery for the interactive viewer and deduplicate them
   const allImages = Array.from(new Set([
     vehicle.heroImage,
@@ -223,7 +231,7 @@ export default async function VehiclePage({
               <FaPhone size={13} /> Call Edwin
             </a>
             <a
-              href="https://wa.me/254768351483"
+              href={`https://wa.me/254768351483?text=${waVehicleMessage}`}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-2.5 font-black text-xs uppercase tracking-widest hover:bg-[#1da851] transition-colors shadow-lg"
@@ -385,7 +393,7 @@ export default async function VehiclePage({
                 <a href="tel:0768351483" className="flex items-center gap-2 bg-[#D62B2B] text-white px-5 py-2.5 font-black text-xs uppercase tracking-widest hover:bg-[#b01e1e] transition-colors">
                   Call Edwin
                 </a>
-                <a href="https://wa.me/254768351483" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 font-black text-xs uppercase tracking-widest hover:bg-[#1da851] transition-colors">
+                <a href={`https://wa.me/254768351483?text=${waVehicleMessage}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 font-black text-xs uppercase tracking-widest hover:bg-[#1da851] transition-colors">
                   WhatsApp
                 </a>
               </div>
@@ -420,7 +428,7 @@ export default async function VehiclePage({
                 <div className="bg-white/10 p-6 border-l-4 border-[#D62B2B]">
                   <p className="text-white font-bold uppercase tracking-widest text-xs mb-2">Experience It Live</p>
                   <p className="text-gray-400 text-xs mb-4">Book a test drive today and experience this incredible vehicle in person.</p>
-                  <a href="https://wa.me/254768351483" target="_blank" rel="noreferrer" className="inline-block bg-[#D62B2B] text-white px-6 py-3 font-black text-[10px] uppercase tracking-widest hover:bg-[#b01e1e] transition-colors">Book a Test Drive</a>
+                  <a href={`https://wa.me/254768351483?text=${waTestDriveMessage}`} target="_blank" rel="noreferrer" className="inline-block bg-[#D62B2B] text-white px-6 py-3 font-black text-[10px] uppercase tracking-widest hover:bg-[#b01e1e] transition-colors">Book a Test Drive</a>
                 </div>
               </div>
             </div>
@@ -541,7 +549,7 @@ export default async function VehiclePage({
                 <FaPhone size={14} /> 0768 351 483
               </a>
               <a
-                href="https://wa.me/254768351483"
+                href={`https://wa.me/254768351483?text=${waVehicleMessage}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 bg-[#1a1a1a] text-white px-7 py-3.5 font-black text-xs uppercase tracking-widest hover:bg-black transition-colors"
