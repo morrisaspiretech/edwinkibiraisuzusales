@@ -113,14 +113,50 @@ export default async function VehiclePage({
                 "@type": "Offer",
                 priceCurrency: "KES",
                 itemCondition: "https://schema.org/NewCondition",
+                availability: "https://schema.org/InStock",
+                validFrom: "2026-01-01",
                 priceValidUntil: "2026-12-31",
                 ...(vehicle.price?.unitPrice
                   ? { price: vehicle.price.unitPrice.replace(/[^0-9.]/g, "") }
                   : vehicle.price?.chassisPrice
                   ? { price: vehicle.price.chassisPrice.replace(/[^0-9.]/g, "") }
-                  : { price: "0", priceRange: "Contact for price" }),
-                availability: "https://schema.org/InStock",
+                  : {}),
                 url: `https://www.edwinkibiraisuzusales.co.ke/vehicles/${vehicle.id}`,
+                hasMerchantReturnPolicy: {
+                  "@type": "MerchantReturnPolicy",
+                  applicableCountry: "KE",
+                  returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+                  merchantReturnDays: 0,
+                  returnMethod: "https://schema.org/ReturnInStore",
+                  returnFees: "https://schema.org/FreeReturn"
+                },
+                shippingDetails: {
+                  "@type": "OfferShippingDetails",
+                  shippingRate: {
+                    "@type": "MonetaryAmount",
+                    value: "0",
+                    currency: "KES"
+                  },
+                  shippingDestination: {
+                    "@type": "DefinedRegion",
+                    addressCountry: "KE"
+                  },
+                  deliveryTime: {
+                    "@type": "ShippingDeliveryTime",
+                    handlingTime: {
+                      "@type": "QuantitativeValue",
+                      minValue: 1,
+                      maxValue: 7,
+                      unitCode: "DAY"
+                    },
+                    transitTime: {
+                      "@type": "QuantitativeValue",
+                      minValue: 1,
+                      maxValue: 14,
+                      unitCode: "DAY"
+                    }
+                  }
+                },
                 seller: {
                   "@type": "AutoDealer",
                   name: "Edwin Kibirai Isuzu Sales",
