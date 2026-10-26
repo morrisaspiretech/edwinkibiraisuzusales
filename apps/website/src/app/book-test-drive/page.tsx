@@ -155,7 +155,7 @@ const BookTestDrivePage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xs">
                   <Link
-                    href="/inventory"
+                    href="/vehicles/"
                     className="flex-1 bg-secondary text-white px-6 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-accent-dark transition-all text-center"
                   >
                     Browse Vehicles

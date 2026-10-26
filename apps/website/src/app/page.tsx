@@ -25,28 +25,28 @@ const VEHICLE_CATEGORIES = [
     label: "Trucks",
     sub: "N & F Series",
     icon: <FaTruckFront size={24} />,
-    href: "/vehicles#trucks",
+    href: "/vehicles/#trucks",
     img: "/vehicles/f-series-truck.webp",
   },
   {
     label: "Buses",
     sub: "N & F Series",
     icon: <FaBusSimple size={24} />,
-    href: "/vehicles#buses",
+    href: "/vehicles/#buses",
     img: "/vehicles/frr90-bus.webp",
   },
   {
     label: "Pickups",
     sub: "D-Max Range",
     icon: <FaCar size={24} />,
-    href: "/vehicles#pickups",
+    href: "/vehicles/#pickups",
     img: "/vehicles/dmax-double.webp",
   },
   {
     label: "SUVs",
     sub: "MU-X Range",
     icon: <FaCar size={24} />,
-    href: "/vehicles#suvs",
+    href: "/vehicles/#suvs",
     img: "/vehicles/mux-1900cc.png",
   },
 ];
@@ -308,7 +308,7 @@ export default async function Home() {
             <h2 className="text-2xl font-black text-[#1a1a1a] uppercase tracking-tight">
               Browse Our <span className="text-[#D62B2B]">Isuzu Range</span>
             </h2>
-            <Link href="/vehicles" className="ml-auto text-xs font-black text-[#D62B2B] uppercase tracking-widest hover:underline flex items-center gap-1">
+            <Link href="/vehicles/" className="ml-auto text-xs font-black text-[#D62B2B] uppercase tracking-widest hover:underline flex items-center gap-1">
               View All <FaChevronRight size={12} />
             </Link>
           </div>
@@ -366,7 +366,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
-              href="/book-test-drive"
+              href="/loan-calculator/"
               className="inline-flex items-center justify-center gap-2 bg-white text-[#D62B2B] px-7 py-3 font-black uppercase text-sm tracking-widest hover:bg-[#1a1a1a] hover:text-white transition-all"
             >
               Calculate Financing
@@ -437,10 +437,10 @@ export default async function Home() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Link href="/vehicles" className="inline-flex items-center gap-2 bg-[#D62B2B] text-white px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all">
+                <Link href="/vehicles/" className="inline-flex items-center gap-2 bg-[#D62B2B] text-white px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all">
                   Browse Vehicles <FaChevronRight size={14} />
                 </Link>
-                <Link href="/about" className="inline-flex items-center gap-2 border-2 border-[#1a1a1a] text-[#1a1a1a] px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#1a1a1a] hover:text-white transition-all">
+                <Link href="/about/" className="inline-flex items-center gap-2 border-2 border-[#1a1a1a] text-[#1a1a1a] px-6 py-3 font-black uppercase text-xs tracking-widest hover:bg-[#1a1a1a] hover:text-white transition-all">
                   About Us
                 </Link>
               </div>
@@ -668,14 +668,14 @@ export default async function Home() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Link
-                    href="/get-quote"
+                    href="/get-quote/"
                     className="flex items-center justify-center gap-2 bg-[#D62B2B] text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all shadow-lg shadow-[#D62B2B]/20 group"
                   >
                     Get a Quote
                     <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
-                    href="/vehicles"
+                    href="/vehicles/"
                     className="flex items-center justify-center gap-2 border border-white/30 bg-white/5 text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-white hover:text-[#1a1a1a] transition-all group"
                   >
                     Browse Vehicles

@@ -56,6 +56,7 @@ export default async function VehiclePage({
     notFound();
   }
 
+  const canonicalUrl = `https://www.edwinkibiraisuzusales.co.ke/vehicles/${model}/`;
   const priceStr = vehicle.price?.unitPrice || vehicle.price?.chassisPrice || "";
   const waVehicleMessage = encodeURIComponent(
     `Hi Edwin, I am interested in the Isuzu ${vehicle.title}${priceStr ? ` (${priceStr})` : ""}. Please share current availability, formal quotation, and bank financing options.`
@@ -121,7 +122,7 @@ export default async function VehiclePage({
                   : vehicle.price?.chassisPrice
                   ? { price: vehicle.price.chassisPrice.replace(/[^0-9.]/g, "") }
                   : {}),
-                url: `https://www.edwinkibiraisuzusales.co.ke/vehicles/${vehicle.id}`,
+                url: canonicalUrl,
                 hasMerchantReturnPolicy: {
                   "@type": "MerchantReturnPolicy",
                   applicableCountry: "KE",
@@ -215,9 +216,9 @@ export default async function VehiclePage({
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.edwinkibiraisuzusales.co.ke" },
-                { "@type": "ListItem", position: 2, name: "Vehicles", item: "https://www.edwinkibiraisuzusales.co.ke/vehicles" },
-                { "@type": "ListItem", position: 3, name: vehicle.title, item: `https://www.edwinkibiraisuzusales.co.ke/vehicles/${vehicle.id}` },
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.edwinkibiraisuzusales.co.ke/" },
+                { "@type": "ListItem", position: 2, name: "Vehicles", item: "https://www.edwinkibiraisuzusales.co.ke/vehicles/" },
+                { "@type": "ListItem", position: 3, name: vehicle.title, item: canonicalUrl },
               ]
             }
           ]),
@@ -259,7 +260,7 @@ export default async function VehiclePage({
           <nav className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6 w-full">
             <Link href="/" className="hover:text-[#D62B2B] transition-colors">Home</Link>
             <FaChevronRight size={9} className="opacity-40" />
-            <Link href="/vehicles" className="hover:text-[#D62B2B] transition-colors">Vehicles</Link>
+            <Link href="/vehicles/" className="hover:text-[#D62B2B] transition-colors">Vehicles</Link>
             <FaChevronRight size={9} className="opacity-40" />
             <span className="text-white/70">{vehicle.title}</span>
           </nav>
@@ -297,7 +298,7 @@ export default async function VehiclePage({
               <FaMessage size={13} /> WhatsApp
             </a>
             <Link
-              href="/vehicles"
+              href="/vehicles/"
               className="flex items-center gap-2 border border-white/30 bg-black/40 backdrop-blur-sm text-white/90 px-6 py-2.5 font-black text-xs uppercase tracking-widest hover:border-white hover:bg-white/10 transition-all shadow-lg"
             >
               <FaChevronLeft size={11} /> All Vehicles
@@ -444,7 +445,7 @@ export default async function VehiclePage({
 
             <div className="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between bg-[#f9f9f9] border border-gray-200 p-5">
               <div>
-                <p className="font-black text-[#1a1a1a] text-sm uppercase tracking-tight">Ready to order your N-Series?</p>
+                <p className="font-black text-[#1a1a1a] text-sm uppercase tracking-tight">Ready to order your {vehicle.title}?</p>
                 <p className="text-xs text-gray-500 mt-0.5">Up to 100% bank financing available. Delivery nationwide.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
@@ -508,7 +509,7 @@ export default async function VehiclePage({
                 </h2>
               </div>
               <Link 
-                href="/vehicles" 
+                href="/vehicles/" 
                 className="text-xs font-bold text-[#D62B2B] hover:text-[#b01e1e] flex items-center gap-1 uppercase tracking-wider transition-colors"
               >
                 View Full Range <FaChevronRight size={10} />
@@ -521,7 +522,7 @@ export default async function VehiclePage({
                 return (
                   <Link
                     key={v.id}
-                    href={`/vehicles/${v.id}`}
+                    href={`/vehicles/${v.id}/`}
                     className="group bg-white rounded-xl border border-gray-200/80 hover:border-[#D62B2B]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden shadow-xs"
                   >
                     {/* Vehicle Image Stage */}

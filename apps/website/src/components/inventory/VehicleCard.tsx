@@ -49,7 +49,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
     >
       {/* Image Container */}
       <Link 
-        href={`/vehicles/${modelSlug}`} 
+        href={`/vehicles/${modelSlug}/`} 
         className="block relative w-full h-52 bg-gradient-to-b from-gray-50 to-white flex-shrink-0 overflow-hidden"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -110,7 +110,7 @@ const VehicleCard = ({ vehicle, index = 0 }: VehicleCardProps) => {
             <span>WhatsApp</span>
           </a>
           <Link
-            href={`/vehicles/${modelSlug}`}
+            href={`/vehicles/${modelSlug}/`}
             className="flex-1 flex items-center justify-center gap-1 rounded-xl bg-[#f8f9fa] border border-gray-100 text-[#1a1a1a] px-3 py-2.5 text-[11px] font-black uppercase hover:bg-[#D62B2B] hover:border-[#D62B2B] hover:text-white transition-all duration-300"
           >
             <span>Details</span>

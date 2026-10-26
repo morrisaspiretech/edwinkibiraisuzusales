@@ -63,7 +63,7 @@ export default function CompareBar() {
               Clear
             </button>
             <Link
-              href="/compare"
+              href="/compare/"
               className={`flex items-center justify-center gap-2 px-6 py-3 font-black text-xs uppercase tracking-widest transition-colors rounded shadow-sm flex-1 sm:flex-none ${
                 compareIds.length > 1
                   ? "bg-[#D62B2B] text-white hover:bg-red-700"

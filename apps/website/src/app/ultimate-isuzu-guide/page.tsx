@@ -118,8 +118,8 @@ export default function UltimateIsuzuGuide() {
               ))}
             </nav>
             <div className="mt-8 pt-8 border-t border-gray-100">
-              <Link href="/inventory" className="block w-full bg-[#1a1a1a] text-white text-center py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-[#D62B2B] transition-colors">
-                View Inventory
+              <Link href="/vehicles/" className="block w-full bg-[#1a1a1a] text-white text-center py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-[#D62B2B] transition-colors">
+                View All Vehicles
               </Link>
             </div>
           </div>
@@ -368,7 +368,7 @@ export default function UltimateIsuzuGuide() {
               <div className="absolute inset-0 bg-[url('/vehicles/f-series-truck.webp')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
               <h3 className="text-3xl font-black text-white mb-4 relative z-10">Ready to experience Isuzu excellence?</h3>
               <p className="text-white/80 mb-8 max-w-xl mx-auto relative z-10">Whether you are expanding a logistics fleet or looking for a durable passenger vehicle, we have the perfect Isuzu for you.</p>
-              <Link href="/contact" className="relative z-10 inline-block bg-[#D62B2B] text-white font-black text-sm uppercase tracking-widest py-4 px-10 rounded-xl hover:bg-red-700 transition-colors shadow-lg hover:shadow-red-900/50 hover:-translate-y-0.5">
+              <Link href="/contact/" className="relative z-10 inline-block bg-[#D62B2B] text-white font-black text-sm uppercase tracking-widest py-4 px-10 rounded-xl hover:bg-red-700 transition-colors shadow-lg hover:shadow-red-900/50 hover:-translate-y-0.5">
                 Contact Us Today
               </Link>
             </div>

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Best Isuzu Dealer in Kenya | Edwin Kibirai Isuzu Sales Nairobi",
     description: "Kenya's premier authorized dealership for brand-new Isuzu Trucks, Buses, D-Max Pickups, and MU-X SUVs. Unbeatable pricing and up to 100% bank financing.",
     type: "website",
-    url: "https://www.edwinkibiraisuzusales.co.ke",
+    url: "https://www.edwinkibiraisuzusales.co.ke/",
     siteName: "Edwin Kibirai Isuzu Sales Kenya",
     images: [{ url: "/logo.jpg", width: 1024, height: 1024, alt: "Edwin Kibirai Isuzu Sales - Best Isuzu Dealer in Kenya" }],
   },
@@ -75,8 +75,8 @@ export default function RootLayout({
                 "@type": "AutoDealer",
                 name: "Edwin Kibirai Isuzu Sales",
                 image: "https://www.edwinkibiraisuzusales.co.ke/logo.jpg",
-                "@id": "https://www.edwinkibiraisuzusales.co.ke",
-                url: "https://www.edwinkibiraisuzusales.co.ke",
+                "@id": "https://www.edwinkibiraisuzusales.co.ke/",
+                url: "https://www.edwinkibiraisuzusales.co.ke/",
                 telephone: "+254768351483",
                 email: "edwin@cfg.co.ke",
                 description: "Authorized Isuzu dealer in Nairobi, Kenya. Selling brand-new Isuzu trucks (FRR90, NLR, NQR, NMR, FVR, FVZ), buses, D-Max pickups, MU-X SUVs and UD Quester prime movers. Up to 100% bank financing available.",
@@ -152,10 +152,10 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "Edwin Kibira Isuzu Sales",
-                "url": "https://www.edwinkibiraisuzusales.co.ke",
+                "url": "https://www.edwinkibiraisuzusales.co.ke/",
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": "https://www.edwinkibiraisuzusales.co.ke/inventory?q={search_term_string}",
+                  "target": "https://www.edwinkibiraisuzusales.co.ke/vehicles/?q={search_term_string}",
                   "query-input": "required name=search_term_string"
                 }
               },
@@ -163,7 +163,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Isuzu",
-                "url": "https://www.edwinkibiraisuzusales.co.ke/ultimate-isuzu-guide",
+                "url": "https://www.edwinkibiraisuzusales.co.ke/ultimate-isuzu-guide/",
                 "logo": "https://www.edwinkibiraisuzusales.co.ke/logo.jpg",
                 "sameAs": [
                   "https://en.wikipedia.org/wiki/Isuzu_Motors",

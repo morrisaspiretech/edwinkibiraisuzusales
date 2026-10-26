@@ -126,8 +126,8 @@ export default function DMaxHub() {
               The ultimate 1-ton pickup in Kenya. Whether for farming, construction, NGO fleet use, or extreme off-roading, the D-MAX is engineered for unmatched durability and payload capacity.
             </p>
             <div className="flex gap-4">
-              <Link href="/book-test-drive" className="bg-red-600 text-white font-bold py-3 px-8 rounded hover:bg-red-700 transition">Test Drive</Link>
-              <Link href="/get-quote" className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-black transition">Get Price</Link>
+              <Link href="/book-test-drive/" className="bg-red-600 text-white font-bold py-3 px-8 rounded hover:bg-red-700 transition">Test Drive</Link>
+              <Link href="/get-quote/" className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-black transition">Get Price</Link>
             </div>
           </div>
           <div className="relative h-[300px] md:h-[450px]">
@@ -233,7 +233,7 @@ export default function DMaxHub() {
               <div className="bg-white p-3 text-center border rounded shadow-sm">Bed Liners & Roll Bars</div>
             </div>
             <div className="mt-6 text-center">
-              <Link href="/contact" className="text-red-600 font-bold hover:underline">Enquire about genuine spare parts →</Link>
+              <Link href="/contact/" className="text-red-600 font-bold hover:underline">Enquire about genuine spare parts →</Link>
             </div>
           </div>
         </div>
@@ -271,10 +271,10 @@ export default function DMaxHub() {
           Through Edwin Kibira Isuzu Sales, access competitive Asset Finance options from leading Kenyan banks. Get up to 95% financing with flexible repayment periods of up to 60 months.
         </p>
         <div className="flex justify-center gap-4">
-          <Link href="/loan-calculator" className="bg-red-600 text-white font-bold py-4 px-10 rounded shadow-lg hover:bg-red-700 transition">
+          <Link href="/loan-calculator/" className="bg-red-600 text-white font-bold py-4 px-10 rounded shadow-lg hover:bg-red-700 transition">
             Use Loan Calculator
           </Link>
-          <Link href="/get-quote" className="bg-white border-2 border-red-600 text-red-600 font-bold py-4 px-10 rounded shadow-lg hover:bg-gray-50 transition">
+          <Link href="/get-quote/" className="bg-white border-2 border-red-600 text-red-600 font-bold py-4 px-10 rounded shadow-lg hover:bg-gray-50 transition">
             Request Official Quote
           </Link>
         </div>

@@ -298,7 +298,7 @@ const Hero = () => {
             </a>
           </div>
           <Link
-            href="/vehicles"
+            href="/vehicles/"
             className="text-white text-xs sm:text-sm font-black uppercase tracking-widest flex items-center gap-2 hover:text-[#D62B2B] transition-colors group"
           >
             <span className="hidden sm:inline border-b border-transparent group-hover:border-[#D62B2B] transition-colors">Browse All Vehicles</span>

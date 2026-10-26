@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
@@ -250,7 +250,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
               </div>
 
               <Link
-                href={`/blog/${featuredPost.slug}`}
+                href={`/blog/${featuredPost.slug}/`}
                 className="group block bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-red-300"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
@@ -316,7 +316,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
               {((searchQuery || selectedCategory !== "all") ? filteredPosts : regularPosts).map((post) => (
                 <Link
                   key={post.id}
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.slug}/`}
                   className="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200/90 hover:border-red-400/50 flex flex-col h-full"
                 >
                   {/* Card Media */}

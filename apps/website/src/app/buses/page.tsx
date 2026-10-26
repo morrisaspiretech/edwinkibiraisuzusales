@@ -125,13 +125,13 @@ export default function BusesHub() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/get-quote?category=Isuzu+Bus"
+              href="/get-quote/?category=Isuzu+Bus"
               className="bg-black hover:bg-neutral-800 text-white font-bold text-sm uppercase px-8 py-3.5 rounded shadow-lg transition-all"
             >
               Get Bus Quotation
             </Link>
             <Link
-              href="/loan-calculator"
+              href="/loan-calculator/"
               className="bg-white hover:bg-gray-100 text-red-800 font-bold text-sm uppercase px-8 py-3.5 rounded shadow-lg transition-all"
             >
               Calculate School / PSV Finance
@@ -183,7 +183,7 @@ export default function BusesHub() {
                   Request Proforma Invoice
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="px-4 py-2.5 border border-gray-300 hover:bg-gray-100 text-xs font-semibold rounded text-gray-700 transition"
                 >
                   Enquire Body Spec
@@ -282,7 +282,7 @@ export default function BusesHub() {
               <div className="bg-white/10 p-3 rounded text-center">Central Motor Service</div>
             </div>
             <Link
-              href="/contact"
+              href="/contact/"
               className="block text-center bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase py-3.5 rounded transition"
             >
               Order Complete Turnkey Bus

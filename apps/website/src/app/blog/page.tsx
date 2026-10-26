@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
     "itemListElement": BLOG_POSTS.slice(0, 20).map((post, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
-      "url": `https://www.edwinkibiraisuzusales.co.ke/blog/${post.slug}`,
+      "url": `https://www.edwinkibiraisuzusales.co.ke/blog/${post.slug}/`,
       "name": post.title,
     })),
   };

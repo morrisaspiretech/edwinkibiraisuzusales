@@ -235,7 +235,7 @@ export default function ShowroomPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/get-quote"
+              href="/get-quote/"
               className="bg-[#D62B2B] text-white px-8 py-4 font-black uppercase text-sm tracking-widest hover:bg-[#b02323] transition-all flex items-center justify-center gap-2"
             >
               Get a Quote <FaArrowRight size={14} />

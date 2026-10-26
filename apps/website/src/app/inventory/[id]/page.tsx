@@ -1,5 +1,5 @@
 import { prisma } from "@repo/database";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -15,29 +15,32 @@ export default async function VehicleDetailsPage({ params }: { params: Promise<{
     });
   } catch (err) {
     console.error("Error fetching vehicle:", err);
-    notFound();
+    redirect("/vehicles/");
   }
 
   if (!car) {
-    notFound();
+    redirect("/vehicles/");
   }
 
-  const m = car!.model.toLowerCase();
-  let slug = "light-trucks-n-series";
+  const m = car.model.toLowerCase();
+  let target = "/trucks/";
   
-  if (m.includes("single")) slug = "single-cabin";
-  else if (m.includes("tfs40") || m.includes("tfs 40")) slug = "tfs40-double-auto";
-  else if (m.includes("double") || m.includes("d-max") || m.includes("dmax")) slug = "double-cabin";
+  if (m.includes("single")) target = "/vehicles/tfr87-4x2/";
+  else if (m.includes("tfs40") || m.includes("tfs 40")) target = "/vehicles/tfs40-double-auto/";
+  else if (m.includes("double") || m.includes("d-max") || m.includes("dmax")) target = "/vehicles/d-max/";
   else if (m.includes("mu-x") || m.includes("mux")) {
-    if (m.includes("1900")) slug = "mu-x-1900cc";
-    else slug = "mu-x-3000cc";
+    if (m.includes("1900")) target = "/vehicles/mu-x-1900cc/";
+    else target = "/vehicles/mu-x-3000cc/";
   }
   else if (m.includes("bus")) {
-    if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) slug = "f-series-buses";
-    else slug = "n-series-buses";
+    target = "/buses/";
   }
-  else if (m.includes("mover") || m.includes("gxz") || m.includes("quester") || m.includes("gwe") || m.includes("ud")) slug = "movers";
-  else if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) slug = "heavy-trucks-f-series";
+  else if (m.includes("mover") || m.includes("gxz") || m.includes("quester") || m.includes("gwe") || m.includes("ud")) {
+    target = "/vehicles/movers/";
+  }
+  else if (m.includes("f-series") || m.includes("frr") || m.includes("fvr")) {
+    target = "/trucks/";
+  }
 
-  redirect(`/vehicles/${slug}`);
+  redirect(target);
 }

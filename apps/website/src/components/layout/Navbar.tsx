@@ -16,47 +16,47 @@ const navCategories = [
   {
     label: "Trucks",
     items: [
-      { label: "N-Series NLR", href: "/vehicles/n-series-nlr" },
-      { label: "N-Series NMR 85", href: "/vehicles/n-series-nmr85" },
-      { label: "N-Series NPS 81H 4x4", href: "/vehicles/n-series-nps" },
-      { label: "N-Series NQR 81", href: "/vehicles/n-series-nqr81" },
-      { label: "N-Series NQR Xtra", href: "/vehicles/n-series-nqr-xtra" },
-      { label: "FRR 90N", href: "/vehicles/f-series-frr90n" },
-      { label: "FVR 90L", href: "/vehicles/f-series-fvr90l" },
-      { label: "FVR 90P", href: "/vehicles/f-series-fvr90p" },
-      { label: "FVZ 34N Truck", href: "/vehicles/f-series-fvz34n" },
-      { label: "FVZ 34T Tipper", href: "/vehicles/f-series-fvz34t" },
-      { label: "Movers (UD Quester)", href: "/vehicles/movers" },
+      { label: "N-Series NLR", href: "/vehicles/n-series-nlr/" },
+      { label: "N-Series NMR 85", href: "/vehicles/n-series-nmr85/" },
+      { label: "N-Series NPS 81H 4x4", href: "/vehicles/n-series-nps/" },
+      { label: "N-Series NQR 81", href: "/vehicles/n-series-nqr81/" },
+      { label: "N-Series NQR Xtra", href: "/vehicles/n-series-nqr-xtra/" },
+      { label: "FRR 90N", href: "/vehicles/f-series-frr90n/" },
+      { label: "FVR 90L", href: "/vehicles/f-series-fvr90l/" },
+      { label: "FVR 90P", href: "/vehicles/f-series-fvr90p/" },
+      { label: "FVZ 34N Truck", href: "/vehicles/f-series-fvz34n/" },
+      { label: "FVZ 34T Tipper", href: "/vehicles/f-series-fvz34t/" },
+      { label: "Movers (UD Quester)", href: "/vehicles/movers/" },
     ],
   },
   {
     label: "Buses",
     items: [
-      { label: "NMR 26 Seater", href: "/vehicles/bus-nmr-26" },
-      { label: "NQR 29 Seater", href: "/vehicles/bus-nqr-29" },
-      { label: "NQR 33 Seater", href: "/vehicles/bus-nqr-33" },
-      { label: "FRR 90N 51 Seater", href: "/vehicles/bus-frr90n-51" },
-      { label: "FRR 90Q 51 Seater", href: "/vehicles/bus-frr90q-51" },
-      { label: "FVR 34 67 Seater 4x2", href: "/vehicles/bus-fvr34-67-4x2" },
-      { label: "FVR 34 67 Seater 6x2", href: "/vehicles/bus-fvr34-67-6x2" },
+      { label: "NMR 26 Seater", href: "/vehicles/bus-nmr-26/" },
+      { label: "NQR 29 Seater", href: "/vehicles/bus-nqr-29/" },
+      { label: "NQR 33 Seater", href: "/vehicles/bus-nqr-33/" },
+      { label: "FRR 90N 51 Seater", href: "/vehicles/bus-frr90n-51/" },
+      { label: "FRR 90Q 51 Seater", href: "/vehicles/bus-frr90q-51/" },
+      { label: "FVR 34 67 Seater 4x2", href: "/vehicles/bus-fvr34-67-4x2/" },
+      { label: "FVR 34 67 Seater 6x2", href: "/vehicles/bus-fvr34-67-6x2/" },
     ],
   },
   {
     label: "Pickups",
     items: [
-      { label: "TFR 87 Single Cab 4x2 1.9L", href: "/vehicles/tfr87-4x2" },
-      { label: "TFS 87 Single Cab 4x4 1.9L Manual", href: "/vehicles/tfs87-4x4-manual" },
-      { label: "TFS 87 Single Cab 4x4 1.9L Auto", href: "/vehicles/tfs87-4x4-auto" },
-      { label: "TFS 87 Double Cab 4x4 1.9L Manual", href: "/vehicles/tfs87-double-manual" },
-      { label: "TFS 87 Double Cab 4x4 1.9L Auto", href: "/vehicles/tfs87-double-auto" },
-      { label: "TFS 40 3.0Ltr Double Cab 4x4 Automatic", href: "/vehicles/tfs40-double-auto" },
+      { label: "TFR 87 Single Cab 4x2 1.9L", href: "/vehicles/tfr87-4x2/" },
+      { label: "TFS 87 Single Cab 4x4 1.9L Manual", href: "/vehicles/tfs87-4x4-manual/" },
+      { label: "TFS 87 Single Cab 4x4 1.9L Auto", href: "/vehicles/tfs87-4x4-auto/" },
+      { label: "TFS 87 Double Cab 4x4 1.9L Manual", href: "/vehicles/tfs87-double-manual/" },
+      { label: "TFS 87 Double Cab 4x4 1.9L Auto", href: "/vehicles/tfs87-double-auto/" },
+      { label: "TFS 40 3.0Ltr Double Cab 4x4 Automatic", href: "/vehicles/tfs40-double-auto/" },
     ],
   },
   {
     label: "SUVs",
     items: [
-      { label: "Isuzu MU-X LS-U 1900cc", href: "/vehicles/mu-x-1900cc" },
-      { label: "Isuzu MU-X LS-T 3000cc", href: "/vehicles/mu-x-3000cc" },
+      { label: "Isuzu MU-X LS-U 1900cc", href: "/vehicles/mu-x-1900cc/" },
+      { label: "Isuzu MU-X LS-T 3000cc", href: "/vehicles/mu-x-3000cc/" },
     ],
   },
 ];
@@ -193,11 +193,11 @@ const Navbar = () => {
               </div>
             ))}
 
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="/about/">About</NavLink>
+            <NavLink href="/blog/">Blog</NavLink>
+            <NavLink href="/contact/">Contact</NavLink>
             <Link
-              href="/fleet-sales"
+              href="/fleet-sales/"
               className="flex items-center gap-1.5 text-white font-black text-xs hover:text-white bg-[#D62B2B] hover:bg-red-700 transition-all px-4 py-2 uppercase tracking-wider ml-2"
             >
               Fleet Sales
@@ -206,7 +206,7 @@ const Navbar = () => {
 
           {/* CTA Desktop */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Link href="/favourites" className="relative text-white hover:text-[#D62B2B] transition-colors group">
+            <Link href="/favourites/" rel="nofollow" className="relative text-white hover:text-[#D62B2B] transition-colors group">
               <FaHeart size={20} />
               {favouritesCount > 0 && (
                 <span className="absolute -top-2 -right-3 w-5 h-5 bg-[#D62B2B] text-white rounded-full flex items-center justify-center text-[10px] font-black shadow-sm group-hover:scale-110 transition-transform">
@@ -215,7 +215,7 @@ const Navbar = () => {
               )}
             </Link>
             <Link 
-              href="/get-quote" 
+              href="/get-quote/" 
               className="bg-[#D62B2B] text-white px-6 py-2.5 text-xs font-black uppercase tracking-widest hover:bg-[#b02323] transition-colors"
             >
               Get a Quote
@@ -285,14 +285,14 @@ const Navbar = () => {
           </div>
         ))}
 
-        <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)}>About</MobileNavLink>
-        <MobileNavLink href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</MobileNavLink>
-        <MobileNavLink href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</MobileNavLink>
-        <MobileNavLink href="/faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</MobileNavLink>
-        <MobileNavLink href="/fleet-sales" onClick={() => setIsMobileMenuOpen(false)}>🚛 Fleet & Corporate Sales</MobileNavLink>
+        <MobileNavLink href="/about/" onClick={() => setIsMobileMenuOpen(false)}>About</MobileNavLink>
+        <MobileNavLink href="/blog/" onClick={() => setIsMobileMenuOpen(false)}>Blog</MobileNavLink>
+        <MobileNavLink href="/contact/" onClick={() => setIsMobileMenuOpen(false)}>Contact</MobileNavLink>
+        <MobileNavLink href="/faq/" onClick={() => setIsMobileMenuOpen(false)}>FAQ</MobileNavLink>
+        <MobileNavLink href="/fleet-sales/" onClick={() => setIsMobileMenuOpen(false)}>🚛 Fleet & Corporate Sales</MobileNavLink>
 
         <Link
-          href="/get-quote"
+          href="/get-quote/"
           onClick={() => setIsMobileMenuOpen(false)}
           className="bg-secondary text-white text-center py-4 font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-colors mt-4 mb-6 flex items-center justify-center gap-2"
         >

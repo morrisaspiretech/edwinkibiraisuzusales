@@ -126,7 +126,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/vehicles" className="inline-flex items-center gap-2 bg-[#D62B2B] text-white font-black uppercase text-xs tracking-widest px-8 py-4 hover:bg-[#b82222] transition-all group">
+              <Link href="/vehicles/" className="inline-flex items-center gap-2 bg-[#D62B2B] text-white font-black uppercase text-xs tracking-widest px-8 py-4 hover:bg-[#b82222] transition-all group">
                 Browse Our Vehicles
                 <FaArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -337,12 +337,12 @@ export default function AboutPage() {
                 <h3 className="text-lg font-black text-white uppercase mb-1">Let&apos;s Find Your Perfect Isuzu</h3>
                 <p className="text-gray-400 text-sm mb-5">Zero pressure. 100% honest advice. Get a quote or visit our showroom today.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <Link href="/get-quote"
+                  <Link href="/get-quote/"
                     className="flex items-center justify-center gap-2 bg-[#D62B2B] text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-[#b82222] transition-all shadow-lg shadow-[#D62B2B]/20 group">
                     Get a Quote
                     <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <Link href="/vehicles"
+                  <Link href="/vehicles/"
                     className="flex items-center justify-center gap-2 border border-white/20 text-white px-5 py-3.5 font-black uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all group">
                     Browse Vehicles
                     <FaArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />

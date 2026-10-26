@@ -29,7 +29,7 @@ export default function FeaturedVehicleCard({ v }: Props) {
 
   return (
     <div className="group bg-white rounded-xl border border-gray-100 hover:border-transparent hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
-      <Link href={`/vehicles/${v.id}`} className="absolute inset-0 z-0"></Link>
+      <Link href={`/vehicles/${v.id}/`} className="absolute inset-0 z-0"></Link>
       
       <div className="relative aspect-[16/10] bg-gradient-to-b from-[#f8f8f8] to-white p-4 z-10 pointer-events-none">
         <Image
@@ -77,7 +77,7 @@ export default function FeaturedVehicleCard({ v }: Props) {
               <span>WhatsApp</span>
             </a>
             <Link
-              href={`/vehicles/${v.id}`}
+              href={`/vehicles/${v.id}/`}
               className="w-7 h-7 rounded-lg bg-gray-50 group-hover:bg-[#D62B2B] flex items-center justify-center transition-colors"
               title="View specs"
             >

@@ -32,7 +32,7 @@ const NewArrivals = ({ vehicles }: NewArrivalsProps) => {
             </p>
           </div>
           <Link
-            href="/vehicles"
+            href="/vehicles/"
             className="group flex items-center gap-3 text-xs font-black uppercase text-primary hover:text-secondary transition-colors tracking-widest flex-shrink-0"
           >
             View All Isuzu Vehicles
@@ -62,7 +62,7 @@ const NewArrivals = ({ vehicles }: NewArrivalsProps) => {
               No vehicles in stock yet. Please check back soon or contact us directly.
             </p>
             <Link
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center gap-2 mt-4 bg-secondary text-white px-6 py-3 font-black uppercase text-sm tracking-wider hover:bg-accent-dark transition-all"
             >
               Contact Us <FaChevronRight size={16} />

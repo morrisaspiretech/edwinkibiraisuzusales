@@ -242,7 +242,7 @@ export default function LoanCalculatorPage() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/contact/"
                 className="flex-1 flex items-center justify-center gap-2 bg-[#D62B2B] text-white px-6 py-4 font-black uppercase text-sm tracking-widest hover:bg-red-700 transition-colors rounded-lg"
               >
                 Apply for Financing <FaArrowRight size={14} />

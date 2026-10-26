@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "Person",
       "name": "Edwin Kibirai",
       "jobTitle": "Isuzu Commercial Sales Specialist",
-      "url": "https://www.edwinkibiraisuzusales.co.ke/about",
+      "url": "https://www.edwinkibiraisuzusales.co.ke/about/",
     },
     "publisher": {
       "@type": "Organization",
@@ -90,13 +90,13 @@ export default async function BlogPostPage({ params }: Props) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.edwinkibiraisuzusales.co.ke",
+        "item": "https://www.edwinkibiraisuzusales.co.ke/",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog & Price Reports",
-        "item": "https://www.edwinkibiraisuzusales.co.ke/blog",
+        "item": "https://www.edwinkibiraisuzusales.co.ke/blog/",
       },
       {
         "@type": "ListItem",
@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
         
         <div className="absolute inset-0 flex flex-col justify-end pb-16 px-4 sm:px-8">
           <div className="max-w-4xl mx-auto w-full">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors mb-8">
+            <Link href="/blog/" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors mb-8">
               <FaChevronLeft size={10} /> Back to Blog
             </Link>
             
@@ -288,7 +288,7 @@ export default async function BlogPostPage({ params }: Props) {
                   isuzu.co.ke <FaLink size={10} />
                 </a>
               </div>
-              <Link href="/get-quote" className="bg-[#1a1a1a] text-white px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#D62B2B] transition-colors shadow-lg">
+              <Link href="/get-quote/" className="bg-[#1a1a1a] text-white px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#D62B2B] transition-colors shadow-lg">
                 Request a Quote
               </Link>
             </div>
@@ -320,7 +320,7 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
               <div className="space-y-4">
                 {relatedPosts.map(rp => (
-                  <Link key={rp.id} href={`/blog/${rp.slug}`} className="group flex gap-4 bg-white border border-gray-100 p-3 rounded-xl hover:shadow-md transition-all">
+                  <Link key={rp.id} href={`/blog/${rp.slug}/`} className="group flex gap-4 bg-white border border-gray-100 p-3 rounded-xl hover:shadow-md transition-all">
                     <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
                       <Image src={rp.image} alt={rp.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>

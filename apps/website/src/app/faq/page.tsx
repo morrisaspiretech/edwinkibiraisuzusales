@@ -156,13 +156,13 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/contact"
+                href="/contact/"
                 className="w-full sm:w-auto bg-[#1A1A1A] text-white px-8 py-4 font-black uppercase text-sm tracking-widest hover:bg-[#333] transition-colors rounded-lg"
               >
                 Contact Us
               </Link>
               <Link
-                href="/loan-calculator"
+                href="/loan-calculator/"
                 className="w-full sm:w-auto bg-[#D62B2B] text-white px-8 py-4 font-black uppercase text-sm tracking-widest hover:bg-red-700 transition-colors rounded-lg"
               >
                 Calculate Financing

@@ -11,29 +11,28 @@ export const KEY_LOCATION = `${BASE_URL}/${INDEXNOW_KEY}.txt`;
  */
 export function getAllSiteUrls(): string[] {
   const staticPaths = [
-    "",
-    "/vehicles",
-    "/vehicles/d-max",
-    "/vehicles/mu-x",
-    "/trucks",
-    "/buses",
-    "/inventory",
-    "/bikes",
-    "/blog",
-    "/fleet-sales",
-    "/get-quote",
-    "/book-test-drive",
-    "/loan-calculator",
-    "/about",
-    "/contact",
-    "/faq",
-    "/privacy",
-    "/terms",
-    "/ultimate-isuzu-guide",
+    "/",
+    "/vehicles/",
+    "/vehicles/d-max/",
+    "/vehicles/mu-x/",
+    "/trucks/",
+    "/buses/",
+    "/blog/",
+    "/fleet-sales/",
+    "/get-quote/",
+    "/book-test-drive/",
+    "/loan-calculator/",
+    "/about/",
+    "/contact/",
+    "/faq/",
+    "/compare/",
+    "/privacy/",
+    "/terms/",
+    "/ultimate-isuzu-guide/",
   ];
 
-  const vehiclePaths = Object.keys(VEHICLES_DATA).map((model) => `/vehicles/${model}`);
-  const blogPaths = (BLOG_POSTS || []).map((post) => `/blog/${post.slug}`);
+  const vehiclePaths = Object.keys(VEHICLES_DATA).map((model) => `/vehicles/${model}/`);
+  const blogPaths = (BLOG_POSTS || []).map((post) => `/blog/${post.slug}/`);
 
   const allPaths = Array.from(new Set([...staticPaths, ...vehiclePaths, ...blogPaths]));
   return allPaths.map((path) => `${BASE_URL}${path}`);

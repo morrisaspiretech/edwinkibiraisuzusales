@@ -19,7 +19,7 @@ export default function ComparePage() {
 
       <section className="bg-[#1A1A1A] pt-32 pb-16 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <Link href="/vehicles" className="inline-flex items-center gap-2 text-white/50 hover:text-white mb-6 text-xs font-bold uppercase tracking-widest transition-colors">
+          <Link href="/vehicles/" className="inline-flex items-center gap-2 text-white/50 hover:text-white mb-6 text-xs font-bold uppercase tracking-widest transition-colors">
             <FaChevronLeft size={10} /> Back to Vehicles
           </Link>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -51,7 +51,7 @@ export default function ComparePage() {
               <h3 className="text-xl font-black text-[#1a1a1a] uppercase mb-2">No Vehicles Selected</h3>
               <p className="text-gray-500 mb-6">You haven't selected any vehicles to compare yet.</p>
               <Link
-                href="/vehicles"
+                href="/vehicles/"
                 className="inline-block bg-[#D62B2B] text-white px-8 py-3 font-black text-xs uppercase tracking-widest hover:bg-red-700 transition-colors rounded shadow-sm"
               >
                 Browse Vehicles

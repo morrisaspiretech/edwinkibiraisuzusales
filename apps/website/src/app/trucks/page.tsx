@@ -239,13 +239,13 @@ export default function TrucksHub() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/get-quote"
+              href="/get-quote/"
               className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm uppercase px-8 py-3.5 rounded shadow-lg transition-all"
             >
               Request Price List & Quotation
             </Link>
             <Link
-              href="/loan-calculator"
+              href="/loan-calculator/"
               className="bg-white/10 hover:bg-white/20 text-white font-bold text-sm uppercase px-8 py-3.5 rounded border border-white/20 transition-all"
             >
               Asset Financing Options (Up to 95%)
@@ -289,13 +289,13 @@ export default function TrucksHub() {
 
               <div className="flex gap-2 mt-4 pt-3 border-t border-gray-200">
                 <Link
-                  href={`/get-quote?model=${encodeURIComponent(truck.model)}`}
+                  href={`/get-quote/?model=${encodeURIComponent(truck.model)}`}
                   className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold text-center text-xs py-2 rounded transition"
                 >
                   Get Quote
                 </Link>
                 <Link
-                  href="/book-test-drive"
+                  href="/book-test-drive/"
                   className="px-3 py-2 border border-gray-300 hover:bg-white text-xs font-semibold rounded text-gray-700 transition"
                 >
                   Book Demo
@@ -342,13 +342,13 @@ export default function TrucksHub() {
 
                 <div className="flex gap-2 mt-4 pt-3 border-t border-gray-200">
                   <Link
-                    href={`/get-quote?model=${encodeURIComponent(truck.model)}`}
+                    href={`/get-quote/?model=${encodeURIComponent(truck.model)}`}
                     className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold text-center text-xs py-2 rounded transition"
                   >
                     Request Proforma
                   </Link>
                   <Link
-                    href="/loan-calculator"
+                    href="/loan-calculator/"
                     className="px-3 py-2 border border-gray-300 hover:bg-gray-100 text-xs font-semibold rounded text-gray-700 transition"
                   >
                     Finance
@@ -389,7 +389,7 @@ export default function TrucksHub() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/contact/"
             className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm uppercase px-8 py-3.5 rounded shadow-lg whitespace-nowrap transition"
           >
             Consult Fleet Engineer

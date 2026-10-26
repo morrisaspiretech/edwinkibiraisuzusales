@@ -117,8 +117,8 @@ export default function MuXHub() {
               The ultimate 7-seater family SUV. Combining D-MAX commercial toughness with executive luxury, advanced safety features, and unparalleled off-road capability.
             </p>
             <div className="flex gap-4">
-              <Link href="/book-test-drive" className="bg-red-600 text-white font-bold py-3 px-8 rounded hover:bg-red-700 transition">Test Drive</Link>
-              <Link href="/get-quote" className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-black transition">Get Price</Link>
+              <Link href="/book-test-drive/" className="bg-red-600 text-white font-bold py-3 px-8 rounded hover:bg-red-700 transition">Test Drive</Link>
+              <Link href="/get-quote/" className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-black transition">Get Price</Link>
             </div>
           </div>
           <div className="relative h-[300px] md:h-[450px]">
@@ -240,10 +240,10 @@ export default function MuXHub() {
           We offer flexible asset financing, trade-in options, and comprehensive insurance packages for corporate fleets and families.
         </p>
         <div className="flex justify-center gap-4">
-          <Link href="/loan-calculator" className="bg-red-600 text-white font-bold py-4 px-10 rounded shadow-lg hover:bg-red-700 transition">
+          <Link href="/loan-calculator/" className="bg-red-600 text-white font-bold py-4 px-10 rounded shadow-lg hover:bg-red-700 transition">
             Calculate Finance
           </Link>
-          <Link href="/contact" className="bg-white border-2 border-red-600 text-red-600 font-bold py-4 px-10 rounded shadow-lg hover:bg-gray-50 transition">
+          <Link href="/contact/" className="bg-white border-2 border-red-600 text-red-600 font-bold py-4 px-10 rounded shadow-lg hover:bg-gray-50 transition">
             Contact Sales Team
           </Link>
         </div>
