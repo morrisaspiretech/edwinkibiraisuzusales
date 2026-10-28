@@ -15,6 +15,9 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Edwin Isuzu Sales | Africa's Premier Isuzu Dealership",
   description: "Experience luxury car buying and selling with real-time CRSP valuation and AI analytics.",
+  verification: {
+    google: "rmQ7setcaOVuH9EJZhsQXaNqkURLU4BLg4DypVXZZl0",
+  },
 };
 
 export default function RootLayout({

@@ -28,7 +28,10 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://www.edwinkibiraisuzusales.co.ke"),
   verification: {
-    google: "84Q1D5R1_Y8vdOBKd_F1GaIeEsQ0vt6Q3eq51zM9bjs",
+    google: [
+      "84Q1D5R1_Y8vdOBKd_F1GaIeEsQ0vt6Q3eq51zM9bjs",
+      "rmQ7setcaOVuH9EJZhsQXaNqkURLU4BLg4DypVXZZl0",
+    ],
   },
   icons: {
     icon: "/logo.jpg",
