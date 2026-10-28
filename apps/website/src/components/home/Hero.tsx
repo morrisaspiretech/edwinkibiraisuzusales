@@ -173,10 +173,12 @@ const Hero = () => {
             animate="visible"
           >
             {/* Single SEO-correct H1 — Google reads this as the page headline */}
-            <motion.h1 variants={textItemVariant} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
+            <motion.h1 variants={textItemVariant} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
+              <span className="text-xs sm:text-sm font-black text-[#D62B2B] tracking-[0.2em] uppercase block mb-3">
+                Best Isuzu Dealer in Kenya · Enterprise Road Nairobi Showroom
+              </span>
               <span className="text-white block">{current.title}</span>
               <span className="text-[#D62B2B] block">{current.highlight}</span>
-              <span className="sr-only"> — Authorized Isuzu Dealer Kenya, Nairobi</span>
             </motion.h1>
             
             <motion.p variants={textItemVariant} className="text-white font-bold mb-4 text-lg sm:text-xl md:text-2xl drop-shadow-md line-clamp-2">

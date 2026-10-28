@@ -43,6 +43,7 @@ node.zip
 node-v20.12.2-win-x64/
 *.db
 *.txt
+!apps/website/public/*.txt
 *.tmp*
 tmp/
 

@@ -17,6 +17,27 @@ export default function robots(): MetadataRoute.Robots {
           "/favourites/",
         ],
       },
+      // Explicit permissions for AI Search & Answer Engines (GEO - Generative Engine Optimization)
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "Google-Extended",
+          "PerplexityBot",
+          "ClaudeBot",
+          "Claude-Web",
+          "Applebot",
+          "Applebot-Extended",
+          "Amazonbot",
+        ],
+        allow: "/",
+        disallow: [
+          "/admin",
+          "/admin/",
+          "/api",
+          "/api/",
+        ],
+      },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,
     host: BASE_URL,
