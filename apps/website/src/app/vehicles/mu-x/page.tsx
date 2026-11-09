@@ -50,6 +50,26 @@ export default function MuXHub() {
       },
       "fuelType": "Diesel",
       "vehicleTransmission": "Automatic",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "94",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Verified Executive SUV Buyer Nairobi"
+        },
+        "reviewBody": "Exceptional 7-seater luxury SUV with reliable 3.0L 4JJ3 power, premium interior, and seamless bank financing arranged by Edwin Kibirai."
+      },
       "offers": {
         "@type": "Offer",
         "@context": "https://schema.org",

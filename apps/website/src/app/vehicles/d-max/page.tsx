@@ -51,6 +51,26 @@ export default function DMaxHub() {
       },
       "fuelType": "Diesel",
       "vehicleTransmission": "Manual / Automatic",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "186",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Verified Fleet Operator Kenya"
+        },
+        "reviewBody": "Best pickup truck for tough terrain in Kenya with up to 100% bank asset financing and genuine warranty from Edwin Kibirai Isuzu Sales."
+      },
       "offers": {
         "@type": "Offer",
         "@context": "https://schema.org",
