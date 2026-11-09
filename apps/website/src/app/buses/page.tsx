@@ -177,7 +177,7 @@ export default function BusesHub() {
 
               <div className="flex gap-3">
                 <Link
-                  href={`/get-quote?model=${encodeURIComponent(bus.chassis)}`}
+                  href={`/get-quote/?model=${encodeURIComponent(bus.chassis)}`}
                   className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold text-center text-xs py-2.5 rounded transition"
                 >
                   Request Proforma Invoice

@@ -57,7 +57,7 @@ export default function VehicleClientView({ initialVehicle }: Props) {
           <nav className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-400 flex-wrap mb-4">
             <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
             <FaChevronRight size={12} className="opacity-40" />
-            <Link href="/inventory" className="hover:text-secondary transition-colors">Inventory</Link>
+            <Link href="/vehicles/" className="hover:text-secondary transition-colors">Vehicles</Link>
             <FaChevronRight size={12} className="opacity-40" />
             <span className="text-primary">{vehicle.make} {vehicle.model}</span>
           </nav>

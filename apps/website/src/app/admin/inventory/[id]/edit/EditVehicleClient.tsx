@@ -66,7 +66,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Vehicle Updated!</h2>
         <p className="text-gray-500 mb-8">The changes have been saved to the database and are live on the website.</p>
         <div className="flex gap-4">
-          <Link href="/admin/inventory" className="bg-gray-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-800 transition-colors">
+          <Link href="/admin/inventory/" className="bg-gray-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-800 transition-colors">
             Back to Inventory
           </Link>
           <Link href={`/inventory/${vehicle.id}`} target="_blank" className="border border-gray-200 text-gray-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-50 transition-colors">
@@ -85,7 +85,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
     <div className="max-w-[1200px] pb-12">
       {/* Header */}
       <div className="mb-6 flex items-center gap-4">
-        <Link href="/admin/inventory" className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors shadow-sm">
+        <Link href="/admin/inventory/" className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors shadow-sm">
           <FaChevronLeft size={20} />
         </Link>
         <div>
@@ -358,7 +358,7 @@ export default function EditVehicleClient({ vehicle }: { vehicle: any }) {
                   "Save All Changes"
                 )}
               </button>
-              <Link href="/admin/inventory" className="w-full border border-gray-200 text-gray-600 bg-gray-50 px-6 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center text-sm">
+              <Link href="/admin/inventory/" className="w-full border border-gray-200 text-gray-600 bg-gray-50 px-6 py-3.5 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center text-sm">
                 Cancel
               </Link>
             </div>

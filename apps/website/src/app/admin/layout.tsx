@@ -5,7 +5,7 @@ import { FaCar, FaMessage, FaUsers, FaMagnifyingGlass, FaGauge, FaDollarSign, Fa
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: FaGauge, exact: true },
-  { href: "/admin/inventory", label: "Inventory", icon: FaCar },
+  { href: "/admin/inventory/", label: "Inventory", icon: FaCar },
   { href: "/admin/leads", label: "Enquiries", icon: FaMessage },
   { href: "/admin/customers", label: "Customers", icon: FaUsers },
   { href: "/admin/sales", label: "Sales", icon: FaDollarSign },

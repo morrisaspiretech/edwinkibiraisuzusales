@@ -502,7 +502,7 @@ export default async function Home() {
                 Your Trusted <span className="text-[#D62B2B]">Isuzu Dealer</span> in Kenya
               </h2>
               <p className="text-gray-600 leading-relaxed text-sm">
-                Edwin Kibira Isuzu Sales is a multi-award winning, authorised Isuzu dealer in Kenya. We are recognized for excellence across Vehicle Sales, Service, Parts, and Customer Experience. We carry the full range of Isuzu vehicles — from the legendary D-Max pickup built for Kenya&apos;s tough terrain, to the premium MU-X SUV, and the powerful, inter-city distribution champions like the N-Series and FRR90 commercial trucks and buses. Every vehicle is brand-new and zero-mileage.
+                Edwin Kibirai Isuzu Sales, in direct partnership with Central Farmers Garage (CFG Ltd) — one of Kenya&apos;s longest-standing authorized Isuzu 3S dealerships (Sales, Service, and Spares since 1982) — provides brand-new, zero-mileage Isuzu commercial trucks (FRR 90, NLR, NMR, NQR, FVR, FVZ), D-Max pickups (Single &amp; Double Cab), mu-X 7-seater SUVs, and passenger buses on Enterprise Road, Industrial Area, Nairobi. Every vehicle comes backed by an official 3-year / 100,000 km manufacturer warranty from Isuzu East Africa with up to 100% bank asset financing.
               </p>
               <ul className="space-y-2">
                 {[

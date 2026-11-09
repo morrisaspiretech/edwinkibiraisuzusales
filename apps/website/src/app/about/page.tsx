@@ -53,7 +53,7 @@ const MODELS = [
     subtitle: "Pickup Trucks",
     desc: "The #1 pickup in Kenya. Available in Single Cab, Space Cab, and Double Cab configurations with 4x2 and 4x4 drivetrains.",
     tags: ["Single Cab", "Double Cab", "4x4", "4x2"],
-    link: "/vehicles#pickups",
+    link: "/vehicles/#pickups",
   },
   {
     image: "/vehicles/mu-x-1900cc-gallery/1.jpeg",
@@ -61,7 +61,7 @@ const MODELS = [
     subtitle: "Premium SUV",
     desc: "A commanding 7-seater SUV with diesel power, premium interior, and legendary off-road capability. Kenya's best family SUV.",
     tags: ["7-Seater", "Turbo Diesel", "4x4", "Premium"],
-    link: "/vehicles#suvs",
+    link: "/vehicles/#suvs",
   },
   {
     image: "/vehicles/n-series-truck.webp",
@@ -69,7 +69,7 @@ const MODELS = [
     subtitle: "Commercial Trucks",
     desc: "NPR, NQR, and NPS trucks — the backbone of Kenyan logistics. Reliable, fuel-efficient, and built for the long haul.",
     tags: ["NPR 71", "NQR 90", "NPS 75", "Fleet"],
-    link: "/vehicles#trucks",
+    link: "/vehicles/#trucks",
   },
   {
     image: "/vehicles/frr90-bus.webp",
@@ -77,7 +77,7 @@ const MODELS = [
     subtitle: "Transport Solutions",
     desc: "FRR and FVR-based buses for school transport, SACCO routes, and private hire. Trusted by hundreds of bus operators across Kenya.",
     tags: ["School Bus", "SACCO", "FRR 90", "FVR"],
-    link: "/vehicles#buses",
+    link: "/vehicles/#buses",
   },
 ];
 

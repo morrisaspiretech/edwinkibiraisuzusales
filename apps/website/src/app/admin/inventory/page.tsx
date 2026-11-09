@@ -63,7 +63,7 @@ export default async function AdminInventoryPage() {
           </button>
           
           <Link
-            href="/admin/inventory/new"
+            href="/admin/inventory/new/"
             className="flex items-center gap-2 bg-red-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-red-700 transition-colors shadow-sm"
           >
             <FaPlus size={16} /> Add Vehicle
@@ -79,7 +79,7 @@ export default async function AdminInventoryPage() {
           </div>
           <p className="text-xl font-bold text-gray-900 mb-2">No Vehicles Found</p>
           <p className="text-sm text-gray-500 mb-8 max-w-sm mx-auto">Your inventory is currently empty. Add your first vehicle to start tracking your stock.</p>
-          <Link href="/admin/inventory/new" className="bg-red-600 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-red-700 transition-colors shadow-sm inline-flex items-center gap-2">
+          <Link href="/admin/inventory/new/" className="bg-red-600 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-red-700 transition-colors shadow-sm inline-flex items-center gap-2">
             <FaPlus size={16} /> Add First Vehicle
           </Link>
         </div>

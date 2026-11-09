@@ -57,7 +57,7 @@ export default async function AdminDashboard() {
           </p>
         </div>
         <Link
-          href="/admin/inventory/new"
+          href="/admin/inventory/new/"
           className="bg-red-600 hover:bg-red-700 transition-colors text-white font-bold px-5 py-3 rounded-xl flex items-center gap-2 shadow-lg shadow-red-900/30 whitespace-nowrap"
         >
           <FaPlus size={18} /> Add Vehicle
@@ -117,7 +117,7 @@ export default async function AdminDashboard() {
         <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
           <div className="p-6 border-b border-gray-50 flex items-center justify-between">
             <h3 className="font-bold text-gray-900">Recent Inventory</h3>
-            <Link href="/admin/inventory" className="text-sm text-red-600 font-semibold hover:underline flex items-center gap-1">
+            <Link href="/admin/inventory/" className="text-sm text-red-600 font-semibold hover:underline flex items-center gap-1">
               View All <FaArrowRight size={14} />
             </Link>
           </div>
@@ -217,7 +217,7 @@ export default async function AdminDashboard() {
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
             <h3 className="font-bold text-gray-900 mb-4">Quick Actions</h3>
             <div className="space-y-2">
-              <Link href="/admin/inventory/new" className="flex items-center gap-3 p-3 rounded-xl border border-dashed border-red-200 bg-red-50 hover:bg-red-100 transition-colors group">
+              <Link href="/admin/inventory/new/" className="flex items-center gap-3 p-3 rounded-xl border border-dashed border-red-200 bg-red-50 hover:bg-red-100 transition-colors group">
                 <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <FaPlus size={16} className="text-white" />
                 </div>
@@ -226,7 +226,7 @@ export default async function AdminDashboard() {
                   <p className="text-xs text-gray-500">Add a car, bus, truck or parts</p>
                 </div>
               </Link>
-              <Link href="/admin/inventory" className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
+              <Link href="/admin/inventory/" className="flex items-center gap-3 p-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
                 <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
                   <FaCar size={16} className="text-white" />
                 </div>

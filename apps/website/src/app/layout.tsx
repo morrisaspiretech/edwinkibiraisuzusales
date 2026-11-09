@@ -162,6 +162,12 @@ export default function RootLayout({
                 ],
                 currenciesAccepted: "KES, USD",
                 paymentAccepted: "Bank Financing, Asset Finance, Bank Transfer, Cash, Banker's Cheque",
+                memberOf: {
+                  "@type": "AutoDealer",
+                  name: "Central Farmers Garage (CFG Ltd)",
+                  url: "https://cfg.co.ke",
+                  description: "Official authorized Isuzu East Africa 3S dealership network in Kenya since 1982",
+                },
                 parentOrganization: {
                   "@type": "AutoManufacturer",
                   name: "Isuzu East Africa",
@@ -171,11 +177,13 @@ export default function RootLayout({
                   "@type": "Person",
                   name: "Edwin Kibirai",
                   alternateName: "Edwin Kibira",
-                  jobTitle: "Isuzu Commercial Vehicle Sales Consultant",
+                  jobTitle: "Authorized Isuzu Commercial Vehicle Sales Specialist",
                   telephone: "+254768351483",
+                  email: "edwin@cfg.co.ke",
                   worksFor: {
                     "@type": "AutoDealer",
-                    name: "Edwin Kibirai Isuzu Sales",
+                    name: "Central Farmers Garage (CFG Ltd) - Edwin Kibirai Isuzu Sales",
+                    url: "https://www.edwinkibiraisuzusales.co.ke/",
                   },
                 },
                 sameAs: [
@@ -184,6 +192,7 @@ export default function RootLayout({
                   "https://www.tiktok.com/@edwinkibiraisuzusales?_r=1&_t=ZS-98qpjrR3C8y",
                   "https://maps.google.com/?q=Isuzu+East+Africa+Enterprise+Road+Nairobi",
                   "https://en.wikipedia.org/wiki/Isuzu_Motors",
+                  "https://cfg.co.ke",
                 ],
                 knowsAbout: [
                   "Isuzu D-Max Pickups",

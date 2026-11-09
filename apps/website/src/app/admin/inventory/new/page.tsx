@@ -60,7 +60,7 @@ export default function NewVehiclePage() {
         <h2 className="text-3xl font-bold text-gray-900 mb-3">Vehicle Added Successfully</h2>
         <p className="text-gray-500 mb-8 max-w-md">The vehicle has been securely saved to the inventory database and is now live on the public showroom.</p>
         <div className="flex gap-4">
-          <Link href="/admin/inventory" className="bg-red-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-sm">
+          <Link href="/admin/inventory/" className="bg-red-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-sm">
             View Inventory
           </Link>
           <button onClick={() => { setSuccess(false); setImages([{ url: "", isHero: true }]); setFeatures([]); }}
@@ -76,7 +76,7 @@ export default function NewVehiclePage() {
     <div className="max-w-[1200px] mx-auto pb-10">
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/admin/inventory" className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors shadow-sm">
+          <Link href="/admin/inventory/" className="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors shadow-sm">
             <FaChevronLeft size={20} />
           </Link>
           <div>
@@ -312,7 +312,7 @@ export default function NewVehiclePage() {
                 {isPending ? <><FaSpinner size={18} className="animate-spin" /> Saving to Database...</> : "Publish Vehicle"}
               </button>
               
-              <Link href="/admin/inventory" className="w-full border border-gray-200 text-gray-600 bg-gray-50 px-6 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center">
+              <Link href="/admin/inventory/" className="w-full border border-gray-200 text-gray-600 bg-gray-50 px-6 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center">
                 Discard Draft
               </Link>
             </div>
