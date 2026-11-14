@@ -7,13 +7,9 @@ import { FaArrowRight } from "react-icons/fa6";
 const MOVING_VEHICLE_IDS = [
   'tfs87-double-manual',
   'mu-x-3000cc',
-  'n-series-nlr',
   'n-series-nqr81',
   'f-series-frr90n',
   'f-series-fvz34t',
-  'movers',
-  'bus-nmr-26',
-  'bus-nqr-33',
   'bus-frr90n-51'
 ];
 

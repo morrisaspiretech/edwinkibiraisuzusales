@@ -67,42 +67,14 @@ const VEHICLE_CATEGORIES = [
   },
 ];
 
-// Featured vehicles linking directly to correct model pages
+// Top 8 flagship featured vehicles linking directly to correct model pages
 const FEATURED_VEHICLES = [
-  {
-    id: 'tfr87-4x2',
-    title: 'TFR 87 Single Cab 4x2 1.9L',
-    category: 'Pickups',
-    img: '/vehicles/grouped/batch1/2.webp',
-    spec: '1.9L Turbo Diesel · 150 hp · Manual',
-  },
-  {
-    id: 'tfs87-4x4-manual',
-    title: 'TFS 87 Single Cab 4x4 1.9L (Manual)',
-    category: 'Pickups',
-    img: '/vehicles/grouped/batch2/2.webp',
-    spec: '1.9L Turbo Diesel · Manual · 4x4',
-  },
-  {
-    id: 'tfs87-4x4-auto',
-    title: 'TFS 87 Single Cab 4x4 1.9L (Auto)',
-    category: 'Pickups',
-    img: '/vehicles/grouped/batch2/3.webp',
-    spec: '1.9L Turbo Diesel · Auto · 4x4',
-  },
   {
     id: 'tfs87-double-manual',
     title: 'TFS 87 Double Cab 4x4 1.9L (Manual)',
     category: 'Pickups',
     img: '/vehicles/grouped/batch3/hero-desktop.webp',
     spec: '1.9L Turbo Diesel · Manual · 4x4',
-  },
-  {
-    id: 'tfs87-double-auto',
-    title: 'TFS 87 Double Cab 4x4 1.9L (Auto)',
-    category: 'Pickups',
-    img: '/vehicles/grouped/batch4/3.webp',
-    spec: '1.9L Turbo Diesel · Auto · 4x4',
   },
   {
     id: 'tfs40-double-auto',
@@ -112,18 +84,11 @@ const FEATURED_VEHICLES = [
     spec: '3.0L Turbo Diesel · 190 hp · 4x4',
   },
   {
-    id: 'mu-x-1900cc',
-    title: 'MU-X LS-U 1900cc',
-    category: 'SUVs',
-    img: '/vehicles/mu-x-1900cc-gallery/1.webp',
-    spec: '1.9L Turbo Diesel · 150 hp · 7-Seater',
-  },
-  {
-    id: 'mu-x-3000cc',
-    title: 'MU-X LS-T 3000cc',
-    category: 'SUVs',
-    img: '/vehicles/mu-x-3000cc-gallery/1.webp',
-    spec: '3.0L Turbo Diesel · 190 hp · 7-Seater',
+    id: 'tfr87-4x2',
+    title: 'TFR 87 Single Cab 4x2 1.9L',
+    category: 'Pickups',
+    img: '/vehicles/grouped/batch1/2.webp',
+    spec: '1.9L Turbo Diesel · 150 hp · Manual',
   },
   {
     id: 'n-series-nlr',
@@ -133,32 +98,11 @@ const FEATURED_VEHICLES = [
     spec: '2.999cc Turbo Diesel · 2.3T Payload',
   },
   {
-    id: 'n-series-nmr85',
-    title: 'N-Series NMR 85',
-    category: 'Trucks',
-    img: '/vehicles/n-series/nmr85/1.webp',
-    spec: '2.999cc Turbo Diesel · 3.5T Payload',
-  },
-  {
-    id: 'n-series-nps',
-    title: 'N-Series NPS 81H 4x4',
-    category: 'Trucks',
-    img: '/vehicles/n-series/nps-81h-real.webp',
-    spec: '4,773cc Turbo Diesel · 3.0T Payload',
-  },
-  {
     id: 'n-series-nqr81',
     title: 'N-Series NQR 81',
     category: 'Trucks',
     img: '/vehicles/nqr-hero.webp',
     spec: '4,773cc Turbo Diesel · 5.0T Payload',
-  },
-  {
-    id: 'n-series-nqr-xtra',
-    title: 'N-Series NQR Xtra',
-    category: 'Trucks',
-    img: '/vehicles/n-series/nqr-xtra-real.webp',
-    spec: '4,773cc Turbo Diesel · 6.0T Payload',
   },
   {
     id: 'f-series-frr90n',
@@ -168,88 +112,18 @@ const FEATURED_VEHICLES = [
     spec: '5,193cc Turbo Diesel · 11T Payload',
   },
   {
-    id: 'f-series-fvr90l',
-    title: 'F-Series FVR 90L',
-    category: 'Trucks',
-    img: '/vehicles/f-series/fvr90l/1.webp',
-    spec: '5,193cc Turbo Diesel · 13T Payload',
-  },
-  {
-    id: 'f-series-fvr90p',
-    title: 'F-Series FVR 90P',
-    category: 'Trucks',
-    img: '/vehicles/f-series/fvr90p/1.webp',
-    spec: '5,193cc Turbo Diesel · 13T Payload',
-  },
-  {
-    id: 'f-series-fvz34n',
-    title: 'F-Series FVZ 34N Truck',
-    category: 'Trucks',
-    img: '/vehicles/f-series/fvz34n/1.webp',
-    spec: '7,790cc Turbo Diesel · 6x4 · 16T Payload',
-  },
-  {
-    id: 'f-series-fvz34t',
-    title: 'F-Series FVZ 34T Tipper',
-    category: 'Trucks',
-    img: '/vehicles/f-series/fvz34t/1.webp',
-    spec: '7,790cc Turbo Diesel · 16T Tipper',
-  },
-  {
-    id: 'movers',
-    title: 'Movers (UD Quester)',
-    category: 'Trucks',
-    img: '/vehicles/movers/ud-quester-460-hero.webp',
-    spec: '10.8L Turbo Diesel · 420–460 HP · ESCOT AMT / MT · Tractor Only',
-  },
-  {
-    id: 'bus-nmr-26',
-    title: 'NMR 26 Seater Bus',
-    category: 'Buses',
-    img: '/vehicles/buses/nmr26/1.webp',
-    spec: '26 Seater · School / Staff',
-  },
-  {
-    id: 'bus-nqr-29',
-    title: 'NQR 29 Seater Bus',
-    category: 'Buses',
-    img: '/vehicles/buses/nqr29/2.webp',
-    spec: '29 Seater · Commuter',
-  },
-  {
-    id: 'bus-nqr-33',
-    title: 'NQR 33 Seater Bus',
-    category: 'Buses',
-    img: '/vehicles/buses/nqr33/1.webp',
-    spec: '33 Seater · Commuter',
+    id: 'mu-x-3000cc',
+    title: 'MU-X LS-T 3000cc',
+    category: 'SUVs',
+    img: '/vehicles/mu-x-3000cc-gallery/1.webp',
+    spec: '3.0L Turbo Diesel · 190 hp · 7-Seater',
   },
   {
     id: 'bus-frr90n-51',
-    title: 'FRR 90N 51 Seater',
+    title: 'FRR 90N 51 Seater Bus',
     category: 'Buses',
     img: '/vehicles/buses/frr90n-51/1.webp',
-    spec: '51 Seater · Ksh 8,450,000',
-  },
-  {
-    id: 'bus-frr90q-51',
-    title: 'FRR 90Q 51 Seater',
-    category: 'Buses',
-    img: '/vehicles/buses/frr90q-51/2.webp',
-    spec: '51 Seater · Ksh 10,425,000',
-  },
-  {
-    id: 'bus-fvr34-67-4x2',
-    title: 'FVR 34 67 Seater 4x2',
-    category: 'Buses',
-    img: '/vehicles/buses/fvr34-4x2/10.webp',
-    spec: '67 Seater Semi-Luxury · Ksh 14,916,000',
-  },
-  {
-    id: 'bus-fvr34-67-6x2',
-    title: 'FVR 34 67 Seater 6x2',
-    category: 'Buses',
-    img: '/vehicles/buses/fvr34-6x2/10.webp',
-    spec: '67 Seater Semi-Luxury · Ksh 16,623,000',
+    spec: '51 Seater School / Staff · Turnkey',
   },
 ];
 
@@ -308,7 +182,15 @@ export default async function Home() {
           />
 
         </picture>
-
+        {/* Dark overlays rendered directly in static HTML so initial paint is final */}
+        <div className="absolute inset-0 bg-black/50 z-[1] pointer-events-none" />
+        <div
+          className="absolute inset-0 z-[2] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(105deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.15) 100%)",
+          }}
+        />
         <Hero />
 
       </div>
@@ -364,6 +246,15 @@ export default async function Home() {
             {FEATURED_VEHICLES.map((v) => (
               <FeaturedVehicleCard key={v.id} v={v} />
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/vehicles/"
+              className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white hover:bg-[#D62B2B] px-8 py-4 font-black uppercase text-xs tracking-widest transition-all shadow-md"
+            >
+              Browse All 28+ Models in Full Showroom <FaChevronRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
@@ -601,12 +492,6 @@ export default async function Home() {
               { name: "Samuel Otieno", role: "Agribusiness, Nakuru", text: "Needed a reliable pickup for my farm operations. The D-Max has been absolutely incredible. Edwin helped me secure 90% bank financing with ease." },
               { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
               { name: "David Kimani", role: "Logistics Company, Nairobi", text: "Our entire delivery fleet is Isuzu N-Series from Edwin Kibira. Best investment we've ever made. Low maintenance, high uptime, every time." },
-              { name: "Fatuma Hassan", role: "Trader, Mombasa", text: "I was skeptical at first but the team was so professional. They helped me compare models and I left with the perfect pickup for my business." },
-              { name: "James Mwangi", role: "Fleet Owner, Nairobi", text: "I bought three NQR trucks from Edwin Kibira and the experience was seamless. Great financing terms and after-sales support has been excellent." },
-              { name: "Grace Achieng", role: "Transport Business Owner, Kisumu", text: "Edwin walked me through everything — from model selection to bank financing. Got my D-Max with zero deposit. Highly recommend their services." },
-              { name: "Peter Kamau", role: "Construction Company, Mombasa", text: "We've purchased 5 Isuzu trucks through Edwin Kibira Isuzu Sales. Transparent pricing and delivery has always been on time." },
-              { name: "Samuel Otieno", role: "Agribusiness, Nakuru", text: "Needed a reliable pickup for my farm operations. The D-Max has been absolutely incredible. Edwin helped me secure 90% bank financing with ease." },
-              { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
             ].map((t, i) => (
               <div key={i} className="flex-shrink-0 w-72 sm:w-80 bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B] shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex gap-0.5 mb-3" aria-hidden="true">
@@ -636,13 +521,7 @@ export default async function Home() {
               { name: "Ahmed Ibrahim", role: "Import/Export, Mombasa", text: "Needed reliable trucks for my port operations. Got 3 FRR trucks from Edwin. Zero downtime in 2 years. Truly the best commercial vehicles." },
               { name: "Ruth Chebet", role: "Dairy Farmer, Rift Valley", text: "Edwin helped me get a single cab D-Max for farm use. The off-road capability is incredible and maintenance costs are very low." },
               { name: "John Njoroge", role: "Real Estate Developer, Karen", text: "Bought an Isuzu mu-X for site visits. The 4x4 capability is phenomenal. Would absolutely buy from Edwin Kibira again without hesitation." },
-              { name: "Mary Auma", role: "NGO Fleet Manager, Kisumu", text: "Our organisation needed 4 pickups for field operations. Edwin's team gave us excellent bulk pricing and the vehicles have never let us down." },
               { name: "Joseph Kiprotich", role: "Mining Company, Taita Taveta", text: "Extreme terrain demands extreme vehicles. The Isuzu D-Max 4x4 from Edwin Kibira handles everything we throw at it. Outstanding machine." },
-              { name: "Brian Omondi", role: "Contractor, Eldoret", text: "I've been running Isuzu trucks for 8 years. Switched to buying from Edwin Kibira Isuzu Sales and the service level is unmatched in Kenya." },
-              { name: "Susan Wanjiku", role: "Entrepreneur, Nairobi", text: "Bought a brand new mu-X for my family. The vehicle is a dream. Edwin's team made the entire process smooth, from financing to delivery." },
-              { name: "Ahmed Ibrahim", role: "Import/Export, Mombasa", text: "Needed reliable trucks for my port operations. Got 3 FRR trucks from Edwin. Zero downtime in 2 years. Truly the best commercial vehicles." },
-              { name: "Ruth Chebet", role: "Dairy Farmer, Rift Valley", text: "Edwin helped me get a single cab D-Max for farm use. The off-road capability is incredible and maintenance costs are very low." },
-              { name: "John Njoroge", role: "Real Estate Developer, Karen", text: "Bought an Isuzu mu-X for site visits. The 4x4 capability is phenomenal. Would absolutely buy from Edwin Kibira again without hesitation." },
             ].map((t, i) => (
               <div key={i} className="flex-shrink-0 w-72 sm:w-80 bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B] shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex gap-0.5 mb-3" aria-hidden="true">

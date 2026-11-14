@@ -98,16 +98,6 @@ const Hero = () => {
         )}
       </AnimatePresence>
 
-      {/* ── Dark overlays for text readability ── */}
-      <div className="absolute inset-0 bg-black/50 z-[1]" />
-      <div
-        className="absolute inset-0 z-[2] pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(105deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.15) 100%)",
-        }}
-      />
-
       {/* ── Progress bar (GPU-accelerated scaleX, zero forced reflows) ── */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-white/10 z-30">
         <motion.div
