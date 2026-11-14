@@ -85,27 +85,27 @@ const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[#111] hero-section" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
 
-      {/* ── Background: Cinematic Ken Burns Effect ── */}
+      {/* ── Background: Smooth Crossfade ── */}
       <AnimatePresence mode="popLayout">
         <motion.div
           key={`bg-${currentSlide}`}
-          initial={currentSlide === 0 ? false : { opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1.15 }}
+          initial={currentSlide === 0 ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ 
-            opacity: { duration: 0.8, ease: "easeInOut" },
-            scale: { duration: 12, ease: "linear" } 
-          }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0 z-0 origin-center"
         >
-          <Image
-            src={current.image}
-            alt={current.title + " " + current.highlight}
-            fill
-            priority={currentSlide === 0}
-            sizes="100vw"
-            className="object-cover"
-          />
+          <picture className="absolute inset-0 w-full h-full">
+            <source media="(max-width: 640px)" srcSet={currentSlide === 0 ? "/vehicles/grouped/batch3/hero-mobile.webp" : current.image} />
+            <img
+              src={current.image}
+              alt={current.title + " " + current.highlight}
+              fetchPriority={currentSlide === 0 ? "high" : "auto"}
+              loading={currentSlide === 0 ? "eager" : "lazy"}
+              decoding="async"
+              className="object-cover w-full h-full"
+            />
+          </picture>
         </motion.div>
       </AnimatePresence>
 
@@ -119,14 +119,15 @@ const Hero = () => {
         }}
       />
 
-      {/* ── Progress bar ── */}
+      {/* ── Progress bar (GPU-accelerated scaleX, zero forced reflows) ── */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-white/10 z-30">
         <motion.div
           key={`bar-${currentSlide}`}
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
           transition={{ duration: 8, ease: "linear" }}
-          className="h-full bg-[#D62B2B]"
+          style={{ transformOrigin: "left" }}
+          className="h-full w-full bg-[#D62B2B]"
         />
       </div>
 

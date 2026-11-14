@@ -87,9 +87,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "SUVs",
     title: "Isuzu MU-X LS-U 1900cc",
     description: "The Isuzu mu-X 1.9L is a refined 7-seater SUV that delivers excellent fuel efficiency without compromising on capability. Powered by the advanced 1.9L RZ4E turbo-diesel engine, it is ideal for families who want a comfortable, modern SUV that handles both city roads and weekend adventures with confidence.",
-    heroImage: "/vehicles/mu-x-1900cc-gallery/1.jpeg",
+    heroImage: "/vehicles/mu-x-1900cc-gallery/1.webp",
     gallery: [
-      "/vehicles/mu-x-1900cc-gallery/1.jpeg",
+      "/vehicles/mu-x-1900cc-gallery/1.webp",
       "/vehicles/mu-x-1900cc-gallery/2.jpeg",
       "/vehicles/mu-x-1900cc-gallery/3.jpeg",
     ],
@@ -145,9 +145,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "SUVs",
     title: "Isuzu MU-X LS-T 3000cc",
     description: "The flagship Isuzu mu-X 3.0L LS-T is the ultimate 7-seater SUV, blending commanding off-road capability with genuine premium luxury. Powered by the legendary 3.0L 4JJ3-TCX turbo-diesel and paired with a 6-speed automatic, it features advanced driver assistance systems, premium leather seating, and full 4WD capability for any terrain.",
-    heroImage: "/vehicles/mu-x-3000cc-gallery/1.jpeg",
+    heroImage: "/vehicles/mu-x-3000cc-gallery/1.webp",
     gallery: [
-      "/vehicles/mu-x-3000cc-gallery/1.jpeg",
+      "/vehicles/mu-x-3000cc-gallery/1.webp",
       "/vehicles/mu-x-3000cc-gallery/2.jpeg",
       "/vehicles/mu-x-3000cc-gallery/3.jpeg",
       "/vehicles/mu-x-3000cc-gallery/4.jpeg",
@@ -221,8 +221,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFR 87 Single Cab 4x2 1.9L",
     description: "The Isuzu TFR 87 4x2 Single Cab is built for serious commercial work. Powered by the 1.9L RZ4E Turbodiesel engine and paired with a 6-speed manual gearbox, it delivers outstanding fuel economy and reliability.",
-    heroImage: "/vehicles/grouped/batch1/2.jpeg",
-    gallery: ['/vehicles/grouped/batch1/2.jpeg', '/vehicles/grouped/batch1/4.jpeg', '/vehicles/grouped/batch1/6.jpeg', '/vehicles/grouped/batch1/1.jpeg', '/vehicles/grouped/batch1/3.jpeg', '/vehicles/grouped/batch1/5.jpeg'],
+    heroImage: "/vehicles/grouped/batch1/2.webp",
+    gallery: ['/vehicles/grouped/batch1/2.webp', '/vehicles/grouped/batch1/4.jpeg', '/vehicles/grouped/batch1/6.jpeg', '/vehicles/grouped/batch1/1.jpeg', '/vehicles/grouped/batch1/3.jpeg', '/vehicles/grouped/batch1/5.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Manual",
@@ -272,9 +272,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Single Cab 4x4 1.9L (Manual)",
     description: "The Isuzu TFS 87 4x4 Single Cab combines rugged off-road capability with the productivity of a full-size single cab. Manual transmission.",
-    heroImage: "/vehicles/tfs87-single-1.jpg",
+    heroImage: "/vehicles/tfs87-single-1.webp",
     gallery: [
-      "/vehicles/tfs87-single-1.jpg",
+      "/vehicles/tfs87-single-1.webp",
       "/vehicles/tfs87-single-2.jpg",
       "/vehicles/tfs87-single-3.jpg",
       "/vehicles/tfs87-single-4.jpg",
@@ -309,9 +309,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Single Cab 4x4 1.9L (Automatic)",
     description: "The Isuzu TFS 87 4x4 Single Cab Automatic. Rugged off-road capability with the convenience of an automatic transmission.",
-    heroImage: "/vehicles/tfs87-single-1.jpg",
+    heroImage: "/vehicles/tfs87-single-1.webp",
     gallery: [
-      "/vehicles/tfs87-single-1.jpg",
+      "/vehicles/tfs87-single-1.webp",
       "/vehicles/tfs87-single-2.jpg",
       "/vehicles/tfs87-single-3.jpg",
       "/vehicles/tfs87-single-4.jpg",
@@ -340,8 +340,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Double Cab 4x4 1.9L (Manual)",
     description: "The D-Max Double Cab 1.9L Manual. Bridges work and lifestyle perfectly.",
-    heroImage: "/vehicles/grouped/batch3/3.jpeg",
-    gallery: ['/vehicles/grouped/batch3/3.jpeg', '/vehicles/grouped/batch3/1.jpeg', '/vehicles/grouped/batch3/2.jpeg', '/vehicles/grouped/batch3/4.jpeg', '/vehicles/grouped/batch3/5.jpeg', '/vehicles/grouped/batch3/6.jpeg', '/vehicles/grouped/batch3/7.jpeg', '/vehicles/grouped/batch3/8.jpeg', '/vehicles/grouped/batch3/9.jpeg', '/vehicles/grouped/batch3/10.jpeg', '/vehicles/grouped/batch3/11.jpeg', '/vehicles/grouped/batch3/12.jpeg', '/vehicles/grouped/batch3/13.jpeg', '/vehicles/grouped/batch3/14.jpeg', '/vehicles/grouped/batch3/15.jpeg', '/vehicles/grouped/batch3/16.jpeg', '/vehicles/grouped/batch3/17.jpeg', '/vehicles/grouped/batch3/18.jpeg', '/vehicles/grouped/batch3/19.jpeg', '/vehicles/grouped/batch3/20.jpeg', '/vehicles/grouped/batch3/21.jpeg', '/vehicles/grouped/batch3/22.jpeg', '/vehicles/grouped/batch3/23.jpeg', '/vehicles/grouped/batch3/24.jpeg', '/vehicles/grouped/batch3/25.jpeg', '/vehicles/grouped/batch3/26.jpeg', '/vehicles/grouped/batch3/27.jpeg', '/vehicles/grouped/batch3/28.jpeg'],
+    heroImage: "/vehicles/grouped/batch3/3.webp",
+    gallery: ['/vehicles/grouped/batch3/3.webp', '/vehicles/grouped/batch3/1.jpeg', '/vehicles/grouped/batch3/2.jpeg', '/vehicles/grouped/batch3/4.jpeg', '/vehicles/grouped/batch3/5.jpeg', '/vehicles/grouped/batch3/6.jpeg', '/vehicles/grouped/batch3/7.jpeg', '/vehicles/grouped/batch3/8.jpeg', '/vehicles/grouped/batch3/9.jpeg', '/vehicles/grouped/batch3/10.jpeg', '/vehicles/grouped/batch3/11.jpeg', '/vehicles/grouped/batch3/12.jpeg', '/vehicles/grouped/batch3/13.jpeg', '/vehicles/grouped/batch3/14.jpeg', '/vehicles/grouped/batch3/15.jpeg', '/vehicles/grouped/batch3/16.jpeg', '/vehicles/grouped/batch3/17.jpeg', '/vehicles/grouped/batch3/18.jpeg', '/vehicles/grouped/batch3/19.jpeg', '/vehicles/grouped/batch3/20.jpeg', '/vehicles/grouped/batch3/21.jpeg', '/vehicles/grouped/batch3/22.jpeg', '/vehicles/grouped/batch3/23.jpeg', '/vehicles/grouped/batch3/24.jpeg', '/vehicles/grouped/batch3/25.jpeg', '/vehicles/grouped/batch3/26.jpeg', '/vehicles/grouped/batch3/27.jpeg', '/vehicles/grouped/batch3/28.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Manual",
@@ -362,8 +362,8 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 87 Double Cab 4x4 1.9L (Automatic)",
     description: "The D-Max Double Cab 1.9L Automatic. The ultimate all-rounder for the modern Kenyan.",
-    heroImage: "/vehicles/grouped/batch4/3.jpeg",
-    gallery: ['/vehicles/grouped/batch4/3.jpeg', '/vehicles/grouped/batch4/5.jpeg', '/vehicles/grouped/batch4/1.jpeg', '/vehicles/grouped/batch4/2.jpeg', '/vehicles/grouped/batch4/4.jpeg', '/vehicles/grouped/batch4/6.jpeg', '/vehicles/grouped/batch4/7.jpeg', '/vehicles/grouped/batch4/8.jpeg', '/vehicles/grouped/batch4/9.jpeg', '/vehicles/grouped/batch4/10.jpeg', '/vehicles/grouped/batch4/11.jpeg', '/vehicles/grouped/batch4/12.jpeg', '/vehicles/grouped/batch4/13.jpeg', '/vehicles/grouped/batch4/14.jpeg', '/vehicles/grouped/batch4/15.jpeg', '/vehicles/grouped/batch4/16.jpeg'],
+    heroImage: "/vehicles/grouped/batch4/3.webp",
+    gallery: ['/vehicles/grouped/batch4/3.webp', '/vehicles/grouped/batch4/5.jpeg', '/vehicles/grouped/batch4/1.jpeg', '/vehicles/grouped/batch4/2.jpeg', '/vehicles/grouped/batch4/4.jpeg', '/vehicles/grouped/batch4/6.jpeg', '/vehicles/grouped/batch4/7.jpeg', '/vehicles/grouped/batch4/8.jpeg', '/vehicles/grouped/batch4/9.jpeg', '/vehicles/grouped/batch4/10.jpeg', '/vehicles/grouped/batch4/11.jpeg', '/vehicles/grouped/batch4/12.jpeg', '/vehicles/grouped/batch4/13.jpeg', '/vehicles/grouped/batch4/14.jpeg', '/vehicles/grouped/batch4/15.jpeg', '/vehicles/grouped/batch4/16.jpeg'],
     quickSpecs: {
       engine: "1.9L Turbo Diesel",
       transmission: "6-Speed Automatic",
@@ -384,9 +384,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "TFS 40 3.0Ltr Double Cab 4x4 Automatic",
     description: "The Isuzu TFS 40 Double Cab Automatic is a premium 4x4 pickup built for those who demand the best. Featuring an aggressive sport-tuned exterior with blacked-out trims, black alloy wheels, and wide fender flares, it commands attention on any road. Powered by a 3.0L turbodiesel and paired with a 6-speed automatic, it combines raw capability with refined comfort.",
-    heroImage: "/vehicles/tfs40-double-auto/1.jpeg",
+    heroImage: "/vehicles/tfs40-double-auto/1.webp",
     gallery: [
-      "/vehicles/tfs40-double-auto/1.jpeg",
+      "/vehicles/tfs40-double-auto/1.webp",
       "/vehicles/tfs40-double-auto/3.jpeg",
       "/vehicles/tfs40-double-auto/4.jpeg",
       "/vehicles/tfs40-double-auto/5.jpeg",
@@ -452,9 +452,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Pickups",
     title: "Isuzu D-Max TFS 40",
     description: "The D-Max TFS 40 Double Cab Automatic perfectly bridges work and lifestyle. With seating for 5, a genuine 4WD system, and a robust build for any terrain.",
-    heroImage: "/vehicles/tfs40/tfs40-1.jpeg",
+    heroImage: "/vehicles/tfs40/tfs40-1.webp",
     gallery: [
-      "/vehicles/tfs40/tfs40-1.jpeg",
+      "/vehicles/tfs40/tfs40-1.webp",
       "/vehicles/tfs40/tfs40-2.jpeg",
       "/vehicles/tfs40/tfs40-3.jpeg",
       "/vehicles/tfs40/tfs40-4.jpeg",
@@ -480,9 +480,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "F-Series FRR 90N",
     description: "The Isuzu FRR 90N is the benchmark medium-duty truck for Kenyan transport operators. Built for urban and intercounty delivery, it packs a powerful 5.2L turbocharged engine into a compact, highly manoeuvrable cab-over chassis delivering an impressive 11-tonne payload.",
-    heroImage: "/vehicles/f-series/frr90n/1.jpeg",
+    heroImage: "/vehicles/f-series/frr90n/1.webp",
     gallery: [
-      "/vehicles/f-series/frr90n/1.jpeg",
+      "/vehicles/f-series/frr90n/1.webp",
       "/vehicles/f-series/frr90n/2.jpeg",
       "/vehicles/f-series/frr90n/3.jpeg",
       "/vehicles/f-series/frr90n/4.jpeg",
@@ -535,9 +535,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "F-Series FVR 90L",
     description: "The Isuzu FVR 90L delivers serious heavy-duty capability for Kenya's most demanding intercounty routes. With a 5.2L turbocharged engine and a massive 13-tonne payload, it is built for businesses that demand more from every trip.",
-    heroImage: "/vehicles/f-series/fvr90l/1.jpeg",
+    heroImage: "/vehicles/f-series/fvr90l/1.webp",
     gallery: [
-      "/vehicles/f-series/fvr90l/1.jpeg",
+      "/vehicles/f-series/fvr90l/1.webp",
       "/vehicles/f-series/fvr90l/2.jpeg",
       "/vehicles/f-series/fvr90l/3.jpeg",
       "/vehicles/f-series/fvr90l/4.jpeg",
@@ -592,9 +592,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "F-Series FVR 90P",
     description: "The Isuzu FVR 90P is the premium variant of the FVR range — Kenya's top choice for high-volume intercounty haulage. Its 5.2L turbocharged engine delivers exceptional torque, hauling 13 tonnes with confidence on even the toughest routes.",
-    heroImage: "/vehicles/f-series/fvr90p/1.jpg",
+    heroImage: "/vehicles/f-series/fvr90p/1.webp",
     gallery: [
-      "/vehicles/f-series/fvr90p/1.jpg",
+      "/vehicles/f-series/fvr90p/1.webp",
     ],
     quickSpecs: {
       engine: "7,790cc Turbo Diesel",
@@ -641,9 +641,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "F-Series FVZ 34N Truck",
     description: "The Isuzu FVZ 34N is Kenya's premier heavy haulage truck. Its massive 7.8L six-cylinder engine and 6x4 drive configuration conquer the most demanding routes, delivering a massive 16-tonne payload for nationwide distribution.",
-    heroImage: "/vehicles/f-series/fvz34n/1.jpeg",
+    heroImage: "/vehicles/f-series/fvz34n/1.webp",
     gallery: [
-      "/vehicles/f-series/fvz34n/1.jpeg",
+      "/vehicles/f-series/fvz34n/1.webp",
       "/vehicles/f-series/fvz34n/2.jpeg",
       "/vehicles/f-series/fvz34n/3.jpeg",
       "/vehicles/f-series/fvz34n/4.jpeg",
@@ -695,9 +695,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "F-Series FVZ 34T Tipper",
     description: "The Isuzu FVZ 34T Tipper is built for Kenya's construction and quarrying industries. Powered by the same mighty 7.8L six-cylinder engine as the FVZ 34N, it features a heavy-duty hydraulic tipper body for efficient bulk material transport of up to 16 tonnes.",
-    heroImage: "/vehicles/f-series/fvz34t/1.jpeg",
+    heroImage: "/vehicles/f-series/fvz34t/1.webp",
     gallery: [
-      "/vehicles/f-series/fvz34t/1.jpeg",
+      "/vehicles/f-series/fvz34t/1.webp",
       "/vehicles/f-series/fvz34t/2.jpeg",
       "/vehicles/f-series/fvz34t/3.jpeg",
       "/vehicles/f-series/fvz34t/4.jpeg",
@@ -750,9 +750,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "N-Series NLR",
     description: "The Isuzu NLR is Kenya's most trusted light commercial truck, engineered for city deliveries and navigating tight spaces with ease. It offers outstanding fuel efficiency, a low cab-forward design, and rugged reliability.",
-    heroImage: "/vehicles/n-series/nlr-chassis.png",
+    heroImage: "/vehicles/n-series/nlr-chassis.webp",
     gallery: [
-      "/vehicles/n-series/nlr-chassis.png"
+      "/vehicles/n-series/nlr-chassis.webp"
     ],
     quickSpecs: {
       engine: "2,999cc Turbo Diesel",
@@ -799,9 +799,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "N-Series NMR 85",
     description: "The Isuzu NMR 85 steps up the capability for businesses needing more payload without sacrificing agility. A robust 3.5-tonne payload makes it the perfect all-rounder for general transport.",
-    heroImage: "/vehicles/n-series/nmr85/1.jpeg",
+    heroImage: "/vehicles/n-series/nmr85/1.webp",
     gallery: [
-      "/vehicles/n-series/nmr85/1.jpeg",
+      "/vehicles/n-series/nmr85/1.webp",
       "/vehicles/n-series/nmr85/2.jpeg",
       "/vehicles/n-series/nmr85/3.jpeg",
       "/vehicles/n-series/nmr85/4.jpeg",
@@ -854,9 +854,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "N-Series NHP 81H 4x4",
     description: "Built for Kenya's toughest terrains, the NHP 81H 4x4 delivers true off-road capability combined with a 3.0-tonne payload and a powerful 4.8L engine, making it the ideal choice for remote operations, agriculture, and rough terrain.",
-    heroImage: "/vehicles/n-series/nps-81h-real.png",
+    heroImage: "/vehicles/n-series/nps-81h-real.webp",
     gallery: [
-      "/vehicles/n-series/nps-81h-real.png",
+      "/vehicles/n-series/nps-81h-real.webp",
     ],
     quickSpecs: {
       engine: "4,773cc Turbo Diesel",
@@ -903,9 +903,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "N-Series NQR 81",
     description: "The Isuzu NQR 81 is the powerhouse of the N-Series. With a 4.8-litre engine and a heavy-duty 5.0-tonne payload, it bridges the gap between light and medium commercial trucks.",
-    heroImage: "/vehicles/nqr/nqr-2.jpeg",
+    heroImage: "/vehicles/nqr/nqr-2.webp",
     gallery: [
-      "/vehicles/nqr/nqr-2.jpeg",
+      "/vehicles/nqr/nqr-2.webp",
       "/vehicles/nqr/nqr-3.jpeg",
       "/vehicles/nqr/nqr-4.jpeg",
       "/vehicles/nqr/nqr-5.jpeg",
@@ -964,9 +964,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "N-Series NQR Xtra",
     description: "The ultimate N-Series. The NQR Xtra features an extended chassis providing maximum load space and an unmatched 6.0-tonne payload, ideal for voluminous cargo and specialized bodies.",
-    heroImage: "/vehicles/n-series/nqr-xtra-real.png",
+    heroImage: "/vehicles/n-series/nqr-xtra-real.webp",
     gallery: [
-      "/vehicles/n-series/nqr-xtra-real.png",
+      "/vehicles/n-series/nqr-xtra-real.webp",
     ],
     quickSpecs: {
       engine: "4,773cc Turbo Diesel",
@@ -1013,9 +1013,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Trucks",
     title: "Movers (UD Quester)",
     description: "The UD Quester GWE 6x4 Heavy-Duty Prime Mover series — featuring the GWE 460 AMT, GWE 440 AMT, and GWE 420 MT — is engineered for maximum uptime, extreme payloads, and unmatched fuel efficiency across East Africa's most demanding transit corridors. Powered by the heavy-duty 11-litre GH11E engine delivering up to 460 HP and 2,200 Nm of low-end torque, paired with UD's legendary ESCOT-E 12-Speed Automated Manual Transmission (AMT) or robust multi-speed Manual Transmission. Sold as Tractor Only with attractive bank and SACCO asset financing available.",
-    heroImage: "/vehicles/movers/ud-quester-460-hero.png",
+    heroImage: "/vehicles/movers/ud-quester-460-hero.webp",
     gallery: [
-      "/vehicles/movers/ud-quester-460-hero.png",
+      "/vehicles/movers/ud-quester-460-hero.webp",
       "/vehicles/movers/ud-quester-fleet.png",
       "/vehicles/movers/ud-quester-tractor-rear.png",
       "/vehicles/movers/ud-quester-side.png",
@@ -1206,9 +1206,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "NMR 26 Seater Bus",
     description: "The Isuzu NMR 26-Seater Bus offers excellent passenger comfort and safety on a robust N-Series chassis. Ideal for schools, staff transport, and city commuting.",
-    heroImage: "/vehicles/buses/nmr26/1.jpg",
+    heroImage: "/vehicles/buses/nmr26/1.webp",
     gallery: [
-      "/vehicles/buses/nmr26/1.jpg",
+      "/vehicles/buses/nmr26/1.webp",
       "/vehicles/buses/nmr26/2.jpeg",
       "/vehicles/buses/nmr26/3.jpeg",
       "/vehicles/buses/nmr26/4.jpeg",
@@ -1262,9 +1262,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "NQR 29 Seater Bus",
     description: "The Isuzu NQR 29-Seater Bus delivers reliable, efficient transportation on the proven NQR chassis. Built for durability and passenger safety.",
-    heroImage: "/vehicles/buses/nqr29/2.jpg",
+    heroImage: "/vehicles/buses/nqr29/2.webp",
     gallery: [
-      "/vehicles/buses/nqr29/2.jpg",
+      "/vehicles/buses/nqr29/2.webp",
       "/vehicles/buses/nqr29/1.png"
     ],
     quickSpecs: {
@@ -1308,9 +1308,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "NQR 33 Seater Bus",
     description: "The Isuzu NQR 33-Seater Bus maximizes passenger capacity on the dependable NQR platform, making it highly profitable for transport operators.",
-    heroImage: "/vehicles/buses/nqr33/1.jpeg",
+    heroImage: "/vehicles/buses/nqr33/1.webp",
     gallery: [
-      "/vehicles/buses/nqr33/1.jpeg",
+      "/vehicles/buses/nqr33/1.webp",
       "/vehicles/buses/nqr33/2.jpeg",
       "/vehicles/buses/nqr33/3.jpeg",
       "/vehicles/buses/nqr33/4.jpeg",
@@ -1361,9 +1361,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "FRR 90N 51 Seater Bus",
     description: "The Isuzu FRR 90N 51-Seater Bus is the ideal choice for inter-city travel, church transport, and large-scale staff movement. Built on the proven FRR chassis with a powerful 5.2L engine, it combines reliability with an impressive 51-seat capacity.",
-    heroImage: "/vehicles/buses/frr90n-51/1.jpg",
+    heroImage: "/vehicles/buses/frr90n-51/1.webp",
     gallery: [
-      "/vehicles/buses/frr90n-51/1.jpg",
+      "/vehicles/buses/frr90n-51/1.webp",
       "/vehicles/buses/frr90n-51/2.jpg",
     ],
     quickSpecs: {
@@ -1411,9 +1411,9 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "FRR 90Q 51 Seater Bus",
     description: "The Isuzu FRR 90Q 51-Seater Bus is the premium variant in the FRR bus range, delivering enhanced performance and a superior finish for operators who demand the very best. With 51 seats and a powerful engine, it's built for long-distance routes across Kenya.",
-    heroImage: "/vehicles/buses/frr90q-51/2.jpg",
+    heroImage: "/vehicles/buses/frr90q-51/2.webp",
     gallery: [
-      "/vehicles/buses/frr90q-51/2.jpg",
+      "/vehicles/buses/frr90q-51/2.webp",
       "/vehicles/buses/frr90q-51/1.jpg",
     ],
     quickSpecs: {
@@ -1461,7 +1461,7 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "FVR 34 67 Seater Bus 4x2",
     description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (4x2) is Kenya's premier high-capacity coach. Powered by a massive 7.8L six-cylinder engine, it delivers exceptional comfort and reliability for long-distance intercounty routes, schools, and corporate transport.",
-    heroImage: "/vehicles/buses/fvr34-4x2/9.jpg",
+    heroImage: "/vehicles/buses/fvr34-4x2/9.webp",
     gallery: [
       "/vehicles/buses/fvr34-4x2/10.jpg",
     ],
@@ -1510,10 +1510,10 @@ export const VEHICLES_DATA: Record<string, VehicleSpec> = {
     category: "Buses",
     title: "FVR 34 67 Seater Bus 6x2",
     description: "The Isuzu FVR 34 Semi-Luxury 67-Seater Bus (6x2) is the top-of-the-range coach for Kenya's most demanding intercounty routes. The 6x2 configuration delivers superior load distribution and stability for operators who carry full loads every day.",
-    heroImage: "/vehicles/buses/fvr34-6x2/10.jpg",
+    heroImage: "/vehicles/buses/fvr34-6x2/10.webp",
     gallery: [
       "/vehicles/buses/fvr34-6x2/9.png",
-      "/vehicles/buses/fvr34-6x2/10.jpg",
+      "/vehicles/buses/fvr34-6x2/10.webp",
       "/vehicles/buses/fvr34-6x2/11.png",
       "/vehicles/buses/fvr34-6x2/12.jpg",
       "/vehicles/buses/fvr34-6x2/13.png",
