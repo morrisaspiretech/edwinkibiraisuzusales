@@ -23,10 +23,9 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["react-icons", "lucide-react"],
   },
 
-  // Image Optimization powered by sharp
+  // Image Optimization disabled to prevent timeouts on Render free tier (512MB RAM)
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 604800,
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "**" },
       { protocol: "http", hostname: "**" },
@@ -99,46 +98,6 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
-      },
-      {
-        source: "/",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
-          { key: "CDN-Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
-        ],
-      },
-      {
-        source: "/vehicles/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-        ],
-      },
-      {
-        source: "/trucks/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-        ],
-      },
-      {
-        source: "/buses/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-        ],
-      },
-      {
-        source: "/blog/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
-        ],
       },
       {
         source: "/_next/static/:path*",
