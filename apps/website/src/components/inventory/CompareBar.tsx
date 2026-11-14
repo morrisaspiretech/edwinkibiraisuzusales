@@ -38,6 +38,7 @@ export default function CompareBar() {
                   </div>
                   <button
                     onClick={() => removeVehicle(id)}
+                    aria-label={`Remove ${vehicle.title} from comparison`}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500 transition-colors p-1"
                     title="Remove"
                   >

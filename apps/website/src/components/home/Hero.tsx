@@ -235,18 +235,22 @@ const Hero = () => {
       </div>
 
       {/* ── Dot indicators ── */}
-      <div className="absolute bottom-20 sm:bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-3">
+      <div className="absolute bottom-20 sm:bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 sm:gap-2">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
             aria-label={`Go to slide ${idx + 1}`}
-            className={`rounded-full transition-all duration-500 ${
-              idx === currentSlide
-                ? "w-10 sm:w-12 h-1.5 sm:h-2 bg-[#D62B2B] shadow-[0_0_10px_rgba(214,43,43,0.8)]"
-                : "w-2 sm:w-2.5 h-1.5 sm:h-2 bg-white/30 hover:bg-white/70"
-            }`}
-          />
+            className="p-2 flex items-center justify-center focus:outline-none"
+          >
+            <span
+              className={`rounded-full transition-all duration-500 block ${
+                idx === currentSlide
+                  ? "w-10 sm:w-12 h-1.5 sm:h-2 bg-[#D62B2B] shadow-[0_0_10px_rgba(214,43,43,0.8)]"
+                  : "w-2 sm:w-2.5 h-1.5 sm:h-2 bg-white/30 hover:bg-white/70"
+              }`}
+            />
+          </button>
         ))}
       </div>
 

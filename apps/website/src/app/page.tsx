@@ -609,11 +609,12 @@ export default async function Home() {
               { name: "Caroline Njeri", role: "School Bus Operator, Thika", text: "Edwin Kibira helped me get 2 Isuzu buses for my school transport business. The after-sale service team is always available when I need them." },
             ].map((t, i) => (
               <div key={i} className="flex-shrink-0 w-72 sm:w-80 bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B] shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex gap-0.5 mb-3">
+                <div className="flex gap-0.5 mb-3" aria-hidden="true">
                   {[...Array(5)].map((_, j) => (
                     <FaStar key={j} size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
+                <span className="sr-only">5 out of 5 stars rating</span>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                 <div>
                   <p className="font-black text-[#1a1a1a] text-xs uppercase tracking-wide">{t.name}</p>
@@ -644,11 +645,12 @@ export default async function Home() {
               { name: "John Njoroge", role: "Real Estate Developer, Karen", text: "Bought an Isuzu mu-X for site visits. The 4x4 capability is phenomenal. Would absolutely buy from Edwin Kibira again without hesitation." },
             ].map((t, i) => (
               <div key={i} className="flex-shrink-0 w-72 sm:w-80 bg-white p-5 border border-gray-200 border-t-4 border-t-[#D62B2B] shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex gap-0.5 mb-3">
+                <div className="flex gap-0.5 mb-3" aria-hidden="true">
                   {[...Array(5)].map((_, j) => (
                     <FaStar key={j} size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
+                <span className="sr-only">5 out of 5 stars rating</span>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                 <div>
                   <p className="font-black text-[#1a1a1a] text-xs uppercase tracking-wide">{t.name}</p>

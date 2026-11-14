@@ -31,10 +31,11 @@ export default function CompareCheckbox({ vehicleId }: Props) {
   return (
     <button
       onClick={toggleCompare}
+      aria-label={isSelected ? `Remove ${vehicleId.replace(/-/g, " ")} from comparison` : `Add ${vehicleId.replace(/-/g, " ")} to comparison`}
       className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-black uppercase tracking-widest rounded transition-all ${
         isSelected
           ? "bg-[#D62B2B] text-white"
-          : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
       }`}
       title={isSelected ? "Remove from comparison" : "Add to comparison"}
     >
