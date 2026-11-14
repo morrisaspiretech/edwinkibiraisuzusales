@@ -57,6 +57,12 @@ body {
   background: rgba(214, 43, 43, 0.7);
 }
 
+/* ── Content Visibility Optimization for Below-the-Fold ── */
+.section-lazy {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
 /* ── Isuzu Red Underline Accent ── */
 .isuzu-underline {
   position: relative;

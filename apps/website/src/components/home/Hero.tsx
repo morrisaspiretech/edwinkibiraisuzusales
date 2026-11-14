@@ -137,20 +137,14 @@ const Hero = () => {
         {/* Left Side: Text Content */}
         <div className="max-w-3xl mt-8 w-full">
           {/* Eyebrow badge */}
-          <motion.div
-            key={`badge-${currentSlide}`}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center gap-3 mb-6"
-          >
+          <div className="flex items-center gap-3 mb-6">
             <span className="bg-[#D62B2B] text-white text-[10px] sm:text-xs font-black px-4 py-1.5 uppercase tracking-widest shadow-lg">
               {current.badge}
             </span>
             <span className="text-white/80 text-[10px] sm:text-xs font-bold uppercase tracking-widest">
               {current.eyebrow}
             </span>
-          </motion.div>
+          </div>
 
           {/* Staggered Main Title & Subtitle */}
           <motion.div
@@ -161,7 +155,7 @@ const Hero = () => {
           >
             {/* Single SEO-correct H1 — Google reads this as the page headline */}
             <motion.h1 variants={textItemVariant} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
-              <span className="text-xs sm:text-sm font-black text-[#D62B2B] tracking-[0.2em] uppercase block mb-3">
+              <span className="text-xs sm:text-sm font-black text-[#FF4D4D] tracking-[0.2em] uppercase block mb-3">
                 Best Isuzu Dealer in Kenya · Enterprise Road Nairobi Showroom
               </span>
               <span className="text-white block">{current.title}</span>
@@ -178,13 +172,7 @@ const Hero = () => {
           </motion.div>
 
           {/* ── CTA Buttons ── */}
-          <motion.div
-            key={`cta-${currentSlide}`}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.4 }}
-            className="flex flex-wrap gap-3 sm:gap-4 mb-8"
-          >
+          <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
             <Link
               href={current.link}
               className="inline-flex items-center gap-2 bg-[#D62B2B] text-white font-black uppercase text-xs sm:text-sm tracking-widest px-7 sm:px-10 py-3.5 sm:py-4 hover:bg-[#b82222] transition-all duration-300 shadow-lg group"
@@ -198,7 +186,7 @@ const Hero = () => {
             >
               {current.ctaSecondary}
             </Link>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Side: Glassmorphism Spec Cards (Desktop Only) */}

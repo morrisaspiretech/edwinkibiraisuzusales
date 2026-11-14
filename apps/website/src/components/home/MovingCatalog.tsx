@@ -6,15 +6,28 @@ import Link from "next/link";
 import { VEHICLES_DATA } from "@/data/vehicles";
 import { FaArrowRight } from "react-icons/fa6";
 
+const MOVING_VEHICLE_IDS = [
+  'tfs87-double-manual',
+  'mu-x-3000cc',
+  'n-series-nlr',
+  'n-series-nqr81',
+  'f-series-frr90n',
+  'f-series-fvz34t',
+  'movers',
+  'bus-nmr-26',
+  'bus-nqr-33',
+  'bus-frr90n-51'
+];
+
 export default function MovingCatalog() {
-  // Use all vehicles from data for full lineup
-  const vehicles = Object.values(VEHICLES_DATA);
+  // Select flagship vehicles across categories for high-performance seamless marquee
+  const vehicles = MOVING_VEHICLE_IDS.map(id => VEHICLES_DATA[id]).filter(Boolean);
   
-  // Duplicate the array to ensure a seamless infinite scrolling loop
+  // Duplicate array for infinite marquee
   const duplicatedVehicles = [...vehicles, ...vehicles];
 
   return (
-    <section className="py-16 bg-[#111] overflow-hidden border-y-[6px] border-[#D62B2B]">
+    <section className="section-lazy py-16 bg-[#111] overflow-hidden border-y-[6px] border-[#D62B2B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
         <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
           Explore Our <span className="text-[#D62B2B]">Full Lineup</span>

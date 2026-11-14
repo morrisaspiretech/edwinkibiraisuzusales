@@ -4,15 +4,18 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import NextTopLoader from "nextjs-toploader";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { CompareProvider } from "@/context/CompareContext";
-import CompareBar from "@/components/inventory/CompareBar";
-import LiveChat from "@/components/layout/LiveChat";
 import { FavouritesProvider } from "@/context/FavouritesContext";
+
+const LiveChat = dynamic(() => import("@/components/layout/LiveChat"));
+const CompareBar = dynamic(() => import("@/components/inventory/CompareBar"));
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "600", "700", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

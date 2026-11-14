@@ -317,7 +317,7 @@ export default async function Home() {
       </section>
 
       {/* ── FULL VEHICLE RANGE ── */}
-      <section className="py-12 px-4 sm:px-6 bg-white">
+      <section className="section-lazy py-12 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-1 bg-[#D62B2B]" />
@@ -339,7 +339,7 @@ export default async function Home() {
 
       
       {/* ── 2026 ISUZU KENYA PRICE GUIDE & SPECIFICATIONS (AI & SEARCH ENGINE OPTIMIZED) ── */}
-      <section className="py-14 px-4 sm:px-6 bg-[#fcfcfc] border-b border-gray-100">
+      <section className="section-lazy py-14 px-4 sm:px-6 bg-[#fcfcfc] border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-8">
             <div className="flex items-center gap-3 mb-2">
@@ -419,7 +419,7 @@ export default async function Home() {
       <MovingCatalog />
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="py-12 px-4 sm:px-6 bg-[#f9f9f9] border-y border-gray-100">
+      <section className="section-lazy py-12 px-4 sm:px-6 bg-[#f9f9f9] border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-2">
@@ -478,7 +478,7 @@ export default async function Home() {
       </section>
 
       {/* ── ABOUT SECTION ── */}
-      <section className="py-12 px-4 sm:px-6 bg-white">
+      <section className="section-lazy py-12 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative w-full h-64 sm:h-80 lg:h-[400px] overflow-hidden bg-[#f5f5f5]">
@@ -544,7 +544,7 @@ export default async function Home() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-14 bg-[#f9f9f9] border-t border-gray-100 overflow-hidden">
+      <section className="section-lazy py-14 bg-[#f9f9f9] border-t border-gray-100 overflow-hidden">
         {/* Header */}
         <div className="text-center mb-10 px-4">
           <div className="flex items-center justify-center gap-3 mb-2">
@@ -631,7 +631,7 @@ export default async function Home() {
 
 
       {/* ── TIKTOK SHOWCASE ── */}
-      <section className="pt-8 pb-14 px-4 sm:px-6 bg-[#0d0d0d] border-t border-gray-900">
+      <section className="section-lazy pt-8 pb-14 px-4 sm:px-6 bg-[#0d0d0d] border-t border-gray-900">
         <div className="max-w-7xl mx-auto">
 
           {/* Section Header */}
@@ -681,7 +681,7 @@ export default async function Home() {
 
       
       {/* ── FREQUENTLY ASKED QUESTIONS (GEO & GOOGLE SEARCH OPTIMIZED) ── */}
-      <section className="py-16 px-4 sm:px-6 bg-[#fcfcfc] border-t border-gray-100">
+      <section className="section-lazy py-16 px-4 sm:px-6 bg-[#fcfcfc] border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-3 mb-2">
