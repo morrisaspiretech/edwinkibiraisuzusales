@@ -83,14 +83,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#111] hero-section" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
+    <section className="absolute inset-0 w-full overflow-hidden bg-transparent hero-section z-10" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
 
       {/* ── Background: Smooth Crossfade ── */}
+      {/* Slide 0: SSR static image below shows through (opacity 0 here = fast LCP) */}
+      {/* Slides 1+: this animates in over the SSR image */}
       <AnimatePresence mode="popLayout">
         <motion.div
           key={`bg-${currentSlide}`}
-          initial={currentSlide === 0 ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: currentSlide === 0 ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0 z-0 origin-center"

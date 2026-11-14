@@ -280,7 +280,38 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
-      <Hero />
+
+      {/* SSR hero image - renders as plain HTML before JS, ensures fast LCP */}
+
+      <div className="relative" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
+
+        <picture className="absolute inset-0 w-full h-full z-0 pointer-events-none" aria-hidden="true">
+
+          <source media="(max-width: 640px)" srcSet="/vehicles/grouped/batch3/hero-mobile.webp" />
+
+          <img
+
+            src="/vehicles/grouped/batch3/hero-desktop.webp"
+
+            alt=""
+
+            fetchPriority="high"
+
+            decoding="sync"
+
+            loading="eager"
+
+            className="object-cover w-full h-full"
+
+            style={{ display: "block" }}
+
+          />
+
+        </picture>
+
+        <Hero />
+
+      </div>
 
       {/* ── VEHICLE CATEGORIES (SEPARATED FROM HERO) ── */}
       <section className="bg-white py-12 px-4 sm:px-6 border-b border-gray-100">
