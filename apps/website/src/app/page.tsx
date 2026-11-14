@@ -401,6 +401,7 @@ export default async function Home() {
                         href={`https://wa.me/254768351483?text=${encodeURIComponent(`Hi Edwin, I am inquiring about pricing and financing for the ${row.model}.`)}`}
                         target="_blank"
                         rel="noreferrer"
+                        aria-label={`Request official price quote for ${row.model}`}
                         className="inline-flex items-center gap-1 bg-[#D62B2B] hover:bg-[#b82222] text-white text-[10px] font-black uppercase px-2.5 py-1.5 rounded transition"
                       >
                         Quote

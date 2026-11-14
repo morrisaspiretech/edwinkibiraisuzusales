@@ -90,8 +90,6 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${montserrat.variable} font-sans bg-white antialiased text-[#1a1a1a]`}>
         <NextTopLoader color="#D62B2B" height={4} showSpinner={false} />

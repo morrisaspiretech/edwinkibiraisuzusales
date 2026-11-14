@@ -91,13 +91,13 @@ export default function FleetSalesPage() {
 
       {/* ── HERO ── */}
       <section className="relative bg-[#0d0d0d] overflow-hidden" style={{ minHeight: 520 }}>
-        <video
-          src="/videos/hero.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        <Image
+          src="/vehicles/f-series-truck.webp"
+          alt="Isuzu Commercial Fleet Solutions Kenya"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d] via-black/70 to-transparent" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-[#D62B2B] z-20" />

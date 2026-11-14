@@ -62,9 +62,9 @@ const VIDEOS: TikTokVideo[] = [
 
 function TikTokCard({ video, isActive, onClick }: { video: TikTokVideo, isActive: boolean, onClick: () => void }) {
   return (
-    <div className="group flex flex-col h-full cursor-pointer" onClick={!isActive ? onClick : undefined}>
-      <div className="block relative bg-[#0a0a0a] overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300 rounded-lg h-[480px]">
-        {isActive ? (
+    <div className="group flex flex-col h-full">
+      {isActive ? (
+        <div className="relative bg-[#0a0a0a] overflow-hidden border border-[#D62B2B]/60 rounded-lg h-[480px]">
           <iframe
             src={`https://www.tiktok.com/embed/v2/${video.embedId}`}
             className="absolute inset-0 w-full h-full border-none"
@@ -72,45 +72,50 @@ function TikTokCard({ video, isActive, onClick }: { video: TikTokVideo, isActive
             allowFullScreen
             title={video.title}
           />
-        ) : (
-          <>
-            <Image
-              src={video.thumbnailUrl}
-              alt={video.title}
-              fill
-              className="object-cover object-center opacity-80"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={onClick}
+          aria-label={`Play TikTok video: ${video.title}`}
+          className="block relative bg-[#0a0a0a] overflow-hidden border border-white/10 group-hover:border-[#D62B2B]/60 transition-colors duration-300 rounded-lg h-[480px] w-full text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D62B2B]"
+        >
+          <Image
+            src={video.thumbnailUrl}
+            alt={video.title}
+            fill
+            className="object-cover object-center opacity-80"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
 
-            <div className="absolute top-3 right-3 z-20 opacity-80">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white drop-shadow">
+          <div className="absolute top-3 right-3 z-20 opacity-80">
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white drop-shadow">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z" />
+            </svg>
+          </div>
+
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 gap-3">
+            <div className="w-16 h-16 rounded-full bg-[#D62B2B] flex items-center justify-center shadow-lg shadow-[#D62B2B]/40 group-hover:scale-110 transition-transform duration-300">
+              <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white ml-1">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <span className="text-white/80 text-[10px] font-bold uppercase tracking-widest">
+              Play Video
+            </span>
+          </div>
+
+          <div className="absolute bottom-3 left-3 z-20 flex items-center gap-1.5">
+            <div className="w-5 h-5 rounded-full bg-[#D62B2B] flex items-center justify-center">
+              <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white">
                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z" />
               </svg>
             </div>
-
-            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 gap-3">
-              <div className="w-16 h-16 rounded-full bg-[#D62B2B] flex items-center justify-center shadow-lg shadow-[#D62B2B]/40 group-hover:scale-110 transition-transform duration-300">
-                <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white ml-1">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <span className="text-white/80 text-[10px] font-bold uppercase tracking-widest">
-                Play Video
-              </span>
-            </div>
-
-            <div className="absolute bottom-3 left-3 z-20 flex items-center gap-1.5">
-              <div className="w-5 h-5 rounded-full bg-[#D62B2B] flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-3 h-3 fill-white">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.19 8.19 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1Z" />
-                </svg>
-              </div>
-              <span className="text-white text-[10px] font-bold">@edwinkibiraisuzusales</span>
-            </div>
-          </>
-        )}
-      </div>
+            <span className="text-white text-[10px] font-bold">@edwinkibiraisuzusales</span>
+          </div>
+        </button>
+      )}
 
       <div className="mt-4 flex-1 flex flex-col">
         <p className="text-[10px] font-black uppercase tracking-widest text-[#D62B2B] mb-1">

@@ -40,6 +40,7 @@ export default function MovingCatalog() {
             <Link
               key={`${vehicle.id}-${idx}`}
               href={`/vehicles/${vehicle.id}/`}
+              aria-label={`View details for Isuzu ${vehicle.title}`}
               className="relative w-72 h-[340px] flex-shrink-0 bg-white group/card overflow-hidden hover:-translate-y-2 transition-transform duration-300 rounded-sm"
             >
               {/* Category Badge */}

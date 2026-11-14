@@ -138,6 +138,10 @@ export default function LiveChat() {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
+              role="button"
+              tabIndex={0}
+              aria-label="Open live chat consultation with Edwin Kibira"
+              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") openChat(); }}
               className="bg-white shadow-2xl rounded-2xl rounded-br-none p-4 max-w-[230px] border border-gray-100 cursor-pointer"
               onClick={openChat}
             >
@@ -218,6 +222,7 @@ export default function LiveChat() {
                   href="tel:0768351483"
                   className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white transition-colors"
                   title="Call Now"
+                  aria-label="Call Edwin Kibira directly"
                 >
                   <FaPhone size={13} />
                 </a>

@@ -38,7 +38,7 @@ const Hero = () => {
   const pathname = usePathname();
   
   // Build dynamic slides from real vehicle data
-  const slides = featuredIds.map((id, index) => {
+  const slides = featuredIds.map((id) => {
     const vehicle = VEHICLES_DATA[id as keyof typeof VEHICLES_DATA];
     
     return {
@@ -49,11 +49,10 @@ const Hero = () => {
       subtitle: vehicle.description.split('.')[0] + ".", // First sentence of description
       body: vehicle.description,
       image: vehicle.heroImage,
-      video: index === 0 ? "/videos/hero.mp4" : undefined, // Atmospheric video background
       cta: `Explore ${vehicle.category}`,
       ctaSecondary: "Get a Quote",
-      link: `/vehicles/${vehicle.id}`,
-      linkSecondary: "/get-quote",
+      link: `/vehicles/${vehicle.id}/`,
+      linkSecondary: "/get-quote/",
       badge: "AVAILABLE NOW",
       specs: [
         { label: "Engine", value: vehicle.quickSpecs.engine },
@@ -99,27 +98,14 @@ const Hero = () => {
           }}
           className="absolute inset-0 z-0 origin-center"
         >
-          {current.video ? (
-            <video
-              src={current.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster={current.image}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <Image
-              src={current.image}
-              alt={current.title + " " + current.highlight}
-              fill
-              priority={currentSlide === 0}
-              sizes="100vw"
-              className="object-cover"
-            />
-          )}
+          <Image
+            src={current.image}
+            alt={current.title + " " + current.highlight}
+            fill
+            priority={currentSlide === 0}
+            sizes="100vw"
+            className="object-cover"
+          />
         </motion.div>
       </AnimatePresence>
 

@@ -170,7 +170,12 @@ const Navbar = () => {
                 onMouseEnter={() => setActiveDropdown(cat.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-white font-bold text-sm hover:text-secondary transition-all px-4 py-6 uppercase tracking-wider">
+                <button
+                  aria-expanded={activeDropdown === cat.label}
+                  aria-haspopup="true"
+                  aria-label={`${cat.label} vehicle categories menu`}
+                  className="flex items-center gap-1 text-white font-bold text-sm hover:text-secondary transition-all px-4 py-6 uppercase tracking-wider"
+                >
                   {cat.label}
                   <FaChevronDown
                     size={12}
@@ -206,7 +211,12 @@ const Navbar = () => {
 
           {/* CTA Desktop */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Link href="/favourites/" rel="nofollow" className="relative text-white hover:text-[#D62B2B] transition-colors group">
+            <Link
+              href="/favourites/"
+              rel="nofollow"
+              aria-label="View saved favourites"
+              className="relative text-white hover:text-[#D62B2B] transition-colors group"
+            >
               <FaHeart size={20} />
               {favouritesCount > 0 && (
                 <span className="absolute -top-2 -right-3 w-5 h-5 bg-[#D62B2B] text-white rounded-full flex items-center justify-center text-[10px] font-black shadow-sm group-hover:scale-110 transition-transform">
@@ -224,7 +234,11 @@ const Navbar = () => {
 
           {/* Mobile Toggle & Quick Actions */}
           <div className="lg:hidden flex items-center gap-4">
-            <a href={`tel:${PHONE}`} className="flex items-center justify-center w-9 h-9 rounded-full bg-secondary text-white shadow-lg shadow-secondary/30">
+            <a
+              href={`tel:${PHONE}`}
+              aria-label="Call Edwin Kibira Isuzu Sales"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-secondary text-white shadow-lg shadow-secondary/30"
+            >
               <FaPhone size={12} />
             </a>
             <button
@@ -252,7 +266,11 @@ const Navbar = () => {
             </div>
             <span className="text-white font-black text-base uppercase">Edwin Kibira Isuzu</span>
           </div>
-          <button className="text-white p-2 border border-white/20 rounded hover:bg-white/10 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+          <button
+            className="text-white p-2 border border-white/20 rounded hover:bg-white/10 transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
             <FaXmark size={24} />
           </button>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import { FaChevronDown, FaChevronUp, FaCircleQuestion } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
@@ -71,13 +72,13 @@ export default function FAQPage() {
 
       {/* Header */}
       <section className="relative bg-[#1A1A1A] overflow-hidden" style={{ minHeight: 320 }}>
-        <video
-          src="/videos/hero.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        <Image
+          src="/vehicles/grouped/batch3/3.jpeg"
+          alt="Edwin Kibira Isuzu FAQ"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#f9fafb] via-[#1A1A1A]/70 to-[#1A1A1A]/90" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-[#D62B2B] z-20" />

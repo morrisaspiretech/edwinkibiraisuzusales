@@ -62,14 +62,14 @@ export default function ShowroomPage() {
 
       {/* ── HERO ── */}
       <div className="relative w-full overflow-hidden bg-[#0d0d0d]" style={{ minHeight: 480 }}>
-        {/* Background Video */}
-        <video
-          src="/videos/hero.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        {/* Background Hero Image */}
+        <Image
+          src="/vehicles/f-series-truck.webp"
+          alt="Edwin Kibira Isuzu Vehicle Showroom Kenya"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-30"
         />
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />

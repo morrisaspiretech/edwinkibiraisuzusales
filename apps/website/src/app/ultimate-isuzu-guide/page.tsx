@@ -75,13 +75,13 @@ export default function UltimateIsuzuGuide() {
 
       {/* HERO SECTION */}
       <section className="relative h-[60vh] min-h-[500px] w-full bg-[#1a1a1a] flex items-center overflow-hidden">
-        <video
-          src="/videos/hero.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        <Image
+          src="/vehicles/dmax-double.webp"
+          alt="The Ultimate Isuzu Guide"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent" />

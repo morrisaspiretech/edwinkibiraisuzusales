@@ -89,13 +89,13 @@ export default function AboutPage() {
       {/* ── HERO HEADER ── */}
       <header className="relative bg-[#111] overflow-hidden" style={{ minHeight: 480 }}>
         <div className="absolute inset-0">
-          <video
-            src="/videos/hero.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-50"
+          <Image
+            src="/vehicles/grouped/batch3/3.jpeg"
+            alt="Edwin Kibira Isuzu Dealership Nairobi"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         </div>
