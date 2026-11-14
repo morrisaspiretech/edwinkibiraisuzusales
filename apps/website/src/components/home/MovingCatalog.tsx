@@ -89,11 +89,11 @@ export default function MovingCatalog() {
                 
                 <div className="flex justify-between items-end border-t border-gray-100 pt-3">
                    <div>
-                     <p className="text-[9px] font-bold uppercase text-gray-400">Engine</p>
+                     <p className="text-[9px] font-bold uppercase text-gray-600">Engine</p>
                      <p className="text-[10px] font-black text-[#1a1a1a]">{vehicle.quickSpecs.engine}</p>
                    </div>
                    <div className="text-right">
-                     <p className="text-[9px] font-bold uppercase text-gray-400">Power</p>
+                     <p className="text-[9px] font-bold uppercase text-gray-600">Power</p>
                      <p className="text-[10px] font-black text-[#1a1a1a]">{vehicle.quickSpecs.power}</p>
                    </div>
                 </div>

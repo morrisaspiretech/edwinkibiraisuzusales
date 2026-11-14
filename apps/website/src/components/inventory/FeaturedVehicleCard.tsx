@@ -60,11 +60,11 @@ export default function FeaturedVehicleCard({ v }: Props) {
       
       <div className="p-5 flex flex-col flex-1 bg-white border-t border-gray-50 z-10 pointer-events-none">
         <h3 className="text-sm font-black text-[#1a1a1a] uppercase mb-1.5 group-hover:text-[#D62B2B] transition-colors line-clamp-1">{v.title}</h3>
-        <p className="text-xs text-gray-500 mb-3 line-clamp-2 leading-relaxed">{v.spec}</p>
+        <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">{v.spec}</p>
         {priceLabel && (
           <div className="mb-3 flex items-baseline gap-1.5">
             <span className="text-[#D62B2B] font-black text-sm tabular-nums">{priceLabel}</span>
-            {priceSuffix && <span className="text-[9px] text-gray-400 font-semibold">{priceSuffix}</span>}
+            {priceSuffix && <span className="text-[9px] text-gray-600 font-semibold">{priceSuffix}</span>}
           </div>
         )}
         <div className="mt-auto pt-3 border-t border-gray-50 flex items-center justify-between gap-2 pointer-events-auto">

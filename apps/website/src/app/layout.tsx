@@ -340,9 +340,9 @@ export default function RootLayout({
         />
         <FavouritesProvider>
           <CompareProvider>
-            <main className="min-h-screen flex flex-col">
+            <div className="min-h-screen flex flex-col">
               {children}
-            </main>
+            </div>
 
             <LiveChat />
             <Footer />

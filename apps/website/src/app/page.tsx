@@ -557,7 +557,7 @@ export default async function Home() {
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-black text-[#D62B2B] leading-none">{s.value}</p>
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mt-1">{s.label}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-600 mt-1">{s.label}</p>
                   </div>
                 ))}
               </div>

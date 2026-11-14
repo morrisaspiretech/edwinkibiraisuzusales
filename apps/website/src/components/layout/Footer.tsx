@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Quick Links</h4>
+            <p className="text-xs font-black uppercase tracking-widest text-secondary font-bold">Quick Links</p>
             <div className="flex flex-col gap-2.5">
               {[
                 { label: "Isuzu D-MAX (All Models)", href: "/vehicles/d-max/" },
@@ -120,7 +120,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Contact Us</h4>
+            <p className="text-xs font-black uppercase tracking-widest text-secondary font-bold">Contact Us</p>
             <div className="flex flex-col gap-3.5 text-xs md:text-sm">
               <div className="flex gap-3 items-start">
                 <FaMapLocationDot className="text-secondary flex-shrink-0 mt-0.5" size={16} />
@@ -157,7 +157,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-black uppercase tracking-widest text-secondary">Stay Updated</h4>
+            <p className="text-xs font-black uppercase tracking-widest text-secondary font-bold">Stay Updated</p>
             <p className="text-white/70 text-xs md:text-sm font-medium">
               Subscribe for the latest Isuzu arrivals, prices, and special dealer offers.
             </p>
@@ -208,7 +208,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-white/10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/40 font-medium">
+        <div className="border-t border-white/10 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/70 font-medium">
           <p>&copy; {new Date().getFullYear()} Edwin Kibira Isuzu Sales. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/ultimate-isuzu-guide/" className="hover:text-secondary transition-colors text-secondary font-bold">Isuzu Global Hub</Link>
