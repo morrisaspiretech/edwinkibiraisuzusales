@@ -14,7 +14,7 @@ const CompareBar = dynamic(() => import("@/components/inventory/CompareBar"));
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["400", "700", "900"],
   display: "swap",
 });
 

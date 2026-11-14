@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaPhone, FaArrowRight, FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
@@ -11,25 +10,12 @@ import { VEHICLES_DATA } from "@/data/vehicles";
 // We select 3 active flagship vehicles from our data to feature in the hero section
 const featuredIds = ["tfs87-double-manual", "mu-x-3000cc", "f-series-frr90n"];
 
-// Staggered text reveal variants
+// Simple, lightweight text fade for fast mobile performance
 const textContainerVariant = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.0, // No delay! Starts immediately
-    }
-  }
-};
-
-const textItemVariant: any = {
-  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    filter: "blur(0px)",
-    transition: { type: "spring", damping: 15, stiffness: 100 }
+    transition: { duration: 0.3 }
   }
 };
 
@@ -86,29 +72,30 @@ const Hero = () => {
     <section className="absolute inset-0 w-full overflow-hidden bg-transparent hero-section z-10" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
 
       {/* ── Background: Smooth Crossfade ── */}
-      {/* Slide 0: SSR static image below shows through (opacity 0 here = fast LCP) */}
-      {/* Slides 1+: this animates in over the SSR image */}
+      {/* Slide 0: SSR static image below renders directly with zero JS */}
+      {/* Slides 1+: animates in smoothly over the SSR image */}
       <AnimatePresence mode="popLayout">
-        <motion.div
-          key={`bg-${currentSlide}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: currentSlide === 0 ? 0 : 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0 z-0 origin-center"
-        >
-          <picture className="absolute inset-0 w-full h-full">
-            <source media="(max-width: 640px)" srcSet={currentSlide === 0 ? "/vehicles/grouped/batch3/hero-mobile.webp" : current.image} />
-            <img
-              src={current.image}
-              alt={current.title + " " + current.highlight}
-              fetchPriority={currentSlide === 0 ? "high" : "auto"}
-              loading={currentSlide === 0 ? "eager" : "lazy"}
-              decoding="async"
-              className="object-cover w-full h-full"
-            />
-          </picture>
-        </motion.div>
+        {currentSlide > 0 && (
+          <motion.div
+            key={`bg-${currentSlide}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0 z-0 origin-center"
+          >
+            <picture className="absolute inset-0 w-full h-full">
+              <source media="(max-width: 640px)" srcSet={current.image} />
+              <img
+                src={current.image}
+                alt={current.title + " " + current.highlight}
+                loading="lazy"
+                decoding="async"
+                className="object-cover w-full h-full"
+              />
+            </picture>
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* ── Dark overlays for text readability ── */}
@@ -148,7 +135,7 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Staggered Main Title & Subtitle */}
+          {/* Main Title & Subtitle */}
           <motion.div
             key={`text-${currentSlide}`}
             variants={textContainerVariant}
@@ -156,21 +143,21 @@ const Hero = () => {
             animate="visible"
           >
             {/* Single SEO-correct H1 — Google reads this as the page headline */}
-            <motion.h1 variants={textItemVariant} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.1] tracking-tight mb-6 drop-shadow-md">
               <span className="text-xs sm:text-sm font-black text-[#FF4D4D] tracking-[0.2em] uppercase block mb-3">
                 Best Isuzu Dealer in Kenya · Enterprise Road Nairobi Showroom
               </span>
               <span className="text-white block">{current.title}</span>
               <span className="text-[#D62B2B] block">{current.highlight}</span>
-            </motion.h1>
+            </h1>
             
-            <motion.p variants={textItemVariant} className="text-white font-bold mb-4 text-lg sm:text-xl md:text-2xl drop-shadow-md line-clamp-2">
+            <p className="text-white font-bold mb-4 text-lg sm:text-xl md:text-2xl drop-shadow-md line-clamp-2">
               {current.subtitle}
-            </motion.p>
+            </p>
 
-            <motion.p variants={textItemVariant} className="text-white/70 text-sm sm:text-base leading-relaxed mb-10 max-w-xl font-medium line-clamp-3">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-10 max-w-xl font-medium line-clamp-3">
               {current.body}
-            </motion.p>
+            </p>
           </motion.div>
 
           {/* ── CTA Buttons ── */}

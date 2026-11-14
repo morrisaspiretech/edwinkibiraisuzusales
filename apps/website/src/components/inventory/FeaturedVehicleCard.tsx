@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,7 +32,7 @@ export default function FeaturedVehicleCard({ v }: Props) {
         aria-label={`View full details for Isuzu ${v.title}`}
         className="absolute inset-0 z-0"
       />
-      
+
       <div className="relative aspect-[16/10] bg-gradient-to-b from-[#f8f8f8] to-white p-4 z-10 pointer-events-none">
         <Image
           src={v.img}
@@ -46,18 +44,17 @@ export default function FeaturedVehicleCard({ v }: Props) {
         <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[9px] font-black text-[#D62B2B] uppercase tracking-widest shadow-sm">
           {v.category}
         </div>
-        <div className={`absolute top-3 right-3 px-2 py-1 rounded text-[9px] font-black uppercase tracking-widest shadow-sm text-white ${
-          vehicleData?.availability === 'Order Only' ? 'bg-amber-500' :
-          vehicleData?.availability === 'Limited Stock' ? 'bg-orange-500' :
-          'bg-green-600'
-        }`}>
+        <div className={`absolute top-3 right-3 px-2 py-1 rounded text-[9px] font-black uppercase tracking-widest shadow-sm text-white ${vehicleData?.availability === 'Order Only' ? 'bg-amber-500' :
+            vehicleData?.availability === 'Limited Stock' ? 'bg-orange-500' :
+              'bg-green-600'
+          }`}>
           {vehicleData?.availability || 'In Stock'}
         </div>
         <div className="absolute top-12 right-3 pointer-events-auto">
           <FavouriteButton vehicleId={v.id} />
         </div>
       </div>
-      
+
       <div className="p-5 flex flex-col flex-1 bg-white border-t border-gray-50 z-10 pointer-events-none">
         <h3 className="text-sm font-black text-[#1a1a1a] uppercase mb-1.5 group-hover:text-[#D62B2B] transition-colors line-clamp-1">{v.title}</h3>
         <p className="text-xs text-gray-600 mb-3 line-clamp-2 leading-relaxed">{v.spec}</p>
