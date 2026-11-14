@@ -86,10 +86,10 @@ const Hero = () => {
     <section className="relative w-full overflow-hidden bg-[#111] hero-section" style={{ height: "92vh", minHeight: 600, maxHeight: 950 }}>
 
       {/* ── Background: Cinematic Ken Burns Effect ── */}
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout">
         <motion.div
           key={`bg-${currentSlide}`}
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={currentSlide === 0 ? false : { opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1.15 }}
           exit={{ opacity: 0 }}
           transition={{ 

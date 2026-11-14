@@ -23,9 +23,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["react-icons", "lucide-react"],
   },
 
-  // Image Optimization disabled to prevent timeouts on Render free tier
+  // Image Optimization powered by sharp
   images: {
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 604800,
     remotePatterns: [
       { protocol: "https", hostname: "**" },
       { protocol: "http", hostname: "**" },
