@@ -48,7 +48,7 @@ const Hero = () => {
       highlight: vehicle.title,
       subtitle: vehicle.description.split('.')[0] + ".", // First sentence of description
       body: vehicle.description,
-      image: vehicle.heroImage,
+      image: id === "tfs87-double-manual" ? "/vehicles/grouped/batch3/hero-desktop.webp" : vehicle.heroImage,
       cta: `Explore ${vehicle.category}`,
       ctaSecondary: "Get a Quote",
       link: `/vehicles/${vehicle.id}/`,
@@ -155,7 +155,7 @@ const Hero = () => {
           <motion.div
             key={`text-${currentSlide}`}
             variants={textContainerVariant}
-            initial="hidden"
+            initial={currentSlide === 0 ? false : "hidden"}
             animate="visible"
           >
             {/* Single SEO-correct H1 — Google reads this as the page headline */}

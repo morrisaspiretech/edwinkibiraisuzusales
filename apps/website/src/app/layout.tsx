@@ -90,6 +90,7 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
+        <link rel="preload" as="image" href="/vehicles/grouped/batch3/hero-desktop.webp" fetchPriority="high" />
       </head>
       <body className={`${montserrat.variable} font-sans bg-white antialiased text-[#1a1a1a]`}>
         <NextTopLoader color="#D62B2B" height={4} showSpinner={false} />
